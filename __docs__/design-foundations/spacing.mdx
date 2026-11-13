@@ -1,7 +1,6 @@
 import {Meta} from "@storybook/addon-docs/blocks";
 import Principle, {PrincipleSet} from "../components/principle";
 import spacingImg from "./assets/spacing/spacing.png";
-import scaleImg from "./assets/spacing/scale.png";
 import paddingImg from "./assets/spacing/types-of-spacing-1.png";
 import gapImg from "./assets/spacing/types-of-spacing-2.png";
 import marginsImg from "./assets/spacing/types-of-spacing-3.png";
@@ -43,29 +42,35 @@ Space is not the absence of content — it's content. The distance between two e
     <Principle
         label="Accessible"
         title="Space scales with the user"
-        description="The spacing system uses relative units so it responds when a user changes their zoom. A comfortable gap at default zoom stays comfortable at 150%. Space is a proportion, not a fixed dimension."
+        description="Spacing must remain usable when a learner zooms, increases text size, or changes display scaling. PWA uses its existing CSS spacing tokens and Android uses dp; both must be tested for wrapping, clipping, and target size rather than assuming fixed gaps automatically adapt to all accessibility settings."
     />
 </PrincipleSet>
 
 ## How the scale works
 
-The spacing scale is built on a base unit of 10px = 1rem = 100%. All values in the scale are expressed as relative units (rems) so they scale with a user's zoom and text size preferences — if a user increases their text size in their browser settings, spacing grows with it.
+HSK AI uses its **existing shared 4-point spacing scale**: **4, 8, 12, 16, 24, 32, 48**. These are approved spacing steps, not a mandate to change every illustration dimension or typography metric. Do not impose a new `10px = 1rem` root-size convention; it is not the current HSK AI implementation.
 
-Token values follow a consistent naming convention: the token suffix is the pixel value multiplied by 10. `size_040` = 4px = 0.4rem. `size_160` = 16px = 1.6rem.
+| Step | PWA token (CSS) | PWA value | Android token (Compose) | Android value |
+| --- | --- | --- | --- | --- |
+| 1 | `--hsk-space-1` | 4px | `PompSpacing.XSmall` | 4.dp |
+| 2 | `--hsk-space-2` | 8px | `PompSpacing.Small` | 8.dp |
+| 3 | `--hsk-space-3` | 12px | `PompSpacing.Medium` | 12.dp |
+| 4 | `--hsk-space-4` | 16px | `PompSpacing.Large` | 16.dp |
+| 6 | `--hsk-space-6` | 24px | `PompSpacing.XLarge` | 24.dp |
+| 8 | `--hsk-space-8` | 32px | `PompSpacing.XXLarge` | 32.dp |
+| 12 | `--hsk-space-12` | 48px | `PompSpacing.XXXLarge` | 48.dp |
 
-With the exception of 1px, all values in the scale are evenly divisible by 2. This prevents subpixel rendering artifacts that occur when relative units produce fractional pixel values at certain zoom levels.
-
-<img src={scaleImg} alt="The spacing scale, from 1px up to 48px" />
+The production sources of truth are `app/static/course_v3_data/design-tokens.css` (PWA) and `android/app/src/main/java/com/pomp/hskai/core/design/Spacing.kt` (Android) in `HSK-AI-Bot`. This is **logical design-scale parity**, not a claim that CSS px and Android dp map to identical physical pixels on every device. Use the established tokens; if a new relative-unit strategy is proposed, first verify its behavior against current layouts rather than silently redefining the root font size.
 
 ## Usage guidelines
 
 ### Always use a token — never a raw value
 
-Spacing should always come from the scale. Arbitrary values (13px, 17px, 22px) bypass the relative unit system, break the zoom-scaling behavior, and introduce visual inconsistency that accumulates over time.
+Use the existing HSK AI spacing tokens for recurring margins, padding and gaps, rather than introducing arbitrary per-screen values (such as 13px, 17px or 22px). PWA must reference the approved CSS variables and Android must use `PompSpacing` values. During the cross-platform UI audit, identify historical hard-coded values and assess each before migration; do not change production layouts blindly or assume that any non-token measurement is automatically a spacing defect.
 
 ### The same relationship gets the same space
 
-If the gap between a section heading and its content is `size_160` in one place, it should be `size_160` everywhere. Inconsistency in repeated relationships is one of the most common sources of visual noise in a product.
+If the gap between a section heading and its content uses the 16-step (`--hsk-space-4` / `PompSpacing.Large`) in one comparable screen, use that same step in other comparable screens. A different learning task may need a different relationship; consistency means matching purpose, not forcing identical spacing everywhere.
 
 ### Spacing is not a substitute for structure
 
@@ -77,7 +82,7 @@ If a layout feels crowded and adding more space doesn't help, the problem is lik
 
 ### Component spacing is already handled
 
-Spacing within pre-built system components (like the padding inside a Button) is defined by the component and shouldn't be overridden. What designers control is the space between components in a layout, and the space within groupings they compose themselves — see Grouped content below. If a layout feels off, the fix is almost always in the gaps between components, not inside them.
+Spacing within approved shared UI components (for example, button padding) belongs to their component specification and should not be overridden for one screen. Layout authors control spacing between components and inside new composed groupings. Keep canonical Panda/approved-character proportions, established lesson feedback effects and AI Voice Orb geometry intact; do not resize or reposition them mechanically just to fit a spacing step. Correct an actual accessibility or layout defect through the relevant component design, not arbitrary overrides.
 
 ### Negative space is a design decision
 
@@ -123,7 +128,7 @@ When you're composing a custom grouping — a card, a module, a section of relat
 
 ### Typography spacing
 
-When using spacing between typographic elements, try to prioritise legibility. You can also use spacing to dictate the visual hierarchy of your text, using tighter spaces to create blocks of content and bigger spaces to separate unrelated content.
+Prioritize readability of Chinese Hanzi, pinyin and translations. Keep related text close enough to be recognized as one learning unit without collisions or cramped line spacing; use larger gaps to separate distinct questions, answer options and feedback. Spacing tokens control margins and padding; readable line-height and text scaling are governed by typography and must not be forced to 4-point increments.
 
 <img src={typographySpacingImg} alt="Typography spacing example" />
 
@@ -131,11 +136,11 @@ When using spacing between typographic elements, try to prioritise legibility. Y
 
 ### Spacing scales with user preferences
 
-Because the scale uses relative units, spacing grows proportionally when a user increases their zoom level or text size. This means layouts must be tested at elevated zoom levels (150%, 200%, and up to 400%) to ensure spacing still holds — content should not begin to overlap, require scrolling in two directions, or collapse at larger sizes.
+The current PWA spacing tokens are CSS px values, which scale under page zoom but do not automatically respond like rem values to every text-only preference. Android spacing uses dp, while font scaling operates separately. Test PWA zoom and text scaling, as well as Android display/font scaling and small screens; check at 150% and 200% and assess up to 400% zoom where supported. Learning content, especially Hanzi/pinyin/translation and interactive feedback, must not overlap, clip, or require unnecessary horizontal scrolling. Do not alter the root rem conversion to mimic Khan Academy without testing.
 
 ### Touch targets require minimum spacing
 
-Interactive elements placed close together must still meet minimum target sizes (24×24px). When interactive elements fall below the minimum size, ensure the control and space between other elements meets the minimum size — padding within the component maintains the target size even when the control components are small. Pre-built system components already handle this. If you're designing a new component to contribute to the system, this is one of the rules that component needs to satisfy.
+Interactive controls must have touch target areas of at least **44×44 CSS px on iPhone PWA** and **48×48 dp on Android**. The visible icon may be smaller than its hit area. Keep sufficient separation to avoid accidental taps, including for lesson answer choices and back/close controls. Validate existing components during the cross-platform UI audit; do not assume all current screens already comply.
 
 ### Whitespace aids readability for cognitive accessibility
 
