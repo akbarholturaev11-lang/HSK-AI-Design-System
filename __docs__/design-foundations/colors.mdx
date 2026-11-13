@@ -32,7 +32,7 @@ Color communicates meaning, directs attention, and reflects the brand. Our syste
     <Principle
         label="Restrained"
         title="Restraint multiplies impact"
-        description="A palette used sparingly hits harder. Our primary blue is the most powerful signal in the UI — the more it appears, the less it means. Reserve it and it remains effective."
+        description="A restrained palette has greater impact. HSK AI's existing brand red is the primary accent for meaningful, non-destructive actions. Use it sparingly through the Instructive semantic tokens; do not use Critical tokens for brand emphasis or make every surface red."
     />
     <Principle
         label="Systematic"
@@ -49,13 +49,13 @@ Color communicates meaning, directs attention, and reflects the brand. Our syste
 ## Palette
 ### Primitives
 
-These are the core colors that define the product's visual identity. Lighter and darker stops of each color exist within the system, but these primary values are the foundation upon which everything else is built.
+HSK AI's existing brand red defines the product's primary accent; its actual production value is the source of truth, not a new or guessed hex value. Its light and dark variants serve non-destructive brand and interactive purposes. Success, Warning, and Critical remain separate semantic color families rather than being derived solely from the brand accent.
 
 <img src={primitivesGrid} alt="Primitives color grid" />
 
 ### Semantic tokens
 
-Semantic color tokens are reusable variables that allow us to apply color across the experience in a consistent, meaningful, and accessible way across Khan Academy experiences. Rather than referencing raw hex values, tokens are named by intent — the purpose a color serves, not what it looks like. These tokens make it easier to apply color consistently, maintain accessibility, and update the system at scale. <a href="./?path=/docs/design-guidelines-foundations-colors-semantic-tokens--docs">See semantic colors for more.</a>
+Semantic color tokens are reusable variables that allow us to apply color consistently, meaningfully, and accessibly across HSK AI's PWA and Android experiences. Rather than referencing raw hex values, tokens are named by intent — the purpose a color serves, not what it looks like. These tokens make it easier to apply color consistently, maintain accessibility, and update the system at scale. <a href="./?path=/docs/design-guidelines-foundations-colors-semantic-tokens--docs">See semantic colors for more.</a>
 
 <img src={semanticTokensImg} alt="Semantic tokens" />
 
@@ -67,7 +67,7 @@ Every color applied in a design — backgrounds, text, icons, borders, shadows �
 
 ### Consistent intent over appearance
 
-Tokens are named for what they do, not what they look like. Choose color that aligns with the purpose of the element: guiding a primary action is Instructive, confirming a completed action is Success, signaling an error or destructive action is Critical. If the intent fits, the token is right. A token that looks correct but carries the wrong meaning is still the wrong token. If you're using a Critical token because the red looks good, that's a misuse — users and the system will interpret it as an error state.
+Tokens are named for what they do, not what they look like. HSK AI maps Instructive to its existing brand-red family for primary, non-destructive actions; Success confirms a completed action; Warning signals caution; and Critical marks errors or destructive actions. The Critical red must be visually distinguishable from HSK AI's brand red and must not be reused for ordinary primary buttons. An error or incorrect answer must also show a clear non-color cue (for example, an × icon and readable label or message); red alone is insufficient. Never use Critical merely because it is red, and never use Instructive for an error or destructive action.
 
 ### No primitives or raw hex
 
