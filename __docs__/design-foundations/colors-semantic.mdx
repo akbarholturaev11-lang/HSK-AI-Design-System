@@ -78,7 +78,7 @@ Now that we've outlined the schema for our semantic tokens, let's take a deeper 
 
 ## Core tokens
 
-Core tokens are intended to power a majority of the components in the Khan Academy experience. These tokens are largely scoped to the system’s functions — its rules and opinions.
+Core tokens power most HSK AI PWA and Android components. Their names express interaction purpose and state, independent of the underlying brand palette.
 
 ### Contexts
 
@@ -100,7 +100,7 @@ Base tokens are available only as Background tokens. Base tokens style a majorit
 
 #### Instructive
 
-Instructive tokens style elements that serve as main elements and actions within a view. Instructive tokens guide users to the most intended actions in a view, typically actions that advance the user to another step in the flow, complete a progressive (non-destructive) action, or communicate general interactivity.
+Instructive tokens style primary, non-destructive actions and key interactive elements. In HSK AI they use the existing brand-red family, with accessible foreground/background combinations, to guide users through lessons and other intended actions. Instructive is never an error or destructive-action token, even though both Instructive and Critical may belong to red color families.
 
 #### Neutral
 
@@ -120,7 +120,7 @@ Warning tokens style elements that show information that is not urgent but could
 
 #### Critical
 
-Critical tokens style elements that require immediate attention or action and actions that are considered destructive within the experience. Critical tokens imply that an element or action is blocked or has an error that needs to be fixed.
+Critical tokens style errors, incorrect-answer feedback where an error state must be conveyed, blocked actions, and destructive operations. Their red palette must be perceptibly distinct from HSK AI's brand-red Instructive palette. Never use Critical red as the ordinary brand or primary-action color. Always pair error/incorrect-answer color with a non-color signal such as an × icon and explicit label or explanation, so meaning is never conveyed by color alone.
 
 #### Knockout
 
