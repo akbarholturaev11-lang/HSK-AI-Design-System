@@ -1,9 +1,6 @@
 import {Meta} from "@storybook/addon-docs/blocks";
 import Principle, {PrincipleSet} from "../components/principle";
 import illustrationImg from "./assets/illustration/illustration.png";
-import audienceCalibration1Img from "./assets/illustration/audience-calibration-1.png";
-import audienceCalibration2Img from "./assets/illustration/audience-calibration-2.png";
-import typesOfIllustration1Img from "./assets/illustration/types-of-illustration-1.png";
 import typesOfIllustration3Img from "./assets/illustration/types-of-illustration-3.png";
 import typesOfIllustration4Img from "./assets/illustration/types-of-illustration-4.png";
 import typesOfIllustration5Img from "./assets/illustration/types-of-illustration-5.png";
@@ -14,15 +11,15 @@ import typesOfIllustration5Img from "./assets/illustration/types-of-illustration
 
 # Illustration
 
-Khan Academy's illustration system is built entirely on shapes.  From Khanmigo to empty states to confetti blasts — every illustration element is shape based, used at different levels of meaning, fidelity, and emotion.
+HSK AI illustrations use a consistent, purposeful visual language across the learner PWA and Android app. Ordinary supporting illustrations are restrained, minimal, flat and geometric. The established HSK AI Panda, other approved characters and the red pearlescent AI Voice Orb retain their canonical appearance instead of being redrawn to fit a generic flat style.
 
 ## Principles
 
 <PrincipleSet>
     <Principle
         label="Foundational"
-        title="Shapes are the brand"
-        description="Shapes are not decoration added on top of the brand — they are its structural DNA. Every illustration element, at every scale, is a shape. Identity, character, environment, spot illustration, and accent all begin and end with shapes."
+        title="Recognizable characters are the brand"
+        description="The existing HSK AI Panda and any other approved character must remain instantly recognizable across screens: the same face, silhouette, ears, proportions, characteristic colors, accessories and illustration style. Change pose, gesture, expression or scene only when the character remains the same. Do not generate a new lookalike character for each feature."
     />
     <Principle
         label="Purposeful"
@@ -36,13 +33,13 @@ Khan Academy's illustration system is built entirely on shapes.  From Khanmigo t
     />
     <Principle
         label="Restrained"
-        title="Flat, geometric, warm"
-        description="All illustration is flat — no gradients, drop shadows, or dimensional shading. Forms are intentionally geometric. Despite this restraint, illustrations should always feel warm and human, never clinical or cold."
+        title="Flat by default; preserve approved character and Voice styles"
+        description="Ordinary supporting illustrations are minimal, flat and geometric, with no unnecessary gradients, dimensional shading, shadows or decorative effects. Do not flatten or restyle the canonical Panda or other approved characters. The HSK AI red pearlescent AI Voice Orb is a deliberate exception: retain its 3D depth, glow and Listening/Thinking/Speaking motion."
     />
     <Principle
         label="Cohesive"
-        title="Color from Graphics tokens"
-        description="Illustration colors pull from the Graphics token category — never raw primitives. There is no separate illustration palette outside this system. Saturation serves as an emotional register, more vibrant for learner-facing moments, more restrained for teacher-facing utility contexts."
+        title="Consistent HSK AI character and illustration colors"
+        description="Ordinary illustrations use HSK AI-approved graphics/illustration colors and semantic tokens rather than invented one-off palettes. Existing canonical Panda and other character colors must not change merely to match a new screen or token. Keep learner-facing illustrations engaging but restrained enough not to compete with Hanzi, pinyin or the current exercise."
     />
     <Principle
         label="Systematic"
@@ -57,15 +54,11 @@ The same system serves multiple audiences. The principles don't change — the e
 
 ### Learner side
 
-Playful, vibrant, character-driven. Khanmigo is central. Customization makes the experience personal and ownable. Celebration moments are high-energy — confetti, expressive Khanmigo states, reward icons. Saturation is high.
+Friendly and recognizable, without turning every screen into decoration. Use the established HSK AI Panda or another approved character where it helps guide, explain or celebrate learning. Preserve its canonical identity across states. Keep the learning content, especially Hanzi and the active question, visually primary; reserve energetic illustration for meaningful achievements.
 
-<img src={audienceCalibration1Img} alt="Audience calibration 1" />
+### Settings and utility screens
 
-### Teacher/Admin side
-
-Warmer and more restrained. Illustrations appear as moments of joy in a data-dense interface — their job is to prevent the product from feeling cold. Spot illustrations should feel reassuring, not playful. Saturation is moderate.
-
-<img src={audienceCalibration2Img} alt="Audience calibration 2" />
+Keep illustrations sparse, minimal and supportive. Prefer concise text and clear controls on settings, reports and utility screens. Character art is contextual, not mandatory decoration; use a more restrained emotional register than in learner celebrations.
 
 ## Usage guidelines
 
@@ -74,31 +67,33 @@ Guidance for how to apply illustration correctly across contexts. Visual example
 ### Contrast by meaning
 
 Ask first: if this illustration were removed, would the user lose meaning? If yes, it's meaningful — apply 3:1.
-Khanmigo’s body color requires 3:1 against its background. Accessories do not.
+Any meaningful Panda or approved-character feature used to communicate identity or an actionable state must be distinguishable from its background; apply 3:1 contrast to meaningful graphical elements. Decorative accessories are not required to meet that graphical contrast threshold.
 Confetti and accent shapes are always decorative — no hard minimum, but avoid combinations that feel unintentional.
 
-### Flat and geometric
+### Flat and geometric — ordinary illustrations
 
-Never apply gradients, drop shadows, or dimensional shading to illustration elements.
+Use flat, minimal, geometric forms for ordinary supporting illustrations. Avoid unnecessary gradients, drop shadows, glow or dimensional shading.
 Corners and edges should feel intentional — rounded only where the form calls for it.
 Complexity should come from composition, not from surface treatment.
+Do not apply this flat-style rule to canonical Panda/approved character artwork or to the red pearlescent AI Voice Orb. The Orb retains its approved 3D look, glow and purposeful animated Listening, Thinking and Speaking states.
 
 ### Color from Graphics tokens
 
-All illustration colors reference the Graphics token category — never raw primitives or custom hex values.
-Lean more saturated for learner-facing illustration; more restrained for teacher-facing contexts.
-Khanmigo’s body color is the learner's identity color — use it consistently wherever Khanmigo appears for that learner.
+Use approved HSK AI graphics/illustration tokens for new ordinary illustrations. Preserve the existing canonical colors of the Panda and other approved characters; do not substitute an unrelated lookalike or invent a new palette. Where a token mapping does not yet exist, use the established source artwork as the reference rather than guessing a hex value.
+Keep learning moments engaging but reduce saturation and illustration density in settings and utility contexts.
+Keep the AI Voice Orb's approved red pearlescent appearance and expressive motion independent of the flat illustration palette.
 
 ## Types of illustration
 
 Each tier has a distinct purpose, audience, and contrast requirement. Identifying the correct tier is the first step in any illustration decision.
 
-### Khanmigo
+### HSK AI Panda and approved characters
 
-Khanmigo’s body is a hexagon. Facial features, body color, accessories, and props are shapes composed together to create expression and personality. Body color is the learner's identity color. Accessories are decorative.
-<a href="./?path=/docs/design-guidelines-components-characters-khanmigo--docs">See Khanmigo for more.</a>
+The existing Panda is the canonical Panda on every screen and platform. Preserve its recognizable face, eyes, ears, body proportions, silhouette, colors, accessories and illustration style. Only pose, gaze, gesture, expression, movement or scene may vary, without changing identity. The same rule applies to each other approved HSK AI character. Reuse approved source artwork and renderers; never replace a character with a merely similar AI-generated mascot.
 
-<img src={typesOfIllustration1Img} alt="Types of illustration 1" />
+### AI Voice Orb
+
+The existing red pearlescent Orb is a specialized interactive visual, not an ordinary flat illustration. Preserve its recognizable red, three-dimensional, softly glowing form and its approved Listening, Thinking and Speaking motions. Its movement must remain purposeful, not obstruct the conversation or learning task, and respect reduced-motion preferences.
 
 ### Spot illustration
 
@@ -108,7 +103,7 @@ Error states, empty states, and contextual illustrations composed of shapes to c
 
 ### Scene
 
-Mission maps and themed worlds are built from flat geometric shapes. Trees, campfires, soccer fields — all shapes arranged to create a sense of place. Assess each element individually for contrast requirements.
+Supporting scenes and learning environments use simple, consistent shapes and intentional composition. Do not introduce a different Panda or unapproved character identity into a scene. Assess each meaningful element individually for contrast requirements.
 
 <img src={typesOfIllustration4Img} alt="Types of illustration 4" />
 
@@ -125,7 +120,7 @@ The key question: if this illustration were removed, would the user lose meaning
 | Type | Meaningful | Decorative | Contextual |
 | --- | --- | --- | --- |
 | Contrast requirement | 3:1 | No requirement | Assess |
-| Rationale | The illustration communicates something the user must understand. Examples: class identity shape, Khanmigo’s body color against its background. | The illustration adds delight but carries no meaning the user must interpret. No hard minimum — mindfulness is always encouraged. Examples: Khamigo accessories, confetti shapes, floating accent elements. | Partly meaningful, partly decorative — assess each element individually. Example: In a mission map, Khanmigo’s body is meaningful (3:1 required); the ranger hat is decorative (no minimum); path waypoints are navigational and meaningful (3:1 required). |
+| Rationale | The illustration communicates something the learner must understand. Examples: a meaningful character status symbol or an essential lesson diagram. | The illustration adds delight but carries no meaning the learner must interpret. No hard minimum — mindfulness is still encouraged. Examples: decorative Panda accessories, confetti and floating accent shapes. | Partly meaningful, partly decorative — assess each element individually. Example: in a lesson scene, a necessary direction marker is meaningful (3:1 required), while a decorative accessory is not. |
 
 ## Roles and responsibilities
 
