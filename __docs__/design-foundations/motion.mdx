@@ -1,7 +1,6 @@
 import {Meta} from "@storybook/addon-docs/blocks";
 import Principle, {PrincipleSet} from "../components/principle";
 import motionImg from "./assets/motion/motion.png";
-import exceptions1Img from "./assets/motion/exceptions-1.png";
 import exceptions2Img from "./assets/motion/exceptions-2.png";
 import usageGuidelines1Img from "./assets/motion/usage-guidelines-1.png";
 import usageGuidelines2Img from "./assets/motion/usage-guidelines-2.png";
@@ -14,7 +13,7 @@ import usageGuidelines4Img from "./assets/motion/usage-guidelines-4.png";
 
 # Motion
 
-Motion helps users understand what's happening — where something is going, what's loading, what just changed. It should clarify the experience, not decorate it. Khanmigo and student celebration moments are the intentional exceptions: these are experiences where delight is the point, and motion is how it's delivered.
+Motion helps HSK AI learners understand what is happening: where a screen is going, what is loading, and whether an answer was correct or incorrect. Motion clarifies interaction rather than adding constant decoration. Established Panda and other approved-character reactions to both correct and incorrect lesson answers are purposeful learning feedback, not decorative motion to remove. Milestone celebrations and the red pearlescent AI Voice Orb are other intentional expressive-motion contexts.
 
 ## Principles
 
@@ -43,19 +42,21 @@ Motion helps users understand what's happening — where something is going, wha
 
 ## Exceptions
 
-Two contexts in the product intentionally use more expressive motion. Both still follow the core principles — animate once, reset, respect reduced motion — but with greater range, including occasionally exceeding the standard 5-second cap when the moment calls for it.
+Three HSK AI contexts intentionally allow expressive motion: immediate lesson answer reactions, meaningful learning milestones, and the AI Voice Orb. Character reactions and celebrations should play briefly once and settle; the AI Voice Orb may move continuously while Listening, Thinking or Speaking is active. All must respect reduced-motion preferences and never block lesson actions.
 
-### Khanmigo
+### Panda and approved-character answer reactions
 
-Khanmigo is a character, and motion is part of what makes it feel alive and personable. Reactions and expressions are expected and encouraged. Animations should play once and reset; they should not loop indefinitely. Replay can be offered on interaction where it adds value.
-
-<img src={exceptions1Img} alt="Khanmigo motion example" />
+The existing HSK AI Panda and other approved lesson characters MUST continue to react to BOTH correct and incorrect answers, using their established facial expressions, gestures, poses and related effects. Correct-answer reactions should communicate success; incorrect-answer reactions should acknowledge the mistake clearly and support retry or learning without ridicule. Provide an immediate, brief reaction that settles without delaying the next answer or blocking the next action; avoid repeating or looping routine feedback. Preserve canonical character identity and existing effects across PWA and Android. Use readable success/error cues alongside motion so answer correctness is not conveyed by animation or color alone.
 
 ### Student celebration moments
 
-When a student completes an exercise, earns an accessory, or hits a milestone, motion is the delivery mechanism for the reward. Confetti, opening treasure chests, and reveal animations are appropriate here because delight is the point. These moments should feel special — which means they should be reserved for genuine achievements, not routine interactions.
+When a learner completes a lesson, reaches a verified milestone, or earns a genuine achievement, a richer celebration, confetti or a reward reveal is appropriate. Keep these moments special. This limitation on *large celebrations* does NOT prohibit short, existing Panda/character reactions and feedback effects after each correct or incorrect lesson answer.
 
 <img src={exceptions2Img} alt="Student celebration motion example" />
+
+### AI Voice Orb
+
+The existing red pearlescent HSK AI Voice Orb preserves its approved three-dimensional glow and Listening, Thinking and Speaking motion. Unlike routine character reactions, the Orb may animate continuously for as long as the corresponding voice state is active. Its transitions must remain smooth, must not obstruct conversation/controls, and must offer a reduced-motion alternative that still communicates state.
 
 ## Usage guidelines
 
@@ -86,9 +87,7 @@ Some loading states should be deliberately crafted to reflect the weight of what
 
 ### Animations
 
-Trigger on user action or on entering the viewport — not on a timer.
-After playing, animations should end on something representative of the message, likely the same or similar to the prefers-reduced-motion state. No looping.
-Animations should stay under 5 seconds by default to adhere to accessibility guidelines. Exceeding this is rare and should be reserved for moments where the extra time serves a real purpose — an intentional loading state built to reflect the weight of what's happening, for example — not a default for routine interactions.
+Trigger routine animations in response to a real state change, a learner action, or viewport entry — not as arbitrary recurring decoration. Preserve the established correct/incorrect answer feedback effects; after a brief character reaction, settle into the appropriate readable feedback state rather than looping. Ordinary decorative animations should finish promptly and generally stay under 5 seconds; do not delay the learner's next action. The active AI Voice Orb is the explicit exception to the no-looping and short-duration rules, because its continuous motion communicates Listening, Thinking or Speaking. Support reduced motion for every category.
 
 <img src={usageGuidelines4Img} alt="Animation example" />
 
@@ -100,6 +99,7 @@ All motion in the product must respect the `prefers-reduced-motion` media query.
 | --- | --- |
 | Slide transition | Fade or instant |
 | Expand/collapse animation | Instant show/hide |
-| Character animation | Static or single frame |
+| Correct/incorrect answer reaction | Static character expression with persistent correct/incorrect text and icon |
 | Celebration animation | Simplified or static |
+| AI Voice Orb | Minimal/static state indicator, preserving Listening/Thinking/Speaking meaning |
 | Loading skeleton pulse | Static skeleton |
