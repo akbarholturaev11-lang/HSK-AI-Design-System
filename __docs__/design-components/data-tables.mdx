@@ -1,123 +1,148 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import headerImg from "./assets/data-tables/header.png";
+import basicTableImg from "./assets/data-tables/basic-table.png";
+import summaryTabsImg from "./assets/data-tables/summary-tabs.png";
+import Figure from "../components/Figure";
+import {NeutralBadge} from "@khanacademy/wonder-blocks-badge";
+import {Do, Dont} from "../components/DoDont";
+import {CompletedBadge, InProgressBadge, WarningFlag, CriticalFlag} from "./assets/data-tables/CellExamples";
 
 <Meta title="Design Guidelines / Components / Data visualization / Data tables" />
 
+<img src={headerImg} alt="Data tables" />
+
 # Data tables
 
-Data tables answer **"Which exact item, what value, and what can I do about it?"** They list individually identifiable records when exact comparison, sorting or action is more useful than an overview chart.
+> **HSK AI application:** these source figures explain table structure only, not a target interface. Replace classroom/teacher examples with actual lesson, vocabulary, practice and authorized analytics records in implementation. On phones, prefer a readable list over a compressed desktop grid.
 
-In HSK AI, learner-facing rows may represent actual lessons, vocabulary items, exercise attempts or review records **only where that data is available and authorized**. Administrative tables are a distinct scope and must not expose one learner's data to another. Use existing HSK AI mobile surfaces, typography, spacing and accessible controls; do not copy Khan Academy's school roster layout or Wonder Blocks implementation.
+<NeutralBadge label="Details for each individual or item" />
 
-## When to use
+Data tables answer "Who exactly, and what do I do?" They list an individual, lesson, vocabulary item, recorded practice result or authorized report item with exact values, and can include small visuals such as progress bars and status flags.
 
-| Use when | HSK AI example |
+Use HSK AI's existing PWA and Android visual components and accessible data controls. The source table framework is a reference, not a required library or style.
+
+## <Do /> When to use
+
+| Use when | Example use |
 | --- | --- |
-| A learner needs an exact record and can act on it | An available lesson history or saved vocabulary list with a review action. |
-| Values must be compared item by item | Actual recorded activity dates, correct/incorrect counts or progress status per lesson. |
-| An administrator needs to inspect audited records | Authorized analytics entries with clear date, scope, source and state. |
+| Readers need to find or act on individuals or items | A learner reviews a recorded lesson or vocabulary item; an authorized administrator inspects a verified report record |
+| Readers compare exact values across many columns | Recorded activities with type, date, completion and applicable flags |
 
-## When NOT to use
+## <Dont /> When NOT to use
 
-| Situation | Recommended alternative | Reason |
+| Don’t use when | Recommended alternative | Rationale |
 | --- | --- | --- |
-| The takeaway is one number | A <a href="./?path=/docs/design-guidelines-components-data-visualization-summary-cards--docs#stat-card">summary card</a> | A table hides the headline. |
-| The reader needs a time trend | A <a href="./?path=/docs/design-guidelines-components-data-visualization-trend-charts--docs">trend chart</a> | A line better shows change over multiple periods. |
-| The reader needs the spread across value ranges | A <a href="./?path=/docs/design-guidelines-components-data-visualization-distribution-charts--docs">distribution chart</a> | A table obscures the shape. |
-| A phone screen cannot show useful columns without extreme scrolling | A focused list or details view | Keep the information readable rather than squeezing desktop columns. |
+| The takeaway is one number with no comparison, like "11,033 students assessed" | A <a href="./?path=/docs/design-guidelines-components-data-visualization-summary-cards--docs#stat-card">stat card</a> | A table makes readers find the number. A stat card shows it at a glance. |
+| Readers need to see a pattern or trend | <a href="./?path=/docs/design-guidelines-components-data-visualization-distribution-charts--docs">Distribution charts</a> or <a href="./?path=/docs/design-guidelines-components-data-visualization-trend-charts--docs">Trend charts</a> | Patterns are hard to spot in rows of numbers. A chart shows them at a glance. |
 
 ## Variants
 
 ### Basic table
 
-Use a short header and ordered rows. Put the field readers scan first: for example **Lesson**, **Word**, or **Date**, depending on the real task.
+Rows of items with a header row of column labels. Start here, and add summary tabs only when readers need them.
 
-- Use clear, localized column labels; keep labels concise.
-- On iPhone PWA and Android, keep only decision-critical columns visible. Move secondary fields to an accessible row details view where necessary.
-- Do not imitate school rosters, teacher names or school-grade tables.
-- A row must represent a real underlying item, not a fabricated placeholder displayed as data.
+- Put the column readers scan by first, usually the lesson title, vocabulary item, date, or record identifier.
+- Write column labels in sentence case, and keep them short: "Completed lessons," not "Total number of lessons that have been completed."
+
+<Figure
+    src={basicTableImg}
+    alt="A basic table with a header row of Teacher, Total classes, and Total students, and five rows of teachers, like Amelia Abalos, 1 class, 30 students."
+    caption="The name column comes first. Column labels are short and in sentence case."
+/>
 
 ### Table with summary tabs
 
-Add tabs only when distinct, useful groups exist in the actual source. Example: **All / Completed / In progress** for lesson records if those states are implemented and reliably tracked.
+Tabs above the table show a count for each real, non-overlapping group and filter the table. For example, an available lesson-history view may separate All, Completed and In progress when these states are actually supported.
 
-| Part | Rule |
+| Tab part | Example |
 | --- | --- |
-| Group title | States what the tabs divide, e.g. available lesson records. |
-| Counts | Use the same scope, period and underlying source in every tab. |
-| All tab | Shows the complete applicable set, with any unclassified or missing records explicitly handled. |
-| Group tab | Filters only matching rows and updates the visible result count accurately. |
+| Label | Completed |
+| Count | 8 lessons |
+| Context | 40% of the applicable lesson total |
 
-- Counts must reconcile: do not double-count one item in mutually exclusive groups.
-- Do not silently classify missing states as incomplete or failed.
-- Announce the active tab and current count to assistive technology.
+- The first tab shows the whole group.
+- Tab counts add up to the first tab's total, minus any with no result. Say how many: "2 did not complete."
+- Percentages use the first tab's total, including any with no result.
+
+<Figure
+    src={summaryTabsImg}
+    alt="A Where students placed table. Four tabs sit above it: This class, 20 students, 2 did not complete (selected); Beginning, 5 students; Approaching, 8 students; Demonstrating, 5 students. Each tab shows its share of the class. The table lists students with status, performance level, score, rushing flags, and recommendations."
+    caption="The first tab shows the whole class. Each level tab filters the table to its students."
+/>
 
 ## Content
 
-### Names and identifiers
+### Names
 
-Use accurate, understandable learner data: Hanzi plus optional pinyin for a word, or the stored lesson title. Preserve the distinction between an HSK level, a lesson number and a word's mastery state. Do not generate fake people, score categories or records.
-
-For administrative views, identifiers and personal data must be included only when the user is authorized to see them. Do not display unrelated user identities as examples of how the learner screen should look.
+Use the actual lesson or word label (Hanzi with readable pinyin when applicable). Choose a sorting default appropriate to the data: lesson order, review date or recorded result; do not sort words or lessons as if they were teacher names.
 
 ### Column alignment
 
-Follow a consistent alignment for the selected language, numeric values and actual table headers. Keep numbers scannable, units explicit and long Chinese text legible. Maintain the original professional requirement that labels and values align predictably; on very narrow screens switch to item cards rather than a confusing compressed grid.
+Align labels and values consistently for the selected language; keep numeric columns scannable. On narrow mobile screens, switch to a readable list rather than forcing a wide table.
 
 ### Missing values
 
-Show **0** only for a confirmed measured zero. Show **—** or a clear localized explanation for unavailable, not recorded, still-processing or unaudited values. Distinguish incomplete data from a completed activity with zero points. Never fabricate Android starts, course completions or unique users to fill a cell. See <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#missing-and-zero-values">Missing and zero values</a>.
+Show `—` when there's no data. See <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#missing-and-zero-values">Missing and zero values</a>.
 
 ## In-cell visuals
 
-| Visual | Use for | Rule |
-| --- | --- | --- |
-| Progress bar | Completion relative to a verified goal or total | Include the actual value and denominator as text. |
-| Status badge | A recorded state such as completed or awaiting processing | Text and icon accompany semantic color. |
-| Warning flag | A genuine actionable problem, not merely a poor learner score | Explain the issue and next step. |
+| Visual | Use for | Rule | Example |
+| --- | --- | --- | --- |
+| Progress bar | Completion | Always show the value next to it: 16/20 | TODO |
+| Status badge | A row's state | Text plus color | <CompletedBadge /> <InProgressBadge /> |
+| Flag | Something that needs action | Icon plus text that says what happened | <WarningFlag label="Rushed 3 times" /> |
+
+Use existing HSK AI progress components only where the value and total are verified.
 
 ### Flags
 
-- Place the more severe meaningful status first; no more than two flags per cell.
-- Link each flag to a specific field when possible.
-- A flag may indicate an actually failed save or unavailable data; **low learning performance is not a system error**.
-- Never rely on red/green alone. Use icons and explicit words.
+Flags are <a href="./?path=/docs/design-guidelines-components-feedback-badges--docs">badges</a>. Their severity decides the badge.
+
+| Severity | Use when | Badge | Example |
+| --- | --- | --- | --- |
+| Critical | Something already went wrong, or a deadline passed | <a href="./?path=/docs/design-guidelines-components-feedback-badges--docs#critical-error-status">Critical error</a> | <CriticalFlag label="Overdue" /> <CriticalFlag label="4 didn't finish" /> |
+| Warning | Someone may need help, but nothing has failed yet | <a href="./?path=/docs/design-guidelines-components-feedback-badges--docs#warning-status">Warning</a> | <WarningFlag label="3 need help" /> <WarningFlag label="Rushed 3 times" /> |
+
+<ul>
+    <li><Do /> Stack up to two flags in a cell, most severe first.</li>
+    <li><Do /> Place a flag about a single value, like Overdue, next to that value.</li>
+    <li><Dont /> Don't show a flag as a number alone, like "3×." Say what it counts.</li>
+    <li><Dont /> Don't use a flag's color without its icon and text.</li>
+</ul>
 
 ## Interaction
 
 ### Sorting
 
-Make a column sortable only when its order is meaningful. Indicate the active sort criterion and direction. Sorting must use stable numeric or date values, not lexical ordering for number strings.
+- Make a column sortable when readers need to find the highest, lowest, or a specific item.
+- Show a default sort, and mark the sorted column with an arrow.
 
 ### Row actions
 
-Place applicable actions near the item, or in a clearly labeled overflow menu. Use bulk selection only when supported by a real multi-item action. Touch targets must comply with the approved HSK AI platform standards.
+- Put actions for one row in a "…" menu at the end of the row.
+- Add a checkbox column only when there are bulk actions. When rows are selected, show the selected count and the bulk actions above the table.
 
 ### Long tables
 
-Paginate or incrementally load large datasets; preserve scroll position and selection where appropriate. The original recommendation of displaying **up to 50 rows before pagination** is a sensible upper bound for a data table, not a mandate to render 50 complex rows on a phone at once. Mobile lists should load fewer visible rows when needed for responsiveness.
+For a desktop-style table, show no more than 50 rows before pagination; on a mobile screen paginate or progressively load fewer rows as needed for performance.
 
-Never count a repeated fetch or duplicated event as a new unique learning record. The displayed total, filter count and exported total must use the same defined scope.
+Pagination must preserve applied filters, selection and a stable item count.
 
 ## States
 
-- **Loading:** distinguish pending data from an empty result.
-- **No data yet:** state the actual reason if known; do not claim the learner failed an activity.
-- **No matching rows:** keep filters visible and allow clearing them.
-- **Partial/processing:** label the available subset and any missing coverage without presenting it as complete.
-- **Error:** provide a recoverable action; never silently replace data with zero.
-- **No access:** explain the access boundary without leaking another account's records.
-
-See <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#states">Data reports</a> for consistent states.
+Empty and error states follow <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#states">Data reports</a>. A table that's filtered to nothing keeps its tabs, filters, and header row visible.
 
 ## Accessibility
 
-- Expose actual column headers and row relationships to screen readers.
-- Make sorting, tabs, menus, filters and pagination keyboard accessible.
-- Accessible names for row actions include the related item: **Review lesson 3**, not merely **Review**.
-- Do not truncate the only accessible Hanzi, pinyin or amount.
-- State warning meaning as text; supply context beyond color or a graphical arrow.
-- Prefer a readable card-list representation when the same data cannot fit as a mobile table.
+- Mark header cells as column headers, so screen readers read the column name with each value.
+- Summary tabs are tabs: arrow keys move between them, and the selected tab is announced.
+- Label each checkbox and "…" menu with its row: "Select Unit 3," "Actions for Unit 3."
+- Read flags and badges as text, not color.
 
-## Implementation boundary
+## HSK AI data integrity and mobile application
 
-This is design guidance. It does not authorize changes to HSK AI's production analytics, event schema, admin data or lesson history. Validate available data and reporting coverage against the real backend before applying the layout on PWA or Android.
+- Display a confirmed zero as `0`; missing, unrecorded, processing or unaudited values must be shown distinctly and explained. Never fill gaps with invented activity.
+- The row total, filtered total and any export or chart view use the same authoritative population and date range; repeated fetches or duplicate events must not count as new unique rows.
+- Do not reveal a different learner's personal history in a learner-facing list or in a stale session after account switching.
+- Keep existing accessible sort, row-action, grouped-tab, cell-status, empty/error and keyboard guidance. Provide adequately sized touch targets on both mobile platforms.
+- The retained original teacher-table illustrations are **reference examples of structure**, not HSK AI production screens or branding.
