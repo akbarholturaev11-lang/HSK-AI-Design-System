@@ -1,10 +1,15 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import headerImg from "./assets/data-visualization/header.png";
 import Principle, {PrincipleSet} from "../components/principle";
 import {Do, Dont} from "../components/DoDont";
 
 <Meta title="Design Guidelines / Foundations / Data visualization" />
 
 # Data visualization
+
+> **HSK AI application:** retain the source's principles of truthful scales, chart choice, labels and accessibility. Use HSK AI's approved palette and only verified learning measures. The historical illustration below is a source explanation, not a visual target for the HSK AI interface.
+
+<img src={headerImg} alt="Original educational illustration of chart construction (not HSK AI UI)" />
 
 Data visualization turns verified HSK AI learning data into actionable understanding. A learner should be able to see their completed work, progress toward an actual goal and areas needing practice without guessing how numbers were calculated. Administrative analytics belong to a separate authorized view. These foundations apply to all HSK AI charts on iPhone PWA and Android, but they do not require creating a chart for metrics not yet supported by the product. For how headings and controls are laid out on a page, see <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs">Data reports</a>. For the components built on these foundations, see <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#usage-and-purpose">Usage and purpose</a> in Data reports.
 
@@ -189,3 +194,10 @@ Every chart needs a short summary of its key takeaway for screen readers. Charts
 ### Support keyboard access
 
 Any information available on hover must also be available on keyboard focus.
+
+## HSK AI verification before implementation
+
+- A student-facing chart may show only a metric that HSK AI actually records, with the correct HSK level, lesson scope and denominator.
+- A learner score, amount of practice, mastery state, and progress toward completion are different measures. Do not give them the same color meaning or imply that completing a lesson is the same as answering it correctly.
+- Admin reporting requires authorized access, tested counting and the actual platform coverage. A missing Android event, pending aggregation or duplicate event must not become a verified zero or a successful completion.
+- Historical chart illustrations explain principles only. Do not copy their Khan Academy UI, colors, characters or school-report content into HSK AI.
