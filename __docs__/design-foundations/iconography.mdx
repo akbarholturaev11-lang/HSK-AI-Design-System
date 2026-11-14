@@ -1,11 +1,26 @@
 import {Meta} from "@storybook/addon-docs/blocks";
 import Principle, {PrincipleSet} from "../components/principle";
+import iconographyImg from "./assets/iconography/iconography.png";
+import iconLibraryImg from "./assets/iconography/icon-library.png";
+import usageGuidelines1Img from "./assets/iconography/usage-guidelines-1.png";
+import usageGuidelines2Img from "./assets/iconography/usage-guidelines-2.png";
+import usageGuidelines3Img from "./assets/iconography/usage-guidelines-3.png";
+import customIcons1Img from "./assets/iconography/custom-icons-1.png";
+import customIcons2Img from "./assets/iconography/custom-icons-2.png";
+import customIcons3Img from "./assets/iconography/custom-icons-3.png";
+import classImg from "./assets/iconography/class.png";
+import roleImg from "./assets/iconography/role.png";
+import subjectImg from "./assets/iconography/subject.png";
 
 <Meta title="Design Guidelines / Foundations / Iconography" />
 
+<img src={iconographyImg} alt="Iconography" />
+
 # Iconography
 
-HSK AI uses a single, coherent icon language across learner PWA and Android. The standard UI icon family is **Phosphor Icons**; established HSK AI-specific symbols may remain as deliberately maintained custom assets. Iconography supports lesson clarity, navigation and feedback. It does not replace canonical Panda/character artwork, correct/incorrect answer reaction effects or the AI Voice Orb; those are governed by the Illustration and Motion rules.
+> **HSK AI scope:** The original professional icon-size, weight, labeling, contrast, selected-state and visual-consistency rules are preserved. The five source images about generic icons are teaching references only; source-brand images for Gems, schools, classes and roles are intentionally excluded. No production icon migration is performed by this documentation change.
+
+Icons communicate meaning at a glance — but only when used consistently and intentionally. Our system is built on a single library, clear size and weight rules, and a small set of approved custom icons unique to HSK AI.
 
 ## Principles
 
@@ -13,77 +28,107 @@ HSK AI uses a single, coherent icon language across learner PWA and Android. The
     <Principle
         label="Contextual"
         title="Familiarity earns independence"
-        description="Only universally recognized actions such as close, back and search may appear without a visible label when their context is clear. Ambiguous actions need a visible label or an accessible explanation."
+        description="Some icons are universally understood — an X means close, an info circle invites more detail. They've earned the right to stand alone. Others carry meaning only within context: a label, a position, a pattern the user already knows. The goal is always clarity."
     />
     <Principle
         label="Consistent"
         title="One library, one visual language"
-        description="Phosphor Icons is the default for ordinary UI icons. Do not mix Lucide, Material, random web SVGs, emoji and Phosphor within one surface or invent per-screen icon styles. Preserve only verified HSK AI-specific custom glyphs where Phosphor cannot express the established product meaning."
+        description="A shared icon library is a shared vocabulary. When every icon comes from the same source, users learn the system once and carry that knowledge everywhere. Consistency is what makes icons feel familiar rather than arbitrary."
     />
     <Principle
         label="Intentional"
-        title="Weight follows size and state"
-        description="Use a consistent icon size and stroke weight according to context. Bold supports small icons; Regular supports larger icons; Fill indicates an active or selected state. Weight is not an arbitrary decorative choice."
+        title="Weight is a response to size"
+        description="Icon weight isn't a stylistic preference — it's a function of how much visual mass an icon needs to read clearly at a given size. Small icons need more weight to stay legible. Larger icons already have the presence they need."
     />
     <Principle
         label="Accessible"
-        title="Meaning never depends on color alone"
-        description="Provide usable labels, contrast and touch targets. Correct and incorrect answer indicators must differ in shape/icon and text as well as semantic color; they complement, not replace, the existing lesson-character reactions and effects."
+        title="Legibility is respect"
+        description="Every person using this product deserves to see and understand it clearly. An icon that disappears against its background isn't a minor aesthetic issue — it's a failure to communicate. Contrast is what makes icons work for everyone."
     />
 </PrincipleSet>
 
+<img src={iconLibraryImg} alt="Icon library" />
+
 ## Icon library
 
-**Phosphor Icons** is the HSK AI canonical icon family for standard actions, navigation, settings, forms and status indicators. Use **Regular**, **Bold** and **Fill** weights only; avoid Thin, Light and decorative Duotone in normal product UI. Keep icon geometry and meaning consistent between PWA and Android; each platform may render the approved icon with its native technology without adding a second visual style.
-
-New standard icons must follow this rule immediately. Existing production icons are checked against this rule during the full PWA/Android UI audit and aligned during the controlled component migration. This documentation change does not itself require an untested bulk replacement in live product code.
-
-Do not change canonical HSK AI Panda illustrations or other approved characters into generic Phosphor icons.
+The primary icon library for this design system is Phosphor Icons. All icons outside of the custom set (defined below) must come from Phosphor. Do not source icons from other libraries, use SVG assets from the web, or create ad-hoc icon shapes — this preserves visual consistency across every surface.
+Phosphor provides icons in six weights: Thin, Light, Regular, Bold, Fill, and Duotone. This system uses Regular, Bold, and Fill only.
 
 ## Sizes and weights
 
-| Visual icon size | Weight | Typical use |
-| --- | --- | --- |
-| 12 px | Bold | Compact decorative-adjacent indicators where legible |
-| 16 px | Bold | Input fields, inline status, badges |
-| 20 px | Bold | Buttons, compact messages, back/close controls when appropriately framed |
-| 24 px | Regular | Icon buttons, navigation, learning utilities |
-| 48 px | Regular | Large standalone symbolic illustration or empty-state icon |
+Icon size and weight are paired. In most cases, the correct weight for any icon is determined by its rendered size, not by preference or visual taste — a small, named set of emphasis-based exceptions exist and are called out below. If a design calls for an icon at a size not mentioned below like 18px or 22px, round to the nearest approved size. Off-scale icons break the size–weight pairing rule and may introduce rendering artifacts. This table reflects Phosphor's size–weight pairings. Existing approved HSK AI custom assets may have their own fixed art dimensions; do not treat character illustrations or the AI Voice Orb as generic icons.
 
-Use the nearest approved size rather than creating an arbitrary per-screen size. A visually small icon can live inside a much larger tap target.
+| Size | Weight | Typical use |
+| --- | --- | --- |
+| 12px | Bold | Small buttons, active filters, breadcrumb separators |
+| 16px | Bold | Inputs, selects, badges, checkboxes, radio buttons, inline status indicators, conversation buttons, info icon when inline with text or heading |
+| 20px | Bold | Buttons, banners, toasts, standalone icon-only actions (ex. close, back, info) |
+| 24px | Regular | Icon buttons, metric and learning utilities, ordinary navigation and available status icons |
+| 48px | Regular | Large icon — e.g., the PDF icon shown after a file is added via drag-and-drop, indicating the file type |
+
+Emphasis exception: two named cases override the size-based weight. Low-emphasis affordance icons such as resize handles and drag grips may use Regular where Bold reads as too visually heavy for a background interaction cue. High-emphasis confirmation actions such as the primary CTA check icon may use Bold to ensure the icon reads clearly against a filled background. Outside of these two named cases, don't adjust weight for emphasis or preference.
 
 ## Usage guidelines
 
-### Use Phosphor for generic UI icons
+Guidance for how to apply generic UI icons in consistent sizes and contexts. The source images illustrate icon principles; they are not the target HSK AI product branding.
 
-All new ordinary UI icons come from Phosphor, unless the symbol is a verified, established HSK AI-specific asset without a suitable Phosphor equivalent. Do not add a second generic icon library for one feature. A platform-native back gesture or operating-system control may retain its expected behavior without changing the shared information hierarchy.
+### Use the Phosphor library exclusively
 
-### Labels and accessibility
+All UI icons must come from Phosphor, except for custom icons listed below. Using icons from other libraries — even ones that look similar — introduces inconsistency in stroke weight, geometry, and corner radius that is visible at icon sizes.
 
-Icons with ambiguous meanings must be paired with visible text or a clearly available explanation. Every meaningful icon needs an accessible name (for example aria-label on PWA and contentDescription on Android); decorative icons must not be announced by assistive technology.
+<img src={usageGuidelines1Img} alt="A visual of the Phosphor Icon Figma plugin" />
 
-Meaningful icon artwork must meet at least 3:1 contrast against its background. Keep clear keyboard/focus and selected states; do not use color or opacity alone to express an interactive state.
+### Always pair icons with labels when the meaning is ambiguous
 
-### States and visual weight
+Icons that represent universal, well-understood actions (close, search, back) may stand alone when space is constrained. All other icons should have a visible label or a tooltip fallback.
 
-Use **Regular** and **Bold** for resting UI. Reserve **Fill** for genuinely selected/active states, not emphasis for its own sake. Do not wrap simple utility icons in decorative tiles, extra shadow layers or repeated icon backplates unless a functional selected/primary state requires a surface.
+<img src={usageGuidelines2Img} alt="Close, previous and info icons are shown to be common patterns and accetable, along with three that need description" />
 
-### Touch targets on HSK AI mobile platforms
+### Only Regular, Bold, and Fill weights are approved for use
 
-Interactive touch areas must be at least **44 × 44 CSS px** on iPhone PWA and **48 × 48 dp** on Android, even when the icon drawing itself is 16, 20 or 24 px/dp. Respect safe areas, nearby controls and keyboard insets.
+Thin and Light are too delicate for product UI and fail contrast requirements at small sizes. Duotone introduces two-color complexity that conflicts with Phosphor's single-color icon system used here. Fill is reserved exclusively for active or selected states — never use it for decoration, emphasis, or stylistic variation. Components without a toggled or selected state should always use Regular or Bold.
 
-### Correct and incorrect lesson feedback
-
-Use a clear success indicator (e.g. a check) and a different clear incorrect/error indicator (e.g. an X) with text or another accessible cue. The existing Panda/other approved-character facial reactions, gestures, animations and feedback effects after **both correct and incorrect answers are retained**. Icons are an additional accessibility cue, not a reason to remove character feedback. Incorrect-answer feedback must never shame the learner.
+<img src={usageGuidelines3Img} alt="Visual represenation of which icon weights can be utilized" />
 
 ## HSK AI-specific custom icons
 
-Product-specific symbols such as approved HSK levels, mastery/progress, XP/streak, exercise types or already-established reward assets may remain custom **only when an existing canonical source asset is verified**. Reuse that same symbol and name across platforms. Do not copy Khan Academy's Gems, class, teacher, parent or Khanmigo icons; these are another brand's product vocabulary.
+Product-specific artwork is exempt from the generic Phosphor icon geometry only when its original approved HSK AI source asset exists. Retain existing Panda/approved-character artwork, correct/incorrect facial reactions and gestures, the distinctive red pearlescent AI Voice Orb, and actual HSK level/XP/streak/reward icons where verified. They are not generic icons and must never be replaced merely to make them resemble Phosphor.
 
-If no approved HSK AI-specific custom asset exists, use the closest semantically correct Phosphor icon with a readable label rather than generating a new decorative glyph.
+- The custom icon is reused consistently on both mobile platforms when the same feature exists.
+- A learning level or mastery icon must be accompanied by its actual text label and meaning; do not communicate correct/incorrect states by color alone.
+- If an ordinary new action has no canonical custom asset, use an approved Phosphor icon and an understandable label. Do not import another product's Gems, school-class, parent-role, or Khanmigo symbols.
 
-Panda, approved characters, and the red pearlescent AI Voice Orb are **not** generic icons. They keep their original artwork, expressions, motion and appearance under the Illustration and Motion rules.
+### Correct and incorrect lesson responses
+
+The existing HSK AI characters' **correct and incorrect reaction animations and feedback effects remain**. A semantic check/X and accessible message may supplement them but must not erase the character feedback or make an error state look destructive. Incorrect-answer feedback must not shame the learner.
+
+## Accessibility
+
+Provide text alternatives for all meaningful icons Every icon that conveys meaning — whether standalone or paired with a label — must have an accessible text alternative via aria-label or equivalent. Icons that are purely decorative should be hidden from assistive technology with aria-hidden="true".
+Meet contrast minimums at all icon sizes The 3:1 contrast requirement applies at all sizes, including 16px. Do not apply opacity to icons as a way to indicate disabled or subdued states without verifying the resulting contrast against the background.
+
+| Icon type | Rationale |
+| --- | --- |
+| Meaningful icons (convey information or action) | 3:1 |
+| Decorative icons (purely visual, no meaning conveyed) | No requirement |
+
+An icon is considered meaningful if removing it would cause a user to lose information or miss a function. When in doubt, treat the icon as meaningful and apply the 3:1 minimum.
+Do not use color as the only differentiator between icon states. When an icon changes state (e.g., default to selected), the change must be visible through more than color alone. Using Fill weight for selected states satisfies this requirement for icon buttons.
+Touch targets must meet the approved HSK AI mobile minimum: **44 × 44 CSS px on iPhone PWA** and **48 × 48 dp on Android**, regardless of visible glyph size. A 16px icon may sit inside a larger accessible tap target.
 
 ## Roles and responsibilities
 
-Icon selection is an interaction design decision; a custom icon is a brand design decision. New custom assets require a clear product need and must fit the established HSK AI visual system. Cross-platform rendering is verified during the PWA/Android UI audit, including sizes, contrast, labels, hit targets and correct/incorrect lesson feedback.
+Choosing which icon to use is a product decision. Creating an icon that doesn't exist yet is a visual design decision. These responsibilities belong to different disciplines.
+
+| Responsibility | Visual design | Product design |
+| --- | --- | --- |
+| Select Phosphor icons for UI contexts | Contributes | Owns |
+| Create and maintain custom icon assets | Owns | – |
+| Ensure custom icons fit the visual system | Owns | – |
+| Flag the need for a new custom icon | Contributes | Contributes |
+
+## HSK AI rollout and verification
+
+- All **new** ordinary interface icons use the previously approved Phosphor family, rendered consistently on iPhone PWA and Android. Existing legacy icons are migrated only after a controlled component-by-component visual and accessibility audit, not via an untested bulk replacement.
+- Maintain the approved icon target sizes, correct/incorrect lesson feedback, meaningful labels, contrast, keyboard focus, safe-area behavior and canonical character artwork.
+- This guideline defines design intent; it does not itself modify production UI or replace the Android icon-rendering technology.
