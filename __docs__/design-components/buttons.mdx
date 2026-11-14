@@ -1,279 +1,133 @@
 import {Meta} from "@storybook/addon-docs/blocks";
-import buttonsImg from "./assets/buttons/buttons.png";
-import variants1Img from "./assets/buttons/variants-1.png";
-import variants2Img from "./assets/buttons/variants-2.png";
-import variants3Img from "./assets/buttons/variants-3.png";
-import states1Img from "./assets/buttons/states-1.png";
-import states3Img from "./assets/buttons/states-3.png";
-import states4Img from "./assets/buttons/states-4.png";
-import states5Img from "./assets/buttons/states-5.png";
-import states6Img from "./assets/buttons/states-6.png";
-import neutralIconButtonsImg from "./assets/buttons/neutral-icon-buttons.png";
-import placement1Img from "./assets/buttons/placement-1.png";
-import copy1Img from "./assets/buttons/copy-1.png";
-import copy2Img from "./assets/buttons/copy-2.png";
-import copy3Img from "./assets/buttons/copy-3.png";
-import copy4Img from "./assets/buttons/copy-4.png";
-import copy5Img from "./assets/buttons/copy-5.png";
-import copy6Img from "./assets/buttons/copy-6.png";
-import {NeutralBadge} from "@khanacademy/wonder-blocks-badge";
-import Button, {ActivityButton} from "@khanacademy/wonder-blocks-button";
-import {ActivityIconButton} from "@khanacademy/wonder-blocks-icon-button";
-import {View} from "@khanacademy/wonder-blocks-core";
-import checkSquareOffsetBold from "@phosphor-icons/core/bold/check-square-offset-bold.svg";
-import pencilBold from "@phosphor-icons/core/bold/pencil-bold.svg";
-import Demo from "../components/Demo";
-import {Do, Dont} from "../components/DoDont";
-
-export const barImageStyle = {width: "100%", display: "block", margin: 0};
 
 <Meta title="Design Guidelines / Components / Buttons / Buttons" />
 
-<img src={buttonsImg} alt="Buttons" />
-
 # Buttons
 
-<div style={{display: "flex", gap: "8px", marginBottom: "8px"}}>
-  <NeutralBadge label="Call-to-action/Interaction trigger" />
-</div>
+A button clearly signals a specific action and immediately performs that action. The HSK AI button system uses the same purpose-based hierarchy across iPhone PWA and native Android. Keep the original professional rules of one primary action per context, clear affordances, predictable outcomes, accessible interaction, and concise copy. Use **HSK AI's approved brand and product semantics**, not Khan Academy's prebuilt button appearance or learner rewards.
 
-A button is a highly discoverable, interactive element used to communicate and trigger a specific action or command. Its primary purpose is to initiate state changes or execute a task—essentially, buttons do things.
+## When to use
 
-## <Do /> When to use
+Use a button when a learner or administrator performs a command or changes state: start lesson, check answer, continue, save, confirm, retry, or purchase a subscription.
 
-The choice to use a button is determined by the need to prompt the user to perform an action that changes the state or context of the system.
+Do not use an action button in place of:
+- A text link to another resource or detail page.
+- A navigation tab that switches between independent, persistent views.
+- A selector or menu whose primary purpose is to show choices rather than carry out an action.
 
-| Use when | Example use |
-| --- | --- |
-| The action is the primary goal of the current view | Save, Submit, Confirm — the main thing a user needs to do on this screen. |
-| The action has a clear, immediate outcome | Assign content, Add filter, Delete record. |
-
-## <Dont /> When NOT to use
-
-| Don’t use when | Recommended alternative | Rationale |
-| --- | --- | --- |
-| The action is inline within a body of text | Text link | Buttons interrupt reading flow. Inline actions should use a text link. |
-| The action switches between independent, persistent views (site sections, main nav) | Tabs or nav link | Buttons imply an action with an outcome. This is site navigation, not a task action — different from moving through steps within a single flow (see Tertiary button). |
-| The outcome is revealing options, not executing an action | Dropdown or overflow menu | A button implies something will happen immediately. If the result is showing more choices, use a dropdown or menu pattern instead. |
+Within a sequential lesson, a **Back**, **Continue**, or **Next** control may be an action button because it changes the current step. Main app navigation remains the navigation component.
 
 ## Variants
 
 ### Primary button
 
-Used for the single most important action on the page—the one that completes the workflow (Submit, Start) and drives the user toward the main goal. Use only one primary button per page.
+One primary action per visible screen or interaction context. Its purpose is the most important next action: **Start lesson**, **Check**, **Continue**, **Save**, **Confirm** or **Get Pro** when purchase is the main purpose of that screen. A modal or sheet is a separate interaction context with its own primary button; the screen behind it is inactive.
 
-A modal, drawer, or other overlay is its own context, so it can have its own primary action. The primary button on the page behind the scrim doesn’t count as a second one.
+HSK AI's existing brand-red **Instructive** color family is the primary-button accent in the relevant theme, using production tokens and verified accessible foreground/background pairings. Do not substitute a Khan Academy blue. A brand-red primary button means **continue/act**, **not danger**.
 
-<Demo>
-    <Button kind="primary" onClick={() => {}} style={{transform: "scale(1.2)"}}>Primary button</Button>
-</Demo>
-
-<Demo type="dont" explanation="put a primary button on every card when the page already has a primary action." style={{paddingInline: 0, paddingBlock: 0}}>
-    <img src={variants1Img} alt="Variants 1" style={barImageStyle} />
-</Demo>
+Do not put a primary button on every card when one screen-wide primary action already exists. Do not assign the same prominence to unrelated competing actions.
 
 ### Secondary button
 
-Used for an intentional alternative action that creates value (Save draft, Duplicate).
-Can be used multiple times on a page if actions are of equal importance.
-Don’t use it for navigation or low-value trivial actions (View details, Preview).
+Use for a useful alternative to the primary action, such as **Save for later**, **Change option**, or **Continue another way**. Multiple equal-priority alternatives are permissible if the hierarchy remains clear. Use HSK AI's established neutral/secondary styling rather than another strongly colored primary surface.
 
-<Demo>
-    <Button kind="secondary" onClick={() => {}} style={{transform: "scale(1.2)"}}>Secondary button</Button>
-</Demo>
-
-<Demo type="dont" explanation="use secondary buttons for low-value actions like “View course” repeated down a list." style={{paddingInline: 0, paddingBlock: 0}}>
-    <img src={variants2Img} alt="Variants 2" style={barImageStyle} />
-</Demo>
+Do not elevate a trivial navigation link, decorative action, XP display or Pro badge to secondary-button status merely because space is available.
 
 ### Tertiary button
 
-Used exclusively for low-priority actions that change the state on the current screen. Do use for actions that abandon or exit the current workflow (cancel, exit, close), for simple movement backward or through a defined flow (previous, back, next step), or for actions that branch into an optional setup or preference setting (customize, advanced settings). This is flow navigation — advancing through steps within a single task — not the page-level navigation described in "When NOT to use"; switching between independent, persistent views should still use Tabs or a nav link.
-Avoid styling links as buttons (e.g., a "Read more" button). To maintain accessibility and meet user expectations, designers and developers must ensure each is coded correctly: links go places, while buttons do things. Confusing these functions breaks core navigation logic and creates significant barriers for users with disabilities.
+Use for low-priority actions within the current flow: **Back**, **Skip** where allowed, **Cancel**, **Close**, **More options**, or an optional configuration action. Distinguish a flow-step action from independent app navigation: destinations use links or navigation controls.
 
-<Demo>
-    <Button kind="tertiary" onClick={() => {}} style={{transform: "scale(1.2)"}}>Tertiary button</Button>
-</Demo>
+### Neutral icon button
 
-<Demo type="dont" explanation="use a tertiary button for “Read more.” It takes the user somewhere, so it should be a link." style={{paddingInline: 0, paddingBlock: 0}}>
-    <img src={variants3Img} alt="Variants 3" style={barImageStyle} />
-</Demo>
-
-### Neutral button
-
-Neutral tokens help preserve hierarchy balance when multiple kinds of elements with differing visual weights are present in a view. Single-use icon buttons — like an X (close), a back button, or an info icon — should be neutral, not primary/blue. Our current application of them is for icon-only tertiary buttons.
-
-<img src={neutralIconButtonsImg} alt="Three icon-only neutral buttons: an X (close), a back chevron, and an info icon" />
-
-Neutral text buttons are not currently in use. If a use case arises, please reach out to the #design-infra group with your rationale.
-
-<Demo type="dont" explanation="use neutral text buttons. Neutral is only for icon-only tertiary buttons." style={{gap: "16px", flexDirection: "row", flexWrap: "wrap", justifyContent: "center"}}>
-    <Button actionType="neutral" kind="primary" onClick={() => {}}>Primary button</Button>
-    <Button actionType="neutral" kind="secondary" onClick={() => {}}>Secondary button</Button>
-    <Button actionType="neutral" kind="tertiary" onClick={() => {}}>Tertiary button</Button>
-</Demo>
+Use for unambiguous compact tools such as **Back**, **Close**, **Search**, **Settings** or **Information**, consistent with the approved HSK AI iconography rule. Keep the hit area large and the icon visually calm. Do not add an unnecessary circular plate, tile, glow or shadow behind an icon when the action is already understandable and usable. Provide an accessible name and state.
 
 ### Destructive button
 
-Used for permanent, irreversible actions, typically styled with a critical color (e.g., "Delete Class Roster").
-Don’t use red for simple errors or warning, or non-destructive actions.
+Reserve the distinct **Critical** error/destructive color family for genuinely destructive actions, such as **Delete account** or **Discard unsaved work** after confirmation. This red must remain visually distinguishable from HSK AI's ordinary brand red. Never use the Critical palette for a normal lesson or purchase button.
 
-<img src={states3Img} alt="States 3" />
+A failed answer or form error is feedback, not a destructive button. Use error text and a distinct error icon alongside semantic color; retain existing Panda/approved-character correct/incorrect feedback effects.
 
-## Sizing
+## HSK AI product contexts
 
-### Default buttons
+### Lesson and practice
 
-{/* TODO: describe default button sizing and when to use it */}
+The active task has one obvious next action. Lesson choices, check/continue controls, hints, pronunciation controls and exit actions should follow one hierarchy and not compete visually. **Correct and incorrect answer character reactions, gestures and animations are retained**; a button restyle must not disable or obscure those responses, replace them with a generic icon, or delay progress unnecessarily.
 
-### Small buttons
+An answer option is a selectable learning control, not automatically a primary action button. Its correct/incorrect/selected state must be distinguishable through content, icon and semantic color. Use the existing lesson components when available.
 
-Small buttons are low-emphasis UI elements used for supplemental actions that must remain accessible without competing with the primary focus of the page. They are essential for maintaining a clean visual hierarchy in tight spaces or high-density interfaces, ensuring that complex or information-dense layouts remain scannable and uncluttered.
-Space is constrained: Ideal for actions nested within confined areas like cells (e.g., UMG work), list items, or small cards where a standard button would feel bulky.
-Hierarchical balance is needed: Helps avoid "button fatigue" when prominent primary or secondary CTAs are already present, allowing the user to focus on the main task while keeping utilities available.
-Utility-based actions: Perfect for "micro-actions" within a larger workflow, such as table column headings that trigger modals, linking accounts in settings, or batch actions like "Select All."
+### Subscription and Pro
 
-<Demo>
-    <Button kind="tertiary" size="small" onClick={() => {}}>Small button</Button>
-</Demo>
+A subscription screen can have one purchase/confirm primary action, with visible terms and a clear way to go back. Existing HSK AI Pro, gold, pricing and payment branding remain product-specific; a gold Pro badge or crown is **not** automatically a new generic button class. Do not convert a successful purchase into a destructive-style red action. Honor existing checkout exit, confirmation and resume behavior, including any separately approved offer rules.
 
-<Demo type="do" explanation="use a small button for a micro-action inside a compact card, like “Set reward.”" style={{paddingInline: 0, paddingBlock: 0}}>
-    <img
-        src={states1Img}
-        alt="A small 'Set reward' button used inside a compact Gem challenge card"
-        style={barImageStyle}
-    />
-</Demo>
+### Learning achievements and rewards
+
+XP, streak, HSK-level progress and earned rewards are **information or achievements first**, not copies of Khan Academy's Gems, learner accessory buttons or classroom challenges. Show counts and awards using their approved badge/progress designs. Make a reward clickable only when there is a real action (for example, opening the relevant reward details or claiming an actually supported reward). Do not create an imaginary reward or purchase mechanic to imitate another product.
+
+### Settings, reports and other utility screens
+
+Use the same primary/secondary/tertiary hierarchy in settings, personal profile and progress views. Do not import Khan-specific restrictions that reserve core primary and secondary actions exclusively for classroom learning or forbid their use inside settings and modals.
+
+## Sizing and width
+
+### Minimum touch targets
+
+- **iPhone PWA:** at least **44 × 44 CSS px** clickable area.
+- **Native Android:** at least **48 × 48 dp** clickable area.
+
+A small visible icon may sit inside a larger hit area. Visually small utility buttons must still meet the target minimum. The iPhone PWA and Android implementations may use platform-native units but should share the same intended hierarchy.
+
+### Default and compact controls
+
+Use production HSK AI component sizes and spacing tokens. The current shared 4-point spacing scale governs repeatable gaps and padding; do not impose new per-screen measurements without checking component behavior.
+
+Small/compact button **appearance** is suitable for low-emphasis utilities inside a narrow panel, card or list, but compact appearance must never reduce the interactive hit target below the platform minimum.
 
 ### Width
 
-By default, buttons should hug their content — sized to fit the label plus consistent padding, never wider than necessary. Full-width is the exception, not the default, and should be used deliberately.
+Buttons normally fit their short labels. On a single-column mobile lesson, form, purchase or bottom sheet, a **single primary next action may fill the available width**. This is an appropriate, deliberate exception already supported by the original button guidance.
 
-**Mobile and narrow viewports:** On mobile or in single-column layouts (forms, modals, bottom sheets), stretch the primary action to full-width. This gives it a larger, easier-to-hit target and reinforces it as the clear next step in a constrained space.
+Grouped alternatives should retain clear hierarchy and can sit side by side when labels remain legible; stack them when constrained by screen width, localization or larger text. Avoid arbitrary full-width buttons simply to fill empty space.
 
-**Desktop and wide layouts:** Avoid full-width buttons on desktop unless the button lives inside a narrow container (a sidebar, a card). A full-width button in a wide layout reads as visually heavy and can look like an error state rather than an intentional choice.
+## States and feedback
 
-**Grouped buttons:** When multiple buttons appear together (Cancel / Save), keep them hug-width and let them sit side-by-side — full-width only applies when a single button occupies its own row.
+### Rest, focus, press and selected
 
-Don't stretch a button to full-width just to fill unused horizontal space. Width should communicate intent — this is the primary, unmissable action — not just close a layout gap.
+Make enabled, pressed, focused, selected and unavailable states distinguishable without relying on color alone. Preserve visible focus feedback, safe-area and keyboard behavior. Any press animation should be brief, purposeful and respect reduced motion. Avoid an added decorative elevation or glass backplate without a functional design reason.
 
-## States
+### Disabled and unavailable
 
-### Disabled
+Disable an action when performing it is impossible or unsafe. If information is missing, tell the learner what is needed instead of presenting a mysterious disabled button with no explanation. Do not use disabled styling to hide valid options.
 
-Use disabled buttons in cases when you need to prevent a user from acting on items where the action is functionally impossible or forbidden, such as a "Submit" button when previewing an activity.
-Don’t use a disabled button to communicate when conditions for progressing or successfully taking action are not met.
+### Loading and repeated taps
 
-<Demo>
-    <Button kind="primary" disabled onClick={() => {}} style={{transform: "scale(1.2)"}}>Primary button</Button>
-</Demo>
+When a button starts an asynchronous operation, display a readable loading/busy state **within that action**. Do not send duplicate requests on repeated taps. Preserve the action's context and announce relevant failures; offer **Retry** when appropriate. Do not replace real content with fake success or a perpetual spinner.
 
-<Demo type="dont" explanation="disable a button because the user hasn’t finished a step yet, like selecting questions to review." style={{paddingInline: 0, paddingBlock: 0}}>
-    <img src={states4Img} alt="States 4" style={barImageStyle} />
-</Demo>
+### Success, failure and destructive confirmation
 
-### Loading
-
-Coming soon
+Show an immediate, specific result, using text/icons as well as color. The correct/incorrect Panda/character feedback is retained in lessons. Dangerous irreversible actions require an appropriate confirmation and recovery guidance where possible.
 
 ## Iconography
 
-Do use an icon if the icon symbolizes the result or category of the action and the icon conveys the same meaning as the text in milliseconds. This helps improve its clarity.Omit if the button works just as well without the icon.
-Icon placement: Icon set to “start” is to indicate action, emphasis, and category. Icon set to “end” indicates status, direction, or change in context. 
-Icon-only buttons: Do use them only for universally understood actions (search, settings, close, edit) And use the Neutral action (not Progressive/the default color).
+Use the already-approved **Phosphor Icons** family for ordinary new interface icons, while preserving canonical HSK AI-specific approved symbols. Add an icon only if it genuinely clarifies the action; it must not duplicate obvious text or make the button more visually crowded. Place leading icons for the action, trailing icons for status/direction when useful. Icon-only actions require an accessible name and adequate hit area.
 
-<img src={states5Img} alt="States 5" />
+Do not copy Khan Academy's Gems, Khanmigo, Khanductor, unlock button artwork or icon combinations into HSK AI.
 
-## Special cases
+## Placement and grouping
 
-### Buttons for learners
+Place the primary action where the learner expects the next step, taking account of keyboard and mobile safe-area insets. Group related actions by purpose, with a clear visual priority and predictable order. Aim for at most two visible action choices together, occasionally three if genuinely necessary; move lower-priority options into a menu rather than presenting a row of equally loud buttons.
 
-These buttons are exclusively used for the learners experience only.
-Primary and secondary are reserved for promoting action within the core learning journey. They are explicitly excluded from administrative interfaces, modals, pagination, table controls, and settings menus.
-Icon buttons are specific to quick tools and actions within the practice/learning mode experience.
-Gem and unlock buttons are for indicating a students total life gems and to notify when they have unlocked a new accessory.
-
-<Demo>
-    <View style={{gap: "16px", alignItems: "center"}}>
-        <ActivityButton kind="primary" onClick={() => {}}>Primary button</ActivityButton>
-        <ActivityButton kind="secondary" onClick={() => {}}>Secondary button</ActivityButton>
-    </View>
-</Demo>
-
-<Demo>
-    <View style={{flexDirection: "row", gap: "16px", alignItems: "center"}}>
-        <ActivityIconButton kind="primary" icon={checkSquareOffsetBold} label="Check" onClick={() => {}} />
-        <ActivityIconButton kind="secondary" actionType="neutral" icon={pencilBold} label="Draw" onClick={() => {}} />
-    </View>
-</Demo>
-
-<Demo style={{paddingInline: 0, paddingBlock: 0}}>
-    <img
-        src={states6Img}
-        alt="A gem count button showing 542 gems and a 'New unlock' button"
-        style={barImageStyle}
-    />
-</Demo>
-
-## Placement
-
-### Priority placement
-
-The Primary button should be placed in the most visible and logical position for the user's flow (e.g., block-end of a form or modal).
-
-<img src={placement1Img} alt="Placement 1" />
-
-### Hierarchy and grouping
-
-If bundled together, the actions should be ordered from lowest priority to highest priority. This helps ensure that the final decision the user makes is the most important one.
-Group related actions together. In a modal or form, the order should generally be: [Secondary: Cancel/Back] followed by [Primary: Submit/Save].
-
-<Demo style={{gap: "16px", flexDirection: "row", flexWrap: "wrap", justifyContent: "center"}}>
-    <Button kind="tertiary" onClick={() => {}}>Tertiary button</Button>
-    <Button kind="secondary" onClick={() => {}}>Secondary button</Button>
-    <Button kind="primary" onClick={() => {}}>Primary button</Button>
-</Demo>
-
-**When there are too many buttons:** Cap a visible button group at two, occasionally three, when every action genuinely needs equal prominence (Cancel / Save / Save and close). Beyond three, the group stops reading as a hierarchy and starts reading as a list of options.
-
-**Rule of thumb:** If a user has to scan more than three buttons to find the one they want, buttons aren't helping them decide quickly anymore — that's what a menu is for. Consolidate the lower-priority actions into a dropdown or overflow menu, and keep only the single most important action as a standalone button.
+Avoid overlays or decorative elements covering the primary action. Keep approved lesson back/exit behavior and do not silently discard progress or purchases when the learner leaves.
 
 ## Copy
 
-### Brevity
+- Aim for **1–3 short words** when the user's language permits; clarity is more important than an absolute word limit.
+- Prefer a plain, specific action verb. Avoid ambiguous **OK**, long technical descriptions and marketing copy in the button itself.
+- Use sentence case in the selected language and omit sentence-ending punctuation.
+- Use the same label for the same action across PWA and Android, translated appropriately into HSK AI's supported languages.
+- Keep paired actions coherent (for example **Back / Continue**). Do not swap meanings or change the label for the same outcome from screen to screen.
 
-Aim for 1-3 words. The text must be immediately scannable.
+## Implementation and verification
 
-<img src={copy3Img} alt="Copy 3" />
+This is a **design-system specification**, not a command to immediately replace production buttons. Check actual PWA and Android components before implementation, document any deviations, and migrate deliberately without breaking navigation, billing, lesson assessment, animation, loading or accessibility. Audit both platforms for minimum hit targets, duplicate requests, consistent labels, focus states, contrast, correct/incorrect feedback, and the distinction between brand-red action and Critical destructive red.
 
-### Action focus
-
-Button copy must be short, clear, and focused on the action (a verb or a verb phrase).
-Avoid technical jargon or vague labels like "OK" or "Click Here". Use clear action verbs like "Save Changes" or "Next Step".
-
-<img src={copy1Img} alt="Copy 1" />
-
-### Labels stand alone
-
-Button labels must be a single action phrase. Descriptive or explanatory text must not appear inside a button.
-Buttons communicate an action, not context. If users need more information before acting, provide it through helper text, tooltips, or a confirmation dialog — not inside the button label itself.
-
-<img src={copy2Img} alt="Copy 2" />
-
-### Sentence case
-
-To be consistent with UX copy guidelines, use sentence case.
-
-<img src={copy4Img} alt="Copy 4" />
-
-### Punctuation
-
-Do not use periods, question marks, or exclamation points at the end of button text. Button text is typically a fragment, phrase, or command, not a full sentence, and terminal punctuation adds unnecessary visual clutter and reduces scannability.
-
-<img src={copy5Img} alt="Copy 5" />
-
-### Consistency
-
-Always use logically paired verbs for opposite actions, as the choice clarifies the type of movement. Previous / Next is used for simple, non-committing pagination through lists or sequences. Back / Next or Back / Continue is used for advancing through procedural flows like multi-step forms or wizards. Never mix terms from different pairs (e.g., avoid "Previous/Continue").
-
-<img src={copy6Img} alt="Copy 6" />
+Reuse the existing shared mobile components and brand tokens wherever possible rather than introducing one-off button styles.
