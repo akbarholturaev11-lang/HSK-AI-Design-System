@@ -1,9 +1,18 @@
 import {Meta} from "@storybook/addon-docs/blocks";
 import Principle, {PrincipleSet} from "../components/principle";
+import headerImg from "./assets/layout/header.png";
+import learningImg from "./assets/layout/learning.png";
+import jobImg from "./assets/layout/job.png";
+import onboardingImg from "./assets/layout/onboarding.png";
+import settingsImg from "./assets/layout/settings.png";
 
 <Meta title="Design Guidelines / Foundations / Layout" />
 
 # Layout
+
+<img src={headerImg} alt="Source illustration of general layout categories, not HSK AI production UI" />
+
+> **Source diagram note:** The retained original wireframes explain the four screen-layout shapes. Their desktop sidebars and two-column geometry are not approved mobile HSK AI screens and must not replace the existing iPhone PWA or Android navigation.
 
 Layout answers two questions: what kind of HSK AI screen is this, and what is the learner here to do? Each layout type has one primary purpose and a default information density. Choose the type before arranging content. These are information-architecture rules for HSK AI's iPhone PWA and Android, not instructions to copy Khan Academy's desktop page geometry; retain approved mobile navigation, safe areas, lesson feedback and AI Voice interaction.
 
@@ -47,6 +56,8 @@ A bird's-eye view of the system's current state with entry points to tasks and d
 
 The primary surface where an HSK AI learner actively studies Chinese: lessons, Hanzi/pinyin practice, quizzes, listening, pronunciation and AI Voice conversation. The lesson content is the focus; existing Panda/approved-character reactions and visual effects for both correct and incorrect answers are meaningful learning feedback and must remain. AI Voice retains its approved Orb and interaction states.
 
+<img src={learningImg} alt="Original source Learning wireframe (desktop side rail is not HSK AI mobile layout)" />
+
 **When to use:** An active lesson, answer exercise, vocabulary study or AI Voice conversation.
 **Density:** Low — the student needs focus. Nothing competes with the content.
 
@@ -54,12 +65,16 @@ The primary surface where an HSK AI learner actively studies Chinese: lessons, H
 
 A focused flow for completing a task — either a single step or a sequence of steps. The user has one thing to accomplish and the layout clears everything else out of the way. When a task requires multiple sequential decisions, a progress indicator at the top shows the user where they are and how much is left. Complexity is managed by breaking it across steps, not by cramming it onto one screen.
 
+<img src={jobImg} alt="Original source focused task flow (layout principle only)" />
+
 **When to use:** One-time flows such as account linking, completing a profile action, confirming a purchase or submitting a focused task. Do not copy Khan Academy's teacher/assignment use cases.
 **Density:** Low — one task, one focus per step.
 
 ### Onboarding (get oriented before starting)
 
 A setup flow for first-time HSK AI learners. New users need clarity above everything else, so each step focuses on the immediate decision without introducing all product features at once.
+
+<img src={onboardingImg} alt="Original source setup wireframe (its desktop columns must not be copied into HSK AI iPhone onboarding)" />
 
 **When to use:** First launch, language/HSK-level selection, sign-in, account binding and platform-specific installation onboarding when required. On iPhone PWA, retain the approved Safari/Add to Home Screen guidance rather than a desktop two-column onboarding template.
 **Density:** Low — one focus per step.
@@ -74,6 +89,8 @@ A view for reviewing HSK AI learning progress, completed lessons, results, mista
 ### Settings (configure or control preferences)
 
 A screen for managing preferences and configurations. Navigation between topics sits above or alongside; the content area handles the active topic. Users come here to adjust something specific and leave — it's rarely a destination in itself.
+
+<img src={settingsImg} alt="Original source settings wireframe (not HSK AI mobile navigation geometry)" />
 
 **When to use:** HSK AI profile/account settings, language, learning preferences, notifications, privacy and accessibility controls.
 **Density:** Medium.
