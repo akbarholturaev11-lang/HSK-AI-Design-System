@@ -1,16 +1,12 @@
 import {Meta} from "@storybook/addon-docs/blocks";
 import Principle, {PrincipleSet} from "../components/principle";
-import Swatch from "../components/Swatch";
 import {Do, Dont} from "../components/DoDont";
-import headerImg from "./assets/data-visualization/header.png";
 
 <Meta title="Design Guidelines / Foundations / Data visualization" />
 
-<img src={headerImg} alt="Data visualization" />
-
 # Data visualization
 
-Data visualization turns learning data into decisions. Teachers and administrators use our charts to see who needs help, what's working, and what to do next. These foundations apply to every chart, wherever it appears. For how headings and controls are laid out on a page, see <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs">Data reports</a>. For the components built on these foundations, see <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#usage-and-purpose">Usage and purpose</a> in Data reports.
+Data visualization turns verified HSK AI learning data into actionable understanding. A learner should be able to see their completed work, progress toward an actual goal and areas needing practice without guessing how numbers were calculated. Administrative analytics belong to a separate authorized view. These foundations apply to all HSK AI charts on iPhone PWA and Android, but they do not require creating a chart for metrics not yet supported by the product. For how headings and controls are laid out on a page, see <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs">Data reports</a>. For the components built on these foundations, see <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#usage-and-purpose">Usage and purpose</a> in Data reports.
 
 ## Principles
 
@@ -18,7 +14,7 @@ Data visualization turns learning data into decisions. Teachers and administrato
     <Principle
         label="Helpful"
         title="A smart analyst, not another boring database"
-        description="Don't just dump data; synthesize it. Our product should surface the conclusion so the teacher can make the best informed decision."
+        description="Don't just dump data; synthesize it. Surface the supported conclusion so an HSK AI learner can choose the next useful action."
     />
     <Principle
         label="Rich"
@@ -28,17 +24,17 @@ Data visualization turns learning data into decisions. Teachers and administrato
     <Principle
         label="Purposeful"
         title="Data must earn its pixels"
-        description="If a data point doesn't change a teacher's behavior, it's just noise. Eliminate visual junk food by limiting the focus to what matters."
+        description="If a data point doesn't help a learner understand their progress or take a useful action, it's noise. Keep only relevant information."
     />
     <Principle
         label="Respectful"
         title="Design for the &quot;90-second&quot; gap"
-        description="Teachers don't live in our product; they pass through it. Respect their time by removing friction and surfacing what is important to them in context to where they are."
+        description="Respect short study sessions. Put important information near the relevant lesson, progress screen or review action instead of making learners search for it."
     />
     <Principle
         label="Supportive"
         title="Speak like an assistant, not a spreadsheet"
-        description={'Use human language. "5 students are stuck" is an insight; "Growth: -0.2" is a math problem.'}
+        description={'Use human language: "12 of 15 lessons completed" is clearer than an unexplained score. Only display numbers that come from the current verified records.'}
     />
     <Principle
         label="Inclusive"
@@ -83,71 +79,67 @@ Use these names for chart parts across all data visualization guidance.
 | Legend | Maps colors or patterns to series | Only when series can't be labeled directly |
 | Tooltip | Details on hover or focus | Optional |
 | Annotation | Calls out a notable point, goal, or threshold | Optional |
-| Footer | When the data was last updated | Yes |
+| Footer | When the data was last successfully updated, or when the value is current | Required for time-sensitive or asynchronously updated reports; unnecessary for a stat whose context is already explicit |
 
 ## Color
 
-Chart colors come from the color palette and are chosen by **role**: what the color does in the chart. Color supports meaning but never carries it alone.
-
-Primitives on this page are a visual reference for designers. Don't use them in code.
+Chart colors come from the approved HSK AI semantic palette and are chosen by **role**: what the color means. Color supports meaning but never carries it alone. Use the existing PWA/Android theme tokens; do not copy Khan Academy's chart swatches or invent new chart colors. Check contrast in both existing app themes before applying any new pairing.
 
 ### Color roles
 
-Choose the role by what the color shows, not where the data comes from. Assessment, Mastery, and Scores are for results, like levels and scores. How much or how far along, like how much of an assessment a class has finished, uses Progress and amounts. Motivation data always uses Motivation.
+The role of a color is determined by what the visual communicates. HSK AI retains these professional distinctions while using its **existing approved theme tokens**, not Khan Academy's fixed blue, magenta or gem palette:
 
-| Role | Use when | Fill | Outline and line |
-| --- | --- | --- | --- |
-| <span id="progress-and-amounts">Progress and amounts</span> | How much or how far along: completion, usage, counts, or progress on an assignment or assessment. This is the default. | <Swatch name="Blue 50" hex="#8DA2FF" /> | <Swatch name="Blue 40" hex="#6C82FF" /> |
-| <span id="categorical">Categorical</span> | Two to four series the reader tracks separately. Apply colors in order. | <Swatch name="Cyan 40" hex="#57BAFD" /> <Swatch name="Orange 40" hex="#F97B4F" /> <Swatch name="Magenta 40" hex="#F670C1" /> <Swatch name="Green 40" hex="#72BB82" /> | <Swatch name="Cyan 20" hex="#2485C7" /> <Swatch name="Orange 30" hex="#F8551A" /> <Swatch name="Magenta 30" hex="#E83FA4" /> <Swatch name="Green 30" hex="#579F6C" /> |
-| <span id="neutral">Neutral</span> | A mark is context, not the subject, like "Other" or the middle of a diverging scale | <Swatch name="Gray 60" hex="#CBCBCD" /> | <Swatch name="Gray 30" hex="#8A8B90" /> |
-| <span id="emphasis">Emphasis</span> | Some items are the point of the chart, and the rest are there to compare against. Emphasis says where to look, not whether it's good or bad. For lines, draw the rest in Gray 30. | <Swatch name="Blue 50 (emphasized)" hex="#8DA2FF" /> <Swatch name="Blue 70 (rest)" hex="#DFEAFF" /> | <Swatch name="Blue 40 (emphasized)" hex="#6C82FF" /> <Swatch name="Blue 40 (rest)" hex="#6C82FF" /> |
-| <span id="annotation">Annotation</span> | Words and reference marks that aren't data, like a target line or a district average | <Swatch name="Gray 10 (text and callouts)" hex="#4A4C53" /> | <Swatch name="Gray 30 (reference lines)" hex="#8A8B90" /> |
-| <span id="scores">Scores</span> | Coloring each score by how high it is, like a standards heat map or assignment scores. A line of average scores over time uses Progress and amounts. | <Swatch name="Red 50" hex="#F97F7F" /> <Swatch name="Orange 60" hex="#FEBFB1" /> <Swatch name="Yellow 40" hex="#FCC539" /> <Swatch name="Green 60" hex="#BCEBBB" /> <Swatch name="Green 40" hex="#72BB82" /> | <Swatch name="Red 40" hex="#ED5656" /> <Swatch name="Orange 40" hex="#F97B4F" /> <Swatch name="Yellow 10" hex="#966B00" /> <Swatch name="Green 40" hex="#72BB82" /> <Swatch name="Green 30" hex="#579F6C" /> |
-| <span id="motivation">Motivation</span> | Motivation data, like a gem challenge | <Swatch name="Magenta 30" hex="#E83FA4" /> | |
-| <span id="errors">Errors</span> | Error states, like a chart that failed to load. Never for data. | <Swatch name="Red 30" hex="#E22D2D" /> | |
-| <span id="assessment">Assessment</span> | Assessment results, like performance levels. Not progress on an assessment. | TODO | TODO |
-| <span id="mastery">Mastery</span> | Mastery levels. Not progress toward mastery. | TODO | TODO |
+| Role | Meaning in HSK AI | Implementation rule |
+| --- | --- | --- |
+| <span id="progress-and-amounts">Progress and amounts</span> | Lessons completed, current task completion, counted activities or progress toward a genuine goal | Use an approved non-destructive theme color; pair the bar with the actual count/denominator. |
+| <span id="categorical">Categorical</span> | Up to four distinct exercise types or other verified categories | Use distinct theme-accessible colors with a visible label for each category. |
+| <span id="neutral">Neutral</span> | Background reference, unselected series or an "Other" category | Use HSK AI's neutral theme family. |
+| <span id="emphasis">Emphasis</span> | Focus on a relevant value without implying praise or an error | Contrast an emphasized series against subdued neutral comparators. |
+| <span id="annotation">Annotation</span> | Goal, threshold, date or reference line | Use legible labels and non-interactive neutral marks. |
+| <span id="scores">Scores</span> | Actual verified assessment results, never guessed mastery | Show numerical meaning and thresholds; the error color is not an automatic low-score label. |
+| <span id="motivation">Motivation</span> | XP, streaks or earned learning rewards, when actually recorded | Preserve HSK AI's approved reward color semantics; never import Khan Gems. |
+| <span id="errors">Errors</span> | A chart loading, processing or query failure, not a poor learning result | Use the separate Critical/error family and a clear error message. |
+| <span id="assessment">Assessment</span> | Available quiz/assessment outcomes | Distinguish outcome from percentage of test completed. |
+| <span id="mastery">Mastery</span> | Verified vocabulary or learning mastery levels | Use the product's actual level labels, not unimplemented school thresholds. |
 
-> **TODO:** Define how charts show items that need action, like schools behind schedule. Emphasis blue can read as positive next to a Warning badge. Yellow can still mean Warning when the context makes it clear, like bars next to a Warning badge, even though Scores also uses yellow.
-
-> **TODO:** Replace the primitive color names on this page (for example, Blue 50 and Cyan 20) with data visualization semantic color tokens once they exist in Wonder Blocks.
+Do not assign a new numeric score, grade or color threshold without a validated data definition. The existing HSK AI brand accent, correct-answer green, caution and Critical colors already have distinct roles. Do not repurpose them simply to make a chart colorful.
 
 ### Using color roles
 
 <ul>
-    <li><Do /> Give every filled mark a 1px outline in the role's outline color. Light fills don't reach 3:1 contrast on their own, so the outline carries it. Draw lines in the outline color at 2px.</li>
-    <li><Do /> Keep a series' color the same across every chart in the view. Past four series, fold the rest into "Other" in Neutral gray, or use a table.</li>
-    <li><Do /> Use Progress and amounts for progress on anything, including assessments and mastery: "18 of 25 students finished the assessment."</li>
-    <li><Dont /> Don't use Progress and amounts blue for results, like performance levels, mastery levels, or scores, or for motivation data. They have their own roles.</li>
-    <li><Dont /> Don't use Magenta 30 as a fill outside motivation data.</li>
-    <li><Dont /> Don't use Errors red for data, including low scores. Scores use lighter reds, so a low score doesn't read as a broken chart.</li>
+    <li><Do /> Ensure visible lines, outlines and marks meet the required non-text contrast; do not rely on pale fills alone.</li>
+    <li><Do /> Keep each series' color stable across all charts in one context; limit visual clutter to four distinct series where possible.</li>
+    <li><Do /> Display counts, units, labels and the applicable denominator alongside relevant progress marks.</li>
+    <li><Dont /> Don't make every chart red merely because HSK AI's brand is red. Chart role determines emphasis.</li>
+    <li><Dont /> Don't use Critical/error red for a low learner score, a streak break or other valid data.</li>
+    <li><Dont /> Don't use a decorative reward color as an error indicator or as an unexplained chart legend.</li>
 </ul>
 
 ## Typography and numbers
 
 ### Type styles
 
-> **TODO:** Map chart text to Wonder Blocks typography: chart title, axis labels, data labels, legend, tooltip, and large stat numbers.
+Use HSK AI's existing UI type scale for chart headings, axis labels and explanatory text. Keep Chinese characters and pinyin legible when a learning metric includes vocabulary. Respect user text scaling and the narrowest supported mobile viewport; do not require a desktop font package.
 
 ### Number formatting
 
 | Rule | Example |
 | --- | --- |
 | Round to the precision that matters for the decision | 82%, not 82.37% |
-| Use counts when the reader acts on individuals | "23 of 28 students completed it" |
-| Use percentages to compare groups of different sizes | "82% of Period 1 vs. 64% of Period 3" |
-| Pair them when comparing groups and the reader will follow up with individuals | "82% (23 of 28)" |
+| Use counts for an actual completed task | "12 of 15 lessons completed" |
+| Use percentages when comparing differently sized sets | "80% of 15 lessons; 50% of 20 lessons" |
+| Pair rate with numerator and denominator when useful | "80% (12 of 15)" |
 | Use thousands separators | 1,500, not 1500 |
 | Write ordinals on the baseline, not as superscript | 8th, not 8ᵗʰ |
 | Abbreviate large numbers | 1.2K, 3.4M |
-| Always include units | 45 min, 12 skills |
+| Always include actual units | 45 min, 12 lessons, 30 XP |
 | Use relative dates within 7 days | "2 days ago," "Due Friday" |
 | Use full dates beyond 7 days | Oct 15, 2026 |
 
 <ul>
-    <li><Do /> Pair them when a teacher compares classes and will follow up with students: "Period 1: 82% (23 of 28)."</li>
-    <li><Dont /> Don't pair them when the count is too large to act on: "82% (14,302 of 17,441)." Use the percentage alone.</li>
-    <li><Dont /> Don't use counts alone to compare groups of different sizes: "23 of 28" vs. "12 of 14." Use percentages.</li>
+    <li><Do /> Pair a ratio with a count where the numerator and denominator are known: "80% (12 of 15 lessons)."</li>
+    <li><Dont /> Don't overwhelm a learner with oversized raw totals. Prefer a percentage when the underlying count does not aid a decision.</li>
+    <li><Dont /> Don't compare differently sized groups using counts alone. Show both proportions or clearly state the denominators.</li>
 </ul>
 
 ### Missing and zero values
@@ -156,11 +148,11 @@ Zero and missing are different and must look different.
 
 - **Zero** is a real value. Show it as `0`.
 - **Missing** means no data exists. Show it as `—` and explain why in a tooltip or footnote.
-- Give `—` an accessible label, so screen readers don't read it as a dash or skip it. Use the reason when it's known, like "Not started" or "Didn't take the assessment." Otherwise use "No data."
+- Give `—` an accessible label. Use the real reason when known, such as "Not started", "Not yet processed", or "No data". Never convert a missing measurement, an unsupported Android event or a failed request into zero.
 
 ## Interaction
 
-> **TODO:** Confirm which interactions are supported.
+Expose only interactions implemented in the specific HSK AI screen. A tooltip or chart-to-table switch is not a mandatory new feature; if it is offered, it must work on touch and keyboard.
 
 - **Tooltips** open on hover and on keyboard focus. They add detail but never hold information that's unavailable elsewhere.
 - **Hover and focus** states highlight the active mark and mute the others.
@@ -168,16 +160,14 @@ Zero and missing are different and must look different.
 
 ## Data context
 
-Always show when data was last updated, in the chart footer or container.
-
-> **TODO:** Define the "last updated" format and how to show data that's still processing.
+For asynchronously updated charts show the last successful update time and distinguish "processing", "partially available", "unavailable" and "current". Do not present stale, incomplete or unaudited platform figures as a complete total. When a chart is based on cached data, make the age visible.
 
 ## Writing for data
 
-- **Write chart titles as insights.** The title directly above a chart states the takeaway: "Students are moving up, but five have never left Beginning," not "Mastery levels." The section heading above the chart container names the topic, like "Mastery levels."
-- **Leave the period off titles.** Titles are headings, so write them in sentence case with no ending punctuation, even when they're full sentences: "3 skills ahead of schedule."
+- **Write chart titles as verified insights.** A chart title states a grounded takeaway, such as "12 of 15 lessons completed", not just "Lesson progress". The section heading may still name the topic.
+- **Leave the period off titles.** Use sentence case and follow the selected language for HSK AI rather than inserting school-specific wording.
 - **Use plain language.** Avoid jargon like "cohort" or "variance" unless the audience expects it.
-- **Name people consistently.** Use "students" for learners in a class context.
+- **Name users consistently.** Learner-facing screens describe the current learner; admin-facing summaries use the precise user/event scope and protect personal data.
 - **Label directly.** Put labels on the marks instead of relying on a legend.
 
 ## Accessibility
@@ -186,9 +176,7 @@ Always show when data was last updated, in the chart footer or container.
 
 Pair color with direct labels, patterns, shapes, or position. A chart must remain readable in grayscale.
 
-A global display setting will add shapes, textures, and always-on values to charts for people who need them.
-
-> **TODO:** Define this setting: which charts and roles it applies to, the shapes and textures it adds, and where the setting lives.
+Accessibility must work without assuming a future display setting exists. Use labels, values and accessible summaries immediately; optional display preferences may be added only if actually implemented.
 
 ### Marks must meet contrast requirements
 
