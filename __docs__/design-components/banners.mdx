@@ -1,382 +1,135 @@
 import {Meta} from "@storybook/addon-docs/blocks";
-import headerImg from "./assets/banners/banners.png";
-import placement1Img from "./assets/banners/placement-1.png";
-import placement2Img from "./assets/banners/placement-2.png";
-import placement3Img from "./assets/banners/placement-3.png";
-import {NeutralBadge} from "@khanacademy/wonder-blocks-badge";
-import Banner from "@khanacademy/wonder-blocks-banner";
-import Link from "@khanacademy/wonder-blocks-link";
-import checkCircleBold from "@phosphor-icons/core/bold/check-circle-bold.svg";
-import Demo from "../components/Demo";
-import {BannerIconography} from "./assets/banners/BannerIconography";
-import {Do, Dont, UsageExample} from "../components/DoDont";
 
 <Meta title="Design Guidelines / Components / Feedback / Banners" />
 
-<img src={headerImg} alt="Banners" />
-
 # Banners
 
-<NeutralBadge label="Persistent/Global alerts" />
+A banner is a prominent **non-modal** message about important state, an unresolved issue, or a meaningful completed transaction. Use it when the learner needs continuing awareness while still being able to use the relevant screen. This standard applies to HSK AI's iPhone PWA and Android app. Use HSK AI's existing semantic colors, icons, spacing and content patterns; do not copy another product's alert artwork or classroom messages.
 
-A highly visible, non-modal container used to communicate important, global system status changes, successful operations, or errors. Banners remain persistent at the top of the viewport or relevant area until dismissed by the user or the issue is resolved.
+## When to use
 
-## <Do /> When to use
+Use a banner when an issue or state affects the current screen, session, or account and must remain visible until it is resolved, acknowledged, or no longer relevant.
 
-The choice to use a banner is determined by the need for persistent, high-priority, and global system communication.
-
-| Use when | Example use |
+| Use when | HSK AI example |
 | --- | --- |
-| High-priority feedback signals a significant change affecting the user's entire session or future state | Warning/action required: Your Premium Curriculum Access will end on January 15, 2026. Renew now. |
-| The message must stay visible until the user acknowledges it or the system resolves it | Error/offline status: "Your grading autosave failed due to a system service outage. Please save your work manually." |
-| Confirming a complex or high-stakes action that is difficult to reverse | Success confirmation: Final Grades Submitted! Your students' grades for the current term have been successfully locked and forwarded to the registrar. |
+| An important account state needs the learner's attention | Verified subscription expiry approaching; show the real date and a valid route to manage access. |
+| A persistent issue affects an ongoing task | A lesson result could not be saved; show the save state and a real **Retry** action rather than pretending the result was stored. |
+| An important transaction is completed | A confirmed payment is reflected in the learner's actual Pro entitlement; show details only after the server confirms the state. |
+| The learner needs an essential one-time notice | A substantive lesson or account policy that affects continued use. |
 
-## <Dont /> When NOT to use
+## When NOT to use
 
-| Don’t use when | Recommended alternative | Rationale |
+| Situation | Better pattern | Reason |
 | --- | --- | --- |
-| Showing transient feedback | Toast | Do not use for low-urgency, self-contained, or temporary confirmations that do not require acknowledgment (e.g., "Assignment saved"). Banners are too disruptive for simple confirmation. |
-| Blocking the interface for a critical issue | Modal or full screen error page | The Banner is non-modal and allows the user to click around the background. A critical error requires blocking the entire interface. |
-| Requiring a complex user decision | Modal | Do not use when the message requires the user to make an immediate, high-stakes choice or irreversible commitment. Banners lack the necessary context and visual gravity for complex decisions. |
-| Displaying non-critical promotions | Contextual card or feature slot | Do not use for non-critical promotional or marketing content. Banners are reserved for system alerts and status changes, not upsells or temporary campaigns. |
-| Highlighting a field-specific error | Inline form validation | Do not use for validation failures related to a specific input field (e.g., student ID field is empty). Banners are global, not local. |
+| A routine, short confirmation such as copied text or a saved preference | Brief non-blocking feedback | A persistent alert adds unnecessary noise. |
+| A field has a specific validation error | Inline field error | Keep the explanation next to the affected field. |
+| An irreversible action requires explicit confirmation | Confirmation dialog or a dedicated flow | The learner must understand the choice before acting. |
+| An account problem blocks the whole screen or requires authentication | Relevant account state, full-screen error, or focused dialog | A banner does not safely enforce a blocked task. |
+| A new feature or an optional Pro promotion needs an introduction | The approved, contextual HSK AI feature announcement or relevant product surface | Promotional interruptions must not masquerade as urgent warnings. |
+| A correct or incorrect answer needs immediate lesson feedback | Existing lesson answer feedback and approved Panda/character reactions | A banner would compete with the active question and must not replace character expressions or animations. |
 
 ## Variants
 
-### Critical error/blocker
+### Critical error / blocker
 
-Do use when signaling a severe, system-wide failure, data corruption, or an issue that immediately blocks the user from completing a primary task, ensuring that the error message is not dismissible until the problem is resolved or the page state changes.
+Use for a serious unresolved failure with a clear consequence, such as an unsaved lesson result after a failed write, a failed account operation, or a service outage affecting the active task. State **what happened**, **what remains unsaved or unavailable**, and **what the learner can do next**. Never claim a payment, answer or progress update succeeded without the authoritative result.
 
-<Demo>
-    <div style={{width: "100%"}}>
-        <Banner
-            kind="critical"
-            text={
-                <>
-                    Your message was flagged by our moderation system. If it
-                    follows the{" "}
-                    <Link href="#link" inline={true}>
-                        Community Guidelines
-                    </Link>
-                    , try rephrasing and sending it again.
-                </>
-            }
-        />
-    </div>
-</Demo>
+If continued interaction is unsafe, use a properly blocked state or confirmation instead of relying on a banner alone.
 
-### Warning/action required
+### Warning / action required
 
-Do use when signaling a non-blocking but significant future risk or communicating a mandatory action that must be completed to prevent a problem, ensuring the user is aware of the potential negative consequence if they do not act. The banner must not be dismissible until the user has resolved the underlying issue.
-
-<Demo>
-    <div style={{width: "100%"}}>
-        <Banner
-            kind="warning"
-            text={"Plan access will end on {Renewal/Expiry date}. Renew now to keep features."}
-            actions={[{type: "button", title: "Renew plan", onClick: () => {}}]}
-        />
-    </div>
-</Demo>
+Use for a credible future risk, such as a server-confirmed expiry or an action that must be completed to retain access. Prefer specific verified dates or account states. An expired subscription and a pending payment are different states; do not mislabel one as the other or assume payment capture from bank authorization alone.
 
 ### Success confirmation
 
-Do use when signaling the successful completion of a complex or high-stakes transactional action, especially if that action involves multiple steps or is difficult to reverse, ensuring the copy is specific, data-driven, and includes direct links or identifiers to the resulting content for immediate verification.
+Use when an important multi-step operation **really succeeded**, for example a server-confirmed Pro activation or a restored saved lesson result. The text should reflect the resulting real state. Ordinary small successes do not require a persistent banner. A success banner can be dismissed without undoing the success.
 
-<Demo>
-    <div style={{width: "100%"}}>
-        <Banner
-            kind="success"
-            icon={checkCircleBold}
-            text={
-                <>
-                    2 assignments have been assigned to: this class,{" "}
-                    <Link href="#link" inline={true}>
-                        Period 1 – Precalculus
-                    </Link>
-                    , and{" "}
-                    <Link href="#link" inline={true}>
-                        Period 5 – Precalculus
-                    </Link>
-                </>
-            }
-            onDismiss={() => {}}
-        />
-    </div>
-</Demo>
+### Informational / feature
 
-### Informational/feature
+Use for essential, temporary non-critical information connected to the current context. Optional feature introductions use the separately approved HSK AI feature-announcement flow, including platform-specific eligibility and dismissal behavior; they are not critical or warning banners. Do not repeatedly show an announcement after the learner has already acknowledged the relevant instance.
 
-Do use when communicating temporary policies or essential guidelines that require a one-time user acknowledgement to dismiss the visual notice or when announcing new tools or key features to drive awareness.
-
-<Demo>
-    <div style={{width: "100%"}}>
-        <Banner
-            kind="info"
-            text="Don't share personal information. This conversation can be reviewed by your teacher."
-            onDismiss={() => {}}
-        />
-    </div>
-</Demo>
-
-## States
+## States and dismissal
 
 ### Dismissal for informational and success banners
 
-Do include the 'X' for a banner that is informational, feature-related, or confirms a successful transaction, allowing the user to clear visual clutter immediately.
+Provide a visible close action for completed success and non-critical information. Dismissing the banner changes **only its presentation**, not the account status, payment, entitlement or underlying result. Remember acknowledgment at the appropriate scope when the product already supports it.
 
-<Demo type="do" explanation="include an X on success and info banners so users can clear them.">
-    <div style={{display: "flex", flexDirection: "column", gap: "16px", width: "100%"}}>
-        <Banner
-            kind="success"
-            icon={checkCircleBold}
-            text={
-                <>
-                    2 assignments have been assigned to: this class,{" "}
-                    <Link href="#link" inline={true}>
-                        Period 1 – Precalculus
-                    </Link>
-                    , and{" "}
-                    <Link href="#link" inline={true}>
-                        Period 5 – Precalculus
-                    </Link>
-                </>
-            }
-            onDismiss={() => {}}
-        />
-        <div style={{width: "380px", maxWidth: "100%"}}>
-            <Banner
-                kind="info"
-                text="Khanmigo makes mistakes sometimes"
-                actions={[
-                    {
-                        type: "link",
-                        title: "Here's why",
-                        href:"#link",
-                    },
-                ]}
-                onDismiss={() => {}}
-            />
-        </div>
-    </div>
-</Demo>
+### Unresolved critical and warning states
 
-### No dismissal for unresolved state
+A banner reporting an ongoing problem must not disappear silently while the problem remains active. If hiding it would conceal unsaved work, loss of access, or a safety-relevant failure, keep the status visible until resolution or until the screen enters a truthful alternate error state.
 
-Don't include the 'X' if the message communicates a state that the user cannot resolve on their own, or if the user must be continuously aware of the message to prevent an error or data loss.
+Do not mechanically make every non-critical subscription reminder permanent: distinguish a genuine blocking state from a future reminder the learner can acknowledge. Let the actual verified status determine the urgency.
 
-<Demo type="dont" explanation="include an X on warning or critical banners the user still needs to resolve.">
-    <div style={{display: "flex", flexDirection: "column", gap: "16px", width: "100%"}}>
-        <Banner
-            kind="warning"
-            text={"Plan access will end on {Renewal/Expiry date}. Renew now to keep features."}
-            actions={[{type: "button", title: "Renew now", onClick: () => {}}]}
-            onDismiss={() => {}}
-        />
-        <Banner
-            kind="critical"
-            text="Your message was not delivered. Please try again."
-            actions={[{type: "button", title: "Try again", onClick: () => {}}]}
-            onDismiss={() => {}}
-        />
-    </div>
-</Demo>
+### Loading and stale data
+
+The state must be derived from the current account/task authority. Use loading or unavailable copy while verification is in progress; never show stale payment status, entitlement, receipt, or learner-specific notices from a different account as confirmed. On account change, stale notices must be cleared. Provide a recoverable error and retry when status cannot be verified.
 
 ## Iconography
 
-The banner must include the system-defined type icon. The icon is the most immediate signal, helping users who may have color vision deficiencies or who are scanning the page quickly.
+Each banner uses the standard semantic status icon as well as text and its approved color pairing: **Critical**, **Warning**, **Success**, or **Information**. Preserve the existing separation between HSK AI brand red and the visually distinct destructive/error red. Meaning must not depend on color alone.
 
-Do not use custom, context-specific icons (a "calendar" for maintenance) in the primary position, as this dilutes the meaning of the core status types.
-
-<Demo>
-    <BannerIconography />
-</Demo>
+Use the approved HSK AI UI iconography and reuse canonical product assets only for their real product role; do not import Khan Academy's mascot or classroom icons into alert states.
 
 ## Actions
 
-### Action type and singular focus
+### One primary action
 
-There are two action types: Button and Link. Use a Link when the action is primarily to navigate to a detailed page or section. Use a Button when the action is functional or mandatory and completes a process. Also, maintain singular focus. Banners should contain only one primary action to maintain focus.
+Offer a single obvious next step: **Retry**, **Review payment**, **Manage subscription**, or **View details**, only if that action is available in the current platform and account state. Use an action button for retrying or completing a task; use a navigation link when it opens another location.
 
-<Demo type="do" explanation="give a banner one action: a button to complete a task, or a link to go somewhere.">
-    <div style={{display: "flex", flexDirection: "column", gap: "16px", width: "100%"}}>
-        <Banner
-            kind="warning"
-            text={"Plan access will end on {Renewal/Expiry date}. Renew now to keep features."}
-            actions={[{type: "button", title: "Renew now", onClick: () => {}}]}
-        />
-        <div style={{width: "380px", maxWidth: "100%"}}>
-            <Banner
-                kind="info"
-                text="Khanmigo makes mistakes sometimes"
-                actions={[
-                    {
-                        type: "link",
-                        title: "Here's why",
-                        href: "#link",
-                    },
-                ]}
-                onDismiss={() => {}}
-            />
-        </div>
-    </div>
-</Demo>
+Never show a purchase button on a platform where that purchase method is unavailable. Keep the existing approved HSK AI purchase and platform routing flows; do not invent a new payment path or fee.
 
 ### Guide to resolution
 
-If a banner is not dismissible, it should contain a single, highly visible call-to-action button that resolves the state or provides necessary details, guiding the user toward a specific next step. Use a button rather than a link here — resolving the issue is a functional action.
-
-<Demo type="do" explanation="give a banner that can’t be dismissed one button that resolves the issue.">
-    <div style={{display: "flex", flexDirection: "column", gap: "16px", width: "100%"}}>
-        <Banner
-            kind="warning"
-            text={"Plan access will end on {Renewal/Expiry date}. Renew now to keep features."}
-            actions={[{type: "button", title: "Renew now", onClick: () => {}}]}
-        />
-        <Banner
-            kind="critical"
-            text="Your message was not delivered. Please try again."
-            actions={[{type: "button", title: "Try again", onClick: () => {}}]}
-        />
-    </div>
-</Demo>
+A non-dismissible failure needs a relevant, working recovery path where one exists. If the learner cannot resolve the issue immediately, explain the status without implying a nonexistent action; support or later retry can be offered when applicable. Avoid meaningless **OK** buttons and repeated alerts for the same unresolved failure.
 
 ## Placement
 
-### Top of content area
+### Top of affected content
 
-Do display the banner at the top of the affected content area.
+Place the banner at the top of the affected content area, below the relevant header when appropriate. A global account alert may appear near the beginning of the relevant account view. Avoid covering Hanzi, pinyin, answer choices, character feedback, the AI Voice Orb, primary lesson actions, navigation or the keyboard.
 
-<Demo type="do" explanation="place the banner at the top of the content it affects." style={{paddingInline: 0, paddingBlock: 0}}>
-    <img
-        src={placement1Img}
-        alt="Placement 1"
-        style={{width: "100%", display: "block", margin: 0}}
-    />
-</Demo>
+Respect iPhone safe areas and Android window insets. The banner should remain legible on narrow screens and with enlarged text; its body may wrap instead of truncating essential information.
 
-### Maximum two banners
+### Maximum two visible banners
 
-A single banner is ideal, but if more is needed the max should be no more than two banners in a single view. If a third banner needs to appear, the oldest Success or Informational banner is hidden or dismissed automatically to make room. Critical and Warning banners are never auto-removed — they persist until the user resolves the underlying issue, per their own dismissal rules.
+Prefer one banner. Show no more than two at once in a single view, with **Critical** first and **Warning** next, followed by Success and Information. On a third event, remove or defer an older non-critical notice where safe; **never automatically remove an unresolved critical status** to make room.
 
-<Demo type="dont" explanation="show more than two banners at once. It adds too much cognitive load." style={{paddingInline: 0, paddingBlock: 0}}>
-    <img
-        src={placement2Img}
-        alt="Placement 2"
-        style={{width: "100%", display: "block", margin: 0}}
-    />
-</Demo>
-
-### Priority stacking order
-
-If there must be two banners, order them by:
-Highest priority / Most critical banner (at the very top).
-Second highest priority / Second most critical banner (below the first one).
-If both banners have the same criticality, the newest or most recently triggered one often takes the top spot, or the decision is made based on which piece of information is most urgent for the user to see first.
-
-<Demo type="do" explanation="put the most critical banner on top when two banners are showing." style={{paddingInline: 0, paddingBlock: 0}}>
-    <img
-        src={placement3Img}
-        alt="Placement 3"
-        style={{width: "100%", display: "block", margin: 0}}
-    />
-</Demo>
+If several problems need simultaneous action, organize them in the relevant notification/account screen rather than building an unlimited stack of banners.
 
 ## Accessibility
 
 ### Contrast and color independence
 
-Each banner variant's background, text, and icon colors must meet WCAG AA contrast requirements (4.5:1 for text, 3:1 for icons and borders). Never rely on color alone to distinguish variants — the icon and copy tone must independently communicate severity for users with color vision deficiencies.
+Meet at least WCAG AA contrast for meaningful text (normally 4.5:1) and non-text status icons/meaningful boundaries (3:1), subject to the relevant content exceptions. The icon, copy and available action must communicate urgency independently of color. Provide accessible labels for close/action controls and readable focus states.
+
+### Announcements and focus
+
+Announce important new states accessibly without repeatedly interrupting reading. A non-modal banner must not trap focus or unexpectedly change the learner's position in an ongoing lesson. Reserve forced focus changes for a genuinely blocking dialog. Do not make character motion or flashing the sole communication of an alert.
 
 ## Copy
 
-### State status directly
+### State the status directly
 
-Banner copy must be kept as concise as possible, ideally limited to one main sentence and one actionable sentence. Do use a direct, declarative sentence structure to immediately state the status or risk, avoiding overly polite phrasing, passive voice, or system jargon, thereby maximizing scannability and comprehension.
-The tone must be neutral and professional across all types, though it should shift in intensity—firm for Errors, cautious for Warnings, and positive but measured for Success and Information.
+Prefer one concise statement of the actual status and one sentence describing recovery when necessary. Use the selected HSK AI language, with the established meaning consistent between PWA and Android. Avoid technical error codes, excessive politeness, exaggerated urgency and invented facts.
 
-<Demo style={{flexDirection: "column", gap: "16px", alignItems: "stretch"}}>
-    <UsageExample type="do">
-        <Banner
-            kind="warning"
-            text="Your cloud storage is full. Files will stop syncing tomorrow."
-            actions={[{type: "button", title: "Upgrade now", onClick: () => {}}]}
-        />
-    </UsageExample>
-    <UsageExample type="dont">
-        <Banner
-            kind="warning"
-            text="Your cloud storage capacity has been exceeded and file synchronization will have to cease commencing tomorrow"
-            actions={[{type: "button", title: "Upgrade now", onClick: () => {}}]}
-        />
-    </UsageExample>
-</Demo>
+Examples of intent, **not hard-coded production strings**:
 
-### Link problem to solution
+| Situation | Concise meaning to communicate |
+| --- | --- |
+| Result not saved | The lesson result was not saved; retry is available. |
+| Payment under verification | Payment status is still being checked; do not claim Pro is already active. |
+| Confirmed Pro activation | Pro is now active; state the verified entitlement or period if the server supplies it. |
+| Access expiry approaching | Access ends on the confirmed date; manage subscription if that route is available. |
+| Offline or service failure | Explain what is unavailable and whether work is preserved locally. |
 
-For Error and Warning banners, do use copy that clearly states what the user can do next to resolve the issue or mitigate the risk, linking the textual problem statement directly to the intended Call-to-Action button or link.
+### Problem to solution
 
-<Demo style={{flexDirection: "column", gap: "16px", alignItems: "stretch"}}>
-    <UsageExample type="do">
-        <Banner
-            kind="critical"
-            text="Server connection failed. Refresh the page to restore the connection."
-            actions={[{type: "button", title: "Refresh page", onClick: () => {}}]}
-        />
-    </UsageExample>
-    <UsageExample type="dont">
-        <Banner
-            kind="critical"
-            text="Server connection failed. Data may be lost."
-            actions={[{type: "button", title: "Ok", onClick: () => {}}]}
-        />
-    </UsageExample>
-</Demo>
+For Critical and Warning banners, the proposed action must actually address the stated problem. Do not label a disconnected route as the solution. Use specific verified amounts, dates, durations or identifiers **only when safely available**, avoiding unnecessary personal or payment information in notifications.
 
-### Include specific data
+### Punctuation and consistency
 
-When applicable, the copy for transactional banners (Success, Warning) must include specific numbers, identifiers, or dates to confirm the impact of the action or the immediacy of the risk (e.g., "2 assignments," or "expires on &#123;date&#125;").
+Keep short alert text scannable, use sentence case and appropriate punctuation for the learner's language, and translate the meaning rather than copying another app's school-specific English text.
 
-<Demo style={{flexDirection: "column", gap: "16px", alignItems: "stretch"}}>
-    <UsageExample type="do">
-        <Banner
-            kind="success"
-            icon={checkCircleBold}
-            text="23 students have been added to Period 3 – Algebra I"
-            onDismiss={() => {}}
-        />
-    </UsageExample>
-    <UsageExample type="dont">
-        <Banner
-            kind="success"
-            icon={checkCircleBold}
-            text="Your changes have been saved to your schedule"
-            onDismiss={() => {}}
-        />
-    </UsageExample>
-</Demo>
+## Implementation boundary
 
-### Punctuation
-
-Copy should omit periods when the message consists of a single, short statement or command. This enhances scannability and maintains a headline style. If the copy requires more than one full sentence, periods must be used to correctly separate those thoughts.
-
-<Demo type="do" explanation="leave off the period for a single sentence, and use periods when there’s more than one.">
-    <div style={{display: "flex", flexDirection: "column", gap: "16px", width: "100%"}}>
-        <Banner kind="info" text="If copy is one sentence, no periods" onDismiss={() => {}} />
-        <Banner kind="info" text="If copy is more than one sentence, use periods." onDismiss={() => {}} />
-    </div>
-</Demo>
-
-### Sentence case
-
-To be consistent with UX copy guidelines, use sentence case.
-
-<Demo type="do" explanation="use sentence case in banner copy.">
-    <div style={{width: "100%"}}>
-        <Banner
-            kind="warning"
-            text="Your cloud storage is full. Files will stop syncing tomorrow."
-            actions={[{type: "button", title: "Upgrade now", onClick: () => {}}]}
-        />
-    </div>
-</Demo>
+This file specifies expected HSK AI alert design. Do not automatically modify the production PWA/Android notification code while preparing these design guidelines. During later UI work, compare with the existing account notices, payment events, PWA announcement flow, error states and Android counterparts, and test that alert changes do not break lesson progress, billing, account ownership, dismissal persistence or accessibility.
