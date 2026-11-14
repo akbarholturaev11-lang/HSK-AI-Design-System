@@ -1,172 +1,314 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import Figure from "../components/Figure";
+import {Do, Dont} from "../components/DoDont";
+import ownSectionImg from "./assets/data-reports/own-section.png";
+import headerImg from "./assets/data-reports/header.png";
+import emptyContainerImg from "./assets/data-reports/empty-container.png";
+import emptyPageImg from "./assets/data-reports/empty-page.png";
+import filteredContainerImg from "./assets/data-reports/filtered-container.png";
+import filteredPageImg from "./assets/data-reports/filtered-page.png";
+import errorPageLoadImg from "./assets/data-reports/error-page-load.png";
+import errorPageUpdateImg from "./assets/data-reports/error-page-update.png";
+import errorContainerImg from "./assets/data-reports/error-container.png";
 
 <Meta title="Design Guidelines / Patterns / Data reports" />
 
+<img src={headerImg} alt="Data reports" />
+
 # Data reports
 
-A report should answer a real question with the fewest useful numbers, comparisons and actions. For HSK AI, learning reports summarize **the current learner's verified progress**. Administrator reporting has different permissions, attribution and completeness rules; it must not be treated as the same screen as a learner's personal statistics.
+> **HSK AI application:** retain these professional rules for chart choice, comparison, filters, page order, empty/error states, readability and accessible reporting. The source school/district illustrations are reference-only and are not HSK AI target UI. Use verified learner events for personal progress and separately authorized, audited analytics for administrators. No fictitious HSK AI metrics or cross-platform totals.
 
-This guidance preserves the original professional information hierarchy, clarity, filtering, incomplete-data handling and accessible presentation while adapting the context to iPhone PWA and native Android.
+This guide covers how to build a data report: what to show, how to lay it out, and how to handle empty and error states. It applies to every data visualization component.
+
+<a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs">Data visualization</a> holds the rules every chart follows: chart types, anatomy, color, number formatting, and writing. This page applies them to whole reports.
 
 ## Usage and purpose
 
-| Component | Question | Use in HSK AI |
+| Component | Answers | Use case and purpose |
 | --- | --- | --- |
-| <a href="./?path=/docs/design-guidelines-components-data-visualization-summary-cards--docs">Summary cards</a> | What's the headline? | A verified XP count, current streak, completed lessons or an actual HSK level. |
-| <a href="./?path=/docs/design-guidelines-components-data-visualization-progress-charts--docs">Progress charts</a> | How close to a goal? | A lesson count relative to the actual course total; a configured goal only when supported. |
-| <a href="./?path=/docs/design-guidelines-components-data-visualization-distribution-charts--docs">Distribution charts</a> | How do records spread across categories? | Genuine tracked exercise-result or vocabulary mastery categories, if available. |
-| <a href="./?path=/docs/design-guidelines-components-data-visualization-trend-charts--docs">Trend charts</a> | How did a metric change? | Consistently recorded activity across several dates. |
-| <a href="./?path=/docs/design-guidelines-components-data-visualization-data-tables--docs">Data tables and lists</a> | Which exact items? | Actual saved lesson, vocabulary or exercise records. |
-
-Only show a component when the real product has the underlying data. A design example is not permission to add a new metric, infer a missing event or fabricate records.
+| <a href="./?path=/docs/design-guidelines-components-data-visualization-summary-cards--docs">Summary cards</a> | What's the headline? | Shows key numbers in words and digits, with no chart to decode. Stat cards show one metric. |
+| <a href="./?path=/docs/design-guidelines-components-data-visualization-progress-charts--docs">Progress charts</a> | How close are we to the goal? | Shows a current value against a goal, like a class challenge or grade level target. |
+| <a href="./?path=/docs/design-guidelines-components-data-visualization-distribution-charts--docs">Distribution charts</a> | How is the group spread out? | Shows how many students, classes, or schools land in each range, like assignments completed, or how that spread changed between two periods. |
+| <a href="./?path=/docs/design-guidelines-components-data-visualization-trend-charts--docs">Trend charts</a> | How has it changed? | Shows a value across three or more periods, like growth across units. |
+| <a href="./?path=/docs/design-guidelines-components-data-visualization-data-tables--docs">Data tables</a> | Who exactly, and what do I do? | Lists each individual or item with exact values, so readers can find and act on them. |
+| Heat map (coming soon) | Where are the patterns? | Shows a value across two dimensions, like mastery by student and skill. |
 
 ## Making a useful chart
 
-A chart earns its place when it answers the user's question faster than a number or a list. Never chart a single value just because the screen looks empty.
+A chart earns its place only when it answers the question faster than a number or a table would.
 
 ### Number, chart, or table
 
-| Choose | When | HSK AI example |
+| Use | When | Example |
 | --- | --- | --- |
-| A number | One verified value answers the question | Recorded streak is 4 days. |
-| A chart | A valid trend, meaningful comparison or distribution exists | Activity in several consistently recorded weeks. |
-| A table or readable mobile list | The reader needs exact values or actions for individual items | Review an actual saved lesson result. |
+| A number, in a <a href="./?path=/docs/design-guidelines-components-data-visualization-summary-cards--docs">summary card</a> | The takeaway is one value | 11,033 students assessed |
+| A chart | Readers need to see a pattern, a change, or a gap | Scores climbed 133 points since the last assessment |
+| A <a href="./?path=/docs/design-guidelines-components-data-visualization-data-tables--docs">data table</a> | Readers need exact values, or need to find and act on individuals | Each student's score, with flags |
 
 ### What makes a chart useful
 
-- State **one question or insight per chart**. Don't hide an important conclusion in unlabeled bars.
-- Show only the values needed for that question; offer details separately.
-- Do not confuse activity quantity with assessment correctness or vocabulary mastery.
-- Do not mix lesson starts, successful completions and attempts as one event without a clearly defined mapping.
-- For time comparisons, use consistent time zones, date windows, denominators, inclusion rules and event definitions.
-- A displayed percentage or count must be reproducible from the authoritative records. Retries and duplicate writes must not inflate totals.
-- When a measure has not been fully audited for PWA and Android, disclose that fact; do not claim complete cross-platform coverage.
+<ul>
+    <li><Do /> Answer one question per chart, and state the answer in the title: "Scores climbed 133 points since the last assessment," not "Average score."</li>
+    <li><Do /> Show only the data the title needs. Move the rest to a table or another chart.</li>
+    <li><Dont /> Don't chart a single value. Use a summary card.</li>
+    <li><Dont /> Don't make readers match many colors to a legend. Past four series, fold the rest into "Other" or use a table.</li>
+    <li><Dont /> Don't show more dimensions than one chart can show clearly. Split it into two charts, or use a table.</li>
+</ul>
+
+> **TODO:** Add visual examples of a number and a chart for the same data, and of a useful and a useless chart.
 
 ## Showing growth
 
-A comparison is valid when the earlier and later values measure **the same thing**, with comparable inclusion rules. For a personal learner report, a change may compare the same learner's verified activity at two points in time, or a measure tracked across comparable sets of lessons.
+In HSK AI, valid growth compares the same defined learner metric across compatible periods, scopes and course versions. The original school-based comparison shows the general method but does not define an HSK AI score.
 
-- Define which periods and records are included in both values.
-- If the underlying course, HSK level, goal or calculation changed, explain that discontinuity; do not label it growth from an identical baseline.
-- Show meaningful numeric change and direction; do not use color or an arrow as the only signal.
-- Avoid a congratulatory claim when the metric does not justify it (e.g. doing more attempts does not prove higher mastery).
-- A missing earlier period is **not** a zero baseline.
+| To show | Use |
+| --- | --- |
+| How the split by level changed between two periods | <a href="./?path=/docs/design-guidelines-components-data-visualization-distribution-charts--docs#comparing-periods">Distribution chart, comparing periods</a> |
+| A value across three or more periods | <a href="./?path=/docs/design-guidelines-components-data-visualization-trend-charts--docs">Trend chart</a> |
+| Which students moved, and by how much | <a href="./?path=/docs/design-guidelines-components-data-visualization-data-tables--docs#table-with-summary-tabs">Data table with summary tabs</a>: Moved up, Same level, Moved down |
+
+<ul>
+    <li><Do /> Say who's included: "29 students took both." Leave out students without both results, and say how many: "4 didn't take the middle of year assessment."</li>
+    <li><Do /> Lead with level movement, then points: "8 of 29 students moved up a level." A point change needs context to mean something, and a level doesn't.</li>
+    <li><Do /> Show a change within a level, so a gain isn't hidden: "Approaching, no change" with "↑ 10 pts."</li>
+    <li><Do /> Sort students by change by default, so the biggest moves in both directions are easy to find.</li>
+    <li><Dont /> Don't show only an average. An average can go up while some students go down.</li>
+</ul>
 
 ### Choosing the earlier period
 
-When multiple valid historical periods exist, let the learner choose a comparison period only if the product supports it. Label both dates/ranges and update the insight when selection changes. Do not show nonfunctional date filters or preselected periods with no verified records.
+When more than two assessments exist, let readers choose what to compare against with a "Compared to" control, like "Compared to: Middle of year."
+
+<ul>
+    <li><Do /> Default to the previous assessment. It shows the most recent change, which is the easiest to act on.</li>
+    <li><Do /> Let the control change all the growth content together: stat cards, charts, tables, and the line that says who's included. Place it above everything it changes. See <a href="#control-scope">Control scope</a>.</li>
+    <li><Dont /> Don't change anything that isn't about growth, like the current score overview.</li>
+</ul>
 
 ## Layouts
 
-### Learner overview
+Data appears in one of two layouts, and each has its own rules.
 
-Use HSK AI's existing mobile-first home/profile/progress screen. Present summary first, then relevant progress, then supporting detail or a clear review action. Avoid overwhelming the current lesson with full reporting controls.
-
-### Detailed report
-
-If a metric needs several filters, long histories, many rows, technical definitions or complex explanations, give it a dedicated view. It may have more information density than the learner overview but should still work on narrow PWA and Android screens.
-
-### Administrator analytics
-
-Separate administrative dashboards from learner progress. Use the authorized filter scope, known attribution and platform-coverage rules. If one platform is unaudited or reports partial events, flag the affected metrics rather than falsely aggregating them. Do not reveal personal learner details without proper authorization.
+| Layout | Use when | Controls |
+| --- | --- | --- |
+| Container | One chart that needs a few controls, or none | Inside the container, top right |
+| Own page or section | The data needs more controls than fit beside the H3 | Above the data |
 
 ## Page order
 
-1. Short heading and clearly defined reporting scope.
-2. Verified summary values that answer the main question.
-3. The most useful chart or progress view, if supported.
-4. Exact records or an optional route to details.
-5. Source period, last successful update or any important coverage limitation when applicable.
+Reports read top to bottom, from overview to detail.
 
-Mobile screens may use one column. Preserve the approved bottom navigation, spacing, text scaling, keyboard behavior and safe areas rather than importing desktop teacher-dashboard columns.
+| Order | Content | Controls |
+| --- | --- | --- |
+| 1 | Summary stats, like a row of stat cards | None |
+| 2 | Containers | Inside each container |
+| 3 | Own section, like a full table | Filter bar above the data |
+
+Data with its own section always goes at the **bottom** of the page. Never place it above containers or between them.
+
+> **TODO:** Add guidance on ordering containers, and an image of a full report.
 
 ### Control scope
 
-Controls affect only the stated dataset below or inside their section. A date filter changing one chart must not silently change unrelated headline statistics. When a filter applies to the entire report, put it above the affected report and say so.
+Controls only change the data they sit with, never data above them.
+
+- **Container controls** change only that container.
+- **Filter bar controls** change only the data below them in that section.
+- **Never place a filter bar above containers.** Containers always sit higher on the page, so a filter bar can never affect a container.
 
 ## Containers
 
-Each chart container has one main question, readable labels, optional meaningful controls and a trustworthy state. See <a href="./?path=/docs/design-guidelines-components-data-visualization-chart-container--docs">Chart container</a>.
+A container holds one chart with its section heading, title, and controls. For its anatomy, headings, and controls, see <a href="./?path=/docs/design-guidelines-components-data-visualization-chart-container--docs">Chart container</a>.
 
 ## Own page or section
 
 ### When data needs its own page or section
 
-Move the report to its own view when there are too many controls, rows or comparisons for an overview. Avoid nested scrolling tables and controls on top of the learning interaction. Keep the user's current context when moving to details.
+A container has outgrown inline controls when the data needs:
+
+- More than about three controls.
+- Any control that opens a multi-field popover.
+
+This is usually a sign the data needs its own page or a significant section of a page.
 
 ### Page and section controls
 
-Use only implemented date, category, HSK level and exercise-type filters. Show active selections and provide a working clear or reset route. A detailed report should not expose controls with no supported data.
+Controls sit outside and above the data, not inside a container. See <a href="./?path=/docs/design-guidelines-patterns-filter-and-sort--docs">Filter and sort</a> for filter bar guidance.
+
+<Figure
+    src={ownSectionImg}
+    alt="An Activation page with a title and description. A highlighted filter bar with search, Last 30 days, School, Grade, and More filters sits above a table of teachers and student account activation."
+    caption="With a search field and four filters, this data gets its own page. Controls sit above the table, not inside a container."
+/>
 
 ## Insights and actions
 
-A helpful insight describes the verified data and proposes an action that really exists in HSK AI. For example, if lesson records show unfinished work, a link may return to the actual unfinished lesson. A claim such as "You need to improve pronunciation" requires an actual validated pronunciation assessment, not a guess from chat activity.
-
-Don't invent reminders, scores, awards, difficulty ratings or a "recommended next lesson" that the product doesn't calculate. Explanations and actions must be understandable in the user's selected language.
+Insights must reflect real measured outcomes; offer only actual HSK AI actions such as revisiting an existing lesson. Do not infer pronunciation quality or mastery from an unrelated usage count.
 
 ## States
 
 ### Empty states
 
-An empty state explains why data is absent and when it might appear, without implying the learner performed poorly. The empty state must account for the scope of the current filter and actual tracked events.
+An empty state's copy depends on why the data is missing. Its placement depends on the layout. Name what's missing, say when data will appear or what to do, and offer an action only when the user can fix it from there.
 
-### Empty container
+| Layout | Show | Action |
+| --- | --- | --- |
+| One container is empty; others have data | An empty state inside that container | Secondary button, only if the fix happens here |
+| Every container would be empty for the same reason | One empty state in place of all containers | One primary button |
+| Own page or section | An empty state in place of the data, below the controls | One primary button, only if the fix happens here |
 
-Keep the section context visible with a short explanation that data is not yet available. Do not replace it with an unlabeled zero.
+Any layout can be empty because of its filters. See [Filtered to nothing](#filtered-to-nothing).
 
-### Filtered to nothing
+Every data report empty state uses the **No report data** spot illustration, in every layout and for every cause. The illustration is decorative; the headline and body carry the meaning.
 
-Keep the current filters visible and offer a way to clear them. Do not silently expand the date range or change the chosen HSK level.
+#### Empty container
+
+- Keep the H2 so readers still know what the section is. The empty state replaces the H3 and the chart.
+- Write copy specific to that container: "No growth data yet," not "No report data yet."
+- Keep only controls that could change the result, like a date filter. Hide the view toggle and download.
+- Leave out the button when the fix happens somewhere else, like students finishing a test.
+
+<Figure
+    src={emptyContainerImg}
+    alt="A Growth over time container shows an empty state reading 'No growth data yet. Growth shows here after students finish their first unit test.' with only a This year date filter. A Skills mastered container with data sits below it."
+    caption="The H2 and date filter stay. The empty state replaces the H3 and chart, with no button."
+/>
+
+#### Empty page or section
+
+- Keep the page or section title and description.
+- Keep controls that could change the result, like search and filters. Hide controls that act on data, like download.
+- The empty state replaces the table or chart, directly below the controls.
+
+<Figure
+    src={emptyPageImg}
+    alt="A report page with search, Last 30 days, School, and Grade controls above an empty state reading 'No teachers yet. Sync your district roster to see account activation.' and a Sync roster primary button."
+    caption="Filters stay. The empty state replaces the table, below the controls."
+/>
+
+#### Filtered to nothing
+
+This applies to containers and to pages or sections.
+
+- Keep the controls that caused the empty result visible, so users can see and change them.
+- In a page or section, offer "Clear filters" as a secondary button. See <a href="./?path=/docs/design-guidelines-patterns-filter-and-sort--docs">Filter and sort</a>.
+- In a container, point to the control instead: "Try a different date range." Skip the button; the control is right there.
+
+<Figure
+    src={filteredContainerImg}
+    alt="A Growth over time container with a Last 7 days date filter and an empty state reading 'No growth data for this date range. Try a different date range.' A Skills mastered container with data sits below it."
+    caption="In a container, the copy points to the date filter. No button."
+/>
+
+<Figure
+    src={filteredPageImg}
+    alt="A report page with search, date, School, and Grades filters and active filter chips for Addison Middle School, 6th grade, and 7th grade, plus a Clear filters link. Below, an empty state reads 'No results for these filters. Try a different date range or clear your filters.' with a Clear filters secondary button."
+    caption="In a page or section, active filters stay visible and Clear filters is a secondary button."
+/>
 
 ### Empty state copy
 
-| State | Meaning | Suggested pattern |
+| Part | Rule | Example |
 | --- | --- | --- |
-| Not started | No relevant recorded activity exists | "No lessons recorded yet" with a real start route when available. |
-| Not enough data | Too few comparable points to establish a trend | "More recorded periods are needed for a trend". |
-| Not supported | This event or metric is not measured on the current platform | Explicitly mark it unavailable rather than 0. |
-| Filtered out | No records match the active criteria | "No results for these filters" with a clear action. |
+| Headline | Name what's missing. Sentence case, no period. Use "yet" when data is coming. | No growth data yet |
+| Body | One sentence: why it's empty, or when data will appear. End with a period. | Add students to your class to start tracking their progress. |
+| Button | Verb first, 1–3 words. Only when the user can fix it here. | Add students |
 
-These are meaning examples, not a substitute for the product's current localization catalogue.
+Use "yet" only when the relevant HSK AI data truly has not arrived. Do not reassure falsely when measurement is unavailable or unaudited.
+
+| Cause | Headline | Body | Action |
+| --- | --- | --- | --- |
+| Not set up | No report data yet | Add students to your class to start tracking their progress. | Add students |
+| Waiting on activity | No activity yet | Data shows here once students start practicing. | None |
+| Filtered to nothing | No results for these filters | Try a different date range or clear your filters. | Clear filters (page or section only) |
+| Not enough data | Not enough data yet | Check back after students complete more skills. | None |
 
 ### Loading
 
-Use a stable loading state that reflects the layout shape. Known section titles and controls can stay visible while values load. Do not insert fake statistics or permanently freeze a spinner. Keep an existing usable snapshot only when clearly labeled as older data.
+Keep known headings and controls visible while values load. Use a stable shape-matching loading state, never fabricated records or a perpetual empty spinner.
 
 ### Error
 
-When a request fails, show what couldn't load or save and a real retry when possible. Do not show the error as an empty or zero-value success. Keep previously confirmed totals separate from unverified new data.
+An error state means data failed to load. It's never the user's fault, so the copy says what happened and offers a way to try again.
 
-### Container errors
+#### Full page errors
 
-A chart-specific failure should not erase unrelated successfully loaded report sections. A global account/session failure may require the broader report to stop showing sensitive data until the account is reverified.
+A full page error affects the whole page or section. What to show depends on whether any data loaded.
+
+| Situation | Show | Action |
+| --- | --- | --- |
+| Nothing loaded | An error state in place of the data, below the controls | Primary "Try again" button |
+| Earlier data loaded, but the update failed | **One** banner at the top of the content area, above the controls. Keep the earlier data. | "Try again" link in the banner |
+
+- Keep the page title, description, and controls.
+- Use one error for the page, not one per container.
+- Never hide data that already loaded. Say when it's from.
+- Make sure screen readers announce the error when it appears.
+
+<Figure
+    src={errorPageLoadImg}
+    alt="A report page with search and filter controls above an error state with the error spot illustration, reading 'Page couldn't load. Couldn't load this report. Try again in a moment.' and a Try again primary button."
+    caption="Nothing loaded: the error state replaces the data, below the controls."
+/>
+
+<Figure
+    src={errorPageUpdateImg}
+    alt="A report page with a warning banner at the top of the content area reading 'Couldn't update. Showing data from 9:15 AM.' with a Try again link. The search and filter controls sit below the banner, above a table of teachers that still shows the earlier data."
+    caption="The update failed: one banner at the top, and the earlier data stays visible."
+/>
+
+> **TODO:** Decide what to show if "Try again" keeps failing.
+
+#### Container errors
+
+When one container's data fails to load, show the error inside that container. The rest of the page still works.
+
+- Keep the H2 and the container's controls.
+- Use the error spot illustration, not No report data. An empty state says data is on its way; an error says something broke.
+- Offer a secondary "Try again" button.
+- Make sure screen readers announce the error when it appears.
+
+<Figure
+    src={errorContainerImg}
+    alt="A Growth over time container shows the error spot illustration and reads 'Couldn't load growth data. Something went wrong on our end. Try again in a moment.' with a Try again secondary button. A Skills mastered container that loaded normally sits below it."
+    caption="One container failed. Its H2 and controls stay, and the rest of the page still works."
+/>
+
+#### Container couldn't update
+
+> **TODO:** Add guidance for a container that shows earlier data after a refresh fails.
+
+#### Error copy
+
+Say what happened, then offer a way to try again. Don't blame the user. Don't show error codes, technical messages, "Error:" prefixes, "Oops," or "please."
+
+| Situation | Message | Action |
+| --- | --- | --- |
+| Container couldn't load | Headline: Couldn't load growth data<br />Body: Something went wrong on our end. Try again in a moment. | Try again |
+| Page couldn't load | Headline: Couldn't load this report<br />Body: Something went wrong on our end. Try again in a moment. | Try again |
+| Page couldn't update | Couldn't update. Showing data from 9:15 AM. | Try again |
 
 ### Partial or processing data
 
-Use explicit partial/processing states. Distinguish "known portion of records", "awaiting aggregation", "source unavailable" and "not yet audited". Admin analytics must disclose platform coverage and avoid treating missing start events as zero starts.
+Separate processing records, stale snapshots and partial platform coverage from completed totals. Show when a figure is incomplete and do not classify missing events as zero.
 
 ### Not enough data
 
-Do not stretch one or two points into an artificial trend or draw a distribution that suggests a statistically meaningful pattern from a handful of records. Prefer a value, list or concise explanation.
+A single or very small number of genuine observations does not justify a trend or distribution. Prefer a verified number or simple explanation.
 
 ### No access
 
-Keep data from different accounts isolated and respect permissions. On logout/account switching clear learner-specific reports and cached previews that could show another learner's information.
+On account change or missing authorization, clear protected learner details, avoid cross-account cached previews and explain that the report is unavailable.
 
 ### Too much data
 
-Show a meaningful summary, then let users refine the scope, browse a paginated list or open a dedicated detailed view. Do not place a full desktop-style data grid inside a narrow phone dashboard.
+Summarize first, then use real filters, pagination or a dedicated details view; do not force a desktop multi-column grid onto a phone.
 
-## Accessibility and verification
+## HSK AI reporting and mobile constraints
 
-- Meaning is conveyed through text and values, not color alone.
-- Charts have readable summaries and accessible numeric details.
-- Missing, zero, partial and failed states are distinct.
-- Controls work with touch, keyboard and assistive technology.
-- Chinese characters, pinyin and translations are readable at supported text sizes.
-- A metric displays its actual units, scope, definition and time basis.
-- PWA and Android totals reconcile with authoritative event records; deduplication, aggregation and coverage are checked before a report is called complete.
-
-## Implementation boundary
-
-The HSK AI Design System documents these principles. It must not change production analytics definitions, backfill events, install a chart library or modify the PWA/Android reporting screens automatically. Implementations require comparison against real code, tested data integrity and explicit platform coverage.
+- A learner report shows only authorized, current-account records for the selected HSK level and period. XP, streaks, lesson starts/completions, attempts and correct answers have distinct definitions; never treat one as another.
+- Across PWA and Android, count and denominator definitions must match. If coverage is unaudited, events are duplicated, or data is still processing, disclose the limitation rather than claiming an exact global total.
+- The source's teacher, district, school-terms and class comparisons are professional information-architecture examples only; they are not required functions for HSK AI.
+- Mobile views follow the existing HSK AI surfaces, typography, safe areas, touch targets and narrow-screen layouts. Do not import school-themed illustrations, colors or dashboard layouts into the production design.
+- Preserve all the original accessibility, choosing-a-chart, chart-vs-number, clear-filter, loading, no-data, no-access and error-recovery rules. Implement only data-based interactions supported by the real product.
