@@ -1,79 +1,134 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import headerImg from "./assets/trend-charts/header.png";
+import {NeutralBadge} from "@khanacademy/wonder-blocks-badge";
+import {Do, Dont} from "../components/DoDont";
+import Demo from "../components/Demo";
+import Figure from "../components/Figure";
+import {GrowthOverTimeChartOnly} from "./assets/trend-charts/GrowthOverTimeChart";
+import containerImg from "./assets/trend-charts/container.png";
 
 <Meta title="Design Guidelines / Components / Data visualization / Trend charts" />
 
+<img src={headerImg} alt="Trend charts" />
+
 # Trend charts
 
-Trend charts answer **"How has a verified measure changed over time?"** A line connects comparable values from distinct dates or periods. Use them only when HSK AI has enough correctly timestamped and consistently counted records to support a real trend.
+> **HSK AI scope:** Preserve the original professional rules for time axes, absent periods, comparison and accessibility; replace school-report semantics with genuinely recorded HSK AI activity. Source diagrams are examples, not HSK AI visual specifications.
 
-Trend charts belong in a <a href="./?path=/docs/design-guidelines-components-data-visualization-chart-container--docs">chart container</a>. Their layout and rendering adapt to the existing iPhone PWA and Android components, not Khan Academy's school reporting charts or a required web-only chart package.
+<NeutralBadge label="Change over time" />
 
-## When to use
+Trend charts answer "How has it changed?" A line chart shows a value across time, like growth across units or assessments.
 
-Use when a learner needs to understand the direction and shape of a real recorded metric across **three or more comparable periods**. Examples may include actual recorded activity over time or a supported quiz measure, only where HSK AI verifies the events and the metric definition.
+Trend charts sit inside a <a href="./?path=/docs/design-guidelines-components-data-visualization-chart-container--docs">chart container</a>. Use existing HSK AI mobile rendering rather than prescribing Khan Academy's chart package.
 
-## When NOT to use
+## <Do /> When to use
 
-| Situation | Alternative | Why |
+| Use when | Example use |
+| --- | --- |
+| Readers need to see the direction of change over time | Verified practice activity across comparable date windows, where the event is actually recorded |
+
+## <Dont /> When NOT to use
+
+| Don’t use when | Recommended alternative | Rationale |
 | --- | --- | --- |
-| One data point | <a href="./?path=/docs/design-guidelines-components-data-visualization-summary-cards--docs">Summary card</a> | One value cannot show change. |
-| Two points with no future periods planned | Summary card with a verified delta | The numerical change reads faster. |
-| A set of unordered lesson types or levels | <a href="./?path=/docs/design-guidelines-components-data-visualization-distribution-charts--docs">Distribution chart</a> | A line implies time order. |
-| Events are incomplete, duplicated or timestamps unreliable | A qualified partial view or no chart | A false trend is worse than no chart. |
+| The main metric can be said in words or one number, like "Scores rose 10 points since the last assessment" | A <a href="./?path=/docs/design-guidelines-components-data-visualization-summary-cards--docs#stat-card">stat card</a> | Plain text is faster to read than a chart to decode. Use a chart only when the shape of the data matters. |
+| There's only one period | A <a href="./?path=/docs/design-guidelines-components-data-visualization-summary-cards--docs#stat-card">stat card</a> | One point has no direction to show. |
+| There are two periods, and the chart won't gain more | A <a href="./?path=/docs/design-guidelines-components-data-visualization-summary-cards--docs#stat-card">stat card</a> with the change: "↑ 133 pts from beginning of year" | Two points make a straight line, and the change reads faster as a number. |
+| Comparing categories that aren't in time order | <a href="./?path=/docs/design-guidelines-components-data-visualization-distribution-charts--docs">Distribution charts</a> | A line connects points in order, so it implies a sequence that isn't there. |
 
 ## Chart anatomy
 
+These parts apply in any container.
+
+> **Reference:** This example illustrates the underlying chart principle, not a production HSK AI graph or a requirement to use the source library.
+
+<Demo>
+    <GrowthOverTimeChartOnly />
+</Demo>
+
 | Part | Rule |
 | --- | --- |
-| Title | States the real change and relevant time span, when established. |
-| Time axis | Uses actual dates in order, with uneven gaps shown where applicable. |
-| Value axis | States its units and avoids a misleading compressed range. |
-| Line | Shows the metric consistently using approved HSK AI chart colors. |
-| Data points | Mark periods when useful; disclose unavailable periods as gaps. |
-| Context | Explain period selection, verified coverage and last successful update. |
-
-A line's vertical scale need not start at zero, **but** the selected range must not exaggerate small variations. Two different unit types must not share one unexplained axis.
+| Title | States the change: "Recorded practice results changed since the previous available period" |
+| Time axis | Periods in order. Space them by date, or evenly for named periods like assessment windows. Labeled with what the periods are: "Assessment window." |
+| Value axis | Scale, labeled with units: "Average score." It doesn't need to start at zero. |
+| Line | 2px. Choose colors by role. See <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#color">Color</a>. |
+| Points | One per period. Label values when there are few points. |
+| Area fill | A light fill below a single line |
 
 ## Container
 
-Use a large chart container where dates, labels and values remain readable. On phones, reduce clutter and let detailed data open in an accessible list. Do not force a desktop legend or chart-and-table switch when not implemented.
+Trend charts use a large container, for reports. The title states how the value changed.
+
+| Part | Example |
+| --- | --- |
+| Section heading | Growth over time |
+| Title | Scores climbed 133 points since the last assessment |
+| Description | Actual verified measure and selected learning scope |
+| Controls | Date filter, view toggle, download |
+| Line | One line with a light area fill and a labeled point per assessment window |
+| Footer | Updated today, 9:15 AM |
+
+<Figure
+    src={containerImg}
+    alt="A report page with gray placeholder summary cards at the top. Below them, a Growth over time section heading above a chart container. The container's title reads Scores climbed 133 points since the last assessment, with the description Average score, all students and a This year date filter, a chart and table view toggle, and a download button at the top right. A line with a light area fill rises from 635 at beginning of year to 768 at middle of year, with end of year labeled but empty. The value axis is labeled Average score and the time axis is labeled Assessment window. The footer reads Updated Oct 20, 2026, 9:15 AM."
+    caption="A trend chart in a large container, below the summary cards on a report page. The end-of-year window is labeled but empty."
+/>
 
 ## Usage guidelines
 
 ### Title and description
 
-Describe what changed, by how much, and since when, **only if the records support the comparison**. A neutral label such as **"Recorded activity by week"** is safer than an invented performance conclusion.
+<ul>
+    <li><Do /> State how the value changed, and since when: "Scores climbed 133 points since the last assessment."</li>
+    <li><Do /> Name the measure in the description when the title doesn't: "Recorded learning activity."</li>
+</ul>
 
 ### Time and values
 
-- Compare the same metric and stable calculation rules across periods.
-- Leave a gap for a missing or untracked period; never turn it into zero.
-- Place date-based points according to their real dates, rather than pretending uneven intervals are equal.
-- If one platform does not track the required event, say that coverage is incomplete; don't show combined cross-platform counts as fully audited.
-- Ensure repeat events, retries or duplicated writes do not inflate the reported count.
+<ul>
+    <li><Do /> When more periods are coming, like assessment windows, show the full time axis, with future windows labeled but empty: Beginning of year, Middle of year, End of year.</li>
+    <li><Do /> When points are real dates that aren't evenly apart, space them by date, so a long break looks long. Keep named periods, like assessment windows, evenly spaced.</li>
+    <li><Do /> Leave a gap for a missing period. Don't draw it as zero. See <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#missing-and-zero-values">Missing and zero values</a>.</li>
+    <li><Do /> Start the value axis wherever the data needs, as long as it's labeled.</li>
+    <li><Dont /> Don't squeeze the value axis so a small change looks dramatic.</li>
+</ul>
 
 ### Lines
 
-- One primary series is preferable; up to four clearly distinct series may be used if necessary.
-- Use color roles defined in <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#color">Data visualization</a>.
-- Label important series directly when space allows; never communicate series meaning through color alone.
-- Do not add confusing overlapping filled areas.
-- Label meaningful latest values. Other values must remain accessible by touch/focus or an equivalent readable view.
+<ul>
+    <li><Do /> Use the <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#progress-and-amounts">Progress and amounts</a> role for one line, and <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#categorical">Categorical</a> for up to four. For assessment data, use the <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#assessment">Assessment</a> role instead. For mastery data, use the <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#mastery">Mastery</a> role.</li>
+    <li><Do /> When one line is the point, like a class against the school, highlight it with the <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#emphasis">Emphasis</a> role, and draw the rest in Gray 30.</li>
+    <li><Do /> Give a single line a light area fill below it, like the header image. Leave the fill off when there's more than one line, so the areas don't overlap.</li>
+    <li><Do /> Label lines directly at their ends instead of using a legend.</li>
+    <li><Do /> Show a dot on each point when there are only a few. With many points, like weekly data across a year, show the line alone.</li>
+    <li><Do /> Label only the latest value and any point the title mentions. Readers can see other values in a tooltip or the table view.</li>
+    <li><Dont /> Don't show more than four lines. Fold the rest into "Other," or use a table.</li>
+</ul>
+
+Draw a reference line only for a real configured learning target or valid same-scope comparison; never invent a peer or school average.
+
+If a tooltip is implemented, show the point's date/period, exact value, unit and relevant source context. Touch users must not lose access to the information.
 
 ## Variants
 
 ### Comparing groups
 
-Only compare actual, compatible HSK AI learning categories and time windows. Do not create Khan Academy-style school/class averages or a learner leaderboard merely to populate a trend graph.
+Compare series only for actual HSK AI metrics with equivalent time windows and consistent definitions; no school/class comparison is required.
 
 ## States
 
-Differentiate no activity, a confirmed zero, no recorded event, still-processing data and a real error. A missing period is an empty gap, not a collapse to zero. See <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#states">Data reports</a>.
+Empty and error states follow <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#states">Data reports</a>. A period with no data shows as a gap in the line, not a drop to zero.
 
 ## Accessibility
 
-- Provide a short textual conclusion and values with their units.
-- Ensure any focusable point is announced with period and value.
-- Do not hide essential information in hover-only interactions on mobile.
-- Respect enlarged text and reduced motion.
-- A supported chart-to-table switch must preserve precisely the same data scope.
+- Every chart has a short text summary of its takeaway: "Average score rose from 635 to 768 since the beginning of year." See <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#accessibility">Accessibility</a> in Data visualization.
+- Points can be focused with the keyboard. Each announces its period and value: "Middle of year: 768."
+- Label lines directly, so color is never the only way to tell them apart.
+- The view toggle switches to a table of the same data.
+
+## HSK AI verification before drawing a trend
+
+- Require three or more comparable observed periods when a line adds more value than a card; with a single value, use a summary card.
+- Distinguish no activity, genuinely measured zero, untracked event, missing Android coverage, stale data and processing.
+- Do not turn a retry or duplicate record into a new event; use the same metric definition across periods and platforms.
+- Historical chart demonstrations explain visual encoding only; do not copy their school reports or color palette into HSK AI.
