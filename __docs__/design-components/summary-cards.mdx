@@ -1,104 +1,81 @@
 import {Meta} from "@storybook/addon-docs/blocks";
-import headerImg from "./assets/summary-cards/header.png";
-import {NeutralBadge} from "@khanacademy/wonder-blocks-badge";
-import {Do, Dont} from "../components/DoDont";
-import Figure from "../components/Figure";
-import statCardsImg from "./assets/summary-cards/stat-cards.png";
-import statCardsClickableImg from "./assets/summary-cards/stat-cards-clickable.png";
 
 <Meta title="Design Guidelines / Components / Data visualization / Summary cards" />
 
-<img src={headerImg} alt="Summary cards" />
-
 # Summary cards
 
-<NeutralBadge label="The headline at a glance" />
+Summary cards answer **"What's the headline?"** They present an important, verifiable number or state in a readable way, without forcing the user to decode a chart. HSK AI uses its own learner-facing visual style and verified learning data, not Khan Academy's school or district dashboards.
 
-Summary cards answer "What's the headline?" They show key numbers in words and digits, with no chart to decode. Detail is one click away.
+## When to use
 
-Summary cards are built with Wonder Blocks, using the Thunderblocks theme.
-
-## <Do /> When to use
-
-| Use when | Example use |
+| Use when | HSK AI example |
 | --- | --- |
-| One value tells the story, and a few of them sit side by side | District overview: Students assessed, Subjects on target, District growth |
+| One meaningful value can be understood at a glance | Verified total XP, current streak or lessons completed, where that metric is genuinely available. |
+| A small group of values forms a useful overview | Real recorded learning activity, completed lessons and current HSK level. |
+| A detail view exists and would help the learner act | A completed-lessons count may link to the actual lesson history, if implemented. |
 
-## <Dont /> When NOT to use
+## When NOT to use
 
-| Don’t use when | Recommended alternative | Rationale |
+| Situation | Recommended alternative | Rationale |
 | --- | --- | --- |
-| Readers need to see change over time | <a href="./?path=/docs/design-guidelines-components-data-visualization-trend-charts--docs">Trend charts</a> | A card shows one moment. A line shows the direction across periods. |
-| Readers need to see how a group is spread out | <a href="./?path=/docs/design-guidelines-components-data-visualization-distribution-charts--docs">Distribution charts</a> | A card can't show the spread across ranges. |
-| Readers need to find or act on individuals or items | <a href="./?path=/docs/design-guidelines-components-data-visualization-data-tables--docs">Data tables</a> | Cards summarize groups. Tables list each individual or item to act on. |
-| Readers need to see progress toward a goal | <a href="./?path=/docs/design-guidelines-components-data-visualization-progress-charts--docs">Progress charts</a> | A bar shows how much of the goal is done and how much is left. |
+| Showing change across multiple dates | <a href="./?path=/docs/design-guidelines-components-data-visualization-trend-charts--docs">Trend chart</a> | One number cannot show a trend. |
+| Showing a spread across categories or ranges | <a href="./?path=/docs/design-guidelines-components-data-visualization-distribution-charts--docs">Distribution chart</a> | A card obscures the distribution. |
+| Finding a specific saved record | <a href="./?path=/docs/design-guidelines-components-data-visualization-data-tables--docs">Table or mobile list</a> | Individual items need direct identification and actions. |
+| Showing progress toward a known goal | <a href="./?path=/docs/design-guidelines-components-data-visualization-progress-charts--docs">Progress bar</a> | A value without the goal omits how far remains. |
+| The metric isn't verified or isn't tracked on that platform | Clearly labeled unavailable state or omission | A fabricated metric undermines trust. |
 
 ## Placement
 
-Summary cards are the headline, so readers should see them almost immediately.
-
-<ul>
-    <li><Do /> Place summary cards at the top of the page, below the page title and other top-of-page elements.</li>
-    <li><Dont /> Don't place summary cards below detailed components, like chart containers or data tables.</li>
-</ul>
-
-See <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#page-order">Page order</a> in Data reports.
+Place summary cards near the start of a relevant learning progress or profile screen, below its heading. They are high-level context and should not displace the primary lesson task. Keep statistics secondary while the learner is actively answering questions or using AI Voice.
 
 ## Variants
 
 ### Stat card
 
-Shows one metric. Stat cards sit in a row of 2 to 4, under a section heading that names the group, like "District overview."
+One card communicates one metric, including its label and value. A row of two to four cards is useful on wider layouts, but **a single informative card is valid** and must not force unrelated numbers onto a mobile screen.
 
-| Part | Required | Example |
+| Part | Requirement | HSK AI example |
 | --- | --- | --- |
-| Label | Yes | Students assessed |
-| Info tooltip | Optional. Beside the label, for more context. | How the metric is calculated |
-| Value | Yes. A number, an "X of Y" count, a change, or a level word. | 11,033; 2 of 3; −7 pts; Familiar |
-| Context or change | Optional | 40% of total students assessed; ↓ 1 subject at risk |
-| View link | When there's a detail view. Bottom right, on the same line as the context. | View › |
+| Label | Yes; concise and localized | Lessons completed |
+| Value | Yes; a verified number, ratio or text state | 12 of 15, if that count is known |
+| Unit/period | When the value needs context | Lessons, XP, days, selected date range |
+| Context/change | Optional, only if comparable records exist | 2 more than the previous period, if verified |
+| Details link | Only when there is a working destination | View completed lessons |
 
-- Use at least 2 and at most 4 stat cards in a row.
-- Write the label in sentence case, in 1 to 3 words. Keep units with the value: "−7 pts," not a label like "Growth (pts)."
-- Cards in a row share one height. On narrow screens, they wrap to 2 per row, then 1.
-- Stat cards have no controls and no last-updated footer.
-- Format the value with the <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#number-formatting">Number formatting</a> rules: "11,033," "1.2K," "−7 pts."
-- Show a change as a <a href="./?path=/docs/design-guidelines-components-feedback-badges--docs#value-and-trend-badges">value and trend badge</a>. Only the value and its arrow go inside the badge ("↓ 1"). The description stays outside as text ("subject at risk").
-- Give a rank its total: "8th of 24 classes," not "8th."
-- Pair a change arrow with text. The arrow and its color never carry the meaning alone.
-- Use a <a href="./?path=/docs/design-guidelines-components-feedback-badges--docs#warning-status">Warning</a> badge when a metric has gone down or is at risk, and a <a href="./?path=/docs/design-guidelines-components-feedback-badges--docs#success-status">Success</a> badge when it has gone up.
+- Use HSK AI's established colors, typography, card surfaces and spacing. Do not import the bright Khan Academy card theme.
+- Allow one card per row on narrow phones; use two columns only when values and translated labels remain readable.
+- Do not require at least two cards merely because the source design included pairs.
+- Include the relevant period or goal in the card or nearby description. Never compare metrics with different periods without saying so.
+- Large totals may be abbreviated visually, but exact values must remain available when important.
+- A rank must state its actual population; do not invent leaderboards or rank positions.
 
-<Figure
-    src={statCardsImg}
-    alt="A district report page, with the page title and tabs shown as gray placeholders. Below them, a District overview section heading above three stat cards. Students assessed: 11,033, 40% of total students assessed. Subjects on target: 2 of 3, with a warning badge reading down 1 and the text subject at risk. District growth: −7 pts, with a warning down arrow badge and the text from last assessment. Each label has an info icon."
-    caption="Stat cards sit at the top of the page, under a section heading. Warning badges show a metric that's down or at risk."
-/>
+### Stat cards with a detail view
 
-#### Stat cards with a detail view
+Only a real destination should get an interactive **View** link. The card need not be clickable as a whole. Maintain accessible link labels, clear focus indication and minimum target areas on PWA and Android.
 
-- Add a View link only when there's a detail view for that metric.
-- Place the View link at the bottom right, on the same line as the context or change.
-- Only the View link is clickable. The card itself isn't a link.
-- Cards in a row can mix: some with a View link, some without.
+### Status and directional change
 
-<Figure
-    src={statCardsClickableImg}
-    alt="A report page, with the page title and tabs shown as gray placeholders. Below them, a Classes overview section heading above three stat cards, each with a blue View link and caret at the bottom right. Classes on target: 3 of 5, with a warning badge reading down 2 and the text classes at risk. Mastery average: Familiar, with a warning badge reading down 2 and the text classes below Familiar. Growth over time: +2.1 pts, with a success up arrow badge and the text above school trend."
-    caption="Each card links to its detail view with a View link at the bottom right. A success badge shows a metric that's up."
-/>
-
-> **TODO:** Find a solution for a single headline number, since a row needs at least 2 stat cards.
+Show increases or decreases with a number and explicit text, never with an arrow or color alone. **A lower metric is not automatically bad**, and a higher metric is not automatically good; interpretation depends on the definition (for example, more recorded mistakes does not necessarily mean worse learning if more practice was completed). Use warning/success badges only for a genuinely meaningful evaluated state.
 
 ## States
 
-<ul>
-    <li><Do /> When a metric has no data yet, show "—" as the value and say why in the context line: "No data yet." See <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#missing-and-zero-values">Missing and zero values</a>.</li>
-</ul>
+- **Zero:** show 0 when confirmed.
+- **Not recorded:** show a neutral unavailable state, not 0.
+- **Processing or incomplete:** indicate that the value is not yet final.
+- **Error:** explain the failure and show a retry route when one exists.
+- **Different platform coverage:** do not mix unaudited Android data with audited PWA counts as a complete total.
+- **Not applicable:** omit an irrelevant card instead of filling it with a made-up value.
 
-For not enough data, loading, and error states, see <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#states">States</a> in Data reports.
+For detailed behavior see <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#states">Data reports</a>.
 
 ## Accessibility
 
-- Give each View link an accessible name that includes the metric: "View classes on target."
-- The info tooltip and the View link are separate controls, so keyboard users reach each one in turn.
-- Read the level and the change as text, not as color or an arrow icon.
+- Read the label, number and unit together for assistive technology.
+- Expose meaningful change as text rather than only as a colored arrow.
+- Make any details link independently focusable and specific.
+- Allow larger text and long localized labels without clipping.
+- Do not rely on card color, motion or decorative rewards to explain data.
+
+## Implementation boundary
+
+These are documentation rules. The availability and definitions of XP, streak, lesson progress, HSK levels and other measures come from HSK AI's real production model; no new server event, metric, target, leaderboard or chart is created simply by adopting this design guideline.
