@@ -1,32 +1,15 @@
 import {Meta} from "@storybook/addon-docs/blocks";
 import {NeutralBadge} from "@khanacademy/wonder-blocks-badge";
-import modalsImg from "./assets/modals/modals.png";
-import confirmationFlowImg from "./assets/modals/confirmation-flow.png";
-import functionalTaskFlowImg from "./assets/modals/functional-task-flow.png";
-import selectionFlowImg from "./assets/modals/selection-flow.png";
-import contextualEducationFlowImg from "./assets/modals/contextual-education-flow.png";
-import marketingFlowImg from "./assets/modals/marketing-flow.png";
-import mediaImg from "./assets/modals/media.png";
-import placementCenteredImg from "./assets/modals/placement-centered.png";
-import placementActionsImg from "./assets/modals/placement-actions.png";
-import interactionDismissalImg from "./assets/modals/interaction-dismissal.png";
-import interactionMultistepImg from "./assets/modals/interaction-multistep.png";
-import buttonsPairingsImg from "./assets/modals/buttons-pairings.png";
-import buttonsDirectionalImg from "./assets/modals/buttons-directional.png";
-import copyHeadlineImg from "./assets/modals/copy-headline.png";
-import copyBodyImg from "./assets/modals/copy-body.png";
-import copyActionsImg from "./assets/modals/copy-actions.png";
 import {Do, Dont} from "../components/DoDont";
 
 <Meta title="Design Guidelines / Components / Overlays / Modals" />
 
-<img src={modalsImg} alt="Modals" />
 
 # Modals
 
 <NeutralBadge label="Focused task or decision" />
 
-A high-focus container used to isolate a user’s attention for a specific sub-task or critical decision. Modals require an explicit action or dismissal before the user can return to the primary background content.
+A high-focus overlay used to isolate the learner's attention for a specific sub-task or important decision. A modal requires explicit action or dismissal before returning to background content. In HSK AI, the presentation adapts to iPhone PWA and native Android, retaining existing approved mobile sheets and centered dialogs instead of copying Khan Academy's desktop geometry.
 
 ## <Do /> When to use
 
@@ -34,11 +17,11 @@ The choice to use a modal is determined by the need for complete user focus and 
 
 | Use when | Example use |
 | --- | --- |
-| A high-stakes decision requires the user’s full attention | Setting up a classroom game. |
-| The task is important but must not leave the page or take up a full-page view | Adding multiple students to a roster. |
+| A high-stakes decision requires the user’s full attention | Leaving an unfinished HSK lesson or deleting an account. |
+| The task is important but can stay within the current context | Changing a study option or choosing an available HSK level. |
 | The system requires an explicit "Confirm" or "Cancel" before proceeding | Restarting an exercise or confirming a deletion. |
-| A short sequential flow is needed without leaving the page | Adding a class — choosing an import method, then confirming details. |
-| Supplementary content is needed without fully navigating away from the current page | Displaying a long description during an assessment so students can reference it without leaving. |
+| A short sequential flow is needed without leaving the page | Choosing an option and reviewing it before confirmation, if the existing HSK AI flow requires this. |
+| Supplementary content is needed without fully navigating away from the current page | Viewing contextual help for a Chinese learning exercise. |
 
 ## <Dont /> When NOT to use
 
@@ -46,9 +29,9 @@ Avoid modals when the task doesn’t require the user’s full attention, when t
 
 | Don’t use when | Recommended alternative | Rationale |
 | --- | --- | --- |
-| The user needs to reference or monitor background content | Side drawer | Don’t use a modal if the user needs to glance at background context, or if the information is supplemental (e.g., Gem achievements) and should coexist with the main task. The side drawer is not yet documented in this system; treat this as known design debt. |
-| The content is dense or complex enough to need its own page | Full page or side drawer | If the task requires significant scrolling, more complex multi-step flows, or heavy content, it belongs on its own page — not inside a modal. |
-| The interaction is a simple binary choice or lightweight edit | Popover | Don’t use a modal for a single binary choice or a simple rename; it’s too interruptive for "light" actions. |
+| The learner needs to monitor or interact with the underlying lesson or AI Voice chat | In-context explanation or a non-modal panel | Do not block the lesson, character reactions or voice interaction for information that can coexist with the main task. |
+| The content is dense or complex enough to need its own page | Full-screen flow | Long forms, lengthy lessons and complex multi-step tasks belong in a dedicated view, especially on mobile. |
+| The interaction is a simple, non-destructive setting change | Inline control or compact popover | Do not interrupt study with a modal when an immediate local control is sufficient. High-risk binary choices still require a confirmation. |
 | A modal is already open | Redesign the flow | Never stack task modals. A second modal that introduces new content or choices disorients the user and breaks their sense of where they are. The one exception is a confirmation that resolves the dismissal of the modal beneath it — see Dismissal and unsaved state. |
 
 ## Variants
@@ -59,15 +42,13 @@ Modals are a universal container, but their internal logic changes based on the 
 
 Use for destructive or non-reversible actions.
 
-<img src={confirmationFlowImg} alt="A “Start over?” confirmation modal centered over a dimmed exercise page, warning that starting over clears progress, with Start over and Keep going actions" />
 
 ### Functional task
 
-Use for tasks like "Add class" or "Add students."
+Use for focused HSK AI actions such as configuring a practice option, confirming an account change or selecting a supported learning preference.
 
 Multi-step flows have additional requirements — see Multi-step flows under Interaction.
 
-<img src={functionalTaskFlowImg} alt="An “Add your students” modal over a dimmed roster page, offering class-link, manual, and Google Classroom import options with Cancel and Continue" />
 
 ### Selection (configuration)
 
@@ -75,79 +56,73 @@ Use for complex, multi-faceted filtering or export settings.
 
 See <a href="./?path=/docs/design-guidelines-components-overlays-modals-selection--docs">Modals - selection</a>.
 
-<img src={selectionFlowImg} alt="A “More filters” modal over a dimmed report, with display options, course, subject checkboxes, and practice fields, plus Reset filters and Apply filters" />
 
 ### Contextual education
 
 Triggered by info icons. Keeps the explanation local to the context.
 
-<img src={contextualEducationFlowImg} alt="A “Mastery learning” explainer modal over a dimmed page, describing what mastery learning is and how it is scored, with a Got it button" />
 
 ### Marketing and announcement
 
-Highly visual, system-initiated interruptions to showcase new value.
+Reserve for an already-approved HSK AI feature introduction when interruption is justified. Do not reproduce Khan Academy reward, character or accessory marketing. Pro/payment information belongs in the product's established subscription flow, not an unsolicited modal that hides the lesson.
 
-<img src={marketingFlowImg} alt="A visual “Check out your new collection!” announcement modal, badged “New”, with a colorful accessory grid, a “New unlock” label, and a Customize Khanmigo button, over a dimmed page" />
 
 ### Media
 
-Always read-only — no footer actions.
+Use for viewing an image or learning resource, normally read-only. Do not make interactive Hanzi exercises read-only by applying this variant.
 
-<img src={mediaImg} alt="A read-only media modal showing a Gauguin painting on the left with its title, attribution, and description on the right — no footer actions" />
 
 ## Usage and purpose by variant
 
 | Variant | Purpose | Example |
 | --- | --- | --- |
-| Confirmation | To verify a high-stakes or permanent action and prevent errors. | Deleting a class or discarding unsaved grades. |
-| Functional task | To complete a sub-task or data entry without leaving the page. | Adding a student to a roster or setting up a game. |
-| Selection (configuration) | To narrow down or configure exactly what is being viewed. | Applying advanced filters to a student report. |
-| Contextual education | To provide rich, on-demand explanation of a specific term or feature. | Clicking an (i) icon for "What is mastery?" |
-| Marketing and announcement | To drive adoption of new features or highlight system value. | Promoting the new Live Mode game upon login. |
-| Media | To display rich media alongside contextual detail. | Expanding an artwork to view its full description. |
+| Confirmation | To verify a high-stakes or permanent action and prevent errors. | Deleting an account or leaving a lesson with unsaved progress. |
+| Functional task | To complete a short task or edit without leaving the current context. | Choosing a lesson setting or changing a study preference. |
+| Selection (configuration) | To narrow or configure a view with multiple options. | Selecting available HSK levels, exercise types or progress filters. |
+| Contextual education | To explain a specific term or learning feature without losing context. | Explaining a grammar hint, vocabulary detail or mastery indicator. |
+| Marketing and announcement | To introduce a relevant approved capability without interrupting active study. | A context-sensitive explanation of a genuinely new HSK AI feature, when permitted by the product's existing announcement rules. |
+| Media | To view media and its context. | Expanding a lesson image or reference image. |
 
 ## Sizing reference
 
-Modals use a set of fixed widths with dynamic height. Choose a size based on the density and intent of the content. Marketing and Media are the exceptions — Marketing may exceed the standard widths, and Media fills the viewport.
+Do not copy fixed Khan Academy desktop modal widths into HSK AI's phone experience. Choose the container from the task, the available viewport and existing platform patterns; the *intent* of the original sizing rule (clear focus and readable density) remains authoritative.
 
-| Variant | Recommended size | Why |
+| Variant | HSK AI mobile presentation | Why |
 | --- | --- | --- |
-| Confirmation | Small (400px) | Keeps the focus tight on the decision; prevents the text from stretching too wide. |
-| Contextual education | Small or Medium (400–600px) | Large enough for a diagram but small enough that the user still feels "connected" to the page they were just on. |
-| Functional task | Medium (600px) | The "Goldilocks" size for standard forms and readability. |
-| Selection (configuration) | Large (800px) | Necessary for multi-column layouts or complex data sets. |
-| Marketing and announcement | Large or Custom (800px+) | These are "storytelling" modals. They often need room for high-res illustrations, videos, or feature cards. |
-| Media | Full screen | Maximizes the visibility of the image or media type being displayed. |
+| Confirmation | A compact centered dialog where possible, fitting within the safe viewport. | Keeps the consequence and two decisions together without occupying the whole screen. |
+| Contextual education | Compact dialog or a short bottom sheet, following the existing screen pattern. | Explains a topic near the context without obscuring the entire lesson. |
+| Functional task | Bottom sheet for a short task; dedicated view for long forms and extensive keyboard input. | Supports mobile interaction, accessibility and predictable keyboard handling. |
+| Selection (configuration) | Bottom sheet with a scrollable content area and reachable actions. | Makes several choices usable without importing a desktop multi-column form. |
+| Marketing and announcement | Use only an approved HSK AI announcement layout and cadence. | Prevents unrelated promotional takeovers of the learning screen. |
+| Media | Responsive full-screen or appropriately fitted viewer. | Keeps media legible and avoids clipping. |
+
+For larger screens, the dialog may use an appropriate maximum width; do not stretch it simply because space exists. For iPhone PWA respect browser viewport changes and safe-area insets; on Android respect window insets and system navigation.
 
 ## Surface and elevation
 
-The modal container uses Surface 2 – Default and sits at High elevation, so it reads as a distinct object floating above the page. It is always paired with a Surface scrim covering all background content — a modal is never opened without a scrim. The Media variant is the exception: it fills the viewport rather than sitting centered over the scrim. See <a href="./?path=/docs/design-guidelines-foundations-surfaces-and-elevations--docs">Surfaces and elevations</a>.
+A true modal must be visually separate from and block interaction with the background. Use HSK AI's approved raised-surface, overlay and elevation tokens; a scrim (dimmed background) must cover and deactivate underlying content. Full-screen media or dedicated screens are not floating dialogs. Preserve established HSK AI glass effects only where already approved; do not force them onto every modal. See <a href="./?path=/docs/design-guidelines-foundations-surfaces-and-elevations--docs">Surfaces and elevations</a>.
 
 | Element | Value | Token |
 | --- | --- | --- |
-| Modal container | Surface 2 – Default | `semanticColor.core.background.base.default` |
-| Container elevation | High | `boxShadow.high` |
-| Background | Surface scrim | `semanticColor.core.background.overlay.default` |
+| Modal container | Approved HSK AI raised surface | PWA: existing surface tokens; Android: existing surface theme |
+| Container separation | Enough elevation or boundary to distinguish the dialog | Reuse approved HSK AI platform components |
+| Background | Modal scrim | Reuse the current modal overlay with sufficient separation and contrast |
 
 ## Placement
 
-### Centered overlay
+### Adaptive placement
 
-Modals always appear centered horizontally and vertically within the viewport, over a darkened overlay. The overlay must cover all background content — never partially. The Media variant is the exception — it fills the viewport rather than sitting centered within it.
+Use a centered dialog for brief confirmations; use an existing bottom sheet for mobile selection or short configuration tasks; use a dedicated page or full-screen flow for long interactions. The overlay must cover and deactivate all background content, including the existing bottom navigation. A bottom sheet is not a desktop dialog shrunk to fit: it must respect safe areas, keyboard clearance, scrolling, and tap targets.
 
-<img src={placementCenteredImg} alt="A modal centered horizontally and vertically in the viewport over a darkened page, with crosshair guides showing the center alignment" />
 
-### Actions always bottom right
+### Actions always reachable
 
-Primary and secondary actions are always anchored to the bottom right of the modal. Never center-align or left-align modal actions. This rule is inverted for right-to-left languages, where actions anchor to the bottom left. The Media variant is the exception — it is read-only and has no footer actions.
+On phones, keep the primary action visible at the sheet/dialog footer where applicable; a single primary action may span the available width. Grouped actions may be side by side when readable or vertically stacked in narrow viewports or with larger text. Preserve the approved primary/secondary hierarchy and logical reading order for the selected language, rather than enforcing desktop bottom-right alignment. Read-only media viewers do not need footer actions.
 
-<img src={placementActionsImg} alt="A modal with its primary and secondary actions anchored to the bottom-right corner, highlighted with a dashed outline" />
 
 ### Overflow
 
-A modal’s height grows with its content up to the height of the viewport, less a margin so the overlay stays visible on all sides. Past that point the body scrolls while the title and the actions stay pinned — the user must never have to scroll to reach the primary action.
-
-Background content does not scroll while a modal is open. Scrolling the overlay scrolls nothing.
+A floating dialog or bottom sheet must fit within the usable visual viewport after accounting for system bars, the home indicator, the safe area and an opened keyboard. When content exceeds available height, scroll the body rather than losing the title or required actions. Preserve a usable close/escape route and prevent the background page from scrolling while the modal is active. Do not cover the AI Voice controls, lesson answers or account payment confirmation with an unrelated overlay.
 
 ## Interaction
 
@@ -161,36 +136,32 @@ The modal is exposed to assistive technology as a dialog, labelled by its title,
 
 ### Dismissal and unsaved state
 
-Users can dismiss a modal via the X button in the top right, clicking the overlay, or pressing the Escape key. For functional task modals, if the modal contains unsaved changes, dismissal must trigger a warning — never silently discard user input.
+Provide a clearly available close/back path, including platform back behavior where applicable. Outside-tap dismissal is suitable only for safe, non-destructive cases; do not accidentally close high-stakes payment, account or loss-of-progress decisions. For task modals with unsaved changes, confirm before discarding user input. In HSK AI's active lessons, leaving or restarting must respect the existing progress-protection behavior.
 
 This confirmation is the only permitted second layer. It resolves the dismissal of the modal beneath it and nothing else — it introduces no new task, offers no route to a third layer, and on resolution either returns the user to the modal they were in or closes both.
 
-<img src={interactionDismissalImg} alt="A “Discard changes?” modal warning that unsaved changes will be lost, with a Keep editing button and a red Discard button" />
 
 ### Multi-step flows
 
 A modal can support a short sequential flow of 2–3 steps when each step is simple and self-contained. If the flow grows beyond 3 steps or requires significant input at each stage, move it to a full page with the <a href="./?path=/docs/design-guidelines-components-feedback-progress-stepper--docs">Progress stepper</a> instead.
 
-<img src={interactionMultistepImg} alt="Step one of an “Add your students” multi-step modal, selecting an import method before continuing to the next step" />
 
 ## Buttons
 
 ### Pairings
 
-Modal actions use the <a href="./?path=/docs/design-guidelines-components-buttons-buttons--docs">Buttons</a> component. Never use the chonky buttons for learners in a modal. Three pairings apply:
+Modal actions follow the established HSK AI <a href="./?path=/docs/design-guidelines-components-buttons-buttons--docs">button hierarchy</a>, without importing Khan-specific learner button styling. Three pairings apply:
 
--   **Standard (Primary + Secondary):** used for neutral functional tasks (e.g., "Add students"). The secondary button (outlined) provides a clear, accessible exit that feels equal in importance to the task.
+-   **Standard (Primary + Secondary):** for ordinary HSK AI functional tasks (e.g., "Save settings"). The secondary option provides an understandable exit.
 -   **Nudge (Primary + Tertiary):** used for confirmations. The primary solid button represents the "path of least resistance." Whether this is the safe choice or the requested action depends on the risk involved (see Directional logic).
--   **Destructive (Danger + Tertiary):** used for permanent actions. The primary button is red (e.g., "Delete class") and "Cancel" is a Tertiary button to highlight the severity.
+-   **Destructive (Critical + Tertiary):** for permanent or data-losing actions such as account deletion or discarding unfinished work. Use the distinct destructive/error color rather than treating HSK AI's standard brand-red action as destructive. Prefer a safe action as primary when loss of progress is at risk.
 
-<img src={buttonsPairingsImg} alt="Three button pairings: Standard (Cancel + blue Save), Nudge (Reset filters + blue Apply filters), and Destructive (Cancel + red Delete class)" />
 
 ### Directional logic
 
--   **High-risk nudges:** when an action results in a loss of progress (e.g., "Start over"), the Primary button pivots to the safe/positive action (e.g., "Keep going"). This prevents "auto-pilot" clicks from causing accidental data loss.
--   **Standard intent:** when an action is neutral or expected (e.g., "Log out"), the Primary button remains the requested action. Since there is no data loss to prevent, the system respects the user’s explicit command to exit.
+-   **High-risk nudges:** when leaving a lesson, resetting progress or discarding unsaved work, emphasize the safe choice (e.g., "Continue studying") and make the loss explicit. This prevents accidental progress loss.
+-   **Standard intent:** when an action is neutral and expected (e.g., "Log out"), the requested action may remain primary, provided no unsaved work, payment verification or other important process is at risk.
 
-<img src={buttonsDirectionalImg} alt="Two examples: a high-risk nudge where Keep going is the primary button next to a Start over link, and a standard case where Logout is primary next to a Cancel link" />
 
 ## Copy
 
@@ -198,16 +169,13 @@ Modal actions use the <a href="./?path=/docs/design-guidelines-components-button
 
 Modal titles should be direct and specific — ideally a noun or short noun phrase that describes exactly what the modal is for. Avoid generic titles like "Are you sure?" or "Notice."
 
-<img src={copyHeadlineImg} alt="Recommended specific titles like “Start over?”, “Delete assignment?”, and “Add student” versus discouraged generic titles like “Are you sure?”, “Warning”, and “Notice”" />
 
 ### Describing body content
 
 The body copy should explain the consequence of the action clearly and concisely. For destructive actions, be explicit about what will be lost. Never rely on the title alone to carry the full context.
 
-<img src={copyBodyImg} alt="Recommended body copy “Starting over will clear your current progress. This cannot be undone.” versus the discouraged vague “Are you sure you want to do this?”" />
 
 ### Action labels
 
 Use explicit verbs that describe exactly what will happen. The user should be able to read the button label alone and understand the outcome. Avoid generic labels that require reading the full modal to understand.
 
-<img src={copyActionsImg} alt="Recommended explicit action labels (Start over / Keep going) versus discouraged generic labels (No / Yes)" />
