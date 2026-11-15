@@ -9,6 +9,18 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Agent, AskUserQuestion
 
 **Mandatory first step:** read repository-root `AGENTS.md`. That is the canonical HSK AI product and agent contract. This skill provides **technical MDX/Storybook authoring conventions only**; it does not make the documentation site's inherited packages into HSK AI app requirements.
 
+## Priority: preserve professional design in full
+
+Read `DESIGN_SYSTEM_PROFESSIONAL_FIRST_CONTRACT.md` after `AGENTS.md`. **Professional design decisions are the target**; the current HSK AI interface is a baseline of functional facts, **not a design style that overrides the professional source**. Do not mistake necessary product compatibility for a reason to discard precise component anatomy, visual hierarchy, state models, density, placement, spacing, accessible interaction and micro-behavior.
+
+For every affected guideline, use a **two-layer specification**: (A) the full transferable professional design standard, including do/don't, exact supported figures and micro-details; (B) the *smallest* HSK AI-specific adaptation necessary for real functions, brand assets, language accuracy, permission, platform or backend state. If HSK AI has no corresponding feature yet, preserve A as the design reference and mark B as future/unimplemented rather than erasing A.
+
+If an existing HSK AI screen looks weaker than the professional target, **document the delta for the subsequent PWA/Android UI/UX overhaul**, do not change the design rule to fit the old screen. Only source-brand imagery, unrelated business logic or unsupported product features are excluded; general visual/interaction quality survives. No speculative numbers, fake HSK AI components or inferred test results.
+
+### Required documentation detail review
+
+For each page record: visual structure and proportions; spacing/alignment; type and color hierarchy; icon and state roles; all variants; trigger/commit/cancel/back/dismiss/focus semantics; keyboard/safe area and responsive transitions; localization and screen-reader meanings; zero/missing/loading/error/empty and recovery where appropriate. Explain each deviation from source rules with exact product constraint and retain the nearest professionally valid solution. Do not substitute "use existing UI" for a specification.
+
 ## Research before editing
 
 1. Read the relevant existing `__docs__/` page and the HSK AI-specific foundation or component it links to.
