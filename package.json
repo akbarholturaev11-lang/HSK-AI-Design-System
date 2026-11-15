@@ -8,7 +8,6 @@
         "node": ">=24.13 <25"
     },
     "scripts": {
-        "check:docs": "node scripts/check-docs.mjs",
         "start": "storybook dev -p 56789",
         "build": "storybook build --stats-json",
         "typecheck": "tsc --noEmit"
