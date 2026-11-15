@@ -28,13 +28,14 @@ Long **optional** descriptions are clamped to a maximum of **two rendered lines*
 
 The intended outcome is a **full, no-omission transfer of professional guidelines** into the HSK AI product repository as the **top-level UI/UX decision authority**—not a new app, not a code refactor, and not a blind merge of third-party Storybook tools.
 
-- [44-page source/transfer catalog](docs/migration/TRANSFER_CATALOG.md) — exact tracked filenames, Git blob identities, planned destination paths and 299 source image imports.
+- [44-page standalone Markdown review edition](docs/portable/README.md) — one independent, source-SHA-pinned draft per professional guideline, with figure references and no Storybook runtime dependency.
+- [44-page source/transfer catalog](docs/migration/TRANSFER_CATALOG.md) — tracked filenames, Git blob identities, intended target paths and 298 historical figure placements plus one Phosphor SVG demo import.
 - [316-image / 30-font asset quarantine](docs/migration/ASSET_AND_RUNTIME_INVENTORY.md) — verified source path and SHA inventory, no blind binary copying.
 - [Verified conflicts with existing HSK AI rules](docs/migration/CONFLICT_REGISTER.md) — especially the **one-line vs two-line** disclosure and **existing-style vs professional-design precedence** discrepancies.
 - [Copy-ready authority insertion and two-line UI skill replacement](docs/migration/TARGET_AUTHORITY_INSERT.md) — read and apply **only during the separately authorized repository transfer**.
 - [Top-level transfer status](MIGRATION_TO_HSK_AI.md) — what is actually prepared and what still cannot be claimed complete.
 
-**Important:** all 44 active guideline pages exist here, but they are still MDX/Storybook source files. Some professional reference illustrations are third-party material without confirmed redistribution rights. A truly portable product-repository design corpus must retain every useful rule while removing external runtime dependencies and resolving media provenance. **Neither the product repository nor its PWA/Android screens have been edited as part of this preparation.**
+**Important:** all 44 active source guideline pages exist here as MDX/Storybook **and now have separate portable Markdown review copies**. Some professional reference illustrations are third-party material without confirmed redistribution rights. A truly portable product-repository design corpus must retain every useful rule while removing external runtime dependencies and resolving media provenance. **Neither the product repository nor its PWA/Android screens have been edited as part of this preparation.**
 
 ## Documentation development
 
