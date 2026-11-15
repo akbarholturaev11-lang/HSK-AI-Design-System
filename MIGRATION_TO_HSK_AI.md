@@ -2,6 +2,14 @@
 
 **This is the start-here file for the NEXT migration phase.** Work on the design-system source continues in `akbarholturaev11-lang/HSK-AI-Design-System` alone. It is **not** an instruction to run the HSK AI application, change PWA/Android screens or copy files into HSK AI main today.
 
+## Latest owner decision: internal rulebook, retain NON-SCREEN design examples
+
+**We publish nothing.** The goal is to make HSK AI's private professional design corpus authoritative. **Carry useful generic design illustration PNGs** (component anatomy, placement, states, variants, spacing, palettes-as-concepts) into the later documentation transfer, together with all corresponding professional micro-rules. **Do not carry full screenshots of a different app** or source product-specific school/Gems/rewards/mascot screens. Evaluate actual image content, **not just filenames**. HSK AI's verified colors, 4-unit spacing and canonical characters are still authoritative; source samples never silently become HSK palette tokens or live functions.
+
+Read the [directly visually inspected reference decisions](docs/migration/VISUAL_REFERENCE_SELECTION.md): eight real source PNGs examined so far, **six generic design samples selected** and **two external product-specific screens excluded**. Remaining source images await classification; these eight results are not invented classifications for the other 308 PNGs.
+
+**No public release or publication review is planned.** We do not need to redraw every foreign screenshot, license-clear every archived image to finish the rulebook, or rebuild source Storybook. Retain helpful **non-screen** samples as supporting internal references, plus the 44/44 texts, professional-first priority and verified HSK AI exceptions. The subsequent product-repository integration is separate and untouched now. This decision supersedes older blanket "omit all source images" or "reconstruct all 298 figures" mandates elsewhere in the audit history.
+
 ## The non-negotiable owner goal
 
 **Make the COMPLETE professionally adapted design-guideline corpus the MOST IMPORTANT UI/UX design system in HSK AI.** Every future UI/UX decision should begin with the professional standard and its smallest, evidenced HSK AI-specific exceptions. The current PWA/Android appearance must not lower professional visual quality. Preserve every relevant fine detail: composition, hierarchy, space, geometry, state, responsive motion, accessibility, content truth, interactive behavior and source-grounded examples.
