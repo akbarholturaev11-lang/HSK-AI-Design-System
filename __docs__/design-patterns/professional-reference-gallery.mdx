@@ -1,0 +1,132 @@
+import {Meta} from "@storybook/addon-docs/blocks";
+import {
+    HskProgressReference,
+    HskTrendReference,
+    HskDistributionReference,
+    HskTableReference,
+} from "../design-components/assets/hsk-reference/HskReferenceDemos";
+import contrastImg from "../design-foundations/assets/colors/accessible-pairings.png";
+import colorRolesImg from "../design-foundations/assets/colors/semantic-tokens.png";
+import focusBorderImg from "../design-foundations/assets/borders-and-dividers/focus-border.png";
+import stateInputsImg from "../design-foundations/assets/borders-and-dividers/state-inputs.png";
+import iconUsageImg from "../design-foundations/assets/iconography/usage-guidelines-1.png";
+import iconLibraryImg from "../design-foundations/assets/iconography/icon-library.png";
+import emptyReportImg from "./assets/data-reports/empty-container.png";
+import errorReportImg from "./assets/data-reports/error-page-load.png";
+import filteredReportImg from "./assets/data-reports/filtered-container.png";
+import onboardingFlowImg from "./assets/onboarding-and-setup/logic-framework-how-they-play-together-5.png";
+import onboardingActivationImg from "./assets/onboarding-and-setup/activation-1.png";
+import chartHierarchyImg from "../design-components/assets/chart-container/heading-hierarchy.png";
+import tableLayoutImg from "../design-components/assets/data-tables/basic-table.png";
+import distributionLayoutImg from "../design-components/assets/distribution-charts/container.png";
+import progressLayoutImg from "../design-components/assets/progress-charts/container.png";
+import trendLayoutImg from "../design-components/assets/trend-charts/container.png";
+import popoverAnchorImg from "../design-components/assets/popovers/adaptive-anchoring.png";
+import feedbackImg from "./assets/collecting-feedback/feedback-open-widget.png";
+
+<Meta title="Design Guidelines / References / Recovered professional examples" />
+
+# Recovered professional visual references
+
+> **SOURCE REFERENCE — NOT HSK AI UI OR PRODUCT RULES.** These professional diagrams were safely recovered from this repository's historical revision `f5ce49c`. They were created for a different educational product and may include its colors, wording, brand marks and school workflows. They must never be copied into the HSK AI app, treated as the approved HSK AI palette, or used to justify unsupported features. The diagrams are **non-authoritative instructional examples**, not screenshots of the current PWA or Android application.
+
+The `main` branch's HSK AI rules, `AGENTS.md`, canonical character system and server-verified data contracts remain authoritative. For new work, prefer their related guideline pages, then use a figure here **only to understand a reusable professional design principle**. Do not revive upstream school, Gems, Khanmigo, Khanductor or teacher-specific rules.
+
+## 1. Semantic colors and contrast
+
+The first original diagrams explain *contrast and semantic color structure*, not which exact colors HSK AI must use.
+
+<img src={contrastImg} alt="Original upstream illustration of accessible foreground-background color pairings. Historical reference, not HSK AI palette." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+<img src={colorRolesImg} alt="Original upstream diagram grouping semantic color tokens; use only as an example of hierarchy, not a prescription for HSK AI colors." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+**Useful principle:** semantic meaning survives themes and does not depend on color alone. Verify actual HSK AI light/dark tokens and contrast; distinguish ordinary brand red from destructive/error states. Do not copy the source palette's primitive names, numbers or token library.
+
+## 2. Borders and accessible focus
+
+<img src={focusBorderImg} alt="Original example of visually distinguishable keyboard focus borders." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+<img src={stateInputsImg} alt="Original component state example with border variations for different field states." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+**Useful principle:** controls should have a consistent visible focus, non-color-only invalid states, readable separation and clear inactive/read-only styling. These examples are not HSK AI border tokens or a mandatory third-party focus package.
+
+## 3. Icons and hit areas
+
+<img src={iconUsageImg} alt="Original design-system illustration of icon use and clarity, not approved HSK AI glyphs." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+<img src={iconLibraryImg} alt="Original source library illustration; icon shapes are historical examples only." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+**Useful principle:** consistent weight, size and label meaning; readable icon+text states; adequate accessible touch targets. Use HSK AI's own approved icon set and preserve its Panda/characters and red Voice Orb rather than translating them into a generic icon family.
+
+## 4. Reports: empty, loading, failed and filtered states
+
+<img src={emptyReportImg} alt="Original illustration of a report with no content, not a current HSK AI report." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+<img src={errorReportImg} alt="Original report failure layout and recovery hierarchy; source content is not HSK AI analytics." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+<img src={filteredReportImg} alt="Original example of filtered report presentation, for structural comparison only." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+**Useful principle:** `0`, no records, no matching records, loading, failure, stale snapshots and unknown metrics are distinct states. Show a real scope/time window and a working retry where one exists. Do not invent a teacher roster or a missing Android event to make a screenshot look complete.
+
+## 5. First-run setup and decision order
+
+<img src={onboardingFlowImg} alt="Original school onboarding flow reference illustrating order and dependency, not HSK AI's iPhone or Android flow." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+<img src={onboardingActivationImg} alt="Historical school account activation example; do not copy it into HSK AI login." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+**Useful principle:** one clear action per step, accurate progress in a true sequence, back navigation without losing entered data, and Skip only for optional inputs. Existing iPhone Safari-to-PWA setup and Android guest/login paths are different and must be verified against current HSK AI code.
+
+## 6. Chart and table layout anatomy
+
+<img src={chartHierarchyImg} alt="Original source diagram of chart title and context hierarchy, not HSK AI styling." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+<img src={tableLayoutImg} alt="Original demonstration of a table layout; the source's school records are not HSK AI data." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+<img src={progressLayoutImg} alt="Original progress layout container; source targets and color tokens are not HSK AI rules." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+<img src={trendLayoutImg} alt="Historical trend chart layout example, without authority over current HSK AI metrics." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+<img src={distributionLayoutImg} alt="Original distribution chart layout showing grouping and labels; source grading bands must not be imported." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+**Useful principle:** every figure communicates a defined metric, accessible exact values, trustworthy denominators, and a visible period. A progress chart starts at zero, missing observations are not zeros, and distribution groups must reconcile to their actual population. Use native HSK AI styles and real authorized data in production.
+
+## 7. Popovers and feedback placement
+
+<img src={popoverAnchorImg} alt="Original source popover placement illustration; desktop placement is not mandatory on phones." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+<img src={feedbackImg} alt="Original source feedback window; not HSK AI's current feedback service." style={{maxWidth: 660, width: "100%", height: "auto"}} />
+
+**Useful principle:** contextual help must not block lesson answers, voice input or the keyboard; feedback drafts should not be discarded unintentionally. Submit success requires a confirmed server response, and any screenshot attachment must follow the current HSK AI permission/privacy contract.
+
+## HSK AI-only interactive replacements
+
+These working documentation demonstrations replace five removed upstream examples that previously hard-coded school assignments, exam grades or Gems. **All values below are deliberately fictional sample data**, not account activity, actual mastery thresholds, an available admin feature or a current product screen. They do not call any external service.
+
+### Progress toward a defined sample goal
+
+<HskProgressReference />
+
+### A trend with missing observations — chart versus exact table
+
+<HskTrendReference />
+
+### Distribution across mutually exclusive sample categories
+
+<HskDistributionReference />
+
+### Exact Hanzi + pinyin records with sorting
+
+<HskTableReference />
+
+## Recovery and review rules
+
+1. The restored PNG files are **historical source examples**. The gallery shows a curated subset of the recovered images; other assets remain available in their original paths for controlled reference, not automatic use.
+2. Do not reintroduce source-only character illustrations, Gem challenges, schools, teacher workflows, score thresholds, source color tokens or original proprietary icon demands.
+3. The four React demonstrations are **documentation-only fictional data** and require no HSK AI application services. They do not define backend events or release a new analytics screen.
+4. Before copying a principle into HSK AI, check the actual PWA/Android code, account authorization, payment status, exercise answer reveal behavior, typography, themes and accessibility.
+5. In any implementation, verify CSS/Android responsive behavior, keyboard interaction, missing versus zero, screen-reader summary and reduced motion. Do not call the demonstration a tested production app feature.
+6. `AGENTS.md` and the adapted HSK AI guidelines have precedence over this gallery if wording conflicts.
+
+## Build boundary
+
+This reference page is included in the documentation's Storybook MDX glob. **A passing build and visual inspection must be recorded before merging** the recovery branch. GitHub file existence and import resolution alone are insufficient evidence of a successful Storybook build.
