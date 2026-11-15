@@ -9,14 +9,14 @@
 
 - **44 active MDX guideline pages:** 11 foundations, 27 components, 5 patterns, 1 introduction.
 - Each of the 44 page blobs below is inventoried by **Git SHA** at the cited branch snapshot; a future migration must check this source SHA has not changed before translating/copying. **Source-page completeness is required: 44/44, no silent omissions.**
-- **299 image-import occurrences** counted on the 44 pages, across **39 image-bearing MDX pages**; five have zero imported images. Occurrences are *not* 299 distinct assets; images may be reused.
+- **299 imported visual bindings** across 44 MDX pages: **298 source illustration/figure references** and **one imported Phosphor `checkCircleBold` SVG icon used in the banner demonstrations**. Thirty-nine pages have figure imports; five do not. These are occurrences, not 299 distinct image files. Figure replacement is still subject to provenance and visual-detail review.
 - The repository Git tree contains **316 PNG blobs and 30 static font files**; their exact paths and source SHA prefixes are recorded separately in [ASSET_AND_RUNTIME_INVENTORY.md](ASSET_AND_RUNTIME_INVENTORY.md). Do **not** assume their copyrights/licensing are cleared, or use them in a future product integration merely because they are tracked in Git.
 - The 73 restored historical third-party PNGs and 11 inactive source-code archives have separate file-by-file audit. `docs/audits/deleted-material-item-audit-2026-11-15.md` and `__docs__/reference-archive/RESTORATION_MANIFEST.md` are **evidence, not production assets**.
 - Foreign product visuals, Wonder Blocks runtime code/dependencies, historical vendor logos, bundled fonts, demo screenshots, Figma external prototype links and archive text must not become default HSK AI app requirements.
 
 ## Destination file map (all 44, zero gaps)
 
-The destination paths are the **intended documentation locations**, not files already present in HSK AI. Convert MDX/Storybook UI wrappers into portable Markdown **without deleting the professional design decisions**. Protect meaningful diagram geometry by rights-cleared originals or detailed textual description; do not just drop all figures and call the guide complete.
+The destination paths are the **intended final HSK AI documentation locations**, not files already present in the HSK AI product. The current drafts are separate `docs/portable/guidelines/` copies inside **this design repository**. Convert MDX/Storybook UI wrappers into portable Markdown **without deleting the professional design decisions**. Protect meaningful diagram geometry by rights-cleared originals or detailed textual description; do not just drop all figures and call the guide complete.
 
 | # | Source file | Git blob (prefix) | Image imports | Intended destination | Packaging work |
 | ---: | --- | --- | ---: | --- | --- |
@@ -92,8 +92,8 @@ The destination paths are the **intended documentation locations**, not files al
 - ✅ Accurate page counts, paths, images-import exposure and pinned source blob SHAs.
 - ✅ Master professional-first priority and approved HSK AI functional/brand exceptions written in source repository.
 - ✅ Source-to-HSK AI professional design reconciliation exists separately, including historical 45-page SHA matrix.
-- 🔶 A migration-ready one-file-per-guideline **portable, clean Markdown export has not yet been created or checked**. A proposed destination path in this catalog is not that file.
-- 🔶 299 image-import occurrences require explicit no-loss textual/rights-cleared handling; **figure transfer itself is not cleared**.
+- ✅ **44/44 source-derived portable Markdown review copies** now exist in [`docs/portable/guidelines/`](../portable/guidelines/) with a [navigable index](../portable/README.md). Source-page heading counts were compared during conversion and a first 44-file scan found no remaining JSX tags or broken links to other portable Markdown files. **This is not a claim of complete visual fidelity, cleared prose/media rights, or a final authorized transfer.**
+- 🔶 **298 historical figure placements** are represented by in-context descriptions/source asset pointers; detailed geometry and image-rights review remains open. The 299th visual import is an icon-package glyph, documented as professional success-banner semantics rather than a transferred source image.
 - 🔶 Target HSK AI `AGENTS.md` / UI skill have **not** been changed: see the verified conflicts register.
 - 🔶 No actual design-system repository subtree was added to the target. It is not correct to claim the transfer is complete.
 
