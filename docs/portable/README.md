@@ -4,6 +4,14 @@
 
 **Latest verification:** [44 guideline pages, 212 original-SHA image blobs and all local reference links — integrity audit](../audits/PORTABLE_EXAMPLE_INTEGRITY_2026-11-15.md). The historic source-notes in the portable pages have been reconciled with the physically copied, selected sample images; excluded screenshots are not present in the portable examples directory.
 
+## Additional HSK AI-owned UX contract — one new page (44 + 1)
+
+**[HSK AI learner UI/UX — product-specific standards and approved roadmap](guidelines/hsk-ai-product-ux-contract.md)** is a **new, 45th portable rule document** assembled from the **current HSK-AI-Bot `main` UI skill, root agent rules, progressive-loading contract and eight owner-approved UI/UX roadmap tasks** (reviewed 2026-11-15). It contains evergreen learner-facing UX invariants, exact approved future screen behavior, source commit/blob provenance, conflict resolution for older product instructions, and future Codex checks.
+
+**Inventory accounting:** **44 historical professional guideline conversions + 1 original HSK AI-specific supplement = 45 Markdown rule pages**. The 44/44 MDX parity audit, 35 imaged historical pages, 212 portable selected PNGs, and 29 source demos retain their **original scope and counts**. This new guide adds **no images**, does not retroactively certify third-party rights, and does **not** mean any approved future UI work has been implemented in the product.
+
+**Mandatory reading route for future product UI/UX work:** professional-first contract and approved design decisions → this HSK AI-specific supplement → applicable detailed professional guideline(s) → refreshed product `AGENTS.md` and existing `hsk-ai-ui` skill and real current source. The separate later migration must reconcile the skill's outdated one-line disclosure and generic checkout smart-exit with the owner's current two-line and UIUX-012 offer decisions **without replacing unrelated product agent instructions**.
+
 ## Portable image-library integration complete (35 guidelines / 212 source-exact PNGs)
 
 The **212 visually selected source sample PNG files are now physically included within this design repository** at [`docs/portable/examples/`](examples/README.md), copied using their **original Git blob SHAs, without recompression or pixel alteration**. The [machine-readable manifest](examples/manifest.json) links every selected source image, destination image, content SHA and audit batch. **All 35 corresponding portable Markdown guidelines contain an image preview and direct links to all their approved examples**; the other nine guidelines intentionally remain text-only, because their historical assets were excluded or did not have an approved generic sample.
