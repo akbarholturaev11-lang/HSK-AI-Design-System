@@ -26,6 +26,8 @@ import {Do, Dont} from "../components/DoDont";
 
 # Dropdown select
 
+> **HSK AI application:** The source dropdown examples show professional selection, accessibility and feedback behavior, not HSK AI school screens. Use the existing HSK AI component style and **only the actual options** available in a course, learning-preference form or supported report.
+
 <NeutralBadge label="Predefined list selection" />
 
 A selection control used in forms, modals, settings panels, and filter bars. Can start empty or with a product default. Single-select and multi-select variants.
@@ -37,8 +39,8 @@ The choice to use a dropdown is based on the need to select from a predefined li
 | Use when | Rule | Example use |
 | --- | --- | --- |
 | Selecting a single value | One option must be chosen from a list. | Selecting a course in a filter bar or form. |
-| Selecting multiple values | More than one option can be chosen simultaneously. | Selecting multiple grades to filter a report. |
-| List is too long for radio buttons or checkboxes | More than 8 options. | Selecting a school from a district-wide list. |
+| Selecting multiple values | More than one option can be chosen simultaneously. | Selecting several supported exercise types in a filtered view, when that multi-select is implemented. |
+| List is too long for radio buttons or checkboxes | More than 8 options. | Selecting from a long available vocabulary category list, if that selector exists. |
 
 ## <Dont /> When NOT to use
 
@@ -60,7 +62,7 @@ A dropdown is also acceptable at eight or fewer outside the filter bar — a set
 
 The filter bar holds two controls that look alike once opened. The difference is who decided the filter is there.
 
-A dropdown select is a dimension the product has placed in the bar — Course, Date, School. It is always visible, whether or not it currently holds a value, because the view is defined in terms of it.
+A dropdown select is a dimension the product places in the view — such as an actual course, HSK level or date scope, when required. It is always visible, whether or not it currently holds a value, because the view is defined in terms of it.
 
 An inline filter button is a filter the user opts into. It is not in the bar until they add it. Activating it opens a menu that looks and behaves like a dropdown select, which is why the two are easy to confuse once open — but it can be removed entirely, and the view is complete without it.
 
@@ -68,7 +70,7 @@ The test: if the view cannot be described without the dimension, it is a dropdow
 
 Whether either control produces an active filter is a separate question, decided by whether it carries a product default. See <a href="./?path=/docs/design-guidelines-components-inputs-active-filters--docs">Active filters</a>.
 
-The inline filter button is not yet documented in this system. Treat this as known design debt.
+The inline filter button has its own <a href="./?path=/docs/design-guidelines-components-inputs-inline-filter-button--docs">documented guideline</a>. Use it for optional rather than required filtering.
 
 ## Variants
 
@@ -92,7 +94,7 @@ The label sits inside the field to the left of the value. Used in filter bars an
 
 ### Single-select
 
-One option can be selected. Selecting an option commits it immediately and closes the menu. In a form this sets the field value; in a filter bar it re-queries the data. A filled blue circle with a checkmark marks the active item.
+One option can be selected. Selecting an option commits it immediately and closes the menu. In a form this sets the field value; in a filter bar it re-queries the data. An accessible checked indicator marks the selected item using HSK AI's approved semantic colors and icons; do not copy the source product's blue palette.
 
 <img src={singleSelectImg} alt="An open single-select menu listing Geometry 1, Algebra 1, and Algebra 2, with Algebra 2 marked active by a filled blue checkmark circle" />
 
@@ -171,3 +173,12 @@ Option labels must be clear, concise, and immediately understandable, avoiding a
 Order options logically. This can mean arranging them alphabetically, numerically, by popularity, or by functional grouping, depending on what best supports the user’s scanning process.
 
 <img src={copyOrderingImg} alt="Two menus showing ordering strategies: a status list ordered by functional grouping (To do, In progress, Complete) and a state list ordered alphabetically (Alabama, Alaska, Arizona)" />
+
+## HSK AI product application
+
+### HSK AI selected values and mobile safety
+
+- The HSK level or lesson choices must match the **actual available product and account state**. Do not show unsupported levels, fabricated exercise types or a default that silently changes stored progress.
+- For a small fixed set of choices, preserve the original guidance to show options directly where space permits. On phones, long translated labels, Hanzi and pinyin must not become unreadable solely to satisfy a rigid desktop layout.
+- Source illustrations are teaching references only. Use the approved HSK AI icons, theme colors and existing mobile dropdown/sheet behavior, with at least 44 CSS px touch area on iPhone PWA and 48 dp on native Android.
+- Keep single-select commits immediate, multi-select pending until Apply, and Cancel nondestructive. Required, disabled, read-only and error states retain distinct meanings and accessible explanations.
