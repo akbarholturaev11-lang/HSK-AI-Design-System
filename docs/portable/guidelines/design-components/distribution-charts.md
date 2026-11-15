@@ -123,3 +123,11 @@ Do not assign a learner's HSK level to a score bin unless such mapping is suppor
 ## Scope
 
 This guideline contains no source-school assessment charts, currency, grade taxonomy or generic mock score data presented as production truth. It does not change the actual HSK AI analytics pipeline or introduce new chart functionality.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: header.png](../../examples/design-components/distribution-charts/header.png)
+
+- [header.png](../../examples/design-components/distribution-charts/header.png) — exact source blob `8d9ed89b089d` (illustrated above)

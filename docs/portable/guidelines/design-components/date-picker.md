@@ -62,3 +62,14 @@ Users can type directly (MM/DD/YYYY) or click the calendar icon to pick visually
 Label the field for the date being set, not the control — "Due date", not "Date picker" or "Select a date". Use sentence case and no ending punctuation.
 
 Use MM/DD/YYYY as the placeholder so the expected format is visible before the user types. Do not rely on a label or helper text alone to communicate format.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: custom-range-modal.png](../../examples/design-components/date-picker/custom-range-modal.png)
+
+- [custom-range-modal.png](../../examples/design-components/date-picker/custom-range-modal.png) — exact source blob `5f4c943aadc4` (illustrated above)
+- [date-picker.png](../../examples/design-components/date-picker/date-picker.png) — exact source blob `8aa266563dfa`
+- [interaction.png](../../examples/design-components/date-picker/interaction.png) — exact source blob `434d3642b037`
+- [standalone.png](../../examples/design-components/date-picker/standalone.png) — exact source blob `1b3cfb16561c`

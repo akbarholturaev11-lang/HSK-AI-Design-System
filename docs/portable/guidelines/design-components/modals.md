@@ -204,3 +204,19 @@ Use explicit verbs that describe exactly what will happen. The user should be ab
 - Destructive actions use the semantically distinct Critical palette, not the ordinary HSK AI brand-red primary style. In high-risk decisions, emphasize the safe choice to reduce accidental data loss.
 - A dialog may support two or three short steps; long workflows should be dedicated screens. Avoid stacking task dialogs, except one focused confirmation that resolves dismissal of the underlying dialog.
 - This file does not change production app screens; later implementation must verify existing components and tests first.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: buttons-directional.png](../../examples/design-components/modals/buttons-directional.png)
+
+- [buttons-directional.png](../../examples/design-components/modals/buttons-directional.png) — exact source blob `a59bc5ea62f8` (illustrated above)
+- [buttons-pairings.png](../../examples/design-components/modals/buttons-pairings.png) — exact source blob `c3eeaae373b6`
+- [copy-actions.png](../../examples/design-components/modals/copy-actions.png) — exact source blob `813144c3d246`
+- [copy-body.png](../../examples/design-components/modals/copy-body.png) — exact source blob `388787fdaf0f`
+- [copy-headline.png](../../examples/design-components/modals/copy-headline.png) — exact source blob `87e8335b3b33`
+- [interaction-dismissal.png](../../examples/design-components/modals/interaction-dismissal.png) — exact source blob `633895577783`
+- [modals.png](../../examples/design-components/modals/modals.png) — exact source blob `a1ba7d7b5be7`
+- [placement-actions.png](../../examples/design-components/modals/placement-actions.png) — exact source blob `076ad73c100f`
+- [placement-centered.png](../../examples/design-components/modals/placement-centered.png) — exact source blob `93e7b64a1b4a`

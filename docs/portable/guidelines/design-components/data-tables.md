@@ -132,3 +132,11 @@ Use a table for comparable structured records with stable column meanings. It is
 ## Implementation boundary
 
 This is HSK AI guidance, not a schema migration or a promise that table sorting, pagination and exporting have shipped. It intentionally removes the source's teacher/grade/class screenshots, classroom record policy and school score examples.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: basic-table.png](../../examples/design-components/data-tables/basic-table.png)
+
+- [basic-table.png](../../examples/design-components/data-tables/basic-table.png) — exact source blob `9826e9506e8a` (illustrated above)

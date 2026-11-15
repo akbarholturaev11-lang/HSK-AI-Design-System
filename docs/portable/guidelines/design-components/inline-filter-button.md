@@ -79,3 +79,15 @@ For active filters display behavior and "Clear all filters" logic, see the [Filt
 - On a narrow PWA/Android screen, do not force several filters onto one horizontal row. Use readable wrapping or the existing mobile selection sheet and preserve visible applied selections.
 - These criteria are **examples**, not a mandate to add filtering to every vocabulary, exercise or reporting screen. A dependency between options must be backed by real product data.
 - The result count must reconcile after each change. Clearing a filter never alters a learner's actual answers, study record or account data.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: inline-filter-button.png](../../examples/design-components/inline-filter-button/inline-filter-button.png)
+
+- [inline-filter-button.png](../../examples/design-components/inline-filter-button/inline-filter-button.png) — exact source blob `97c6bde9230a` (illustrated above)
+- [interaction-1.png](../../examples/design-components/inline-filter-button/interaction-1.png) — exact source blob `b48c04571a81`
+- [interaction-2.png](../../examples/design-components/inline-filter-button/interaction-2.png) — exact source blob `d4e25ef4faef`
+- [variants-1.png](../../examples/design-components/inline-filter-button/variants-1.png) — exact source blob `346126e6514b`
+- [variants-2.png](../../examples/design-components/inline-filter-button/variants-2.png) — exact source blob `b17bdf51c3ab`

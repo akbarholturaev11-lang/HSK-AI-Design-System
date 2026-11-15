@@ -89,3 +89,15 @@ For dropdown list labels, show a compact, unambiguous date in the learner’s se
 - The source English month/day formatting is an example for that locale, **not a mandatory date format for HSK AI's supported languages**. Use the learner's localized readable dates while preserving the same selected period.
 - A default required date scope is not cleared as an optional filter. An optional added date filter can be removed to restore the correct all-time scope. Preserve the original selection and clear/reset rules.
 - A date picker or custom range must fit a phone, safe areas and keyboard. Do not add unsupported historical periods or imply cross-platform metrics are complete when coverage is partial.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: copy.png](../../examples/design-components/date-filter/copy.png)
+
+- [copy.png](../../examples/design-components/date-filter/copy.png) — exact source blob `4408003a6dd2` (illustrated above)
+- [date-filter.png](../../examples/design-components/date-filter/date-filter.png) — exact source blob `1a71feccf89c`
+- [interaction.png](../../examples/design-components/date-filter/interaction.png) — exact source blob `c01da37913e6`
+- [variants-1.png](../../examples/design-components/date-filter/variants-1.png) — exact source blob `622d0fa717b3`
+- [variants-2.png](../../examples/design-components/date-filter/variants-2.png) — exact source blob `858ca1fdac0c`

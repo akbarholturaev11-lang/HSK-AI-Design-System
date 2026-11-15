@@ -160,3 +160,25 @@ Order options logically. This can mean arranging them alphabetically, numericall
 - For a small fixed set of choices, preserve the original guidance to show options directly where space permits. On phones, long translated labels, Hanzi and pinyin must not become unreadable solely to satisfy a rigid desktop layout.
 - Source illustrations are teaching references only. Keep the professional visual anatomy, option hierarchy and keyboard/focus behavior; use approved HSK AI brand icon/semantic roles and implement the appropriate anchored menu or mobile sheet for actual platform constraints, with at least 44 CSS px touch area on iPhone PWA and 48 dp on native Android. The current sheet visuals may be redesigned later.
 - Keep single-select commits immediate, multi-select pending until Apply, and Cancel nondestructive. Required, disabled, read-only and error states retain distinct meanings and accessible explanations.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: copy-ordering.png](../../examples/design-components/dropdown-select/copy-ordering.png)
+
+- [copy-ordering.png](../../examples/design-components/dropdown-select/copy-ordering.png) — exact source blob `7d5a25e3b481` (illustrated above)
+- [copy-truncation.png](../../examples/design-components/dropdown-select/copy-truncation.png) — exact source blob `7c9fa2167755`
+- [dropdown-select.png](../../examples/design-components/dropdown-select/dropdown-select.png) — exact source blob `e8b14fde21cb`
+- [in-menu-search.png](../../examples/design-components/dropdown-select/in-menu-search.png) — exact source blob `7f56fa029a25`
+- [label-above.png](../../examples/design-components/dropdown-select/label-above.png) — exact source blob `23c265ede998`
+- [label-inline.png](../../examples/design-components/dropdown-select/label-inline.png) — exact source blob `724173d629c8`
+- [multi-select-2.png](../../examples/design-components/dropdown-select/multi-select-2.png) — exact source blob `2992cbd51102`
+- [multi-select-apply.png](../../examples/design-components/dropdown-select/multi-select-apply.png) — exact source blob `dc4b4d8d9d2a`
+- [multi-select.png](../../examples/design-components/dropdown-select/multi-select.png) — exact source blob `f461f407e82f`
+- [single-select.png](../../examples/design-components/dropdown-select/single-select.png) — exact source blob `f76bc77c9844`
+- [state-context.png](../../examples/design-components/dropdown-select/state-context.png) — exact source blob `c9ecdcac69db`
+- [state-disabled.png](../../examples/design-components/dropdown-select/state-disabled.png) — exact source blob `6471457f2441`
+- [state-error.png](../../examples/design-components/dropdown-select/state-error.png) — exact source blob `92b156667713`
+- [state-helper-text.png](../../examples/design-components/dropdown-select/state-helper-text.png) — exact source blob `40ad7d104904`
+- [state-read-only.png](../../examples/design-components/dropdown-select/state-read-only.png) — exact source blob `14a3203b64bb`
