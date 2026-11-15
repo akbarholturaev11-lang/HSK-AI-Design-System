@@ -1,4 +1,13 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import sourceReportsHeader from "./assets/data-reports/header.png";
+import sourceReportsSection from "./assets/data-reports/own-section.png";
+import sourceReportsEmptyContainer from "./assets/data-reports/empty-container.png";
+import sourceReportsEmptyPage from "./assets/data-reports/empty-page.png";
+import sourceReportsFilteredContainer from "./assets/data-reports/filtered-container.png";
+import sourceReportsFilteredPage from "./assets/data-reports/filtered-page.png";
+import sourceReportsErrorLoad from "./assets/data-reports/error-page-load.png";
+import sourceReportsErrorRefresh from "./assets/data-reports/error-page-update.png";
+import sourceReportsErrorContainer from "./assets/data-reports/error-container.png";
 
 <Meta title="Design Guidelines / Patterns / Data reports" />
 
@@ -96,6 +105,70 @@ Do not hide critical error details behind the optional two-line chevron pattern.
 - Mobile screen, keyboard, bottom navigation, dynamic text and reduced-motion behavior take priority over fixed desktop screenshots.
 - Provide descriptive headings, understandable counts/units and keyboard/screen reader equivalents for every chart. Never rely on color alone.
 - Optional lengthy **secondary descriptions** may collapse to **at most two fully visible lines** with only a top-right ⌄/⌃ control, but charts, denominators, time ranges, errors, permissions and essential facts must remain visible.
+
+## Restored professional source examples
+
+> **Historical education-product diagrams only.** These examples preserve valuable interaction, composition and state patterns, not HSK AI's actual screens, roles, artwork, data or feature inventory. See the HSK AI-specific rules above before making a production design decision.
+
+### Example 1: header
+
+<img src={sourceReportsHeader} alt="Original report structure with source metrics; not real HSK AI analytics" />
+
+A report begins with a purpose, scope, heading and verified current range; primary controls are not copied from another product.
+
+### Example 2: own section
+
+<img src={sourceReportsSection} alt="Source example of a dedicated report section and filters; classroom data are illustrative only" />
+
+Give a dataset its own page or section when it needs many filters, search, sort or wide tables; place controls above the data they affect.
+
+### Example 3: empty container
+
+<img src={sourceReportsEmptyContainer} alt="Original empty chart-container pattern" />
+
+When a chart alone has no records, retain its title and applicable controls while replacing only the visualization with specific neutral copy.
+
+### Example 4: empty page
+
+<img src={sourceReportsEmptyPage} alt="Original no-records report-page pattern" />
+
+For a totally empty report, keep page context and date/filter scope; distinguish no captured records from not authorized.
+
+### Example 5: filtered container
+
+<img src={sourceReportsFilteredContainer} alt="Original filtered empty container reference" />
+
+Show which filters exclude records. A local no-match state should guide the user to adjust that scope, not imply the backend has no data.
+
+### Example 6: filtered page
+
+<img src={sourceReportsFilteredPage} alt="Original filtered empty report reference with reset action" />
+
+Maintain applied filters and a legitimate clear-filters action without resetting unrelated search/sort unless the user chooses to.
+
+### Example 7: error page load
+
+<img src={sourceReportsErrorLoad} alt="Source full-report loading failure example" />
+
+If initial loading failed, do not display invented zero data; offer a real recovery action and preserve the user's filter choices.
+
+### Example 8: error page update
+
+<img src={sourceReportsErrorRefresh} alt="Source report refresh failure with previous data retained" />
+
+If an update fails but older verified results remain, identify them as stale and retain them only where authorized; never present them as newly refreshed.
+
+### Example 9: error container
+
+<img src={sourceReportsErrorContainer} alt="Source error isolated to one chart container" />
+
+Failure of one card/chart should not destroy other unrelated loaded data. Give the faulty region its own accessible error notice.
+
+### Professional state hierarchy
+
+**No records** means successful fetch and empty authorized scope. **Filtered to none** means available records may exist but not match selected criteria. **Not enough data** means a chart comparison cannot yet be supported. **No permission** is different from either; never reveal protected totals. **Processing/partial coverage** must name its actual verified data status rather than display a false final total.
+
+Report-level filters apply consistently to all included metrics; chart-local filters must be visibly scoped. Avoid double-counting duplicated events, mixing user- and admin-level identities, or comparing non-audited platform attribution with fully audited totals. On a phone, a large table can need a different layout, but must preserve actual record and filter semantics. Keep chart/table accessible data alternatives and enough width for Hanzi, pinyin and localized date formats.
 
 ## Implementation boundary
 
