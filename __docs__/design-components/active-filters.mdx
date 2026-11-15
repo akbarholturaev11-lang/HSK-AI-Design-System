@@ -12,6 +12,8 @@ import {Do, Dont} from "../components/DoDont";
 
 # Active filters
 
+> **HSK AI application:** The original images show the source product's school filters as **structural examples only**. In HSK AI, an active-filter label describes a real, removable choice on an available learner list or an authorized report. Keep the approved visual style and mobile layout.
+
 <NeutralBadge label="Active filter feedback" />
 
 Compact visual elements that provide transparent feedback on the current dataset. In our reporting interface, they are primarily used to display active filter selections directly below the filter bar.
@@ -22,8 +24,8 @@ The choice to use active filters is determined by the need to provide immediate 
 
 | Use when | Example use |
 | --- | --- |
-| The user needs to see what filters are currently applied | Showing "Grade: 6th grade" after selecting from the Grades dropdown. |
-| Individual filters should be removable without resetting all others | Removing only "Subject: Math" while keeping school and date filters active. |
+| The user needs to see what filters are currently applied | Showing "HSK level: HSK 3" after the learner explicitly applies an available level filter. |
+| Individual filters should be removable without resetting all others | Removing only "Exercise type: Listening" while preserving other actually selected criteria. |
 
 ## <Dont /> When NOT to use
 
@@ -48,7 +50,7 @@ Not every control in the filter bar produces a chip. The deciding factor is who 
 
 ## States
 
-Each active filter displays the filter category and its selected value — for example, "School: Addison Middle School." A dismiss icon allows the user to deactivate that specific filter.
+Each active filter displays the filter category and its selected value — for example, "HSK level: HSK 3." A dismiss icon allows the user to deactivate that specific filter.
 When more active filters exist than can fit on one line, they wrap to a second line to maintain full transparency.
 
 <img src={statesImg} alt="A report filter bar with search, date, and school controls, above five active filter pills that wrap onto a second line, each showing a category and value with a dismiss icon, followed by a Clear all filters link" />
@@ -62,8 +64,17 @@ They sit above the data visualization — cards, charts, or tables — acting as
 
 ## Copy
 
-Use the format [Category]: [Value] — for example, "Subject: Math." This ensures users can immediately understand what each chip represents without needing to open the dropdown to check.
+Use the format [Category]: [Value] — for example, "HSK level: HSK 3." This ensures users can immediately understand what each chip represents without needing to open the dropdown to check.
 
-For multi-select filters, each selected value gets its own chip rather than combining them into one — "Grade: 6th grade" and "Grade: 7th grade" as two chips, not "Grades: 6th, 7th" as one. This keeps each value individually scannable and removable.
+For multi-select filters, each selected value gets its own chip rather than combining them into one — "HSK level: HSK 3" and "HSK level: HSK 4" as two chips, not one ambiguous combined label as one. This keeps each value individually scannable and removable.
 
 <img src={copyImg} alt="Copy" />
+
+## HSK AI product application
+
+### HSK AI application
+
+- Display removable filter labels **only for actually selected, optional criteria**. A fixed selected HSK course or required default scope is not automatically an active removable filter.
+- The source figure shows the position, not HSK AI colors or Khan Academy subject labels. On phones, wrap labels, keep a clearly named removal control and prevent labels from covering the result count.
+- Removing one selected criterion must retain other filters, any typed search and the sort order. Keep the resulting count consistent with the listed records.
+- Use the approved HSK AI touch targets, iconography and readable labels; do not represent lesson progress or Pro status as an active filter if it is merely a static badge.
