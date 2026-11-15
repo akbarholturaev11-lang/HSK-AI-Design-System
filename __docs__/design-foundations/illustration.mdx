@@ -1,6 +1,9 @@
 import {Meta} from "@storybook/addon-docs/blocks";
 import Principle, {PrincipleSet} from "../components/principle";
 import illustrationImg from "./assets/illustration/illustration.png";
+import audienceCalibration1Img from "./assets/illustration/audience-calibration-1.png";
+import audienceCalibration2Img from "./assets/illustration/audience-calibration-2.png";
+import typesOfIllustration1Img from "./assets/illustration/types-of-illustration-1.png";
 import typesOfIllustration3Img from "./assets/illustration/types-of-illustration-3.png";
 import typesOfIllustration4Img from "./assets/illustration/types-of-illustration-4.png";
 import typesOfIllustration5Img from "./assets/illustration/types-of-illustration-5.png";
@@ -60,6 +63,18 @@ Friendly and recognizable, without turning every screen into decoration. Use the
 
 Keep illustrations sparse, minimal and supportive. Prefer concise text and clear controls on settings, reports and utility screens. Character art is contextual, not mandatory decoration; use a more restrained emotional register than in learner celebrations.
 
+### Original source learner-side comparison
+
+The following **Khan Academy learner illustration** is retained from the original design guidelines to demonstrate the professional contrast between playful learning art and restrained utility art. Its Khanmigo look, customization and colors are **not** part of the HSK AI character system.
+
+<img src={audienceCalibration1Img} alt="Khan Academy original learner-side illustration demonstrating expressive source style, not HSK AI art" />
+
+### Teacher/Admin side
+
+This is an **original Khan Academy teacher/admin illustration reference only**. It demonstrates why data-heavy screens benefit from sparse and calm supportive illustrations. HSK AI’s actual learner/settings screens and its admin PWA must use their own approved imagery and layout.
+
+<img src={audienceCalibration2Img} alt="Khan Academy original teacher/admin illustration showing restrained source artwork, not HSK AI screen" />
+
 ## Usage guidelines
 
 Guidance for how to apply illustration correctly across contexts. Visual examples will be defined here as the system matures.
@@ -98,6 +113,12 @@ Each tier has a distinct purpose, audience, and contrast requirement. Identifyin
 ### HSK AI Panda and approved characters
 
 The existing Panda is the canonical Panda on every screen and platform. Preserve its recognizable face, eyes, ears, body proportions, silhouette, colors, accessories and illustration style. Only pose, gaze, gesture, expression, movement or scene may vary, without changing identity. The same rule applies to each other approved HSK AI character. Reuse approved source artwork and renderers; never replace a character with a merely similar AI-generated mascot. Lesson characters MUST retain their established correct-answer and incorrect-answer expressions, gestures and related visual effects on both PWA and Android; do not flatten, hide, disable, or replace these reactions when applying design-system consistency. Ensure feedback is respectful and never shames learners for errors.
+
+### Historical Khanmigo shape example (upstream only)
+
+This original figure shows Khan Academy’s **hexagonal Khanmigo**. It remains as a source example of how consistent facial geometry communicates identity. **Do not use its hexagon, accessories, color selector or Gem logic** for HSK AI’s Panda, other characters or Voice Orb.
+
+<img src={typesOfIllustration1Img} alt="Original Khan Academy Khanmigo hexagonal shape example; not a permitted HSK AI mascot" />
 
 ### AI Voice Orb
 
