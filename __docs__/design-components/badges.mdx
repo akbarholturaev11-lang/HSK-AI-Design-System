@@ -6,14 +6,12 @@ import variants3Img from "./assets/badges/variants-3.png";
 import variants4Img from "./assets/badges/variants-4.png";
 import variants5Img from "./assets/badges/variants-5.png";
 import variants6Img from "./assets/badges/variants-6.png";
-import variants7Img from "./assets/badges/variants-7.png";
 import states1Img from "./assets/badges/states-1.png";
 import states2Img from "./assets/badges/states-2.png";
 import states3Img from "./assets/badges/states-3.png";
 import states4Img from "./assets/badges/states-4.png";
 import states5Img from "./assets/badges/states-5.png";
 import iconography1Img from "./assets/badges/iconography-1.png";
-import scoreToStatusMapping1Img from "./assets/badges/score-to-status-mapping-1.png";
 import scoreToStatusMapping2Img from "./assets/badges/score-to-status-mapping-2.png";
 import scoreToStatusMapping3Img from "./assets/badges/score-to-status-mapping-3.png";
 import copy1Img from "./assets/badges/copy-1.png";
@@ -50,7 +48,7 @@ The choice to use a badge is determined by the need for a brief, immediate visua
 | Don’t use when | Recommended alternative | Rationale |
 | --- | --- | --- |
 | Signaling a system-wide critical alert | Transient message (toast or banner) | Do not use for global, session-wide errors or urgent system feedback (a service outage, a failed save). Badges label the state of a specific item, not the system as a whole — see Critical error status below for that distinction. |
-| Labeling a permanent identity or category | Tertiary text, tag, or chip | Do not use a Badge for organizational categories or "types" that don't regularly change (e.g., Subject names, District name, User IDs, or Student count). Badges are for state; Tags are for identity. |
+| Labeling a permanent identity or category | Tertiary text, tag, or chip | Do not use a badge for fixed HSK level names, course titles, static user identifiers or other permanent categories. Badges represent state; ordinary labels represent identity. |
 | Prompting a call-to-action | Button or link | Do not use a Badge to drive a user to click or perform an action. They communicate what is, not what to do. |
 | Displaying complex meta-data | Tooltip or inline text | Do not use for conveying long, multi-line data or complex contextual help. If the information cannot fit into one word, use a tooltip or standard text. |
 | Categorization is already established visually | Tertiary text or omit entirely | If an accompanying illustration or icon already establishes the category/identity, do not use a badge. Use subtle tertiary text to provide the label without competing for visual attention. (ex. Insight card) |
@@ -67,7 +65,7 @@ Do signal a critical error when inaction has a negative consequence (missing a d
 ### Warning status
 
 This category communicates a state of potential trouble, pending risk, or non-blocking issues that require user attention and review, but do not necessarily prevent the current task from proceeding. The color should be used to encourage a "Review and Proceed with Caution" behavior.
-Do signal potential risk or future failure where proceeding is possible but not recommended without review (student not activated, low score, drop in metric).
+Show a genuine pending state, verified risk, or recorded drop in a learning metric when the item warrants review. Do not infer classroom activity or unverified scores.
 
 <img src={variants2Img} alt="Variants 2" />
 
@@ -99,11 +97,9 @@ Do use this badge to flag an active feature mode or temporary discovery. Badges 
 
 <img src={variants6Img} alt="Variants 6" />
 
-### Metric status
+### Verified metric status
 
-**Source-only reference:** this Gem badge variant belongs to Khan Academy. The original figure is retained to explain compact metric labeling, but HSK AI must **not** import Gems, accessory rewards, class challenges or the Gem-specific icon requirement. Only an **actually tracked and verified** HSK AI learning metric may receive a matching compact value label, using HSK AI semantic status styling.
-
-<img src={variants7Img} alt="Variants 7" />
+Only an **actually tracked and verified** HSK AI metric may receive a compact badge. Include a correct unit and scope. Do not invent a source-product currency or rewards system.
 
 ## What goes inside the badge
 
@@ -143,7 +139,7 @@ Success and warning badges have exactly one icon substitution allowed: a plain u
 
 ### Icons that cannot change
 
-Critical, gem, and time badges never change their icon. These are fixed system identifiers with no exceptions.
+Critical and time status badges use stable, understandable symbols; a source product’s currency icon is not an HSK AI requirement.
 
 <img src={states4Img} alt="States 4" />
 
@@ -151,9 +147,9 @@ Critical, gem, and time badges never change their icon. These are fixed system i
 
 ### Scoring semantics and thresholds
 
-The **source example** maps critical to below 50%, warning to 50–99%, and success to 100%. These are **not HSK AI pass/fail thresholds**. Use the actual HSK AI course, exercise or quiz scoring specification and server-verified status before choosing a badge. In particular, a correct answer, a passed course, a completed lesson and a Pro subscription are different statuses; never collapse them into one unverified green success badge.
+Use the **actual HSK AI learning and assessment scoring specification** and server-verified status. This badge system imposes **no universal numeric pass/fail thresholds**. A correct answer, a passed course, a completed lesson and a Pro entitlement are different states.
 
-<img src={scoreToStatusMapping1Img} alt="Score to status mapping 1" />
+
 
 ### Neutral status
 
