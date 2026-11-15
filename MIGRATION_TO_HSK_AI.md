@@ -2,6 +2,8 @@
 
 **This is the start-here file for the NEXT migration phase.** Work on the design-system source continues in `akbarholturaev11-lang/HSK-AI-Design-System` alone. It is **not** an instruction to run the HSK AI application, change PWA/Android screens or copy files into HSK AI main today.
 
+**Complete portable-file verification:** [source-exact 212 PNGs, 44 Markdown documents and correct local links](docs/audits/PORTABLE_EXAMPLE_INTEGRITY_2026-11-15.md). The 43 updated front-matter/status notices are documentation-only changes; the protected HSK AI decisions and production app have not been changed.
+
 ## Current portable asset package — actually copied, not just planned
 
 The **212 approved professional PNG examples are now present at [`docs/portable/examples/`](docs/portable/examples/README.md)** in this design repository, with original SHA-preserving Git-object copies. The complete [machine-readable manifest](docs/portable/examples/manifest.json) names each source, destination, SHA and audit batch. All **35 eligible portable Markdown guideline pages** link their images directly; **212/212 approved references were checked across those pages**. The remaining 9 of the 44 guidelines correctly do not receive unapproved image substitutes.
