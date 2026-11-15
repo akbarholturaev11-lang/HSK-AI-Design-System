@@ -32,6 +32,10 @@ All **44 active MDX pages** were re-read on the source branch in four 11-file gr
 
 The six pages still byte-identical to the historical MDX baseline — clear filter, date filter, inline filter button, search field, motion and typography — were re-read; they already contain explicit HSK AI-specific sections/rules, so unchanged blob SHA alone does **not** mean "unadapted source policy." Their historical image imports still require the same portable conversion/rights review as other source pages.
 
+## Completed internal text-and-structure comparison
+
+The [44/44 page parity audit](docs/audits/MDX_TO_MARKDOWN_PARITY_AUDIT_2026-11-15.md) now records the exact current MDX/Markdown source file hashes, heading completeness, local file-target checks and the two corrections made to the source and portable guideline wording. This **closes the bounded editorial/structure comparison of the already-existing Markdown review copies**, not source illustration geometry, ownership/license verification or executable vendor demo reproduction. Do not represent this as a completed app transfer.
+
 ## Migration documents — read in this exact order
 
 1. [**Professional-first contract**](DESIGN_SYSTEM_PROFESSIONAL_FIRST_CONTRACT.md) — governs the professional design decisions and minimal HSK adaptation.
