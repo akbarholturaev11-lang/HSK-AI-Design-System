@@ -12,9 +12,9 @@ import settingsImg from "./assets/layout/settings.png";
 
 <img src={headerImg} alt="Source illustration of general layout categories, not HSK AI production UI" />
 
-> **Source diagram note:** The retained original wireframes explain the four screen-layout shapes. Their desktop sidebars and two-column geometry are not approved mobile HSK AI screens and must not replace the existing iPhone PWA or Android navigation.
+> **Source diagram note:** The retained original wireframes explain the four screen-layout shapes. Their desktop sidebars and two-column geometry are **information hierarchy and density references**, not literal HSK AI mobile layouts. Preserve actual navigation destinations, but use the professional composition to improve the later iPhone PWA/Android interface instead of freezing current appearance.
 
-Layout answers two questions: what kind of HSK AI screen is this, and what is the learner here to do? Each layout type has one primary purpose and a default information density. Choose the type before arranging content. These are information-architecture rules for HSK AI's iPhone PWA and Android, not instructions to copy Khan Academy's desktop page geometry; retain approved mobile navigation, safe areas, lesson feedback and AI Voice interaction.
+Layout answers two questions: what kind of HSK AI screen is this, and what is the learner here to do? Each layout type has one primary purpose and a default information density. Choose the type before arranging content. These are information-architecture rules for HSK AI's iPhone PWA and Android, not instructions to copy Khan Academy's desktop page geometry; retain real mobile navigation **function** while improving any weaker visual organization, safe areas, lesson feedback and AI Voice interaction.
 
 ## Principles
 
@@ -43,7 +43,7 @@ Layout answers two questions: what kind of HSK AI screen is this, and what is th
 
 ## Types of layouts
 
-Every HSK AI learner-facing screen maps to one of six layout types. Each is defined by the learner's job, the contexts it's built for, and a default density. Keep existing approved mobile navigation structures, including the PWA bottom navigation, rather than importing desktop side rails or two-column layouts.
+Every HSK AI learner-facing screen maps to one of six layout types. Each is defined by the learner's job, the contexts it's built for, and a default density. Preserve actual mobile navigation destinations and usable bottom-navigation behavior. For the future UI pass, prefer the professional hierarchy, spacing, touch affordances and density over accidental current bar styling; do not copy source desktop side rails literally.
 
 ### Dashboard (get an overview and navigate)
 
