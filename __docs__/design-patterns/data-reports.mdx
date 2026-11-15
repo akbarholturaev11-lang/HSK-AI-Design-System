@@ -202,6 +202,34 @@ Failure of one card/chart should not destroy other unrelated loaded data. Give t
 
 Report-level filters apply consistently to all included metrics; chart-local filters must be visibly scoped. Avoid double-counting duplicated events, mixing user- and admin-level identities, or comparing non-audited platform attribution with fully audited totals. On a phone, a large table can need a different layout, but must preserve actual record and filter semantics. Keep chart/table accessible data alternatives and enough width for Hanzi, pinyin and localized date formats.
 
+## Restored report composition and comparison rules
+
+### Page order and control scope
+
+- Structure the report as **title and scope → key verified figures → supporting distribution/progress/trend → exact authorized records and actions**. Reorder only to match the reader's actual question; do not copy a desktop school dashboard into the learner phone UI.
+- A control positioned **above multiple components** changes all those components coherently. A filter inside one chart changes only that chart. Display the chosen period/scope and do not leave a summary card on a different baseline from its detail table without explanation.
+- Use a **dedicated section or page** when the data requires many controls, a complex table, or sustained comparison. An isolated chart container is appropriate for one simple result.
+
+### Truthful growth
+
+- Compare the **same defined measurement**, comparable scope, equivalent time period, applicable version and denominator. For multiple time windows, make the earlier-period selector explicit only where such comparisons are implemented.
+- If only a subset of learners or events appears in both periods, state the matched population and excluded counts. A shift in group composition is not automatically improvement by the same learner.
+- Lead with an actionable validated conclusion, not a decorative chart. A raw point difference alone may be meaningless if course definitions, event capture or data freshness changed.
+
+### Empty, error and permission placement
+
+- **No records ever:** explain that the scoped entity has not produced records and show the next genuine learning step. **Filtered to nothing:** keep filters and scope visible and offer to clear only the added filter constraints.
+- **Container failure:** preserve unaffected cards and controls; explain which chart failed. **Full-page failure:** reserve page-level treatment for a genuinely unavailable report, not one failed metric.
+- **Update failure with previous data:** label that data **last successfully updated**, not current; allow a safe retry without generating duplicate analytics events.
+- **Partial or processing data:** show which period/source is incomplete. **Not enough data:** explain the actual minimum or calculation limitation only where the backend enforces one.
+- **No access:** state the permission boundary and offer an appropriate existing route without leaking record contents. **Too much data:** paginate or narrow scope rather than silently dropping records.
+- Use clear, localized, specific copy stating what happened and which safe action is available; no invented successful export, save, analytics freshness or server recovery.
+
+### Mobile and accessibility
+
+- Preserve safe areas, focus order, 4-unit spacing logic and a readable hierarchy. A compact chart must never force horizontal page overflow or obscure required lessons in favor of analytics.
+- Provide text equivalents for numbers and charts, keyboard/touch access for supported interactions and clear status for loading, errors and stale results.
+
 ## Implementation boundary
 
 All report actions and analytics must be verified against the current HSK AI source before use. This page deliberately excludes foreign school/district workflows, screenshots and score thresholds. It is a design document, not a change to product data collection, authorization, frontend code or a report endpoint.
