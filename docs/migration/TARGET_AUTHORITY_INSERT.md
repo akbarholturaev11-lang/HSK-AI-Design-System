@@ -98,7 +98,7 @@ Read in this order:
 ## D. Future transfer and merge discipline
 
 1. Refresh current main and source branch SHAs; re-read target `AGENTS.md` and existing UI skill.
-2. Convert all **44** guideline MDX files into portable, complete, readable native Markdown pages. Verify exact path inventory and high-fidelity source coverage.
+2. Review the **44** existing first-pass Markdown drafts under `docs/portable/guidelines/`, then produce an independently written, rights-cleared professional version of each page. Verify exact path inventory and full professional visual/micro-detail coverage; the source-derived draft wording and mere image-alt notes are NOT yet final equivalents.
 3. Add the protected source documents to the intended `docs/design-system/` location without overwriting unrelated target docs.
 4. Update target `AGENTS.md` by **minimal insertion only**, reconcile the existing UI skill with **one** two-line rule and professional-first style priority, check references and protect all other owner decisions.
 5. Verify exact documentation diff and route/relative links; test **documents** for broken references. App CI/browser/mobile tests are separately required **only if/when app behavior is actually changed**, not for this prior source-only decision migration.
