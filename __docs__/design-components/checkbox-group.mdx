@@ -17,6 +17,8 @@ export const barImageStyle = {width: "100%", display: "block", margin: 0};
 
 # Checkbox group
 
+> **HSK AI adaptation:** Original Grade/essay figures demonstrate the multi-select mechanics, not available HSK AI content. The app must provide real category values before showing a multi-select. Preserve the original **OR within a group / AND between distinct criteria**, immediate-versus-Apply timing and actual lesson titles (Hanzi and pinyin where they appear). These screenshots are source teaching examples only.
+
 <NeutralBadge label="Additive filtering/selectors" />
 
 A multi-selection mechanism that allows users to select multiple options from a single dimension simultaneously. Each selection adds to the filter — results matching any of the selected options are included.
@@ -27,7 +29,7 @@ The choice to use a checkbox group is based on the requirement for additive filt
 
 | Use when | Example use |
 | --- | --- |
-| Multiple options from the same dimension can apply simultaneously | Filtering by 6th grade OR 7th grade OR 8th grade at the same time. |
+| Multiple options from the same dimension can apply simultaneously | Filtering by several available exercise categories as an **OR** choice, but only where an actual HSK AI view supports multi-select. |
 | The selection is part of a form or larger filter context | Inside a filter modal where selections are confirmed with Apply — exposed directly or wrapped in a combobox depending on option count. |
 
 ## <Dont /> When NOT to use
@@ -74,7 +76,7 @@ If multiple selections are made, the trigger displays a count — for example, "
 
 What goes into an option label depends on where its content comes from.
 
-**Category and filter labels:** When you're authoring the labels yourself (filter categories, essay types, grade levels), keep them concise — a noun, a short noun phrase, or an adjective naming a type (Persuasive, Explanatory). Avoid full sentences or instructional phrasing. Labels should be parallel in structure — if one option is a noun, the rest should be too.
+**Category and filter labels:** When you're authoring the labels yourself (available exercise categories, learning-content types or other real criteria), keep them concise — a noun, a short noun phrase, or an adjective naming a type (Persuasive, Explanatory). Avoid full sentences or instructional phrasing. Labels should be parallel in structure — if one option is a noun, the rest should be too.
 
 **Content titles:** When the option is a pre-existing piece of content (a lesson, quiz, or unit test name), use its actual title as-is. These aren't subject to the conciseness or parallel-structure rule above — they're inherited from the curriculum, not authored for the checkbox group, and shortening or rewording them would break their ability to identify the actual content.
 
