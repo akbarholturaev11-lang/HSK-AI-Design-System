@@ -12,11 +12,11 @@ import {
 } from "@khanacademy/wonder-blocks-theming";
 import type {Preview} from "@storybook/react-vite";
 
-// Import the Wonder Blocks CSS variables
+// Import the legacy documentation renderer's CSS variables. These are NOT HSK AI app theme tokens.
 import "@khanacademy/wonder-blocks-tokens/styles.css";
 
 /**
- * WB Official breakpoints
+ * Legacy documentation-preview viewport presets (not HSK AI app breakpoints)
  * @see https://khanacademy.atlassian.net/wiki/spaces/WB/pages/2099970518/Layout+Breakpoints
  */
 const wbViewports = {
@@ -294,17 +294,17 @@ const preview: Preview = {
                     {
                         value: "default",
                         icon: "circlehollow",
-                        title: "Wonder Blocks (default)",
+                        title: "Legacy docs renderer — default",
                     },
                     {
                         value: "thunderblocks",
                         icon: "lightning",
-                        title: "Shape Your Learning (Thunder Blocks)",
+                        title: "Legacy docs renderer — light",
                     },
                     {
                         value: "syl-dark",
                         icon: "moon",
-                        title: "Shape Your Learning - Dark (WIP)",
+                        title: "Legacy docs renderer — dark preview",
                     },
                 ],
                 // Change title based on selected value
@@ -360,7 +360,7 @@ const preview: Preview = {
         // 👇 Set the initial background color (restore together with the
         // backgrounds parameter above)
         // backgrounds: {value: "baseDefault"},
-        // Default to the Shape Your Learning (Thunder Blocks) theme
+        // Default to the documentation renderer's legacy theme; NOT HSK AI production theme.
         theme: "thunderblocks",
     },
 };
