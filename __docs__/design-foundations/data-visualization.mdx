@@ -47,7 +47,7 @@ Use <a href="./?path=/docs/design-guidelines-components-data-visualization-chart
 
 ## Color
 
-Chart color describes the **meaning of the measure or comparison**, not a source design system's product palette. Prefer existing HSK AI light/dark semantic tokens and check contrast against real backgrounds. See <a href="./?path=/docs/design-guidelines-foundations-colors-semantic-tokens--docs">HSK AI semantic colors</a>.
+Chart color describes the **meaning of the measure or comparison**, not a source design system's product palette. Use the **professional semantic hierarchy and visual encoding** as the target, mapping it onto verified HSK AI light/dark token roles. If current tokens are insufficient for correct distinction or contrast, specify a proposed token/role rather than abandoning professional chart quality; verify actual rendered contrast later. See <a href="./?path=/docs/design-guidelines-foundations-colors-semantic-tokens--docs">HSK AI semantic colors</a>.
 
 ### Color roles
 
@@ -97,7 +97,7 @@ Use HSK AI's actual <a href="./?path=/docs/design-guidelines-foundations-typogra
 ## Interaction
 
 - Tooltips and point details, if present, work on touch and keyboard, not hover alone.
-- A chart/table switch, data download or legend toggle is a **feature only if actually implemented** and authorized; the design page does not require it.
+- A chart/table switch, export or legend toggle must be **offered to end users only if implemented and authorized**. Preserve the professional layout and interaction specification as an **unimplemented reference** otherwise; do not delete it merely because today's HSK AI app lacks the control.
 - All dependent figures, filter scopes, time windows and summaries should update consistently when real controls are used.
 - Do not render protected data after logout/account change.
 
