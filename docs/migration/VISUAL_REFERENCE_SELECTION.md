@@ -1,5 +1,17 @@
 # HSK AI — internal visual reference selection (image-by-image, no publication)
 
+## Latest exception disposition (supersedes the 9-open status below)
+
+The owner-approved [nine-case review resolution](VISUAL_REFERENCE_EXCEPTIONS_2026-11-15.md) **converts eight previously undecided files into explicit, evidence-backed selection outcomes** and identifies one oversized PNG that **cannot** yet be visually inspected. The effective working totals are now:
+
+- **212 INCLUDE_SAMPLE:** useful generic visual sample candidates
+- **95 EXCLUDE_FOREIGN_SCREEN:** unrelated other-product screenshots/branding
+- **4 EXCLUDE_NO_VALUE:** placeholder or uninformative one-glyph visuals
+- **4 KEEP_PARTIAL_REWORK:** useful component details within mixed source-specific images; **do not copy full files**, retain professional detail for an appropriate neutral excerpt
+- **1 REVIEW_REQUIRED_BINARY_READ:** `modals/media.png` is 5,460,818 bytes; the GitHub file-content reader returns empty image data, so a binary-capable read is needed
+
+**316/316 source paths accounted for; 315/316 actually visually viewed; 1 not visually assessable with the current connector.** The older numeric classification below (212/95/9) is the historical batch-16 snapshot, not the current effective disposition. The image selection does not move any binary files to the product.
+
 ## Audit status — complete source-path inventory (2026-11-15)
 
 **Updated final result:** **316/316 PNG file paths tracked and individually classified**, with file paths and matching Git blob SHA verified against the current branch Git tree. **212 `INCLUDE_SAMPLE`**, **95 `EXCLUDE_FOREIGN_SCREEN`**, and **9 `REVIEW_REQUIRED`**. **0 file paths left unclassified**. **315/316 actually visually rendered**: `__docs__/design-components/assets/modals/media.png` was fetched but could not be decoded in the image viewer; its visual content is unknown and it remains REVIEW_REQUIRED. The original 8-image section below documents **the initial pilot**, not the final audit total.
