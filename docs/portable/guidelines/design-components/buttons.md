@@ -67,7 +67,7 @@ Neutral tokens help preserve hierarchy balance when multiple kinds of elements w
 
 Use neutral text buttons where the **professional hierarchy** calls for a low-emphasis action; repair a weaker current HSK AI hierarchy in the later app-redesign phase rather than lowering this standard. Source-team approval procedures are not HSK AI policy.
 
-> **Avoid demo:** use neutral text buttons. Neutral is only for icon-only tertiary buttons.. Example UI: button primary: Primary button; button secondary: Secondary button; button tertiary: Tertiary button.
+> **Avoid demo:** The historical example assigns the neutral action color to primary, secondary and tertiary text buttons, obscuring the intended hierarchy. For HSK AI, preserve professional contrast and neutral-icon rules without banning justified low-emphasis text actions.. Example UI: button primary: Primary button; button secondary: Secondary button; button tertiary: Tertiary button.
 
 ### Destructive button
 
@@ -88,7 +88,7 @@ Space is constrained: Ideal for actions nested within confined areas like cells 
 Hierarchical balance is needed: Helps avoid "button fatigue" when prominent primary or secondary CTAs are already present, allowing the user to focus on the main task while keeping utilities available.
 Utility-based actions: Perfect for "micro-actions" within a larger workflow, such as table column headings that trigger modals, linking accounts in settings, or batch actions like "Select All."
 
-> **Illustrative demo:** Historical visual example (not a shipped HSK AI component). Example UI: button tertiary: Small button.
+> **Illustrative demo:** A **small-size tertiary button**, sourced from a variant marked `size="small"`, is a visually compact micro-action. Its interactive hit target still meets the relevant iPhone PWA / Android accessibility requirement.
 
 > **Recommended demo:** use a small button for a micro-action inside a compact card, like “Set reward.”. **Historical figure 7 — source reference only (not transferred):** A small 'Set reward' button used inside a compact Gem challenge card. Source asset: `./assets/buttons/states-1.png`.
 
@@ -111,7 +111,7 @@ Don't stretch a button to full-width just to fill unused horizontal space. Width
 Use disabled buttons in cases when you need to prevent a user from acting on items where the action is functionally impossible or forbidden, such as a "Submit" button when previewing an activity.
 Don’t use a disabled button to communicate when conditions for progressing or successfully taking action are not met.
 
-> **Illustrative demo:** Historical visual example (not a shipped HSK AI component). Example UI: button primary: Primary button.
+> **Illustrative demo:** A **disabled primary button** (source sample includes the Boolean `disabled` state) remains visibly inactive and must not submit anything. Disabling a button solely because the learner has not yet completed an optional prerequisite is the distinct anti-pattern shown next.
 
 > **Avoid demo:** disable a button because the user hasn’t finished a step yet, like selecting questions to review.. **Historical figure 8 — source reference only (not transferred):** States 4. Source asset: `./assets/buttons/states-4.png`.
 
