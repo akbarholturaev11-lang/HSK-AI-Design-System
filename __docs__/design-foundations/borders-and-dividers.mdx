@@ -1,181 +1,62 @@
 import {Meta} from "@storybook/addon-docs/blocks";
-import Principle, {PrincipleSet} from "../components/principle";
-import Figure from "../components/Figure";
-import headerImg from "./assets/borders-and-dividers/header.png";
-import borderColorsImg from "./assets/borders-and-dividers/border-colors.png";
-import subtleBorderImg from "./assets/borders-and-dividers/subtle-border.png";
-import defaultBorderImg from "./assets/borders-and-dividers/default-border.png";
-import focusBorderImg from "./assets/borders-and-dividers/focus-border.png";
-import stateInputsImg from "./assets/borders-and-dividers/state-inputs.png";
-import stateCardImg from "./assets/borders-and-dividers/state-card.png";
-import tableDividersImg from "./assets/borders-and-dividers/table-dividers.png";
-import headerFooterDividersImg from "./assets/borders-and-dividers/header-footer-dividers.png";
-import sectionDividersImg from "./assets/borders-and-dividers/section-dividers.png";
-import borderedCellsImg from "./assets/borders-and-dividers/bordered-cells.png";
-import lineDividersImg from "./assets/borders-and-dividers/line-dividers.png";
 
 <Meta title="Design Guidelines / Foundations / Borders and dividers" />
 
-<img src={headerImg} alt="Borders and dividers" />
-
 # Borders and dividers
 
-Borders define edges; dividers separate elements. Together with <a href="./?path=/docs/design-guidelines-foundations-spacing--docs">Spacing</a>, they enable users to perceive how elements are grouped hierarchically.
+Borders clarify where a control or surface begins. Dividers separate adjacent content without creating additional visual noise. For HSK AI, use **real mobile app tokens and platform components**, not names or focus packages from another UI framework.
 
 ## Principles
 
-<PrincipleSet>
-    <Principle
-        label="Graduated"
-        title="Use the lightest tool that works"
-        description="Spacing, then lines, then borders — each step up adds more visual weight. Only reach for the heavier tool when the lighter one isn't enough."
-    />
-</PrincipleSet>
+1. **Use the lightest tool that works:** grouping and spacing first, then dividers, then a full border when the boundary matters.
+2. **Keep a consistent hierarchy:** the same interaction/state should not have a different border system on each phone screen.
+3. **Show action and state clearly:** a selected option must remain identifiable without relying only on a color change.
+4. **Do not disguise missing information:** an error needs a real explanation and recovery route, not a red border alone.
 
-## Borders
+## HSK AI existing tokens
 
-A border makes an edge explicit — it says this is where something begins or ends. Use a border when that boundary carries meaning: when what's inside behaves differently from what's outside.
+The PWA defines `--hsk-divider` as `#EAE0CC` in the light theme and `#17617D` in dark mode. These values are **existing divider colors**, not a verified 3:1 focus treatment. Other border and focus colors must be chosen from the real current HSK AI screen and checked visually; do **not** fabricate a `semanticColor.core.border.*` token or assume it exists in the HSK AI app.
 
-The system has two neutral border colors, ordered by contrast. Weight stays constant at `border.width.thin` (1px); only the color token changes. A thicker border (`border.width.medium`, 2px) is only ever used for hover and focus states.
+Android has its own `PompColors` palette and Material 3 roles. Keep the same meaning, but let native components use correct accessible focus, pressed, selected and disabled states rather than trying to inject PWA CSS geometry into Kotlin.
 
-| Color | Token |
+## When to use a border
+
+- A card or other grouping needs a visible edge to be distinguished from its actual surrounding surface.
+- A text input, selectable row or custom control requires a clear boundary to be discoverable.
+- A focused interactive control needs **high-contrast focus treatment** that does not disappear in dark mode.
+- An error input needs a state border **plus** an explanation; never use border color as the sole failure cue.
+
+Use ordinary approved component borders where available; their widths, corner radii and themes are defined by the real platform components. Avoid mandating fixed source-library 1px/2px token rules on components that do not use them.
+
+## When to use a divider
+
+- Between dense, actual data-table rows when the separation helps scanning.
+- Between a fixed dialog header/footer and its scrolling content.
+- Between distinct filter groups or neighboring records within a common container.
+- Not when an ordinary heading or adequate spacing already makes sections clear.
+
+Use `--hsk-divider` or the corresponding native theme role rather than a copied line color from a design screenshot.
+
+## Bordered choices versus line-divided lists
+
+| Bordered option cards | Line-divided list |
 | --- | --- |
-| Subtle | `semanticColor.core.border.neutral.subtle` |
-| Default | `semanticColor.core.border.neutral.default` |
+| Short, curated and mutually exclusive selection | Browsable or searchable selection |
+| Each option must be independently identifiable | The parent list container already defines the outside edge |
+| No substantial filtering needed | A genuine supported filter/search may narrow the options |
+| Useful for a supported HSK track/level choice if already present | Useful for supported lesson or result lists if already present |
 
-<img src={borderColorsImg} alt="Two rounded squares showing the Subtle and Default border colors, from lower to higher contrast" />
+Never build fictional class selection, teacher/roster forms or school filters to populate a demonstration. Respect the existing HSK AI component style rather than forcing cards merely because a design source depicted them.
 
-### Subtle border
+## Focus, error and accessibility
 
-Subtle border doesn't meet 3:1 contrast on its own — and doesn't need to when the border isn't essential for identifying the component or understanding its state. The test: if the border disappeared, would the interface still make sense? If so, Subtle works, because other cues like a text label, surface color, elevation, or an icon already identify the element. If the border is the only thing showing where an interactive element is, use Default.
+- **Focus must be visible**, keyboard and assistive-technology friendly and distinguishable against adjacent colors (typically at least 3:1 for applicable graphical indicator contrast). Do not suppress native focus behavior or replace it with an untested border.
+- Input errors require a concise localized message, a non-color cue and clear recovery. A wrong exercise answer is a learning state, not necessarily a broken input.
+- Disabled is different from read-only, selected, pending and error. Each has its own meaning and appropriate visual treatment.
+- Dividers are structural, not buttons; do not render them as interactive targets.
+- Use 44 CSS px minimum iPhone PWA touch targets and 48 dp native Android targets where relevant, even if a border or icon is visually much smaller.
+- Verify text scaling, Hanzi strokes/pinyin tone marks, light/dark surfaces, keyboard overlay and reduced-motion interactions on real mobile screens.
 
-Use for: cards, panels, dropdown menus, neutral buttons, dynamic action buttons, etc.
+## Implementation boundary
 
-<Figure
-    src={subtleBorderImg}
-    alt="Mockup of a page of cards, each outlined with a subtle 1px border against the background"
-    caption="All cards on this page use a subtle border to define their edges against the background."
-/>
-
-### Default border
-
-Used when the border is the primary signal — the main thing telling the user an edge exists and that the element is interactive. Default meets the 3:1 contrast threshold needed to be perceivable on its own, without relying on elevation, shape, or other supporting cues.
-
-Use for: form inputs, selects, and textareas on flat surfaces where the border alone defines the interactive target.
-
-<Figure
-    src={defaultBorderImg}
-    alt="Mockup highlighting a text input whose edge is defined by a default-color border"
-    caption="The text input uses a default border to meet contrast requirements — ensuring the field edge is perceivable for all users."
-/>
-
-### Focus border
-
-Applied when an element receives focus — either through keyboard navigation or on initial click.
-
-Use for: all interactive elements when focused — buttons, inputs, links, checkboxes, selects. Always high-contrast. Never suppressed.
-
-Do not set focus states manually using borders. Instead, use the [focus package](https://khan.github.io/wonder-blocks/?path=/docs/packages-styles-focus-styles--docs#when-to-use&globals=pseudo.focusVisible:!true) offered in Wonder Blocks to apply a consistent focus treatment.
-
-<Figure
-    src={focusBorderImg}
-    alt="Mockup of a dropdown in focus, surrounded by a blue outer ring"
-    caption="The focused dropdown shows the blue outer ring — making clear which element is in focus without changing its size or position."
-/>
-
-### State borders
-
-Border color changes to communicate interactive state. The shape and weight remain constant; only the color token changes: selected and focus use `semanticColor.core.border.instructive.default`, error uses `semanticColor.core.border.critical.default`, and disabled uses `semanticColor.core.border.disabled.strong`.
-
-Use for: selected, active, error, and disabled states on form inputs and interactive components.
-
-<Figure
-    src={stateInputsImg}
-    alt="Four stacked text inputs showing selected-with-focus, selected, error with an inline message, and disabled states"
-    caption="The selected state uses the focus border color. Error uses a red border paired with an inline message. Disabled reduces the border color to show the field is unavailable."
-/>
-
-<Figure
-    src={stateCardImg}
-    alt="A list of selectable cards with the top card outlined in a blue border to show it is selected"
-    caption="The selected card uses a blue border color to indicate the current selection."
-/>
-
-## Dividers
-
-A divider is a 1px hairline in `semanticColor.core.border.neutral.subtle` that marks a boundary between elements. Dividers work in four specific contexts:
-
-- To separate table cells
-- To separate headers and footers from their associated content
-- To divide a container into sections
-- To separate the items of a searchable list
-
-Use a divider when adjacent regions behave differently — a fixed header above scrolling content, or list rows that are each their own target. When regions behave the same — like groups of form fields under their own headings — the job is grouping and hierarchy, and spacing and headings are usually enough. Add a divider only when spacing can't do the job alone: dense content like data tables, where more space would cost too much, or groups that need to read as distinct at a glance.
-
-### Table dividers
-
-Row lines separate data in tables. They're the default separation strategy — low visual weight, clear enough for most data densities. Apply one strategy consistently per table.
-
-Use for: separating rows in data tables. Don't mix row lines with alternating rows or a full grid within the same table.
-
-<img src={tableDividersImg} alt="Data table with horizontal row lines separating each row of content" />
-
-### Header and footer dividers
-
-Marks the boundary between a fixed element — like a header or footer — and the content it contains.
-
-Use for: the bottom edge of modal headers, the top edge of modal footers, and sticky navigation bars where a boundary between the fixed element and scrolling content is needed.
-
-<img src={headerFooterDividersImg} alt="Modal dialog with lines separating the header and footer from its scrolling content" />
-
-### Section dividers
-
-Used to communicate the grouping of content within a component or pattern.
-
-Use for: separating labeled filter groups within a panel or modal, and dividing distinct content blocks within a single surface. Skip the line directly below an in-content heading that already introduces what follows — that's different from a header divider, which marks a fixed-to-scrolling boundary regardless of whether the header has a heading.
-
-<img src={sectionDividersImg} alt="Modal with lines separating distinct blocks of form content into groups" />
-
-## Choosing between borders and lines
-
-Choose by where the list sits and what it's for, not how many items it has. Two tests decide it: if the list has a search or filter control, or if it already sits inside a container — like the content card in a Job layout — use line dividers.
-
-| Use bordered cells when | Use line dividers when |
-| --- | --- |
-| The set is short and fixed, and the user picks one | The user scans or searches the list |
-| There is no search or filter control | A search or filter control is present |
-| Options sit directly on the page background | The list sits inside a container |
-
-### Bordered cells
-
-Use bordered cells for a short, fixed set of options where the user picks one — like choosing which class to enter. The options sit directly on the page background, so each one needs its own border to define its edge. The gap and border around each option make every choice stand out on its own.
-
-<Figure
-    src={borderedCellsImg}
-    alt="A short “Enter a class” list where each of three class periods sits in its own bordered cell, with the first one selected"
-    caption="Bordered cells work here because the list is short, has no search, and sits directly on the page background — each class needs its own edge. The selected state uses the focus border color with a filled radio button to confirm the choice."
-/>
-
-### Line dividers
-
-Use line dividers for lists the user scans or searches — like a course catalog or a filtered set of results. These lists usually sit inside a container, such as the content card in a Job layout, which already defines the edge. One outer border with hairlines between rows stays light, and it's still the right choice when a filter narrows the list to just a few items.
-
-<Figure
-    src={lineDividersImg}
-    alt="A searchable course catalog inside one container, its rows separated by hairline dividers, with one row selected"
-    caption="Line dividers work here because the list has a filter control and sits inside the Job layout's content container. The container defines the space; lines are enough to separate the rows, even with a title, metadata, and info link in each one."
-/>
-
-## Accessibility
-
-### Focus rings must meet contrast requirements
-
-The focus ring must have a contrast ratio of at least 3:1 against adjacent colors. This applies in both light and dark mode. Do not use low-contrast or thin focus styles; users who rely on keyboard navigation need prominent focus markers.
-
-### Borders must not be the only signal for error states
-
-Color alone is not sufficient to communicate state, because users with color vision deficiencies might not perceive it. A red border on an error field must be accompanied by an error message, an icon, or another non-color indicator.
-
-### Ensure dividers are not mistaken for interactive elements
-
-A horizontal rule should not be styled in a way that could be confused with a button, link, or selectable row. Keep lines visually subdued and consistent with their role as structural separators.
+This is HSK AI-specific design guidance. It deliberately excludes foreign UI-library token paths, desktop classroom screenshots and third-party focus-package requirements. It changes no production CSS, native component or navigation behavior.
