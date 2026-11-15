@@ -1,6 +1,6 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/tooltips.mdx`, Git blob `e40d2f42cfa1da560fa74e7a174195ea492a3ca7`; 6 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/tooltips.mdx`, Git blob `e40d2f42cfa1da560fa74e7a174195ea492a3ca7`; 6 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
-> **Historical figure 1 — source reference only (not transferred):** Historical source example of short labels that appear beside an icon control; not an HSK AI screen. Source asset: `./assets/tooltips/tooltips.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Historical source example of short labels that appear beside an icon control; not an HSK AI screen. Source asset: `./assets/tooltips/tooltips.png`.
 
 # Tooltips
 
@@ -32,11 +32,11 @@ The choice to use a tooltip is determined by the need to provide immediate, supp
 
 Position the optional tooltip using the approved **4-unit spacing scale** (typically an 8 CSS px reference gap), adjusted for the actual anchor and screen geometry. The historical source used 6px; **that is not HSK AI spacing policy**. Prefer placement above/below, flipping before clipping into a safe area, keyboard or screen edge. Do not interpret this design gap as a verified current CSS/Android token.
 
-> **Historical figure 2 — source reference only (not transferred):** A “Back” tooltip appearing below the back chevron at the top-left of a practice screen for “Number of solutions to equations”. Source asset: `./assets/tooltips/placement-1.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** A “Back” tooltip appearing below the back chevron at the top-left of a practice screen for “Number of solutions to equations”. Source asset: `./assets/tooltips/placement-1.png`.
 
-> **Historical figure 3 — source reference only (not transferred):** A “Start over” tooltip appearing below the reset icon near the top-right of the same practice screen. Source asset: `./assets/tooltips/placement-2.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** A “Start over” tooltip appearing below the reset icon near the top-right of the same practice screen. Source asset: `./assets/tooltips/placement-2.png`.
 
-> **Historical figure 4 — source reference only (not transferred):** A “Check answer” tooltip flipped to the left of the Check button in the bottom-right corner, avoiding the viewport edge. Source asset: `./assets/tooltips/placement-3.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** A “Check answer” tooltip flipped to the left of the Check button in the bottom-right corner, avoiding the viewport edge. Source asset: `./assets/tooltips/placement-3.png`.
 
 ## Interaction
 
@@ -44,7 +44,7 @@ Position the optional tooltip using the approved **4-unit spacing scale** (typic
 -   **Dismissal:** Must be dismissible via Escape or moving focus away; ensure the tooltip does not obscure the currently focused action or an HSK question.
 -   **No manual trigger:** Tooltips should not require a click to open; if a click is required, use a Popover instead.
 
-> **Historical figure 5 — source reference only (not transferred):** A “Browse library” tooltip anchored to the right of the highlighted library icon in the left navigation rail, beside a grid of subject cards. Source asset: `./assets/tooltips/interaction.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** A “Browse library” tooltip anchored to the right of the highlighted library icon in the left navigation rail, beside a grid of subject cards. Source asset: `./assets/tooltips/interaction.png`.
 
 ## Copy
 
@@ -54,7 +54,7 @@ Keep messaging brief and non-interactive; prefer a short phrase. Use inline help
 
 Do not use unnecessary end punctuation for brief tooltip labels. A tooltip does not substitute for the **two-line optional explanation disclosure**: only supporting explanation may collapse, with an accessible top-right ⌄/⌃ icon that opens it in place.
 
-> **Historical figure 6 — source reference only (not transferred):** A tooltip whose text wraps onto three lines and ends with a period: "When you’ve selected your answer(s), click this button to check your answer." — let tooltip text wrap across multiple lines or end with punctuation.. Type: dont. Source asset: `./assets/tooltips/copy.png`.
+> **Historical figure 6 — source figure reference (only approved samples, if any, are linked below):** A tooltip whose text wraps onto three lines and ends with a period: "When you’ve selected your answer(s), click this button to check your answer." — let tooltip text wrap across multiple lines or end with punctuation.. Type: dont. Source asset: `./assets/tooltips/copy.png`.
 
 ## Curated professional visual examples (internal)
 

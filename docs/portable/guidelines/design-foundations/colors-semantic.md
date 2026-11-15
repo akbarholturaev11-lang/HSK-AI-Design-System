@@ -1,4 +1,4 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/colors-semantic.mdx`, Git blob `147d3f2d1cee957c8ec1ba46155e03ef9f97d1c2`; 1 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/colors-semantic.mdx`, Git blob `147d3f2d1cee957c8ec1ba46155e03ef9f97d1c2`; 1 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
 # HSK AI semantic color tokens
 
@@ -42,7 +42,7 @@ These are **documented current PWA values** for the most important roles, not an
 
 ## Semantic-system design method (source reference)
 
-> **Historical figure 1 — source reference only (not transferred):** Historical semantic token hierarchy diagram; source category names and palette are illustrative, not HSK AI token contracts. Source asset: `./assets/colors/semantic-tokens-hero.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Historical semantic token hierarchy diagram; source category names and palette are illustrative, not HSK AI token contracts. Source asset: `./assets/colors/semantic-tokens-hero.png`.
 
 The professional insight is to **separate raw color values from interface purpose**. A semantic role can be defined by state (ordinary, selected, success, warning, error or disabled), foreground/background context and theme. The source's former domain/layer/intensity taxonomy is **not a HSK AI token API**. HSK AI's actual tokens above and native Material roles govern implementation.
 

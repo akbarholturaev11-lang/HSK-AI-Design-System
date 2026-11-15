@@ -1,4 +1,4 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/iconography.mdx`, Git blob `deafe2f3ef3b6f61afbdca9f605d349f9b6dead8`; 5 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/iconography.mdx`, Git blob `deafe2f3ef3b6f61afbdca9f605d349f9b6dead8`; 5 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
 # HSK AI iconography
 
@@ -36,11 +36,11 @@ Minimum interactive targets: **44 × 44 CSS px** on iPhone PWA and **48 × 48 dp
 
 The five illustrations below are **historical source design examples**. They demonstrate professional icon geometry, hierarchy, labeling and state, **not** the product's existing app icons or a requirement to migrate every PWA/Android icon.
 
-> **Historical figure 1 — source reference only (not transferred):** Historical iconography overview illustrating consistency of stroke and recognizable symbols; not an HSK AI icon inventory. Source asset: `./assets/iconography/iconography.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Historical iconography overview illustrating consistency of stroke and recognizable symbols; not an HSK AI icon inventory. Source asset: `./assets/iconography/iconography.png`.
 
 ### Library consistency and migration policy
 
-> **Historical figure 2 — source reference only (not transferred):** Reference icon-library overview; existing HSK AI icons retain their current approved assets until an audited migration. Source asset: `./assets/iconography/icon-library.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Reference icon-library overview; existing HSK AI icons retain their current approved assets until an audited migration. Source asset: `./assets/iconography/icon-library.png`.
 
 For **new ordinary generic icons**, use the previously approved Phosphor family with a consistent stroke vocabulary, and adopt a smaller number of size/weight roles. Existing production icons are **not** replaced in this guideline-only phase, but inconsistent generic icons should be identified as future UI/UX migration candidates. Keep the original professional requirements for stroke, weight, optical alignment, roles and state consistency; only actual HSK AI branded assets are protected exceptions.
 
@@ -56,18 +56,18 @@ These source values are **illustrative**; existing HSK icon dimensions and the i
 
 ### Selection, labeling and weights
 
-> **Historical figure 3 — source reference only (not transferred):** Reference example of sourcing icons consistently; a source Figma library is not HSK AI's production icon repository. Source asset: `./assets/iconography/usage-guidelines-1.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Reference example of sourcing icons consistently; a source Figma library is not HSK AI's production icon repository. Source asset: `./assets/iconography/usage-guidelines-1.png`.
 
 Use one coherent approved generic visual family for a new feature, rather than assembling arbitrary SVGs from unrelated libraries. Source icons such as teacher, classroom, Gems, Khanmigo or assessment roles **must not be ported**.
 
-> **Historical figure 4 — source reference only (not transferred):** Reference comparing familiar standalone close/back icons with less obvious symbols that need labels. Source asset: `./assets/iconography/usage-guidelines-2.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** Reference comparing familiar standalone close/back icons with less obvious symbols that need labels. Source asset: `./assets/iconography/usage-guidelines-2.png`.
 
 - Close, back or search can be icon-only in a known position **with an accessible name**.
 - New study actions, reveal translation, replay pronunciation and review mistakes need a visible label or a well established product-specific convention.
 - A tooltip by itself is not a sufficient touch interface label when a symbol is unfamiliar.
 - Do not communicate selection with a color change alone.
 
-> **Historical figure 5 — source reference only (not transferred):** Reference comparison of icon visual weights and selected states; not an instruction to recolor HSK characters. Source asset: `./assets/iconography/usage-guidelines-3.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** Reference comparison of icon visual weights and selected states; not an instruction to recolor HSK characters. Source asset: `./assets/iconography/usage-guidelines-3.png`.
 
 Regular/Bold/Fill offer a useful visual hierarchy for newly approved generic icons; reserve Fill for actual selected states when a clear state cue is needed. Avoid hard-coded source library rules for every platform icon, and review readability, contrast and Unicode fallback on physical devices. Custom Panda, correct/incorrect reaction, Pro crown and Voice Orb artwork **remain outside** the generic icon family.
 

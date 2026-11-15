@@ -1,4 +1,4 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/trend-charts.mdx`, Git blob `2522b1d65b83f794b14b137b269da5b9f8efa0b5`; 2 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/trend-charts.mdx`, Git blob `2522b1d65b83f794b14b137b269da5b9f8efa0b5`; 2 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
 # Trend charts
 
@@ -80,13 +80,13 @@ The following demonstration contains **fictional example values only**. It illus
 
 ### Overview
 
-> **Historical figure 1 — source reference only (not transferred):** Original trend-chart example with an illustrative time series, not HSK AI product history. Source asset: `./assets/trend-charts/header.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Original trend-chart example with an illustrative time series, not HSK AI product history. Source asset: `./assets/trend-charts/header.png`.
 
 Trends need **three or more comparable observed points** and explicit units, dates and filter scope. A sparse or missing dataset cannot be interpreted as steady growth.
 
 ### Anatomy
 
-> **Historical figure 2 — source reference only (not transferred):** Source example placing a time-series chart beneath summary metrics; values are source-only. Source asset: `./assets/trend-charts/container.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Source example placing a time-series chart beneath summary metrics; values are source-only. Source asset: `./assets/trend-charts/container.png`.
 
 **Time-series anatomy:** readable x-axis period, y-axis measurement with units, plotted observations and enough contrast to distinguish series without hue alone. Dates and missing periods must be accurately represented.
 

@@ -1,4 +1,4 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/colors.mdx`, Git blob `3ac38839501ffc9324d224b07329ffc4622e7488`; 4 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/colors.mdx`, Git blob `3ac38839501ffc9324d224b07329ffc4622e7488`; 4 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
 # Colors
 
@@ -35,23 +35,23 @@ The four images in this section are **original design-method references**, not H
 
 ### Primitive palette versus semantic meaning
 
-> **Historical figure 1 — source reference only (not transferred):** Historical source design color overview: an example of visual hierarchy, not HSK AI brand colors. Source asset: `./assets/colors/colors.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Historical source design color overview: an example of visual hierarchy, not HSK AI brand colors. Source asset: `./assets/colors/colors.png`.
 
 The source overview demonstrates visual restraint: use a small, intentional accent family and distinguish content, actions and feedback. For HSK AI the actual brand roles and dark-theme variants in the production app remain authoritative.
 
-> **Historical figure 2 — source reference only (not transferred):** Reference grid demonstrating a primitive color palette; its particular hues are not HSK AI tokens. Source asset: `./assets/colors/primitives-grid.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Reference grid demonstrating a primitive color palette; its particular hues are not HSK AI tokens. Source asset: `./assets/colors/primitives-grid.png`.
 
 **Primitives** are raw shades. They should inform semantic decisions, not be pasted directly as hex values throughout an interface. When considering a new HSK AI color, first identify its function, compare it against existing light/dark roles, and test the contrast of foreground, background and state indicators.
 
 ### Semantic color roles
 
-> **Historical figure 3 — source reference only (not transferred):** Reference example of mapping raw colors to purposeful semantic tokens; the illustrated token names belong to the source library. Source asset: `./assets/colors/semantic-tokens.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Reference example of mapping raw colors to purposeful semantic tokens; the illustrated token names belong to the source library. Source asset: `./assets/colors/semantic-tokens.png`.
 
 The transferable principle is **intent over appearance**. Apply actual HSK AI names such as `--hsk-ink`, `--hsk-paper`, `--hsk-divider`, `--hsk-cinnabar` and `--hsk-jade` where verified. Never create nonexistent HSK AI warning or critical tokens merely to imitate the reference. A destructive action, a wrong lesson answer, a payment failure and a brand accent are distinct concepts.
 
 ### Accessible pairings
 
-> **Historical figure 4 — source reference only (not transferred):** Professional reference showing accessible foreground/background pairings; actual combinations must be checked against HSK AI themes. Source asset: `./assets/colors/accessible-pairings.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** Professional reference showing accessible foreground/background pairings; actual combinations must be checked against HSK AI themes. Source asset: `./assets/colors/accessible-pairings.png`.
 
 - Test **4.5:1 for normal text** and **3:1 for qualifying large text and essential non-text interface boundaries** against the **rendered** HSK AI background. Bigger fonts do not automatically make low contrast acceptable.
 - Decorative figures need not act as state signals; important status graphics, focus boundaries and selected options must be discernible without relying on hue alone.

@@ -1,4 +1,4 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/borders-and-dividers.mdx`, Git blob `ef78fa529411b0fba3ab8d7e20a8009aa27c94af`; 12 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/borders-and-dividers.mdx`, Git blob `ef78fa529411b0fba3ab8d7e20a8009aa27c94af`; 12 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
 # Borders and dividers
 
@@ -59,56 +59,56 @@ Never build fictional class selection, teacher/roster forms or school filters to
 
 The following figures restore the **original detailed border and divider examples**. Their blue/neutral palette, classroom content and source component tokens are reference screenshots only; **do not copy them into HSK AI themes**. The current `--hsk-divider`, actual PWA focus treatment and native Android components **document the present implementation**; the professional border/focus distinction remains the target for future value and geometry improvements.
 
-> **Historical figure 1 — source reference only (not transferred):** Original border and divider overview; educational diagram rather than HSK AI app screen. Source asset: `./assets/borders-and-dividers/header.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Original border and divider overview; educational diagram rather than HSK AI app screen. Source asset: `./assets/borders-and-dividers/header.png`.
 
 ### Border intensity and contrast
 
-> **Historical figure 2 — source reference only (not transferred):** Two source reference border strengths shown side by side. Source asset: `./assets/borders-and-dividers/border-colors.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Two source reference border strengths shown side by side. Source asset: `./assets/borders-and-dividers/border-colors.png`.
 
 - **Subtle border:** appropriate when the shape is already clear through readable text, spacing, surface or elevation. It need not itself carry a state or interactive boundary. Ask: *If the line disappeared, would the learner still identify the control?*
 - **Default/discoverable border:** required when the line itself is the primary cue that an input or action has an edge. In this case verify non-text contrast, normally 3:1 where applicable.
 - Border thickness is part of component behavior: do not change the size of a selectable card merely to show focus. The original reference library used 1px normally and sometimes 2px for focus; **those are source examples, not fixed HSK CSS/Android dp instructions**.
 
-> **Historical figure 3 — source reference only (not transferred):** Reference showing cards with light, nonessential borders. Source asset: `./assets/borders-and-dividers/subtle-border.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Reference showing cards with light, nonessential borders. Source asset: `./assets/borders-and-dividers/subtle-border.png`.
 
-> **Historical figure 4 — source reference only (not transferred):** Reference of a discoverable text input whose edge is a primary affordance. Source asset: `./assets/borders-and-dividers/default-border.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** Reference of a discoverable text input whose edge is a primary affordance. Source asset: `./assets/borders-and-dividers/default-border.png`.
 
 ### Focus state must be distinct
 
-> **Historical figure 5 — source reference only (not transferred):** Reference dropdown with a visible focus indicator. Source asset: `./assets/borders-and-dividers/focus-border.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** Reference dropdown with a visible focus indicator. Source asset: `./assets/borders-and-dividers/focus-border.png`.
 
 A keyboard-focused action requires visible, accessible focus without surprising layout shift. Use each platform's **actual supported focus implementation**. Never import Khan's Wonder Blocks focus package into the HSK AI application. Check light/dark contrast and visible focus against adjacent error/selected borders.
 
 ### Selected, invalid and disabled
 
-> **Historical figure 6 — source reference only (not transferred):** Source comparison of selected, focused, invalid and disabled text-field borders. Source asset: `./assets/borders-and-dividers/state-inputs.png`.
+> **Historical figure 6 — source figure reference (only approved samples, if any, are linked below):** Source comparison of selected, focused, invalid and disabled text-field borders. Source asset: `./assets/borders-and-dividers/state-inputs.png`.
 
-> **Historical figure 7 — source reference only (not transferred):** Source example of a selected choice card with a distinct outline. Source asset: `./assets/borders-and-dividers/state-card.png`.
+> **Historical figure 7 — source figure reference (only approved samples, if any, are linked below):** Source example of a selected choice card with a distinct outline. Source asset: `./assets/borders-and-dividers/state-card.png`.
 
 Selected, pending, invalid, disabled and read-only are **different states**. Error requires text and recovery, not just a red line; a wrong quiz answer is a learning result, not necessarily an invalid form input. In a selectable card, retain an accessible checked/selected cue (text, icon, radio state) in addition to the outline.
 
 ### Table, modal and section dividers
 
-> **Historical figure 8 — source reference only (not transferred):** Source data table with horizontal separators; the displayed data are illustrative, not HSK AI learner records. Source asset: `./assets/borders-and-dividers/table-dividers.png`.
+> **Historical figure 8 — source figure reference (only approved samples, if any, are linked below):** Source data table with horizontal separators; the displayed data are illustrative, not HSK AI learner records. Source asset: `./assets/borders-and-dividers/table-dividers.png`.
 
 Use row separators as a restrained default for dense data. Don't mix a full cell grid, zebra stripes and horizontal lines without a specific measured scanning benefit. Preserve cell/column association and focus in an accessible HSK AI admin table.
 
-> **Historical figure 9 — source reference only (not transferred):** Reference of modal boundaries separating fixed header/footer from scrolling content. Source asset: `./assets/borders-and-dividers/header-footer-dividers.png`.
+> **Historical figure 9 — source figure reference (only approved samples, if any, are linked below):** Reference of modal boundaries separating fixed header/footer from scrolling content. Source asset: `./assets/borders-and-dividers/header-footer-dividers.png`.
 
 A modal's fixed header/footer can need a clear line between stationary actions and scrolling content, especially with the on-screen keyboard and safe areas. Preserve primary actions and unsaved learner input.
 
-> **Historical figure 10 — source reference only (not transferred):** Source reference separating independent content groups inside a dialog. Source asset: `./assets/borders-and-dividers/section-dividers.png`.
+> **Historical figure 10 — source figure reference (only approved samples, if any, are linked below):** Source reference separating independent content groups inside a dialog. Source asset: `./assets/borders-and-dividers/section-dividers.png`.
 
 For independent filter groups, a section line can clarify scope; don't add dividers directly under every heading when spacing and labels already establish hierarchy.
 
 ### Bordered choice cells versus divided lists
 
-> **Historical figure 11 — source reference only (not transferred):** Source example of separately bordered selectable cells; its original class names are not HSK AI options. Source asset: `./assets/borders-and-dividers/bordered-cells.png`.
+> **Historical figure 11 — source figure reference (only approved samples, if any, are linked below):** Source example of separately bordered selectable cells; its original class names are not HSK AI options. Source asset: `./assets/borders-and-dividers/bordered-cells.png`.
 
 - **Bordered cells:** a short fixed mutually exclusive choice on the page background (e.g., *an already supported HSK track/level choice*). Each target needs its own edge and a selected cue.
 - **Line-divided list:** content already inside a container, especially when searching or filtering. Use rows and separators rather than a second full border around every record.
 
-> **Historical figure 12 — source reference only (not transferred):** Reference list within a containing surface using lightweight horizontal row lines. Source asset: `./assets/borders-and-dividers/line-dividers.png`.
+> **Historical figure 12 — source figure reference (only approved samples, if any, are linked below):** Reference list within a containing surface using lightweight horizontal row lines. Source asset: `./assets/borders-and-dividers/line-dividers.png`.
 
 No image represents actual student/classroom functionality in HSK AI. These rules are about **visual organization**, not new product screens. The original source's main professional distinctions—subtle vs discoverable, focus vs selected, table vs section, and cells vs list—are now explicit for HSK AI.
 
