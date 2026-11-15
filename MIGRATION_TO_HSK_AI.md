@@ -26,6 +26,12 @@ There are **two different kinds of priority**; they must not be confused:
 
 **Do not call this migration complete or fully portable yet.** The source guideline audit and future transfer plan are substantially prepared, but the canonical product-doc file copies and original-asset provenance must still be resolved. These are **document transfer** gates, not demands to test PWA/Android now.
 
+## Last targeted documentation consistency scan (source only)
+
+All **44 active MDX pages** were re-read on the source branch in four 11-file groups for direct instructions to **collapse optional text to one rendered line**, to **let existing HSK AI styling override professional design**, or to **keep current visual layout unconditionally**. No matching active instruction was detected by those targeted phrase patterns; one ordinary report-filter sentence about preserving the *current selection* is **user state**, not a styling override. This is a **bounded text-pattern review**, not proof of all semantic contradictions being impossible. The **real confirmed one-line contradiction is in the separate HSK-AI-Bot UI skill**, and it stays open in the conflict register until actual later transfer.
+
+The six pages still byte-identical to the historical MDX baseline — clear filter, date filter, inline filter button, search field, motion and typography — were re-read; they already contain explicit HSK AI-specific sections/rules, so unchanged blob SHA alone does **not** mean "unadapted source policy." Their historical image imports still require the same portable conversion/rights review as other source pages.
+
 ## Migration documents — read in this exact order
 
 1. [**Professional-first contract**](DESIGN_SYSTEM_PROFESSIONAL_FIRST_CONTRACT.md) — governs the professional design decisions and minimal HSK adaptation.
