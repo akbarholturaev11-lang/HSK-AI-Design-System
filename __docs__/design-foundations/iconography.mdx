@@ -1,4 +1,9 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import sourceIconographyImg from "./assets/iconography/iconography.png";
+import sourceIconLibraryImg from "./assets/iconography/icon-library.png";
+import sourceIconUsage1Img from "./assets/iconography/usage-guidelines-1.png";
+import sourceIconUsage2Img from "./assets/iconography/usage-guidelines-2.png";
+import sourceIconUsage3Img from "./assets/iconography/usage-guidelines-3.png";
 
 <Meta title="Design Guidelines / Foundations / Iconography" />
 
@@ -33,6 +38,45 @@ Icons should support clear, familiar, accessible interaction in the HSK AI learn
 | Larger illustration | Treat as graphics/characters, not as an enlarged generic interface icon. |
 
 Minimum interactive targets: **44 × 44 CSS px** on iPhone PWA and **48 × 48 dp** on native Android, where relevant. This does not mean every *visible glyph* must be 44–48 units wide.
+
+## Professional icon references and HSK AI decisions
+
+The five illustrations below are **historical source design examples**. They demonstrate professional icon geometry, hierarchy, labeling and state, **not** the product's existing app icons or a requirement to migrate every PWA/Android icon.
+
+<img src={sourceIconographyImg} alt="Historical iconography overview illustrating consistency of stroke and recognizable symbols; not an HSK AI icon inventory" />
+
+### Library consistency and migration policy
+
+<img src={sourceIconLibraryImg} alt="Reference icon-library overview; existing HSK AI icons retain their current approved assets until an audited migration" />
+
+For **new ordinary generic icons**, use the previously approved Phosphor family with a consistent stroke vocabulary, and adopt a smaller number of size/weight roles. Existing production icons are **not** replaced globally. Treat the original source's library-only instruction as a design aim for new work, not a license to disrupt existing HSK AI UI.
+
+| Reference glyph size | Source visual weight | Professional use; verify per app component |
+| --- | --- | --- |
+| 12px | Bold | Compact indicators, never a 12px-only tap target |
+| 16px | Bold | Inline indicators, badges, inputs |
+| 20px | Bold | Common button/status glyphs |
+| 24px | Regular | Navigation or icon buttons |
+| 48px | Regular | Large illustrative utility symbol, not a mascot |
+
+These source values are **illustrative**; existing HSK icon dimensions and the iPhone 44 CSS px / Android 48 dp interaction targets take priority. Do not enlarge a glyph only to satisfy tap-area sizing.
+
+### Selection, labeling and weights
+
+<img src={sourceIconUsage1Img} alt="Reference example of sourcing icons consistently; a source Figma library is not HSK AI's production icon repository" />
+
+Use one coherent approved generic visual family for a new feature, rather than assembling arbitrary SVGs from unrelated libraries. Source icons such as teacher, classroom, Gems, Khanmigo or assessment roles **must not be ported**.
+
+<img src={sourceIconUsage2Img} alt="Reference comparing familiar standalone close/back icons with less obvious symbols that need labels" />
+
+- Close, back or search can be icon-only in a known position **with an accessible name**.
+- New study actions, reveal translation, replay pronunciation and review mistakes need a visible label or a well established product-specific convention.
+- A tooltip by itself is not a sufficient touch interface label when a symbol is unfamiliar.
+- Do not communicate selection with a color change alone.
+
+<img src={sourceIconUsage3Img} alt="Reference comparison of icon visual weights and selected states; not an instruction to recolor HSK characters" />
+
+Regular/Bold/Fill offer a useful visual hierarchy for newly approved generic icons; reserve Fill for actual selected states when a clear state cue is needed. Avoid hard-coded source library rules for every platform icon, and review readability, contrast and Unicode fallback on physical devices. Custom Panda, correct/incorrect reaction, Pro crown and Voice Orb artwork **remain outside** the generic icon family.
 
 ## Correct and incorrect lesson feedback
 
