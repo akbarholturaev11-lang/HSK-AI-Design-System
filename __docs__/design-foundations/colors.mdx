@@ -1,116 +1,55 @@
 import {Meta} from "@storybook/addon-docs/blocks";
-import Principle, {PrincipleSet} from "../components/principle";
-import Color from "../components/ColorSwatch";
-import colorsImg from "./assets/colors/colors.png";
-import primitivesGrid from "./assets/colors/primitives-grid.png";
-import semanticTokensImg from "./assets/colors/semantic-tokens.png";
-import accessiblePairingsImg from "./assets/colors/accessible-pairings.png";
 
 <Meta title="Design Guidelines / Foundations / Colors / Colors" />
 
-<img src={colorsImg} alt="Colors" />
-
 # Colors
 
-Color communicates meaning, directs attention, and reflects the brand. Our system maps a core palette to semantic tokens — so every color decision describes purpose, not just appearance.
+HSK AI uses **semantic colors** to make lesson content readable, support correct and incorrect answers, show actual progress and keep navigation clear. Colors express **purpose**, not decorative preferences. The actual PWA tokens and Android palette are the source of truth for existing roles.
 
-<a href="https://www.figma.com/design/e9qdyiDUBZ3rDabP9S7ulO/%E2%9A%A1%EF%B8%8F-Handshake?m=auto&node-id=19-1264&t=pe1ZVTE19sKas5sl-1" target="_blank" rel="noopener noreferrer">View all color tokens</a>
+Read the <a href="./?path=/docs/design-guidelines-foundations-colors-semantic-tokens--docs">HSK AI semantic color tokens</a> page for existing token names, verified light/dark values, contrast and state rules.
 
 ## Principles
 
-<PrincipleSet>
-    <Principle
-        label="Foundational"
-        title="Color supports, never carries"
-        description="Color should enhance understanding, not be the only way to achieve it. Meaning must survive without it."
-    />
-    <Principle
-        label="Intentional"
-        title="Color has purpose"
-        description="Every color in the product communicates something. When color is applied without intention, that meaning erodes. Use it deliberately, or not at all."
-    />
-    <Principle
-        label="Restrained"
-        title="Restraint multiplies impact"
-        description="A restrained palette has greater impact. HSK AI's existing brand red is the primary accent for meaningful, non-destructive actions. Use it sparingly through the Instructive semantic tokens; do not use Critical tokens for brand emphasis or make every surface red."
-    />
-    <Principle
-        label="Systematic"
-        title="Consistency builds trust"
-        description="When the same color always means the same thing, users stop thinking about it and start feeling it. Inconsistency creates doubt."
-    />
-    <Principle
-        label="Respectful"
-        title="Contrast is respect"
-        description="Legibility isn't a nice-to-have. Every person using this product deserves to read and understand it clearly."
-    />
-</PrincipleSet>
+### Color supports meaning, never carries it alone
 
-## Palette
-### Primitives
+A correct response needs a clear success state plus text, shape/icon or existing character reaction. An incorrect response needs unambiguous correction feedback. Payment success, score, lesson completion and Pro entitlement must **not** be communicated as accomplished until confirmed by the authoritative state.
 
-HSK AI's existing brand red defines the product's primary accent; its actual production value is the source of truth, not a new or guessed hex value. Its light and dark variants serve non-destructive brand and interactive purposes. Success, Warning, and Critical remain separate semantic color families rather than being derived solely from the brand accent.
+### Purpose before color
 
-<img src={primitivesGrid} alt="Primitives color grid" />
+- **Primary/brand:** use existing product accent roles such as `--hsk-cinnabar` for non-destructive interactive emphasis.
+- **Content:** use `--hsk-ink` and secondary text on the actual current background.
+- **Success:** use the established Jade family where a verified positive state is appropriate.
+- **Warning/errors:** do **not** misuse the brand's light-theme red as a generic error; where needed, use the actual screen's validated error presentation and propose a dedicated role when the existing tokens do not provide one.
+- **Milestone/Pro:** use the existing Gold family only when its associated state or verified event exists.
+- **Decorative graphics:** preserve the canonical Panda/side characters and AI Voice Orb independent of generic interface-color conventions.
 
-### Semantic tokens
+### Respect light and dark themes
 
-Semantic color tokens are reusable variables that allow us to apply color consistently, meaningfully, and accessibly across HSK AI's PWA and Android experiences. Rather than referencing raw hex values, tokens are named by intent — the purpose a color serves, not what it looks like. These tokens make it easier to apply color consistently, maintain accessibility, and update the system at scale. <a href="./?path=/docs/design-guidelines-foundations-colors-semantic-tokens--docs">See semantic colors for more.</a>
+The existing `--hsk-cinnabar` role is `#E04A40` on the light theme and **`#20BCEB` on the dark theme**. Do not paint all non-destructive buttons red regardless of theme. Re-evaluate text foreground contrast, accessibility and correct/incorrect signals in both.
 
-<img src={semanticTokensImg} alt="Semantic tokens" />
+### Readable contrast
 
-## Usage guidelines
+For WCAG AA, normal text usually needs **4.5:1**, large text or essential non-text UI boundaries **3:1** against their real background. Do not assume a palette is accessible merely because a pair uses a semantic variable; check the actual rendered combination, including overlays and focus states.
 
-### Tokens for everything
+## HSK AI implementation guidance
 
-Every color applied in a design — backgrounds, text, icons, borders, shadows — should use a semantic token. If you're reaching for a color swatch or hex value directly, stop and find the token instead.
+**Existing sources:**
+- PWA: `app/static/course_v3_data/design-tokens.css`.
+- Android: `android/app/src/main/java/com/pomp/hskai/core/design/Color.kt` and Material color scheme defined in `Theme.kt`.
 
-### Consistent intent over appearance
+Use current semantic role names and token mappings. An experimental palette, unverified UI theme or additional global color must be proposed and tested rather than imported from a source screenshot. Avoid hard-coded source-brand colors, invented gem economy states and school-specific score thresholds.
 
-Tokens are named for what they do, not what they look like. HSK AI maps Instructive to its existing brand-red family for primary, non-destructive actions; Success confirms a completed action; Warning signals caution; and Critical marks errors or destructive actions. The Critical red must be visually distinguishable from HSK AI's brand red and must not be reused for ordinary primary buttons. An error or incorrect answer must also show a clear non-color cue (for example, an × icon and readable label or message); red alone is insufficient. Never use Critical merely because it is red, and never use Instructive for an error or destructive action.
+**Hanzi/pinyin/translation** remain readable in every learner exercise, and important text may never be hidden by an overlay or made illegible by reduced contrast. Use icon and readable message with state colors, never color alone.
 
-### No primitives or raw hex
+## Review checklist
 
-Primitive tokens and hex values are the raw ingredients that feed the token system — they're not meant to be applied directly in designs. Using them bypasses the system and breaks consistency across themes and components.
+1. Does the color match the verified learning or UI state?
+2. Does its meaning survive grayscale, reduced motion and screen reader use?
+3. Is the contrast sufficient on both themes at the actual size/weight?
+4. Does the current PWA token or Android role really exist?
+5. Would the change preserve approved Panda/other character colors and the red Voice Orb?
+6. Have small screens, large text, overlays and keyboard states been checked?
 
-## Accessible pairings
+## Scope
 
-All color combinations must meet minimum contrast ratios. The applicable contrast ratio depends on the content type. Purely decorative elements with no informational purpose are exempt.
-
-<img src={accessiblePairingsImg} alt="Accessible pairings" />
-
-| 3:1 contrast ratio | 4.5:1 contrast ratio |
-| --- | --- |
-| Large Text (19–23px + bold weight | ≥ 24px) | Normal Text (≤ 18px)
-| Distinguishing borders or fills of controls |
-| Critical graphics |
-
-### Recommended combinations
-
-The token system is built with accessible pairings in mind.
-
-**Background**
-
--   Default and Strong Background tokens (minus Warning) pass at 3:1+ on the Default and Subtle Base Background tokens
--   Strong Background tokens pass at 3:1+ on all Subtle Background tokens
-
-**Borders**
-
--   Strong Border tokens pass at 3:1+ on all Subtle Background tokens and the Default Base Background token
--   Default and Subtle Border tokens (minus Warning) pass at 3:1+ on all Subtle Background tokens and the Default Base Background token
-
-**Foreground**
-
--   Strong Foreground tokens pass at 4.5:1+ on all Subtle Background and Base Background tokens
--   Default Foreground tokens pass at 4.5:1 on Default and Subtle Base Background tokens and most Subtle Background tokens (with a few 3:1 only passing exceptions)
-
-Following the usage guidelines above will help keep you within compliant combinations.
-
-### Working with color
-
-We ensure that users can distinguish between elements and understand any instructions, states, or other design cues by pairing color changes with non-color cues. These can include:
-
--   Adding / applying a new icon, underline, border, shadow, or glow
--   Increasing font weight, underline, border, or stroke thickness
--   Increasing the spacing of / between elements, including letter spacing
--   Including patterns or shapes with data visualizations
+This page is **HSK AI-only design guidance**. It does not authorize editing the production app or replacing Storybook's temporary authoring dependencies without separate validation.
