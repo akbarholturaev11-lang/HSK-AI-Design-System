@@ -30,6 +30,7 @@ The intended outcome is a **full, no-omission transfer of professional guideline
 
 - [44-page standalone Markdown review edition](docs/portable/README.md) — one independent, source-SHA-pinned draft per professional guideline, with figure references and no Storybook runtime dependency.
 - [44-page source/transfer catalog](docs/migration/TRANSFER_CATALOG.md) — tracked filenames, Git blob identities, intended target paths and 298 historical figure placements plus one Phosphor SVG demo import.
+- [Upstream text/art rights verification](docs/migration/UPSTREAM_RIGHTS_VERIFICATION_2026-11-15.md) and [29-demo semantic audit](docs/migration/LIVE_DEMO_SEMANTICS_AUDIT.md) — no automatic license from the upstream repository or its separate component packages.
 - [316-image / 30-font asset quarantine](docs/migration/ASSET_AND_RUNTIME_INVENTORY.md) — verified source path and SHA inventory, no blind binary copying.
 - [Verified conflicts with existing HSK AI rules](docs/migration/CONFLICT_REGISTER.md) — especially the **one-line vs two-line** disclosure and **existing-style vs professional-design precedence** discrepancies.
 - [Copy-ready authority insertion and two-line UI skill replacement](docs/migration/TARGET_AUTHORITY_INSERT.md) — read and apply **only during the separately authorized repository transfer**.
