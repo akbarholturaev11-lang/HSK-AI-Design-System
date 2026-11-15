@@ -1,4 +1,7 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import {ProgressReferenceDemo} from "../components/HskReferenceDemos";
+import sourceProgressHeader from "./assets/progress-charts/header.png";
+import sourceProgressContainer from "./assets/progress-charts/container.png";
 
 <Meta title="Design Guidelines / Components / Data visualization / Progress charts" />
 
@@ -59,6 +62,30 @@ Use <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs">HSK AI
 ## Accessibility
 
 Each chart announces the actual value and goal as text, with a clear accessible name and unit. Do not depend on color, animation, a vague percentage or a character reaction alone. Check focus, contrast, dynamic text size and mobile safe areas. Reduced-motion mode must still convey the completed amount and any genuinely pending task.
+
+## Interactive HSK AI documentation example
+
+The following demonstration contains **fictional example values only**. It illustrates a real UI interaction (switching view, sorting, state, or range), **not** a functioning HSK AI analytics endpoint or a new production screen.
+
+<ProgressReferenceDemo />
+
+## Restored professional reference examples
+
+> **Source-only illustrations:** Every figure below originated in a different product's design guidelines. Preserve their professional layout and interaction principles; do not treat sample students, school data, scores, source colors or buttons as verified HSK AI functionality.
+
+### Overview
+
+<img src={sourceProgressHeader} alt="Source progress chart overview; it is not HSK AI's Gems or school reward feature" />
+
+A progress bar requires a real, validated numerator and target in the **same units**; otherwise use a different view.
+
+### Anatomy
+
+<img src={sourceProgressContainer} alt="Original large progress-chart container showing current versus target observations" />
+
+**Progress anatomy:** clear title, measured current amount, real target, optional marker only where an actual schedule exists and meaningful completion semantics.
+
+Never use an expected-by-today marker or 100% unless the backend records the target and its schedule. Preserve a readable text equivalent for bar fill; distinguish a goal that is exceeded from an error in accounting. Compact versions omit secondary controls without hiding the actual current/target values. **Gems challenge illustration remains excluded** because HSK AI has no corresponding verified reward metric.
 
 ## Implementation boundary
 

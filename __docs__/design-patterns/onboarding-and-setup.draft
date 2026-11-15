@@ -1,4 +1,15 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import sourceOnboardOverview from "./assets/onboarding-and-setup/onboarding-and-setup.png";
+import sourceActivation1 from "./assets/onboarding-and-setup/activation-1.png";
+import sourceActivation2 from "./assets/onboarding-and-setup/activation-2.png";
+import sourceProfile1 from "./assets/onboarding-and-setup/collecting-info-1.png";
+import sourceProfile2 from "./assets/onboarding-and-setup/collecting-info-2.png";
+import sourceDecision1 from "./assets/onboarding-and-setup/logic-framework-how-they-play-together-5.png";
+import sourceDecision2 from "./assets/onboarding-and-setup/logic-framework-how-they-play-together-6.png";
+import sourceDecision3 from "./assets/onboarding-and-setup/logic-framework-how-they-play-together-7.png";
+import sourceDecision4 from "./assets/onboarding-and-setup/logic-framework-how-they-play-together-8.png";
+import sourceDecision5 from "./assets/onboarding-and-setup/logic-framework-how-they-play-together-9.png";
+import sourceDecision6 from "./assets/onboarding-and-setup/logic-framework-how-they-play-together-10.png";
 
 <Meta title="Design Guidelines / Patterns / Onboarding and setup" />
 
@@ -54,6 +65,82 @@ Do not use a fake multi-step wizard for one setting, for a payment redirect, a p
 - Respect approved HSK AI colors, Panda proportions, motion/reduced-motion handling, clear accessible button names, iPhone touch targets (44 CSS px) and native Android touch targets (48 dp where appropriate).
 - Extra nonessential text can use **a maximum two-line collapsed description**, with only a **top-right ⌄/⌃ icon** and in-place expansion. Required input guidance, privacy terms and choices are never collapsed.
 - Test with real iPhone browser/standalone and Android navigation, keyboard, enlarged text and network interruption before declaring a flow production-ready.
+
+## Restored professional source examples
+
+> **Historical education-product diagrams only.** These examples preserve valuable interaction, composition and state patterns, not HSK AI's actual screens, roles, artwork, data or feature inventory. See the HSK AI-specific rules above before making a production design decision.
+
+### Example 1: onboarding and setup
+
+<img src={sourceOnboardOverview} alt="Original onboarding framework diagram; it depicts a different education app" />
+
+A guided flow has a concrete activation goal, sensible sequential decisions and a known exit/recovery path.
+
+### Example 2: activation 1
+
+<img src={sourceActivation1} alt="Source teacher activation example, NOT an HSK AI teacher account" />
+
+**Activation:** identify which verified account or entry route is actually supported. Do not request a teacher's district address in HSK AI.
+
+### Example 3: activation 2
+
+<img src={sourceActivation2} alt="Source student activation example; school selection is not an HSK AI requirement" />
+
+**Account context:** show only verified information, such as the actual selected HSK level/language and supported sign-in method.
+
+### Example 4: collecting info 1
+
+<img src={sourceProfile1} alt="Original teacher profile collection; the form fields are not HSK AI mandatory fields" />
+
+**Minimal data:** ask only for information the actual HSK AI flow needs. Explain why a required choice matters; do not collect birthdays/names because a school demo did.
+
+### Example 5: collecting info 2
+
+<img src={sourceProfile2} alt="Source student profile and language example, not an HSK AI registration screen" />
+
+**Language:** preserve the app's chosen supported UI language; do not swap the meaning of user-level language, Chinese study level or linked account.
+
+### Example 6: logic framework how they play together 5
+
+<img src={sourceDecision1} alt="Original example of a primary decision step in onboarding" />
+
+**Primary decision:** label the real user's next meaningful choice, support back navigation and avoid needless required fields.
+
+### Example 7: logic framework how they play together 6
+
+<img src={sourceDecision2} alt="Original illustration of escaping a limited choice set" />
+
+**Other path:** when an actual supported option is not listed, provide the real alternative or explain the limitation; do not invent a non-existent account route.
+
+### Example 8: logic framework how they play together 7
+
+<img src={sourceDecision3} alt="Original illustration of alternative and secondary flow" />
+
+**Secondary path:** distinguish the primary route from a supported fallback such as browser guidance without losing the intended account/session.
+
+### Example 9: logic framework how they play together 8
+
+<img src={sourceDecision4} alt="Original optional-step/skip illustration" />
+
+**Optionality:** Skip is shown only where a step truly is optional, never where authorization or informed consent is required.
+
+### Example 10: logic framework how they play together 9
+
+<img src={sourceDecision5} alt="Original framework illustrating repeated steps" />
+
+**Repetition:** don't make a single progress bar lie about multiple repeated prompts. Show correct context and preserve already supplied data.
+
+### Example 11: logic framework how they play together 10
+
+<img src={sourceDecision6} alt="Original onboarding completion diagram" />
+
+**Finish:** confirm the real saved/onboarded state, don't claim Safari installation or Pro entitlement solely from opening a URL.
+
+### HSK AI platform mapping and guardrails
+
+On **iPhone PWA**, Safari install guidance and Google/Telegram sign-in are platform-specific; the browser cannot reliably detect installation in a different browser context. On **Android**, retain the actual native account path and supported new/existing learner decisions rather than a school activation workflow. Do not suggest Apple login works unless verified, do not make onboarding a paid-plan requirement, and do not permanently hide guidance based on a one-tab session dismissal.
+
+**In all cases:** show honest progress for a genuine sequence, allow a predictable Back action when supported, keep the user's language and entered text when returning to a prior step, and avoid losing data on keyboard opening/closing. Preserve existing auth, lesson and payment state. The screenshot diagrams are instructional illustrations, **not accepted HSK AI screen designs**.
 
 ## Documentation boundary
 

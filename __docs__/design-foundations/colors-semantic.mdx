@@ -1,4 +1,5 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import sourceSemanticTokensImg from "./assets/colors/semantic-tokens-hero.png";
 
 <Meta title="Design Guidelines / Foundations / Colors / Semantic tokens" />
 
@@ -41,6 +42,14 @@ These are **documented current PWA values** for the most important roles, not an
 | `--hsk-flame` | `#FF9600` | `#FF6B66` |
 
 **Important:** `--hsk-cinnabar` is the existing brand-action role name even though its **dark-mode appearance becomes cyan**. Do not hardcode red in both themes, infer that cyan means error, or bind success and incorrect-answer semantics to a decorative brand color.
+
+## Semantic-system design method (source reference)
+
+<img src={sourceSemanticTokensImg} alt="Historical semantic token hierarchy diagram; source category names and palette are illustrative, not HSK AI token contracts" />
+
+The professional insight is to **separate raw color values from interface purpose**. A semantic role can be defined by state (ordinary, selected, success, warning, error or disabled), foreground/background context and theme. The source's former domain/layer/intensity taxonomy is **not a HSK AI token API**. HSK AI's actual tokens above and native Material roles govern implementation.
+
+For each role, specify the component, text/background pairing, light/dark values, contrast outcome and a non-color cue. When a needed role is absent, record it as a **design gap**, not an already implemented CSS property. Verify that a visually similar brand accent does not silently substitute for a destructive state.
 
 ## Application rules
 

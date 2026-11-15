@@ -1,4 +1,9 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import {TrendReferenceDemo} from "../components/HskReferenceDemos";
+import sourceChartHeader from "./assets/chart-container/header.png";
+import sourceHeadingHierarchy from "./assets/chart-container/heading-hierarchy.png";
+import sourceControls from "./assets/chart-container/controls.png";
+import sourceViewToggle from "./assets/chart-container/view-toggle.png";
 
 <Meta title="Design Guidelines / Components / Data visualization / Chart container" />
 
@@ -46,6 +51,42 @@ On error, show an understandable message with real recovery, preserve unaffected
 - Describe the chart's meaning in text; never rely only on color or hover tooltip.
 - Enable touch/keyboard access to supported data details.
 - Keep HSK-related Hanzi, pinyin and localized language text legible under font scaling and both HSK AI themes.
+
+## Interactive HSK AI documentation example
+
+The following demonstration contains **fictional example values only**. It illustrates a real UI interaction (switching view, sorting, state, or range), **not** a functioning HSK AI analytics endpoint or a new production screen.
+
+<TrendReferenceDemo />
+
+## Restored professional reference examples
+
+> **Source-only illustrations:** Every figure below originated in a different product's design guidelines. Preserve their professional layout and interaction principles; do not treat sample students, school data, scores, source colors or buttons as verified HSK AI functionality.
+
+### Overview
+
+<img src={sourceChartHeader} alt="Historical chart-container overview showing a source data report, not real HSK AI analytics" />
+
+Overview: hierarchy of chart title, timeframe, controls and plot. Preserve the separation of data definition and presentation.
+
+### Anatomy
+
+<img src={sourceHeadingHierarchy} alt="Source illustration of section heading outside a chart container and chart title inside" />
+
+**Headings:** put the page/section H2 outside; a shorter chart title and optional description belong inside the container. Do not duplicate a headline in two places.
+
+### Controls and comparison
+
+<img src={sourceControls} alt="Original reference showing chart controls alongside the container title" />
+
+**Control scope:** a chart-local dropdown applies to that chart; a page-wide date filter belongs above all affected results. Show the selected scope and avoid silent cross-chart filter drift.
+
+### Alternative presentation
+
+<img src={sourceViewToggle} alt="Original reference showing chart and table view controls together" />
+
+**Alternative view:** when an authorized real chart has a table alternative, a clearly labeled toggle preserves the selected date range and filtered data. Do not fabricate unmeasured values in a table.
+
+A professional report container has five layers: contextual heading, compact metric title, optional supporting explanation, **local controls with explicit scope**, and the visualization or its state. Choose a large layout when users need comparison or drill-down; use a compact layout only for a glanceable supported metric. In narrow phones move controls below the title rather than squeezing labels. A chart with no verified data needs an accurate empty/loading/error state, not a fabricated SVG.
 
 ## Implementation boundary
 

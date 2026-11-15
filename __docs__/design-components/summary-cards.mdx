@@ -1,4 +1,7 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import sourceSummaryHeader from "./assets/summary-cards/header.png";
+import sourceStatCard from "./assets/summary-cards/stat-cards.png";
+import sourceClickableCard from "./assets/summary-cards/stat-cards-clickable.png";
 
 <Meta title="Design Guidelines / Components / Data visualization / Summary cards" />
 
@@ -48,6 +51,30 @@ Include an action only if a real screen provides a working, authorized destinati
 Show stable known card labels while the metric loads. A refresh failure may retain a valid previous number with an explicit timestamp, but never claim it is current. Protect previous account data on logout/switch. Offer retry only when an actual retry action exists.
 
 Refer to <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs">Data reports</a> and <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs">Data visualization</a> for shared reporting and accessibility rules.
+
+## Restored professional reference examples
+
+> **Source-only illustrations:** Every figure below originated in a different product's design guidelines. Preserve their professional layout and interaction principles; do not treat sample students, school data, scores, source colors or buttons as verified HSK AI functionality.
+
+### Overview
+
+<img src={sourceSummaryHeader} alt="Historical summary card layout example containing source metrics, not real HSK AI analytics" />
+
+A summary strip should lead with a verified high-value number and its period; secondary comparison does not overpower the figure.
+
+### Anatomy
+
+<img src={sourceStatCard} alt="Original example of plain stat cards and directional badges; the sample scores are not HSK AI grading rules" />
+
+**Stat card:** include metric label, value, unit and time period. A color-coded upward/downward indicator must only describe a real comparable change, with a readable explanation.
+
+### Controls and comparison
+
+<img src={sourceClickableCard} alt="Source example of summary cards with explicit links to detailed views" />
+
+**Actionable card:** only show a View/Details affordance if a supported destination exists and the user is authorized. A clickable card requires focus, keyboard semantics and a visible destination label.
+
+Do not merge *enrolled*, *active*, *completed*, *passed* and *Pro* into one undefined status. A summary value must carry the same account, platform, date range and deduplication rules as its drill-down list. On phones allow the value and localized labels to wrap; avoid tiny fonts or misleading down arrows. Loading, partial coverage, missing permission and failure are different states.
 
 ## Implementation boundary
 
