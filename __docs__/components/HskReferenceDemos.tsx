@@ -27,7 +27,7 @@ const buttonStyle: React.CSSProperties = {
     color: "inherit",
     border: "1px solid currentColor",
     cursor: "pointer",
-    minHeight: 40,
+    minHeight: 44,
 };
 const explanation: React.CSSProperties = {fontSize: 13, opacity: 0.85, lineHeight: 1.45};
 const week: Point[] = [
