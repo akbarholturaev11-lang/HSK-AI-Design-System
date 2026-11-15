@@ -98,6 +98,29 @@ Trends need **three or more comparable observed points** and explicit units, dat
 
 Place a high-level measure above the chart where useful; label the time window. Use a consistent interpolation policy: never draw a confident continuous increase across missing periods without marking the gap. If comparing groups, use the **same metric, sample definition, granularity and axis scale**. Describe which group each series represents for screen readers and provide an accessible table fallback when a production chart exists.
 
+## Restored trend design rules
+
+### Time axis and evidence
+
+- Use a trend only for an **ordered series of genuinely recorded comparable periods**. One observation has no trend. When the analysis will permanently have only two points, a stat card expressing the verified difference is often clearer.
+- Dates with unequal real intervals must use appropriately spaced time positions; named assessment windows can be equally spaced only when they are explicitly categorical periods. Label the time zone and granularity when a user could misread the boundary.
+- Never convert a missing period into numerical zero or connect a line across an unknown value as if it were measured. Show a gap; distinguish future periods, incomplete reporting and not-yet-available data.
+- For a line chart, **a nonzero vertical baseline can be appropriate** when clearly labeled; for bar charts, begin the value axis at zero. Do not exaggerate changes with an unlabeled truncated axis.
+
+### Lines and labels
+
+- A standard line is visually legible at about 2 CSS px before device-scale adjustments; prioritize contrast and touch visibility over rigid cross-platform pixel identity.
+- Show point markers when there are only a few observations; with dense daily/weekly histories, reduce markers but retain keyboard/touch access to point values via a table or focusable summary.
+- Label the most recent measured point and any point a conclusion explicitly references. Use exact units, date/period and sample population in the tooltip or alternative table.
+- One highlighted series may use a stronger approved semantic color; other comparable series use neutral or distinct accessible roles with text/shape labels. Do not use an area fill when multiple overlapping lines would obscure one another.
+
+### Comparing groups and trustworthy change
+
+- Use equal time windows, calculation definitions, data freshness and account/permission scope. A change in tracking coverage, repeated events or learner mix must not be presented as individual progress.
+- A reference line is legitimate only for an existing goal or compatible verified baseline. No invented school average, target or HSK mastery threshold.
+- Prefer the statement “X verified activities over Y dates” to a directional claim if measurement coverage is incomplete. Surface a relevant loading/error state instead of freezing a stale chart as current.
+
+
 ## Implementation boundary
 
 This document is HSK AI-only and deliberately contains no imported school test charts, source scoring examples or inherited comparator policies. Do not modify the app or manufacture trend data from the design guideline.
