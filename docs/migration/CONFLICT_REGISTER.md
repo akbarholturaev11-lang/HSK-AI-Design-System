@@ -29,10 +29,10 @@
 
 ### C-04 — Storybook/MDX with foreign rendering packages: CONFIRMED packaging risk
 
-- **Design source:** 44 active MDX pages; **299 image-import occurrences**, many JSX/Storybook components (`<Meta>`, `<Demo>`, `<Do>`, `<Dont>`) and imported vendor runtime packages such as `@khanacademy/wonder-blocks-*`.
+- **Design source:** 44 active MDX pages; **299 visual import declarations (298 figure placements and one Phosphor SVG icon)**, many JSX/Storybook components (`<Meta>`, `<Demo>`, `<Do>`, `<Dont>`) and imported vendor runtime packages such as `@khanacademy/wonder-blocks-*`.
 - **Target:** HSK product uses its own PWA CSS and native Android Compose design components; it is not the historical Storybook renderer.
 - **Mandatory future resolution:** deliver 44 complete, portable guideline pages under `docs/design-system/guidelines/`, with **no active JSX imports, Storybook route assumptions or vendor-runner requirements**. Convert structured illustrative content to safe, readable markdown/examples and preserve every professional rationale and detail. Maintain source-file SHA traceability. Do not move package manager config or the original UI renderer into the product root, or force Wonder Blocks into PWA/Android.
-- **Evidence level:** Git-tree and source-page source reads; not a completed portable conversion.
+- **Evidence level:** Git-tree and source-page reads; **44 internal portable review drafts have now been created** at `docs/portable/guidelines/`, but rights/figure parity and final target acceptance are **not** complete.
 
 ### C-05 — External images and font redistribution: CONFIRMED unresolved provenance
 
@@ -76,10 +76,10 @@
 
 | Gate | Current status | Requirement |
 | --- | --- | --- |
-| 44-page professional-rule corpus and approved owner decisions inventoried | VERIFIED source existence | Future conversion must retain 44/44 content and granular detail |
+| 44-page professional-rule corpus and approved owner decisions inventoried | 44 source pages + 44 initial standalone Markdown drafts VERIFIED | Manual micro-detail/figure parity and original wording clearance still required |
 | Explicit priority contract inside design source | WRITTEN | Must be merged into HSK root agent routing at later approved transfer |
 | C-01 one-line conflict | OPEN in destination | Replace old instruction, not merely add another |
 | C-02 existing-style priority conflict | OPEN in destination | Existing target skill must defer aesthetic details to the professional system |
-| 299 source figure references, 316 PNG and 30 font files | PROVENANCE OPEN | No blind asset inclusion; keep professional figure reasoning by safe text/originals |
+| 298 figure references + one Phosphor SVG demo import; 316 PNG and 30 font files | PROVENANCE / VISUAL PARITY OPEN | Do not blindly include art; retain visual logic in rights-cleared original text/schematics |
 | Product code changed | NO | Current scope is preparation only |
 | Branch readiness and HSK main adoption | NOT TRANSFERRED | Explicit separate future migration operation |
