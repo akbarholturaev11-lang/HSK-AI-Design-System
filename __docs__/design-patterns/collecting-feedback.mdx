@@ -1,4 +1,8 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import sourceFeedbackHero from "./assets/collecting-feedback/hero-collecting-feedback.png";
+import sourceFeedbackOpinion from "./assets/collecting-feedback/feedback-trigger-opinion.png";
+import sourceFeedbackGeneral from "./assets/collecting-feedback/feedback-trigger-general.png";
+import sourceFeedbackForm from "./assets/collecting-feedback/feedback-open-widget.png";
 
 <Meta title="Design Guidelines / Patterns / Collecting feedback" />
 
@@ -57,6 +61,42 @@ The following observations came from inspecting `app/static/course_v3_data/iphon
 | Survey close while sending | The submit button becomes disabled, but the survey close handler does not fully block dismissal; its final response may be hidden. | Resolve the close/submit race and do not invite duplicate submission. |
 | Technical report during send | The technical report closes only when not currently submitting. | Retain a clear pending/result state without duplicate sends. |
 | Screenshot default | Available capture has its attachment switch checked by default, though the user can uncheck it. | Make consent behavior explicit and privacy-appropriate. |
+
+## Restored professional source examples
+
+> **Historical education-product diagrams only.** These examples preserve valuable interaction, composition and state patterns, not HSK AI's actual screens, roles, artwork, data or feature inventory. See the HSK AI-specific rules above before making a production design decision.
+
+### Example 1: hero collecting feedback
+
+<img src={sourceFeedbackHero} alt="Original feedback-positive/negative illustration; not an HSK AI voting screen" />
+
+**Contextual sentiment:** a source-level thumbs-up/down interaction is not equivalent to HSK AI's current server-prepared lesson survey.
+
+### Example 2: feedback trigger opinion
+
+<img src={sourceFeedbackOpinion} alt="Source in-content opinion feedback affordance" />
+
+**Discoverability:** invite feedback near the content it evaluates, but only through a real supported HSK AI feedback campaign/route.
+
+### Example 3: feedback trigger general
+
+<img src={sourceFeedbackGeneral} alt="Source general feedback entry point on a teacher dashboard, not an HSK AI admin feature" />
+
+**General suggestions:** product feedback has a different intent from a reproducible technical error; don't invent a teacher navigation item.
+
+### Example 4: feedback open widget
+
+<img src={sourceFeedbackForm} alt="Original compact feedback popover example" />
+
+**Form anatomy:** use readable choices, concise explanation, optional comment where configured and a safe submission/close behavior. A fixed desktop popover width is not mandated on phones.
+
+### Acceptance and error cases
+
+1. Show feedback choices and eligibility only when the existing backend actually provides them; preserve typed text and the user's selected response on transient failure.
+2. Distinguish a successful server acknowledgment from a pending request, and prevent accidental duplicate sends.
+3. Preserve the already-audited iPhone PWA gaps: backdrop dismissal currently clears unsent form content; survey close during send has race conditions; report screenshots default to **opt-out attachment** rather than explicit opt-in. These are **observed issues**, not fixed functionality.
+4. If a future change makes attachments opt-in, test user privacy and do not silently attach a screenshot to an unrelated satisfaction question.
+5. Keep real HSK AI localized buttons, focus return and touch sizes. Never overwrite a user's account or session to match the school-based source illustration.
 
 ## Scope and verification
 
