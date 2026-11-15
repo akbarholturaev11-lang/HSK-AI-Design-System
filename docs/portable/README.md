@@ -8,6 +8,12 @@ Before reading a component guideline, consult [Professional-first design decisio
 
 **Explicit hard rules:** correct and incorrect Panda/approved-character reactions, official brand identity, red pearlescent Voice Orb, authentic backend-owned results, 4-unit spacing; optional supporting descriptions at **most 2 fully visible collapsed lines**, only a **top-right ⌄/⌃** accessible icon control. Never hide required Hanzi/pinyin/answer/payment/error information. Android and iPhone PWA retain real platform-specific behavior.
 
+## Verified editorial parity review — 44 of 44 pages
+
+The complete [MDX-to-Markdown parity audit](../audits/MDX_TO_MARKDOWN_PARITY_AUDIT_2026-11-15.md) records each currently inspected source/portable Git blob, heading retention, source provenance, converted demonstration coverage and the local Markdown file-link check. **All 44 documents were reviewed for textual and structural continuity.** The remaining source-image geometry, source-licensed wording and 29 live demos are explicitly **not** declared fully reproduced in the portable edition.
+
+Two documented source/portable content corrections were made in both variants: a school-specific filter text example was neutralized without losing the professional truncation/selection rule, and the surfaces rule now gives professional design precedence over incidental current app geometry. The source blob references in both portable headers and the transfer catalog were updated.
+
 ## What the portable edition does and does not include
 
 - **Includes:** all 44 guideline file texts, retained Markdown headings/tables, explicit professional visual-and-behavioral rules, HSK AI adaptation boundaries, source blob SHA metadata, and in-place source figure descriptions with original source paths for traceability.
