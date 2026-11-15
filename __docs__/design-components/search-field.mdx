@@ -13,6 +13,8 @@ import {Do, Dont} from "../components/DoDont";
 
 # Search field
 
+> **HSK AI application:** The source examples illustrate where a search field goes and how it clears; they are not HSK AI school screens. Apply this component only to searchable HSK AI lists that **really exist**. On mobile, keep the field next to the list it affects and preserve the current HSK AI theme and approved icon family.
+
 <NeutralBadge label="Keyword filtering" />
 
 A specialized text input used to accept user-entered keywords or strings to instantly narrow or filter content based on those terms. It is the primary mechanism for finding specific items within large data sets or complex navigation structures.
@@ -23,16 +25,16 @@ The choice to use a search field is determined by the need to efficiently locate
 
 | Use when | Example use |
 | --- | --- |
-| The content list contains more than 10–15 items, making visual scanning difficult | Finding a specific student name within a class roster of 40 students. |
-| The user is searching by a specific identifier, name, or non-categorical string | Searching for "Pythagorean Theorem" in a library of math lessons. |
-| The dataset is too large for live-filtering and requires explicit submission | Typing a partial class name and hitting enter to refresh the report table. |
+| The content list contains more than 10–15 items, making visual scanning difficult | Finding a specific vocabulary item in a long recorded word list, if that view offers search. |
+| The user is searching by a specific identifier, name, or non-categorical string | Searching for a known Hanzi word or lesson title within a supported HSK AI collection. |
+| The dataset is too large for live-filtering and requires explicit submission | Typing a lesson title and submitting to narrow an existing searchable lesson list. |
 
 ## <Dont /> When NOT to use
 
 | Don’t use when | Recommended alternative | Rationale |
 | --- | --- | --- |
 | The available options are fixed, small, and mutually exclusive | Dropdown, checkbox, or radio group | Typing to reach one of a handful of known options is slower than picking from them, and it forces the user to guess the exact wording. |
-| The user is narrowing a preference with a binary choice | Toggle / checkbox | For binary choices like "Show assigned skills only," use a toggle instead of a search query. |
+| The user is narrowing a preference with a binary choice | Toggle / checkbox | For a real binary option such as showing only completed lessons, use a toggle instead of a search query when the view supports that option. |
 | The input is intended to collect new data, not retrieve existing data | Text field | Search styling promises retrieval. A field that looks like search but stores what the user types misrepresents what the input does. |
 
 ## States
@@ -67,10 +69,19 @@ A search term is cleared only from the field. It does not produce an active filt
 
 ## Copy
 
-The placeholder names what the field searches rather than labelling the field. "Search students" tells the user the scope; "Search" on its own leaves them guessing whether it covers the table, the page, or the whole product.
+The placeholder names what the field searches rather than labelling the field. "Search words" or "Search lessons" states the scope; "Search" on its own leaves users guessing whether it covers the table, the page, or the whole product.
 
-Write placeholders in sentence case with no ending punctuation — "Search students", not "Search students…" or "Search."
+Write placeholders in sentence case with no ending punctuation — "Search words", not "Search words…" or "Search."
 
 Where the scope is too broad to carry in a placeholder, pair the field with an adjacent scope selector so the user can see and change what is being searched.
 
 <img src={scopeClarityImg} alt="A search field whose placeholder reads “Search report,” clarifying its scope" />
+
+## HSK AI product application
+
+### HSK AI content and accessibility
+
+- Chinese characters, pinyin and translations are different forms of text. Define exactly which forms the **actual implemented search** supports in each collection; never promise pinyin-to-Hanzi matching or translation search without verifying it.
+- Keep the original rule: clearing the typed query restores the result set constrained **only by remaining filters**; it does not silently clear an HSK-level selection, selected date or sort order. Keep keyboard focus in the field and announce updated result counts.
+- Use the supported language's concise field label and the HSK AI Phosphor search icon for new ordinary UI. On PWA, the clear button's tap area must be at least 44 CSS px; on native Android 48 dp.
+- Search must not discard a partially answered exercise, voice input, saved vocabulary or payment form. When searching is not implemented in a view, this guideline does not require adding it.
