@@ -11,7 +11,9 @@ import triggerOpenImg from "./assets/collecting-feedback/feedback-open-widget.pn
 
 # Collecting feedback
 
-When a user wants to tell us something about our platform, they should be able to do it in-context, where they are, and the process should be quick, familiar.
+> **HSK AI scope:** Preserve all four source illustrations as educational examples, not brand assets or app layouts. The original teacher/Khanmigo/video example controls remain demonstrations of choosing a feedback category; their data model does **not** override the existing HSK AI feedback and problem-report services.
+
+When learners want to share a reaction to a lesson or say something about HSK AI, feedback should be understandable, quick, and contextual. The original design examples illustrate professional feedback structure, not a finished HSK AI feedback screen. Reuse the existing verified PWA/Android flows and approved HSK AI visual system.
 
 ## Usage and purpose
 
@@ -21,34 +23,32 @@ There are two main variants of the feedback widget, each with its own affordance
 
 <img src={triggerOpinionImg} alt="Feedback trigger for opinion variant" />
 
-Choose **sentiment** when there is one identifiable item the user just consumed. Not only is the positive/negative signal valuable–this modality also allows us to present more relevant feedback types specific to the item type and sentiment.
+Choose **sentiment** when a reaction concerns a specific, identifiable lesson, practice item or AI response **where the actual platform offers that feedback**. The original thumbs-up/down example describes a useful design pattern, not a mandate to add a separate one-click voting feature. HSK AI's existing contextual lesson feedback can capture positive and negative selections within one guided survey; do not replace that server-defined flow.
 
-Logged:
+Captured when the existing HSK AI feedback service supports it:
 
-- sentiment
-- type
-- comment
-- item ID
+- selected positive/negative feedback choices or rating, according to the actual question
+- response category/subcategory when available
+- optional or required explanation according to the question
+- verified feedback/campaign identifier and supported lesson or practice context
+
+Do not assume a thumbs-up/down, free-text field or per-message identifier exists in every context.
 
 ### "General" variant
 
 <img src={triggerGeneralImg} alt="View cropped to show the Teacher navbar with the 'Leave Feedback' button above the profile link" />
 
-Choose **general** when the subject is a surface or workflow rather than a single item.
+Choose **general** when the subject is a screen, workflow or product experience rather than one evaluated lesson item. This is distinct from reporting a reproducible technical failure.
 
-The Teacher navbar example above allows the teacher to provide feedback on anything they can view in this layout (i.e. any non-modal experience). While there should be a default set of types, consider whether a specific view, e.g. a teacher report, would benefit from more targeted types.
+The original school navigation image demonstrates how a general feedback entry point may be discovered. In HSK AI, show a general feedback option only through an existing supported route. Do not create a teacher dashboard or a new universal launcher just to mimic the source. When the user reports a technical defect, use the actual HSK AI problem-reporting path instead of treating an error report as a satisfaction score.
 
-Logged:
-
-- type
-- comment
-- URL
+For a general product message, capture only fields that the chosen existing HSK AI channel actually supports, such as a category, description and limited screen context. Do not automatically attach a full URL, account identity or diagnostic data without an applicable need and appropriate disclosure.
 
 ### Get that feedback
 
 <img src={triggerOpenImg} alt="Feedback widget open, showing the open widget popover" />
 
-All variants open a popover like the one above, with various labels/titles being customizable. One of the biggest levers is in naming the "feedback types." 
+The source popover demonstrates a compact feedback interaction with customizable wording. HSK AI already uses modal feedback views and a distinct problem-report sheet; do not force them into a desktop-style popover. On phones, preserve the existing overlay, readable choices, keyboard clearance, focus management and a safe close route. Choosing understandable feedback categories remains essential.
 
 ## Choosing feedback types
 
@@ -78,15 +78,13 @@ Generally, the goal is match the user's intent here, so think from their perspec
 
 ## Widget popover placement
 
-The feedback popover should be anchored to the affordance that opened it, opening toward empty space or chrome — away from the region the feedback responding to. This enables sighted users to reference any helpful details. 
-
-The popover is a fixed `425px` wide and the height is dynamic.
+In the source desktop example, the popover sits near its trigger and opens away from the content under review so the user can still reference it. Apply this **intent**, not the desktop geometry: HSK AI's existing phone dialogs/sheets must fit the safe viewport, keyboard and accessible text sizes, and must not cover a live lesson answer or AI Voice action. A fixed `425px` popover is **not** mandatory on iPhone PWA or Android.
 
 ## Responding to input
 
 - A tapped thumb fills, so the response stays visible. That sentiment also determines the title and feedback types to present.
-- **Sentiment:** the thumbs are replaced by a thanks message, which takes focus on close. One submission per item — an item gets one verdict.
-- **General:** the popover swaps to a thank-you pane and the launch signifier stays available for another submission.
+- **Sentiment:** after the server confirms successful submission, replace the form with a localized confirmation. The source's one-vote-per-item rule is a reference pattern, **not** permission to overwrite HSK AI's server-owned feedback eligibility or existing multi-question responses. Avoid duplicate submissions and restore focus appropriately.
+- **General:** show a confirmation only after actual successful submission; keep an appropriate existing entry point available for another valid message if the chosen channel permits it.
 - The user must actively close the widget. Clicking outside the widget bounds will not dismiss it. If it did, the user could lose their work if they attempt to scroll or otherwise view the content they want to leave feedback on. Users likely will give up potentially losing important feedback. 
 
 ## Custom implementation
@@ -95,4 +93,28 @@ Use the customizable fields.
 
 Customizations should be rare. One example is feedback on video content, where we silently include the current timestamp of the video player as a signal.
 
-If other data needs to be captured or represented, reach out to the Design Infra team.
+Any additional information must be justified by a verified HSK AI product need, privacy requirements and the existing backend contract. Do not make another company's internal approval process a dependency for this project.
+
+## HSK AI implementation boundaries
+
+### Existing feedback surveys
+
+- The iPhone PWA already has a server-prepared feedback flow for eligible lesson, foundation, practice and voice contexts, as well as ordinary/release campaigns. Preserve the existing questions, optional/requisite comment rules, server-defined availability and authenticated-account ownership.
+- HSK AI's contextual flow can ask what the learner liked **and** disliked within one response. Do not replace that with the source's one-thumbs-up/one-thumbs-down-only rule, or submit multiple responses when one backend feedback identifier is pending.
+- Show positive/negative category choices only when the server supplies them. Existing release campaigns may request a star rating and explanation; do not imply every survey is a vote or that every item has a public rating.
+- Feedback must not unexpectedly interrupt active practice, the red AI Voice Orb, authentication, an unfinished form or a payment return. Preserve existing presentation and reminder restrictions.
+
+### Technical problems and suggestions
+
+- HSK AI has a **separate iPhone PWA problem report** with a description, optional image and verified server submission. A screenshot can contain sensitive on-screen information: the learner must explicitly control attachment, and the app must respect the current capture, redaction and account-verification protections. Do not silently attach a full screenshot to a general feedback vote.
+- Preserve the existing distinction between product suggestions, satisfaction feedback and problem reports. A support channel may be offered where one actually exists, but never claim a new integrated ticketing, reply or attachment capability that the product has not implemented.
+- Reporting a problem does not mean the problem is fixed, and attaching an image does not mean it has been sent before the server confirms the submission.
+
+### Form safety, accessibility and mobile presentation
+
+- Keep submitted and draft states distinct; prevent repeated submission while waiting. Only display a success message after a confirmed server response. On failure, preserve entered content whenever feasible and offer a clear retry.
+- Preserve the source's rule against accidental dismissal through outside taps while the learner is composing feedback. Use the approved HSK AI dialog/back behavior and restore keyboard focus when closing.
+- Keep feedback type labels short, meaningful and localized to Uzbek, Russian and Tajik where supported. Provide a clear reason for required comments; do not force extra fields purely for analytics.
+- Keep source rules of at most five specific choices plus “Other” as a **design readability guideline**, not a replacement for backend-supplied choices. Keep the approved HSK AI colors, Panda and mobile touch targets (44 CSS px on iPhone PWA; 48 dp on native Android).
+
+This is **design documentation only**. Do not change current PWA/Android feedback behavior, message endpoints or server event fields merely to match a historical Khan Academy illustration.
