@@ -87,6 +87,28 @@ A progress bar requires a real, validated numerator and target in the **same uni
 
 Never use an expected-by-today marker or 100% unless the backend records the target and its schedule. Preserve a readable text equivalent for bar fill; distinguish a goal that is exceeded from an error in accounting. Compact versions omit secondary controls without hiding the actual current/target values. **Gems challenge illustration remains excluded** because HSK AI has no corresponding verified reward metric.
 
+## Restored progress design rules
+
+### Choose progress rather than a score
+
+- A progress bar measures **completion of a real task toward a genuine target**. A learning grade, answer correctness, mastery status, unverified XP total or subscription entitlement is not automatically completion progress.
+- Without a genuine target, use a stat card for the current amount. Use a trend for change over time and a distribution for counts by band. Avoid circular gauges when a linear bar communicates the same result more precisely.
+- Show **current value and target together**, in the same units and account/date scope. For example, use “8 of 12 verified lessons” only if both quantities come from the authorized course state.
+
+### Title, bar and expected marker
+
+- Use a concrete title, an exact numeric label and a denominator. When a real schedule exists, say how far ahead or behind the learner actually is; do not add “on track” from a guessed deadline.
+- A bar starts at zero, advances monotonically for actual completed units and has an accessible numeric text equivalent. Distinguish “target achieved” from “value unexpectedly greater than denominator”; do not hide data-integrity issues with CSS clipping.
+- **Expected by today** is optional and requires a stored real target, time zone, schedule and transparent formula. Label the expected amount; without reliable scheduling data, omit the marker entirely.
+- A large container can show marker, explanation and genuine controls. A compact card uses one bar and the essential values only; it must not silently discard the denominator.
+- Comparing multiple groups requires the **same measurement and same goal definition** for all bars. If one group uses a different target, separate the charts or clearly normalize with an explained method.
+
+### States and accessible reporting
+
+- Loading, no target, no observations, missing permission, outdated records and request failure must not look like 0% completion.
+- Expose the number/target to a screen reader in the user's locale; distinguish completion from grades and incorrect-answer feedback. Keep the icon/character lesson reactions intact.
+
+
 ## Implementation boundary
 
 This is an HSK AI guideline, not a prebuilt progress chart or an instruction to edit learning/scoring endpoints. It deliberately removes source-school, grade-target, Gem and assignment chart demos after retaining their valid general progress principles.
