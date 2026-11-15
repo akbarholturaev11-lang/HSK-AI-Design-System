@@ -4,7 +4,7 @@
 
 - Baseline: `f5ce49cbc219`.
 - Cleanup state: `db65c22a9a7e`.
-- Exact original binary assets restored: **72**.
+- Exact original binary assets restored: **73** (72 in the original restoration manifest plus `system-guidance.png`, independently restored by the guidelines branch).
 - New interactive HSK AI **fictional-data** demonstrations: `__docs__/design-components/assets/hsk-reference/HskReferenceDemos.tsx`.
 - Recovered old demo/evaluation code is inert, archived as text.
 - Neither `main` nor the live HSK AI PWA/Android project is modified by this branch.
@@ -28,6 +28,7 @@
 | `__docs__/design-components/assets/popovers/feature-highlight.png` | `e352b8536d49aba4bf3bf77ff8b3a38864e848ab` |
 | `__docs__/design-components/assets/popovers/informational.png` | `7372820af7bc374482865e991c8e58b07a76b851` |
 | `__docs__/design-components/assets/popovers/popovers.png` | `afb77135adbaa3cb4bd58a261d69431b17046bec` |
+| `__docs__/design-components/assets/popovers/system-guidance.png` | `6340859147e73d913fd3fbe7243f33e4fe23d6a0` |
 | `__docs__/design-components/assets/progress-charts/container.png` | `38d446f284091f3d38a12dc65821834b16772914` |
 | `__docs__/design-components/assets/progress-charts/header.png` | `133c27c0edc2eda84c46caa43570c6419f12c939` |
 | `__docs__/design-components/assets/radio-button/exposed.png` | `af0dc2a39de7ce6091133e79342731e8f9811202` |
@@ -87,6 +88,8 @@
 | `__docs__/design-patterns/assets/onboarding-and-setup/logic-framework-how-they-play-together-8.png` | `4c660660e85b6e4c15dbb4c7f79652cfb24295ce` |
 | `__docs__/design-patterns/assets/onboarding-and-setup/logic-framework-how-they-play-together-9.png` | `a57d597f0203ad007bc91c29ec58795008b8b0f0` |
 | `__docs__/design-patterns/assets/onboarding-and-setup/onboarding-and-setup.png` | `8c10f7d1f6b2418fcd60c484c83f06fa36c3df70` |
+
+The additional `system-guidance.png` is also an exact-match historical Git blob (both `f5ce49cbc219` and the unified restoration tree resolve to SHA `6340859147e73d913fd3fbe7243f33e4fe23d6a0`). This corrects the 72-versus-73 manifest discrepancy; it does **not** establish redistribution rights.
 
 ## Validation and exclusions
 
