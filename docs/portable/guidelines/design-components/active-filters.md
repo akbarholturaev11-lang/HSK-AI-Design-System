@@ -1,4 +1,4 @@
-> **HSK AI professional design guideline — portable review copy.** Current implementation is not implied. Source `__docs__/design-components/active-filters.mdx` (Git blob `b7b705a12f825097d1a1ba9e135b0d305d20e2b7`); 4 historic figure references, 0 MDX demo blocks. Figures and upstream vendor code were **not** copied; ownership/licensing of source prose requires review before transferring beyond this repo. Full professional prose is retained as an internal source-derived draft.
+> **HSK AI professional design guideline — portable review copy.** Current implementation is not implied. Source `__docs__/design-components/active-filters.mdx` (Git blob `ca9a5a855efed7adb23e6f2f6f60f841bea714eb`); 4 historic figure references, 0 MDX demo blocks. Figures and upstream vendor code were **not** copied; ownership/licensing of source prose requires review before transferring beyond this repo. Full professional prose is retained as an internal source-derived draft.
 
 > **Historical figure 1 — source reference only (not transferred):** Active filters. Source asset: `./assets/active-filters/active-filters.png`.
 
@@ -33,7 +33,7 @@ Not every control in the filter bar produces a chip. The deciding factor is who 
 
 | Control type | Generates an active filter? | Why |
 | --- | --- | --- |
-| Standard dropdown or inline filter button | Yes | Starts empty or inactive — any value present means the user chose it. Long or multi-value selections also get truncated or summarized as a count on the control itself (e.g. "Addison Middle...", "2 selected"); chips restore full legibility, one per value when multiple are selected. |
+| Standard dropdown or inline filter button | Yes | Starts empty or inactive — any value present means the user chose it. Long or multi-value selections also get truncated or summarized as a count on the control itself (e.g. "Long optional category…", "2 selected"); chips restore full legibility, one per value when multiple are selected. |
 | Embedded filter dropdown (e.g. Date, defaulting to Last 30 days) | No | The product supplies a default and the control can't be cleared to empty — a value is always present regardless of user action, so a chip couldn't signal an actual choice. |
 | Date inline filter button | Yes | No date is pre-applied — the control starts empty until the user adds one. Its presence, even when short and fully legible on the control itself (e.g. "Nov 1 – Nov 30"), signals a real, removable choice the user made. |
 | Search field | No | The typed term is fully visible in the field itself. |
