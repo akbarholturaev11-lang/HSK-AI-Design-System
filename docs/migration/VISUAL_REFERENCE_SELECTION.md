@@ -1,5 +1,11 @@
 # HSK AI — internal visual reference selection (image-by-image, no publication)
 
+## Internal portable image copies completed (verified)
+
+**212 `INCLUDE_SAMPLE` PNGs have now been copied within the design-system repository** into [`docs/portable/examples/`](../portable/examples/README.md) by preserving their original Git blob SHA identities. All **35 relevant Markdown guideline files** now include a rendered sample and links for every approved image, with the [exact machine-readable manifest](../portable/examples/manifest.json) identifying every image. This transfer was non-destructive; the historic original directories remain unchanged.
+
+**This did NOT copy the images to `HSK-AI-Bot`**, did NOT include any of the 95 foreign screens or any of the nine mixed/placeholder/unknown exceptions, and did NOT change the app UI. Earlier paragraphs saying "no binaries moved" refer to the previous assessment state, not the current 212-image copy now complete.
+
 ## Latest exception disposition (supersedes the 9-open status below)
 
 The owner-approved [nine-case review resolution](VISUAL_REFERENCE_EXCEPTIONS_2026-11-15.md) **converts eight previously undecided files into explicit, evidence-backed selection outcomes** and identifies one oversized PNG that **cannot** yet be visually inspected. The effective working totals are now:
