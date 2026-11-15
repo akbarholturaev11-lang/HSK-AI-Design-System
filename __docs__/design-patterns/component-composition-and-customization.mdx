@@ -16,11 +16,11 @@ A **task surface** supports a continuous user activity (such as completing an HS
 | PWA `app/static/course_v3_data/design-tokens.css` defines `--hsk-paper`, `--hsk-paper-raised`, `--hsk-card-surface` and `--hsk-divider` | Use the existing theme-aware surface and divider roles when a discrete grouping is needed | Historical `semanticColor.core.*` and arbitrary extra shadows |
 | Android `android/app/src/main/java/com/pomp/hskai/core/design/Color.kt` defines `PompColors.CardSurface` and platform palette roles | Keep actual Android card/region semantics, touch targets and native navigation | Forcing CSS-style shadows onto Compose or inventing a new theme |
 
-**Decision rule:** first identify the user's task, then the minimal needed container. Reuse an existing control or screen surface. Propose a new shared surface abstraction only if real repetition and code inspection justify it. This does not authorize refactoring working components.
+**Decision rule:** first identify the user's task, then the minimal needed container. Prefer an existing component **only when it satisfies the professional visual and interaction standard**; otherwise record the target redesign while preserving its existing functional interface. Propose a shared surface abstraction when task structure and verified reuse justify it, not just because the present UI happens to differ. This documentation alone does not refactor working components; later dedicated PWA/Android redesign may improve their visuals without unnecessarily changing business logic.
 
 ## 2. Distinguish layout composition from visual restyling
 
-- Using an existing component's supported props/API for placement, alignment and size is typically a **composition decision**. It must still respect safe areas and current screen behavior.
+- Using an existing component's supported props/API for placement, alignment and size is typically a **composition decision**. It must still respect safe areas and **actual functional behavior**, but the existing visual presentation may be improved in the later phase.
 - Arbitrary overrides of color, radius, typography, shadows, focus borders, motion, feedback or touch targets are **design-system changes**, requiring actual HSK AI tokens, behavioral review and visual parity evidence.
 - A local exception can be valid if its purpose and state are documented, but it is not a new global rule. Avoid old source-specific exceptions and `Wonder Blocks` API names.
 - Prefer a native browser/Android control when it communicates the correct task, is accessible and matches actual current app needs. Do not build a custom widget solely because an upstream screenshot used one.
