@@ -15,6 +15,8 @@ import {Do, Dont} from "../components/DoDont";
 
 # Date filter
 
+> **HSK AI application:** The source illustrations explain **default date scope versus optional date filtering**. Use this distinction only where HSK AI actually supplies date-based lesson history or authorized analytics. Never copy the source school-dashboard appearance or force a date filter onto a view without temporal data.
+
 <NeutralBadge label="Temporal filtering" />
 
 A dropdown component for filtering data across a range of time. Offers predefined relative options (Today, This week, Last 30 days) and a custom range entry for freeform input.
@@ -25,14 +27,14 @@ The choice to use a date filter is determined by the need to filter data based o
 
 | Use when | Rule | Example use |
 | --- | --- | --- |
-| Filtering by a time period | Used when the primary dataset needs to be restricted to a specific time context | Filtering a teacher dashboard to show metrics for "This week" or "Last 30 days" |
-| Comparing across time periods | Used when the user needs to select a period to conduct time-based analyses and identify trends | Comparing student performance from "This week" versus "Week 16" |
+| Filtering by a time period | Used when the primary dataset needs to be restricted to a specific time context | Filtering supported learning history or authorized analytics to a valid selected period |
+| Comparing across time periods | Used when the user needs to select a period to conduct time-based analyses and identify trends | Comparing a verified learner metric in two comparable available periods |
 
 ## <Dont /> When NOT to use
 
 | Don't use when | Recommended alternative | Rationale |
 | --- | --- | --- |
-| Filtering non-date attributes | Filter or dropdown | Do not use a Date Filter to select non-temporal data (e.g., student names, assignment type, or class ID) |
+| Filtering non-date attributes | Filter or dropdown | Do not use a Date Filter to select non-temporal data (e.g., HSK level, vocabulary or exercise type) |
 | Sorting a list by date | Sort toggle | If the need is simply to sort a list by 'Date Created' or 'Due Date', a simple sort control is less disruptive than a full picker interface |
 | Selecting a specific date or deadline | Date picker | Picking a deadline or birthdate requires a specific point in time, not a range |
 
@@ -41,7 +43,7 @@ The choice to use a date filter is determined by the need to filter data based o
 ### Date filter
 
 The product pre-applies a date. Data is always scoped to a time period — the user never sees an unfiltered state. They can change the selection, but cannot clear it entirely.
-Use this when there are pages where showing all-time data would be overwhelming or meaningless — e.g. a teacher dashboard where "Today" is a sensible default. The product owns the initial state.
+Use this when there are pages where showing all-time data would be overwhelming or meaningless — e.g. a real activity summary whose authorized data is deliberately limited to a documented current period. The product owns the initial state.
 There is always a value in the trigger. If no user selection has been made, the product default shows (e.g. Today).
 Because the product supplies this default and the control can never be cleared to empty, changing the selection does not generate an active filter chip (see Active filters).
 
@@ -50,7 +52,7 @@ Because the product supplies this default and the control can never be cleared t
 ### Date inline filter button
 
 No date is pre-applied. Data defaults to all time. The user chooses to add a date filter — clicking the inactive inline filter button opens the same predefined options. Once applied, the button shows the active range and gains a clear (×) control.
-Use this when there are pages where all-time data is a valid and expected default — e.g. a roster or gradebook where the user may or may not want to narrow by date. The user owns the initial state.
+Use this when there are pages where all-time data is a valid and expected default — e.g. a genuinely available lesson-history list where the learner may optionally select a period. The user owns the initial state.
 The × control clears back to all-time (unfiltered). This is the key distinction from the standard variant — this one can be cleared.
 Because no date is pre-applied, any value shown here was chosen by the user. Applying one generates an active filter chip, even though the range is already visible on the button itself (see Active filters).
 
@@ -89,3 +91,12 @@ If a new custom range is selected, the previous one does not stay there but is r
 For dropdown list labels, use "Month Day" format (e.g., Dec 12) for quick scannability within dropdown lists and secondary metadata. Helps users confirm the right period at a glance.
 
 <img src={copyImg} alt="One correct usage example with 'Dec 1 - Dec 23' and an incorrect one with '12/1 - 12-23'" />
+
+## HSK AI product application
+
+### HSK AI dates and mobile presentation
+
+- Show the **actual date interval** behind relative labels such as Today, This week and Last 30 days when available. Use the relevant account/reporting time zone and consistent inclusive/exclusive boundaries; never miscount a lesson near midnight or across time zones.
+- The source English month/day formatting is an example for that locale, **not a mandatory date format for HSK AI's supported languages**. Use the learner's localized readable dates while preserving the same selected period.
+- A default required date scope is not cleared as an optional filter. An optional added date filter can be removed to restore the correct all-time scope. Preserve the original selection and clear/reset rules.
+- A date picker or custom range must fit a phone, safe areas and keyboard. Do not add unsupported historical periods or imply cross-platform metrics are complete when coverage is partial.
