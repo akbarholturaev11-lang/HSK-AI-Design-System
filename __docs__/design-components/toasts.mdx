@@ -24,6 +24,8 @@ import {Do, Dont} from "../components/DoDont";
 
 # Toasts
 
+> **HSK AI adaptation:** All original school/teacher screenshots illustrate toast hierarchy and states, not actual HSK AI screens. Keep the professional rules for clear status, recovery, focus and non-blocking feedback. A saved lesson, verified payment or changed subscription must not be announced as successful until the authoritative backend confirms it. An actionable failure should remain discoverable; do not conceal mandatory error details in the optional two-line expand/collapse pattern.
+
 <NeutralBadge label="System feedback/Transient messages" />
 
 A non-intrusive, temporary container used to display brief, passive, and asynchronous system feedback. Toasts communicate success, failure, or neutral information that does not require immediate user action to dismiss or proceed.
@@ -36,8 +38,8 @@ The choice to use a toast is determined by the need for non-blocking, transient 
 | Use when | Example use |
 | --- | --- |
 | Delivering low-urgency feedback that doesn't interrupt the user's flow | Confirming that a file has been saved successfully in the background. |
-| The message is transient and persists only until dismissed or acted on | Confirmation that the assignment has been uploaded successfully. |
-| No action is required, or only an optional secondary action is available | All changes saved (no action) / Student removed with an undo button. |
+| The message is transient and persists only until dismissed or acted on | Confirmation of an actual saved learning preference or completed supported action **after the server confirms it**. |
+| No action is required, or only an optional secondary action is available | A verified action-success message; offer Undo only if the HSK AI action truly supports reversal. |
 
 ## <Dont /> When NOT to use
 
@@ -83,7 +85,7 @@ Do not use custom, context-specific icons (a "wifi" for no wifi connection) in t
 
 ### Default viewport location
 
-Primary location is bottom center of the viewport or main focus area (such as the question area in practice view). Bottom center is generally less disruptive than the top of the screen.
+The source desktop example favors bottom center. In HSK AI iPhone PWA and Android, use the actual mobile system-feedback placement that avoids bottom navigation, keyboard, safe area, active exercise answers, AI Voice controls and payment actions. No source screenshot is an instruction to obscure primary controls.
 
 <img src={placement1Img} alt="Placement is bottom center overlapping card rather than contained within" />
 
