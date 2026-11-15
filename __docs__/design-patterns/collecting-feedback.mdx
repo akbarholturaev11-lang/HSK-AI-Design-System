@@ -1,133 +1,65 @@
 import {Meta} from "@storybook/addon-docs/blocks";
-import {OptionItem, SingleSelect} from "@khanacademy/wonder-blocks-dropdown";
-import heroImg from "./assets/collecting-feedback/hero-collecting-feedback.png";
-import triggerOpinionImg from "./assets/collecting-feedback/feedback-trigger-opinion.png";
-import triggerGeneralImg from "./assets/collecting-feedback/feedback-trigger-general.png";
-import triggerOpenImg from "./assets/collecting-feedback/feedback-open-widget.png";
 
 <Meta title="Design Guidelines / Patterns / Collecting feedback" />
 
-<img src={heroImg} alt="Thumbs up / down visual" />
+# HSK AI feedback and problem reporting
 
-# Collecting feedback
+Learners can provide feedback about supported learning experiences or report a technical problem through the **actual HSK AI channels**. A satisfaction question, product suggestion and technical bug report are different flows and must not be combined solely to imitate a widget pattern. This page documents **existing verified iPhone PWA code and target safety requirements** separately; it does not claim every flow is available on Android.
 
-> **HSK AI scope:** Preserve all four source illustrations as educational examples, not brand assets or app layouts. The original teacher/Khanmigo/video example controls remain demonstrations of choosing a feedback category; their data model does **not** override the existing HSK AI feedback and problem-report services.
+## Contextual lesson and experience feedback
 
-When learners want to share a reaction to a lesson or say something about HSK AI, feedback should be understandable, quick, and contextual. The original design examples illustrate professional feedback structure, not a finished HSK AI feedback screen. Reuse the existing verified PWA/Android flows and approved HSK AI visual system.
+The current iPhone PWA has server-prepared feedback for eligible lesson, foundation, practice and voice contexts, plus ordinary and release campaigns. The server determines question content, available answer choices and whether the learner can answer.
 
-## Usage and purpose
+- Feedback concerns a **real identifiable activity** and only fields the current service supports.
+- A guided response may collect **both** what was liked and disliked together. Do not replace it with a one-click vote or submit a separate unrelated answer for each selection.
+- Some release campaigns may include a star rating/comment; these are different from per-lesson choices. Do not claim public ratings exist.
+- The learner's account, lesson context, campaign identifier and response eligibility are server-authoritative.
+- Do not interrupt active practice, an unfinished form, the red AI Voice Orb, login or external payment returns with an unexpected feedback sheet.
+- Use clear categories and localized text in supported languages. A small, scannable group of choices is generally preferable, but **the server-provided choices are authoritative**; do not drop required categories to match a fixed design count.
+- When a comment is required, explain **why** and validate it against the actual question; don't force unrelated fields purely for analytics.
 
-There are two main variants of the feedback widget, each with its own affordance and use case.
+## General suggestions
 
-### "Sentiment" variant
+A product suggestion concerns the interface or learning experience rather than a single scored exercise. Offer only a real available support/feedback entry point; do not invent a universal toolbar, ticket system, admin identity or reply timeline.
 
-<img src={triggerOpinionImg} alt="Feedback trigger for opinion variant" />
+Collect only fields relevant to the selected supported channel. Do not attach full URLs, private screen contents, learner identifiers or diagnostics without a legitimate need, backend handling and appropriate disclosure.
 
-Choose **sentiment** when a reaction concerns a specific, identifiable lesson, practice item or AI response **where the actual platform offers that feedback**. The original thumbs-up/down example describes a useful design pattern, not a mandate to add a separate one-click voting feature. HSK AI's existing contextual lesson feedback can capture positive and negative selections within one guided survey; do not replace that server-defined flow.
+## Technical problem reporting
 
-Captured when the existing HSK AI feedback service supports it:
+The iPhone PWA has a separate **technical problem report** supporting a description, a possible screenshot and a server submission.
 
-- selected positive/negative feedback choices or rating, according to the actual question
-- response category/subcategory when available
-- optional or required explanation according to the question
-- verified feedback/campaign identifier and supported lesson or practice context
+- Distinguish a failed lesson save, network failure or broken feature from a satisfaction score.
+- When capture is available, the present PWA tries an on-device screenshot and presents a preview with an attachment switch **ON by default**. The learner can turn it off before sending. **That is opt-out, not affirmative opt-in**; do not describe the existing behavior as consent by default.
+- The screenshot may contain private information. The desired privacy rule is clear disclosure, preview, safe capture/redaction, explicit control and secure ownership verification. If the product chooses true opt-in, a separate implementation change must default the checkbox to OFF and require a positive user selection.
+- Capture does not mean uploaded; only show “sent” after the real server response.
+- Do not quietly attach a screenshot to ordinary lesson feedback.
 
-Do not assume a thumbs-up/down, free-text field or per-message identifier exists in every context.
+## Submission, failure and dismissal
 
-### "General" variant
+### Required future design behavior
 
-<img src={triggerGeneralImg} alt="View cropped to show the Teacher navbar with the 'Leave Feedback' button above the profile link" />
+1. A confirmed success message requires an actual server-accepted submission; network navigation or an optimistic UI is not proof.
+2. Avoid duplicate submits while awaiting a response. On failures, preserve the unsent description and supported attachments and offer a clear retry.
+3. Do not silently discard a typed draft on outside tap, Escape, system Back or a close icon. Preserve recoverable state or explicitly confirm abandonment, while retaining accessible focus restoration.
+4. A pending submission must not be canceled in a way that makes its outcome silently ambiguous. Reconcile the server result before showing an error or inviting a duplicate.
+5. Use a real HSK AI phone dialog/sheet layout and keyboard clearance. A source desktop popover or fixed 425 px width is **not required**.
+6. Keep simple labels, sufficient iPhone/Android touch targets, screen-reader status announcements and text readable in both themes.
+7. Do not disguise required errors or privacy disclosures in a two-line optional expansion.
 
-Choose **general** when the subject is a screen, workflow or product experience rather than one evaluated lesson item. This is distinct from reporting a reproducible technical failure.
+### Observed implementation gaps (iPhone PWA only)
 
-The original school navigation image demonstrates how a general feedback entry point may be discovered. In HSK AI, show a general feedback option only through an existing supported route. Do not create a teacher dashboard or a new universal launcher just to mimic the source. When the user reports a technical defect, use the actual HSK AI problem-reporting path instead of treating an error report as a satisfaction score.
+The following observations came from inspecting `app/static/course_v3_data/iphone-pwa-feedback.js` and `iphone-pwa-shake-report.js`; they are **not already implemented fixes**.
 
-For a general product message, capture only fields that the chosen existing HSK AI channel actually supports, such as a category, description and limited screen context. Do not automatically attach a full URL, account identity or diagnostic data without an applicable need and appropriate disclosure.
-
-### Get that feedback
-
-<img src={triggerOpenImg} alt="Feedback widget open, showing the open widget popover" />
-
-The source popover demonstrates a compact feedback interaction with customizable wording. HSK AI already uses modal feedback views and a distinct problem-report sheet; do not force them into a desktop-style popover. On phones, preserve the existing overlay, readable choices, keyboard clearance, focus management and a safe close route. Choosing understandable feedback categories remains essential.
-
-## Choosing feedback types
-
-1. **Write for the user's moment** The list should hold what a user could plausibly want to say at that point, on that surface.
-2. **Serve the user's needs before the team's questions.** A type that exists because someone wants to measure it, and/or that's phrased in words no user would reach for, adds noise. A user should recognize their own reaction in the list at a glance.
-3. **Up to 5 options + "Other"** If the list isn't quickly scannable, users may exit, or just pick "Other". Don't get in the way of their actual task. Fewer is better!
-4. **Positive and negative are separate lists, and may have overlap.** A dimension that can be done well or badly ("Tone", "Pacing") could appear in both, with the sentiment and notes carrying the verdict.
-
-### Example type sets
-
-| Opinion examples | Thumbs up | Thumbs down |
+| Finding | What the current PWA code does | What should change in a separate production task |
 | --- | --- | --- |
-| Khanmigo message | <SingleSelect aria-label="Khanmigo messages — thumbs up" placeholder="👍 options"><OptionItem label="Helped me learn!" value="helped-me-learn" /><OptionItem label="Made me smile!" value="made-me-smile" /><OptionItem label="Surprised me" value="surprised-me" /><OptionItem label="Other" value="other" /></SingleSelect> | <SingleSelect aria-label="Khanmigo messages — thumbs down" placeholder="👎 options" onChange={() => {}}><OptionItem label="Language issue" value="language-issue" /><OptionItem label="Math issue" value="math-issue" /><OptionItem label="Technical issue" value="technical-issue" /><OptionItem label="Other" value="other" /></SingleSelect> |
-| Video | <SingleSelect aria-label="Video — thumbs up" placeholder="👍 options"><OptionItem label="Clear explanation" value="clear-explanation" /><OptionItem label="Helpful examples" value="helpful-examples" /><OptionItem label="Interesting" value="interesting" /><OptionItem label="Pacing and duration" value="pacing-and-duration" /><OptionItem label="Other" value="other" /></SingleSelect> | <SingleSelect aria-label="Video — thumbs down" placeholder="👎 options" onChange={() => {}}><OptionItem label="Mistake" value="mistake" /><OptionItem label="Audio-video quality" value="audio-video-quality" /><OptionItem label="Not engaging" value="not-engaging" /><OptionItem label="Confusing" value="confusing" /><OptionItem label="Pacing and duration" value="pacing-and-duration" /><OptionItem label="Other" value="other" /></SingleSelect> |
+| Contextual survey dismissed by scrim | Outside tap calls `close()` and resets the `draft` object; Escape can also close. | Avoid loss of unfinished feedback or explicitly confirm discarding it. |
+| Technical report dismissed by scrim | Close clears the report description and captured image; outside taps and Escape can trigger it. | Preserve or explicitly confirm clearing an unsent report. |
+| Survey close while sending | The submit button becomes disabled, but the survey close handler does not fully block dismissal; its final response may be hidden. | Resolve the close/submit race and do not invite duplicate submission. |
+| Technical report during send | The technical report closes only when not currently submitting. | Retain a clear pending/result state without duplicate sends. |
+| Screenshot default | Available capture has its attachment switch checked by default, though the user can uncheck it. | Make consent behavior explicit and privacy-appropriate. |
 
-| General examples | Options |
-| --- | --- |
-| Default Nav launcher | <SingleSelect aria-label="Default Nav launcher" placeholder="Default options"><OptionItem label="Issue" value="issue" /><OptionItem label="Feature request" value="feature-request" /><OptionItem label="I love this!" value="i-love-this" /><OptionItem label="Other" value="other" /></SingleSelect> |
+## Scope and verification
 
-## Copy
+Server feedback eligibility, answers, ownership checks, release campaign rules and actual app behavior must not be changed during a **documentation-only** update. The Android reporting workflow was not independently confirmed in this audit; inspect its present screens before adopting parity claims or rewriting code.
 
-You can customize the prompt, the popover title (with a separate title for thumbs-down when the negative case needs different words), the thumbs labels, and every type label.
-
-For titles and body copy, follow the <a href="./?path=/docs/design-guidelines-components-overlays-modals--docs#copy">Modal copy guidelines</a>
-
-Generally, the goal is match the user's intent here, so think from their perspective. This is especially important for type labels, which should be 1-3 words and non-technical. 
-
-## Widget popover placement
-
-In the source desktop example, the popover sits near its trigger and opens away from the content under review so the user can still reference it. Apply this **intent**, not the desktop geometry: HSK AI's existing phone dialogs/sheets must fit the safe viewport, keyboard and accessible text sizes, and must not cover a live lesson answer or AI Voice action. A fixed `425px` popover is **not** mandatory on iPhone PWA or Android.
-
-## Responding to input
-
-- A tapped thumb fills, so the response stays visible. That sentiment also determines the title and feedback types to present.
-- **Sentiment:** after the server confirms successful submission, replace the form with a localized confirmation. The source's one-vote-per-item rule is a reference pattern, **not** permission to overwrite HSK AI's server-owned feedback eligibility or existing multi-question responses. Avoid duplicate submissions and restore focus appropriately.
-- **General:** show a confirmation only after actual successful submission; keep an appropriate existing entry point available for another valid message if the chosen channel permits it.
-- The user must actively close the widget. Clicking outside the widget bounds will not dismiss it. If it did, the user could lose their work if they attempt to scroll or otherwise view the content they want to leave feedback on. Users likely will give up potentially losing important feedback. 
-
-## Custom implementation
-
-Use the customizable fields. 
-
-Customizations should be rare. One example is feedback on video content, where we silently include the current timestamp of the video player as a signal.
-
-Any additional information must be justified by a verified HSK AI product need, privacy requirements and the existing backend contract. Do not make another company's internal approval process a dependency for this project.
-
-## HSK AI implementation boundaries
-
-### Existing feedback surveys
-
-- The iPhone PWA already has a server-prepared feedback flow for eligible lesson, foundation, practice and voice contexts, as well as ordinary/release campaigns. Preserve the existing questions, optional/requisite comment rules, server-defined availability and authenticated-account ownership.
-- HSK AI's contextual flow can ask what the learner liked **and** disliked within one response. Do not replace that with the source's one-thumbs-up/one-thumbs-down-only rule, or submit multiple responses when one backend feedback identifier is pending.
-- Show positive/negative category choices only when the server supplies them. Existing release campaigns may request a star rating and explanation; do not imply every survey is a vote or that every item has a public rating.
-- Feedback must not unexpectedly interrupt active practice, the red AI Voice Orb, authentication, an unfinished form or a payment return. Preserve existing presentation and reminder restrictions.
-
-### Technical problems and suggestions
-
-- HSK AI has a **separate iPhone PWA problem report** with a description, optional image and verified server submission. The current report form automatically attempts an on-device capture and **defaults the screenshot attachment switch to ON** when a capture is present; the learner can turn it off before pressing Send. This is **opt-out, not explicit opt-in**, and must not be represented otherwise. The target privacy principle is to let the learner review and explicitly control any attachment, avoid unnecessary sensitive content and retain the existing capture restrictions/account verification. Do not attach a screenshot to ordinary survey feedback.
-- Preserve the existing distinction between product suggestions, satisfaction feedback and problem reports. A support channel may be offered where one actually exists, but never claim a new integrated ticketing, reply or attachment capability that the product has not implemented.
-- Reporting a problem does not mean the problem is fixed, and attaching an image does not mean it has been sent before the server confirms the submission.
-
-### Form safety, accessibility and mobile presentation
-
-- Keep submitted and draft states distinct; prevent repeated submission while waiting. Only display a success message after a confirmed server response. On failure, preserve entered content whenever feasible and offer a clear retry.
-- **Target guideline:** preserve the source's rule against accidental dismissal while a learner is composing feedback. This is **not yet what the current iPhone PWA code does**: both feedback and problem-report dialogs currently close on backdrop taps and clear their drafts. Preserve focus restoration, and address this documented mismatch in a separate production change with tests; do not claim the protection already exists.
-- Keep feedback type labels short, meaningful and localized to Uzbek, Russian and Tajik where supported. Provide a clear reason for required comments; do not force extra fields purely for analytics.
-- Keep source rules of at most five specific choices plus “Other” as a **design readability guideline**, not a replacement for backend-supplied choices. Keep the approved HSK AI colors, Panda and mobile touch targets (44 CSS px on iPhone PWA; 48 dp on native Android).
-
-### Observed gaps in the current iPhone PWA implementation (design-to-code audit)
-
-The following are **observations about production code**, not design recommendations already implemented. A later focused change must preserve the existing feedback endpoints, server eligibility, owner validation and other app functionality.
-
-| Concern | Observed behavior in the current iPhone PWA | Required outcome for a future implementation |
-| --- | --- | --- |
-| Accidental dismissal of survey feedback | The dialog scrim has the same close action as the X button; `close()` resets `draft = {}`. Escape also closes. | Backdrop taps must not silently destroy an unfinished response. Preserve draft or confirm deliberate abandonment, and make the supported dismissal semantics accessible. |
-| Accidental dismissal of technical report | Backdrop taps invoke `close()`, which resets the report description and snapshot; Escape also closes. | Avoid silent loss of a typed problem description or attachment. A safe confirmation or recoverable draft is required before clearing unsent work. |
-| Submission still in progress | The survey disables its submit button while sending, but its close handler does **not** refuse dismissal during the request. The late response can then be invisible to the learner. The separate technical report **does** refuse to close during sending. | Resolve the survey's close/submit race so an outcome is not silently ambiguous. Do not submit twice or claim a message failed when it may already have reached the server. |
-| Screenshot consent | The technical-report form sets the attachment checkbox to **checked by default** when an image is available, even though the image may contain private details. A visible toggle and preview allow removal before sending. | If explicit attachment opt-in is adopted, default to unchecked and require an affirmative choice; otherwise clearly disclose that the present flow is opt-out. Preserve redaction and ownership verification. |
-
-These are **specific audit findings**, not authorization to alter the production PWA/Android code in a design-documentation pass. The Android implementation has not been independently verified by this audit; apply cross-platform changes only after inspecting its actual corresponding screens.
-
-This is **design documentation only**. Do not change current PWA/Android feedback behavior, message endpoints or server event fields merely to match a historical Khan Academy illustration.
+The design document intentionally excludes unrelated school, teacher, mascot, source-product video-feedback and other-brand component examples. Any implementation requires a separate testable task.
