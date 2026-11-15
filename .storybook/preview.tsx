@@ -27,6 +27,14 @@ const wbViewports = {
             height: "568px",
         },
     },
+    phone375: {
+        name: "Phone 375",
+        styles: {width: "375px", height: "812px"},
+    },
+    phone412: {
+        name: "Phone 412",
+        styles: {width: "412px", height: "915px"},
+    },
     medium: {
         name: "Medium",
         styles: {
