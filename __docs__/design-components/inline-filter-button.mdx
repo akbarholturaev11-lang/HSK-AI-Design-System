@@ -14,6 +14,8 @@ import {Do, Dont} from "../components/DoDont";
 
 # Inline filter button
 
+> **HSK AI application:** The source's School/Grade examples explain **optional filtering mechanics only**. In HSK AI these can correspond to actually available level, exercise-type or recorded activity criteria; do not add filters for unsupported states, and do not copy the desktop school filter bar.
+
 <NeutralBadge label="Additive filter control" />
 
 An opt-in filter control that lives in a filter bar. Starts unfiltered — all data shows. User adds a filter by clicking the inactive inline filter button. Always clearable with ×.
@@ -24,9 +26,9 @@ The choice to use an inline filter button is based on the need to allow users to
 
 | Use when | Rule | Example use |
 | --- | --- | --- |
-| Filtering is optional | All-time or unfiltered data is a valid and useful default | A report that shows all schools unless narrowed by the user |
-| User owns the initial state | The product has no meaningful default to pre-apply | Filtering a roster by grade — all grades shown by default |
-| Multiple filters in a bar | Several opt-in filter comboboxes sit side by side in a filter bar, each independently addable and clearable | School ⊕, Grade ⊕ filter in a report filter bar |
+| Filtering is optional | All-time or unfiltered data is a valid and useful default | An existing lesson list that shows all available lessons until an optional exercise-type filter is applied |
+| User owns the initial state | The product has no meaningful default to pre-apply | Filtering a recorded practice list by a supported HSK level when all available levels are initially shown |
+| Multiple filters in a bar | Several opt-in filter comboboxes sit side by side in a filter bar, each independently addable and clearable | HSK level and exercise type as optional criteria on an applicable learning list |
 
 ## <Dont /> When NOT to use
 
@@ -78,3 +80,12 @@ Multiple filter comboboxes sit side by side in a filter bar. Each is independent
 For active filters display behavior and "Clear all filters" logic, see the <a href="./?path=/docs/design-guidelines-patterns-filter-and-sort--docs">Filter and sort pattern doc</a>.
 
 <img src={interaction3Img} alt="A report page with a filter bar containing a `Last 30 days` date filter followed by three inline filter buttons — `School`, `Grade`, and `Subject` — highlighted together, above a `120 results` count." />
+
+## HSK AI product application
+
+### HSK AI mobile usage
+
+- Keep the original difference: a single choice takes effect immediately, while choosing several values requires an explicit Apply action. Cancel/dismiss must preserve the previously applied choices.
+- On a narrow PWA/Android screen, do not force several filters onto one horizontal row. Use readable wrapping or the existing mobile selection sheet and preserve visible applied selections.
+- These criteria are **examples**, not a mandate to add filtering to every vocabulary, exercise or reporting screen. A dependency between options must be backed by real product data.
+- The result count must reconcile after each change. Clearing a filter never alters a learner's actual answers, study record or account data.
