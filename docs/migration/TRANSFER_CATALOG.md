@@ -5,6 +5,12 @@
 **Destination (future, NOT modified):** `akbarholturaev11-lang/HSK-AI-Bot`.
 **Status:** Migration preparation / source inventory. This is **not** a successful transfer or proof of rights to graphics.
 
+## Transfer of professional example IMAGES — owner scope
+
+**Do not treat images as categorically prohibited.** This is an internal professional design package, **not a publication**. Retain useful generic visual examples from the source (component, state, variant, spacing, positioning, chart anatomy) alongside their corresponding `.md` rules. **Exclude screenshots of other applications and school/Gems/product-specific screens.** Every asset decision must be based on opening its actual image, not on a filename. See [direct-image selection register](VISUAL_REFERENCE_SELECTION.md) — six examples selected and two foreign screens excluded so far; remaining PNGs not yet inspected.
+
+This rule **supersedes** references elsewhere in older transfer notes to excluding *all* source pictures or rebuilding *every* figure. The 298 MDX figure placements are audit occurrences, **not** a mandate to recreate 298 images or move 298 screenshots. Sample images must not override real HSK AI brand colors, spacing scale or supported features.
+
 ## Precise inventory
 
 - **44 active MDX guideline pages:** 11 foundations, 27 components, 5 patterns, 1 introduction.
