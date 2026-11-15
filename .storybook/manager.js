@@ -5,8 +5,8 @@ import {addons} from "storybook/manager-api";
 import {getStorybookTheme} from "./wb-storybook-themes";
 
 /**
- * Configures a custom theme to add some minor WB branding to our Storybook
- * instance.
+ * Configures the HSK AI brand identity for the documentation site. The
+ * preview uses legacy WB rendering dependencies for historic MDX examples.
  * @see https://storybook.js.org/docs/react/configure/theming
  */
 addons.setConfig({
