@@ -1,189 +1,65 @@
 import {Meta} from "@storybook/addon-docs/blocks";
-import headerImg from "./assets/progress-charts/header.png";
-import {NeutralBadge} from "@khanacademy/wonder-blocks-badge";
-import {Do, Dont} from "../components/DoDont";
-import Demo from "../components/Demo";
-import Figure from "../components/Figure";
-import {GradeLevelTargetChartOnly, SchoolComparisonExample} from "./assets/progress-charts/ProgressExamples";
-import containerImg from "./assets/progress-charts/container.png";
-import gemChallengeImg from "./assets/progress-charts/gem-challenge.png";
 
 <Meta title="Design Guidelines / Components / Data visualization / Progress charts" />
 
-<img src={headerImg} alt="Progress charts" />
-
 # Progress charts
 
-> **HSK AI scope:** Khan Academy's diagrams show the mechanics of progress bars; they do not define HSK AI's visual style, rewards or school schedule. Only show a bar for a real HSK AI total and an actual verified current value.
+Progress charts answer **“How much of this verified, measurable goal is complete?”** A current amount and a real goal are both required. A learner's verified HSK AI lesson progress, a configured activity target or an authorized admin metric may qualify, **only if the relevant current app state actually records both quantities**.
 
-<NeutralBadge label="Progress toward a goal" />
+## When to use
 
-Progress charts answer "How close are we to the goal?" A progress bar shows a current value against a goal, and can mark where the group should be by today. Progress means how far along, never how well. An HSK AI progress bar never turns a quiz score or correct-answer rate into completion.
+- An actual numerator and denominator exist and refer to the **same unit, learner/account scope and time window**.
+- An authorized user benefits from seeing how much remains rather than an isolated score.
+- A genuine configurable schedule defines a meaningful “expected by today” threshold; this marker must be computed from that schedule, never invented.
 
-Progress charts sit inside a <a href="./?path=/docs/design-guidelines-components-data-visualization-chart-container--docs">chart container</a>, large or small.
+Do **not** use this component to assign an exercise grade, invent an HSK pass threshold, draw a class-assignment bar or create a Gem/reward system. A correct answer, progress toward a goal, a score, a streak and Pro entitlement are different states.
 
-Use existing HSK AI mobile rendering rather than requiring the source product's chart package.
+## Anatomy
 
-## <Do /> When to use
-
-| Use when | Example use |
+| Part | Requirement |
 | --- | --- |
-| Readers need to see how far along they are toward a goal | Verified lessons completed relative to the actual total, or a real configured XP goal if such a target is supported |
-| Readers need to see whether progress is on track for a deadline | Verified activity against a configured, validated learner schedule if it exists |
-| Readers need to see how much of a task is done | Recorded completion of a specific supported learning task |
+| Title | Name the real HSK AI goal or task. |
+| Current amount | Server-verified value with meaningful units. |
+| Target | Actual configured amount, never a source-chart constant. |
+| Progress bar | Represents `current / target` on a common, nonmisleading scale. |
+| Remaining amount | If useful, calculate from the verified goal; do not turn missing data into zero. |
+| Time/expected marker | Show **only** if a real schedule and its method have been defined; otherwise omit. |
+| Text alternative | Clearly announce current, target, units and any real shortfall. |
 
-## <Dont /> When NOT to use
+Bar visuals follow the existing HSK AI mobile palette, not a foreign assessment or rewards palette.
 
-| Don’t use when | Recommended alternative | Rationale |
-| --- | --- | --- |
-| Readers only need to know ahead or behind, not how far along the goal they are, like "4 lessons completed today" | A <a href="./?path=/docs/design-guidelines-components-data-visualization-summary-cards--docs#stat-card">stat card</a> | Plain text is faster to read than a chart to decode. Use a bar when seeing how much of the goal is left matters. |
-| Showing a score or outcome, like the learner's HSK or vocabulary mastery state | <a href="./?path=/docs/design-guidelines-components-data-visualization-distribution-charts--docs#grouped-by-level">Distribution charts</a> grouped by level | A bar reads as how far along, not how well. A full bar would look like success even when scores are low. |
-| There's no goal | <a href="./?path=/docs/design-guidelines-components-data-visualization-summary-cards--docs">Summary cards</a> | Progress needs something to measure against. Without a goal, a bar's length means nothing. |
-| Readers need to see how progress changed over time | <a href="./?path=/docs/design-guidelines-components-data-visualization-trend-charts--docs">Trend charts</a> | A progress bar shows where things stand today, not how they got there. |
+## Visual and mathematical rules
 
-## Chart anatomy
+1. A bar starts at **zero**. An amount above the target may be represented as `100% complete` with a separate, plainly labeled excess, but never silently shorten the real count or fabricate progress over the goal.
+2. Never mix different units within one bar set. If two measures differ, use separate views.
+3. Use a verified numerator and denominator; filter and permission scopes must match. Never classify an unrecorded Android or PWA event as incomplete work.
+4. Avoid coloring a bar as wrong/error merely because the target was not reached. A missed genuinely time-bound obligation needs separate, explicit status.
+5. For comparison across multiple authorized records, the goals must share a compatible definition and time window. A learner view cannot reveal other learners' private progress.
+6. When values are not yet known, show a loading state or an honest unavailable state, **not** a sample count.
+7. Labels and bars must remain readable in compact phone layouts, both themes and text scaling. Keep actual values outside a bar if interior text would be too small.
+8. Do not force a “today” target from calendar weekdays or school-day formulas. Only current product schedules define that marker.
 
-These parts apply in any container.
+## Containers and variants
 
-> **Note:** This is a placeholder built for these docs, not the production chart. It will be replaced with the Highcharts version once it exists.
+**Compact:** one goal, current value, target and simple progress. Use an ordinary card when nothing else needs attention.
 
-<Demo>
-    <GradeLevelTargetChartOnly />
-</Demo>
+**Detailed report:** a single supported objective with a title, verified date range and optional action. Link to detail only when an actual authorized destination exists.
 
-| Part | Rule | Example |
-| --- | --- | --- |
-| Value and goal | Always as text, not only as bar length | 12 of 15 lessons, if verified |
-| Bar | Fills to the current value. Choose colors by role. See <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#color">Color</a>. | |
-| Expected by today marker | When "on track" depends on the date. Labeled with its value. | Expected by today: 35 |
-| Start and end labels | In large containers, when the bar spans a time period | 0 skills, Sept 1; 70 skills, May 29 |
+**Multiple comparable goals:** use aligned bars if readers need to compare compatible real records; use a table when labels or unit differences make a chart misleading. Color is not the only progress cue.
 
-Actual XP, streak and learning-reward goals (when measured) use the <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#motivation">Motivation</a> color role, not the source product's Gems scheme.
+## Empty, error and outdated state
 
-### Expected by today
+- If the goal has not been set, explain that state instead of drawing `0 / 0` or a 0% bar.
+- If the goal exists but no observations were made, distinguish **actual zero** from **missing records**.
+- When data fails to refresh, preserve a valid prior snapshot only with a clear timestamp and visible retry.
+- On account changes, validate record ownership and clear protected stale values.
 
-Expected by today is an optional marker that requires a genuine configured goal, schedule and documented calculation. Do not use the source product's school-day formula as an HSK AI assumption.
-
-If HSK AI has no validated expected-by-today calculation, omit this marker instead of guessing.
-
-Show milestone markers only when HSK AI actually has stored, meaningful milestone dates and values.
-
-## Container
-
-### Large container
-
-For reports. The title states whether the group is ahead of or behind schedule.
-
-| Part | Example |
-| --- | --- |
-| Section heading | Grade level target |
-| Title | 3 skills ahead of schedule |
-| Description | 38 of 70 skills · Goal date May 29 |
-| Controls | Download |
-| Bar | With a labeled expected by today marker, and start and end labels |
-| Footer | Updated today, 9:15 AM |
-
-Label the bar's values directly. A legend isn't needed when the value and the marker are labeled.
-
-<Figure
-    src={containerImg}
-    alt="A report page with gray placeholder summary cards at the top. Below them, a Grade level target section heading above a chart container. The title reads 3 skills ahead of schedule, with the description 38 of 70 skills, Goal date May 29, and a download button at the top right. A progress bar is filled a little past halfway, with a marker labeled Expected by today: 35, Oct 20. Start and end labels read 0 skills, Sept 1, and 70 skills, May 29. The footer reads Updated Oct 20, 2026, 9:15 AM."
-    caption="A progress chart in a large container, below the summary cards on a report page."
-/>
-
-### Small container
-
-For dashboards and side panels, like the student dashboard. Keep it to the bar and a few values.
-
-| Part | Example |
-| --- | --- |
-| Title | Gem challenge, with an info tooltip |
-| Context | Period 3, Precalculus |
-| Illustration | Optional, like a trophy |
-| Bar | No marker |
-| Time left | 1 day left |
-| Value and goal | 1,245 of 1,500 gems |
-| Details | Up to two rows, like Your contribution: 217 and Reward: Pizza party |
-
-<ul>
-    <li><Do /> Keep a small container to one bar and up to four values.</li>
-    <li><Dont /> Don't add controls, a legend, or an expected by today marker to a small container. If readers need them, use a large container.</li>
-</ul>
-
-<Figure
-    src={gemChallengeImg}
-    alt="A student dashboard, with most of the page shown as gray placeholders. In the side panel, a small Gem challenge card for Period 3, Precalculus, with a trophy illustration. A magenta progress bar is about three quarters full. Below it, a 1 day left badge and 1,245 of 1,500 gems, then Your contribution: 217 and Reward: Pizza party."
-    caption="On the student dashboard, the gem challenge sits in a small container in the side panel: one bar and a few values, with no controls or marker."
-/>
-
-## Usage guidelines
-
-### Title and description
-
-<ul>
-    <li><Do /> State the gap in the title of a large container: "3 skills ahead of schedule," not "Class is ahead of schedule."</li>
-    <li><Do /> Show the current value and the goal as text, not only as bar length.</li>
-</ul>
-
-### Values
-
-<ul>
-    <li><Do /> Show the value as "X of Y," with units: "38 of 70 skills."</li>
-    <li><Dont /> Don't fill the bar past 100%. Say "Goal reached" and show the final value.</li>
-</ul>
-
-At goal completion, state the verified achieved amount. After a real deadline, show the actual status without manufacturing an expected rate.
-
-### Bars
-
-<ul>
-    <li><Do /> Show one kind of progress per container. In Comparing groups, every bar measures the same thing toward the same goal.</li>
-    <li><Dont /> Don't mix measures in one container, like skills in one bar and assignments in another.</li>
-    <li><Do /> Label the expected by today marker with its value: "Expected by today: 35."</li>
-    <li><Do /> When some groups are behind schedule, say so in the title and label each one: "2 of 5 schools are behind schedule." How their bars are colored is still a TODO. See <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#color-roles">Color roles</a>.</li>
-    <li><Dont /> Don't show progress as a gauge or dial. Gauges are harder to read and compare, and take more space for the same value.</li>
-</ul>
-
-## Variants
-
-### Comparing groups
-
-Use this comparison only for real authorized HSK AI categories sharing one goal definition, not schools or classrooms. The source example illustrates alignment, not a required feature.
-
-Several groups against the same goal, in one large container. Every bar measures the same goal, and one expected by today marker lines up across all of them, so readers can see at a glance who's ahead and who's behind.
-
-| Part | Example |
-| --- | --- |
-| Section heading | Assignments completed by school |
-| Title | 2 of 5 schools are behind schedule |
-| Description | Goal: 1,200 assignments per school by May 29 |
-| Rows | One per group: name, bar, value, and the gap |
-| Expected by today marker | One label above the bars, lined up on every bar |
-
-> **Note:** This is a placeholder built for these docs, not the production chart. It will be replaced with the Highcharts version once it exists.
-
-<Demo>
-    <SchoolComparisonExample />
-</Demo>
-
-If this variant is needed, decide its sort order and how many groups it can show before a table works better.
-
-## States
-
-Empty and error states follow <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#states">Data reports</a>.
-
-If a goal is not configured or the count is not available, show that directly. Do not render a fake zero-progress bar.
+Use <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs">HSK AI data reports</a> for common report behavior, and <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs">Data visualization</a> for color/number/accessibility guidance.
 
 ## Accessibility
 
-- Every progress chart has a text summary: "38 of 70 skills. Expected by today: 35. 3 skills ahead of schedule."
-- Read the value and goal as text: "1,245 of 1,500 gems."
-- Announce the expected by today marker with its value: "Expected by today: 35."
-- Color is never the only signal. The title or values say whether the group is ahead or behind.
+Each chart announces the actual value and goal as text, with a clear accessible name and unit. Do not depend on color, animation, a vague percentage or a character reaction alone. Check focus, contrast, dynamic text size and mobile safe areas. Reduced-motion mode must still convey the completed amount and any genuinely pending task.
 
-## HSK AI source and measurement constraints
+## Implementation boundary
 
-- A lesson total must match the selected HSK level/course version and the same learner; do not silently use an old denominator when the course changes.
-- Do not combine correctness, XP, lessons and streak days into one unlabeled bar. A completed lesson is not the same as a passed test.
-- Only display milestones, expected daily progress and comparison groups if the corresponding product data and formulas actually exist.
-- Retained diagrams (including source school and Gem samples) are **educational illustrations of progress mechanics**, not approved HSK AI branding or features.
+This is an HSK AI guideline, not a prebuilt progress chart or an instruction to edit learning/scoring endpoints. It deliberately removes source-school, grade-target, Gem and assignment chart demos after retaining their valid general progress principles.
