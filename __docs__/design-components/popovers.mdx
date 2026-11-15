@@ -111,6 +111,28 @@ A user-opened interactive popover should make its controls accessible and restor
 
 Opening should come from an actual control, not a surprise during a scored exercise. Prefer only one anchored popover at once. Dismiss via a clear close/outside action only when no unsaved draft or irreversible decision can be lost; retain predictable Escape/back behavior, sensible focus return and adequate touch targets. Long optional descriptions normally use HSK AI's **two-line, top-right chevron in-place expansion**, not a new popover. Historical character figures are never assets to ship.
 
+## Restored popover choice, placement and focus contract
+
+### Select the smallest appropriate overlay
+
+- **Informational:** add concise context or an optional supported action for one visible element. **Feature highlight:** introduce a real currently available affordance, only at a useful moment. **System guidance:** explain an existing step without hiding a required lesson question or leaking an answer.
+- Use a tooltip for one short identity label, a dialog/bottom sheet for substantial reading, destructive choices and required decisions, and a banner for global errors. Do not use an anchored popover as a substitute for onboarding a nonexistent feature.
+- Character artwork is **optional** and only appropriate when the actual HSK AI learning context already uses that canonical approved character. External mascot/Gem images are structural historical examples, not implementation assets.
+
+### Actions and geometry
+
+- Keep the title concise and the primary action explicit; use one primary action when possible. Never add a decorative “Got it” action as the only way to dismiss urgent or safety-critical information.
+- Anchor to the trigger when there is space, but flip or reposition relative to safe-area edges, keyboard and reading direction. On narrow PWA/Android screens, a bottom sheet may be the better semantic presentation; do not copy fixed desktop offsets.
+- Avoid blocking the source control or essential current task. Do not let the overlay's caret point to a different element after scrolling, resizing or orientation change.
+- Normally show **one popover at a time**. Opening another contextual hint closes the first after state/focus handling rather than stacking inaccessible layers.
+
+### Keyboard and dismissal
+
+- Provide an understandable trigger name, expanded-state semantics and a trigger-to-popover relationship where supported; place focus inside only when the interaction needs it, and restore focus to a meaningful element on close.
+- Define Escape/Back, outside press and explicit-close behavior deliberately. If a popover contains a draft or unsent action, accidental outside dismissal **must not discard it** without a safe preservation/confirmation mechanism.
+- Support touch and keyboard. A hover-only tooltip or fixed hover timeout is insufficient for a decision-making popover. Announce essential status without repeatedly interrupting screen readers.
+- Respect reduced-motion, do not force an illustration animation, and keep controls at the actual PWA/Android minimum interactive sizes.
+
 ## Implementation boundary
 
 These are HSK AI interaction rules, not a requirement to introduce a popover library. Existing working features, platform navigation and server-owned state remain authoritative. No foreign character, school reward or assessment examples are product rules.
