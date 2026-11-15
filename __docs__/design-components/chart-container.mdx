@@ -1,139 +1,52 @@
 import {Meta} from "@storybook/addon-docs/blocks";
-import headerImg from "./assets/chart-container/header.png";
-import {NeutralBadge} from "@khanacademy/wonder-blocks-badge";
-import {Do, Dont} from "../components/DoDont";
-import Figure from "../components/Figure";
-import headingHierarchyImg from "./assets/chart-container/heading-hierarchy.png";
-import controlsImg from "./assets/chart-container/controls.png";
-import viewToggleImg from "./assets/chart-container/view-toggle.png";
 
 <Meta title="Design Guidelines / Components / Data visualization / Chart container" />
 
-<img src={headerImg} alt="Chart container" />
-
 # Chart container
 
-> **HSK AI scope:** These original figures illustrate chart hierarchy only. For HSK AI, use existing mobile cards, controls and real recorded learning data, not the teacher-dashboard artwork or a mandated chart package.
+A chart container holds **one actual HSK AI data visualization**, a clear title, the essential scope, and any verified controls or timestamps. The container is a **documentation pattern**, not a mandatory third-party chart library or a claim that HSK AI currently implements every example.
 
-<NeutralBadge label="Frame for a chart" />
+## When to use
 
-A container holds one chart with its heading, title, controls, and footer. Every distribution chart, trend chart, and progress chart sits inside one. For how containers are laid out on a page, see <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs">Data reports</a>.
+- One real <a href="./?path=/docs/design-guidelines-components-data-visualization-progress-charts--docs">progress</a>, <a href="./?path=/docs/design-guidelines-components-data-visualization-distribution-charts--docs">distribution</a> or <a href="./?path=/docs/design-guidelines-components-data-visualization-trend-charts--docs">trend</a> view needs contextual framing.
+- A chart needs a specific title, verified values, optional time range and a few actual interactions.
+- More than one distinct chart appears in the report: give each its own container to avoid competing interpretations.
 
-Use HSK AI's existing PWA and Android rendering and visual components; no specific third-party library is mandated.
+Do **not** wrap an unrelated interactive table, a single KPI or a large multi-step form as a “chart container”. A <a href="./?path=/docs/design-guidelines-components-data-visualization-summary-cards--docs">summary card</a>, <a href="./?path=/docs/design-guidelines-components-data-visualization-data-tables--docs">data table</a> or dedicated report section is clearer.
 
-## <Do /> When to use
+## Large and compact layouts
 
-| Use when | Example use |
-| --- | --- |
-| Showing a distribution chart, trend chart, or progress chart on a report | Recorded lessons, verified practice over time, real learner goal |
-| Showing more than one chart on a page | Two charts get two containers, each with its own section heading |
-
-## <Dont /> When NOT to use
-
-| Don’t use when | Recommended alternative | Rationale |
+| Element | Larger report container | Compact mobile/dashboard container |
 | --- | --- | --- |
-| Showing a complex table, like an actual lesson or vocabulary history with search, sorting, or filters | A <a href="./?path=/docs/design-guidelines-components-data-visualization-data-tables--docs">data table</a> in its own page or section | A complex table needs room for its own controls. A container's controls must fit on one line beside the title. |
-| The takeaway is one number with no comparison, like "12 lessons completed" | A <a href="./?path=/docs/design-guidelines-components-data-visualization-summary-cards--docs#stat-card">stat card</a> | A chart adds nothing when there's nothing to compare. A stat card shows the number at a glance. |
-| The data needs more than about three controls | Its own page or section. See <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs">Data reports</a>. | Controls that don't fit on one line crowd the title and wrap. |
-| Fitting two charts in one container | Two containers, one chart each | Each container's title states one insight. Two charts compete for one title. |
+| Section label | Names the topic, where appropriate. | Optional; avoid duplicate headings. |
+| Chart title | States a grounded takeaway based on real data. | Names the metric/topic. |
+| Description | Explains actual metric scope, period and denominator when necessary. | Only essential context. |
+| Controls | A few real filters/actions with explicit scope. | Only if supported and still usable at phone width. |
+| Chart | One meaningful visualization. | One simple chart that remains legible. |
+| Footer | Actual last-updated/processing state when relevant. | Optional but required when stale data matters. |
 
-## Sizes
-
-| Size | Use for | Example |
-| --- | --- | --- |
-| Large | Reports, where readers study the data | Learning activity over time, if accurately tracked |
-| Small | Dashboards and side panels, where readers glance | An actual recorded learner goal, where available |
-
-- A small container holds less: one chart and a few values, with no controls.
-- In a small container, the title names the topic, like "Lesson progress." The values carry the insight.
-
-## Anatomy
-
-| Part | Placement | Large | Small |
-| --- | --- | --- | --- |
-| Section heading (H2) | Above the container | Yes | No |
-| Title (H3) | Inside, top left | Yes. States the insight. Not shown in empty and error states. | Yes. Names the topic. |
-| Description | Below the title | When it adds context | Context only, like the selected HSK level |
-| Controls | Inside, top right, on the same line as the title | Optional | No |
-| Chart | Below the title | Yes | Yes |
-| Legend | Below the title and description, above the chart | Only when series can't be labeled directly | No |
-| Footer | Bottom. When the data was last updated. | Yes | Optional |
-
-A small container needs a freshness indicator when the data may be stale or partial, otherwise avoid redundant metadata.
-
-For the parts of the chart itself, like axes and data labels, see <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#anatomy">Anatomy</a> in Data visualization.
-
-### Headings
-
-The section heading and title each have a different job.
-
-| Part | Purpose | Example |
-| --- | --- | --- |
-| Section heading (H2) | Names the topic | "Learning activity over time" |
-| Title (H3) | States the insight | "Recorded results changed during the available period" |
-
-- The section heading draws the eye down the page and tells readers what the containers below are about.
-- The title can have an optional description below it.
-
-<Figure
-    src={headingHierarchyImg}
-    alt="A line chart container. The section heading sits above the container, and the title and its description sit inside it at the top left. The section heading, title, and description are outlined together."
-    caption="The section heading sits outside the container. The title and its optional description sit inside."
-/>
+On narrow screens, stack controls **below** the title when needed. Never force a borrowed desktop screenshot's top-right one-line layout, overlap the keyboard/bottom navigation or truncate important data.
 
 ## Controls
 
-Controls belong with the chart they affect. On larger screens they may sit beside the title. On narrow phones they may move below it in a readable row; never force unusable one-line desktop placement.
+- Only include a date picker, chart/table toggle, filter or download when **implemented** in the relevant HSK AI screen and supported by the current backend.
+- A chart/table switch must preserve the exact same records, permission scope, filters, denominator and window; it is not a second analytics query with unrelated data.
+- Keep the controlled content obvious. A control in one container should not silently change unrelated charts above it.
+- Use a dedicated report section when controls become complex. Refer to <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs">Data reports</a> rather than copying a desktop toolbar.
 
-Controls are optional. Add one only when it helps the reader answer the chart's question.
+## Empty, loading and error states
 
-| Control | Use when |
-| --- | --- |
-| Date filter | The reader may need a different time range |
-| View toggle | The same data works as a chart and as a table |
-| Download | The reader needs the data outside the product |
+A loading container keeps known titles and filters stable and uses a shape-fitting skeleton for not-yet-known data. Distinguish actual zero from no observations, insufficient data, loading, failed query, stale snapshot or unavailable authorization.
 
-When the data needs more than about three controls, it outgrows a container. See <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#own-page-or-section">Own page or section</a> in Data reports.
-
-Only show controls the specific HSK AI screen actually supports.
-
-<Figure
-    src={controlsImg}
-    alt="A line chart container with a This year date filter, a chart and table view toggle, and a download button outlined together on one line at the top right, beside the title."
-    caption="Container controls fit on one line beside the title."
-/>
-
-### Chart and table toggle
-
-The view toggle is optional. It switches the chart to a table of the same data.
-
-<Figure
-    src={viewToggleImg}
-    alt="A line chart container with the chart and table view toggle outlined at the top right, between the This year date filter and the download button. The chart view is selected."
-    caption="The view toggle sits with the other controls, beside the title."
-/>
-
-The chart/table switch is optional, and when present both views must use the same scope and totals.
-
-## States
-
-Empty and error states replace the title and chart, and keep the section heading and controls. All state guidance lives in <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#states">Data reports</a>:
-
-- <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#empty-container">Empty container</a>
-- <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#filtered-to-nothing">Filtered to nothing</a>
-- <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#container-errors">Container errors</a>
-- <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#empty-state-copy">Empty state copy</a> and <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#error-copy">error copy</a>
+On error, show an understandable message with real recovery, preserve unaffected independent charts and stale timestamp where applicable. Do not hide errors, required denominators or important scope beneath an optional two-line disclosure.
 
 ## Accessibility
 
-- Use real heading levels: the section heading is an H2 and the title is an H3. In a small container, the title is the container's heading.
-- Give each icon button an accessible name that starts with a verb and includes the chart's topic: "Download growth data," "Show growth as a table."
-- The view toggle announces which view is selected.
-- Every chart has a short text summary of its takeaway. See <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#accessibility">Accessibility</a> in Data visualization.
+- Use proper heading order, labelled values and real accessible names for controls.
+- Describe the chart's meaning in text; never rely only on color or hover tooltip.
+- Enable touch/keyboard access to supported data details.
+- Keep HSK-related Hanzi, pinyin and localized language text legible under font scaling and both HSK AI themes.
 
-## HSK AI implementation and data integrity
+## Implementation boundary
 
-- Use existing mobile HSK AI surfaces, readable typography, safe areas and touch targets; do not imitate the source screenshots' styling.
-- Do not invent data, force downloads, or create a chart from unsupported metrics. Distinguish recorded zero, no event, still processing, error and stale cached data.
-- Chart views and table views of the same records must have matching totals, filters, denominators and date windows; repeated events must not inflate counts.
-- Administrative reports require appropriate access and verified per-platform event coverage; personal reports show only the authorized learner's data.
+This page removes inherited school-report screenshots, borrowed chart styling and dead source anchors. The HSK AI application and metrics pipeline remain unchanged.
