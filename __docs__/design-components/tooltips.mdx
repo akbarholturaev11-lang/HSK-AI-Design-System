@@ -11,13 +11,13 @@ import {Do, Dont} from "../components/DoDont";
 
 <Meta title="Design Guidelines / Components / Feedback / Tooltips" />
 
-<img src={tooltipsImg} alt="Tooltips" />
+<img src={tooltipsImg} alt="Historical source example of short labels that appear beside an icon control; not an HSK AI screen" />
 
 # Tooltips
 
 <NeutralBadge label="Contextual identifier" />
 
-A small, transient text label that appears on hover or focus to identify or explain a UI element.
+A small, transient, **non-interactive** text label on a supported hover/focus-capable device. **HSK AI rule:** do not hide required Chinese-learning text, an error, payment disclosure or a needed action in a tooltip. On iPhone PWA and touch-only Android interfaces, use a persistent accessible label or supported contextual help. The upstream figures are historical structural references, not HSK AI product screens.
 
 ## <Do /> When to use
 
@@ -27,7 +27,7 @@ The choice to use a tooltip is determined by the need to provide immediate, supp
 | --- | --- |
 | Labeling a UI element that has no visible text | Labeling an icon button, such as a "plus" icon with "Add item". |
 | Providing more in-depth details about a feature or value | Describing the specific value or impact of a feature in a dashboard. |
-| Offering supplemental info that may require further action | Providing a tooltip with a "Learn more" link or subhead. |
+| Identifying a non-interactive short datum | Briefly naming a verified value when an adjacent persistent label already carries essential meaning. |
 
 ## <Dont /> When NOT to use
 
@@ -41,7 +41,7 @@ The choice to use a tooltip is determined by the need to provide immediate, supp
 
 ## Placement
 
-Tooltips must remain anchored 6px from the element that triggered them. While they prefer "Above" or "Below" placement, they must flip to the sides or reverse orientation if they would be clipped by the viewport edge.
+Position the optional tooltip using the approved **4-unit spacing scale** (typically an 8 CSS px reference gap), adjusted for the actual anchor and screen geometry. The historical source used 6px; **that is not HSK AI spacing policy**. Prefer placement above/below, flipping before clipping into a safe area, keyboard or screen edge. Do not interpret this design gap as a verified current CSS/Android token.
 
 <img src={placement1Img} alt="A “Back” tooltip appearing below the back chevron at the top-left of a practice screen for “Number of solutions to equations”" />
 
@@ -51,8 +51,8 @@ Tooltips must remain anchored 6px from the element that triggered them. While th
 
 ## Interaction
 
--   **Trigger:** Appears immediately (or with a slight delay) on mouse hover or keyboard focus.
--   **Dismissal:** Must be dismissible via the Escape key or by moving focus away from the trigger element.
+-   **Trigger:** On devices that genuinely support hover, appears on hover and keyboard focus. A touch-only action must not rely on this as the sole explanation.
+-   **Dismissal:** Must be dismissible via Escape or moving focus away; ensure the tooltip does not obscure the currently focused action or an HSK question.
 -   **No manual trigger:** Tooltips should not require a click to open; if a click is required, use a Popover instead.
 
 <img src={interactionImg} alt="A “Browse library” tooltip anchored to the right of the highlighted library icon in the left navigation rail, beside a grid of subject cards" />
@@ -61,9 +61,9 @@ Tooltips must remain anchored 6px from the element that triggered them. While th
 
 ### Text limits and formatting
 
-Keep messaging brief; avoid wrapping text to multiple lines or including large volumes of information.
+Keep messaging brief and non-interactive; prefer a short phrase. Use inline help, a dialog or a popover when the explanation needs more than a quick identification.
 
-Do not use end punctuation (periods, exclamation points) for tooltip labels.
+Do not use unnecessary end punctuation for brief tooltip labels. A tooltip does not substitute for the **two-line optional explanation disclosure**: only supporting explanation may collapse, with an accessible top-right ⌄/⌃ icon that opens it in place.
 
 <Figure
     src={copyImg}
