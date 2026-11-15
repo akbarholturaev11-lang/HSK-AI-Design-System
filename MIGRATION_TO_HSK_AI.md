@@ -2,6 +2,12 @@
 
 **This is the start-here file for the NEXT migration phase.** Work on the design-system source continues in `akbarholturaev11-lang/HSK-AI-Design-System` alone. It is **not** an instruction to run the HSK AI application, change PWA/Android screens or copy files into HSK AI main today.
 
+## Verified image-selection progress — full path inventory evaluated
+
+The [final image-selection entrypoint](docs/migration/VISUAL_REFERENCE_SELECTION.md) now reconciles **all 316 tracked PNG paths** with the [exception-resolution file](docs/migration/VISUAL_REFERENCE_EXCEPTIONS_2026-11-15.md). Current effective results: **212 neutral/generic samples selected, 95 foreign-product screenshots excluded, 4 content-free placeholders excluded, 4 partially useful composite images requiring neutral rework, and 1 oversized image still unviewable with the current binary reader**. The original sixteen batch manifests are traceable SHA-backed evidence and are not deleted.
+
+This closes the **file-path classification pass**, **not** a claim that the 212 images have been transferred into HSK AI, that 4 mixed images have been edited, or that the oversized image was visually verified. Publication is not in scope; the separate target repository remains untouched.
+
 ## Latest owner decision: internal rulebook, retain NON-SCREEN design examples
 
 **We publish nothing.** The goal is to make HSK AI's private professional design corpus authoritative. **Carry useful generic design illustration PNGs** (component anatomy, placement, states, variants, spacing, palettes-as-concepts) into the later documentation transfer, together with all corresponding professional micro-rules. **Do not carry full screenshots of a different app** or source product-specific school/Gems/rewards/mascot screens. Evaluate actual image content, **not just filenames**. HSK AI's verified colors, 4-unit spacing and canonical characters are still authoritative; source samples never silently become HSK palette tokens or live functions.
