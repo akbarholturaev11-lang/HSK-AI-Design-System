@@ -3,6 +3,18 @@
 **Source revision:** `restore/hsk-ai-professional-unified-audit-20261115` HEAD `0c7ef618c4fdac3decf320462aeb30ff7ac535ee`, checked directly against GitHub recursive Git tree.
 **Purpose:** preserve the **professional information** shown by historical figures while ensuring no foreign or unverified binary becomes an HSK AI runtime dependency. This is a factual source file inventory, **not** a legal conclusion that every listed file is restricted. Specific license grants are **not verified** by this inventory.
 
+## Owner's internal-only selection rule — keep generic design illustrations
+
+**The 316-PNG table below is source inventory, NOT a 316-item exclusion list.** Source images shall be sorted through an **actual image-content check** before migration:
+- **KEEP** non-screen **design examples**: schematic component variants, spacing/padding diagrams, chart anatomy, badges, button states, overlay placement and accessible feedback examples that visually teach professional rules.
+- **EXCLUDE** actual screenshots of another app, school/teacher/district dashboards, Gems/reward product UI, foreign mascots or unrelated proprietary product screens.
+- **KEEP HSK ORIGINALS** by referencing the existing canonical product asset.
+- **UNKNOWN** stays `REVIEW_REQUIRED` until opened; neither binary nor filename alone establishes the category.
+
+See [image-by-image verified examples](VISUAL_REFERENCE_SELECTION.md): **six useful generic sample images** and **two other-app screenshots/product screens** were classified by opening the real PNGs. Remaining images are **not yet classified**. This is an **internal documentation migration, not publication**. The transfer task should include the selected example images, preserve their exact professional teaching role, and avoid replacing HSK AI tokens with vendor example colors or example metrics.
+
+The rightmost source-inventory column below is a **pre-review placeholder only**. It must not override an `INCLUDE_SAMPLE` decision, and it must be replaced with an exact visual-review result before deciding whether the specific PNG is part of the portable image selection.
+
 ## Counts and transfer policy
 
 - Source tree: **316 PNG assets**. They may be referenced by 44 MDX pages, may be reused across pages, or may be unused; per-page **299 imported visual bindings** (298 figure placements plus one `@phosphor-icons/core` package SVG glyph) are reconciled in [TRANSFER_CATALOG.md](TRANSFER_CATALOG.md). A per-file listing does not by itself confirm use, ownership or permission.
