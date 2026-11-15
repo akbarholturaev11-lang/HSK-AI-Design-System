@@ -1,6 +1,6 @@
-> **HSK AI professional design guideline — portable review copy.** Current implementation is not implied. Source `__docs__/design-components/banners.mdx` (Git blob `7eb978d126911a64b013c178f4db66d0169fc3cc`); 4 historic figure references, 17 MDX demo blocks. Figures and upstream vendor code were **not** copied; ownership/licensing of source prose requires review before transferring beyond this repo. Full professional prose is retained as an internal source-derived draft.
+> **HSK AI professional design guideline — portable review copy.** Current implementation is not implied. Source `__docs__/design-components/banners.mdx` (Git blob `7eb978d126911a64b013c178f4db66d0169fc3cc`); 4 historic figure references, 17 MDX demo blocks. Approved neutral example PNGs are linked below where available; excluded foreign screens and vendor runtime code were not transferred. The original prose remains an internal source-derived draft. Full professional prose is retained as an internal source-derived draft.
 
-> **Historical figure 1 — source reference only (not transferred):** Banners. Source asset: `./assets/banners/banners.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Banners. Source asset: `./assets/banners/banners.png`.
 
 # Banners
 
@@ -98,13 +98,13 @@ If a banner is not dismissible, it should contain a single, highly visible call-
 
 Do display the banner at the top of the affected content area.
 
-> **Recommended demo:** place the banner at the top of the content it affects.. **Historical figure 2 — source reference only (not transferred):** Placement 1. Source asset: `./assets/banners/placement-1.png`.
+> **Recommended demo:** place the banner at the top of the content it affects.. **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Placement 1. Source asset: `./assets/banners/placement-1.png`.
 
 ### Maximum two banners
 
 A single banner is ideal, but if more is needed the max should be no more than two banners in a single view. If a third banner needs to appear, the oldest Success or Informational banner is hidden or dismissed automatically to make room. Critical and Warning banners are never auto-removed — they persist until the user resolves the underlying issue, per their own dismissal rules.
 
-> **Avoid demo:** show more than two banners at once. It adds too much cognitive load.. **Historical figure 3 — source reference only (not transferred):** Placement 2. Source asset: `./assets/banners/placement-2.png`.
+> **Avoid demo:** show more than two banners at once. It adds too much cognitive load.. **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Placement 2. Source asset: `./assets/banners/placement-2.png`.
 
 ### Priority stacking order
 
@@ -113,7 +113,7 @@ Highest priority / Most critical banner (at the very top).
 Second highest priority / Second most critical banner (below the first one).
 If both banners have the same criticality, the newest or most recently triggered one often takes the top spot, or the decision is made based on which piece of information is most urgent for the user to see first.
 
-> **Recommended demo:** put the most critical banner on top when two banners are showing.. **Historical figure 4 — source reference only (not transferred):** Placement 3. Source asset: `./assets/banners/placement-3.png`.
+> **Recommended demo:** put the most critical banner on top when two banners are showing.. **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** Placement 3. Source asset: `./assets/banners/placement-3.png`.
 
 ## Accessibility
 

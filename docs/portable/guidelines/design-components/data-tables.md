@@ -87,19 +87,19 @@ The following demonstration contains **fictional example values only**. It illus
 
 ### Overview
 
-> **Historical figure 1 — source reference only (not transferred):** Source illustration showing a dense data table, not actual HSK AI student records. Source asset: `./assets/data-tables/header.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Source illustration showing a dense data table, not actual HSK AI student records. Source asset: `./assets/data-tables/header.png`.
 
 Use a table for comparable structured records with stable column meanings. It is not a universal replacement for mobile lesson cards.
 
 ### Anatomy
 
-> **Historical figure 2 — source reference only (not transferred):** Original table example with short headings and name-first structure; sample school data are not HSK AI content. Source asset: `./assets/data-tables/basic-table.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Original table example with short headings and name-first structure; sample school data are not HSK AI content. Source asset: `./assets/data-tables/basic-table.png`.
 
 **Columns:** place the record identifier first, use concise sentence-case headers and correct text/numeric/date alignment. Numeric values should usually align on the end edge; dates must follow selected locale.
 
 ### Controls and comparison
 
-> **Historical figure 3 — source reference only (not transferred):** Original table with summary tabs; its school/classroom categories are illustrative only. Source asset: `./assets/data-tables/summary-tabs.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Original table with summary tabs; its school/classroom categories are illustrative only. Source asset: `./assets/data-tables/summary-tabs.png`.
 
 **Tabs:** totals and scoped categories must come from the same verified query or explicitly different scopes. Switching tabs does not change the identity/authorization of the underlying data.
 

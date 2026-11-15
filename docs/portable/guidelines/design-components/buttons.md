@@ -1,6 +1,6 @@
-> **HSK AI professional design guideline — portable review copy.** Current implementation is not implied. Source `__docs__/design-components/buttons.mdx` (Git blob `b20a71a3783cba8a21797b4a431a696ea57d6c92`); 16 historic figure references, 12 MDX demo blocks. Figures and upstream vendor code were **not** copied; ownership/licensing of source prose requires review before transferring beyond this repo. Full professional prose is retained as an internal source-derived draft.
+> **HSK AI professional design guideline — portable review copy.** Current implementation is not implied. Source `__docs__/design-components/buttons.mdx` (Git blob `b20a71a3783cba8a21797b4a431a696ea57d6c92`); 16 historic figure references, 12 MDX demo blocks. Approved neutral example PNGs are linked below where available; excluded foreign screens and vendor runtime code were not transferred. The original prose remains an internal source-derived draft. Full professional prose is retained as an internal source-derived draft.
 
-> **Historical figure 1 — source reference only (not transferred):** Buttons. Source asset: `./assets/buttons/buttons.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Buttons. Source asset: `./assets/buttons/buttons.png`.
 
 # Buttons
 
@@ -38,7 +38,7 @@ A modal, drawer, or other overlay is its own context, so it can have its own pri
 
 > **Illustrative demo:** Historical visual example (not a shipped HSK AI component). Example UI: button primary: Primary button.
 
-> **Avoid demo:** put a primary button on every card when the page already has a primary action.. **Historical figure 2 — source reference only (not transferred):** Variants 1. Source asset: `./assets/buttons/variants-1.png`.
+> **Avoid demo:** put a primary button on every card when the page already has a primary action.. **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Variants 1. Source asset: `./assets/buttons/variants-1.png`.
 
 ### Secondary button
 
@@ -48,7 +48,7 @@ Don’t use it for navigation or low-value trivial actions (View details, Previe
 
 > **Illustrative demo:** Historical visual example (not a shipped HSK AI component). Example UI: button secondary: Secondary button.
 
-> **Avoid demo:** use secondary buttons for low-value actions like “View course” repeated down a list.. **Historical figure 3 — source reference only (not transferred):** Variants 2. Source asset: `./assets/buttons/variants-2.png`.
+> **Avoid demo:** use secondary buttons for low-value actions like “View course” repeated down a list.. **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Variants 2. Source asset: `./assets/buttons/variants-2.png`.
 
 ### Tertiary button
 
@@ -57,13 +57,13 @@ Avoid styling links as buttons (e.g., a "Read more" button). To maintain accessi
 
 > **Illustrative demo:** Historical visual example (not a shipped HSK AI component). Example UI: button tertiary: Tertiary button.
 
-> **Avoid demo:** use a tertiary button for “Read more.” It takes the user somewhere, so it should be a link.. **Historical figure 4 — source reference only (not transferred):** Variants 3. Source asset: `./assets/buttons/variants-3.png`.
+> **Avoid demo:** use a tertiary button for “Read more.” It takes the user somewhere, so it should be a link.. **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** Variants 3. Source asset: `./assets/buttons/variants-3.png`.
 
 ### Neutral button
 
 Neutral tokens help preserve hierarchy balance when multiple kinds of elements with differing visual weights are present in a view. Single-use icon buttons — like an X (close), a back button, or an info icon — should be neutral, not the primary action color. Our current application of them is for icon-only tertiary buttons.
 
-> **Historical figure 5 — source reference only (not transferred):** Three icon-only neutral buttons: an X (close), a back chevron, and an info icon. Source asset: `./assets/buttons/neutral-icon-buttons.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** Three icon-only neutral buttons: an X (close), a back chevron, and an info icon. Source asset: `./assets/buttons/neutral-icon-buttons.png`.
 
 Use neutral text buttons where the **professional hierarchy** calls for a low-emphasis action; repair a weaker current HSK AI hierarchy in the later app-redesign phase rather than lowering this standard. Source-team approval procedures are not HSK AI policy.
 
@@ -73,7 +73,7 @@ Use neutral text buttons where the **professional hierarchy** calls for a low-em
 
 Use for destructive or irreversible actions, such as account deletion. The distinct Critical color must not be confused with HSK AI's ordinary brand-red non-destructive primary action. Never use Critical red for normal lessons, purchases or harmless retries.
 
-> **Historical figure 6 — source reference only (not transferred):** States 3. Source asset: `./assets/buttons/states-3.png`.
+> **Historical figure 6 — source figure reference (only approved samples, if any, are linked below):** States 3. Source asset: `./assets/buttons/states-3.png`.
 
 ## Sizing
 
@@ -90,7 +90,7 @@ Utility-based actions: Perfect for "micro-actions" within a larger workflow, suc
 
 > **Illustrative demo:** A **small-size tertiary button**, sourced from a variant marked `size="small"`, is a visually compact micro-action. Its interactive hit target still meets the relevant iPhone PWA / Android accessibility requirement.
 
-> **Recommended demo:** use a small button for a micro-action inside a compact card, like “Set reward.”. **Historical figure 7 — source reference only (not transferred):** A small 'Set reward' button used inside a compact Gem challenge card. Source asset: `./assets/buttons/states-1.png`.
+> **Recommended demo:** use a small button for a micro-action inside a compact card, like “Set reward.”. **Historical figure 7 — source figure reference (only approved samples, if any, are linked below):** A small 'Set reward' button used inside a compact Gem challenge card. Source asset: `./assets/buttons/states-1.png`.
 
 ### Width
 
@@ -113,7 +113,7 @@ Don’t use a disabled button to communicate when conditions for progressing or 
 
 > **Illustrative demo:** A **disabled primary button** (source sample includes the Boolean `disabled` state) remains visibly inactive and must not submit anything. Disabling a button solely because the learner has not yet completed an optional prerequisite is the distinct anti-pattern shown next.
 
-> **Avoid demo:** disable a button because the user hasn’t finished a step yet, like selecting questions to review.. **Historical figure 8 — source reference only (not transferred):** States 4. Source asset: `./assets/buttons/states-4.png`.
+> **Avoid demo:** disable a button because the user hasn’t finished a step yet, like selecting questions to review.. **Historical figure 8 — source figure reference (only approved samples, if any, are linked below):** States 4. Source asset: `./assets/buttons/states-4.png`.
 
 ### Loading
 
@@ -125,7 +125,7 @@ Do use an icon if the icon symbolizes the result or category of the action and t
 Icon placement: Icon set to “start” is to indicate action, emphasis, and category. Icon set to “end” indicates status, direction, or change in context. 
 Icon-only buttons: Do use them only for universally understood actions (search, settings, close, edit) And use the Neutral action (not Progressive/the default color).
 
-> **Historical figure 9 — source reference only (not transferred):** States 5. Source asset: `./assets/buttons/states-5.png`.
+> **Historical figure 9 — source figure reference (only approved samples, if any, are linked below):** States 5. Source asset: `./assets/buttons/states-5.png`.
 
 ## Special cases
 
@@ -147,7 +147,7 @@ XP, streaks, HSK progress and rewards are information until a real destination o
 
 The Primary button should be placed in the most visible and logical position for the user's flow (e.g., block-end of a form or modal).
 
-> **Historical figure 10 — source reference only (not transferred):** Placement 1. Source asset: `./assets/buttons/placement-1.png`.
+> **Historical figure 10 — source figure reference (only approved samples, if any, are linked below):** Placement 1. Source asset: `./assets/buttons/placement-1.png`.
 
 ### Hierarchy and grouping
 
@@ -166,39 +166,39 @@ Group related actions together. In a modal or form, the order should generally b
 
 Aim for 1-3 words. The text must be immediately scannable.
 
-> **Historical figure 11 — source reference only (not transferred):** Copy 3. Source asset: `./assets/buttons/copy-3.png`.
+> **Historical figure 11 — source figure reference (only approved samples, if any, are linked below):** Copy 3. Source asset: `./assets/buttons/copy-3.png`.
 
 ### Action focus
 
 Button copy must be short, clear, and focused on the action (a verb or a verb phrase).
 Avoid technical jargon or vague labels like "OK" or "Click Here". Use clear action verbs like "Save Changes" or "Next Step".
 
-> **Historical figure 12 — source reference only (not transferred):** Copy 1. Source asset: `./assets/buttons/copy-1.png`.
+> **Historical figure 12 — source figure reference (only approved samples, if any, are linked below):** Copy 1. Source asset: `./assets/buttons/copy-1.png`.
 
 ### Labels stand alone
 
 Button labels must be a single action phrase. Descriptive or explanatory text must not appear inside a button.
 Buttons communicate an action, not context. If users need more information before acting, provide it through helper text, tooltips, or a confirmation dialog — not inside the button label itself.
 
-> **Historical figure 13 — source reference only (not transferred):** Copy 2. Source asset: `./assets/buttons/copy-2.png`.
+> **Historical figure 13 — source figure reference (only approved samples, if any, are linked below):** Copy 2. Source asset: `./assets/buttons/copy-2.png`.
 
 ### Sentence case
 
 To be consistent with UX copy guidelines, use sentence case.
 
-> **Historical figure 14 — source reference only (not transferred):** Copy 4. Source asset: `./assets/buttons/copy-4.png`.
+> **Historical figure 14 — source figure reference (only approved samples, if any, are linked below):** Copy 4. Source asset: `./assets/buttons/copy-4.png`.
 
 ### Punctuation
 
 Do not use periods, question marks, or exclamation points at the end of button text. Button text is typically a fragment, phrase, or command, not a full sentence, and terminal punctuation adds unnecessary visual clutter and reduces scannability.
 
-> **Historical figure 15 — source reference only (not transferred):** Copy 5. Source asset: `./assets/buttons/copy-5.png`.
+> **Historical figure 15 — source figure reference (only approved samples, if any, are linked below):** Copy 5. Source asset: `./assets/buttons/copy-5.png`.
 
 ### Consistency
 
 Always use logically paired verbs for opposite actions, as the choice clarifies the type of movement. Previous / Next is used for simple, non-committing pagination through lists or sequences. Back / Next or Back / Continue is used for advancing through procedural flows like multi-step forms or wizards. Never mix terms from different pairs (e.g., avoid "Previous/Continue").
 
-> **Historical figure 16 — source reference only (not transferred):** Copy 6. Source asset: `./assets/buttons/copy-6.png`.
+> **Historical figure 16 — source figure reference (only approved samples, if any, are linked below):** Copy 6. Source asset: `./assets/buttons/copy-6.png`.
 
 ## HSK AI verification safeguards
 

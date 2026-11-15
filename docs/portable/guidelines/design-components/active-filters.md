@@ -1,6 +1,6 @@
-> **HSK AI professional design guideline — portable review copy.** Current implementation is not implied. Source `__docs__/design-components/active-filters.mdx` (Git blob `ca9a5a855efed7adb23e6f2f6f60f841bea714eb`); 4 historic figure references, 0 MDX demo blocks. Figures and upstream vendor code were **not** copied; ownership/licensing of source prose requires review before transferring beyond this repo. Full professional prose is retained as an internal source-derived draft.
+> **HSK AI professional design guideline — portable review copy.** Current implementation is not implied. Source `__docs__/design-components/active-filters.mdx` (Git blob `ca9a5a855efed7adb23e6f2f6f60f841bea714eb`); 4 historic figure references, 0 MDX demo blocks. Approved neutral example PNGs are linked below where available; excluded foreign screens and vendor runtime code were not transferred. The original prose remains an internal source-derived draft. Full professional prose is retained as an internal source-derived draft.
 
-> **Historical figure 1 — source reference only (not transferred):** Active filters. Source asset: `./assets/active-filters/active-filters.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Active filters. Source asset: `./assets/active-filters/active-filters.png`.
 
 # Active filters
 
@@ -45,14 +45,14 @@ Not every control in the filter bar produces a chip. The deciding factor is who 
 Each active filter displays the filter category and its selected value — for example, "HSK level: HSK 3." A dismiss icon allows the user to deactivate that specific filter.
 When more active filters exist than can fit on one line, they wrap to a second line to maintain full transparency.
 
-> **Historical figure 2 — source reference only (not transferred):** A report filter bar with search, date, and school controls, above five active filter pills that wrap onto a second line, each showing a category and value with a dismiss icon, followed by a Clear all filters link. Source asset: `./assets/active-filters/states.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** A report filter bar with search, date, and school controls, above five active filter pills that wrap onto a second line, each showing a category and value with a dismiss icon, followed by a Clear all filters link. Source asset: `./assets/active-filters/states.png`.
 
 ## Placement
 
 Active filters sit directly below the filter bar, creating a clear visual link between the controls and the data they affect.
 They sit above the data visualization — cards, charts, or tables — acting as a bridge between the filtering interface and the displayed data.
 
-> **Historical figure 3 — source reference only (not transferred):** A report page showing active filter pills positioned directly below the filter bar and above the results count and data area. Source asset: `./assets/active-filters/placement.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** A report page showing active filter pills positioned directly below the filter bar and above the results count and data area. Source asset: `./assets/active-filters/placement.png`.
 
 ## Copy
 
@@ -60,7 +60,7 @@ Use the format [Category]: [Value] — for example, "HSK level: HSK 3." This ens
 
 For multi-select filters, each selected value gets its own chip rather than combining them into one — "HSK level: HSK 3" and "HSK level: HSK 4" as two chips, not one combined label. This keeps each value individually scannable and removable.
 
-> **Historical figure 4 — source reference only (not transferred):** Copy. Source asset: `./assets/active-filters/copy.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** Copy. Source asset: `./assets/active-filters/copy.png`.
 
 ## HSK AI product application
 

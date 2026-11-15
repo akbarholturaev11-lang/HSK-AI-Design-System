@@ -1,6 +1,6 @@
 > **HSK AI professional design guideline — portable review copy.** Source: `__docs__/design-components/clear-filter.mdx`, Git blob `542669f4afa117a7a4f163f40278934d019a2cc6`. 4 historic figure references and 0 MDX demo blocks; source images / vendor runtime code were not copied. Source prose remains an internal derivative draft pending rights and detailed visual parity review; this does not assert a live app feature.
 
-> **Historical figure 1 — source reference only (not transferred):** Decorative banner showing a “School: Addison Middle School” active filter with a remove (×) button next to a “Clear all filters” link, set over abstract orange, yellow, and blue shapes.. Source asset: `./assets/clear-filter/clear-filter.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Decorative banner showing a “School: Addison Middle School” active filter with a remove (×) button next to a “Clear all filters” link, set over abstract orange, yellow, and blue shapes.. Source asset: `./assets/clear-filter/clear-filter.png`.
 
 # Clear filter
 
@@ -48,14 +48,14 @@ Because the reset reaches past the chip row, the label says so — "Clear all fi
 
 The button should not be visible if no filters are applied, preventing UI clutter.
 
-> **Historical figure 2 — source reference only (not transferred):** A report filter bar with a search field, a “Last 30 days” date filter, and inactive School, Grade, and More filters controls. No active filters are applied, so no Clear all filters button appears. The view shows 120 results.. Source asset: `./assets/clear-filter/states-hidden.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** A report filter bar with a search field, a “Last 30 days” date filter, and inactive School, Grade, and More filters controls. No active filters are applied, so no Clear all filters button appears. The view shows 120 results.. Source asset: `./assets/clear-filter/states-hidden.png`.
 
 ### Default (active)
 
 Appears as a [tertiary button](buttons.md) at the small size — `kind="tertiary"`, `size="small"` — once a filter is triggered.
 Avoid using red or other high-caution colors. Clearing filters is an inconsequential action that does not delete data; use neutral styling to keep focus on primary actions.
 
-> **Historical figure 3 — source reference only (not transferred):** The same filter bar with School and Grades filters applied, shown as active School and Grades controls. Below the bar, an active filters row lists School: Addison Middle School, Grade: 7th grade, and Subject: Math, with the Clear filters button at the end of the row. The view shows 4 results.. Source asset: `./assets/clear-filter/states-default.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** The same filter bar with School and Grades filters applied, shown as active School and Grades controls. Below the bar, an active filters row lists School: Addison Middle School, Grade: 7th grade, and Subject: Math, with the Clear filters button at the end of the row. The view shows 4 results.. Source asset: `./assets/clear-filter/states-default.png`.
 
 ## Interaction
 
@@ -78,7 +78,7 @@ The button sits within the active filters row, which already appears and disappe
 Position the "Clear filters" button directly following the list of [active filters](active-filters.md).
 It should sit between the filter bar (controls) and the data (results), providing a clear bridge between the two. For the full filtering pattern, see [Filter and sort](../design-patterns/filter-and-sort.md).
 
-> **Historical figure 4 — source reference only (not transferred):** An active filters row — School: Addison Middle School, Grade: 7th grade, and Subject: Math, each removable — followed by the Clear filters button at the end of the row, sitting between the filter bar above and the results list below.. Source asset: `./assets/clear-filter/placement.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** An active filters row — School: Addison Middle School, Grade: 7th grade, and Subject: Math, each removable — followed by the Clear filters button at the end of the row, sitting between the filter bar above and the results list below.. Source asset: `./assets/clear-filter/placement.png`.
 
 ## Copy
 

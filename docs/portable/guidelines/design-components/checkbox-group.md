@@ -1,6 +1,6 @@
-> **HSK AI professional design guideline — portable review copy.** Current implementation is not implied. Source `__docs__/design-components/checkbox-group.mdx` (Git blob `76a44cfc5b515190667aad82205448fc21dfa9c6`); 6 historic figure references, 0 MDX demo blocks. Figures and upstream vendor code were **not** copied; ownership/licensing of source prose requires review before transferring beyond this repo. Full professional prose is retained as an internal source-derived draft.
+> **HSK AI professional design guideline — portable review copy.** Current implementation is not implied. Source `__docs__/design-components/checkbox-group.mdx` (Git blob `76a44cfc5b515190667aad82205448fc21dfa9c6`); 6 historic figure references, 0 MDX demo blocks. Approved neutral example PNGs are linked below where available; excluded foreign screens and vendor runtime code were not transferred. The original prose remains an internal source-derived draft. Full professional prose is retained as an internal source-derived draft.
 
-> **Historical figure 1 — source reference only (not transferred):** Checkbox group. Source asset: `./assets/checkbox-group/checkbox-group.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Checkbox group. Source asset: `./assets/checkbox-group/checkbox-group.png`.
 
 # Checkbox group
 
@@ -34,13 +34,13 @@ The choice to use a checkbox group is based on the requirement for additive filt
 
 A dropdown is also acceptable at eight or fewer outside the filter bar — a settings page or a long form — where the group is one field among many and the user is setting a value they already know. Expose when seeing the options is part of the decision. Collapse when the user arrives knowing the answer and the surrounding form needs to stay scannable.
 
-> **Historical figure 2 — source reference only (not transferred):** A filter set with two exposed checkbox groups — Essay types with 3 options and Categories with 4 options — shown directly, not wrapped in a dropdown — 8 or fewer, exposed directly. Type: do. Source asset: `./assets/checkbox-group/placement-1.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** A filter set with two exposed checkbox groups — Essay types with 3 options and Categories with 4 options — shown directly, not wrapped in a dropdown — 8 or fewer, exposed directly. Type: do. Source asset: `./assets/checkbox-group/placement-1.png`.
 
 ### Top filter bar
 
 Horizontal space is constrained, so exposed groups would break the layout.
 
-> **Historical figure 3 — source reference only (not transferred):** A top filter bar where grade options are wrapped in a dropdown — top filter bar, always dropdown. Type: do. Source asset: `./assets/checkbox-group/placement-2.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** A top filter bar where grade options are wrapped in a dropdown — top filter bar, always dropdown. Type: do. Source asset: `./assets/checkbox-group/placement-2.png`.
 
 ## Interaction
 
@@ -50,14 +50,14 @@ Any number of options within the group can be selected simultaneously, including
 
 Whether selections take effect immediately or wait for confirmation depends on where the group lives: exposed directly in a filter bar, selections apply as soon as they're checked; inside a combobox or filter modal, selections are held until the user presses Apply.
 
-> **Historical figure 4 — source reference only (not transferred):** Interaction 1. Source asset: `./assets/checkbox-group/interaction-1.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** Interaction 1. Source asset: `./assets/checkbox-group/interaction-1.png`.
 
 ### Dropdown display
 
 When used inside a multi-select dropdown, if a single selection is made the exact name of the selected item is displayed in the trigger, truncated with an ellipsis if needed.
 If multiple selections are made, the trigger displays a count — for example, "4 selected."
 
-> **Historical figure 5 — source reference only (not transferred):** Interaction 2. Source asset: `./assets/checkbox-group/interaction-2.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** Interaction 2. Source asset: `./assets/checkbox-group/interaction-2.png`.
 
 ## Copy
 
@@ -67,7 +67,7 @@ What goes into an option label depends on where its content comes from.
 
 **Content titles:** When the option is a pre-existing piece of content (a lesson, quiz, or unit test name), use its actual title as-is. These aren't subject to the conciseness or parallel-structure rule above — they're inherited from the curriculum, not authored for the checkbox group, and shortening or rewording them would break their ability to identify the actual content.
 
-> **Historical figure 6 — source reference only (not transferred):** Copy. Source asset: `./assets/checkbox-group/copy.png`.
+> **Historical figure 6 — source figure reference (only approved samples, if any, are linked below):** Copy. Source asset: `./assets/checkbox-group/copy.png`.
 
 ## Curated professional visual examples (internal)
 

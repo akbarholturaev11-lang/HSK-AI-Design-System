@@ -1,4 +1,4 @@
-> **HSK AI professional design guideline — portable review copy.** Current implementation is not implied. Source `__docs__/design-components/chart-container.mdx` (Git blob `48f5d439b29c5d70d9ee55f1effc8b8ffb58f8e2`); 4 historic figure references, 0 MDX demo blocks. Figures and upstream vendor code were **not** copied; ownership/licensing of source prose requires review before transferring beyond this repo. Full professional prose is retained as an internal source-derived draft.
+> **HSK AI professional design guideline — portable review copy.** Current implementation is not implied. Source `__docs__/design-components/chart-container.mdx` (Git blob `48f5d439b29c5d70d9ee55f1effc8b8ffb58f8e2`); 4 historic figure references, 0 MDX demo blocks. Approved neutral example PNGs are linked below where available; excluded foreign screens and vendor runtime code were not transferred. The original prose remains an internal source-derived draft. Full professional prose is retained as an internal source-derived draft.
 
 # Chart container
 
@@ -57,25 +57,25 @@ The following demonstration contains **fictional example values only**. It illus
 
 ### Overview
 
-> **Historical figure 1 — source reference only (not transferred):** Historical chart-container overview showing a source data report, not real HSK AI analytics. Source asset: `./assets/chart-container/header.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Historical chart-container overview showing a source data report, not real HSK AI analytics. Source asset: `./assets/chart-container/header.png`.
 
 Overview: hierarchy of chart title, timeframe, controls and plot. Preserve the separation of data definition and presentation.
 
 ### Anatomy
 
-> **Historical figure 2 — source reference only (not transferred):** Source illustration of section heading outside a chart container and chart title inside. Source asset: `./assets/chart-container/heading-hierarchy.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Source illustration of section heading outside a chart container and chart title inside. Source asset: `./assets/chart-container/heading-hierarchy.png`.
 
 **Headings:** put the page/section H2 outside; a shorter chart title and optional description belong inside the container. Do not duplicate a headline in two places.
 
 ### Controls and comparison
 
-> **Historical figure 3 — source reference only (not transferred):** Original reference showing chart controls alongside the container title. Source asset: `./assets/chart-container/controls.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Original reference showing chart controls alongside the container title. Source asset: `./assets/chart-container/controls.png`.
 
 **Control scope:** a chart-local dropdown applies to that chart; a page-wide date filter belongs above all affected results. Show the selected scope and avoid silent cross-chart filter drift.
 
 ### Alternative presentation
 
-> **Historical figure 4 — source reference only (not transferred):** Original reference showing chart and table view controls together. Source asset: `./assets/chart-container/view-toggle.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** Original reference showing chart and table view controls together. Source asset: `./assets/chart-container/view-toggle.png`.
 
 **Alternative view:** when an authorized real chart has a table alternative, a clearly labeled toggle preserves the selected date range and filtered data. Do not fabricate unmeasured values in a table.
 
