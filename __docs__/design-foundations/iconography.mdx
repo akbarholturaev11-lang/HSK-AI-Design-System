@@ -99,6 +99,28 @@ The icon remains visible in the upper-right corner when expanded. Determine whet
 - Respect platform navigation expectations, keyboard/safe-area clearance, text scaling and reduced-motion settings.
 - Do not replace source-approved artwork with random cartoon symbols merely because a generic icon library cannot render it.
 
+## Restored icon scale, weights and governance
+
+### Proposed generic icon sizing rules
+
+- Use **Phosphor** for new ordinary interface icons, with a clear mapping of glyph meaning across PWA and Android. **Regular, Bold and Fill** are the preferred available weights for proposed new UI; Thin and Light are fragile at small sizes, and Duotone should not be introduced casually.
+- The source sizing method is useful as a **starting guideline**, not a verified implementation fact: roughly **16px Bold** for inline status, inputs and badges; **24px Regular** for icon buttons and ordinary navigation; **48px Regular** for a large file/action symbol. Final visual size, optical weight and dp/px scaling must be validated on both platforms.
+- Reserve **Fill** for selected/active emphasis where it has a distinct accessible meaning. Do not arbitrarily change a glyph's weight across states, and do not turn a destructive action into a decorative bold icon.
+- Low-emphasis affordances (such as a drag handle) may need a less prominent weight; high-emphasis confirmation may need a stronger one. These are deliberate exceptions requiring a visual review, not free styling choices.
+
+### Labels, touch and prohibited substitutions
+
+- Common close, back and search glyphs may be icon-only when a user understands the context **and** an accessible button name exists. For unfamiliar actions, use an adjacent visible label or an appropriate persistent explanation, not a hover-only hint.
+- Match actual HSK AI button tap areas; the icon's drawn size is **not** its full interactive target. Evaluate PWA at least 44 CSS px and Android's native 48 dp expectation where applicable, without enlarging glyph artwork unnecessarily.
+- An action icon's visual foreground and focus state must meet the required contrast in both themes; disabled presentation needs semantic disabled state, not a blanket untested opacity.
+- Explicit **right-or-wrong** feedback remains a combination of the existing character expressions/effects and accurate educational explanation. A check or X may supplement, never replace, these reactions.
+- The two-line optional-disclosure chevron is **⌄/⌃ at top-right, icon only visually**, with screen-reader button name, expanded state, sufficient target and no lost required text. Never put an illustrated character or custom lesson mark into Phosphor merely for visual uniformity.
+
+### Approval and source boundaries
+
+- No upstream Gems/teacher/class/assistant glyph becomes HSK AI product policy. Existing canonical characters and AI Voice Orb are exceptions because they already have approved HSK AI identity.
+- Record the chosen glyph, weight, size, touch area, theme pairing, accessible name and real platform availability before declaring a new icon mapping final.
+
 ## Implementation boundary
 
 These are HSK AI design rules. No production app icon dependency, UI screen, Native Compose icon set or Panda/Voice renderer is changed in this documentation-only revision.
