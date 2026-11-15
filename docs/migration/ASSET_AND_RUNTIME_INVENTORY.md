@@ -5,13 +5,17 @@
 
 ## Counts and transfer policy
 
-- Source tree: **316 PNG assets**. They may be referenced by 44 MDX pages, may be reused across pages, or may be unused; per-page **299 import occurrences** are counted in [TRANSFER_CATALOG.md](TRANSFER_CATALOG.md). A per-file listing does not by itself confirm use, ownership or permission.
+- Source tree: **316 PNG assets**. They may be referenced by 44 MDX pages, may be reused across pages, or may be unused; per-page **299 imported visual bindings** (298 figure placements plus one `@phosphor-icons/core` package SVG glyph) are reconciled in [TRANSFER_CATALOG.md](TRANSFER_CATALOG.md). A per-file listing does not by itself confirm use, ownership or permission.
 - Source tree: **30 font binaries** under `static/fonts/`. **Do not move or share actual font files**; usage/licensing and necessity must be checked separately, and system fonts are preferred where appropriate.
 - Some PNGs are among **73 exact previously restored historical images** tracked at the granular deleted-material audit. Do not infer the remaining PNGs were created by HSK AI or licensed; origin is **unverified**.
 - One original HSK AI-owned icon has a separate provenance path: `static/hsk-ai-logo.svg` was copied byte-identically from `HSK-AI-Bot/branding/hsk-ai-logo.svg` (Git blob `171a49f9093367cc88d3a81b83133a85e8bb4be9`); its reuse in an HSK AI design entrypoint can reference the original product asset rather than duplicate it.
 - Storybook components, demonstration JSX, `@khanacademy/wonder-blocks` packages, `.storybook/**`, `package.json`, `pnpm-lock.yaml`, `static/fonts/**` and repo-specific `.github/workflows/**` are **technical authoring dependencies**, not the future HSK AI production design authority. Do not install or copy them into the product root as part of docs migration.
 
-## How to safely retain professional diagram detail
+## Current portable draft and how to safely retain professional diagram detail
+
+The source-derived [44-page portable draft](../portable/README.md) records **298 figure references** in context as text and source asset paths, without copying any PNG/font binaries. The other imported visual binding is the example Phosphor check-circle icon in the Banners guideline, whose semantic success role is also documented. These notes are **traceability, not an assertion that image geometry/visual variants have been fully reconstructed**. An individual diagram or font still needs verified rights/provenance or a rights-cleared HSK AI original before final transfer.
+
+
 
 For **each** image a guideline needs, retain its technical meaning — composition, geometry, component hierarchy, control placement, original sizing/ratio if supported, state distinctions, arrows/flow, labels and accessibility rationale — in rewritten professional design documentation. When license/use is verified or there is an HSK AI-owned original diagram, use the rights-cleared illustration; otherwise a full textual breakdown must replace the visual without losing design content. Never rebrand or silently copy a school/vendor screenshot.
 
