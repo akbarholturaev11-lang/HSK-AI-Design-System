@@ -100,6 +100,12 @@ Every substantive divergence must be recorded where it occurs, using:
 
 **Prohibited vague justifications:** "HSK AI style is different", "old screenshots are not ours", "only keep what is already implemented", "not applicable", "too complex" or "there's no test", without the specific contextual reason. These statements are not a license to remove the underlying professional technique.
 
+### Owner's image-handling clarification — internal professional examples
+
+The owner specified **no publication** and a simple visual distinction: **retain/migrate useful generic sample illustrations that teach component anatomy or design decisions, exclude real screenshots of other apps and vendor business screens.** Judge the actual image, not its filename or the fact that it is historical. Selected examples remain **illustrative** and do not change the official HSK AI brand palette/spacing/functionality. Preserve every transferable professional micro-detail from an excluded screenshot in the surrounding design text.
+
+The source contains many different image types; do not call every PNG a foreign screen, or drop a valid neutral reference image on that basis. For documented visually verified examples and the remainder's `REVIEW_REQUIRED` handling, use [visual reference selection](docs/migration/VISUAL_REFERENCE_SELECTION.md). There is no public-site publication in the current plan; source rights statements should be accurate but cannot substitute for the user's selection criteria.
+
 ## 7. Publication / artwork provenance boundary
 
 A rule or generic anatomy description can be retained and rewritten; historical third-party PNGs must not be assumed licensed because they exist in git. **Keep source-figure identity separate from design-guideline completeness.** If redistribution rights cannot be shown, the professional geometry and reasoning stay in text or a newly rights-cleared original schematic; historical source-only visuals must not be published as HSK AI artwork.
