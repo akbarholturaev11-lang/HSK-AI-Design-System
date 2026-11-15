@@ -22,6 +22,16 @@ Apply this exact precedence when two statements appear to conflict:
 - **Avoid full-screen redesign now.** This repository only establishes and reconciles guidelines. The **next, separately scoped phase** is a screen-by-screen audit and implementation of HSK AI PWA/Android UI/UX against these guidelines, retaining underlying workflows, data contracts, business logic and rollout safety. Do not touch the production app during design-documentation work.
 - Read [Professional-first decision contract](DESIGN_SYSTEM_PROFESSIONAL_FIRST_CONTRACT.md) and the [source reconciliation matrix](docs/audits/professional-rules-source-to-hsk-ai-matrix-2026-11-15.md) before proposing deviations.
 
+## HSK AI main-repository migration preparation (DOCUMENTATION ONLY)
+
+The user intends to make this complete professional design corpus the **PRIMARY design authority inside `akbarholturaev11-lang/HSK-AI-Bot`**, after the design-system source is reconciled and prepared. **Do NOT modify that application repository or its real PWA/Android implementation while preparing the transfer.**
+
+Before claiming transfer readiness, read `docs/migration/TRANSFER_CATALOG.md`, `docs/migration/CONFLICT_REGISTER.md` and `docs/migration/TARGET_AUTHORITY_INSERT.md`. Preserve **all 44 active professional guideline pages**, their source-grounded micro-details and explicit exceptions; do not move a vendor screenshot, runtime library, foreign font or third-party reference binary blindly into the product. Use the exact Git-blob source inventory and distinguish `reference-only`, `owner-approved target`, `current behavior`, and `not implemented`.
+
+On the future separately authorized transfer, **append an authoritative pointer to the existing product root `AGENTS.md` rather than replacing its security, billing, analytics, monitoring or Git rules**. Update the existing product `.agents/skills/hsk-ai-ui/SKILL.md` **in place**, removing its contradictory **one-line** helper-text rule in favor of the approved **maximum two fully visible lines + upper-right ⌄/⌃** requirement. Let professional UI design overrule incidental current styling while all real HSK product functions/identity remain intact.
+
+This design documentation may be accepted without app tests. Public Storybook packaging and binary-art provenance are separate concerns; actual product screen redesign and app tests happen **after** documentation migration as an independently scoped task.
+
 ## Only authoritative product scope
 
 - Products: **iPhone PWA and native Android**, with consistent user intent, platform-appropriate navigation, safe areas, keyboard and accessibility behavior.
