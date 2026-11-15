@@ -20,6 +20,8 @@ import {Do, Dont} from "../components/DoDont";
 
 # Toggle
 
+> **HSK AI adaptation:** Original source images show filtering and preferences, not HSK AI settings. Reuse the binary-control and filtering mechanics only where the PWA/Android feature actually exists. A preference requiring OS permission, a server write, or a reversible off state must **not** be declared saved until its real outcome is known. Preserve the source's difference between an immediate filter toggle and a deferred filter-modal selection.
+
 <NeutralBadge label="Binary/Boolean control" /> A simple on/off mechanism used for a quick, either-or choice — filtering results by a single boolean attribute, or switching a setting or preference on and off.
 
 ## <Do /> When to use
@@ -29,7 +31,7 @@ The choice to use a toggle is determined by the need for an immediate, singular 
 | Use when | Example use |
 | --- | --- |
 | The choice is strictly binary | On/Off, Include/Exclude, True/False |
-| The action takes effect immediately without confirmation | Toggling "Show only completed tasks" instantly filters the list; toggling "Receive email from Khan Academy" instantly saves the preference. Exception: inside the More filters modal the effect is deferred until Apply — see [Filter modal](#filter-modal) under Filtering. |
+| The action takes effect immediately without confirmation | A supported "completed only" list toggle may immediately filter the visible results; a real HSK AI setting takes effect according to its verified save and device-permission rules. A toggle inside a filter modal remains pending until Apply — see [Filter modal](#filter-modal) under Filtering. |
 | The state is always visible and needs to be persistent | A global constraint that remains active across the session until the user turns it off or clears filters; a notification preference that stays set until changed in account settings |
 
 ## <Dont /> When NOT to use
@@ -104,6 +106,6 @@ Preference toggles save instantly on change. There is no deferred or confirm ste
 
 ### Copy
 
-The label names the setting itself as a noun phrase (e.g., "New assignment notifications," "Receive email from Khan Academy") — not an instruction to turn it on (avoid "Enable new assignment notifications" or "Turn on..."). It should still be clear what turning the toggle on enables.
+The label names the actual supported setting as a concise noun phrase (e.g., "Notifications" only when that notification preference exists), not a Khan Academy email or assignment feature. Avoid imperative phrases such as "Enable notifications" when the label should name the preference. Clearly distinguish saved preference, pending permission and unavailable state.
 
 <img src={preferencesCopyImg} alt="Two preference toggles compared: “New assignment notifications” marked with a green check, and “Enable new assignment notifications” marked with a red cross" />
