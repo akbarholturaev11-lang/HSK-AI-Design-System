@@ -17,14 +17,14 @@ There are **two different kinds of priority**; they must not be confused:
 | --- | --- | --- |
 | Design authority and priority | `AGENTS.md`, `DESIGN_SYSTEM_PROFESSIONAL_FIRST_CONTRACT.md`, authoring skill and introduction carry professional-first precedence | Add an **authoritative pointer** to HSK product root AGENTS during a separate transfer |
 | Protected owner decisions | `DESIGN_SYSTEM_APPROVED_DECISIONS_AND_RESTORATION_TASKS.md` remains unmodified (Git blob `f679725a5e69ca9e2de85438e57a413aedc8142f`) | Preserve exact decision meaning in product repo, without overwriting other owner rules |
-| Source professional corpus | **44 active MDX pages** verified in source Git tree; historical 45-page reconciliation documented | Make all 44 readable independent portable Markdown guideline pages; verify 44/44 source detail coverage |
-| Historical visual/source material | **316 PNG**, **30 fonts**, **299 image-import occurrences** in 44 MDX pages, and 73 exact historically restored PNG identified | Rights/provenance review for any binaries or reused source text/code; preserve figure reasoning without unlicensed copies |
+| Source professional corpus | **44 active MDX source pages + 44 standalone Markdown review copies**, indexed at [docs/portable/README.md](docs/portable/README.md). Headings and internal file links checked. | Finish source micro-detail/figure parity review, rights-aware original wording and final acceptance before app transfer |
+| Historical visual/source material | **316 PNG**, **30 fonts** and **299 imported visual bindings (298 figure placements + 1 Phosphor SVG icon)**; source archive includes 73 restored historic images | Rights/provenance and exact visual-detail review remain open before any figure, font or verbatim source prose transfer |
 | Existing target conflicts | At least **two substantive source-confirmed policy contradictions**: **one-line vs two-line disclosure**, **current-style priority vs professional-first**; see register | Reconcile target existing `.agents/skills/hsk-ai-ui/SKILL.md` at transfer; don't create competing skill |
 | Exact transfer inventory | `docs/migration/TRANSFER_CATALOG.md` lists all 44 paths, Git source blobs and intended target paths | Convert, copy and verify paths as a separate expressly authorized operation |
 | Target product status | `HSK-AI-Bot/main` inspected **read-only** at SHA `839bdebb6d4b41ec2015ec734bc75faefa8eee17` | Re-check the **latest** HSK main before transfer; never rely on a stale snapshot |
 | Code / business logic | HSK app code **NOT EDITED** | None during this documentation-only phase. Later UI implementation has separate scope and testing |
 
-**Do not call this migration complete or fully portable yet.** The source guideline audit and future transfer plan are substantially prepared, but the canonical product-doc file copies and original-asset provenance must still be resolved. These are **document transfer** gates, not demands to test PWA/Android now.
+**Do not call the HSK AI product migration complete or fully rights-cleared yet.** All **44 draft portable documents now exist inside the design repository**, but visual/example equivalence, source prose rights, original graphics and target-repository authority wiring still remain open. These are **document transfer** gates, not demands to test PWA/Android now.
 
 ## Last targeted documentation consistency scan (source only)
 
@@ -36,12 +36,13 @@ The six pages still byte-identical to the historical MDX baseline — clear filt
 
 1. [**Professional-first contract**](DESIGN_SYSTEM_PROFESSIONAL_FIRST_CONTRACT.md) — governs the professional design decisions and minimal HSK adaptation.
 2. [**Approved owner decisions**](DESIGN_SYSTEM_APPROVED_DECISIONS_AND_RESTORATION_TASKS.md) — exact protected exceptions; never relax.
-3. [**Exact 44-page transfer catalog**](docs/migration/TRANSFER_CATALOG.md) — every page with its Git SHA, image exposure and planned `docs/design-system/guidelines` path.
-4. [**Exact asset quarantine**](docs/migration/ASSET_AND_RUNTIME_INVENTORY.md) — 316 PNG and 30 font paths with source SHA provenance and exclusions.
-5. [**Existing HSK conflict register**](docs/migration/CONFLICT_REGISTER.md) — verified line-by-line policy collisions and resolution strategy.
-6. [**Ready-to-insert product AGENTS / UI skill instructions**](docs/migration/TARGET_AUTHORITY_INSERT.md) — future safe, minimal authority wiring; not yet applied.
-7. [**Source vs HSK historical page audit**](docs/audits/professional-rules-source-to-hsk-ai-matrix-2026-11-15.md) — original 45-page dispositions and rationale.
-8. [**Professional-priority wording audit**](docs/audits/professional-first-priority-reconciliation-2026-11-15.md) — previously weaker "keep current visuals" language corrected in guideline pages.
+3. [**44 standalone Markdown review documents**](docs/portable/README.md) — navigable completed draft corpus with source SHA metadata.
+4. [**Exact 44-page transfer catalog**](docs/migration/TRANSFER_CATALOG.md) — every page with its Git SHA, image exposure and planned `docs/design-system/guidelines` path.
+5. [**Exact asset quarantine**](docs/migration/ASSET_AND_RUNTIME_INVENTORY.md) — 316 PNG and 30 font paths with source SHA provenance and exclusions.
+6. [**Existing HSK conflict register**](docs/migration/CONFLICT_REGISTER.md) — verified line-by-line policy collisions and resolution strategy.
+7. [**Ready-to-insert product AGENTS / UI skill instructions**](docs/migration/TARGET_AUTHORITY_INSERT.md) — future safe, minimal authority wiring; not yet applied.
+8. [**Source vs HSK historical page audit**](docs/audits/professional-rules-source-to-hsk-ai-matrix-2026-11-15.md) — original 45-page dispositions and rationale.
+9. [**Professional-priority wording audit**](docs/audits/professional-first-priority-reconciliation-2026-11-15.md) — previously weaker "keep current visuals" language corrected in guideline pages.
 
 ## Correct future integration architecture (not implemented now)
 
@@ -65,7 +66,7 @@ HSK-AI-Bot/                        # existing application and product contracts
 └── app/, android/, backend/...     # UNTOUCHED by docs migration
 ```
 
-The full 44 pages are required. But **do not copy source MDX verbatim and merely rename it .md**: Storybook JSX, vendor imports, source-color pictures and dead references must first be converted into true, standalone readable design guidance **without losing professional micro-details**. If an illustration teaches exact anatomy, record the geometry/state/reason in text and attach a **rights-cleared** HSK AI-owned diagram later. Do not reuse uncertain source drawings simply because they are useful.
+**All 44 first-pass portable Markdown documents now exist**, having removed Storybook JSX and vendor component imports; they are not simple `.mdx` renames. The original *prose* still requires independent intellectual-property/wording review, and the referenced figures still need detailed visual inspection and rights-cleared diagrams before the result can be certified as a finished source-equivalent professional design system. If an illustration teaches exact anatomy, record the geometry/state/reason in text and attach a **rights-cleared** HSK AI-owned diagram later. Do not reuse uncertain source drawings simply because they are useful.
 
 **Never replace the target's root AGENTS file wholesale**. Do not copy Storybook configs, `@khanacademy/wonder-blocks` dependencies, `pnpm-lock.yaml`, vendor font binaries, external school workflows, unrelated `.github` workflows or inactive upstream code into the product runtime. If an optional live docs site is desired later, evaluate and isolate it as an independent tool.
 
