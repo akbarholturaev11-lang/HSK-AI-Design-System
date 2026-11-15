@@ -5,6 +5,12 @@
 **Destination as inspected:** `akbarholturaev11-lang/HSK-AI-Bot`, `main` SHA `839bdebb6d4b41ec2015ec734bc75faefa8eee17`.
 **Verification method:** directly fetched both repositories' named files and trees, not generated UI assumptions. Before a future merge, re-fetch current main and resolve new conflicts by observed evidence.
 
+## C-05 image-selection decision superseding blanket exclusion
+
+The owner clarified: **no public publication, but YES to transferring useful professional reference visuals when they are not actual screens of another application**. An abstract component/spacing/variant/state illustration is an asset to **retain**, not a copyright/publication task to erase or redraw by default. By contrast, actual foreign-app screens, school/Gems workflows and proprietary product brand presentation are **excluded**. Review the actual image bytes and explain its role rather than treating the source's entire 316-PNG inventory as prohibited. The [visual selection manifest](VISUAL_REFERENCE_SELECTION.md) records the first eight direct inspections (six useful schematic samples, two foreign screens); remaining assets need review.
+
+This **supersedes the older blanket “do not move unverified PNG” implication** in C-05; continue to avoid false assertions about source permission, but **do not make an imagined public release, hundreds of screenshot recreations or Storybook CI mandatory** for internal design-rule preparation. Canonical HSK colors, approved spacing and brand identity are not overwritten by upstream example colors.
+
 ## Critical conflicts to resolve before the design system becomes authoritative
 
 ### C-01 — Two-line vs one-line disclosure: CONFIRMED, must replace old instruction
