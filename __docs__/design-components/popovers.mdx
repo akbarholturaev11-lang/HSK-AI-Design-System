@@ -1,4 +1,9 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import sourcePopoverOverview from "./assets/popovers/popovers.png";
+import sourcePopoverInformation from "./assets/popovers/informational.png";
+import sourcePopoverFeature from "./assets/popovers/feature-highlight.png";
+import sourcePopoverGuidance from "./assets/popovers/system-guidance.png";
+import sourcePopoverAnchor from "./assets/popovers/adaptive-anchoring.png";
 
 <Meta title="Design Guidelines / Components / Overlays / Popovers" />
 
@@ -67,6 +72,44 @@ One popover at a time; a modal/required sheet takes precedence. Do not stack a s
 ### Focus and accessibility
 
 A user-opened interactive popover should make its controls accessible and restore focus to the opener when closed. Announce relevant status without pulling focus unexpectedly for optional, product-triggered hints. Support touch, keyboard, iPhone PWA and Android equivalents; visible icons require accessible names.
+
+## Restored professional source examples
+
+> **Historical education-product diagrams only.** These examples preserve valuable interaction, composition and state patterns, not HSK AI's actual screens, roles, artwork, data or feature inventory. See the HSK AI-specific rules above before making a production design decision.
+
+### Example 1: popovers
+
+<img src={sourcePopoverOverview} alt="Original anchored popover overview showing third-party UI, not HSK AI app design" />
+
+**Use sparingly:** popovers are attached to existing triggers and only for information or short actions, never for mandatory consent or a long report form.
+
+### Example 2: informational
+
+<img src={sourcePopoverInformation} alt="Source informational popover for a school learning queue, not HSK AI lesson history" />
+
+**Informational:** attach the explanation close to its real supported lesson/control, but never cover essential Hanzi, answers or playback controls.
+
+### Example 3: feature highlight
+
+<img src={sourcePopoverFeature} alt="Original source highlight featuring Gems; no HSK AI Gems feature is implied" />
+
+**Feature highlight:** only use when the app actually ships that feature; avoid unsupported reward counters or automated school-task announcements.
+
+### Example 4: system guidance
+
+<img src={sourcePopoverGuidance} alt="Original proctor-themed system guidance; the character and assessment role do not exist in HSK AI" />
+
+**System guidance:** present brief neutral instructions if they genuinely help the learner. Do not introduce another company's mascot, hint restrictions or user roles.
+
+### Example 5: adaptive anchoring
+
+<img src={sourcePopoverAnchor} alt="Source illustration of an anchored popover that shifts away from the viewport edge" />
+
+**Adaptive anchoring:** flip to available space, keep the trigger visible and avoid the keyboard/safe area. Use the existing HSK AI sheet/dialog when a phone has insufficient space.
+
+### Interaction details
+
+Opening should come from an actual control, not a surprise during a scored exercise. Prefer only one anchored popover at once. Dismiss via a clear close/outside action only when no unsaved draft or irreversible decision can be lost; retain predictable Escape/back behavior, sensible focus return and adequate touch targets. Long optional descriptions normally use HSK AI's **two-line, top-right chevron in-place expansion**, not a new popover. Historical character figures are never assets to ship.
 
 ## Implementation boundary
 
