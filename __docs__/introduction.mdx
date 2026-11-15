@@ -1,83 +1,42 @@
 import {Meta} from "@storybook/addon-docs/blocks";
 
-import headerImg from "./assets/introduction/header.png";
-
 <Meta title="Design Guidelines / Introduction" />
 
-<img src={headerImg} alt="Design System Guidelines" />
+# HSK AI Design System
 
-# Hello 👋
+This is the **HSK AI** design guideline library for the **iPhone PWA** and **native Android** learning application. It is a reference for decisions about learning layouts, typography, accessible interactions, user feedback, reporting and artwork. It is **not** the application source or proof that a proposed feature has shipped.
 
-This is a living reference for how we build UI at the component, foundation, and pattern level. It documents how things should work — the when and why behind each decision — so the team can address those questions earlier in the product cycle, not after something's already been built.
+## Authority and scope
 
-## Who it's for
+- Read the repository-root **`AGENTS.md`** before applying any guideline in Codex or another coding agent.
+- The HSK AI product code in `akbarholturaev11-lang/HSK-AI-Bot` (current `main`) is the **read-only source for verifying actual behavior** during documentation work. A design proposal is not the same as an implemented function.
+- Product priorities are mobile PWA and Android, Chinese learning with Hanzi/pinyin/translation, approved Panda and other lesson characters, verified exercise results, the red AI Voice Orb and server-authoritative account/Pro state.
+- The design guidelines do **not** mandate features, characters, theme settings, scoring policies or engineering libraries from another company.
 
-It's for the whole org. Designers use it most, but anyone scoping, reviewing, or giving feedback can use it to gut-check decisions — is this the right component? Has this been solved before? Is this consistent with how we do things?
+## How these guidelines are structured
 
-## How it's structured
+**Foundations** define HSK AI's semantic colors, typography, responsive layout, spacing, elevation, motion, illustration and iconography. Use <a href="./?path=/docs/design-guidelines-foundations-typography--docs">Typography</a> for Hanzi/pinyin/translation and the **maximum two-line inline disclosure** of optional supporting text.
 
-**Foundations** are the building blocks every UI is built from — color, typography, spacing, elevation, and iconography. These decisions underpin everything else.
+**Components** describe purpose, usage boundaries, interactive states and accessible presentation for real learner or authorized-admin interfaces. The <a href="./?path=/docs/design-guidelines-components-characters-hsk-ai-characters--docs">HSK AI characters</a> page defines the actual Panda and supporting cast, and distinguishes them from the AI Voice Orb.
 
-**Components** are the reusable UI elements assembled from those foundations — buttons, inputs, modals, navigation, steppers, cards, and more. Each entry covers when to use it, when not to use it, how to use it correctly, known variants, and other guidelines.
+**Patterns** cover combinations of components, including data reports, feedback, filters and onboarding. Some pages document **proposed guidance** and are not a claim that the product has already implemented every option.
 
-**Patterns** are the recurring views and solutions to common design problems — how we handle empty states, how assignment flows are structured, how errors are surfaced, how onboarding works. Where components answer "what is this?", patterns answer "how do we solve this?"
+## How Codex should use this documentation
 
-## How to use it
+1. Start from `AGENTS.md` and a relevant guideline rather than scanning old package names for policy.
+2. Verify HSK AI's **current actual platform implementation** before changing UI. Do not assume PWA and Android have identical flows.
+3. Only apply guidelines that fit the requested screen, its verified backend, localized text and existing design semantics.
+4. Keep learning content readable and correct. Preserve hidden-answer rules, progress ownership, correct/incorrect feedback and accessibility.
+5. Never implement or reintroduce former Khan Academy mascots, school workflows, Gems, rewards or source scoring thresholds.
+6. When a source-themed illustration or legacy demo component remains for documentation rendering, it is **not an HSK AI product specification**.
+7. Report test coverage accurately. A successfully updated markdown file is not equivalent to an actual Storybook build or device validation.
 
-We believe that early and frequent usage of the DSG from early ideation to solution validation is the best way to ensure that:
+## Development and preview
 
-- Our product feels consistent and cohesive across all of our experiences for all our Learners, Teachers, Parents, and Admins
-- Our Design, PM and Engineering teams have a shared language for talking about UI, and are aligned on how to build features
-- We can focus on solving new problems instead of rehashing old ones.
+This project is a **Storybook documentation site**, not a reusable production UI package. Some technical authoring/rendering dependencies retain their original package names; that does not make their product rules authoritative.
 
-### Agentic usage
+The repository's `package.json` currently offers `pnpm start` (local Storybook, default port **56789**), `pnpm build` and `pnpm typecheck`. Run these in a configured local workspace or CI before claiming that the docs compile. Do not use an external site's MCP address as this HSK AI project's official endpoint.
 
-The Design System Guidelines are created to be useful for agents as well as humans.
+## Updating guidelines
 
-Simply add the MCP server to your agent of choice, and it should return information relevant to your query and guide your workflows in the right direction.
-
-#### Connect your agent to the MCP
-
-If you have the **`Claude CLI`** tool, open up Terminal and run:
-
-```sh
-claude mcp add --transport http --scope user design-guidelines https://main--6a5008743971119020a6233b.chromatic.com/mcp
-```
-
-If you have the Claude Desktop app, or another client (Cursor, etc.), add this to your MCP configuration (or ask the agent to do it for you):
-
-```json
-{
-    "mcpServers": {
-        "design-guidelines": {
-            "type": "http",
-            "url": "https://main--6a5008743971119020a6233b.chromatic.com/mcp"
-        }
-    }
-}
-```
-
-### Hosting locally
-
-You can host locally to test your changes to the guidelines. It will also operate faster without network latency, but make sure you have the latest version of the guidelines before you start if that's your goal.
-
-You can run the Design Guidelines Storybook locally by going to the cloned `design-system-guidelines` repo folder and running:
-
-```sh
-pnpm start
-```
-
-Then point your agent to the local MCP endpoint:
-
-```
-http://localhost:56789/mcp
-```
-
-## Who maintains this?
-
-The `Design Infra` team.
-
-If you want to discuss a specific UX interaction or a potential change to or potential modification to the system, please reach out to the team in `#design-infra`.
-
-Thank you for helping us keep this system up to date and useful for everyone!
-
+Keep professional reasons, visible states, accessibility and actual product constraints. Remove unsupported brand examples, obsolete instructions and dead links rather than preserving a contradictory history. Any app-code implementation requires its own review and approval outside this design repository.
