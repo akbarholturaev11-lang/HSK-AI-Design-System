@@ -65,7 +65,7 @@ These ranges are **starting points for visual prototypes and audits**, not a req
 
 ## Inline collapse/expand of long supporting text
 
-**HSK AI interaction rule:** optional explanatory text is normally condensed to **one or two visible lines by default**, including descriptions slightly longer than a single row. Show **only one small chevron icon in the upper-right corner** of the explanation container: **⌄** when collapsed, **⌃** when expanded. Tapping it expands or collapses the **same paragraph in place**. **Do not display visible “Подробнее”, “Кўпроқ кўриш”, “Свернуть”, “Йиғиш” or a separate labeled button**, popup, new card, drawer or page. The icon itself is a genuine accessible button with an invisible, localized screen-reader label.
+**HSK AI interaction rule:** when collapsed, optional explanatory text is **strictly limited to a maximum of TWO visible rendered text lines** (never three, not even a partial third line), including descriptions only slightly longer than the available area. Show **only one small chevron icon in the upper-right corner** of the explanation container: **⌄** when collapsed, **⌃** when expanded. Tapping it expands or collapses the **same paragraph in place**. **Do not display visible “Подробнее”, “Кўпроқ кўриш”, “Свернуть”, “Йиғиш” or a separate labeled button**, popup, new card, drawer or page. The icon itself is a genuine accessible button with an invisible, localized screen-reader label.
 
 ### Eligible content — may be collapsed
 
@@ -83,7 +83,7 @@ These ranges are **starting points for visual prototypes and audits**, not a req
 
 ### Exact interaction contract
 
-1. Default: **one line** for compact optional hints, up to **two lines** for longer supporting descriptions. Choose consistently by component; don't vary arbitrarily for identical cards.
+1. **Hard limit: at most TWO fully visible text lines when collapsed**, regardless of content length, device width, font scaling or language. If the text only occupies one line, show one. Do not leak a third line or a clipped fragment of one. Use a real two-line clamp (PWA: `-webkit-line-clamp: 2` or equivalent robust line limiting; Android Compose: `maxLines = 2` with overflow handling), not a guessed fixed pixel height. Recalculate overflow on layout/font changes.
 2. Show the chevron **only if the rendered text actually overflows** at the current width, language and accessible font size. Place it in the **upper-right corner of the same text container**, with enough internal padding to avoid overlapping the first line. A short description must not show an inert chevron.
 3. Expand **in place**, restoring the entire explanation with natural line wrapping, not a popup or scrolling text box. Collapse restores the agreed compact limit without wiping nearby input or learner progress.
 4. Render **only the chevron**, not visible text beside or below it. Underneath, use an actual accessible button (not a decorative span): keyboard/touch operable with `aria-expanded`, `aria-controls`, and a localized **aria-label** for expand/collapse on PWA, plus equivalent Android Compose accessibility semantics. Give the icon an adequate invisible touch target (44 CSS px on iPhone PWA; 48 dp on Android), even if the glyph is visually small. The direction **⌄ / ⌃** conveys the state without relying on color.
@@ -93,7 +93,7 @@ These ranges are **starting points for visual prototypes and audits**, not a req
 
 ### Illustrative presentation (noninteractive)
 
-**Collapsed supporting note (1–2 lines):**  
+**Collapsed supporting note (MAXIMUM TWO complete lines; never a third):**  
 Upper-right corner: **⌄**  
 “This word has an additional usage in longer sentences…”
 
@@ -182,7 +182,7 @@ Use the source-derived <a href="./?path=/docs/design-guidelines-components-input
 5. Do light/dark theme, narrow screen, keyboard and enlarged text preserve all essential text? Are the type roles consistent and the smallest labels readable?
 6. Does the component work with focus, screen readers and audio controls, without changing a lesson's scoring or feedback?
 7. Are PWA and Android differences explicitly validated rather than assumed from a shared screenshot?
-8. Are optional lengthy descriptions condensed to one/two lines and expanded in place using **only a top-right ⌄ / ⌃ icon** (no visible label) when they overflow — without hiding a task, question, payment, limit or safety warning?
+8. Does the collapsed description display **no more than TWO fully visible rendered lines** at every supported font size and viewport (never a third), with only the top-right ⌄ / ⌃ icon for expanding in place — without hiding a task, question, payment, limit or safety warning?
 
 ## Implementation boundary
 
