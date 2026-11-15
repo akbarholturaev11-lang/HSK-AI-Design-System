@@ -19,6 +19,8 @@ import dependentFilters2Img from "./assets/filter-and-sort/dependent-filters-2.p
 
 # Filter and sort
 
+> **HSK AI application:** The existing examples and images illustrate **filter behavior**, not HSK AI's approved visual style or a requirement to reproduce Khan Academy school reports. In HSK AI, use these rules for **already-supported** lesson, vocabulary, practice-history and authorized analytics lists only. The UI must remain usable on iPhone PWA and Android.
+
 This guide defines how interactive components work together to manage large datasets, ensuring users can navigate content with minimal friction.
 
 <a href="https://www.figma.com/make/XJsbikH15NhiBV6s2Yi8wl/Finding--Organizing--and-Viewing-Prototype?p=f&t=YW51oGABw6Xv1kLY-0&fullscreen=1" target="_blank" rel="noopener noreferrer">View prototype</a>
@@ -28,10 +30,10 @@ This guide defines how interactive components work together to manage large data
 | Component | Affordance category | Use case and purpose |
 | --- | --- | --- |
 | Search field | Finding | Locates specific items via text input; ideal for unpredictable datasets. |
-| Dropdown/select | Organizing | Space-efficient method for sorting or choosing a single filter from a long list. Can appear as buttons that, when clicked, reveal a list of options (e.g., School, Grade) to narrow data results. |
+| Dropdown/select | Organizing | Space-efficient method for sorting or choosing a single filter from a long list. Can appear as buttons that, when clicked, reveal a list of options (for example, a real HSK level or exercise type) to narrow data results. |
 | Checkbox group | Organizing | Allows for multi-select filtering, letting users view several categories simultaneously within a list or dropdown. |
 | Radio buttons | Organizing | Used for mutually exclusive filtering where only one option can be active at a time. |
-| Toggle | Organizing | Binary on/off constraint on the dataset (e.g., "Show assigned skills only"). Generates no active filter, but counts toward Clear all filters. |
+| Toggle | Organizing | Binary on/off constraint on the dataset (for example, "Show completed lessons only," if that view exists). Generates no active filter, but counts toward Clear all filters. |
 | More filters modal | Organizing | A centralized secondary view containing advanced or low-frequency filters that are not in the primary action bar. |
 | Active filters | Organizing | Dynamic, removable elements that represent active filters. Clicking the "X" removes the specific parameter from the view. |
 | Clear all filters | Organizing | A tertiary button that removes every filter the user applied. Does not revert controls to their system defaults, and does not reset sorting. |
@@ -46,7 +48,7 @@ Regardless of which components are selected for your specific use case, the syst
 
 - **Additive filtering (AND):** When a user selects a value from a Dropdown and then types in the Search Bar, the results must reflect both. The search is conducted within the already filtered subset.
 - **Inclusive selection (OR):** Within a single component—specifically Checkboxes—selecting multiple items should expand the results (e.g., "Show me Blue OR Red items").
-- **Cascading dependencies:** Primary filters (e.g., School) dynamically "prune" secondary filters (e.g., Grade) to show only valid, overlapping options. If a primary filter is changed, any now-invalid secondary selections are cleared to prevent "No Results" states. In the filter bar, a child filter is not displayed at all until its parent holds a value, and is removed when the parent is.
+- **Cascading dependencies:** Primary filters (e.g., an actually available HSK course) dynamically "prune" dependent criteria (e.g., its available lessons) to show only valid, overlapping options. If a primary filter is changed, any now-invalid secondary selections are cleared to prevent "No Results" states. In the filter bar, a child filter is not displayed at all until its parent holds a value, and is removed when the parent is.
 - **Global reset:** Provide a "Clear all filters" function as soon as the user applies a filter. This ensures users can return to a neutral state instantly without manual deselection, regardless of how many components are currently in use. A toggle counts — it produces no chip, but it activates the button and is turned off by it.
 
 ### Experience flow: the discovery sequence
@@ -62,7 +64,7 @@ It can feature things like (and in this order) Search field for keyword queries,
 
 ### Search field
 
-A search field allowing users to type keywords to find specific items within the dataset. As you type, the system provides a list of auto-suggestions—such as specific class names—to help you find what you need faster. Once you select a suggestion or press enter, the main results list will refresh to display your matches.
+A search field allowing users to type keywords to find specific items within the dataset. As you type, the system provides a list of auto-suggestions—such as names of available lessons or vocabulary items—to help you find what you need faster. Once you select a suggestion or press enter, the main results list will refresh to display your matches.
 
 <img src={logicFrameworkHowTheyPlayTogether2Img} alt="Logic framework: how they play together 2" />
 
@@ -77,7 +79,7 @@ Use them sparingly (1–2 max) to avoid over-constraining the data and forcing a
 
 ### Compact additive dropdown (single or multi-select)
 
-This specific style of dropdown is designed for high-frequency use within the horizontal filter bar. It allows users to manage common data categories—such as School or Grade—efficiently within a limited space.
+This specific style of dropdown is designed for high-frequency use within the horizontal filter bar. It allows users to manage common data categories—such as HSK level or exercise type when these are supported—efficiently within a limited space.
 Limit to 4 max of these categories to prevent UI clutter and ensure the most common data segments remain accessible.
 
 <img src={logicFrameworkHowTheyPlayTogether5Img} alt="Logic framework: how they play together 5" />
@@ -86,7 +88,7 @@ Limit to 4 max of these categories to prevent UI clutter and ensure the most com
 
 ### Dependent filters (parent/child)
 
-Some filters only make sense once another is set — choosing a School before selecting a Teacher, for example.
+Some filters only make sense once another is set — selecting a supported HSK course before an available lesson subtype, for example.
 
 In the filter bar, the child control is not shown until the parent holds a value. Removing or clearing the parent removes the child with it, along with any value it held and any active filter it produced. A child filter never appears on its own, and never outlives the parent that justified it.
 
@@ -115,3 +117,13 @@ A "Clear all filters" button appears as soon as the user applies a filter — in
 <img src={logicFrameworkHowTheyPlayTogether9Img} alt="Logic framework: how they play together 9" />
 
 <img src={logicFrameworkHowTheyPlayTogether10Img} alt="Logic framework: how they play together 10" />
+
+## HSK AI product application
+
+### HSK AI application and mobile behavior
+
+- Search for Chinese learning content only within the records and search modes the real app actually supports. Do not assert that searching by Hanzi, pinyin or translation is implemented unless it has been verified for that view.
+- Keep **AND** between distinct filters/search, **OR** among chosen values inside one multi-select, and remove invalid child selections when a parent changes. Do not invent filtering dependencies absent from the stored data.
+- Retain the difference between clearing applied optional filters, resetting to system defaults, clearing typed search, and changing sort order. These actions have different meanings and must not erase lesson answers, saved work or account settings.
+- On narrow mobile screens, controls may wrap or move into the existing bottom-sheet pattern; source desktop screenshots and the external prototype demonstrate behavior only and must not dictate HSK AI page geometry.
+- The visible count, listed records and any authorized report total must agree after filtering and sorting. Keep empty, loading, error and partially tracked states distinct; no invented results or unsupported sorting.
