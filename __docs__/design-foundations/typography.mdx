@@ -1,0 +1,117 @@
+import {Meta} from "@storybook/addon-docs/blocks";
+
+<Meta title="Design Guidelines / Foundations / Typography" />
+
+# Typography
+
+HSK AI teaches Chinese through **Hanzi, pinyin and a learner-language meaning**. Typography is therefore part of instructional accuracy, not only visual styling. This HSK AI-specific foundation is **new**: the upstream Khan Academy guidelines do not contain a standalone typography page to preserve. The original <a href="./?path=/docs/design-guidelines-components-inputs-text-field--docs">Text field</a> and component-copy guidance remain authoritative for their own interaction patterns.
+
+> **Documentation boundary:** Preserve the actual iPhone PWA and Android type rendering, the established HSK AI characters and the verified learning content. This page describes intended roles and checks. It does not install a font, invent localization keys, force every exercise to reveal the answer, or replace an existing production design.
+
+## Principles
+
+1. **Accurate first.** Hanzi, pinyin tone marks, character order and translation meaning must remain correct after layout, scaling and line wrapping.
+2. **The exercise determines what is visible.** A teaching card may display Hanzi, pinyin and translation together; a listening, recognition or quiz task may deliberately hide one or more until the relevant reveal state.
+3. **One reading hierarchy.** In an ordinary new-word display, the existing PWA order is **Hanzi → pinyin → meaning → audio/replay**. When a task is specifically about pronunciation or translation, adapt emphasis to that task without mixing the text's meanings.
+4. **Use the product's own font roles and theme.** Generic source-design fonts or demo swatches must not override the approved HSK AI tokens or the system's native Android typography.
+5. **Localization is content, not decoration.** Uzbek, Russian and Tajik labels and translations need real space and meaningful accessible labels. Never shrink a word until a tone mark becomes unreadable.
+
+## Existing typography sources
+
+The production PWA already defines these values in `app/static/course_v3_data/design-tokens.css`:
+
+| Existing token | Current value or role | HSK AI use |
+| --- | --- | --- |
+| `--hsk-font-ui` | `-apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Arial, sans-serif` | Menus, labels, Russian/Uzbek/Tajik translations, buttons and pinyin with suitable glyph fallback. |
+| `--hsk-font-cjk` | `"Songti SC", "STSong", "Noto Serif SC", "Noto Sans SC", serif` | Prominent Hanzi on appropriate PWA lesson surfaces. |
+| `--hsk-section-title-size` | `20px` | An existing section title reference, **not** a global size for words or pinyin. |
+| `--hsk-section-title-line-height` | `1.2` | Existing section-title proportion; not a universal text line-height. |
+| `--hsk-ink` / `--hsk-ink-secondary` | Theme-dependent text colors | Primary learning text and supporting explanations. |
+
+The light theme currently uses dark ink on light paper and a cinnabar `#E04A40` accent. The dark theme uses light ink on dark paper and changes the accent token to cyan `#20BCEB`. **Do not hard-code the light accent in dark mode.**
+
+On Android, inspect existing native text styles, font fallback and dynamic font scaling before choosing an equivalent. A PWA `px` dimension is **not** a 1:1 Android `sp` instruction; use the platform's supported typography and scaling. No new CJK font file or web font dependency is introduced by this guideline.
+
+## Learning text hierarchy
+
+| Role | Example | Presentation and semantics |
+| --- | --- | --- |
+| Hanzi (汉字) | 学习 | Primary learning text when the target is a Chinese word; clear character strokes and a suitable Chinese glyph fallback. |
+| Pinyin (拼音) | xuéxí | Directly linked to the relevant Hanzi, in legible Latin characters with **tone marks**. Not a phonetic translation into Russian. |
+| Meaning / translation | ўрганмоқ / учиться | A learner-language explanation; choose the actual selected language and context. Do not substitute pinyin for the meaning. |
+| Part of speech / grammar note | Verb; usage notes | Secondary to the learning target; keep clear if necessary for the task. |
+| Example sentence | 我学习中文。 | Chinese sentence with correct punctuation, optionally with a separately labeled pinyin and translation view. |
+| Audio / pronunciation action | Replay pronunciation | A focusable control with a clear label. Audio is an aid, not a substitute for readable text. |
+
+The examples are illustrative content; they are not new lesson records or an instruction to add these words to a live HSK level.
+
+### Hanzi
+
+- Preserve individual strokes; avoid decorative Latin fonts, exaggerated negative letter spacing, automatic uppercasing or transformations that distort Chinese characters.
+- Use the product's approved Chinese-capable font stack and allow reasonable glyph fallback where the preferred family is unavailable.
+- Prefer an appropriate readable line-height for multi-character words and complete sentences; do not crop descenders, punctuation or large characters inside fixed-height containers.
+- Keep simplified Chinese character forms consistent with the actual HSK lesson data; do not automatically change Chinese content between traditional and simplified forms.
+- Line breaks may occur between suitable Chinese text units as required, but avoid breaking mixed Hanzi-pinyin-meaning associations so that the meaning of a learning card becomes ambiguous.
+- Do not confuse `字` (one character), `词` (word) and `句子` (sentence) in labels or counts.
+
+### Pinyin
+
+- A valid displayed pinyin syllable may contain diacritics such as `ā á ǎ à`, `ē é ě è`, `ǖ ǘ ǚ ǜ`, and neutral tones without diacritics. Keep the **actual stored pronunciation** intact.
+- Do not remove tone marks merely to match a font or field width; don't manufacture them from unverified input either. Tone-number forms such as `ni3 hao3` must only be offered where the actual product or exercise supports them.
+- Preserve spacing between pinyin syllables and legibility of tone marks when the learner enlarges text. Avoid all-caps conversions and overly tight line-height or clipping.
+- If pinyin is hidden as part of a recognition exercise, reveal it only at that exercise's existing answer/review state; this page does not require exposing it in advance.
+- Keep any copy and text-to-speech action associated with the correct displayed Chinese entry.
+
+### Meaning and translations
+
+- The user's chosen interface language and the language of a word's meaning must remain consistent with the actual localized lesson content. Do not mix Uzbek, Russian or Tajik fallback strings without indicating which language is being shown.
+- Translation length may vary significantly. Permit wrapping in cards, buttons and bubbles; do not silently truncate the **only available** meaning.
+- Distinguish a gloss or brief definition from the translation of an entire example sentence. A single word may have several contextual meanings; don't claim a one-to-one translation when the current lesson supplies alternatives.
+- Chinese learning tasks sometimes intentionally hide the translation for recall or show it behind a working reveal control. Preserve that behavior.
+- Maintain ordinary readable punctuation, numerals and proper names in all supported languages. Latin and Cyrillic fallback must not produce missing glyphs.
+
+## Component-specific applications
+
+### Vocabulary and new-word cards
+
+In the current PWA course, the new-word display uses the order **Hanzi first, then pinyin, meaning and replay**; prominent Hanzi and readable pinyin are the focal elements. Do not transfer these exact fixed sizes to every new screen. Keep its existing animation and lesson state.
+
+### Answer options, listening and tests
+
+The question dictates whether the primary visible text is Hanzi, pinyin, audio or a translation. Do not reveal a hidden answer simply to fill a typography template. Correct/incorrect answer feedback and Panda character reactions retain their existing meaning and motion; typography must not obscure options or be replaced by decorative effects.
+
+### Grammar and examples
+
+Display a full sentence using a suitable Chinese text style. When pinyin and translation are shown, distinguish the three lines visually and semantically. Avoid placing a very long sentence in one unbreakable line, or making the pinyin more visually dominant than the sentence without a task-specific reason.
+
+### AI Voice and conversation
+
+Keep speech transcripts, AI messages, pinyin assistance and any optional translation readable when the keyboard is open, the Orb is active or the screen transitions between voice and chat. Do not copy a fixed-width desktop speech bubble or reveal subtitles/translation that the current voice feature has intentionally hidden.
+
+### Input fields and search
+
+Use the source-derived <a href="./?path=/docs/design-guidelines-components-inputs-text-field--docs">Text field</a> guideline for labels, validation, helper text and disabled/read-only behavior. The matching logic for Hanzi, pinyin or translation search must reflect the **actual** supported backend/index; visually displaying pinyin does not prove it is searchable.
+
+## Responsive behavior and accessibility
+
+- Treat the established PWA `px` values as current implementation examples, not mandated typography sizes for the native Android app.
+- Do not clip Hanzi strokes, pinyin diacritics, or long localized meanings at 320–360px phone widths, larger device text settings or increased display zoom.
+- Keep text legible in both HSK AI themes. Meaning must not depend only on the light/dark accent color or on an unavailable font.
+- For accessibility, associate any pinyin and meaning with the correct Hanzi as contextual information. Let the learner read the target without repeating decorative speech-bubble artwork.
+- Use clear button labels, visible focus and sufficient tap sizes for audio, show-translation and copy controls. Keep the reading order consistent with the displayed content.
+- Test Simplified Chinese characters, marked pinyin, Cyrillic and Uzbek/Tajik special characters in the selected font fallbacks on real iPhone PWA/Safari and native Android.
+- An automated layout test may detect clipping, but a language/content review is also needed for tone accuracy and translation meaning.
+
+## Review checklist
+
+1. Is the Hanzi text exactly the content of the authorized lesson or message?
+2. Is pinyin correct, readable, tone-marked where supplied and bound to the right entry?
+3. Is the translation in the intended learner language and available at the exercise's correct reveal stage?
+4. Do the approved UI and CJK font stacks render the necessary glyphs without distortion?
+5. Do light/dark theme, narrow screen, keyboard and enlarged text preserve all essential text?
+6. Does the component work with focus, screen readers and audio controls, without changing a lesson's scoring or feedback?
+7. Are PWA and Android differences explicitly validated rather than assumed from a shared screenshot?
+
+## Implementation boundary
+
+This page is a design rule, not a production migration. It does **not** change backend content, scoring, HSK version mapping, fonts bundled in the application, app strings, PWA/Android UI code or the behavior of existing text-to-speech. Any implementation must be reviewed against current real code and learning content first.
