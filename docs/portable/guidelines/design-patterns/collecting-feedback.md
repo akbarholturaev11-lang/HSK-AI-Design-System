@@ -118,3 +118,14 @@ The following observations came from inspecting `app/static/course_v3_data/iphon
 Server feedback eligibility, answers, ownership checks, release campaign rules and actual app behavior must not be changed during a **documentation-only** update. The Android reporting workflow was not independently confirmed in this audit; inspect its present screens before adopting parity claims or rewriting code.
 
 The design document intentionally excludes unrelated school, teacher, mascot, source-product video-feedback and other-brand component examples. Any implementation requires a separate testable task.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: feedback-open-widget.png](../../examples/design-patterns/collecting-feedback/feedback-open-widget.png)
+
+- [feedback-open-widget.png](../../examples/design-patterns/collecting-feedback/feedback-open-widget.png) — exact source blob `9b16a4037eba` (illustrated above)
+- [feedback-trigger-general.png](../../examples/design-patterns/collecting-feedback/feedback-trigger-general.png) — exact source blob `f7b51a63072b`
+- [feedback-trigger-opinion.png](../../examples/design-patterns/collecting-feedback/feedback-trigger-opinion.png) — exact source blob `d2c52712f4fe`
+- [hero-collecting-feedback.png](../../examples/design-patterns/collecting-feedback/hero-collecting-feedback.png) — exact source blob `305b46050e7c`

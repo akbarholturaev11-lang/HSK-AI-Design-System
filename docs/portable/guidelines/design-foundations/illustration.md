@@ -115,3 +115,11 @@ Accent shapes such as confetti may support a verified celebration but must carry
 PWA: `app/static/assets/characters/hsk-character-pack.js`, `hsk-character-motion.js` and related HSK AI screens. Android: `core/design/components/HskCharacters.kt`, `feature/lesson/LessonCharacters.kt`, and the current Voice renderer. These paths are references into the **read-only production repository**, not files in this design project.
 
 This is HSK AI-only documentation. It contains no imported art, requirements, score rules or character policy from other products; making changes to production character rendering is a separate task.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: types-of-illustration-5.png](../../examples/design-foundations/illustration/types-of-illustration-5.png)
+
+- [types-of-illustration-5.png](../../examples/design-foundations/illustration/types-of-illustration-5.png) — exact source blob `1363aa201082` (illustrated above)

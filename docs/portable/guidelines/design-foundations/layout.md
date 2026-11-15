@@ -94,3 +94,15 @@ Each layout carries a density contract — a promise about how much the user sho
 | Onboarding | The single most important thing to understand or do right now. | Full feature explanations, settings, advanced options, edge cases. |
 | Reports | Data tables, charts, filters, date ranges. Summary metrics at the top. | Editable fields, task flows, onboarding prompts, unrelated calls to action. |
 | Settings | Controls grouped by topic. Labels and descriptions that aid decisions. | Marketing copy, onboarding prompts, unrelated calls to action. |
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: header.png](../../examples/design-foundations/layout/header.png)
+
+- [header.png](../../examples/design-foundations/layout/header.png) — exact source blob `d28b20c3e240` (illustrated above)
+- [job.png](../../examples/design-foundations/layout/job.png) — exact source blob `76bd4840e415`
+- [learning.png](../../examples/design-foundations/layout/learning.png) — exact source blob `117c98f62546`
+- [onboarding.png](../../examples/design-foundations/layout/onboarding.png) — exact source blob `37b779c46c50`
+- [settings.png](../../examples/design-foundations/layout/settings.png) — exact source blob `33402bfa32e5`

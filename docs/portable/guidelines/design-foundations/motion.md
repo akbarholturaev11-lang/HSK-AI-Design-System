@@ -83,3 +83,13 @@ All motion in the product must respect the `prefers-reduced-motion` media query.
 | Celebration animation | Simplified or static |
 | AI Voice Orb | Minimal/static state indicator, preserving Listening/Thinking/Speaking meaning |
 | Loading skeleton pulse | Static skeleton |
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: motion.png](../../examples/design-foundations/motion/motion.png)
+
+- [motion.png](../../examples/design-foundations/motion/motion.png) — exact source blob `ccd36c0b2e2d` (illustrated above)
+- [usage-guidelines-1.png](../../examples/design-foundations/motion/usage-guidelines-1.png) — exact source blob `38862df9f3b1`
+- [usage-guidelines-2.png](../../examples/design-foundations/motion/usage-guidelines-2.png) — exact source blob `0361cbde5519`

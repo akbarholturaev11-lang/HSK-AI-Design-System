@@ -163,3 +163,26 @@ A component that appears elevated does not have an inherent focus state. Focus r
 ### Modal dialogs must trap and restore focus
 
 Components using High elevation that create a modal context must trap keyboard focus within the overlay — focus must not be reachable on the dimmed content underneath. When the modal closes, focus must return to the element that opened it.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: combinations.png](../../examples/design-foundations/surfaces-and-elevations/combinations.png)
+
+- [combinations.png](../../examples/design-foundations/surfaces-and-elevations/combinations.png) — exact source blob `bf3ea8721306` (illustrated above)
+- [elevation-base.png](../../examples/design-foundations/surfaces-and-elevations/elevation-base.png) — exact source blob `30a30daab149`
+- [elevation-high.png](../../examples/design-foundations/surfaces-and-elevations/elevation-high.png) — exact source blob `175888054877`
+- [elevation-low.png](../../examples/design-foundations/surfaces-and-elevations/elevation-low.png) — exact source blob `7ff1292d3aa7`
+- [elevation-mid.png](../../examples/design-foundations/surfaces-and-elevations/elevation-mid.png) — exact source blob `bbb57cb47b6c`
+- [elevation-overview.png](../../examples/design-foundations/surfaces-and-elevations/elevation-overview.png) — exact source blob `c15ed7290e56`
+- [surface-1.png](../../examples/design-foundations/surfaces-and-elevations/surface-1.png) — exact source blob `319f7b300ac3`
+- [surface-2.png](../../examples/design-foundations/surfaces-and-elevations/surface-2.png) — exact source blob `c1820c2cd73d`
+- [surface-3.png](../../examples/design-foundations/surfaces-and-elevations/surface-3.png) — exact source blob `11173ef26602`
+- [surface-scrim.png](../../examples/design-foundations/surfaces-and-elevations/surface-scrim.png) — exact source blob `68bb024a04d5`
+- [surfaces-and-elevations.png](../../examples/design-foundations/surfaces-and-elevations/surfaces-and-elevations.png) — exact source blob `f8ade7d17c55`
+- [surfaces-overview.png](../../examples/design-foundations/surfaces-and-elevations/surfaces-overview.png) — exact source blob `c3cf49e2f166`
+- [usage-low-at-rest-v3.png](../../examples/design-foundations/surfaces-and-elevations/usage-low-at-rest-v3.png) — exact source blob `48fa93500c26`
+- [usage-page-level.png](../../examples/design-foundations/surfaces-and-elevations/usage-page-level.png) — exact source blob `4e6eddb8a04b`
+- [usage-scrim-high.png](../../examples/design-foundations/surfaces-and-elevations/usage-scrim-high.png) — exact source blob `b8c66b8a0da7`
+- [usage-surface-base.png](../../examples/design-foundations/surfaces-and-elevations/usage-surface-base.png) — exact source blob `e5a1d82e4e2e`

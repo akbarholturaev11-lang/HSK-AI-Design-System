@@ -117,3 +117,14 @@ The icon remains visible in the upper-right corner when expanded. Determine whet
 ## Implementation boundary
 
 These are HSK AI design rules. No production app icon dependency, UI screen, Native Compose icon set or Panda/Voice renderer is changed in this documentation-only revision.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: icon-library.png](../../examples/design-foundations/iconography/icon-library.png)
+
+- [icon-library.png](../../examples/design-foundations/iconography/icon-library.png) — exact source blob `ae5d4f81e22e` (illustrated above)
+- [iconography.png](../../examples/design-foundations/iconography/iconography.png) — exact source blob `b3dc7449db36`
+- [usage-guidelines-2.png](../../examples/design-foundations/iconography/usage-guidelines-2.png) — exact source blob `80490285d598`
+- [usage-guidelines-3.png](../../examples/design-foundations/iconography/usage-guidelines-3.png) — exact source blob `891d3f05e011`

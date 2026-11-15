@@ -122,3 +122,18 @@ Interactive controls must have touch target areas of at least **44×44 CSS px on
 ### Whitespace aids readability for cognitive accessibility
 
 Adequate spacing between text elements and content groups benefits users with cognitive disabilities, attention difficulties, and reading disorders. Dense layouts are not inherently inaccessible, but spacing decisions in reading-heavy contexts should account for the full range of users.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: scale.png](../../examples/design-foundations/spacing/scale.png)
+
+- [scale.png](../../examples/design-foundations/spacing/scale.png) — exact source blob `199b41022cec` (illustrated above)
+- [spacing-examples-1.png](../../examples/design-foundations/spacing/spacing-examples-1.png) — exact source blob `417ea08481c5`
+- [spacing-examples-2.png](../../examples/design-foundations/spacing/spacing-examples-2.png) — exact source blob `19fa35d312d9`
+- [spacing-examples-3.png](../../examples/design-foundations/spacing/spacing-examples-3.png) — exact source blob `ec8bbb6de53a`
+- [spacing.png](../../examples/design-foundations/spacing/spacing.png) — exact source blob `c2d862abb09f`
+- [types-of-spacing-1.png](../../examples/design-foundations/spacing/types-of-spacing-1.png) — exact source blob `5dd5ba157b04`
+- [types-of-spacing-2.png](../../examples/design-foundations/spacing/types-of-spacing-2.png) — exact source blob `ac414f766f31`
+- [types-of-spacing-3.png](../../examples/design-foundations/spacing/types-of-spacing-3.png) — exact source blob `093968a41488`
