@@ -65,7 +65,7 @@ These ranges are **starting points for visual prototypes and audits**, not a req
 
 ## Inline collapse/expand of long supporting text
 
-**Previously agreed HSK AI interaction rule:** optional explanatory text is normally condensed to **one or two visible lines by default**, including a description that is only slightly longer than a single row. A visible, localized **“Подробнее” / “Кўпроқ кўриш”** action expands the **same paragraph in its current place**. A corresponding **“Свернуть” / “Йиғиш”** action collapses it again. Use a verified Tajik equivalent in the Tajik interface. **Do not open a popup, new card, drawer or separate page just to read the remainder.**
+**HSK AI interaction rule:** optional explanatory text is normally condensed to **one or two visible lines by default**, including descriptions slightly longer than a single row. Show **only one small chevron icon in the upper-right corner** of the explanation container: **⌄** when collapsed, **⌃** when expanded. Tapping it expands or collapses the **same paragraph in place**. **Do not display visible “Подробнее”, “Кўпроқ кўриш”, “Свернуть”, “Йиғиш” or a separate labeled button**, popup, new card, drawer or page. The icon itself is a genuine accessible button with an invisible, localized screen-reader label.
 
 ### Eligible content — may be collapsed
 
@@ -84,22 +84,24 @@ These ranges are **starting points for visual prototypes and audits**, not a req
 ### Exact interaction contract
 
 1. Default: **one line** for compact optional hints, up to **two lines** for longer supporting descriptions. Choose consistently by component; don't vary arbitrarily for identical cards.
-2. Show the expand affordance **only if the rendered text actually overflows** at the current width, language and accessible font size. A short description is not a fake expandable item.
+2. Show the chevron **only if the rendered text actually overflows** at the current width, language and accessible font size. Place it in the **upper-right corner of the same text container**, with enough internal padding to avoid overlapping the first line. A short description must not show an inert chevron.
 3. Expand **in place**, restoring the entire explanation with natural line wrapping, not a popup or scrolling text box. Collapse restores the agreed compact limit without wiping nearby input or learner progress.
-4. Use an actual accessible button, not a decorative text span: keyboard/touch operable with `aria-expanded` and `aria-controls` on PWA, and equivalent Android Compose accessibility semantics. An open state must be perceivable without color alone.
-5. Keep the button next to or immediately after the paragraph it controls, and preserve sensible keyboard focus. Ensure changes in height do not unexpectedly move the user's reading position or conceal action buttons; honor reduced-motion preferences.
+4. Render **only the chevron**, not visible text beside or below it. Underneath, use an actual accessible button (not a decorative span): keyboard/touch operable with `aria-expanded`, `aria-controls`, and a localized **aria-label** for expand/collapse on PWA, plus equivalent Android Compose accessibility semantics. Give the icon an adequate invisible touch target (44 CSS px on iPhone PWA; 48 dp on Android), even if the glyph is visually small. The direction **⌄ / ⌃** conveys the state without relying on color.
+5. Keep the icon anchored consistently at the **upper-right corner** of the same text container in both states; do not move it below the expanded paragraph. Preserve focus. Ensure changes in height do not unexpectedly move the user's reading position or conceal other actions; honor reduced-motion preferences.
 6. Do not truncate semantic content in the saved data. The collapsed state is **presentation only**. On localized font scaling and after orientation changes, re-evaluate whether the label is needed. The expanded text must remain selectable and accessible.
 7. For Hanzi/pinyin/translation blocks, only collapse a genuinely **supplementary explanation**. Never cut the learning target or its required pronunciation/meaning merely because it takes two lines.
 
 ### Illustrative presentation (noninteractive)
 
 **Collapsed supporting note (1–2 lines):**  
-“This word has an additional usage in longer sentences…” **Подробнее**
+Upper-right corner: **⌄**  
+“This word has an additional usage in longer sentences…”
 
 **Expanded in the same position:**  
-“This word has an additional usage in longer sentences. It can express a different nuance depending on context and should be interpreted with the full example.” **Свернуть**
+Upper-right corner: **⌃**  
+“This word has an additional usage in longer sentences. It can express a different nuance depending on context and should be interpreted with the full example.”
 
-These labels illustrate the text behavior, not existing localization keys or an already deployed HSK AI UI change.
+**No visible text label** accompanies either icon. The localized control name exists only in accessibility semantics. This is a documentation example, not an already deployed HSK AI UI change.
 
 ## Learning text hierarchy
 
@@ -180,7 +182,7 @@ Use the source-derived <a href="./?path=/docs/design-guidelines-components-input
 5. Do light/dark theme, narrow screen, keyboard and enlarged text preserve all essential text? Are the type roles consistent and the smallest labels readable?
 6. Does the component work with focus, screen readers and audio controls, without changing a lesson's scoring or feedback?
 7. Are PWA and Android differences explicitly validated rather than assumed from a shared screenshot?
-8. Are optional lengthy descriptions condensed to one/two lines and expanded in place only when they overflow — without hiding a task, question, payment, limit or safety warning?
+8. Are optional lengthy descriptions condensed to one/two lines and expanded in place using **only a top-right ⌄ / ⌃ icon** (no visible label) when they overflow — without hiding a task, question, payment, limit or safety warning?
 
 ## Implementation boundary
 
