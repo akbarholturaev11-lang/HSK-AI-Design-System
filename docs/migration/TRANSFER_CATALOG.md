@@ -10,7 +10,7 @@
 - **44 active MDX guideline pages:** 11 foundations, 27 components, 5 patterns, 1 introduction.
 - Each of the 44 page blobs below is inventoried by **Git SHA** at the cited branch snapshot; a future migration must check this source SHA has not changed before translating/copying. **Source-page completeness is required: 44/44, no silent omissions.**
 - **299 image-import occurrences** counted on the 44 pages, across **39 image-bearing MDX pages**; five have zero imported images. Occurrences are *not* 299 distinct assets; images may be reused.
-- The repository Git tree contains **316 PNG blobs and 30 static font files**. Do **not** assume their copyrights/licensing are cleared, or use them in a future product integration merely because they are tracked in Git.
+- The repository Git tree contains **316 PNG blobs and 30 static font files**; their exact paths and source SHA prefixes are recorded separately in [ASSET_AND_RUNTIME_INVENTORY.md](ASSET_AND_RUNTIME_INVENTORY.md). Do **not** assume their copyrights/licensing are cleared, or use them in a future product integration merely because they are tracked in Git.
 - The 73 restored historical third-party PNGs and 11 inactive source-code archives have separate file-by-file audit. `docs/audits/deleted-material-item-audit-2026-11-15.md` and `__docs__/reference-archive/RESTORATION_MANIFEST.md` are **evidence, not production assets**.
 - Foreign product visuals, Wonder Blocks runtime code/dependencies, historical vendor logos, bundled fonts, demo screenshots, Figma external prototype links and archive text must not become default HSK AI app requirements.
 
