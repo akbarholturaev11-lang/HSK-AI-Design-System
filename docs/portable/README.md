@@ -11,7 +11,7 @@ Before reading a component guideline, consult [Professional-first design decisio
 ## What the portable edition does and does not include
 
 - **Includes:** all 44 guideline file texts, retained Markdown headings/tables, explicit professional visual-and-behavioral rules, HSK AI adaptation boundaries, source blob SHA metadata, and in-place source figure descriptions with original source paths for traceability.
-- **Excludes:** executable JSX/Storybook interactive demos, original source PNG/font binaries, Wonder Blocks and Storybook dependency packages, vendor runtime styles, claims that any fictional sample has live HSK AI data. The 29 live <escape><Demo></escape> blocks in Buttons and Banners are represented by noninteractive descriptions and selected semantic details; **their original visual state behavior has not been rebuilt**.
+- **Excludes:** executable JSX/Storybook interactive demos, original source PNG/font binaries, Wonder Blocks and Storybook dependency packages, vendor runtime styles, claims that any fictional sample has live HSK AI data. The 29 live `<Demo>` blocks in Buttons and Banners are represented by noninteractive descriptions and selected semantic details; **their original visual state behavior has not been rebuilt**.
 - **Outstanding before final canonical migration:** visually examine/redraw source figures with rights-cleared HSK AI artwork (298 figure references); verify licensing or replace verbatim third-party prose with original authorized wording; reconcile all source-to-port differences at detail-level; update HSK AI main root `AGENTS.md` and existing UI skill **only during separately authorized documentation transfer**; then audit real app UI in a separate task.
 
 ## Exact 44-file professional guideline directory
