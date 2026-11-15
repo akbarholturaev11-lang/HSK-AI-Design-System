@@ -91,8 +91,23 @@ The static import and `alt` inspection does **not** validate MDX compilation, al
 - [ ] Restore and pass GitHub Actions checks on the reviewed PR head. Diagnose repository/Actions settings if workflows still produce zero runs; do **not** label an absent check as green.
 - [ ] Open Storybook and inspect every relevant page and demo in both light/dark treatment, 320px and 375px phone widths and wider viewports. Inspect mobile overflow, safe areas, keyboard focus, localization, accessible names and linked anchors.
 - [ ] Confirm every non-documentation asset/flow is correctly distinguished from a live HSK AI feature. Do not use any historical mock metric as production data.
-- [ ] Verify source-vs-current guideline completeness and the two interactive-demo implementations after compilation. Preserve existing approved behaviors without a “redesign” override.
+- [x] Complete the **45-page historical professional-guideline MDX source reconciliation**; see the per-file blob matrix below. This is a documentation content audit, not MDX compilation evidence.
+- [ ] Verify the two interactive-demo implementations **after actual Storybook compilation and visual interaction tests**; preserve existing approved behaviors without a “redesign” override.
 - [ ] Recheck exact approved registry SHA and confirm no changes in the real `HSK-AI-Bot` repository.
 - [ ] Only then prepare a safe reviewed merge and retest the main result. **No merge is authorized while these unresolved gates remain.**
 
 **Final status as of this audit: a safer and more complete *draft* restoration, NOT a finished/validated design system.** Existing professional HSK AI guidelines and the underlying per-file inventory are retained, but the release remains explicitly blocked by unproven IP rights, absent CI/build, and absent visual/runtime tests.
+
+
+## Follow-up: completed source-to-HSK-AI professional-rule deep comparison (2026-11-15)
+
+**Primary evidence:** [Professional rules source-to-HSK-AI matrix](./professional-rules-source-to-hsk-ai-matrix-2026-11-15.md) — each of the **45** historic MDX files is individually classified with its historic and restoration Git blob SHA.
+
+- **15 pages** remain byte-for-byte identical, **27 pages** were individually compared and adapted for HSK AI, and **3 source-brand-only pages** (Khanmigo, Khanductor, Verdicts) remain excluded from active guidance with generic principles preserved where relevant. **2 new HSK-only reference pages** bring current published MDX total to **44**.
+- Restored substantive source methods **in place** to **14 guideline documents**: chart containers, distribution/progress/trend charts, data tables, summary cards, popovers, collecting feedback, semantic colors, accessible data visualization, iconography, illustration, borders/dividers and complete report composition. The treatment retains existing current HSK AI code evidence and does not introduce school data, Gems, vendor persona or fabricated metrics.
+- Corrected **2 additional direct inherited-rule contradictions**: tooltips formerly mandated a **6px** source offset (now 4-unit HSK AI spacing guidance and mobile non-hover safety); filter-bar examples prescribed **school/department categories** (now actual supported HSK AI course/level/status choices only). Historical source illustrations remain clearly labeled and non-authoritative.
+- Swept the text of **all 44 active MDX pages** for inherited role/brand words; remaining occurrences inspected in context are historical-reference disclaimers, image descriptions, renderer details or explicit prohibitions, rather than adopted HSK product policy.
+- The unchanged HSK approved decisions registry remains Git blob `f679725a5e69ca9e2de85438e57a413aedc8142f`; **no HSK-AI-Bot production edits and no main-branch merge** were performed in this follow-up.
+- This closes the **historical MDX rules-completeness/documentary comparison**, **not** the independent Storybook build, UI interaction, source image distribution-rights, responsive rendering or CI requirements below. At this check, the design repo GitHub Actions API still returned **zero workflow runs**; local runtime has Node 22 instead of required Node 24 and no pnpm or GitHub network DNS, so `pnpm typecheck` / `pnpm build` were **not** executed.
+
+**Disposition:** The specified source-comparison task has a per-page audited result. The PR **stays draft/unmerged** pending the existing release blockers.
