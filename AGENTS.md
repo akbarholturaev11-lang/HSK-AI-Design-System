@@ -2,6 +2,26 @@
 
 This repository documents **HSK AI** UI/UX rules. It is not the source code for the HSK AI application and is not an instruction to ship features. These rules override any inherited wording in Storybook dependencies, source-illustration metadata, example code and development tooling.
 
+## DESIGN DECISION PRECEDENCE — PROFESSIONAL-FIRST (MANDATORY)
+
+**Goal:** preserve the complete, precise and rigorous professional visual/interaction system as the **default target design** for HSK AI. The current app is an **implementation baseline and a source of functional facts**, NOT a visual or UX ceiling. Do not dilute, drop, flatten or replace professional design anatomy, proportions, spacing rhythm, content hierarchy, states, animation guidance, control placement or interaction details merely because the present HSK AI screen differs.
+
+Apply this exact precedence when two statements appear to conflict:
+
+1. **Hard constraints:** user safety, rights to assets, accessibility, verified Chinese-learning correctness, privacy/account/data authorization, server-verified state, platform capabilities and the HSK AI canonical brand/characters/Voice Orb. These cannot be falsified or broken.
+2. **Professional design decision (default and preferred):** the rigorously documented design-system rule for component anatomy, sizing/density, hierarchy, states/variants, feedback, transitions, iconography, focus, responsive composition, chart meaning, empty/loading/error states, concise copy and micro-interactions. **Choose this over incidental present-day HSK AI styling.**
+3. **Existing HSK AI function is a compatibility constraint, not an aesthetic veto:** map the professional rule onto the feature, actual data, user permissions, supported locales, iPhone PWA and Android. Preserve functional outcomes, not historic visual debt. If the feature is absent, keep the professional rule documented as a **future design reference**; do not claim or invent the feature in production.
+4. **Screenshots and demo/renderer code are evidence or illustrations, not authority:** foreign-product branding, school policies, reward economies, source-specific assets/SDKs and ownership restrictions have no normative force in HSK AI. Extract the transferable *design reasoning*, including its fine-grained specifications, without transplanting the foreign product.
+
+**Do not interpret “keep existing HSK AI style” as preserving an inferior layout, color contrast, shape, density, spacing, navigation affordance or feedback treatment.** Real brand identity stays, but its visual application can be elevated using the professional system. Token names and platform APIs are implementation facts, not mandatory final design choices. An existing flawed UI should be marked **current / to improve**, not canonized. Where a professional example uses a source-exclusive feature, preserve its underlying component pattern and label the example **reference only**, rather than deleting the professional rule.
+
+### Fidelity and exceptions
+
+- Preserve **all transferable detail**, not only a one-paragraph summary: when-to-use / when-not-to-use; anatomy and hierarchy; geometry, spacing and alignment; states, actions and gestures; visual emphasis; responsive behavior; text/translation expansion; loading, empty, error, retry and success; focus, screen reader, reduced motion; non-destructive dismissal; text and data integrity. Record concrete numbers only when grounded by the professional source, an approved HSK AI decision, or actual verified code. Mark examples/heuristics rather than inventing global specifications.
+- For every exception, write **professional default → exact HSK AI functional/brand constraint → minimal justified adaptation → retained detail → current vs target status**. No unqualified "not applicable", "keep current", or feature omission that silently deletes the professional decision.
+- **Avoid full-screen redesign now.** This repository only establishes and reconciles guidelines. The **next, separately scoped phase** is a screen-by-screen audit and implementation of HSK AI PWA/Android UI/UX against these guidelines, retaining underlying workflows, data contracts, business logic and rollout safety. Do not touch the production app during design-documentation work.
+- Read [Professional-first decision contract](DESIGN_SYSTEM_PROFESSIONAL_FIRST_CONTRACT.md) and the [source reconciliation matrix](docs/audits/professional-rules-source-to-hsk-ai-matrix-2026-11-15.md) before proposing deviations.
+
 ## Only authoritative product scope
 
 - Products: **iPhone PWA and native Android**, with consistent user intent, platform-appropriate navigation, safe areas, keyboard and accessibility behavior.
