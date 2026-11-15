@@ -1,4 +1,4 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-patterns/data-reports.mdx`, Git blob `270a4b3fe4422de9e6f273c312844ce84431f748`; 9 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-patterns/data-reports.mdx`, Git blob `270a4b3fe4422de9e6f273c312844ce84431f748`; 9 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
 # HSK AI data reports
 
@@ -132,55 +132,55 @@ This **fictional** demo distinguishes empty, filtered, stale and error states wi
 
 ### Example 1: header
 
-> **Historical figure 1 — source reference only (not transferred):** Original report structure with source metrics; not real HSK AI analytics. Source asset: `./assets/data-reports/header.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Original report structure with source metrics; not real HSK AI analytics. Source asset: `./assets/data-reports/header.png`.
 
 A report begins with a purpose, scope, heading and verified current range; primary controls are not copied from another product.
 
 ### Example 2: own section
 
-> **Historical figure 2 — source reference only (not transferred):** Source example of a dedicated report section and filters; classroom data are illustrative only. Source asset: `./assets/data-reports/own-section.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Source example of a dedicated report section and filters; classroom data are illustrative only. Source asset: `./assets/data-reports/own-section.png`.
 
 Give a dataset its own page or section when it needs many filters, search, sort or wide tables; place controls above the data they affect.
 
 ### Example 3: empty container
 
-> **Historical figure 3 — source reference only (not transferred):** Original empty chart-container pattern. Source asset: `./assets/data-reports/empty-container.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Original empty chart-container pattern. Source asset: `./assets/data-reports/empty-container.png`.
 
 When a chart alone has no records, retain its title and applicable controls while replacing only the visualization with specific neutral copy.
 
 ### Example 4: empty page
 
-> **Historical figure 4 — source reference only (not transferred):** Original no-records report-page pattern. Source asset: `./assets/data-reports/empty-page.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** Original no-records report-page pattern. Source asset: `./assets/data-reports/empty-page.png`.
 
 For a totally empty report, keep page context and date/filter scope; distinguish no captured records from not authorized.
 
 ### Example 5: filtered container
 
-> **Historical figure 5 — source reference only (not transferred):** Original filtered empty container reference. Source asset: `./assets/data-reports/filtered-container.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** Original filtered empty container reference. Source asset: `./assets/data-reports/filtered-container.png`.
 
 Show which filters exclude records. A local no-match state should guide the user to adjust that scope, not imply the backend has no data.
 
 ### Example 6: filtered page
 
-> **Historical figure 6 — source reference only (not transferred):** Original filtered empty report reference with reset action. Source asset: `./assets/data-reports/filtered-page.png`.
+> **Historical figure 6 — source figure reference (only approved samples, if any, are linked below):** Original filtered empty report reference with reset action. Source asset: `./assets/data-reports/filtered-page.png`.
 
 Maintain applied filters and a legitimate clear-filters action without resetting unrelated search/sort unless the user chooses to.
 
 ### Example 7: error page load
 
-> **Historical figure 7 — source reference only (not transferred):** Source full-report loading failure example. Source asset: `./assets/data-reports/error-page-load.png`.
+> **Historical figure 7 — source figure reference (only approved samples, if any, are linked below):** Source full-report loading failure example. Source asset: `./assets/data-reports/error-page-load.png`.
 
 If initial loading failed, do not display invented zero data; offer a real recovery action and preserve the user's filter choices.
 
 ### Example 8: error page update
 
-> **Historical figure 8 — source reference only (not transferred):** Source report refresh failure with previous data retained. Source asset: `./assets/data-reports/error-page-update.png`.
+> **Historical figure 8 — source figure reference (only approved samples, if any, are linked below):** Source report refresh failure with previous data retained. Source asset: `./assets/data-reports/error-page-update.png`.
 
 If an update fails but older verified results remain, identify them as stale and retain them only where authorized; never present them as newly refreshed.
 
 ### Example 9: error container
 
-> **Historical figure 9 — source reference only (not transferred):** Source error isolated to one chart container. Source asset: `./assets/data-reports/error-container.png`.
+> **Historical figure 9 — source figure reference (only approved samples, if any, are linked below):** Source error isolated to one chart container. Source asset: `./assets/data-reports/error-container.png`.
 
 Failure of one card/chart should not destroy other unrelated loaded data. Give the faulty region its own accessible error notice.
 
