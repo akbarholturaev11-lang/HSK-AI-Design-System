@@ -2,6 +2,12 @@
 
 **This is the start-here file for the NEXT migration phase.** Work on the design-system source continues in `akbarholturaev11-lang/HSK-AI-Design-System` alone. It is **not** an instruction to run the HSK AI application, change PWA/Android screens or copy files into HSK AI main today.
 
+## Current portable asset package — actually copied, not just planned
+
+The **212 approved professional PNG examples are now present at [`docs/portable/examples/`](docs/portable/examples/README.md)** in this design repository, with original SHA-preserving Git-object copies. The complete [machine-readable manifest](docs/portable/examples/manifest.json) names each source, destination, SHA and audit batch. All **35 eligible portable Markdown guideline pages** link their images directly; **212/212 approved references were checked across those pages**. The remaining 9 of the 44 guidelines correctly do not receive unapproved image substitutes.
+
+**This is a source-repository internal documentation package, NOT installation into `HSK-AI-Bot` or production UI work.** 95 foreign screens, four non-informative placeholders, four mixed-source PNGs and one unresolved oversized PNG were not transferred into the portable examples folder. Earlier notes describing the source PNGs as "selected but not copied" are historic status; they now exist as actual exact source Git blobs in the new portable folder.
+
 ## Verified image-selection progress — full path inventory evaluated
 
 The [final image-selection entrypoint](docs/migration/VISUAL_REFERENCE_SELECTION.md) now reconciles **all 316 tracked PNG paths** with the [exception-resolution file](docs/migration/VISUAL_REFERENCE_EXCEPTIONS_2026-11-15.md). Current effective results: **212 neutral/generic samples selected, 95 foreign-product screenshots excluded, 4 content-free placeholders excluded, 4 partially useful composite images requiring neutral rework, and 1 oversized image still unviewable with the current binary reader**. The original sixteen batch manifests are traceable SHA-backed evidence and are not deleted.
