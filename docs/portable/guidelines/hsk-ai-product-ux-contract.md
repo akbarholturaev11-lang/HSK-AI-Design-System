@@ -15,35 +15,25 @@
 5. Respect the separate source of truth in [Professional-first contract](../../../DESIGN_SYSTEM_PROFESSIONAL_FIRST_CONTRACT.md), [owner-approved decisions](../../../DESIGN_SYSTEM_APPROVED_DECISIONS_AND_RESTORATION_TASKS.md), and the 44 [professional foundation/component/pattern pages](../README.md). Never invent thresholds, universal sizes, tokens, routes, data fields, or UI features from illustrative source images.
 6. For implementation, follow product `AGENTS.md`, `AI_RULES.md`, actual `hsk-ai-ui` skill, localization and performance contracts, and appropriate Analytics/Monitoring requirements. This document summarizes **UI/UX** only; it does not replace those engineering policies.
 
-## 2. Always-on learner UI/UX principles — distilled from the current product skill (EVERGREEN)
+## 2. Existing professional rules — no duplicate copies (EVERGREEN)
 
-### 2.1 Navigation chrome, layout, surfaces, and hierarchy
+The HSK-AI-Bot UI skill contains many sound general rules, but they are **already expressed in the 44 professional guidelines**. Do not restate them as another independent normative system. Read these canonical documents instead:
 
-- **Shared anchors:** related screens should keep consistent header/title baseline, back/action positions, top insets, gutters, and first-content alignment. Accommodate iPhone safe areas and Android system insets; keep fixed navigation stable while content scrolls naturally. Deliberately immersive AI Voice layouts are an exception to ordinary page structure, not to accessibility.
-- **Professional-first composition:** choose surfaces, corner treatment, density, elevation, and hierarchy from the matching professional component/layout rules. **Do not hard-code “flat everywhere” or preserve existing inferior cards/shadows purely because the current product does so.** Apply the existing skill's valid warning against *unnecessary* nested cards, ornamental tiles, repeated backplates, glow, and duplicated boundaries. A useful surface, state background, scrim, focus ring, selected treatment, or primary CTA must not be removed just to appear flat.
-- **Clean utility controls:** avoid a decorative card behind each ordinary icon or a button nested in another button-like surface. Maintain recognizable actions and **PWA ≥44 CSS px / Android ≥48 dp touch targets** and clear focus/pressed/disabled states even when the visual icon is small.
-- **One action per purpose:** do not duplicate Save/Back/Close, repeat a statistic in adjacent containers, or create competing primary CTAs. Keep one visually dominant action per decision, with secondary actions available but quieter. Distinguish genuinely different actions rather than deleting necessary controls.
-- **Cross-platform intent parity:** preserve common task order and information meaning while honoring iPhone PWA Liquid Glass bottom navigation, browser Back/history, Android native Back, platform controls, keyboard, gestures, and safe areas. Semantic parity does not mean pixel-perfect cloning.
+| Existing skill / optimization topic | Canonical portable reference | Decision |
+| --- | --- | --- |
+| Header alignment, page density, primary task and professional hierarchy | [Layout](design-foundations/layout.md), [Component composition](design-patterns/component-composition-and-customization.md) | Reuse the original professional anatomy; add only the specific XP/Streak/Profile destinations below |
+| Utility icon backplates, flat-vs-card balance, nested borders and **UIUX-009** | [Surfaces and elevations](design-foundations/surfaces-and-elevations.md), [Iconography](design-foundations/iconography.md), [Component composition](design-patterns/component-composition-and-customization.md) | **Already covered; no second global icon/backplate standard** |
+| Primary/secondary CTAs, immediate button states, concise copy, touch targets and local validation feedback | [Buttons](design-components/buttons.md), [Typography](design-foundations/typography.md), [Toasts](design-components/toasts.md), [Borders and dividers](design-foundations/borders-and-dividers.md) | Preserve existing detailed component guidance; see the additional partial-loading contract below |
+| Real Panda/cast appearance, right and wrong reactions, separate Voice Orb | [HSK AI characters](design-components/hsk-ai-characters.md), [Illustration](design-foundations/illustration.md), [Motion](design-foundations/motion.md) | Do not repeat or weaken canonical identities |
+| Semantic color roles, four-unit spacing and reduced-motion design | [Semantic colors](design-foundations/colors-semantic.md), [Spacing](design-foundations/spacing.md), [Motion](design-foundations/motion.md) | Do not introduce competing tokens or another motion scale |
+| **Two fully visible lines** of optional supporting text with only top-right ⌄/⌃ | [Typography](design-foundations/typography.md) | The product skill's former **one-line** direction is obsolete; do not import it |
+| Modal accessibility, honest data/errors, empty charts and report hierarchy | [Modals](design-components/modals.md), [Banners](design-components/banners.md), [Data reports](design-patterns/data-reports.md) | Record only the checkout-specific branching and interruption scheduling |
+| Filter/search compositional logic and clear-filter behavior | [Filter and sort](design-patterns/filter-and-sort.md), [Search field](design-components/search-field.md) | Add only HSK-specific auto-version and saved-word decisions below |
+| Generic progress/chart and stat-card representation | [Progress charts](design-components/progress-charts.md), [Summary cards](design-components/summary-cards.md), [Data visualization](design-foundations/data-visualization.md) | Add the real XP/Streak full-screen information architecture only |
 
-### 2.2 Copy, Chinese learning, and canonical identity
+**Priority:** the professional-first design target wins aesthetic disagreements with today's app, subject to its explicit brand, safety, learning, payment and platform hard constraints. Source skill §6's general “reuse the present style” cannot freeze inferior existing visuals. The approved product-specific 20% offer below overrides only the colliding generic checkout modal composition; existing checkout safety remains intact.
 
-- **Short, user-facing, localized copy:** use concise titles, meaningful action labels, and help only when needed; never expose backend jargon, debug codes or developer notes. Do **not** shorten mandatory instructions, price/renewal/limits, error recovery, or learning content into illegibility. Permanent UI copy follows product canonical **Uzbek, Russian and Tajik** localization sources; preserve Simplified Chinese/Hanzi and correctly tone-marked pinyin.
-- **Learning integrity:** make Hanzi, pinyin, and selected-language meaning legible **when the learning step requires them**. Do not leak quiz, verification, or flashcard answers before the allowed reveal; ensure correct and incorrect answer feedback is understandable without relying only on color. Course remains the core task; AI, voice, XP, streak, and paywalls must not displace it.
-- **Canonical artwork only:** Panda and the named Dragon/Longlong, Crane/Hehe, Monkey/Wuwu, and Rabbit/Yueyue retain real HSK AI identities, proportions and recognizable rendering across the app. Preserve the **existing right AND wrong answer reactions**. Do not swap in generated lookalikes or a vendor mascot. Characters appear where relevant, not on every loading slot.
-- **Voice-specific identity:** preserve the established **red pearlescent Voice Orb** and meaningful Listening/Thinking/Speaking presentation, with keyboard/composer/background coexistence. Professional motion and interaction refinements must not change voice entitlement or invent results.
-- **4-unit spacing system** is an owner-approved HSK AI constraint; apply a coherent professional rhythm using actual platform units and verified tokens, not imported vendor token values or arbitrary screen-specific numbers.
-- **Color semantics:** existing light/dark brand tokens are implementation facts. Brand accent is not automatically the error/destructive color; show state by text/icon and contrast as well as color.
-
-### 2.3 Inline disclosure — the owner-approved **two complete lines**, not the old skill's one-line rule
-
-- Only genuinely **optional secondary descriptions, helper text, and supplementary hints** may be clamped. **Collapsed maximum: TWO completely visible rendered lines**; never reveal a clipped third-line fragment.
-- When — and only when — the full text overflows the collapsed two-line layout, show a **small top-right ⌄** control with no visible “More/Подробнее” label or decorative button plate. Click/tap opens the full text **in place**, changing that same control to **⌃**; a second activation collapses it. Expanded state retains the control.
-- Calculate overflow using the **collapsed geometry**, including the reserved control area; reevaluate after localization, resize, content change, or dynamic font scaling. Short text has **no inert chevron**.
-- Preserve localized accessible name, button semantics, expanded state, keyboard/screen-reader operation, focus continuity, **≥44 CSS px / ≥48 dp touch target**, and reduced-motion preference; no scroll/input state reset.
-- **Never clamp essential lesson/question/answer/Hanzi/pinyin/meaning, the active user's input, subscription prices/terms/limits, warnings, or blocking error recovery** under this helper-text rule. A deliberately collapsible **browse-only ready-phrases card** in UIUX-004 is a separate explicit interaction with its own approved reveal semantics; do not apply that card pattern to essential test content.
-- The product skill's current “One-Line Expandable Text” section is a **known outdated conflict**, not a second valid option. Its future replacement **in place** is defined in `docs/migration/TARGET_AUTHORITY_INSERT.md`; this source-only task does **not** edit that product file.
-
-### 2.4 Loading, state truth, and micro-interaction
+### 2.1 Additional layout-matched loading, state truth and micro-interaction contract
 
 - **Layout-first, screen-specific skeleton:** reserve the same final header, rows, images, card structure, padding, spacing, relative placements and fixed-nav anchors before remote content arrives. Known labels/navigation appear immediately. Skeletons replace only unknown content; never use a generic two-line gray card to stand in for a complex grid, XP panel, rating podium, or lesson.
 - **Independent reveal:** each section settles as its **own verified response** arrives; keep other ready regions visible. Replace a placeholder in its allocated slot with a small opacity fade (~150–250 ms as a source guideline, not a universal app timing mandate), or instantly with reduced motion. Avoid remounting siblings, vertical jumps, and entire-page loaders.
@@ -53,7 +43,7 @@
 - **Purposeful motion only:** transitions communicate state and respect `prefers-reduced-motion`; no perpetual decorative animation that distracts from Hanzi or prevents reading.
 - Performance implementation and actual browser acceptance remain governed by product `docs/PERFORMANCE_PWA_PROGRESSIVE_LOADING.md` and `AGENTS.md`; static documentation is **not** a passing device/CLS test.
 
-### 2.5 Preservation of state, keyboard, Back, and interruptions
+### 2.2 Additional navigation state, keyboard, Back, and interruption contract
 
 - **State continuity:** returning from a detail view preserves meaningful scroll position, filter, search query, tab, expanded row, selection, and unsent draft. Avoid restoring private/stale state after logout, user switch, incompatible HSK version, or completed session.
 - **Keyboard-aware UI:** keep focused field, its prompt, relevant errors, composer and Submit/Send reachable when IME opens. Adjust the right scrollable region and preserve header/navigation context; restore sensible layout when keyboard closes, including Android native and iPhone PWA.
@@ -112,11 +102,9 @@ The product's `HSK_AI_UI_UX_IMPROVEMENTS.md` dated 2026-11-15 contains **exactly
 - Do **not** duplicate the XP hero, show two subscription CTAs, or repeat a separate “30 days in a row” card in profile. A selected goal is not a fake CTA; unknown accuracy shows unavailable/insufficient-data, not `0`.
 - Preserve the deliberate **iPhone PWA Liquid Glass bottom-nav translucency and scrolling behavior** and ensure the last profile item remains reachable above its safe area. Keep real entitlement, existing settings/functions, loading/empty/error/retry, and PWA/Android semantics.
 
-### UIUX-009 — remove redundant icon/backplate nesting across the learner app
+### UIUX-009 — already covered by the original 44 pages; do not duplicate
 
-- Remove decorative extra circles, boxes, repeated outlines, card-behind-card and heavy shadows from **secondary/utility** actions on lessons, course, practice, profile, quick tools, header and modals when they add no meaning.
-- Keep primary button surfaces, necessary contrast, selected-state containers, explicit focus/press feedback, accessible touch targets and meaningful professional surface elevation. This is **not** a mandate to flatten the complete system or remove professional component anatomy.
-- Review consistency across screens, Android and PWA; retain the native route, safe areas, interaction and focus after each visual simplification.
+The no-unnecessary-utility-backplates rule is already authoritative in [Surfaces and elevations](design-foundations/surfaces-and-elevations.md), [Iconography](design-foundations/iconography.md) and [Component composition](design-patterns/component-composition-and-customization.md). Its PWA/Android touch, focus, contrast and professional surface exceptions stay governed by those pages; **do not create a second version here**.
 
 ## 4. Explicit conflict register for future Codex/product skill reconciliation
 
