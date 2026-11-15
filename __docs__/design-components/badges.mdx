@@ -32,6 +32,8 @@ import {Do, Dont} from "../components/DoDont";
 
 # Badges
 
+> **HSK AI adaptation:** Source screenshots may depict teachers, classrooms, Gem rewards or source-specific scoring colors. They are educational examples of badge size, concise text, icons and state treatment — not an HSK AI dashboard or scoring policy. Keep the original visual examples, but base HSK AI statuses on actual lesson results, subscription ownership and analytics; never copy Khan Academy's Gems or fixed score thresholds.
+
 <NeutralBadge label="Status/Meta-data indicators" />
 
 A small, contextual, non-interactive container used to display a single, non-critical piece of meta-data or communicate a current status associated with a larger object.
@@ -42,9 +44,9 @@ The choice to use a badge is determined by the need for a brief, immediate visua
 
 | Use when | Example use |
 | --- | --- |
-| Describing the state of an adjacent object (not standalone) | Displaying the completion status next to a lesson title: "Geometry Lesson 5" followed by [Complete]. |
+| Describing the state of an adjacent object (not standalone) | Displaying a **verified** HSK AI lesson completion state next to the corresponding lesson title, when that state is known. |
 | Communicating a status with a single word or short label | [Draft], [Published], [Overdue], or [On Hold]. |
-| The status is read-only — not a button or link | Teacher view: Showing a student's current status: 'Liam K.' followed by [Active] or [Absent]. |
+| The status is read-only — not a button or link | Showing an actual, verified item-level status such as a recorded lesson completion; do not invent a teacher attendance workflow. |
 
 ## <Dont /> When NOT to use
 
@@ -102,8 +104,7 @@ Do use this badge to flag an active feature mode or temporary discovery. Badges 
 
 ### Metric status
 
-This category is reserved exclusively for the Gem count system.
-Do use this badge to communicate how many gems can be earned by completing the task that it relates to. Do use this badge to communicate how many days are left to achieve the class gem challenge.
+**Source-only reference:** this Gem badge variant belongs to Khan Academy. The original figure is retained to explain compact metric labeling, but HSK AI must **not** import Gems, accessory rewards, class challenges or the Gem-specific icon requirement. Only an **actually tracked and verified** HSK AI learning metric may receive a matching compact value label, using HSK AI semantic status styling.
 
 <img src={variants7Img} alt="Variants 7" />
 
@@ -153,8 +154,7 @@ Critical, gem, and time badges never change their icon. These are fixed system i
 
 ### Scoring semantics and thresholds
 
-To govern score badges effectively, use critical, warning, and success badges with clear percentage thresholds.
-Critical badges: below 50%, Warning badges: 50–99%, and Success badges: 100%.
+The **source example** maps critical to below 50%, warning to 50–99%, and success to 100%. These are **not HSK AI pass/fail thresholds**. Use the actual HSK AI course, exercise or quiz scoring specification and server-verified status before choosing a badge. In particular, a correct answer, a passed course, a completed lesson and a Pro subscription are different statuses; never collapse them into one unverified green success badge.
 
 <img src={scoreToStatusMapping1Img} alt="Score to status mapping 1" />
 
