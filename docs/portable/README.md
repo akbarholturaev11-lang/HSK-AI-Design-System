@@ -2,11 +2,17 @@
 
 **Source status:** 44/44 standalone Markdown guideline files have been created and independently inventoried in `HSK-AI-Design-System` at this repository branch (snapshot `776d92e2c9b4b639db3b8c5c6542bf3006fc69d0`). This is a **candidate transfer corpus, not the final HSK app's currently installed design system**. HSK-AI-Bot has not been changed.
 
+## Portable image-library integration complete (35 guidelines / 212 source-exact PNGs)
+
+The **212 visually selected source sample PNG files are now physically included within this design repository** at [`docs/portable/examples/`](examples/README.md), copied using their **original Git blob SHAs, without recompression or pixel alteration**. The [machine-readable manifest](examples/manifest.json) links every selected source image, destination image, content SHA and audit batch. **All 35 corresponding portable Markdown guidelines contain an image preview and direct links to all their approved examples**; the other nine guidelines intentionally remain text-only, because their historical assets were excluded or did not have an approved generic sample.
+
+**Verification:** every transferred PNG SHA matches its original `__docs__` blob; 212 distinct portable image files; exactly 212 unique image links across the 35 guidelines; no missing approved image or image/guide link in the checked set. **This was done inside HSK-AI-Design-System only.** No source PNG was deleted, no HSK-AI-Bot product file edited, no foreign-app screenshot included. The four mixed examples and one inaccessible large PNG remain outside the selected 212.
+
 ## Owner direction: carry useful visual SAMPLES, exclude foreign APP SCREENS
 
 **This is an internal reference, not a publication.** The portable Markdown set already preserves the 44 professional guideline texts, but **the selected helpful non-screen illustrations must accompany the future transfer**, not be discarded merely because their original MDX import is historical. Classify every source image by **actual visual content**: neutral component/layout/spacing/variant/state illustration -> keep; screenshot or branded product UI from a foreign application -> exclude; genuine HSK artwork -> use canonical source; ambiguous -> visually review.
 
-See [verified sample/screenshot decisions](../migration/VISUAL_REFERENCE_SELECTION.md). The reviewed pictures show **six useful non-screen examples** and **two foreign-product screens**. The other PNGs must not be classified without looking at them. Sample palettes and spacing values are **illustrative, not HSK AI design tokens**. No public-site build or replacement of hundreds of foreign screenshots is required for the internal design system.
+See [the fully reconciled image-selection decisions](../migration/VISUAL_REFERENCE_SELECTION.md): **all 316 paths have been evaluated**, with **212 SHA-identical selected samples copied** into the internal examples library. One oversized original image remains unviewed; no unknown or foreign-app images were copied. Sample palettes and spacing values are **illustrative, not HSK AI design tokens**. No public-site build or replacement of hundreds of foreign screenshots is required for the internal design system.
 
 ## Design authority — professional rules take precedence
 
