@@ -111,6 +111,30 @@ Use a table for comparable structured records with stable column meanings. It is
 
 **Detailed cell guidance:** a missing number is not zero; use a localized dash or “not recorded” explanation. A status flag should link to a real verified status and be understandable without color. Sorting must compare actual values rather than localized strings, and the visual sort indicator and screen-reader announcement must match. Avoid a full grid and thick separators if restrained row lines are sufficient. For long tables preserve column headers, pagination/virtualization semantics, keyboard navigation and a compact mobile strategy; never hide an essential HSK character or translation behind a clipped cell.
 
+## Restored table decision and interaction contract
+
+### Selection, ordering and exact records
+
+- Use a table when a reader must locate **individual authorized records**, compare exact values or perform a row-specific action. Use a stat card for a single headline and a chart for a broad pattern; a table must not be the default answer to every report.
+- A **basic table** has stable column headers, clearly defined row keys and a documented default sort. A **summary-tab variant** is useful only when actual non-overlapping statuses or categories exist; tab totals must reconcile to the scoped dataset, and selection must announce which set is visible.
+- Use precise column nouns, short sentence-case headers and a readable Hanzi/pinyin/meaning hierarchy when vocabulary is the subject. Numeric columns align consistently; date/time values show applicable locale and time zone.
+- Show a real **0** for an observed zero, an em dash plus explanation for absent data, and distinct states for processing, unavailable, unauthorized and failed values. A missing score is not a zero score.
+- Status flags are concise **icon-and-label** information, not color-only signals. The server must actually support the status. A progress bar inside a row must have a verified target, correct units and a text equivalent.
+
+### Actions, density and navigation
+
+- Sorting controls must indicate direction, preserve the active filter scope and use stable tie-breaking so rows do not jump unpredictably. A sorted numeric field must be sorted numerically, not as formatted strings.
+- Show a **bulk-selection checkbox column only when authorized bulk actions exist**. Explain the selected count, clear selection on an identity/scope change and confirm destructive operations explicitly.
+- Row-level actions apply to that exact stable record; do not imply “open details” if there is no verified route. If row click and inner buttons coexist, avoid nested interactive targets.
+- On wide reporting surfaces, paginate or virtualize long tables; the original source's approximately 50-row-per-page guideline is a performance heuristic, **not** a guaranteed HSK AI product limit.
+- On mobile, prefer a semantic stacked record list or a carefully disclosed horizontally scrollable data region over squashing Hanzi, numeric values and controls into illegible columns. Preserve column meaning and keyboard/screen-reader labels.
+
+### Empty and error fidelity
+
+- An unfiltered zero-result table retains context and offers the next relevant action. A filtered-empty table retains the applied filters and clear-filter control; explain “No matching records” rather than “No data exists.”
+- Loading, partial aggregates and export results must share the **same authoritative population, period and counting method**. Reject duplicate-event totals and the accidental merging of Android and PWA event records when the same event ID represents one action.
+- Learners can only inspect their own records. Authorized admin views must enforce permission before rendering values or exports, and must not leak prior-user rows after account switching.
+
 ## Implementation boundary
 
 This is HSK AI guidance, not a schema migration or a promise that table sorting, pagination and exporting have shipped. It intentionally removes the source's teacher/grade/class screenshots, classroom record policy and school score examples.
