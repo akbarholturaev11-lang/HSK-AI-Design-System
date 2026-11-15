@@ -14,6 +14,8 @@ import {Do, Dont} from "../components/DoDont";
 
 # Popovers
 
+> **HSK AI adaptation:** The original popover screenshots (including Khanmigo/Khanductor and Gems) are **structural examples only**, not HSK AI screens. Preserve anchoring, contrast, focus, one-popover-at-a-time and clear action principles. On a narrow mobile screen use the current HSK AI overlay/sheet when an anchored popover would cover Hanzi, answer choices, AI Voice controls or the keyboard. Do not treat an editable feedback form or payment/verification dialog as a dismiss-on-outside popover.
+
 <NeutralBadge label="Rich contextual overlay" />
 
 A non-modal overlay that displays rich content — text, links, icons, or illustration — anchored to a specific UI element. Some popovers open in response to the user; others are raised by the product. Unlike tooltips, popovers are designed for larger bodies of info and interactive content.
@@ -26,8 +28,8 @@ The choice to use a popover is determined by the need to provide supplemental in
 | --- | --- |
 | Displaying formatted text, headers, or small snippets of info | Explaining a specific exercise, skill name, and score, e.g. "Familiar." |
 | The overlay needs to contain clickable links, buttons, or small forms | A popover that includes a "Jump here" button to navigate the user to a specific activity. |
-| Delivering transient, proactive feedback that requires user acknowledgement | Khanductor appearing in a popover to say "Slow down just a bit" with a "Got it" button during an assessment. |
-| A specific on-screen element needs contextual guidance or a nudge tied directly to it | A popover anchored to the gem counter, showing the student where to check progress toward their next accessory. |
+| Delivering brief, non-blocking guidance associated with a supported existing feature | A concise hint or explanation tied to a real HSK AI control; do not invent a Khanductor exam-proctor feature. |
+| A specific on-screen element needs contextual guidance tied directly to it | An explanation anchored to an existing HSK AI progress indicator or lesson action when such a popover is already supported. |
 
 ## <Dont /> When NOT to use
 
@@ -65,14 +67,14 @@ Used for transient, proactive feedback from the system that requires user acknow
 | Variant | Purpose | Example |
 | --- | --- | --- |
 | Informational | To surface contextual detail about a specific UI element without leaving the page. | Explaining an exercise name, skill level, and score inline with the learning queue. |
-| Feature highlight | To introduce a new feature in context, anchored to the relevant UI element, without interrupting the user's flow. | Onboarding a student to the gem counter and rewards system after first login. |
-| System guidance | To deliver proactive feedback from the system that requires acknowledgement before continuing. | Khanductor prompting "Slow down just a bit" during an assessment. |
+| Feature highlight | To introduce a verified, available feature in context without interrupting the learner. | Briefly explaining a real HSK AI feature when it first appears; the source Gems figure is not an HSK AI reward scheme. |
+| System guidance | To deliver concise contextual system guidance where an anchored non-modal cue is sufficient. | Explaining a real HSK AI step without leaking test answers or introducing an assessment-proctor persona. |
 
 ## Character illustration
 
-Use a character illustration when the message is delivered on behalf of a named system character — Khanmigo (tutor) or Khanductor (proctor). The character signals the source of the message and adds personality to system-initiated communication.
+A source example uses Khanmigo or Khanductor to identify who is giving guidance. **These characters are not HSK AI assets.** In HSK AI, only include a real approved Panda/side-character illustration where the existing learning UI actually assigns that character and the guidance benefits from it. Use text-only presentation when a character would distract or invent authority. Refer to <a href="./?path=/docs/design-guidelines-components-characters-hsk-ai-characters--docs">HSK AI characters</a>.
 
-The illustration is optional and available in System guidance only. If neither character is the source, use text only or a feature image instead. Feature highlight and Informational popovers never carry a character.
+Retain the source principle of **sparse, optional artwork** in meaningful system guidance. Do not copy Khan-only image placement rules as a mandate for all HSK AI views. An informative popover or feature highlight should normally remain text/control-first; any exception requires an actual approved UI and accessibility review.
 
 <img src={withCharacterImg} alt="A popover with the Khanductor character illustration to the left of the “Slow down just a bit” message and a “Got it” button" />
 
