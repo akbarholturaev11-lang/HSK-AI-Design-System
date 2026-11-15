@@ -21,6 +21,7 @@ const button: React.CSSProperties = {
     background: "transparent",
     color: "inherit",
     cursor: "pointer",
+    minHeight: 44,
 };
 const muted: React.CSSProperties = {fontSize: 13, margin: "5px 0 14px", opacity: 0.83};
 const accent = "var(--hsk-cinnabar, #E04A40)";
