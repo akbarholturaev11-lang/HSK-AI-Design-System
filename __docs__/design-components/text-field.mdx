@@ -16,6 +16,8 @@ import {Do, Dont} from "../components/DoDont";
 
 # Text field
 
+> **HSK AI scope:** The eight inherited field illustrations explain labels, placeholders, validation, read-only and disabled states; their school-name examples and source colors are not HSK AI production screens. Use the existing HSK AI mobile UI and preserve these professional interaction guidelines.
+
 <NeutralBadge label="Free-form input" />
 
 Text fields allow users to enter and edit text into a UI. They typically appear in forms and dialogs. This is a primary mechanism for gathering user input and data across the platform.
@@ -26,9 +28,9 @@ The choice to use a text field is determined by the need to capture specific, of
 
 | Use when | Example use |
 | --- | --- |
-| Capturing a short-to-medium length input where no predefined selection exists | Entering a student's first name or an assignment title. |
-| The user needs to provide a unique detail or description | Naming a new class, such as "Period 3 – Algebra". |
-| Defining parameters as part of a multi-step workflow | Filling out account details during a new teacher onboarding. |
+| Capturing a short-to-medium length input where no predefined selection exists | Entering a learner-provided display name or an existing supported lesson note, if the view includes editable text. |
+| The user needs to provide a unique detail or description | Providing a short description in an existing HSK AI account or learning workflow, where that field is supported. |
+| Defining parameters as part of a multi-step workflow | Entering only the account information that the actual HSK AI sign-in or profile step requires. |
 
 ## <Dont /> When NOT to use
 
@@ -48,14 +50,14 @@ Label is positioned outside and above the input box. The input box is empty unti
 
 ### Placeholder text
 
-Serves as a brief, transient hint inside an input field to help guide user input. It is best used to demonstrate specific formatting like MM/DD/YYYY, or clarify ambiguous labels with style examples such as "Ms. Z."
+Serves as a brief, transient hint inside an input field to help guide user input. It is best used to demonstrate genuinely required formatting, or clarify an ambiguous expected response. For a Chinese text entry, an example may contain Hanzi or pinyin **only if the field truly accepts that format**. Do not impose US date formatting across HSK AI's supported languages.
 Because this text disappears when a user begins typing, it must never replace a persistent external label.
 
 <img src={states2Img} alt="A “Name” field with the sub-label “Start Description” and gray placeholder text reading “Example: Ms. Z” inside the input" />
 
 ### Required fields
 
-Use "Required" as an inline label next to the field label instead of an asterisk. This is more accessible and explicit — users don’t need to find and interpret a legend.
+Use a localized equivalent of "Required" next to the persistent field label instead of an unexplained asterisk. This is more accessible and explicit — users don’t need to find and interpret a legend.
 
 <img src={states3Img} alt="An “Email” field with a “Required” label inline to the right of the field label, above an empty input" />
 
@@ -69,13 +71,13 @@ Used for any helpful description text that would otherwise be hidden in a placeh
 
 ### Error
 
-If the input is invalid, the label and border turn red, accompanied by specific error text below the field.
+When input is invalid, use the approved HSK AI semantic error color on the field and label together with **specific explanatory text**. Ordinary brand-red primary actions are not the same as destructive or input-error status. Never flag a valid Hanzi, tone mark or Chinese punctuation as an error solely because it is not ASCII.
 
 <img src={states5Img} alt="A “Username” field in its error state: red label, a red border around the value “meeeeeeeels@aim.com”, and a red error message below reading “No account found with that username. Please try again or create a new account”" />
 
 ### Read-only
 
-Displays the current value while explicitly preventing interaction. Unlike disabled, read-only maintains clear color contrast — the content is still meant to be read. Always include helper text explaining why the field is locked.
+Displays the current value while explicitly preventing interaction. Unlike disabled, read-only maintains clear color contrast — the content is still meant to be read. Always include helper text explaining why the field is locked, using the current learner's language. Do not hide readable Chinese characters or text merely because the field is read-only.
 
 <img src={states6Img} alt="A read-only “Name” field showing “Ema Carinyo” on a shaded background, with a lock icon and the helper text “Only teachers can edit this”" />
 
@@ -84,3 +86,27 @@ Displays the current value while explicitly preventing interaction. Unlike disab
 Used when a prerequisite action has not been fulfilled. The field is grayed out and non-interactive. Once the dependency is met, it no longer displays as disabled. Do not use disabled when read-only is more appropriate — disabled implies unavailability, not restriction.
 
 <img src={states7Img} alt="A “Password” field in its disabled state: a grayed-out label above an empty, faintly outlined input that cannot be interacted with" />
+
+## HSK AI Chinese and multilingual text-entry rules
+
+### Use the correct input for the task
+
+- Use text fields for **actual supported short answers and profile fields**. Do not introduce a free-text input where HSK AI already has a fixed HSK level, study goal or exercise answer selection.
+- Hanzi, pinyin, learner-language translations and usernames are different input types. A field's label, helper text and validation must specify which one is expected. Do **not** claim HSK AI already provides a new dedicated pinyin editor or handwriting engine.
+- A pinyin **reading label** in lesson content is normally not an editable field. In any existing editable exercise, match the real backend's supported answer formats before offering input.
+
+### Chinese keyboard and composition
+
+- On supported PWA web inputs, do not validate, submit, trim or transform a partial Chinese IME composition as a finished answer. Handle composition-end before final validation; leave the candidate bar and on-screen keyboard visible and unobstructed.
+- Preserve Hanzi, full-width Chinese punctuation and correctly marked pinyin (including tone marks such as **nǐ hǎo**). Do not strip diacritics for appearance or silently equate a tone-marked syllable with its unmarked form.
+- Use a readable Chinese-capable font stack for Hanzi, and the approved UI stack with suitable glyph fallback for pinyin and Uzbek/Russian/Tajik. Do not specify a Latin-only source font for Chinese input.
+- A copied or pasted value must remain semantically intact; do not mutate Unicode merely to force a design-library demo to match.
+
+### Labels, help, errors and mobile layout
+
+- Keep a real field label visible when a placeholder disappears; use concise localization in the app's supported language. Example: **Chinese characters** (汉字), **Pinyin** (nǐ hǎo), **Meaning** (localized), only in contexts that actually ask for those values.
+- Match errors to real input restrictions. Explain required versus invalid versus server-failed states without confusing an incorrect exercise answer with a broken form.
+- On iPhone PWA and native Android, respect dynamic text scaling, safe areas, selected language length, keyboard insets and accessible focus. Do not make an input unreasonably short to match the source desktop mockup.
+- Apply HSK AI's existing semantic typography and colors; consult <a href="./?path=/docs/design-guidelines-foundations-typography--docs">HSK AI typography</a> for Hanzi/pinyin/translation reading order and text roles.
+
+The source screenshots remain **illustrations of form behavior**. This is a design-documentation change; it does not authorize production input or validation rewrites.
