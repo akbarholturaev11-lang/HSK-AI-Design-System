@@ -90,7 +90,7 @@ Use for: primary content cards, content panels, modals, drawers, and components 
 
 A semi-transparent overlay applied over the page when a modal or drawer is open. The scrim signals that the content beneath is behind and unavailable while the overlay requires attention.
 
-Use a scrim when the **existing** overlay actually places the rest of the screen into a modal or blocked state. In the course, the `.sheet` overlay has a dimmed background; AI Voice has its own verified `.sheetLayer`/`.scrim` behavior. An anchored non-modal popover is different. Do not enforce another product’s universal High-elevation/drawer rule or change approved overlay flows.
+Use a scrim when the **existing** overlay actually places the rest of the screen into a modal or blocked state. In the course, the `.sheet` overlay has a dimmed background; AI Voice has its own verified `.sheetLayer`/`.scrim` behavior. An anchored non-modal popover is different. Do not inherit a source-exclusive token or blindly alter functional overlay flows. **Retain the professional scrim, elevation, separation, focus and modality details** as the target for redesign.
 
 <Figure
     src={surfaceScrimImg}
@@ -104,8 +104,8 @@ The following four levels are a **reference-only visual vocabulary**, not four s
 
 | Illustrative level | Professional purpose | HSK AI decision |
 | --- | --- | --- |
-| Base | Flush region with no extra shadow | Prefer current screen styling when hierarchy is already clear |
-| Low | Slight visual separation | Use only where a verified existing component benefits; do not synthesize a global `boxShadow.low` |
+| Base | Flush region with no extra shadow | Prefer the professional surface treatment; a current screen can be kept only if it already satisfies the target hierarchy |
+| Low | Slight visual separation | Use when the professional visual hierarchy warrants separation; implement through verified roles or explicitly propose a new token instead of inventing an existing `boxShadow.low` |
 | Mid | Temporarily floating but non-modal help | Preserve supported HSK AI popover anchoring and keyboard behavior |
 | High | Modal overlay and major interruption | Preserve the existing overlay layering, not upstream shadow constants |
 
@@ -170,7 +170,7 @@ Surfaces and elevations are independent — either can be applied without the ot
 | Existing HSK UI concept | Surface decision | Depth decision |
 | --- | --- | --- |
 | Course page | `--hsk-paper` | Current page CSS, not an inherited `Base` token |
-| Raised content | `--hsk-paper-raised` or `--hsk-card-surface` when actually used | Depends on the existing component |
+| Raised content | `--hsk-paper-raised` or `--hsk-card-surface` when actually used | Match the professional surface hierarchy, mapped to real existing or explicitly proposed roles |
 | Lesson/choice item | Verified course styles | Preserve answer feedback and focus |
 | Anchored help | Actual popover styling if implemented | Not necessarily modal; avoid covering the keyboard |
 | Bottom sheet / modal | Actual `.sheet` / Voice-specific overlay CSS | Preserve existing scrim, stacking, focus and dismissal |
@@ -182,7 +182,7 @@ Surfaces and elevations are independent — either can be applied without the ot
 
 ### Base layer should not falsely imply interactivity
 
-A background should remain visually subordinate to the current learning task. This is a hierarchy principle, **not** a claim that the real app implements the original system's Surface 1/Surface 2 classes. Maintain HSK AI's approved screen-specific layering and avoid redundant depth effects.
+A background should remain visually subordinate to the current learning task. This is a hierarchy principle, **not** a claim that the real app implements the original system's Surface 1/Surface 2 classes. Preserve actual task/overlay layering semantics, but elevate the visual system to the professional surface/elevation hierarchy in the later redesign; avoid redundant depth effects.
 
 <img src={usageSurfaceBaseImg} alt="A Surface 1 card sitting flat on the page with no shadow, labeled Surface 1 + Elevation: Base" />
 
