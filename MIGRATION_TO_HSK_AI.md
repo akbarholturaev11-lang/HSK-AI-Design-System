@@ -31,10 +31,11 @@ There are **two different kinds of priority**; they must not be confused:
 1. [**Professional-first contract**](DESIGN_SYSTEM_PROFESSIONAL_FIRST_CONTRACT.md) — governs the professional design decisions and minimal HSK adaptation.
 2. [**Approved owner decisions**](DESIGN_SYSTEM_APPROVED_DECISIONS_AND_RESTORATION_TASKS.md) — exact protected exceptions; never relax.
 3. [**Exact 44-page transfer catalog**](docs/migration/TRANSFER_CATALOG.md) — every page with its Git SHA, image exposure and planned `docs/design-system/guidelines` path.
-4. [**Existing HSK conflict register**](docs/migration/CONFLICT_REGISTER.md) — verified line-by-line policy collisions and resolution strategy.
-5. [**Ready-to-insert product AGENTS / UI skill instructions**](docs/migration/TARGET_AUTHORITY_INSERT.md) — future safe, minimal authority wiring; not yet applied.
-6. [**Source vs HSK historical page audit**](docs/audits/professional-rules-source-to-hsk-ai-matrix-2026-11-15.md) — original 45-page dispositions and rationale.
-7. [**Professional-priority wording audit**](docs/audits/professional-first-priority-reconciliation-2026-11-15.md) — previously weaker "keep current visuals" language corrected in guideline pages.
+4. [**Exact asset quarantine**](docs/migration/ASSET_AND_RUNTIME_INVENTORY.md) — 316 PNG and 30 font paths with source SHA provenance and exclusions.
+5. [**Existing HSK conflict register**](docs/migration/CONFLICT_REGISTER.md) — verified line-by-line policy collisions and resolution strategy.
+6. [**Ready-to-insert product AGENTS / UI skill instructions**](docs/migration/TARGET_AUTHORITY_INSERT.md) — future safe, minimal authority wiring; not yet applied.
+7. [**Source vs HSK historical page audit**](docs/audits/professional-rules-source-to-hsk-ai-matrix-2026-11-15.md) — original 45-page dispositions and rationale.
+8. [**Professional-priority wording audit**](docs/audits/professional-first-priority-reconciliation-2026-11-15.md) — previously weaker "keep current visuals" language corrected in guideline pages.
 
 ## Correct future integration architecture (not implemented now)
 
