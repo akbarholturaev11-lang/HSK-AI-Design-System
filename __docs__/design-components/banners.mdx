@@ -41,7 +41,7 @@ The choice to use a banner is determined by the need for persistent, high-priori
 | Blocking the interface for a critical issue | Modal or full screen error page | The Banner is non-modal and allows the user to click around the background. A critical error requires blocking the entire interface. |
 | Requiring a complex user decision | Modal | Do not use when the message requires the user to make an immediate, high-stakes choice or irreversible commitment. Banners lack the necessary context and visual gravity for complex decisions. |
 | Displaying non-critical promotions | Contextual card or feature slot | Do not use for non-critical promotional or marketing content. Banners are reserved for system alerts and status changes, not upsells or temporary campaigns. |
-| Highlighting a field-specific error | Inline form validation | Do not use for validation failures related to a specific input field (e.g., student ID field is empty). Banners are global, not local. |
+| Highlighting a field-specific error | Inline form validation | Do not use for validation failures related to a specific input field (e.g., a required account field is empty). Banners are global, not local. |
 
 ## Variants
 
@@ -115,7 +115,7 @@ Do use when communicating temporary policies or essential guidelines that requir
     <div style={{width: "100%"}}>
         <Banner
             kind="info"
-            text="Don't share personal information. This conversation can be reviewed by your teacher."
+            text="Avoid sharing private information in learning conversations. Review the current HSK AI privacy notice."
             onDismiss={() => {}}
         />
     </div>
