@@ -1,197 +1,82 @@
 import {Meta} from "@storybook/addon-docs/blocks";
-import headerImg from "./assets/distribution-charts/header.png";
 import {NeutralBadge} from "@khanacademy/wonder-blocks-badge";
-import {Do, Dont} from "../components/DoDont";
-import Demo from "../components/Demo";
-import Figure from "../components/Figure";
-import {AssignmentsCompletedChartOnly} from "./assets/distribution-charts/AssignmentsCompletedChart";
-import {GroupedByLevelChart, ComparingPeriodsChart} from "./assets/distribution-charts/VariantExamples";
-import containerImg from "./assets/distribution-charts/container.png";
 
 <Meta title="Design Guidelines / Components / Data visualization / Distribution charts" />
 
-<img src={headerImg} alt="Distribution charts" />
-
 # Distribution charts
 
-> **HSK AI scope:** Keep the source rules for equal ranges, true zero, readable bars and accessible comparisons. Treat all original school/assessment pictures as structural illustrations only, not HSK AI sample data or UI styling.
+<NeutralBadge label="Verified range distribution" />
 
-<NeutralBadge label="How a group is spread out" />
+Distribution charts answer **“How are the actual observations spread across defined ranges?”** They can help an authorized HSK AI report show counts of supported learning records or mastery states, where those categories are genuinely tracked. They do not imply a school assessment feature or an extra HSK AI analytics endpoint.
 
-Distribution charts answer "How is the group spread out?" A bar chart shows how many actual HSK AI records land in each range, such as supported learning activity or verified vocabulary mastery categories.
+## When to use
 
-Distribution charts sit inside a <a href="./?path=/docs/design-guidelines-components-data-visualization-chart-container--docs">chart container</a> using existing HSK AI mobile rendering, not a mandatory Khan Academy chart library.
-
-## <Do /> When to use
-
-| Use when | Example use |
+| Use when | HSK AI requirement |
 | --- | --- |
-| Readers need to see how a group spreads across ranges | Actual recorded lesson attempts or vocabulary states across meaningful ranges, when supported |
-| Readers need to spot how many are at the low or high end | How many records are in a confirmed zero category, if the underlying event is tracked |
-| An admin needs to see how schools or classes spread across a measure | Counts by genuine supported HSK AI score or mastery ranges, without inventing a scale |
-| Readers need to see how a group's spread changed between two periods | The same supported mastery categories in two verified time windows. See [Comparing periods](#comparing-periods). |
-| Readers need to see how a group splits into levels, and where scores fall within each level | Exercise outcomes or vocabulary mastery grouped using the actual HSK AI thresholds. See [Grouped by level](#grouped-by-level). |
+| Readers need to understand the spread across ranges | Use real, mutually exclusive categories and a verified population/denominator. |
+| Readers need to see the low or high end | Include a **zero/none** bucket when zero is possible; do not hide the records most in need of review. |
+| Two time windows need comparison | Use the same metric, range boundaries, scope and permission model in both windows. |
+| Data has meaningful real learning bands | Match only actual recorded HSK definitions and available score categories, never a different product's grading bands. |
 
-## <Dont /> When NOT to use
+## When NOT to use
 
-| Don’t use when | Recommended alternative | Rationale |
-| --- | --- | --- |
-| The main metric can be said in words or one number, like "4 students haven't completed any assignments yet" | A <a href="./?path=/docs/design-guidelines-components-data-visualization-summary-cards--docs#stat-card">stat card</a> | Plain text is faster to read than a chart to decode. Use a chart only when the shape of the data matters. |
-| Showing change over time | <a href="./?path=/docs/design-guidelines-components-data-visualization-trend-charts--docs">Trend charts</a> | Bars in a distribution are ranges, not time periods. Readers would read a trend that isn't there. |
-| Readers need each individual's or item's value | <a href="./?path=/docs/design-guidelines-components-data-visualization-data-tables--docs">Data tables</a> | A distribution groups values into ranges, so individual values are lost. |
-| The group is small, like fewer than 10 students | <a href="./?path=/docs/design-guidelines-components-data-visualization-data-tables--docs">Data tables</a> or a sentence | With few students, bars are too short to compare. Each student's value is clearer. |
+- For one fact or a tiny genuine population, choose a <a href="./?path=/docs/design-guidelines-components-data-visualization-summary-cards--docs">summary card</a> or table.
+- For chronological movement across three or more periods, use <a href="./?path=/docs/design-guidelines-components-data-visualization-trend-charts--docs">trend charts</a>.
+- For exact individual learner/lesson values, use an authorized <a href="./?path=/docs/design-guidelines-components-data-visualization-data-tables--docs">table</a>.
+- Do not build peer/school comparisons or benchmark levels that HSK AI does not record.
 
-A bar can open a corresponding filtered record list only when that interaction exists, the user has permission, and the counts reconcile.
+## Anatomy
 
-## Chart anatomy
-
-These parts apply in any container.
-
-> **Reference:** The original chart illustration demonstrates a data encoding method, not HSK AI styling or a requirement for a particular library.
-
-<Demo>
-    <AssignmentsCompletedChartOnly />
-</Demo>
-
-| Part | Rule | Example |
-| --- | --- | --- |
-| Title | States the insight | Most students completed five to eight assignments |
-| Category axis | Ranges in order, equal width, with no overlaps. Use an en dash in range labels. Labeled with what's counted. | Assignments completed: none, 1–2, 3–4 … 11+ |
-| Value axis | Counts or percentages, starting at zero, labeled with units. Optional when every bar has a data label. | Students: 0, 10, 20 … 50 |
-| Bars | Choose colors by role. See <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#color">Color</a> in Data visualization. | |
-| Data labels | The value on or above each bar | 40 |
-
-If available, tooltips add only useful context beyond the direct label (range, count/rate and included items); they must be available on touch and keyboard.
-
-## Container
-
-Distribution charts use a large container, for reports. The title states the insight about the group's spread.
-
-| Part | Example |
+| Part | Rule |
 | --- | --- |
-| Section heading | Assignments completed |
-| Title | Most students completed five to eight assignments |
-| Description | 74 of 92 students |
-| Controls | Date filter, view toggle, download |
-| Bars | The ranges that carry the title's point use the Emphasis role |
-| Footer | Updated Oct 20, 2026, 9:15 AM |
+| Title | A factual, helpful takeaway for the actual measure and scope, never an invented statistic. |
+| Category axis | Ordered, disjoint ranges with descriptive labels and a consistent unit. |
+| Value axis | Counts or percentages, starting at **zero**; state the denominator for percentages. |
+| Bars | Choose the actual semantic theme colors; avoid misleading per-bar colors. |
+| Labels | Provide values on/near bars and accessible text equivalents. |
+| Controls | Real data-range/filter controls that affect only their labeled scope. |
+| Timestamp | If freshness is relevant, use the verified update time rather than pretending the records are current. |
 
-<Figure
-    src={containerImg}
-    alt="A report page with gray placeholder summary cards at the top. Below them, a Skills mastered section heading above a chart container. The container's title reads Most students mastered four to eight skills, with the description 74 of 92 students and a Last 30 days date filter, a chart and table view toggle, and a download button at the top right. A bar chart shows students by range, from none to 11+, peaking at 5–6, with a Students value axis and an Assignments completed category axis. The footer reads Updated Oct 20, 2026, 9:15 AM."
-    caption="A distribution chart in a large container, below the summary cards on a report page."
-/>
+Use the existing <a href="./?path=/docs/design-guidelines-components-data-visualization-chart-container--docs">chart container</a> pattern where a supported report provides it.
 
-## Usage guidelines
+## Range design
 
-### Ranges
+1. Usually choose **4–8** meaningful ranges, but do not manufacture artificial HSK score bands to reach that count.
+2. Keep ranges equal width where the unit permits; if an existing learning classification defines uneven ranges, use its **actual official boundaries**.
+3. Show zero and empty ranges explicitly; do not remove empty bars to make a distribution look smoother.
+4. If the measure has no maximum, a clearly labeled final open range (such as `11+` for a real count) prevents silent exclusion.
+5. Preserve the **same** ranges across periods/groups. Never recompute a new range set for each series when making comparisons.
+6. Never sort ordered ranges by bar height; that changes a distribution into a ranking.
+7. Use clear labels rather than rotating small or lengthy Chinese/translated labels. Horizontal bars are preferable when phone width or accessibility scaling makes labels unworkable.
+8. If a chart supports drilling into a filtered list, reconcile its bar count with the actual authorized records. Do not invent that interaction just because the graph has bars.
 
-<ul>
-    <li><Do /> Use 4 to 8 ranges. In a chart grouped by level, use more only when level thresholds require it.</li>
-    <li><Do /> Choose ranges that match thresholds that mean something to the reader, like levels or goals.</li>
-    <li><Do /> Keep ranges the same width so bar heights compare fairly. In a chart grouped by level, ranges follow level thresholds instead.</li>
-    <li><Do /> Show a "none" range when zero is possible. The students with zero are often the ones who need help.</li>
-    <li><Do /> When values have no maximum, end with an open range, like "11+," so every value has a place.</li>
-    <li><Do /> Keep empty ranges, and label them "0." Dropping them makes the ranges look evenly spread when they aren't.</li>
-    <li><Do /> Use the same ranges for every group and every time period. Don't drop, merge, or recalculate ranges based on the data. Fixed ranges let readers compare charts, and an empty range is information too.</li>
-    <li><Dont /> Don't sort ranges by bar height. That turns the chart into a ranking and hides the shape.</li>
-</ul>
+## Two comparison variants
 
-### Title and description
+### Grouped by a real level
 
-<ul>
-    <li><Do /> When the title says "most," "few," or "half," give the number in the description: "74 of 92 students." Readers can't judge "most" from bar heights alone.</li>
-</ul>
+Use level bands only if the metric already defines valid, distinct HSK or learning mastery groups. A level count must equal the sum of its bars, and an observation must not be counted in multiple exclusive bands. The level name and count must be accessible without color.
 
-### Values
+### Two periods side by side
 
-<ul>
-    <li><Do /> Use counts when readers act on individuals, and percentages to compare groups of different sizes. See <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#number-formatting">Number formatting</a>.</li>
-    <li><Dont /> Don't start the value axis above zero. It exaggerates differences.</li>
-</ul>
-
-### Bars
-
-<ul>
-    <li><Do /> Use vertical bars for ordered ranges. Use horizontal bars when range labels are long, and when comparing periods.</li>
-    <li><Dont /> Don't rotate range labels. When they don't fit, like on a narrow screen, switch to horizontal bars.</li>
-    <li><Do /> When some ranges carry the title's point, highlight them with the <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#emphasis">Emphasis</a> role, and use its paler color for the rest.</li>
-    <li><Dont /> Don't color bars differently for any other reason, except in a chart grouped by level or comparing periods.</li>
-</ul>
-
-## Variants
-
-### Grouped by level
-
-Score ranges are grouped under the levels they belong to, like Beginning, Approaching, and Demonstrating. Use it when readers need both the split into levels and where scores fall within each level.
-
-> **Note:** This is a placeholder built for these docs, not the production chart. The bars are gray on purpose: level colors come from the Assessment and Mastery color roles, which aren't defined yet.
-
-<Demo>
-    <GroupedByLevelChart />
-</Demo>
-
-| Part | Rule | Example |
-| --- | --- | --- |
-| Level band | A line under each level's ranges | |
-| Level name | Below the band, with an info tooltip that gives the level's score range | Approaching |
-| Level count | Below the level name | 8 students |
-| Bars | Colors come from the Assessment or Mastery role | |
-
-<ul>
-    <li><Do /> Line range boundaries up with level thresholds. No range crosses two levels.</li>
-    <li><Do /> Make each level count match the total of its bars.</li>
-    <li><Do /> Label every band with its level name, so color is never the only signal.</li>
-</ul>
-
-Use HSK AI's verified assessment/mastery categories and theme-approved distinguishable colors; do not apply the source's school level colors.
-
-### Comparing periods
-
-Two periods side by side for each range or level, like beginning of year and middle of year assessments. Use it when readers need to see how the group's spread changed.
-
-> **Note:** This is a placeholder built for these docs, not the production chart. The bars are gray on purpose: level colors come from the Assessment and Mastery color roles, which aren't defined yet.
-
-<Demo>
-    <ComparingPeriodsChart />
-</Demo>
-
-| Part | Rule | Example |
-| --- | --- | --- |
-| Title | States the change | 6 more students reached Demonstrating since beginning of year |
-| Description | Says who's included | 29 students took both |
-| Legend | Names the periods, below the description | Beginning of year, Middle of year |
-| Rows | One per range or level, in order | Beginning, Approaching, Demonstrating |
-| Bars | One per period, horizontal, both starting at zero. The earlier period uses Neutral gray, and the latest uses the role color. | |
-| Data labels | The count at the end of each bar | 6, 12 |
-
-<ul>
-    <li><Do /> Compare two periods. When more exist, let readers choose the earlier one. See <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#choosing-the-earlier-period">Choosing the earlier period</a>. To show three or more at once, use a <a href="./?path=/docs/design-guidelines-components-data-visualization-trend-charts--docs">trend chart</a>.</li>
-    <li><Do /> Include only students with results in both periods, and say how many: "29 students took both."</li>
-    <li><Dont /> Don't compare periods with 100% stacked bars. Only the first segment shares a baseline, so the rest are hard to compare.</li>
-</ul>
-
-For how to present growth on a report, see <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#showing-growth">Showing growth</a> in Data reports.
+For the same population and measure, show two bars per category with a common zero baseline, clearly named periods and consistent ranges. If inclusion requires observations in **both** periods, state the eligible and excluded counts. Do not reclassify absent records as zero. For more than two simultaneous periods prefer a trend chart, where appropriate.
 
 ### Comparing groups
 
-Only compare actual, authorized HSK AI groups defined by the same measure; school/class comparisons are source examples, not a requirement.
+Only compare groups that an authorized user is allowed to access, and that share equivalent event definitions. A learner-facing report is owner-scoped by default; aggregated admin reports require their own access controls and privacy safeguards.
 
-## States
+## Missing data and failure
 
-Empty and error states follow <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#states">Data reports</a>. For groups too small to chart, see <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs#not-enough-data">Not enough data</a>.
+A missing event is not a zero. Mark incomplete collection, processing, unsupported platform coverage and genuinely empty categories differently. Do not show stale totals as current or mix HSK course versions with incompatible definitions.
 
-## Accessibility
+An isolated chart error should not prevent independently loaded report components from being read. See <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs">HSK AI data reports</a> for loading, empty, retry and owner-verified access rules.
 
-- Every chart has a short text summary of its takeaway. See <a href="./?path=/docs/design-guidelines-foundations-data-visualization--docs#accessibility">Accessibility</a> in Data visualization.
-- Label each bar with its count, so values don't depend on reading the axis.
-- Bars can be focused with the keyboard. Each announces its range and count: "5–6 assignments: 40 students."
-- A highlighted bar also has a text label, so color is never the only signal.
-- In a chart grouped by level, each level announces its name and count: "Approaching: 8 students."
+## Accessibility and mobile
 
-## HSK AI grouping and counting requirements
+- Provide a text summary of the actual finding, explicit units, an accessible name for each bar and appropriate color contrast.
+- Make supported tooltip/detail interactions available on **touch and keyboard** without relying on hover alone.
+- Respect narrow screens, localized Cyrillic/Chinese labels, tone-marked pinyin and enlarged text. If vertical categories become illegible, switch to horizontal or a table.
+- Use real HSK AI colors, not a borrowed assessment palette. An incorrect-answer red or brand accent is not by itself an acceptable chart category legend.
 
-- Do not impose source-specific Beginning/Approaching/Demonstrating levels, school tests or 700-point ranges on HSK AI. Group data using the real stored HSK level or mastery definition.
-- Use actual mutually exclusive categories for a single-population distribution; the sum of categories must reconcile with its denominator. Do not silently hide uncategorized or pending records.
-- Missing, stale, partially collected and unaudited records must not be misrepresented as zero. Preserve meaningful comparison ranges between periods.
-- Source screenshots and chart examples are retained for professional guidance on graph geometry; they are **not product UI or brand references**.
+## Scope
+
+This guideline contains no source-school assessment charts, currency, grade taxonomy or generic mock score data presented as production truth. It does not change the actual HSK AI analytics pipeline or introduce new chart functionality.
