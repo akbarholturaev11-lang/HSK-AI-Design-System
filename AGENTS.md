@@ -22,6 +22,14 @@ Apply this exact precedence when two statements appear to conflict:
 - **Avoid full-screen redesign now.** This repository only establishes and reconciles guidelines. The **next, separately scoped phase** is a screen-by-screen audit and implementation of HSK AI PWA/Android UI/UX against these guidelines, retaining underlying workflows, data contracts, business logic and rollout safety. Do not touch the production app during design-documentation work.
 - Read [Professional-first decision contract](DESIGN_SYSTEM_PROFESSIONAL_FIRST_CONTRACT.md) and the [source reconciliation matrix](docs/audits/professional-rules-source-to-hsk-ai-matrix-2026-11-15.md) before proposing deviations.
 
+## OWNER-APPROVED IMAGE SELECTION — INTERNAL DESIGN SYSTEM, NO PUBLICATION
+
+**Nothing is being publicly published.** This is an internal HSK AI design-system transfer. **Keep professional component, state, spacing, layout, iconography, color-scale, interaction and other neutral illustrative samples**, including useful PNG examples, when their **actual image content** demonstrates the transferable design decision. Preserve micro-details. **Exclude screenshots of a foreign product's application, school dashboards, other mascots, Gem/reward/business workflows and other unrelated product screens.** A useful button inside a foreign screen does not justify copying the whole screenshot: retain its professional reasoning in text.
+
+**Never treat all 316 PNG files as foreign or all as transferable.** Each image must be inspected; record `INCLUDE_SAMPLE`, `EXCLUDE_FOREIGN_SCREEN`, `INCLUDE_HSK_ORIGINAL` or `REVIEW_REQUIRED`, with file path, blob SHA, visual evidence and purpose. Read [Visual reference selection](docs/migration/VISUAL_REFERENCE_SELECTION.md) before moving any image. A generic sample's historical color numbers, labels or component styles are explanatory and **do not replace the canonical HSK AI palette, 4-unit spacing, characters or real app function**.
+
+**No public-site publication, 316-image reconstruction, screenshot replacement campaign or Storybook build is a requirement of this design-rule task.** Selected generic visual samples should remain included in the eventual internal documentation package; all undecided assets require actual content review, not arbitrary exclusion. Image reuse terms still must not be misrepresented as verified when unverified, but do not use publication as an invented blocker for selecting the internal rulebook.
+
 ## HSK AI main-repository migration preparation (DOCUMENTATION ONLY)
 
 The user intends to make this complete professional design corpus the **PRIMARY design authority inside `akbarholturaev11-lang/HSK-AI-Bot`**, after the design-system source is reconciled and prepared. **Do NOT modify that application repository or its real PWA/Android implementation while preparing the transfer.**
