@@ -72,6 +72,7 @@ These are documentation-only edits; they are **not a claim** of deployed UI or b
 | Approved decision integrity | Main vs restoration branch Git blob for approved registry | **PASS:** identical SHA `f679725a5e69ca9e2de85438e57a413aedc8142f` |
 | Documentation relative imports | Static tree inspection of **45 MDX/draft documents** and **348 relative imports** | **PASS (static only):** no unresolved import path observed |
 | Inline documentation images | Static check for missing `alt` attributes on `<img>` tags in the same docs | **PASS (static only):** none missing |
+| Declared Storybook doc page links | Reviewed declared `<Meta title>` IDs and `?path=/docs/...--docs` destinations across **44 published MDX pages** | **PASS (static only):** referenced page IDs correspond to known published titles; individual anchor existence and browser route resolution not executed |
 | App baseline | Read actual PWA token, course, onboarding, character, voice and Android design/lesson/voice source files | **READ-ONLY INSPECTION:** product code not edited; exhaustive device parity not tested |
 | Documentation demos | Two modules inspected for explicitly fictional data and no backend network requests | **PARTIAL:** source review only, no browser/keyboard/runtime validation |
 | Storybook installation | `pnpm install --frozen-lockfile` | **NOT RUN / NO SUCCESS EVIDENCE** |
