@@ -1,6 +1,6 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/search-field.mdx`, Git blob `95c5ba716ace3f003d528fdd1f83b99876e1056d`; 5 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/search-field.mdx`, Git blob `95c5ba716ace3f003d528fdd1f83b99876e1056d`; 5 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
-> **Historical figure 1 — source reference only (not transferred):** Search field. Source asset: `./assets/search-field/search-field.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Search field. Source asset: `./assets/search-field/search-field.png`.
 
 # Search field
 
@@ -34,7 +34,7 @@ The choice to use a search field is determined by the need to efficiently locate
 
 The search field is bordered and displays placeholder text like "Search." When active, the input must change appearance to clearly indicate active typing.
 
-> **Historical figure 2 — source reference only (not transferred):** Two search fields: a default field with a magnifier icon and placeholder, and an active field showing a text cursor and a clear icon. Source asset: `./assets/search-field/default-active.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Two search fields: a default field with a magnifier icon and placeholder, and an active field showing a text cursor and a clear icon. Source asset: `./assets/search-field/default-active.png`.
 
 ## Placement
 
@@ -42,7 +42,7 @@ The search field is bordered and displays placeholder text like "Search." When a
 
 The search field must be placed immediately adjacent to the content list or data set it controls. It should never float or sit distant from the elements it is meant to filter.
 
-> **Historical figure 3 — source reference only (not transferred):** A report page with the search field placed directly above the results table it filters, alongside the other filter controls. Source asset: `./assets/search-field/contextual-placement.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** A report page with the search field placed directly above the results table it filters, alongside the other filter controls. Source asset: `./assets/search-field/contextual-placement.png`.
 
 ## Interaction
 
@@ -54,7 +54,7 @@ Selecting it clears the search term and submits in a single action, restoring re
 
 Focus stays in the field after clearing. A user who clears a search is usually about to type a different one. This differs from Clear filters, where the button removes itself when activated and focus has to be moved deliberately.
 
-> **Historical figure 4 — source reference only (not transferred):** A search field with a text cursor and a clear “X” button at the end of the input. Source asset: `./assets/search-field/clear-button.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** A search field with a text cursor and a clear “X” button at the end of the input. Source asset: `./assets/search-field/clear-button.png`.
 
 A search term is cleared only from the field. It does not produce an active filter, and Clear filters does not remove it — a user who clears all filters while a search is still applied will see results that remain narrowed by the search term. See [Active filters](active-filters.md) and [Clear filter](clear-filter.md).
 
@@ -66,7 +66,7 @@ Write placeholders in sentence case with no ending punctuation — "Search words
 
 Where the scope is too broad to carry in a placeholder, pair the field with an adjacent scope selector so the user can see and change what is being searched.
 
-> **Historical figure 5 — source reference only (not transferred):** A search field whose placeholder reads “Search report,” clarifying its scope. Source asset: `./assets/search-field/scope-clarity.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** A search field whose placeholder reads “Search report,” clarifying its scope. Source asset: `./assets/search-field/scope-clarity.png`.
 
 ## HSK AI product application
 

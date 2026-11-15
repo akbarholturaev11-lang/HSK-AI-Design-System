@@ -1,4 +1,4 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/popovers.mdx`, Git blob `0ff97d5cb07ece2706aa875bb1b66129ece59957`; 5 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/popovers.mdx`, Git blob `0ff97d5cb07ece2706aa875bb1b66129ece59957`; 5 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
 # Popovers
 
@@ -72,31 +72,31 @@ A user-opened interactive popover should make its controls accessible and restor
 
 ### Example 1: popovers
 
-> **Historical figure 1 — source reference only (not transferred):** Original anchored popover overview showing third-party UI, not HSK AI app design. Source asset: `./assets/popovers/popovers.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Original anchored popover overview showing third-party UI, not HSK AI app design. Source asset: `./assets/popovers/popovers.png`.
 
 **Use sparingly:** popovers are attached to existing triggers and only for information or short actions, never for mandatory consent or a long report form.
 
 ### Example 2: informational
 
-> **Historical figure 2 — source reference only (not transferred):** Source informational popover for a school learning queue, not HSK AI lesson history. Source asset: `./assets/popovers/informational.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Source informational popover for a school learning queue, not HSK AI lesson history. Source asset: `./assets/popovers/informational.png`.
 
 **Informational:** attach the explanation close to its real supported lesson/control, but never cover essential Hanzi, answers or playback controls.
 
 ### Example 3: feature highlight
 
-> **Historical figure 3 — source reference only (not transferred):** Original source highlight featuring Gems; no HSK AI Gems feature is implied. Source asset: `./assets/popovers/feature-highlight.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Original source highlight featuring Gems; no HSK AI Gems feature is implied. Source asset: `./assets/popovers/feature-highlight.png`.
 
 **Feature highlight:** only use when the app actually ships that feature; avoid unsupported reward counters or automated school-task announcements.
 
 ### Example 4: system guidance
 
-> **Historical figure 4 — source reference only (not transferred):** Original proctor-themed system guidance; the character and assessment role do not exist in HSK AI. Source asset: `./assets/popovers/system-guidance.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** Original proctor-themed system guidance; the character and assessment role do not exist in HSK AI. Source asset: `./assets/popovers/system-guidance.png`.
 
 **System guidance:** present brief neutral instructions if they genuinely help the learner. Do not introduce another company's mascot, hint restrictions or user roles.
 
 ### Example 5: adaptive anchoring
 
-> **Historical figure 5 — source reference only (not transferred):** Source illustration of an anchored popover that shifts away from the viewport edge. Source asset: `./assets/popovers/adaptive-anchoring.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** Source illustration of an anchored popover that shifts away from the viewport edge. Source asset: `./assets/popovers/adaptive-anchoring.png`.
 
 **Adaptive anchoring:** flip to available space, keep the trigger visible and avoid the keyboard/safe area. Use a professionally composed HSK AI sheet/dialog when a phone has insufficient space, maintaining real actions, focus and draft behavior.
 

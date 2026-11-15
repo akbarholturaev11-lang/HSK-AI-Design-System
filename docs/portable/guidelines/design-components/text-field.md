@@ -1,6 +1,6 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/text-field.mdx`, Git blob `3a435442dda2c99e9f21f619aa41bc92ae0f0706`; 8 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/text-field.mdx`, Git blob `3a435442dda2c99e9f21f619aa41bc92ae0f0706`; 8 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
-> **Historical figure 1 — source reference only (not transferred):** Text field. Source asset: `./assets/text-field/text-field.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Text field. Source asset: `./assets/text-field/text-field.png`.
 
 # Text field
 
@@ -34,26 +34,26 @@ The choice to use a text field is determined by the need to capture specific, of
 
 Label is positioned outside and above the input box. The input box is empty until text is entered.
 
-> **Historical figure 2 — source reference only (not transferred):** A “Username” field shown twice: an empty default field above, and below it the same field in its active state with a text cursor and a darker border. Source asset: `./assets/text-field/states-1.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** A “Username” field shown twice: an empty default field above, and below it the same field in its active state with a text cursor and a darker border. Source asset: `./assets/text-field/states-1.png`.
 
 ### Placeholder text
 
 Serves as a brief, transient hint inside an input field to help guide user input. It is best used to demonstrate genuinely required formatting, or clarify an ambiguous expected response. For a Chinese text entry, an example may contain Hanzi or pinyin **only if the field truly accepts that format**. Do not impose US date formatting across HSK AI's supported languages.
 Because this text disappears when a user begins typing, it must never replace a persistent external label.
 
-> **Historical figure 3 — source reference only (not transferred):** A “Name” field with the sub-label “Start Description” and gray placeholder text reading “Example: Ms. Z” inside the input. Source asset: `./assets/text-field/states-2.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** A “Name” field with the sub-label “Start Description” and gray placeholder text reading “Example: Ms. Z” inside the input. Source asset: `./assets/text-field/states-2.png`.
 
 ### Required fields
 
 Use a localized equivalent of "Required" next to the persistent field label instead of an unexplained asterisk. This is more accessible and explicit — users don’t need to find and interpret a legend.
 
-> **Historical figure 4 — source reference only (not transferred):** An “Email” field with a “Required” label inline to the right of the field label, above an empty input. Source asset: `./assets/text-field/states-3.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** An “Email” field with a “Required” label inline to the right of the field label, above an empty input. Source asset: `./assets/text-field/states-3.png`.
 
 ### Helper text
 
 Used for any helpful description text that would otherwise be hidden in a placeholder. This information is more useful when persistent, and sits below the label and above the input.
 
-> **Historical figure 5 — source reference only (not transferred):** A “Name” field with helper text “This is the name your students see” between the label and the empty input. Source asset: `./assets/text-field/states-4.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** A “Name” field with helper text “This is the name your students see” between the label and the empty input. Source asset: `./assets/text-field/states-4.png`.
 
 ## States
 
@@ -61,19 +61,19 @@ Used for any helpful description text that would otherwise be hidden in a placeh
 
 When input is invalid, use the approved HSK AI semantic error color on the field and label together with **specific explanatory text**. Ordinary brand-red primary actions are not the same as destructive or input-error status. Never flag a valid Hanzi, tone mark or Chinese punctuation as an error solely because it is not ASCII.
 
-> **Historical figure 6 — source reference only (not transferred):** A “Username” field in its error state: red label, a red border around the value “meeeeeeeels@aim.com”, and a red error message below reading “No account found with that username. Please try again or create a new account”. Source asset: `./assets/text-field/states-5.png`.
+> **Historical figure 6 — source figure reference (only approved samples, if any, are linked below):** A “Username” field in its error state: red label, a red border around the value “meeeeeeeels@aim.com”, and a red error message below reading “No account found with that username. Please try again or create a new account”. Source asset: `./assets/text-field/states-5.png`.
 
 ### Read-only
 
 Displays the current value while explicitly preventing interaction. Unlike disabled, read-only maintains clear color contrast — the content is still meant to be read. Always include helper text explaining why the field is locked, using the current learner's language. Do not hide readable Chinese characters or text merely because the field is read-only.
 
-> **Historical figure 7 — source reference only (not transferred):** A read-only “Name” field showing “Ema Carinyo” on a shaded background, with a lock icon and the helper text “Only teachers can edit this”. Source asset: `./assets/text-field/states-6.png`.
+> **Historical figure 7 — source figure reference (only approved samples, if any, are linked below):** A read-only “Name” field showing “Ema Carinyo” on a shaded background, with a lock icon and the helper text “Only teachers can edit this”. Source asset: `./assets/text-field/states-6.png`.
 
 ### Disabled
 
 Used when a prerequisite action has not been fulfilled. The field is grayed out and non-interactive. Once the dependency is met, it no longer displays as disabled. Do not use disabled when read-only is more appropriate — disabled implies unavailability, not restriction.
 
-> **Historical figure 8 — source reference only (not transferred):** A “Password” field in its disabled state: a grayed-out label above an empty, faintly outlined input that cannot be interacted with. Source asset: `./assets/text-field/states-7.png`.
+> **Historical figure 8 — source figure reference (only approved samples, if any, are linked below):** A “Password” field in its disabled state: a grayed-out label above an empty, faintly outlined input that cannot be interacted with. Source asset: `./assets/text-field/states-7.png`.
 
 ## HSK AI Chinese and multilingual text-entry rules
 

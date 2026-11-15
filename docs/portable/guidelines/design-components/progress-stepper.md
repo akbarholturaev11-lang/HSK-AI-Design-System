@@ -1,6 +1,6 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/progress-stepper.mdx`, Git blob `fcc32708dcf3fdf4466426f4270466d1fbfe5f8c`; 4 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/progress-stepper.mdx`, Git blob `fcc32708dcf3fdf4466426f4270466d1fbfe5f8c`; 4 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
-> **Historical figure 1 — source reference only (not transferred):** Progress stepper. Source asset: `./assets/progress-stepper/progress-stepper.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Progress stepper. Source asset: `./assets/progress-stepper/progress-stepper.png`.
 
 # Progress stepper
 
@@ -37,7 +37,7 @@ Use for lightweight, motivational flows like onboarding where steps don't need t
 
 On a full-screen HSK AI onboarding flow, place the indicator where the professionally composed mobile task layout supports clear progression, without covering the primary button, safe area or keyboard. The source's bottom-left desktop placement is a reference rather than a mandatory phone position.
 
-> **Historical figure 2 — source reference only (not transferred):** Variants 1. Source asset: `./assets/progress-stepper/variants-1.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Variants 1. Source asset: `./assets/progress-stepper/variants-1.png`.
 
 ### Complex
 
@@ -46,14 +46,14 @@ Use when steps have distinct names, the flow is task-critical, or a user may nee
 
 For HSK AI's truly task-critical sequential flows, keep the named stages in a stable, visible place that suits the professionally designed phone navigation and the actual flow. The source's centered top desktop position does not override iPhone or Android safe areas.
 
-> **Historical figure 3 — source reference only (not transferred):** Variants 2. Source asset: `./assets/progress-stepper/variants-2.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Variants 2. Source asset: `./assets/progress-stepper/variants-2.png`.
 
 ## Copy
 
 Applies to step labels in the complex variant only.
 Keep labels to 1–2 words, favoring a single word whenever it stands on its own — reach for two only when one word isn't clear enough. Labels should name the stage rather than instruct the user. Many words work as both nouns and verbs (Review, Order) — that's fine as long as the label reads as the name of the step, not a command ("Review," not "Review & assign"; "Order", not "Set order"). Write in sentence case.
 
-> **Historical figure 4 — source reference only (not transferred):** Copy. Source asset: `./assets/progress-stepper/copy.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** Copy. Source asset: `./assets/progress-stepper/copy.png`.
 
 ## HSK AI onboarding and account safety
 

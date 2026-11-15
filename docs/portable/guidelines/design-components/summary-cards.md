@@ -1,4 +1,4 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/summary-cards.mdx`, Git blob `59720700a5d84a512397e092e003e9d89d8842f1`; 3 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/summary-cards.mdx`, Git blob `59720700a5d84a512397e092e003e9d89d8842f1`; 3 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
 # Summary cards
 
@@ -53,19 +53,19 @@ Refer to [Data reports](../design-patterns/data-reports.md) and [Data visualizat
 
 ### Overview
 
-> **Historical figure 1 — source reference only (not transferred):** Historical summary card layout example containing source metrics, not real HSK AI analytics. Source asset: `./assets/summary-cards/header.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Historical summary card layout example containing source metrics, not real HSK AI analytics. Source asset: `./assets/summary-cards/header.png`.
 
 A summary strip should lead with a verified high-value number and its period; secondary comparison does not overpower the figure.
 
 ### Anatomy
 
-> **Historical figure 2 — source reference only (not transferred):** Original example of plain stat cards and directional badges; the sample scores are not HSK AI grading rules. Source asset: `./assets/summary-cards/stat-cards.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Original example of plain stat cards and directional badges; the sample scores are not HSK AI grading rules. Source asset: `./assets/summary-cards/stat-cards.png`.
 
 **Stat card:** include metric label, value, unit and time period. A color-coded upward/downward indicator must only describe a real comparable change, with a readable explanation.
 
 ### Controls and comparison
 
-> **Historical figure 3 — source reference only (not transferred):** Source example of summary cards with explicit links to detailed views. Source asset: `./assets/summary-cards/stat-cards-clickable.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Source example of summary cards with explicit links to detailed views. Source asset: `./assets/summary-cards/stat-cards-clickable.png`.
 
 **Actionable card:** only show a View/Details affordance if a supported destination exists and the user is authorized. A clickable card requires focus, keyboard semantics and a visible destination label.
 

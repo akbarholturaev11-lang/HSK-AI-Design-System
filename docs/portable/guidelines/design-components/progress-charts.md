@@ -1,4 +1,4 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/progress-charts.mdx`, Git blob `b68a79840726291984c6227ce997fa4938176551`; 2 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/progress-charts.mdx`, Git blob `b68a79840726291984c6227ce997fa4938176551`; 2 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
 # Progress charts
 
@@ -70,13 +70,13 @@ The following demonstration contains **fictional example values only**. It illus
 
 ### Overview
 
-> **Historical figure 1 — source reference only (not transferred):** Source progress chart overview; it is not HSK AI's Gems or school reward feature. Source asset: `./assets/progress-charts/header.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Source progress chart overview; it is not HSK AI's Gems or school reward feature. Source asset: `./assets/progress-charts/header.png`.
 
 A progress bar requires a real, validated numerator and target in the **same units**; otherwise use a different view.
 
 ### Anatomy
 
-> **Historical figure 2 — source reference only (not transferred):** Original large progress-chart container showing current versus target observations. Source asset: `./assets/progress-charts/container.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Original large progress-chart container showing current versus target observations. Source asset: `./assets/progress-charts/container.png`.
 
 **Progress anatomy:** clear title, measured current amount, real target, optional marker only where an actual schedule exists and meaningful completion semantics.
 
