@@ -9,7 +9,7 @@
 - Protected main baseline inspected: `007c5c474909d81208483772f3c24cf7e656d55e`.
 - Restoration review branch: `restore/hsk-ai-professional-unified-audit-20261115`.
 - Review gate: [draft PR #4](https://github.com/akbarholturaev11-lang/HSK-AI-Design-System/pull/4).
-- Product code read-only comparison: `akbarholturaev11-lang/HSK-AI-Bot` `main` (observed ref `f4a1f8aa36859419a5dc94ae66cc7b23d6b49dd3`).
+- Product code read-only comparison: `akbarholturaev11-lang/HSK-AI-Bot` `main` (implementation files initially read at `f4a1f8aa36859419a5dc94ae66cc7b23d6b49dd3`, then rechecked against `839bdebb6d4b41ec2015ec734bc75faefa8eee17`). The sole intervening commit **added** `HSK_AI_UI_UX_IMPROVEMENTS.md` and did **not** modify the inspected implementation files. That newly added document is a **future UI/UX discussion and implementation plan**, not proof that its planned features have shipped or an override of this design system's approved decisions.
 - Main's `DESIGN_SYSTEM_APPROVED_DECISIONS_AND_RESTORATION_TASKS.md` was brought into the unified branch **byte-for-byte with identical Git blob SHA** `f679725a5e69ca9e2de85438e57a413aedc8142f`. It was not rewritten or relaxed.
 - The production HSK-AI-Bot repository was **not modified**.
 
