@@ -4,6 +4,14 @@
 
 This is a Storybook documentation project, not the application itself and not a production component library. For Codex or other code agents, **read [AGENTS.md](AGENTS.md) first**. The former Khan Academy product rules do not apply to HSK AI.
 
+## Governing decision: professional design first
+
+**Professional UI/UX rules are the target standard, not the current appearance of the app.** Keep transferable professional design decisions, including small anatomy/state/spacing/interaction details. Apply only minimal, evidenced HSK AI compatibility adaptations for **actual function, backend data and permissions, brand identity, Chinese learning correctness, accessibility, and iPhone PWA/Android platform behavior**. Existing visual implementation does **not** have blanket authority to override the professional design.
+
+Read [Professional-first decision contract](DESIGN_SYSTEM_PROFESSIONAL_FIRST_CONTRACT.md) before any new guideline or later UI implementation. Treat historical source illustrations as design evidence with unresolved asset rights, not a license to re-publish artwork. Preserve a rule as reference-only when the corresponding HSK AI feature does not yet exist rather than erasing the professional solution.
+
+**Phase boundary:** complete the design-system rule adaptation first. Only afterward, under a **separate task**, audit and bring each real HSK AI PWA/Android UI screen into alignment with this design standard; do not change product code in the present phase.
+
 ## What is authoritative
 
 - **HSK AI-specific design guidance:** `__docs__/` and especially [Typography](__docs__/design-foundations/typography.mdx), [Illustration](__docs__/design-foundations/illustration.mdx), [HSK AI characters](__docs__/design-components/hsk-ai-characters.mdx), [Layout](__docs__/design-foundations/layout.mdx).
