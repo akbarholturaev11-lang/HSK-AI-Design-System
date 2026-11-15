@@ -78,6 +78,19 @@ Distinguish **not configured**, **not yet recorded**, **filtered to none**, **no
 - Offer a next action only when the user can actually fix the cause from that screen.
 - Do not mandate another product's “No report data” graphic or account-roster synchronization.
 
+### Empty-state placement and copy anatomy
+
+Empty states should retain the **known context** and replace only the unavailable data. This keeps the source design's useful container-versus-page distinction while removing its mandated school illustration and roster actions.
+
+| Report scope | Preserve | Replace or hide | Action |
+| --- | --- | --- | --- |
+| One empty chart, other charts valid | Section heading and any date/scope control that could change the result | That chart and its data-only controls, such as a chart/table toggle or download | A local action only if this screen can solve the actual cause |
+| All report sections empty for the same verified reason | Report title, explanation and relevant global scope | Repeated empty cards that add no information | One well-scoped primary action, only when genuinely available |
+| Dedicated list/table with no records | Page title, filters/search and truthful scope | Data rows; disable export or row actions that require records | An appropriate setup or retry action only if its precondition exists |
+| Valid records excluded by filters | Applied filter controls and current query | Matching rows/marks only | Clear **optional** filters without erasing unrelated search or mandatory restrictions |
+
+**Copy structure:** (1) a concise sentence-case headline naming what is missing, (2) one localized sentence explaining the *verified* reason or next condition, and (3) an optional, short verb-first action that actually works. Use “yet” only when data is genuinely expected; never promise an event, lesson, payment or analytics record that HSK AI cannot measure. Do not render a success or celebratory character state for an empty report.
+
 ### Filtered to nothing
 
 Keep the relevant active filters visible. Offer a real `Clear filters` action only if it resets the optional filters; do not silently erase an entered query or mandatory account/period scope.
@@ -91,6 +104,18 @@ Keep known labels and structure visible. A shape-matching skeleton may stand in 
 When loading fails, distinguish a **whole-page failure**, an **isolated chart failure**, and a **refresh failure with a valid earlier snapshot**. Keep earlier valid data when appropriate and visibly label its timestamp. Provide Retry only if a real retry exists. Preserve ownership protection on logout/account switches and make status changes accessible.
 
 Do not hide critical error details behind the optional two-line chevron pattern. The user and an authorized admin require recoverable status and honest diagnostics, not a falsely reassuring success toast.
+
+### Failure scope, previous data and permission
+
+| Verified state | What stays visible | What changes |
+| --- | --- | --- |
+| Initial full-page load failed | Title, explanation, filters already known locally | One accessible failure message in place of data and a working retry control if available |
+| One chart/container failed | All unrelated valid charts, failed section heading and its relevant controls | A localized, accessible error inside only that container |
+| Refresh failed with an earlier authorized snapshot | Previously verified values **with their real timestamp** | One prominent update-failed notice; do not present the old values as current |
+| Permission was removed or the account changed | Non-sensitive page structure and safe navigation only | Clear protected data and cross-account cached previews; do not show previous user's totals |
+| Data is partial or still processing | Verified recorded subset, known definitions and period | Explain coverage limitations, do not turn missing events into zero or a complete total |
+
+Retry must not destroy the user's search, optional filters, input or previously loaded authorized data. Screen readers must be informed of a newly surfaced error. A permanently failing retry needs a safe alternative such as a later retry or appropriate support path; do not invent an escalation action that is not present in the app.
 
 ### Incomplete or insufficient data
 
