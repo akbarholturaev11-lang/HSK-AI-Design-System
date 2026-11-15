@@ -48,7 +48,7 @@ Do use when signaling a non-blocking but significant future risk or communicatin
 
 Do use when signaling the successful completion of a complex or high-stakes transactional action, especially if that action involves multiple steps or is difficult to reverse, ensuring the copy is specific, data-driven, and includes direct links or identifiers to the resulting content for immediate verification.
 
-> **Illustrative demo:** Historical visual example (not a shipped HSK AI component). Example UI: banner success.
+> **Illustrative demo:** Success banner with a clear success/check-circle icon (source example uses the Phosphor `checkCircleBold` glyph), verified outcome copy, related result/detail links where real, and an optional dismissal X. Its linked table/report titles and saved-state example are fictional and **not proof of HSK AI data or success**. Prefer a verified HSK semantic success role, not the ordinary brand-action color.
 
 ### Informational/feature
 
