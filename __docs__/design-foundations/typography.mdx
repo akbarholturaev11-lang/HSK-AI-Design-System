@@ -6,14 +6,14 @@ import {Meta} from "@storybook/addon-docs/blocks";
 
 HSK AI teaches Chinese through **Hanzi, pinyin and a learner-language meaning**. Typography is therefore part of instructional accuracy, not only visual styling. This HSK AI-specific foundation is **new**: the upstream Khan Academy guidelines do not contain a standalone typography page to preserve. The original <a href="./?path=/docs/design-guidelines-components-inputs-text-field--docs">Text field</a> and component-copy guidance remain authoritative for their own interaction patterns.
 
-> **Documentation boundary:** Preserve the actual iPhone PWA and Android type rendering, the established HSK AI characters and the verified learning content. This page describes intended roles and checks. It does not install a font, invent localization keys, force every exercise to reveal the answer, or replace an existing production design.
+> **Documentation boundary:** The current PWA and Android typography below is an **implementation inventory, not an endorsement that every current font size or face is optimal**. This page defines a professional target hierarchy to validate visually and accessibly before any code migration. Preserve real HSK AI learning content, characters, lesson states, theme semantics and approved interactions. This file does not install fonts, change code or reveal an exercise answer.
 
 ## Principles
 
 1. **Accurate first.** Hanzi, pinyin tone marks, character order and translation meaning must remain correct after layout, scaling and line wrapping.
 2. **The exercise determines what is visible.** A teaching card may display Hanzi, pinyin and translation together; a listening, recognition or quiz task may deliberately hide one or more until the relevant reveal state.
 3. **One reading hierarchy.** In an ordinary new-word display, the existing PWA order is **Hanzi → pinyin → meaning → audio/replay**. When a task is specifically about pronunciation or translation, adapt emphasis to that task without mixing the text's meanings.
-4. **Use the product's own font roles and theme.** Generic source-design fonts or demo swatches must not override the approved HSK AI tokens or the system's native Android typography.
+4. **Use a professional, coherent type system.** Reuse the product's existing semantic font roles where suitable, but audit and improve inconsistent sizes, weights and fallbacks before rollout. Generic source-design fonts or demo swatches must not override HSK AI themes.
 5. **Localization is content, not decoration.** Uzbek, Russian and Tajik labels and translations need real space and meaningful accessible labels. Never shrink a word until a tone mark becomes unreadable.
 
 ## Existing typography sources
@@ -30,7 +30,76 @@ The production PWA already defines these values in `app/static/course_v3_data/de
 
 The light theme currently uses dark ink on light paper and the `--hsk-cinnabar` accent `#E04A40`. The dark theme uses light ink on dark paper and **the same token** changes to cyan `#20BCEB`. **Do not hard-code the light accent in dark mode.**
 
-On Android, inspect existing native text styles, font fallback and dynamic font scaling before choosing an equivalent. A PWA `px` dimension is **not** a 1:1 Android `sp` instruction; use the platform's supported typography and scaling. No new CJK font file or web font dependency is introduced by this guideline.
+On Android, `android/app/src/main/java/com/pomp/hskai/core/design/Type.kt` already defines `PompTypography` (32/24/20/16/14 sp role sizes) plus `PompTextStyles` (`hanziLarge` 56 sp, `hanziMedium` 32 sp, `pinyin` 16 sp). Android currently uses the platform's default sans font for ordinary UI and a generic Serif family for learning Hanzi. These are **observed values, not evidence that all other Android screens use the role styles consistently**. A PWA `px` value is not a 1:1 Android `sp` instruction. No new font file or web font dependency is introduced by this documentation.
+
+## Professional typography direction
+
+The original HSK AI PWA already uses a sensible system UI stack, while Android has a real Material 3 typography definition. This is a good foundation, **but the screens are not yet one consistent professional text system**: the PWA mixes numerous ad-hoc sizes (including some secondary labels around 9–11 px); different screen components vary in weight, spacing and line height. A polished outcome requires clear roles and visual verification, not merely replacing the font family.
+
+### Font families and visual character
+
+- **Interface and localized body:** retain a native system sans-serif approach — Apple system text / San Francisco on iPhone, Android's Material 3 system sans typography on Android — with appropriate Cyrillic, Latin and tone-mark glyph fallback. Standardize actual text roles across screens rather than bundling a fashionable but unverified third-party font.
+- **Chinese body text and smaller Hanzi:** prefer readable modern Chinese sans-serif glyphs, such as available PingFang SC or Noto Sans SC system fallback, when stroke clarity is better. Do not force a thin decorative serif for small Chinese sentences.
+- **Prominent learning Hanzi:** retain the approved Songti/Chinese serif appearance on screens where it is legible and visually intentional; compare it directly against a modern CJK sans option on small devices. Do not enforce one global serif swap without checking the correct/incorrect states, lesson cards and character recognition.
+- **Pinyin:** use the readable UI sans stack with reliable macrons/caron/umlaut glyphs and enough vertical headroom. Prefer restrained weight and near-normal tracking; heavy bold and exaggerated letter-spacing make tones harder to scan.
+- **No gratuitous font inventory:** one coherent UI family with its script fallbacks, plus one deliberate Hanzi display role, is the target. Do not add font downloads or font licensing dependencies without a specific reason and an accessibility/performance review.
+
+### Proposed semantic type scale (design target, not existing app configuration)
+
+| Text role | PWA reference range | Android reference | Intended hierarchy |
+| --- | --- | --- | --- |
+| Large, focused Hanzi | About 40–56 CSS px where a word is the main content | Existing 32/56 sp Hanzi roles as starting points | Most prominent only in learning-focused contexts |
+| Chinese example/sentence | About 22–28 CSS px when it is the main exercise text | Native scalable style chosen by screen | Readable strokes, no clipped lines |
+| Page/section heading | 20–24 CSS px | Existing 20–24 sp title roles | Clear title, restrained use of heavy bold |
+| Main body and translations | Normally 16 CSS px | Existing 16 sp body role | Comfortable continuous reading, sufficient line-height |
+| Pinyin | Usually 16–20 CSS px; can be larger on dedicated pronunciation screens | Existing 16 sp pinyin role; scale where needed | Tone marks always readable and visually associated with Hanzi |
+| Secondary hints and metadata | Usually 14 CSS px; 12–13 only for genuinely nonessential short metadata | Existing 14 sp body/label roles where suitable | Supportive, not the primary instruction |
+| Critical instruction, price, limit, validation/error | **Never** reduced merely to make a compact card | Scalable body/label style suited to importance | Full content visible and understandable |
+
+These ranges are **starting points for visual prototypes and audits**, not a requirement to update every CSS declaration blindly. Follow actual mobile accessibility scaling, language length and existing HSK AI component constraints. Aim for a small number of consistently named roles, typically regular (400), medium (500), semibold (600) and bold (700) where the selected platform font supports them; do not mix arbitrary weights 550/650/750/850 across otherwise equivalent screens.
+
+- General body line-height should allow easy reading (roughly 1.45–1.6 on PWA where appropriate). Hanzi and pinyin require enough line-height to preserve strokes and diacritics; do not force an aggressively tight fixed-height text box.
+- Avoid heavy all-caps, unjustified tracking and font-weight mismatches, especially on localized text and tonal pinyin.
+- Use the approved light/dark semantic color roles, readable contrast, coherent spacing and natural wrapping. Do not attempt to compensate for poor hierarchy by creating more colored text, badges or decorations.
+- A design reviewer must compare **actual screenshots** for PWA Safari and Android at ordinary and enlarged text, including Hanzi, tone marks and all three learner-interface languages, before approving a typography migration.
+
+## Inline collapse/expand of long supporting text
+
+**Previously agreed HSK AI interaction rule:** optional explanatory text is normally condensed to **one or two visible lines by default**, including a description that is only slightly longer than a single row. A visible, localized **“Подробнее” / “Кўпроқ кўриш”** action expands the **same paragraph in its current place**. A corresponding **“Свернуть” / “Йиғиш”** action collapses it again. Use a verified Tajik equivalent in the Tajik interface. **Do not open a popup, new card, drawer or separate page just to read the remainder.**
+
+### Eligible content — may be collapsed
+
+- Secondary explanations, optional educational descriptions and extra help **that is not needed to decide or complete the current step**.
+- Noncritical supplementary context in cards, tips and settings descriptions.
+- When an existing sentence exceeds the available row, allow the disclosure to appear even if the text is only **one line longer** than the compact limit.
+
+### Must remain fully readable — never collapse
+
+- The current **lesson or exercise question**, answer choices, active instruction, essential Hanzi/pinyin/meaning and any information necessary to complete a decision.
+- **Payment terms, subscription amounts/durations, renewal conditions, limits and restrictions**.
+- Security/privacy warnings, failed-save notices, accessibility guidance essential to completing the step, error details needed for recovery, and mandatory consent text.
+- Form labels, required instructions and actual learner-entered text. A free-form textarea must remain editable and must never masquerade as a collapsed description.
+- Content that a recognition/translation exercise deliberately hides until its real answer/reveal stage is **not** this disclosure pattern; do not leak hidden answers through the “More” control.
+
+### Exact interaction contract
+
+1. Default: **one line** for compact optional hints, up to **two lines** for longer supporting descriptions. Choose consistently by component; don't vary arbitrarily for identical cards.
+2. Show the expand affordance **only if the rendered text actually overflows** at the current width, language and accessible font size. A short description is not a fake expandable item.
+3. Expand **in place**, restoring the entire explanation with natural line wrapping, not a popup or scrolling text box. Collapse restores the agreed compact limit without wiping nearby input or learner progress.
+4. Use an actual accessible button, not a decorative text span: keyboard/touch operable with `aria-expanded` and `aria-controls` on PWA, and equivalent Android Compose accessibility semantics. An open state must be perceivable without color alone.
+5. Keep the button next to or immediately after the paragraph it controls, and preserve sensible keyboard focus. Ensure changes in height do not unexpectedly move the user's reading position or conceal action buttons; honor reduced-motion preferences.
+6. Do not truncate semantic content in the saved data. The collapsed state is **presentation only**. On localized font scaling and after orientation changes, re-evaluate whether the label is needed. The expanded text must remain selectable and accessible.
+7. For Hanzi/pinyin/translation blocks, only collapse a genuinely **supplementary explanation**. Never cut the learning target or its required pronunciation/meaning merely because it takes two lines.
+
+### Illustrative presentation (noninteractive)
+
+**Collapsed supporting note (1–2 lines):**  
+“This word has an additional usage in longer sentences…” **Подробнее**
+
+**Expanded in the same position:**  
+“This word has an additional usage in longer sentences. It can express a different nuance depending on context and should be interpreted with the full example.” **Свернуть**
+
+These labels illustrate the text behavior, not existing localization keys or an already deployed HSK AI UI change.
 
 ## Learning text hierarchy
 
@@ -108,9 +177,10 @@ Use the source-derived <a href="./?path=/docs/design-guidelines-components-input
 2. Is pinyin correct, readable, tone-marked where supplied and bound to the right entry?
 3. Is the translation in the intended learner language and available at the exercise's correct reveal stage?
 4. Do the approved UI and CJK font stacks render the necessary glyphs without distortion?
-5. Do light/dark theme, narrow screen, keyboard and enlarged text preserve all essential text?
+5. Do light/dark theme, narrow screen, keyboard and enlarged text preserve all essential text? Are the type roles consistent and the smallest labels readable?
 6. Does the component work with focus, screen readers and audio controls, without changing a lesson's scoring or feedback?
 7. Are PWA and Android differences explicitly validated rather than assumed from a shared screenshot?
+8. Are optional lengthy descriptions condensed to one/two lines and expanded in place only when they overflow — without hiding a task, question, payment, limit or safety warning?
 
 ## Implementation boundary
 
