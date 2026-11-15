@@ -98,6 +98,27 @@ The following observations came from inspecting `app/static/course_v3_data/iphon
 4. If a future change makes attachments opt-in, test user privacy and do not silently attach a screenshot to an unrelated satisfaction question.
 5. Keep real HSK AI localized buttons, focus return and touch sizes. Never overwrite a user's account or session to match the school-based source illustration.
 
+## Restored professional feedback-pattern details
+
+### Select a feedback type by the user's goal
+
+- **Contextual sentiment** concerns a particular real lesson, exercise, AI response or supported feedback subject. **General feedback** covers the experience or feature suggestion. **Technical reporting** describes a reproducible failure with diagnostics only under the existing consent and privacy rules.
+- Do not force a universal thumb-up/down widget on HSK AI. Its existing server-prepared lesson survey can collect **both positive and negative aspects** in one response; retain the real question list, eligibility and response contract.
+- If a design adds selectable feedback reasons, make them user-language labels of **one to three words**; roughly **five choices plus “Other”** is a usable upper-bound heuristic, not a backend schema change. Offer distinct lists for positive and negative intent only when the actual flow uses separate intent states.
+
+### Compose text and choose placement
+
+- Write a prompt about what the learner has just done, not what a product team wants to measure. Never use another platform's classroom, video editor or paid tutor as a suggested HSK AI feature.
+- Show feedback close to the context **without covering the required lesson action**. On mobile, the actual existing sheet/dialog and keyboard/safe-area behavior take precedence over source desktop popovers.
+- Allow free-text when the active question requires or permits it; do not change optional comment rules or force an attachment. When a bug screenshot could reveal personal data, **explicit opt-in** is the desired target and the currently observed default-on behavior remains an unresolved app defect.
+
+### Pending, confirmed and failed state
+
+- Keep selected choices and text while the response is pending or a retryable error occurs. Disable only the particular duplicate-submit action, not the ability to copy or review an unsent draft.
+- Treat a successful response as successful **only after the verified server acknowledgment**. Do not count a click as a submitted survey, and do not send one response twice after reconnect.
+- Dismissal must not silently throw away unsent content. Where the current PWA does not meet this requirement, document it as a remediation task, **not** a tested current capability.
+- For technical reports, use the real support endpoint and actual request ID/status where provided, not a simulated confirmation or a fake “support received” banner.
+
 ## Scope and verification
 
 Server feedback eligibility, answers, ownership checks, release campaign rules and actual app behavior must not be changed during a **documentation-only** update. The Android reporting workflow was not independently confirmed in this audit; inspect its present screens before adopting parity claims or rewriting code.
