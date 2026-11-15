@@ -133,3 +133,22 @@ This is not the same action as Clear filters in the filter bar, which removes ac
 - Reset returns controls to their defined defaults and stays pending until Apply. Clearing active filters is different and has its own behavior.
 - Maintain the source's rules for stable control shape, real dependent options and removal of orphaned selections. Group counts must match the filtered authoritative records.
 - The retained source diagrams are reference illustrations only; do not reproduce another app's teacher or school filter bars as HSK AI product screens.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: adaptive-controls-1.png](../../examples/design-components/modals-selection/adaptive-controls-1.png)
+
+- [adaptive-controls-1.png](../../examples/design-components/modals-selection/adaptive-controls-1.png) — exact source blob `607186ecde80` (illustrated above)
+- [adaptive-controls-2.png](../../examples/design-components/modals-selection/adaptive-controls-2.png) — exact source blob `ede268495f78`
+- [category-labels.png](../../examples/design-components/modals-selection/category-labels.png) — exact source blob `2f4d31f73666`
+- [common-placement.png](../../examples/design-components/modals-selection/common-placement.png) — exact source blob `74f553b0cdb4`
+- [default-modal.png](../../examples/design-components/modals-selection/default-modal.png) — exact source blob `c9a9e7ccb9f7`
+- [footer-actions.png](../../examples/design-components/modals-selection/footer-actions.png) — exact source blob `3b67ce148a59`
+- [internal-layout.png](../../examples/design-components/modals-selection/internal-layout.png) — exact source blob `16fb5006e959`
+- [modals-selection.png](../../examples/design-components/modals-selection/modals-selection.png) — exact source blob `149824bdf5fa`
+- [parent-child-1.png](../../examples/design-components/modals-selection/parent-child-1.png) — exact source blob `f0019b767d6c`
+- [parent-child-2.png](../../examples/design-components/modals-selection/parent-child-2.png) — exact source blob `821cc47eb100`
+- [reset-filters.png](../../examples/design-components/modals-selection/reset-filters.png) — exact source blob `61b0999cdb0f`
+- [toggle-behavior.png](../../examples/design-components/modals-selection/toggle-behavior.png) — exact source blob `662cf3582754`

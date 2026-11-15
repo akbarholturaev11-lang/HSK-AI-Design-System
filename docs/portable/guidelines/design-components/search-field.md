@@ -76,3 +76,15 @@ Where the scope is too broad to carry in a placeholder, pair the field with an a
 - Keep the original rule: clearing the typed query restores the result set constrained **only by remaining filters**; it does not silently clear an HSK-level selection, selected date or sort order. Keep keyboard focus in the field and announce updated result counts.
 - Use the supported language's concise field label and the HSK AI Phosphor search icon for new ordinary UI. On PWA, the clear button's tap area must be at least 44 CSS px; on native Android 48 dp.
 - Search must not discard a partially answered exercise, voice input, saved vocabulary or payment form. When searching is not implemented in a view, this guideline does not require adding it.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: auto-suggestion.png](../../examples/design-components/search-field/auto-suggestion.png)
+
+- [auto-suggestion.png](../../examples/design-components/search-field/auto-suggestion.png) — exact source blob `22ec012e71c7` (illustrated above)
+- [clear-button.png](../../examples/design-components/search-field/clear-button.png) — exact source blob `7e437d3d4a7c`
+- [default-active.png](../../examples/design-components/search-field/default-active.png) — exact source blob `f7ecf0bdc2a7`
+- [scope-clarity.png](../../examples/design-components/search-field/scope-clarity.png) — exact source blob `f6fb0b363183`
+- [search-field.png](../../examples/design-components/search-field/search-field.png) — exact source blob `a3021506ac18`

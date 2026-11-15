@@ -106,3 +106,11 @@ Never use an expected-by-today marker or 100% unless the backend records the tar
 ## Implementation boundary
 
 This is an HSK AI guideline, not a prebuilt progress chart or an instruction to edit learning/scoring endpoints. It deliberately removes source-school, grade-target, Gem and assignment chart demos after retaining their valid general progress principles.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: header.png](../../examples/design-components/progress-charts/header.png)
+
+- [header.png](../../examples/design-components/progress-charts/header.png) — exact source blob `133c27c0edc2` (illustrated above)

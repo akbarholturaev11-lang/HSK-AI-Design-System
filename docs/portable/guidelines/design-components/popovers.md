@@ -129,3 +129,11 @@ Opening should come from an actual control, not a surprise during a scored exerc
 ## Implementation boundary
 
 These are HSK AI interaction rules, not a requirement to introduce a popover library. Existing working **functional contracts**, platform navigation destinations and server-owned state remain authoritative, while the professional popover design takes precedence over today's cosmetic implementation. No foreign character, school reward or assessment examples are product rules.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: popovers.png](../../examples/design-components/popovers/popovers.png)
+
+- [popovers.png](../../examples/design-components/popovers/popovers.png) — exact source blob `afb77135adba` (illustrated above)

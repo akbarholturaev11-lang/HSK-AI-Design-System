@@ -95,3 +95,11 @@ Do not merge *enrolled*, *active*, *completed*, *passed* and *Pro* into one unde
 ## Implementation boundary
 
 This document defines HSK AI summary-card design only. It contains no school/district report examples or fictitious production metrics. It does not alter analytics, scoring, progress or payment code.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: header.png](../../examples/design-components/summary-cards/header.png)
+
+- [header.png](../../examples/design-components/summary-cards/header.png) — exact source blob `564750752231` (illustrated above)

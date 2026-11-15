@@ -63,3 +63,14 @@ Keep labels to 1–2 words, favoring a single word whenever it stands on its own
 - Verification, asynchronous loading, Pro entitlement checks and redirects are **system states**, not steps the user completes. A wait spinner must not advance the step indicator.
 - The simple indicator is informational and non-clickable. Named stages can support returning to completed decisions only if the specific HSK AI flow permits it; never jump across a required verification, purchase or owner-boundary check.
 - Retain the original guidance on short, understandable step names and stable placement. **Additionally for HSK AI**, provide an accessible description of the current step and total number of steps when known; do not announce every decorative animation. Follow the approved HSK AI touch targets, localization and reduced-motion behavior. Do not alter production UI in a documentation-only update.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: copy.png](../../examples/design-components/progress-stepper/copy.png)
+
+- [copy.png](../../examples/design-components/progress-stepper/copy.png) — exact source blob `320fb8cfa6dd` (illustrated above)
+- [progress-stepper.png](../../examples/design-components/progress-stepper/progress-stepper.png) — exact source blob `c6595be449f0`
+- [variants-1.png](../../examples/design-components/progress-stepper/variants-1.png) — exact source blob `7f478a31e99a`
+- [variants-2.png](../../examples/design-components/progress-stepper/variants-2.png) — exact source blob `0442c9a9d456`

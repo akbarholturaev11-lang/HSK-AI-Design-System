@@ -80,3 +80,16 @@ Once an option is selected, the user cannot return to a zero-selected state. Rad
 Do not nest radio buttons within one another, as this creates complex dependencies and severely damages clarity.
 
 > **Historical figure 9 — source reference only (not transferred):** A radio group with two options nested and indented beneath a parent option — nest radio buttons within one another.. Type: dont. Source asset: `./assets/radio-button/avoid-nesting.png`.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: avoid-nesting.png](../../examples/design-components/radio-button/avoid-nesting.png)
+
+- [avoid-nesting.png](../../examples/design-components/radio-button/avoid-nesting.png) — exact source blob `99b7e2352fee` (illustrated above)
+- [default-selection.png](../../examples/design-components/radio-button/default-selection.png) — exact source blob `37da18442079`
+- [disabled.png](../../examples/design-components/radio-button/disabled.png) — exact source blob `c1effb9243f4`
+- [immediate-selection.png](../../examples/design-components/radio-button/immediate-selection.png) — exact source blob `6b7b07f5ee56`
+- [no-selection.png](../../examples/design-components/radio-button/no-selection.png) — exact source blob `2162ff6dd06f`
+- [radio-button.png](../../examples/design-components/radio-button/radio-button.png) — exact source blob `62e6524bbc39`
