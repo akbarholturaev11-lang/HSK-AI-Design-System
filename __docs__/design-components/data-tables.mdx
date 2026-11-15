@@ -1,4 +1,7 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import sourceTableHeader from "./assets/data-tables/header.png";
+import sourceBasicTable from "./assets/data-tables/basic-table.png";
+import sourceSummaryTabs from "./assets/data-tables/summary-tabs.png";
 
 <Meta title="Design Guidelines / Components / Data visualization / Data tables" />
 
@@ -58,6 +61,30 @@ Use a <a href="./?path=/docs/design-guidelines-components-data-visualization-sum
 Loading keeps known labels/header structure stable without fake data. Empty and filtered-to-none states explain the actual cause. A failed refresh may leave a previous valid snapshot with a timestamp and retry, but authorization failures must clear protected content.
 
 Refer to <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs">HSK AI data reports</a> for shared empty, retry, filtering, data-integrity and access rules.
+
+## Restored professional reference examples
+
+> **Source-only illustrations:** Every figure below originated in a different product's design guidelines. Preserve their professional layout and interaction principles; do not treat sample students, school data, scores, source colors or buttons as verified HSK AI functionality.
+
+### Overview
+
+<img src={sourceTableHeader} alt="Source illustration showing a dense data table, not actual HSK AI student records" />
+
+Use a table for comparable structured records with stable column meanings. It is not a universal replacement for mobile lesson cards.
+
+### Anatomy
+
+<img src={sourceBasicTable} alt="Original table example with short headings and name-first structure; sample school data are not HSK AI content" />
+
+**Columns:** place the record identifier first, use concise sentence-case headers and correct text/numeric/date alignment. Numeric values should usually align on the end edge; dates must follow selected locale.
+
+### Controls and comparison
+
+<img src={sourceSummaryTabs} alt="Original table with summary tabs; its school/classroom categories are illustrative only" />
+
+**Tabs:** totals and scoped categories must come from the same verified query or explicitly different scopes. Switching tabs does not change the identity/authorization of the underlying data.
+
+**Detailed cell guidance:** a missing number is not zero; use a localized dash or “not recorded” explanation. A status flag should link to a real verified status and be understandable without color. Sorting must compare actual values rather than localized strings, and the visual sort indicator and screen-reader announcement must match. Avoid a full grid and thick separators if restrained row lines are sufficient. For long tables preserve column headers, pagination/virtualization semantics, keyboard navigation and a compact mobile strategy; never hide an essential HSK character or translation behind a clipped cell.
 
 ## Implementation boundary
 
