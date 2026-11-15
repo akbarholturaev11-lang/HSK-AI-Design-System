@@ -1,6 +1,6 @@
 > **HSK AI professional design guideline — portable review copy.** Source: `__docs__/design-components/inline-filter-button.mdx`, Git blob `e12248e82dc385f47aa7b0135b7b720cd50e2010`. 6 historic figure references and 0 MDX demo blocks; source images / vendor runtime code were not copied. Source prose remains an internal derivative draft pending rights and detailed visual parity review; this does not assert a live app feature.
 
-> **Historical figure 1 — source reference only (not transferred):** Inline filter button. Source asset: `./assets/inline-filter-button/inline-filter-button.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Inline filter button. Source asset: `./assets/inline-filter-button/inline-filter-button.png`.
 
 # Inline filter button
 
@@ -36,7 +36,7 @@ Avoid the filter combobox when a value is always required or when the control li
 
 User selects one option. Selecting immediately applies and closes the menu — no Apply button. The filter combobox updates to the active state instantly.
 
-> **Historical figure 2 — source reference only (not transferred):** Three states of a single-select inline filter button stacked vertically: `Inactive` shows a `Course` chip with a plus icon; `Open and selected` shows an open menu listing `Geometry 1`, `Algebra 1`, and a checked `Algebra 2`; `Filtered (active)` shows the chip reading `Course: Algebra 1` with a clear icon and a chevron.. Source asset: `./assets/inline-filter-button/variants-1.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Three states of a single-select inline filter button stacked vertically: `Inactive` shows a `Course` chip with a plus icon; `Open and selected` shows an open menu listing `Geometry 1`, `Algebra 1`, and a checked `Algebra 2`; `Filtered (active)` shows the chip reading `Course: Algebra 1` with a clear icon and a chevron.. Source asset: `./assets/inline-filter-button/variants-1.png`.
 
 ### Multi-select
 
@@ -47,7 +47,7 @@ Trigger label after selection:
 - 1 selected: shows the item name
 - 2 or more: shows `2 selected`, `3 selected`, etc.
 
-> **Historical figure 3 — source reference only (not transferred):** Three states of a multi-select inline filter button stacked vertically: `Inactive` shows a `Grade` chip with a plus icon; `Open and selected` shows a scrollable checkbox menu with `6th grade` and `7th grade` checked, `8th grade` unchecked, and an `Apply` button pinned below a separator; `Filtered (active)` shows the chip reading `School: 2 selected` with a clear icon and a chevron.. Source asset: `./assets/inline-filter-button/variants-2.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Three states of a multi-select inline filter button stacked vertically: `Inactive` shows a `Grade` chip with a plus icon; `Open and selected` shows a scrollable checkbox menu with `6th grade` and `7th grade` checked, `8th grade` unchecked, and an `Apply` button pinned below a separator; `Filtered (active)` shows the chip reading `School: 2 selected` with a clear icon and a chevron.. Source asset: `./assets/inline-filter-button/variants-2.png`.
 
 ## Interaction
 
@@ -55,13 +55,13 @@ Trigger label after selection:
 
 Follows the same rules as the Dropdown component. See [Dropdown documentation](dropdown-select.md).
 
-> **Historical figure 4 — source reference only (not transferred):** An open `School` inline filter button with a `Search schools` field at the top of the menu, above a scrollable checkbox list of school names.. Source asset: `./assets/inline-filter-button/interaction-1.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** An open `School` inline filter button with a `Search schools` field at the top of the menu, above a scrollable checkbox list of school names.. Source asset: `./assets/inline-filter-button/interaction-1.png`.
 
 ### Multi-select requires apply
 
 Follows the same rules as the Dropdown component. See [Dropdown documentation](dropdown-select.md).
 
-> **Historical figure 5 — source reference only (not transferred):** An open `Grade` inline filter button with `6th grade` checked, `7th grade` and `8th grade` unchecked, and an `Apply` button below a separator — the selection is not committed until Apply is pressed.. Source asset: `./assets/inline-filter-button/interaction-2.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** An open `Grade` inline filter button with `6th grade` checked, `7th grade` and `8th grade` unchecked, and an `Apply` button below a separator — the selection is not committed until Apply is pressed.. Source asset: `./assets/inline-filter-button/interaction-2.png`.
 
 ### Multiple filters in a bar
 
@@ -69,7 +69,7 @@ Multiple filter comboboxes sit side by side in a filter bar. Each is independent
 
 For active filters display behavior and "Clear all filters" logic, see the [Filter and sort pattern doc](../design-patterns/filter-and-sort.md).
 
-> **Historical figure 6 — source reference only (not transferred):** A report page with a filter bar containing a `Last 30 days` date filter followed by three inline filter buttons — `School`, `Grade`, and `Subject` — highlighted together, above a `120 results` count.. Source asset: `./assets/inline-filter-button/interaction-3.png`.
+> **Historical figure 6 — source figure reference (only approved samples, if any, are linked below):** A report page with a filter bar containing a `Last 30 days` date filter followed by three inline filter buttons — `School`, `Grade`, and `Subject` — highlighted together, above a `120 results` count.. Source asset: `./assets/inline-filter-button/interaction-3.png`.
 
 ## HSK AI product application
 

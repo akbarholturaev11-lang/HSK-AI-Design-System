@@ -1,6 +1,6 @@
 > **HSK AI professional design guideline — portable review copy.** Source: `__docs__/design-components/date-picker.mdx`, Git blob `d23f47f6f18aabb61228a3b3993bf8f1cd29bd5f`. 4 historic figure references and 0 MDX demo blocks; source images / vendor runtime code were not copied. Source prose remains an internal derivative draft pending rights and detailed visual parity review; this does not assert a live app feature.
 
-> **Historical figure 1 — source reference only (not transferred):** Date picker. Source asset: `./assets/date-picker/date-picker.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Date picker. Source asset: `./assets/date-picker/date-picker.png`.
 
 # Date picker
 
@@ -33,13 +33,13 @@ Both variants use a calendar icon, never a caret. The icon signals that a calend
 
 A text input with a calendar icon. The user can type directly in MM/DD/YYYY format or click the calendar icon to open the popover. Used for due dates, event scheduling, or any field requiring a single specific date.
 
-> **Historical figure 2 — source reference only (not transferred):** A "Due date" field showing 05/04/2026, with an open calendar popover for May 2026 and the 4th circled as the selected day. Source asset: `./assets/date-picker/standalone.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** A "Due date" field showing 05/04/2026, with an open calendar popover for May 2026 and the 4th circled as the selected day. Source asset: `./assets/date-picker/standalone.png`.
 
 ### Date picker in custom range modal
 
 Used inside the date filter’s "Set custom range" modal. Two date picker inputs — From and To — each with a calendar icon. This variant only appears inside the date filter modal, never stand-alone. See the [Date filter documentation](date-filter.md) for full context.
 
-> **Historical figure 3 — source reference only (not transferred):** A “Set custom range” modal with From (December 1, 2025) and To (December 23, 2025) date picker fields and an Apply button. Source asset: `./assets/date-picker/custom-range-modal.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** A “Set custom range” modal with From (December 1, 2025) and To (December 23, 2025) date picker fields and an Apply button. Source asset: `./assets/date-picker/custom-range-modal.png`.
 
 ## Date constraints
 
@@ -55,7 +55,7 @@ Not every date is selectable in every context. Where a date is constrained, expr
 
 Users can type directly (MM/DD/YYYY) or click the calendar icon to pick visually. The two entry methods must stay in sync — typing a valid date highlights it in the calendar, and clicking a date updates the text field immediately.
 
-> **Historical figure 4 — source reference only (not transferred):** A "Due date" field mid-entry showing "05/04" with a text cursor, while the calendar popover for May 2026 highlights the 4th in sync with the input. Source asset: `./assets/date-picker/interaction.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** A "Due date" field mid-entry showing "05/04" with a text cursor, while the calendar popover for May 2026 highlights the 4th in sync with the input. Source asset: `./assets/date-picker/interaction.png`.
 
 ## Copy
 

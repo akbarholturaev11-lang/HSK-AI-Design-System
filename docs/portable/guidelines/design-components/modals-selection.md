@@ -1,6 +1,6 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/modals-selection.mdx`, Git blob `d7d346ac458c58d2d52157c2acfe302ae276a4fa`; 13 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/modals-selection.mdx`, Git blob `d7d346ac458c58d2d52157c2acfe302ae276a4fa`; 13 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
-> **Historical figure 1 — source reference only (not transferred):** Modals - selection. Source asset: `./assets/modals-selection/modals-selection.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Modals - selection. Source asset: `./assets/modals-selection/modals-selection.png`.
 
 # Modals - selection
 
@@ -35,7 +35,7 @@ Avoid the selection modal when the filtering need is simple enough to be handled
 
 All filters are secondary by default when the modal is first opened or currently applied. The modal displays all the available filter sections simultaneously.
 
-> **Historical figure 2 — source reference only (not transferred):** A “More filters” modal over a dimmed report showing all filter sections at once — Display options, Course, Subject, and Practice — with Reset filters and Apply filters in the footer. Source asset: `./assets/modals-selection/default-modal.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** A “More filters” modal over a dimmed report showing all filter sections at once — Display options, Course, Subject, and Practice — with Reset filters and Apply filters in the footer. Source asset: `./assets/modals-selection/default-modal.png`.
 
 ## Placement
 
@@ -45,21 +45,21 @@ Open from a discoverable "More filters" action next to the relevant list or repo
 
 The "More filters" button in the primary UI should display a numeric badge (e.g., "2") to indicate how many hidden filters are currently active.
 
-> **Historical figure 3 — source reference only (not transferred):** A filter bar with Last 30 days, School, and Grade filters followed by a “More filters” button at the end. Source asset: `./assets/modals-selection/common-placement.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** A filter bar with Last 30 days, School, and Grade filters followed by a “More filters” button at the end. Source asset: `./assets/modals-selection/common-placement.png`.
 
-> **Historical figure 4 — source reference only (not transferred):** A filter bar where the “More filters” button carries a “2” badge, with the two active hidden filters shown as chips below. Source asset: `./assets/modals-selection/filter-badge.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** A filter bar where the “More filters” button carries a “2” badge, with the two active hidden filters shown as chips below. Source asset: `./assets/modals-selection/filter-badge.png`.
 
 ### Internal layout
 
 Group filters into clearly labeled sections using headings — e.g. "Display options," "Course," "Subject." This reduces cognitive load and helps users find related filters quickly.
 
-> **Historical figure 5 — source reference only (not transferred):** The selection modal with its filters grouped into labeled sections, the “Display options” section heading highlighted. Source asset: `./assets/modals-selection/internal-layout.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** The selection modal with its filters grouped into labeled sections, the “Display options” section heading highlighted. Source asset: `./assets/modals-selection/internal-layout.png`.
 
 ### Footer actions
 
 Keep Apply and Reset reachable in the pinned footer. On mobile, controls can stack or fit a row according to language length and screen width, with Apply the clear primary action. The footer must not hide behind the keyboard or safe area.
 
-> **Historical figure 6 — source reference only (not transferred):** The selection modal footer highlighted, with Reset filters anchored bottom-left and Apply filters bottom-right. Source asset: `./assets/modals-selection/footer-actions.png`.
+> **Historical figure 6 — source figure reference (only approved samples, if any, are linked below):** The selection modal footer highlighted, with Reset filters anchored bottom-left and Apply filters bottom-right. Source asset: `./assets/modals-selection/footer-actions.png`.
 
 ## Interaction
 
@@ -77,7 +77,7 @@ Reopening the modal shows the filters currently applied to the report, not the p
 
 On phones, labels can appear above their controls to keep text and touch targets usable. A separate label column is suitable only when the actual screen width supports it.
 
-> **Historical figure 7 — source reference only (not transferred):** The selection modal with a highlighted left column of category labels aligned against the filter controls on the right. Source asset: `./assets/modals-selection/category-labels.png`.
+> **Historical figure 7 — source figure reference (only approved samples, if any, are linked below):** The selection modal with a highlighted left column of category labels aligned against the filter controls on the right. Source asset: `./assets/modals-selection/category-labels.png`.
 
 ### Layout — exposed options
 
@@ -91,7 +91,7 @@ A section never scrolls on its own. The modal body is the only scrolling region,
 
 Within the modal, toggles should be placed full-width and left-aligned, with the label on the left and the toggle aligned to the right.
 
-> **Historical figure 8 — source reference only (not transferred):** A “Display options” section with full-width toggle rows, each label on the left and its toggle aligned to the right. Source asset: `./assets/modals-selection/toggle-behavior.png`.
+> **Historical figure 8 — source figure reference (only approved samples, if any, are linked below):** A “Display options” section with full-width toggle rows, each label on the left and its toggle aligned to the right. Source asset: `./assets/modals-selection/toggle-behavior.png`.
 
 ### Dynamic content — adaptive controls
 
@@ -99,9 +99,9 @@ Filter choices are derived from the actual HSK AI data, so the list may vary by 
 
 The form is decided when the modal opens and holds until it closes. A control never changes shape while the user is in the modal, even if another selection narrows its options — a control that changes form mid-interaction moves a target the user is aiming at and casts doubt on selections already made.
 
-> **Historical figure 9 — source reference only (not transferred):** A Course row shown as a “Select a course” dropdown while the option list is still long. Source asset: `./assets/modals-selection/adaptive-controls-1.png`.
+> **Historical figure 9 — source figure reference (only approved samples, if any, are linked below):** A Course row shown as a “Select a course” dropdown while the option list is still long. Source asset: `./assets/modals-selection/adaptive-controls-1.png`.
 
-> **Historical figure 10 — source reference only (not transferred):** The same Course row after the option list is reduced, now shown as exposed checkboxes: Algebra 1, Geometry, Algebra 2, and Trigonometry. Source asset: `./assets/modals-selection/adaptive-controls-2.png`.
+> **Historical figure 10 — source figure reference (only approved samples, if any, are linked below):** The same Course row after the option list is reduced, now shown as exposed checkboxes: Algebra 1, Geometry, Algebra 2, and Trigonometry. Source asset: `./assets/modals-selection/adaptive-controls-2.png`.
 
 ### Dynamic content — parent/child logic
 
@@ -111,9 +111,9 @@ The child control is not displayed until the parent holds a value. When the pare
 
 The change happens in the modal, visibly, at the moment the parent changes — not silently on Apply.
 
-> **Historical figure 11 — source reference only (not transferred):** A More filters modal with Practice set to “Placements” and no dependent control below it yet. Source asset: `./assets/modals-selection/parent-child-1.png`.
+> **Historical figure 11 — source figure reference (only approved samples, if any, are linked below):** A More filters modal with Practice set to “Placements” and no dependent control below it yet. Source asset: `./assets/modals-selection/parent-child-1.png`.
 
-> **Historical figure 12 — source reference only (not transferred):** The same modal after the parent is set, with a dependent “Select a test” dropdown now revealed beneath Practice, both highlighted. Source asset: `./assets/modals-selection/parent-child-2.png`.
+> **Historical figure 12 — source figure reference (only approved samples, if any, are linked below):** The same modal after the parent is set, with a dependent “Select a test” dropdown now revealed beneath Practice, both highlighted. Source asset: `./assets/modals-selection/parent-child-2.png`.
 
 ### Reset filters behavior
 
@@ -123,7 +123,7 @@ The modal stays open and nothing reaches the report until the user selects "Appl
 
 This is not the same action as Clear filters in the filter bar, which removes active filters from the report rather than returning controls to their defaults. Clear and reset are distinct verbs in this system: clear removes to empty, reset returns to a default. See [Clear filter](clear-filter.md).
 
-> **Historical figure 13 — source reference only (not transferred):** The selection modal footer with the “Reset filters” button highlighted. Source asset: `./assets/modals-selection/reset-filters.png`.
+> **Historical figure 13 — source figure reference (only approved samples, if any, are linked below):** The selection modal footer with the “Reset filters” button highlighted. Source asset: `./assets/modals-selection/reset-filters.png`.
 
 ## HSK AI mobile selection and data checks
 

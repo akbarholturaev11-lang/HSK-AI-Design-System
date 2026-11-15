@@ -1,6 +1,6 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/modals.mdx`, Git blob `9c3327581a0ae2fd5242adb8a794ea3e1bb1d735`; 16 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-components/modals.mdx`, Git blob `9c3327581a0ae2fd5242adb8a794ea3e1bb1d735`; 16 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
-> **Historical figure 1 — source reference only (not transferred):** Modals. Source asset: `./assets/modals/modals.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Modals. Source asset: `./assets/modals/modals.png`.
 
 # Modals
 
@@ -41,7 +41,7 @@ Modals are a universal container, but their internal logic changes based on the 
 
 Use for destructive or non-reversible actions.
 
-> **Historical figure 2 — source reference only (not transferred):** A “Start over?” confirmation modal centered over a dimmed exercise page, warning that starting over clears progress, with Start over and Keep going actions. Source asset: `./assets/modals/confirmation-flow.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** A “Start over?” confirmation modal centered over a dimmed exercise page, warning that starting over clears progress, with Start over and Keep going actions. Source asset: `./assets/modals/confirmation-flow.png`.
 
 ### Functional task
 
@@ -49,7 +49,7 @@ Use for short supported study preferences, account settings or configuration tas
 
 Multi-step flows have additional requirements — see Multi-step flows under Interaction.
 
-> **Historical figure 3 — source reference only (not transferred):** An “Add your students” modal over a dimmed roster page, offering class-link, manual, and Google Classroom import options with Cancel and Continue. Source asset: `./assets/modals/functional-task-flow.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** An “Add your students” modal over a dimmed roster page, offering class-link, manual, and Google Classroom import options with Cancel and Continue. Source asset: `./assets/modals/functional-task-flow.png`.
 
 ### Selection (configuration)
 
@@ -57,25 +57,25 @@ Use for complex, multi-faceted filtering or export settings.
 
 See [Modals - selection](modals-selection.md).
 
-> **Historical figure 4 — source reference only (not transferred):** A “More filters” modal over a dimmed report, with display options, course, subject checkboxes, and practice fields, plus Reset filters and Apply filters. Source asset: `./assets/modals/selection-flow.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** A “More filters” modal over a dimmed report, with display options, course, subject checkboxes, and practice fields, plus Reset filters and Apply filters. Source asset: `./assets/modals/selection-flow.png`.
 
 ### Contextual education
 
 Triggered by info icons. Keeps the explanation local to the context.
 
-> **Historical figure 5 — source reference only (not transferred):** A “Mastery learning” explainer modal over a dimmed page, describing what mastery learning is and how it is scored, with a Got it button. Source asset: `./assets/modals/contextual-education-flow.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** A “Mastery learning” explainer modal over a dimmed page, describing what mastery learning is and how it is scored, with a Got it button. Source asset: `./assets/modals/contextual-education-flow.png`.
 
 ### Marketing and announcement
 
 Use only for approved HSK AI feature announcements with a justified interruption, respecting the existing per-session suppression and non-interruption rules.
 
-> **Historical figure 6 — source reference only (not transferred):** A visual “Check out your new collection!” announcement modal, badged “New”, with a colorful accessory grid, a “New unlock” label, and a Customize Khanmigo button, over a dimmed page. Source asset: `./assets/modals/marketing-flow.png`.
+> **Historical figure 6 — source figure reference (only approved samples, if any, are linked below):** A visual “Check out your new collection!” announcement modal, badged “New”, with a colorful accessory grid, a “New unlock” label, and a Customize Khanmigo button, over a dimmed page. Source asset: `./assets/modals/marketing-flow.png`.
 
 ### Media
 
 Always read-only — no footer actions.
 
-> **Historical figure 7 — source reference only (not transferred):** A read-only media modal showing a Gauguin painting on the left with its title, attribution, and description on the right — no footer actions. Source asset: `./assets/modals/media.png`.
+> **Historical figure 7 — source figure reference (only approved samples, if any, are linked below):** A read-only media modal showing a Gauguin painting on the left with its title, attribution, and description on the right — no footer actions. Source asset: `./assets/modals/media.png`.
 
 ## Usage and purpose by variant
 
@@ -119,13 +119,13 @@ A floating modal uses HSK AI's approved raised surface with sufficient separatio
 
 Use centered placement for compact confirmations and the established mobile bottom-sheet pattern for short selections, options and input. Both must cover and deactivate the underlying interface with a full scrim. A longer flow needs its own screen. The media viewer may fill the viewport.
 
-> **Historical figure 8 — source reference only (not transferred):** A modal centered horizontally and vertically in the viewport over a darkened page, with crosshair guides showing the center alignment. Source asset: `./assets/modals/placement-centered.png`.
+> **Historical figure 8 — source figure reference (only approved samples, if any, are linked below):** A modal centered horizontally and vertically in the viewport over a darkened page, with crosshair guides showing the center alignment. Source asset: `./assets/modals/placement-centered.png`.
 
 ### Actions always reachable
 
 Keep the primary and secondary choices at the dialog or sheet footer, outside the scrolling body. On narrow phones, a single primary action can fill the available width; multiple buttons can stack or sit side by side when text fits. Maintain a logical reading order and a genuine safe escape path. Read-only media does not need footer actions.
 
-> **Historical figure 9 — source reference only (not transferred):** A modal with its primary and secondary actions anchored to the bottom-right corner, highlighted with a dashed outline. Source asset: `./assets/modals/placement-actions.png`.
+> **Historical figure 9 — source figure reference (only approved samples, if any, are linked below):** A modal with its primary and secondary actions anchored to the bottom-right corner, highlighted with a dashed outline. Source asset: `./assets/modals/placement-actions.png`.
 
 ### Overflow
 
@@ -149,13 +149,13 @@ Users can leave through an accessible close/back route. Outside-tap and Escape/s
 
 This confirmation is the only permitted second layer. It resolves the dismissal of the modal beneath it and nothing else — it introduces no new task, offers no route to a third layer, and on resolution either returns the user to the modal they were in or closes both.
 
-> **Historical figure 10 — source reference only (not transferred):** A “Discard changes?” modal warning that unsaved changes will be lost, with a Keep editing button and a red Discard button. Source asset: `./assets/modals/interaction-dismissal.png`.
+> **Historical figure 10 — source figure reference (only approved samples, if any, are linked below):** A “Discard changes?” modal warning that unsaved changes will be lost, with a Keep editing button and a red Discard button. Source asset: `./assets/modals/interaction-dismissal.png`.
 
 ### Multi-step flows
 
 A modal can support a short sequential flow of 2–3 steps when each step is simple and self-contained. If the flow grows beyond 3 steps or requires significant input at each stage, move it to a full page with the [Progress stepper](progress-stepper.md) instead.
 
-> **Historical figure 11 — source reference only (not transferred):** Step one of an “Add your students” multi-step modal, selecting an import method before continuing to the next step. Source asset: `./assets/modals/interaction-multistep.png`.
+> **Historical figure 11 — source figure reference (only approved samples, if any, are linked below):** Step one of an “Add your students” multi-step modal, selecting an import method before continuing to the next step. Source asset: `./assets/modals/interaction-multistep.png`.
 
 ## Buttons
 
@@ -167,14 +167,14 @@ Modal actions use the [Buttons](buttons.md) hierarchy. Source-product-specific b
 -   **Nudge (Primary + Tertiary):** used for confirmations. The primary solid button represents the "path of least resistance." Whether this is the safe choice or the requested action depends on the risk involved (see Directional logic).
 -   **Destructive (Danger + Tertiary):** used for permanent actions. The destructive action uses the distinct Critical color (e.g., "Delete account") and "Cancel" is a Tertiary button to highlight the severity.
 
-> **Historical figure 12 — source reference only (not transferred):** Three button pairings: Standard (Cancel + blue Save), Nudge (Reset filters + blue Apply filters), and Destructive (Cancel + red Delete class). Source asset: `./assets/modals/buttons-pairings.png`.
+> **Historical figure 12 — source figure reference (only approved samples, if any, are linked below):** Three button pairings: Standard (Cancel + blue Save), Nudge (Reset filters + blue Apply filters), and Destructive (Cancel + red Delete class). Source asset: `./assets/modals/buttons-pairings.png`.
 
 ### Directional logic
 
 -   **High-risk nudges:** when an action results in a loss of progress (e.g., "Start over"), the Primary button pivots to the safe/positive action (e.g., "Keep going"). This prevents "auto-pilot" clicks from causing accidental data loss.
 -   **Standard intent:** when an action is neutral or expected (e.g., "Log out"), the Primary button remains the requested action. Since there is no data loss to prevent, the system respects the user’s explicit command to exit.
 
-> **Historical figure 13 — source reference only (not transferred):** Two examples: a high-risk nudge where Keep going is the primary button next to a Start over link, and a standard case where Logout is primary next to a Cancel link. Source asset: `./assets/modals/buttons-directional.png`.
+> **Historical figure 13 — source figure reference (only approved samples, if any, are linked below):** Two examples: a high-risk nudge where Keep going is the primary button next to a Start over link, and a standard case where Logout is primary next to a Cancel link. Source asset: `./assets/modals/buttons-directional.png`.
 
 ## Copy
 
@@ -182,19 +182,19 @@ Modal actions use the [Buttons](buttons.md) hierarchy. Source-product-specific b
 
 Modal titles should be direct and specific — ideally a noun or short noun phrase that describes exactly what the modal is for. Avoid generic titles like "Are you sure?" or "Notice."
 
-> **Historical figure 14 — source reference only (not transferred):** Recommended specific titles like “Start over?”, “Delete assignment?”, and “Add student” versus discouraged generic titles like “Are you sure?”, “Warning”, and “Notice”. Source asset: `./assets/modals/copy-headline.png`.
+> **Historical figure 14 — source figure reference (only approved samples, if any, are linked below):** Recommended specific titles like “Start over?”, “Delete assignment?”, and “Add student” versus discouraged generic titles like “Are you sure?”, “Warning”, and “Notice”. Source asset: `./assets/modals/copy-headline.png`.
 
 ### Describing body content
 
 The body copy should explain the consequence of the action clearly and concisely. For destructive actions, be explicit about what will be lost. Never rely on the title alone to carry the full context.
 
-> **Historical figure 15 — source reference only (not transferred):** Recommended body copy “Starting over will clear your current progress. This cannot be undone.” versus the discouraged vague “Are you sure you want to do this?”. Source asset: `./assets/modals/copy-body.png`.
+> **Historical figure 15 — source figure reference (only approved samples, if any, are linked below):** Recommended body copy “Starting over will clear your current progress. This cannot be undone.” versus the discouraged vague “Are you sure you want to do this?”. Source asset: `./assets/modals/copy-body.png`.
 
 ### Action labels
 
 Use explicit verbs that describe exactly what will happen. The user should be able to read the button label alone and understand the outcome. Avoid generic labels that require reading the full modal to understand.
 
-> **Historical figure 16 — source reference only (not transferred):** Recommended explicit action labels (Start over / Keep going) versus discouraged generic labels (No / Yes). Source asset: `./assets/modals/copy-actions.png`.
+> **Historical figure 16 — source figure reference (only approved samples, if any, are linked below):** Recommended explicit action labels (Start over / Keep going) versus discouraged generic labels (No / Yes). Source asset: `./assets/modals/copy-actions.png`.
 
 ## HSK AI implementation safeguards
 

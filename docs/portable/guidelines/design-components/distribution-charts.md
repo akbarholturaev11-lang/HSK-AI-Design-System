@@ -86,13 +86,13 @@ The following demonstration contains **fictional example values only**. It illus
 
 ### Overview
 
-> **Historical figure 1 — source reference only (not transferred):** Original distribution chart overview with illustrative source groups. Source asset: `./assets/distribution-charts/header.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Original distribution chart overview with illustrative source groups. Source asset: `./assets/distribution-charts/header.png`.
 
 A distribution is a **count across mutually exclusive bins**, not a progress bar or a trend. Define the denominator and bin boundaries explicitly.
 
 ### Anatomy
 
-> **Historical figure 2 — source reference only (not transferred):** Original histogram layout reference; source scores and school ranges are not HSK AI measurement rules. Source asset: `./assets/distribution-charts/container.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Original histogram layout reference; source scores and school ranges are not HSK AI measurement rules. Source asset: `./assets/distribution-charts/container.png`.
 
 **Histogram anatomy:** consistent range labels, zero baseline and appropriately grouped bars. The total count of observations must reconcile with the displayed bins and exclusions.
 

@@ -1,6 +1,6 @@
 > **HSK AI professional design guideline — portable review copy.** Source: `__docs__/design-components/dropdown-select.mdx`, Git blob `0c733c01205074674e9064b1597e13d7b7d7c874`. 18 historic figure references and 0 MDX demo blocks; source images / vendor runtime code were not copied. Source prose remains an internal derivative draft pending rights and detailed visual parity review; this does not assert a live app feature.
 
-> **Historical figure 1 — source reference only (not transferred):** Dropdown select. Source asset: `./assets/dropdown-select/dropdown-select.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Dropdown select. Source asset: `./assets/dropdown-select/dropdown-select.png`.
 
 # Dropdown select
 
@@ -56,33 +56,33 @@ The inline filter button has its own [documented guideline](inline-filter-button
 
 The field label sits above the input. Used in forms and modals where vertical space allows and the label needs to be prominent.
 
-> **Historical figure 2 — source reference only (not transferred):** Two stacked dropdowns with their labels above the field: a “Course” dropdown showing the placeholder “Select a course” and a “State” dropdown showing “Algebra 1”. Source asset: `./assets/dropdown-select/label-above.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Two stacked dropdowns with their labels above the field: a “Course” dropdown showing the placeholder “Select a course” and a “State” dropdown showing “Algebra 1”. Source asset: `./assets/dropdown-select/label-above.png`.
 
-> **Historical figure 3 — source reference only (not transferred):** A placeholder tile reading “Example coming soon”. Source asset: `./assets/dropdown-select/example-coming-soon.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** A placeholder tile reading “Example coming soon”. Source asset: `./assets/dropdown-select/example-coming-soon.png`.
 
 ### Label inline
 
 The label sits inside the field to the left of the value. Used in filter bars and compact layouts where horizontal space is shared across multiple fields.
 
-> **Historical figure 4 — source reference only (not transferred):** Two inline-label dropdowns: an empty “Select a course” and one reading “Course: Algebra 1” with the label inside the field. Source asset: `./assets/dropdown-select/label-inline.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** Two inline-label dropdowns: an empty “Select a course” and one reading “Course: Algebra 1” with the label inside the field. Source asset: `./assets/dropdown-select/label-inline.png`.
 
-> **Historical figure 5 — source reference only (not transferred):** An inline-label “Course: Algebra 1” dropdown highlighted within a report’s top filter bar, alongside Search report, School, Grade, and More filters. Source asset: `./assets/dropdown-select/label-inline-filter-bar.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** An inline-label “Course: Algebra 1” dropdown highlighted within a report’s top filter bar, alongside Search report, School, Grade, and More filters. Source asset: `./assets/dropdown-select/label-inline-filter-bar.png`.
 
-> **Historical figure 6 — source reference only (not transferred):** An inline-label “Course: Algebra 1” dropdown highlighted inside a “More filters” modal, below the Display options toggles. Source asset: `./assets/dropdown-select/label-inline-modal.png`.
+> **Historical figure 6 — source figure reference (only approved samples, if any, are linked below):** An inline-label “Course: Algebra 1” dropdown highlighted inside a “More filters” modal, below the Display options toggles. Source asset: `./assets/dropdown-select/label-inline-modal.png`.
 
 ### Single-select
 
 One option can be selected. Selecting an option commits it immediately and closes the menu. In a form this sets the field value; in a filter bar it re-queries the data. An accessible checked indicator marks the selected item using HSK AI's approved semantic colors and icons; do not copy the source product's blue palette.
 
-> **Historical figure 7 — source reference only (not transferred):** An open single-select menu listing Geometry 1, Algebra 1, and Algebra 2, with Algebra 2 marked active by a filled blue checkmark circle. Source asset: `./assets/dropdown-select/single-select.png`.
+> **Historical figure 7 — source figure reference (only approved samples, if any, are linked below):** An open single-select menu listing Geometry 1, Algebra 1, and Algebra 2, with Algebra 2 marked active by a filled blue checkmark circle. Source asset: `./assets/dropdown-select/single-select.png`.
 
 ### Multi-select
 
 Multiple options can be selected via checkboxes. A search field appears for long lists. Changes are not applied until the user selects Apply. The trigger label after selection shows the item name when one is selected, and "2 selected", "3 selected", and so on when more than one is selected.
 
-> **Historical figure 8 — source reference only (not transferred):** An open multi-select menu with grade checkboxes and an Apply button; after applying, the trigger collapses to read “Grade: 6th grade”. Source asset: `./assets/dropdown-select/multi-select.png`.
+> **Historical figure 8 — source figure reference (only approved samples, if any, are linked below):** An open multi-select menu with grade checkboxes and an Apply button; after applying, the trigger collapses to read “Grade: 6th grade”. Source asset: `./assets/dropdown-select/multi-select.png`.
 
-> **Historical figure 9 — source reference only (not transferred):** An open multi-select menu with two grades checked and an Apply button; after applying, the trigger collapses to read “Grade: 2 selected”. Source asset: `./assets/dropdown-select/multi-select-2.png`.
+> **Historical figure 9 — source figure reference (only approved samples, if any, are linked below):** An open multi-select menu with two grades checked and an Apply button; after applying, the trigger collapses to read “Grade: 2 selected”. Source asset: `./assets/dropdown-select/multi-select-2.png`.
 
 ## States
 
@@ -92,31 +92,31 @@ These states apply primarily to the label-above variant, which has vertical spac
 
 Use "Required" as an inline label next to the field label instead of an asterisk. This is more accessible and explicit — users don’t need to find and interpret a legend.
 
-> **Historical figure 10 — source reference only (not transferred):** A “Grade” dropdown with a “Required” label to the right of the field label instead of an asterisk. Source asset: `./assets/dropdown-select/state-context.png`.
+> **Historical figure 10 — source figure reference (only approved samples, if any, are linked below):** A “Grade” dropdown with a “Required” label to the right of the field label instead of an asterisk. Source asset: `./assets/dropdown-select/state-context.png`.
 
 ### Helper text
 
 Used for helpful description text that would otherwise be hidden in a placeholder. Helper text is persistent — it stays visible before and after the user makes a selection. Use it when the context genuinely aids the user’s decision.
 
-> **Historical figure 11 — source reference only (not transferred):** A “Primary language” dropdown with persistent helper text explaining that languages marked with an asterisk are not fully quality-tested. Source asset: `./assets/dropdown-select/state-helper-text.png`.
+> **Historical figure 11 — source figure reference (only approved samples, if any, are linked below):** A “Primary language” dropdown with persistent helper text explaining that languages marked with an asterisk are not fully quality-tested. Source asset: `./assets/dropdown-select/state-helper-text.png`.
 
 ### Error
 
 If the user submits or selects Apply without selecting a required item, the dropdown gains a red border and displays an actionable error message below the field. The label also turns red. The error clears once a valid selection is made.
 
-> **Historical figure 12 — source reference only (not transferred):** A “Grade” dropdown in its error state: red label, red border, and the message “Select at least one grade” below the field. Source asset: `./assets/dropdown-select/state-error.png`.
+> **Historical figure 12 — source figure reference (only approved samples, if any, are linked below):** A “Grade” dropdown in its error state: red label, red border, and the message “Select at least one grade” below the field. Source asset: `./assets/dropdown-select/state-error.png`.
 
 ### Read-only
 
 Displays the current value while explicitly preventing interaction. Unlike disabled, read-only maintains clear color contrast — the content is still meant to be read. Always include helper text explaining why the field is locked.
 
-> **Historical figure 13 — source reference only (not transferred):** A read-only “Class” dropdown showing “Period 3, Precalculus” with a lock icon and the helper text “Only teachers can edit this”. Source asset: `./assets/dropdown-select/state-read-only.png`.
+> **Historical figure 13 — source figure reference (only approved samples, if any, are linked below):** A read-only “Class” dropdown showing “Period 3, Precalculus” with a lock icon and the helper text “Only teachers can edit this”. Source asset: `./assets/dropdown-select/state-read-only.png`.
 
 ### Disabled
 
 Used when a prerequisite action has not been fulfilled. The field is grayed out and non-interactive. Once the dependency is met, it no longer displays as disabled. Do not use disabled when read-only is more appropriate — disabled implies unavailability, not restriction.
 
-> **Historical figure 14 — source reference only (not transferred):** A grayed-out, non-interactive “Grade” dropdown in its disabled state. Source asset: `./assets/dropdown-select/state-disabled.png`.
+> **Historical figure 14 — source figure reference (only approved samples, if any, are linked below):** A grayed-out, non-interactive “Grade” dropdown in its disabled state. Source asset: `./assets/dropdown-select/state-disabled.png`.
 
 ## Interaction
 
@@ -128,7 +128,7 @@ Add a search field inside the menu when the list is long or when users are likel
 -   **Known-item search:** users are likely to know the specific name of the item they’re looking for (e.g., a real lesson, supported course or available category).
 -   **Alphabetical / categorical lists:** the list is long enough that manual scanning becomes inefficient.
 
-> **Historical figure 15 — source reference only (not transferred):** An open “Select school(s)” menu with a “Search schools” field at the top above a scrollable, checkbox list of schools. Source asset: `./assets/dropdown-select/in-menu-search.png`.
+> **Historical figure 15 — source figure reference (only approved samples, if any, are linked below):** An open “Select school(s)” menu with a “Search schools” field at the top above a scrollable, checkbox list of schools. Source asset: `./assets/dropdown-select/in-menu-search.png`.
 
 ### Multi-select requires apply
 
@@ -136,7 +136,7 @@ Checking or unchecking items does not apply until the user selects Apply. This p
 
 Dismissing the menu without applying — clicking outside it or pressing Escape — discards the pending changes and leaves the previous selection intact. Dismissal is the cancel path, so no separate Cancel button is needed.
 
-> **Historical figure 16 — source reference only (not transferred):** A multi-select grade menu with two boxes checked and an Apply button, collapsing to a “Grade: 2 selected” trigger only after Apply is selected. Source asset: `./assets/dropdown-select/multi-select-apply.png`.
+> **Historical figure 16 — source figure reference (only approved samples, if any, are linked below):** A multi-select grade menu with two boxes checked and an Apply button, collapsing to a “Grade: 2 selected” trigger only after Apply is selected. Source asset: `./assets/dropdown-select/multi-select-apply.png`.
 
 ## Copy
 
@@ -144,13 +144,13 @@ Dismissing the menu without applying — clicking outside it or pressing Escape 
 
 Option labels must be clear, concise, and immediately understandable, avoiding ambiguity, jargon, or excessive abbreviation. The label displayed in the closed dropdown must fit on a single line and truncate with an ellipsis (…) if necessary, to prevent line wrapping and maintain the component’s compact footprint.
 
-> **Historical figure 17 — source reference only (not transferred):** Side-by-side comparison: a recommended dropdown truncating “12 grade advanced placeme…” on one line, versus a discouraged dropdown wrapping “12 grade advanced placement” onto two lines. Source asset: `./assets/dropdown-select/copy-truncation.png`.
+> **Historical figure 17 — source figure reference (only approved samples, if any, are linked below):** Side-by-side comparison: a recommended dropdown truncating “12 grade advanced placeme…” on one line, versus a discouraged dropdown wrapping “12 grade advanced placement” onto two lines. Source asset: `./assets/dropdown-select/copy-truncation.png`.
 
 ### Logical ordering
 
 Order options logically. This can mean arranging them alphabetically, numerically, by popularity, or by functional grouping, depending on what best supports the user’s scanning process.
 
-> **Historical figure 18 — source reference only (not transferred):** Two menus showing ordering strategies: a status list ordered by functional grouping (To do, In progress, Complete) and a state list ordered alphabetically (Alabama, Alaska, Arizona). Source asset: `./assets/dropdown-select/copy-ordering.png`.
+> **Historical figure 18 — source figure reference (only approved samples, if any, are linked below):** Two menus showing ordering strategies: a status list ordered by functional grouping (To do, In progress, Complete) and a state list ordered alphabetically (Alabama, Alaska, Arizona). Source asset: `./assets/dropdown-select/copy-ordering.png`.
 
 ## HSK AI product application
 

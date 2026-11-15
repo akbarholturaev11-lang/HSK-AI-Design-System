@@ -1,6 +1,6 @@
 > **HSK AI professional design guideline — portable review copy.** Source: `__docs__/design-components/date-filter.mdx`, Git blob `070428cd7b03b8a5756d45c52b1877244116b634`. 7 historic figure references and 0 MDX demo blocks; source images / vendor runtime code were not copied. Source prose remains an internal derivative draft pending rights and detailed visual parity review; this does not assert a live app feature.
 
-> **Historical figure 1 — source reference only (not transferred):** Date filter. Source asset: `./assets/date-filter/date-filter.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Date filter. Source asset: `./assets/date-filter/date-filter.png`.
 
 # Date filter
 
@@ -36,7 +36,7 @@ Use this when there are pages where showing all-time data would be overwhelming 
 There is always a value in the trigger. If no user selection has been made, the product default shows (e.g. Today).
 Because the product supplies this default and the control can never be cleared to empty, changing the selection does not generate an active filter chip (see Active filters).
 
-> **Historical figure 2 — source reference only (not transferred):** A basic example of a Date filter opened with the first `Today` option selected, followed by `This week` and `Last 30 days`, each with the actual accompanying date or date range as subtext. At the bottom is a `Custom Range` affordance after a horizontal separator.. Source asset: `./assets/date-filter/variants-1.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** A basic example of a Date filter opened with the first `Today` option selected, followed by `This week` and `Last 30 days`, each with the actual accompanying date or date range as subtext. At the bottom is a `Custom Range` affordance after a horizontal separator.. Source asset: `./assets/date-filter/variants-1.png`.
 
 ### Date inline filter button
 
@@ -45,7 +45,7 @@ Use this when there are pages where all-time data is a valid and expected defaul
 The × control clears back to all-time (unfiltered). This is the key distinction from the standard variant — this one can be cleared.
 Because no date is pre-applied, any value shown here was chosen by the user. Applying one generates an active filter chip, even though the range is already visible on the button itself (see Active filters).
 
-> **Historical figure 3 — source reference only (not transferred):** Shows the transition of an empty `Date` filter being filled in. Once filled in, a calendar icon appears at the start of the input followed by the range and then a `clear` icon affordance. Source asset: `./assets/date-filter/variants-2.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Shows the transition of an empty `Date` filter being filled in. Once filled in, a calendar icon appears at the start of the input followed by the range and then a `clear` icon affordance. Source asset: `./assets/date-filter/variants-2.png`.
 
 ### Key differences
 
@@ -62,9 +62,9 @@ Because no date is pre-applied, any value shown here was chosen by the user. App
 
 In dashboards with multiple filter types, place the date filter leftmost — it is typically the highest-priority filter. Maintain consistent placement across views so users don't have to reorient when switching between reports.
 
-> **Historical figure 4 — source reference only (not transferred):** An example showing the `Date` filter aligned first before `School` and `Grade`. Source asset: `./assets/date-filter/placement-1.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** An example showing the `Date` filter aligned first before `School` and `Grade`. Source asset: `./assets/date-filter/placement-1.png`.
 
-> **Historical figure 5 — source reference only (not transferred):** An example of an empty `Date` filter aligned first before `School` and `Grade`. Source asset: `./assets/date-filter/placement-2.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** An example of an empty `Date` filter aligned first before `School` and `Grade`. Source asset: `./assets/date-filter/placement-2.png`.
 
 ## Interaction
 
@@ -73,13 +73,13 @@ In dashboards with multiple filter types, place the date filter leftmost — it 
 Selecting "Custom range" opens a date picker. Once the user applies dates, the filter updates — the selected range replaces the trigger label and is added to the list as the active selection.
 If a new custom range is selected, the previous one does not stay there but is replaced by the newly selected range.
 
-> **Historical figure 6 — source reference only (not transferred):** An example of correct usage. Source asset: `./assets/date-filter/interaction.png`.
+> **Historical figure 6 — source figure reference (only approved samples, if any, are linked below):** An example of correct usage. Source asset: `./assets/date-filter/interaction.png`.
 
 ## Copy
 
 For dropdown list labels, show a compact, unambiguous date in the learner’s selected locale (for example, "Dec 12" in English). This helps users confirm the right period without requiring a US-style month/day format across all HSK AI languages.
 
-> **Historical figure 7 — source reference only (not transferred):** One correct usage example with 'Dec 1 - Dec 23' and an incorrect one with '12/1 - 12-23'. Source asset: `./assets/date-filter/copy.png`.
+> **Historical figure 7 — source figure reference (only approved samples, if any, are linked below):** One correct usage example with 'Dec 1 - Dec 23' and an incorrect one with '12/1 - 12-23'. Source asset: `./assets/date-filter/copy.png`.
 
 ## HSK AI product application
 
