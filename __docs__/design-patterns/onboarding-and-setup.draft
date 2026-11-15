@@ -1,156 +1,60 @@
 import {Meta} from "@storybook/addon-docs/blocks";
-import onboardingAndSetupImg from "./assets/onboarding-and-setup/onboarding-and-setup.png";
-import activation1Img from "./assets/onboarding-and-setup/activation-1.png";
-import activation2Img from "./assets/onboarding-and-setup/activation-2.png";
-import collectingInfo1Img from "./assets/onboarding-and-setup/collecting-info-1.png";
-import collectingInfo2Img from "./assets/onboarding-and-setup/collecting-info-2.png";
-import logicFrameworkHowTheyPlayTogether5Img from "./assets/onboarding-and-setup/logic-framework-how-they-play-together-5.png";
-import logicFrameworkHowTheyPlayTogether6Img from "./assets/onboarding-and-setup/logic-framework-how-they-play-together-6.png";
-import logicFrameworkHowTheyPlayTogether7Img from "./assets/onboarding-and-setup/logic-framework-how-they-play-together-7.png";
-import logicFrameworkHowTheyPlayTogether8Img from "./assets/onboarding-and-setup/logic-framework-how-they-play-together-8.png";
-import logicFrameworkHowTheyPlayTogether9Img from "./assets/onboarding-and-setup/logic-framework-how-they-play-together-9.png";
-import logicFrameworkHowTheyPlayTogether10Img from "./assets/onboarding-and-setup/logic-framework-how-they-play-together-10.png";
 
 <Meta title="Design Guidelines / Patterns / Onboarding and setup" />
 
-<img src={onboardingAndSetupImg} alt="Onboarding and setup" />
+# HSK AI onboarding and setup
 
-# Onboarding and setup
+**Status: draft design guidance.** This file is not published as an MDX page and is not permission to rewrite existing onboarding. Verify real iPhone PWA and native Android flow behavior against the current HSK AI application before implementing changes.
 
-> **HSK AI documentation scope:** This is still the source's **draft pattern**, not an order to replace the already-working iPhone or Android onboarding. Preserve every source diagram as an **educational example only**, without copying school branding or desktop two-column screens into HSK AI. Adapt to the existing mobile route, approved Panda, localization and safe account/data ownership.
+## When to use
 
-A guided first-run setup with visible progress when the learner makes several sequential decisions. HSK AI's iPhone PWA and native Android have different verified account and entry paths, but share the same principles of clarity, one primary action, safe resumption and understandable progress. The original school-account illustrations are reference examples, not product screens.
+Use a guided flow only when a **new learner** has multiple necessary sequential decisions: supported learning language, track/HSK level or other real setup choices. Returning learners should resume verified progress without being forced back through first-run screens.
 
-Use for: first-run setup that spans more than one sequential decision.
-Don't use for: a single standalone task with no sequence, or a genuinely branching, non-linear task that doesn't reduce to a line of steps.
+Do not use a fake multi-step wizard for one setting, for a payment redirect, a passive loading state or a required login verification.
 
-## Usage and purpose
-
-| Component | When to display | Use case and purpose |
-| --- | --- | --- |
-| Illustration panel | Where an illustration supports the actual step | Orients the learner with the existing approved HSK AI Panda and other canonical art where useful. On phones its size follows available space, not a forced 30% desktop column. Illustration must never obscure the decision or keyboard. |
-| Progress indicator | Throughout a genuine sequential flow, in its established platform location | One source of truth for position in a genuine multi-step flow; show where useful, not on standalone screens. Place it within a safe, readable phone layout rather than forcing one desktop footer position. Do not duplicate position in every heading and action label. |
-| Bordered cell (radio) | A small, curated set of options with no search — pick one of a few deliberate, mutually exclusive choices | Full border plus a gap between options signals each choice is worth pausing on. Leading radio when the row carries any content beyond a label — icon, subtitle, badge, metadata. |
-| Line-divider list | Within a modal detour, when the list is meant to be searched or browsed rather than chosen from a small curated set | One outer container, hairline dividers between rows. Lighter than repeated borders at any length — the deciding factor is intent (search or filter present) not how long the list happens to be. Not yet used outside a modal context in this pattern. |
-| Dropdown / select menu | A secondary, lower-frequency action with a small number of alternatives | Compact trigger plus a proper menu — not an accordion. Accordions reveal information; this is revealing actions. |
-| Modal | A bounded detour from the main step, search, filter, or any task that should return the user to exactly where they left off | Reserved for a task substantial enough to earn its own modal, distinct from an inline menu. |
-| Inline preview (info button) | Supporting detail on an option, without navigating away from the flow | Expands in place. Keep this affordance consistent everywhere it appears within the same task — don't mix an inline preview with an external link for the same kind of action. |
-| Checkbox (opt-out) | A "skip this entirely" choice, meaningfully different from an alternate path to the same outcome | Always visible on its own line, never nested inside a menu of alternate methods. |
-| Back / Skip links | Secondary navigation — return to an earlier supported step or skip only genuinely optional steps; preserve progress and account state | Quiet text links, grouped together, visually subordinate to the one primary CTA. |
-| Primary CTA button | The one action that advances the flow | Copy describes the guaranteed outcome, not a presumed action — stays accurate no matter which path the user took to get there. |
-| Cascading select | Narrowing a genuinely large, ambiguous set of supported learning options before presenting a final choice; do not create a cascading picker for a short HSK-level set | Each dropdown depends on the one before it and stays disabled until it's relevant. |
-
-## Logic framework: how they play together
-
-A learner entering on iPhone PWA may sign in with supported providers or resume a verified session; native Android can begin with a guest choice and proceed to account linking. Existing users and new learners need different steps. Keep the visual hierarchy and behavior consistent, without pretending the platform-specific flows use identical screens or forcing every learner through the same questions.
-One consistent interaction model, several verified entry routes. Keep approved Panda art, clear primary action, progress meaning and back navigation, but adapt placement to actual mobile layouts and safe areas.
-Progress is a single source of truth. A step shouldn't need a stepper, a loop counter, and a button label all trying to communicate position. Pick one place for that information and let everything else stay quiet.
-Indicator side is a per-task decision, not a per-screen one. Once a flow picks a side for its selection indicator, every step in that task holds it. Switching sides mid-journey forces the user to learn a new interaction pattern for no reason.
-Weight the container to the task behind it. A quick swap gets a menu or a modal; a genuinely multi-step task (like configuring several supported learning preferences) earns its own full page with its own stepper.
-Say what's guaranteed, not what's likely. Button copy should hold up no matter which path the user took to reach it. Specific language ("Go to dashboard") is only safe when the outcome is deterministic.
-
-## Progressive flow: the onboarding experience
-
-This section illustrates how a learner proceeds from the appropriate entry route through account verification, supported learning choices and a reliable handoff to the course. Some original images use school/teacher contexts; those images teach flow structure only.
-
-### Activation
-
-For an existing HSK AI account, identify the learner with the actual supported sign-in methods and verify the server session before reading or saving account-linked learning data. On iPhone PWA, the available Google/Telegram sign-in and verified session are not equivalent to a school-district identity check. Do not display an invented school name or an unverified account as an authenticated learner.
-
-For a learner without a verified account, show the actual new-learner or guest route where supported. A draft of learning preferences is not itself an authenticated user or a Pro entitlement.
-
-<img src={activation1Img} alt="Teacher activation screen showing the district account email inline" />
-
-Source illustration: the image demonstrates the information hierarchy and spacing of this step. Its school details and desktop geometry are **not** HSK AI requirements.
-
-<img src={activation2Img} alt="Student activation screen showing the school's name instead of an email" />
-
-Source illustration: the sample identifier is relevant only to a school context. HSK AI must use the actual verified learner account state.
-
-### Collecting basic profile info
-
-Collect only the information the specific HSK AI flow actually needs. Existing screens support language choice and learning decisions such as course track, level and goal; other choices depend on the current flow. Do not require school details, teacher birthdays or personal information just because the source example asks for them. Use ordinary fields for real text entry and selection controls for actual choices.
-
-<img src={collectingInfo1Img} alt="Teacher profile form collecting name and birthday" />
-
-Source illustration: the image demonstrates the information hierarchy and spacing of this step. Its school details and desktop geometry are **not** HSK AI requirements.
-
-<img src={collectingInfo2Img} alt="Student profile form collecting name and language" />
-
-Source illustration: the sample identifier is relevant only to a school context. HSK AI must use the actual verified learner account state.
-
-### The primary decision
-
-A dedicated step whose whole purpose is a single decision uses whichever selection component fits a small, curated option set with no search. A clearly marked single-choice control is suitable for a small available HSK-level or course-track set; retain existing approved HSK AI choice styling and selected state rather than imposing a Khan Academy school selector. Not every flow has an equivalent step — some may stop at the profile form above.
-
-<img src={logicFrameworkHowTheyPlayTogether5Img} alt="Logic framework: how they play together 5" />
-
-Source illustration: the image demonstrates the information hierarchy and spacing of this step. Its school details and desktop geometry are **not** HSK AI requirements.
-
-### Escaping the curated set
-
-Not every decision fits in a small curated set. When the option space is genuinely larger than what's shown in the primary decision, a modal detour opens to search or browse past it. This is specifically about searching beyond a smaller set already in view — not the same thing as a long list presented directly as its own step, like a genuinely long list within a cascading select, where there's no smaller curated view to escape from in the first place.
-
-<img src={logicFrameworkHowTheyPlayTogether6Img} alt="Logic framework: how they play together 6" />
-
-Source illustration: the image demonstrates the information hierarchy and spacing of this step. Its school details and desktop geometry are **not** HSK AI requirements.
-
-### Secondary paths
-
-Use a compact menu for truly secondary choices when the existing screen supports them, not for essential login providers or the one primary next action. A dropdown reveals available choices/actions; an accordion reveals content. Preserve this distinction and the product’s established Google/Telegram entry affordances.
-
-<img src={logicFrameworkHowTheyPlayTogether7Img} alt="Logic framework: how they play together 7" />
-
-Source illustration: the image demonstrates the information hierarchy and spacing of this step. Its school details and desktop geometry are **not** HSK AI requirements.
-
-### Opting out
-
-A genuine skip applies only to an **optional** choice. Never offer Skip for a required account verification, payment confirmation, data-saving step or other prerequisite. If skipping a preference is supported, keep it visible and preserve previously entered choices.
-
-<img src={logicFrameworkHowTheyPlayTogether8Img} alt="Logic framework: how they play together 8" />
-
-Source illustration: the image demonstrates the information hierarchy and spacing of this step. Its school details and desktop geometry are **not** HSK AI requirements.
-
-### Repeating the step
-
-If an actual HSK AI flow repeats a similar question, show its loop position separately and keep the core controls stable. Do not create repeated school/class assignment loops in HSK AI merely to follow the source illustration. Keep the step indicator and available navigation consistent across repeated steps; show **Skip** only for a genuinely optional question. Do not fold a loop counter into the main action's label or introduce a classroom-assignment action in HSK AI.
-
-<img src={logicFrameworkHowTheyPlayTogether9Img} alt="Logic framework: how they play together 9" />
-
-Source illustration: the image demonstrates the information hierarchy and spacing of this step. Its school details and desktop geometry are **not** HSK AI requirements.
-
-### Finishing
-
-Only promise a specific destination when the current verified account state, saved choices and platform routing guarantee it. Otherwise use an accurate Continue/Retry action rather than claiming the lesson or Pro access is ready before verification.
-
-<img src={logicFrameworkHowTheyPlayTogether10Img} alt="Logic framework: how they play together 10" />
-
-Source illustration: the image demonstrates the information hierarchy and spacing of this step. Its school details and desktop geometry are **not** HSK AI requirements.
-
----
-
-[Original source design reference — not HSK AI UI](https://www.figma.com/design/G9Yxa0SOlALS078wtq87cM/Design-system-guidelines---Thunderblocks?node-id=15122-6812&t=6FYCtPGYxddWaqet-4)
-
-## HSK AI-specific onboarding behavior
+## Entry routes and identity
 
 ### iPhone PWA
 
-- Keep the product's existing language choices (Uzbek, Russian, Tajik) and verified Google/Telegram account routes. Do not treat a browser return, local draft or stored display preference as proof of authentication. Identity, progress and Pro status remain server-owned.
-- The current iPhone installation guide is for **iOS browser mode**, not for an already-running standalone app. Safari and other iOS browsers have different screens: Safari presents installation help, while another browser presents the approved Panda/Safari-link guidance with a copyable address.
-- A Safari tab **cannot reliably detect whether an icon has already been installed** on the Home Screen. The code detects current browser-versus-standalone display mode. Do not promise a reliable “installed on another screen” status.
-- The current implementation suppresses the installation guide **after it was shown in the same browser-tab session**; it is not a permanent user-account flag. Do not describe it as permanently dismissed, or silently change its frequency in a design-only task.
-- Keep the existing close/continue action and installation-video guidance. The installation guide must not interrupt an external payment return or confuse successful sign-in with verified Pro activation.
+- Distinguish a Safari browser tab, a non-Safari iOS browser and the installed standalone display mode. Do **not** infer the existence of an already-installed home-screen icon from browser-mode checks.
+- In Safari browser mode, use the current installation instructions and any supported guidance media. In another iOS browser use the approved Panda-guided Safari/copy-link handoff only where that UI actually exists.
+- Keep the actual Google and Telegram sign-in options and verify the **server-authenticated account session** before reading or saving account-linked learning progress.
+- Do not turn a successful external provider return, locally chosen display language or pending account registration into a verified session.
+- The current installation-guide visibility behavior is not a permanent account-wide dismissal flag. Do not invent permanent installation detection or change reminder frequency without an explicit product decision.
+- Do not disrupt a purchase/payment return with an install guide. Verified Pro entitlement is owned by the backend.
 
-### Native Android
+### Android
 
-- Retain the platform's existing guest/new-learner choice, returning-account login, selection of supported course track/HSK level/goals and secure transition to account-linked activity.
-- Do not add Safari instructions or an iPhone installation modal to Android. Native Android selection, back navigation, keyboard and safe-area patterns remain the source of truth.
-- Do not force the Android Play version into an unavailable subscription purchase path or treat local guest choices as saved verified server progress.
+- Follow the current native new-learner/guest and returning-account pathways; never insert Safari installation instructions.
+- Use the app's existing supported HSK course-track, level, language and learning-goal options rather than inventing choices from a design screenshot.
+- Treat a guest draft as unverified local state until an approved account-linked save occurs. The Android Play build must not be routed into a purchase feature it does not support.
+- Native back navigation, focus, keyboard insets, safe areas and typography scaling are Android-specific. Do not force an iOS browser modal's geometry onto the native app.
 
-### Shared product safeguards
+## Guided decision principles
 
-- Respect the real branching/number of steps: a returning authenticated learner may skip the first-run questions. Only show a progress indicator for a genuinely sequential set of user decisions; it must not mislabel loading or payment verification as an extra user step.
-- The selected HSK version, level, language and goals must be **actually available** in the current app. A skipped step or provider handoff must not attach stale draft choices to another account.
-- Store and restore only within the existing owner-verified flow; provide a retry when saving fails. Never claim course readiness, a trial/Pro grant or progress persistence until the authoritative state confirms it.
-- Preserve accessible labels, 44 CSS px iPhone touch targets, 48 dp Android targets, reduced-motion behavior and the existing HSK AI colors, Panda proportions and animations.
-- This file is still a `.draft` document and may not appear as a published documentation page. Do not rename it or change production code merely to display this guideline; formal publication requires a separate verified step.
+| Element | Rule |
+| --- | --- |
+| Primary action | Exactly one clear next action per step; label it with a guaranteed outcome, not an unverified promise. |
+| Progress indicator | Only for an **actual ordered sequence**. Show the correct count of user decisions; do not count backend waits or payment checks as completed user steps. |
+| Short single-choice options | Present clearly distinguished options using the existing HSK AI single-choice styling. A short HSK level set does **not** need cascading search. |
+| Larger selection | Use a supported list, filter or modal detour only when genuinely needed; return to the previous step without losing selections. |
+| Secondary choices | Keep truly optional actions subordinate, not hidden inside unfamiliar menus. Actual Google/Telegram account providers should remain clear. |
+| Back and skip | Back returns to a previous supported step without losing a verified identity. Skip is allowed **only** for genuinely optional preferences, never verification, payment or required save. |
+| Inline detail | Optional explanations may expand in place and retain current selection. Keep important choices and mandatory terms visible. |
+| Illustration | Use actual approved Panda or other canonical HSK AI artwork only where it supports the learner. Do not demand a fixed desktop illustration panel on every phone screen. |
+| Localization | Use supported Uzbek/Russian/Tajik labels and the real current lesson track. Avoid truncating long labels or the full meaning of a required choice. |
+| Success and failure | Show success only after the relevant server confirms it; on failure keep data and offer a genuine retry. |
+
+## Layout, state and security
+
+- Keep the current platform's established control placement and visible step hierarchy. Do not introduce extra headings, counters or buttons all repeating the same position.
+- Where a step repeats, explain its position once and keep selections consistent. Do not create classroom-assignment loops.
+- Do not attach an unauthenticated draft to another account after a provider switch, tab return or logout. Guard account ownership, stale sessions and retry duplication.
+- Do not claim trial or Pro activation or course readiness until the authoritative state confirms it.
+- Respect approved HSK AI colors, Panda proportions, motion/reduced-motion handling, clear accessible button names, iPhone touch targets (44 CSS px) and native Android touch targets (48 dp where appropriate).
+- Extra nonessential text can use **a maximum two-line collapsed description**, with only a **top-right ⌄/⌃ icon** and in-place expansion. Required input guidance, privacy terms and choices are never collapsed.
+- Test with real iPhone browser/standalone and Android navigation, keyboard, enlarged text and network interruption before declaring a flow production-ready.
+
+## Documentation boundary
+
+This page contains **only HSK AI-specific design requirements**. It intentionally removes obsolete school account screens, other companies' mascots, classroom roles, source Figma links and inherited source screenshots. It remains a `.draft` file until the user separately authorizes publication and confirms behavior.
