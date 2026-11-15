@@ -126,6 +126,29 @@ For independent filter groups, a section line can clarify scope; don't add divid
 
 No image represents actual student/classroom functionality in HSK AI. These rules are about **visual organization**, not new product screens. The original source's main professional distinctions—subtle vs discoverable, focus vs selected, table vs section, and cells vs list—are now explicit for HSK AI.
 
+## Restored edge and divider decision rules
+
+### Pick the least intrusive boundary
+
+- Start with **spacing**, then a **divider**, then a **full border** only when the boundary itself helps recognition or action. This preserves hierarchy without turning every lesson group into a grid.
+- A **subtle border** may be suitable when the card edge is already evident through elevation/spacing and the line is not essential. An interactive input whose shape depends on its border needs an edge with the applicable **3:1** contrast, plus focus and error treatment.
+- A **focus ring** must remain visible by keyboard, should not shift the control's layout, and must not be repurposed as the only indicator of selection or validation error.
+- Source examples use roughly **1 CSS px** neutral strokes and stronger focus treatment. These are design-scale references, not a claim that every current Android/PWA control has identical dp/px geometry.
+
+### Choose dividers by structural meaning
+
+- **Table row separators:** consistently separate exact records; avoid mixing every-other-row shading, full grids and individual cell boxes without a measured comprehension benefit.
+- **Header/footer dividers:** separate fixed modal and sticky navigation regions from independently scrolling content, respecting the PWA safe area and native Android inset.
+- **Section dividers:** separate meaningfully different content areas. Do not insert a line automatically under every heading when heading typography and spacing already express the group.
+- **Bordered choice cells:** appropriate for a small fixed list of independently selectable options on the page background.
+- **Line-divided lists:** appropriate for already-contained, searchable or filterable items where each row is a distinct target.
+
+### Error, selected and inaccessible states
+
+- An invalid field must pair a distinct border with a readable inline message; a selected option needs a clear persistent state; a disabled control must be semantically disabled, not merely faded.
+- Keep meaningful focus, selected, error and disabled borders distinguishable **in both light and dark themes** without importing the source product's blue or other raw semantic tokens.
+- A decorative divider should not be focusable or look like a click target. Screen readers should hear row headings, labels and available actions rather than visual strokes.
+
 ## Implementation boundary
 
 This is HSK AI-specific design guidance. It deliberately excludes foreign UI-library token paths, desktop classroom screenshots and third-party focus-package requirements. It changes no production CSS, native component or navigation behavior.
