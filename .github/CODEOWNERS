@@ -1,6 +1,2 @@
-* @Khan/dsg-maintainers
-
-# Judge Trudy verdicts: only Design Infra rules.
-/verdicts/ @Khan/design-infra
-/__docs__/verdicts.mdx @Khan/design-infra
-/scripts/build-verdicts-page.mjs @Khan/design-infra
+# HSK AI Design System: no inherited third-party CODEOWNERS or approvals.
+# Add actual repository owner/team handles here only after confirming authorized maintainers.
