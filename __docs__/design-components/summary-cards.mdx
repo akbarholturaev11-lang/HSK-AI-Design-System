@@ -76,6 +76,27 @@ A summary strip should lead with a verified high-value number and its period; se
 
 Do not merge *enrolled*, *active*, *completed*, *passed* and *Pro* into one undefined status. A summary value must carry the same account, platform, date range and deduplication rules as its drill-down list. On phones allow the value and localized labels to wrap; avoid tiny fonts or misleading down arrows. Loading, partial coverage, missing permission and failure are different states.
 
+## Restored summary-card usage and anatomy
+
+### Decide when a card is appropriate
+
+- Use a card for **one important, directly understandable verified metric**. Position small groups after the page/section heading and before deeper charts or tables; on phones, a single full-width readable card is preferable to a forced multi-column grid.
+- Use a trend chart for change over time, a distribution for group spread, a goal bar for completion and a table for record-level actions. A stat card cannot show those dimensions honestly.
+- A detail link appears only if the detail route really exists and the user may access it; its accessible label must state the destination rather than merely “View.”
+
+### Stat anatomy
+
+- Pair a **one-to-three-word label** with an exact value and unit. Add scope, period, denominator, freshness or explanation when leaving them out changes interpretation.
+- A trend badge may communicate a verified change from a compatible baseline, but an increase is not automatically success and a decrease is not automatically failure. For error-rate metrics the meaning may be reversed.
+- Do not invent peer ranking, learner percentile, streak, XP, HSK level or “class average.” Show a missing value distinctly from zero, loading, access denied, partial and stale states.
+- Keep related cards consistent in emphasis/alignment while allowing localized labels and larger text to wrap. Do not clip Hanzi/pinyin, status or denominators for visual symmetry.
+- A clickable card must have a single coherent focus/activation target with keyboard and screen-reader support; a non-clickable metric must not look like a button.
+
+### State accuracy
+
+- When the metric cannot load, label the **specific metric** unavailable without hiding valid adjacent cards. A retry must not manufacture data, restart payment or post a lesson event.
+- Card aggregates, corresponding charts and underlying table lists must use one verifiable definition and matching permissions.
+
 ## Implementation boundary
 
 This document defines HSK AI summary-card design only. It contains no school/district report examples or fictitious production metrics. It does not alter analytics, scoring, progress or payment code.
