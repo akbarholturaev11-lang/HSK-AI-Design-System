@@ -106,15 +106,28 @@ Any additional information must be justified by a verified HSK AI product need, 
 
 ### Technical problems and suggestions
 
-- HSK AI has a **separate iPhone PWA problem report** with a description, optional image and verified server submission. A screenshot can contain sensitive on-screen information: the learner must explicitly control attachment, and the app must respect the current capture, redaction and account-verification protections. Do not silently attach a full screenshot to a general feedback vote.
+- HSK AI has a **separate iPhone PWA problem report** with a description, optional image and verified server submission. The current report form automatically attempts an on-device capture and **defaults the screenshot attachment switch to ON** when a capture is present; the learner can turn it off before pressing Send. This is **opt-out, not explicit opt-in**, and must not be represented otherwise. The target privacy principle is to let the learner review and explicitly control any attachment, avoid unnecessary sensitive content and retain the existing capture restrictions/account verification. Do not attach a screenshot to ordinary survey feedback.
 - Preserve the existing distinction between product suggestions, satisfaction feedback and problem reports. A support channel may be offered where one actually exists, but never claim a new integrated ticketing, reply or attachment capability that the product has not implemented.
 - Reporting a problem does not mean the problem is fixed, and attaching an image does not mean it has been sent before the server confirms the submission.
 
 ### Form safety, accessibility and mobile presentation
 
 - Keep submitted and draft states distinct; prevent repeated submission while waiting. Only display a success message after a confirmed server response. On failure, preserve entered content whenever feasible and offer a clear retry.
-- Preserve the source's rule against accidental dismissal through outside taps while the learner is composing feedback. Use the approved HSK AI dialog/back behavior and restore keyboard focus when closing.
+- **Target guideline:** preserve the source's rule against accidental dismissal while a learner is composing feedback. This is **not yet what the current iPhone PWA code does**: both feedback and problem-report dialogs currently close on backdrop taps and clear their drafts. Preserve focus restoration, and address this documented mismatch in a separate production change with tests; do not claim the protection already exists.
 - Keep feedback type labels short, meaningful and localized to Uzbek, Russian and Tajik where supported. Provide a clear reason for required comments; do not force extra fields purely for analytics.
 - Keep source rules of at most five specific choices plus “Other” as a **design readability guideline**, not a replacement for backend-supplied choices. Keep the approved HSK AI colors, Panda and mobile touch targets (44 CSS px on iPhone PWA; 48 dp on native Android).
+
+### Observed gaps in the current iPhone PWA implementation (design-to-code audit)
+
+The following are **observations about production code**, not design recommendations already implemented. A later focused change must preserve the existing feedback endpoints, server eligibility, owner validation and other app functionality.
+
+| Concern | Observed behavior in the current iPhone PWA | Required outcome for a future implementation |
+| --- | --- | --- |
+| Accidental dismissal of survey feedback | The dialog scrim has the same close action as the X button; `close()` resets `draft = {}`. Escape also closes. | Backdrop taps must not silently destroy an unfinished response. Preserve draft or confirm deliberate abandonment, and make the supported dismissal semantics accessible. |
+| Accidental dismissal of technical report | Backdrop taps invoke `close()`, which resets the report description and snapshot; Escape also closes. | Avoid silent loss of a typed problem description or attachment. A safe confirmation or recoverable draft is required before clearing unsent work. |
+| Submission still in progress | The survey disables its submit button while sending, but its close handler does **not** refuse dismissal during the request. The late response can then be invisible to the learner. The separate technical report **does** refuse to close during sending. | Resolve the survey's close/submit race so an outcome is not silently ambiguous. Do not submit twice or claim a message failed when it may already have reached the server. |
+| Screenshot consent | The technical-report form sets the attachment checkbox to **checked by default** when an image is available, even though the image may contain private details. A visible toggle and preview allow removal before sending. | If explicit attachment opt-in is adopted, default to unchecked and require an affirmative choice; otherwise clearly disclose that the present flow is opt-out. Preserve redaction and ownership verification. |
+
+These are **specific audit findings**, not authorization to alter the production PWA/Android code in a design-documentation pass. The Android implementation has not been independently verified by this audit; apply cross-platform changes only after inspecting its actual corresponding screens.
 
 This is **design documentation only**. Do not change current PWA/Android feedback behavior, message endpoints or server event fields merely to match a historical Khan Academy illustration.
