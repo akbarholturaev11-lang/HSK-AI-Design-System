@@ -2,6 +2,12 @@
 
 **Source status:** 44/44 standalone Markdown guideline files have been created and independently inventoried in `HSK-AI-Design-System` at this repository branch (snapshot `776d92e2c9b4b639db3b8c5c6542bf3006fc69d0`). This is a **candidate transfer corpus, not the final HSK app's currently installed design system**. HSK-AI-Bot has not been changed.
 
+## Owner direction: carry useful visual SAMPLES, exclude foreign APP SCREENS
+
+**This is an internal reference, not a publication.** The portable Markdown set already preserves the 44 professional guideline texts, but **the selected helpful non-screen illustrations must accompany the future transfer**, not be discarded merely because their original MDX import is historical. Classify every source image by **actual visual content**: neutral component/layout/spacing/variant/state illustration -> keep; screenshot or branded product UI from a foreign application -> exclude; genuine HSK artwork -> use canonical source; ambiguous -> visually review.
+
+See [verified sample/screenshot decisions](../migration/VISUAL_REFERENCE_SELECTION.md). The reviewed pictures show **six useful non-screen examples** and **two foreign-product screens**. The other PNGs must not be classified without looking at them. Sample palettes and spacing values are **illustrative, not HSK AI design tokens**. No public-site build or replacement of hundreds of foreign screenshots is required for the internal design system.
+
 ## Design authority — professional rules take precedence
 
 Before reading a component guideline, consult [Professional-first design decisions](../../DESIGN_SYSTEM_PROFESSIONAL_FIRST_CONTRACT.md) and [approved HSK AI owner decisions](../../DESIGN_SYSTEM_APPROVED_DECISIONS_AND_RESTORATION_TASKS.md). The **professional UX/UI system** is the intended visual target. Existing HSK AI screens are implementation evidence only; adapt the professional method at the **smallest precisely verified** functional, user safety, platform, true-learning-data or canonical-brand collision, without sacrificing the remaining professional detail.
