@@ -20,7 +20,7 @@ The destination paths are the **intended final HSK AI documentation locations**,
 
 | # | Source file | Git blob (prefix) | Image imports | Intended destination | Packaging work |
 | ---: | --- | --- | ---: | --- | --- |
-| `01` | `__docs__/design-components/active-filters.mdx` | `b7b705a12f82` | 4 | `docs/design-system/guidelines/design-components/active-filters.md` | Text conversion + figure provenance |
+| `01` | `__docs__/design-components/active-filters.mdx` | `ca9a5a855efe` | 4 | `docs/design-system/guidelines/design-components/active-filters.md` | Text conversion + figure provenance |
 | `02` | `__docs__/design-components/badges.mdx` | `048a1b078fb6` | 19 | `docs/design-system/guidelines/design-components/badges.md` | Text conversion + figure provenance |
 | `03` | `__docs__/design-components/banners.mdx` | `7eb978d12691` | 5 | `docs/design-system/guidelines/design-components/banners.md` | Text conversion + figure provenance |
 | `04` | `__docs__/design-components/buttons.mdx` | `b20a71a3783c` | 16 | `docs/design-system/guidelines/design-components/buttons.md` | Text conversion + figure provenance |
@@ -56,7 +56,7 @@ The destination paths are the **intended final HSK AI documentation locations**,
 | `34` | `__docs__/design-foundations/layout.mdx` | `d936a912a96c` | 5 | `docs/design-system/guidelines/design-foundations/layout.md` | Text conversion + figure provenance |
 | `35` | `__docs__/design-foundations/motion.mdx` | `55d96973acd9` | 6 | `docs/design-system/guidelines/design-foundations/motion.md` | Text conversion + figure provenance |
 | `36` | `__docs__/design-foundations/spacing.mdx` | `d062c6cbca27` | 7 | `docs/design-system/guidelines/design-foundations/spacing.md` | Text conversion + figure provenance |
-| `37` | `__docs__/design-foundations/surfaces-and-elevations.mdx` | `cb41c4272fc4` | 15 | `docs/design-system/guidelines/design-foundations/surfaces-and-elevations.md` | Text conversion + figure provenance |
+| `37` | `__docs__/design-foundations/surfaces-and-elevations.mdx` | `1231393bcf0d` | 15 | `docs/design-system/guidelines/design-foundations/surfaces-and-elevations.md` | Text conversion + figure provenance |
 | `38` | `__docs__/design-foundations/typography.mdx` | `176f01423050` | 0 | `docs/design-system/guidelines/design-foundations/typography.md` | Text/JSX conversion |
 | `39` | `__docs__/design-patterns/collecting-feedback.mdx` | `5e8c950b767d` | 4 | `docs/design-system/guidelines/design-patterns/collecting-feedback.md` | Text conversion + figure provenance |
 | `40` | `__docs__/design-patterns/component-composition-and-customization.mdx` | `4c8c8dbf0d78` | 0 | `docs/design-system/guidelines/design-patterns/component-composition-and-customization.md` | Text/JSX conversion |
