@@ -28,8 +28,8 @@ Don't use for: a single standalone task with no sequence, or a genuinely branch
 
 | Component | When to display | Use case and purpose |
 | --- | --- | --- |
-| Illustration panel | Every step | Orients the learner with the existing approved HSK AI Panda and other canonical art where useful. On phones its size follows available space, not a forced 30% desktop column. Illustration must never obscure the decision or keyboard. |
-| Progress indicator | Every step, in the footer | One source of truth for position in a genuine multi-step flow; show where useful, not on standalone screens. Place it within a safe, readable phone layout rather than forcing one desktop footer position. Do not duplicate position in every heading and action label. |
+| Illustration panel | Where an illustration supports the actual step | Orients the learner with the existing approved HSK AI Panda and other canonical art where useful. On phones its size follows available space, not a forced 30% desktop column. Illustration must never obscure the decision or keyboard. |
+| Progress indicator | Throughout a genuine sequential flow, in its established platform location | One source of truth for position in a genuine multi-step flow; show where useful, not on standalone screens. Place it within a safe, readable phone layout rather than forcing one desktop footer position. Do not duplicate position in every heading and action label. |
 | Bordered cell (radio) | A small, curated set of options with no search — pick one of a few deliberate, mutually exclusive choices | Full border plus a gap between options signals each choice is worth pausing on. Leading radio when the row carries any content beyond a label — icon, subtitle, badge, metadata. |
 | Line-divider list | Within a modal detour, when the list is meant to be searched or browsed rather than chosen from a small curated set | One outer container, hairline dividers between rows. Lighter than repeated borders at any length — the deciding factor is intent (search or filter present) not how long the list happens to be. Not yet used outside a modal context in this pattern. |
 | Dropdown / select menu | A secondary, lower-frequency action with a small number of alternatives | Compact trigger plus a proper menu — not an accordion. Accordions reveal information; this is revealing actions. |
@@ -113,7 +113,7 @@ Source illustration: the image demonstrates the information hierarchy and spacin
 
 ### Repeating the step
 
-If an actual HSK AI flow repeats a similar question, show its loop position separately and keep the core controls stable. Do not create repeated school/class assignment loops in HSK AI merely to follow the source illustration. The stepper and footer navigation (progress bar, Back, Skip, Continue) stay exactly the same as any other step; don't redesign them to account for the loop. Don't fold the loop position into the button copy either — the CTA stays "Continue," not "Assign, next class (1 of 4)."
+If an actual HSK AI flow repeats a similar question, show its loop position separately and keep the core controls stable. Do not create repeated school/class assignment loops in HSK AI merely to follow the source illustration. Keep the step indicator and available navigation consistent across repeated steps; show **Skip** only for a genuinely optional question. Do not fold a loop counter into the main action's label or introduce a classroom-assignment action in HSK AI.
 
 <img src={logicFrameworkHowTheyPlayTogether9Img} alt="Logic framework: how they play together 9" />
 
