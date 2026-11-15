@@ -17,7 +17,7 @@ import {Do, Dont, UsageExample} from "../components/DoDont";
 
 # Banners
 
-> **HSK AI scope:** These original examples and interactive demonstrations describe professional alert hierarchy, severity, layout, iconography and dismissal—not HSK AI's finished branded UI. Use HSK AI's approved semantic colors, accessible icons, mobile spacing and verified account/lesson states. Source screenshots must not be copied into the HSK AI interface.
+> **HSK AI scope:** These original examples and interactive demonstrations describe professional alert hierarchy, severity, layout, iconography and dismissal—not HSK AI's finished branded UI. Use HSK AI's approved semantic colors, accessible icons, mobile spacing and verified account/lesson states. Source screenshots must not be copied into the HSK AI interface. **All sample text and button callbacks on this page are illustrative, not real server actions.** The links now point to actual related documentation rather than dead demo placeholders.
 
 <NeutralBadge label="Persistent/Global alerts" />
 
@@ -57,7 +57,7 @@ Do use when signaling a severe, system-wide failure, data corruption, or an issu
                 <>
                     Your HSK AI request was flagged by moderation. If it
                     follows the{" "}
-                    <Link href="#link" inline={true}>
+                    <Link href="./?path=/docs/design-guidelines-components-feedback-banners--docs#learning-and-interface-safety" inline={true}>
                         Usage guidelines
                     </Link>
                     , try rephrasing and sending it again.
@@ -92,13 +92,13 @@ Do use when signaling the successful completion of a complex or high-stakes tran
             icon={checkCircleBold}
             text={
                 <>
-                    Two records have been saved for this user,{" "}
-                    <Link href="#link" inline={true}>
-                        Lesson history
+                    Illustrative saved-state layout (fictional data),{" "}
+                    <Link href="./?path=/docs/design-guidelines-components-data-visualization-data-tables--docs" inline={true}>
+                        Table guidelines
                     </Link>
                     , and{" "}
-                    <Link href="#link" inline={true}>
-                        Practice history
+                    <Link href="./?path=/docs/design-guidelines-patterns-data-reports--docs" inline={true}>
+                        Reporting data
                     </Link>
                 </>
             }
@@ -134,13 +134,13 @@ Do include the 'X' for a banner that is informational, feature-related, or confi
             icon={checkCircleBold}
             text={
                 <>
-                    Two records have been saved for this user,{" "}
-                    <Link href="#link" inline={true}>
-                        Lesson history
+                    Illustrative saved-state layout (fictional data),{" "}
+                    <Link href="./?path=/docs/design-guidelines-components-data-visualization-data-tables--docs" inline={true}>
+                        Table guidelines
                     </Link>
                     , and{" "}
-                    <Link href="#link" inline={true}>
-                        Practice history
+                    <Link href="./?path=/docs/design-guidelines-patterns-data-reports--docs" inline={true}>
+                        Reporting data
                     </Link>
                 </>
             }
@@ -154,7 +154,7 @@ Do include the 'X' for a banner that is informational, feature-related, or confi
                     {
                         type: "link",
                         title: "Here's why",
-                        href:"#link",
+                        href: "./?path=/docs/design-guidelines-components-feedback-banners--docs#learning-and-interface-safety",
                     },
                 ]}
                 onDismiss={() => {}}
@@ -215,7 +215,7 @@ There are two action types: Button and Link. Use a Link when the action is prima
                     {
                         type: "link",
                         title: "Here's why",
-                        href: "#link",
+                        href: "./?path=/docs/design-guidelines-components-feedback-banners--docs#learning-and-interface-safety",
                     },
                 ]}
                 onDismiss={() => {}}
