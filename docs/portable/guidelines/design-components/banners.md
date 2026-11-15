@@ -174,3 +174,20 @@ To be consistent with UX copy guidelines, use sentence case.
 ### Source demonstrations
 
 Any retained teacher/school or other-brand sample screen is a **historical illustration of the rule** and does not define HSK AI's colors, typography, content or characters. This is documentation only; HSK AI production notification logic is unchanged by this file.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: banners.png](../../examples/design-components/banners/banners.png)
+
+- [banners.png](../../examples/design-components/banners/banners.png) — exact source blob `dce69d4d6091` (illustrated above)
+- [copy-1.png](../../examples/design-components/banners/copy-1.png) — exact source blob `cc3f154bc6c4`
+- [copy-2.png](../../examples/design-components/banners/copy-2.png) — exact source blob `bf820d172ad5`
+- [copy-3.png](../../examples/design-components/banners/copy-3.png) — exact source blob `3b3b40b74108`
+- [placement-1.png](../../examples/design-components/banners/placement-1.png) — exact source blob `081bd66f743c`
+- [placement-2.png](../../examples/design-components/banners/placement-2.png) — exact source blob `fa405f893bbf`
+- [placement-3.png](../../examples/design-components/banners/placement-3.png) — exact source blob `a8946a36eed6`
+- [variants-1.png](../../examples/design-components/banners/variants-1.png) — exact source blob `e230a47f6b40`
+- [variants-2.png](../../examples/design-components/banners/variants-2.png) — exact source blob `ff488b073e9b`
+- [variants-3.png](../../examples/design-components/banners/variants-3.png) — exact source blob `ab35014792a0`

@@ -68,3 +68,16 @@ What goes into an option label depends on where its content comes from.
 **Content titles:** When the option is a pre-existing piece of content (a lesson, quiz, or unit test name), use its actual title as-is. These aren't subject to the conciseness or parallel-structure rule above — they're inherited from the curriculum, not authored for the checkbox group, and shortening or rewording them would break their ability to identify the actual content.
 
 > **Historical figure 6 — source reference only (not transferred):** Copy. Source asset: `./assets/checkbox-group/copy.png`.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: checkbox-group.png](../../examples/design-components/checkbox-group/checkbox-group.png)
+
+- [checkbox-group.png](../../examples/design-components/checkbox-group/checkbox-group.png) — exact source blob `d79160a70d7f` (illustrated above)
+- [copy.png](../../examples/design-components/checkbox-group/copy.png) — exact source blob `17d35ef83f57`
+- [header.png](../../examples/design-components/checkbox-group/header.png) — exact source blob `80e4ce79e65f`
+- [interaction-1.png](../../examples/design-components/checkbox-group/interaction-1.png) — exact source blob `a085849e3c8d`
+- [interaction-2.png](../../examples/design-components/checkbox-group/interaction-2.png) — exact source blob `01c7dcbfdc00`
+- [placement-1.png](../../examples/design-components/checkbox-group/placement-1.png) — exact source blob `5ca856b288d5`

@@ -163,3 +163,27 @@ To be consistent with UX copy guidelines, use sentence case.
 Do not use periods, question marks, or exclamation points in badge copy. Badges are meant to be instantly scannable status indicators.
 
 > **Historical figure 19 — source reference only (not transferred):** Copy 3. Source asset: `./assets/badges/copy-3.png`.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: copy-2.png](../../examples/design-components/badges/copy-2.png)
+
+- [copy-2.png](../../examples/design-components/badges/copy-2.png) — exact source blob `82aba4a41e3b` (illustrated above)
+- [copy-3.png](../../examples/design-components/badges/copy-3.png) — exact source blob `a26678996b03`
+- [copy-4.png](../../examples/design-components/badges/copy-4.png) — exact source blob `5031657e0c2f`
+- [iconography-1.png](../../examples/design-components/badges/iconography-1.png) — exact source blob `7d27b9022fb2`
+- [placement-2.png](../../examples/design-components/badges/placement-2.png) — exact source blob `49c611757adf`
+- [placement-3.png](../../examples/design-components/badges/placement-3.png) — exact source blob `1500b8ee342b`
+- [score-to-status-mapping-2.png](../../examples/design-components/badges/score-to-status-mapping-2.png) — exact source blob `022556b25972`
+- [states-1.png](../../examples/design-components/badges/states-1.png) — exact source blob `e2a4b05a492b`
+- [states-2.png](../../examples/design-components/badges/states-2.png) — exact source blob `335d22ac8863`
+- [states-3.png](../../examples/design-components/badges/states-3.png) — exact source blob `c7d2163fd862`
+- [states-5.png](../../examples/design-components/badges/states-5.png) — exact source blob `745b0c119a83`
+- [variants-1.png](../../examples/design-components/badges/variants-1.png) — exact source blob `475fa87603a9`
+- [variants-2.png](../../examples/design-components/badges/variants-2.png) — exact source blob `81d683c9732a`
+- [variants-3.png](../../examples/design-components/badges/variants-3.png) — exact source blob `f2bebe7be6c8`
+- [variants-4.png](../../examples/design-components/badges/variants-4.png) — exact source blob `79aaadf6d27e`
+- [variants-5.png](../../examples/design-components/badges/variants-5.png) — exact source blob `8815941abb7e`
+- [variants-6.png](../../examples/design-components/badges/variants-6.png) — exact source blob `d61cb1b03399`

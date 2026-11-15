@@ -92,3 +92,11 @@ The label is always "Clear all filters" — sentence case, plural, no ending pun
 - A typed search stays intact after Clear all filters by the source rule; the search field has its own clear control. Default/required course scope, reporting period and sort selection also retain their established behavior.
 - On HSK AI mobile screens, keep this secondary action close to the active filter labels, reachable above the keyboard/safe area, and return accessible focus to the results after the button disappears.
 - After clearing, announce the accurate result count. If the list is truly empty or data is unavailable, do not invent items merely to fill the view.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: clear-filter.png](../../examples/design-components/clear-filter/clear-filter.png)
+
+- [clear-filter.png](../../examples/design-components/clear-filter/clear-filter.png) — exact source blob `dd0ae64847ad` (illustrated above)

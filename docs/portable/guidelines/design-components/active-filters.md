@@ -70,3 +70,12 @@ For multi-select filters, each selected value gets its own chip rather than comb
 - The source figure shows the position, not HSK AI colors or Khan Academy subject labels. On phones, wrap labels, keep a clearly named removal control and prevent labels from covering the result count.
 - Removing one selected criterion must retain other filters, any typed search and the sort order. Keep the resulting count consistent with the listed records.
 - Use the approved HSK AI touch targets, iconography and readable labels; do not represent lesson progress or Pro status as an active filter if it is merely a static badge.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: active-filters.png](../../examples/design-components/active-filters/active-filters.png)
+
+- [active-filters.png](../../examples/design-components/active-filters/active-filters.png) — exact source blob `b986b2d68d6a` (illustrated above)
+- [copy.png](../../examples/design-components/active-filters/copy.png) — exact source blob `bf9fa2fb3e5d`

@@ -107,3 +107,14 @@ A professional report container has five layers: contextual heading, compact met
 ## Implementation boundary
 
 This page removes inherited school-report screenshots, borrowed chart styling and dead source anchors. The HSK AI application and metrics pipeline remain unchanged.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: controls.png](../../examples/design-components/chart-container/controls.png)
+
+- [controls.png](../../examples/design-components/chart-container/controls.png) — exact source blob `bfa77705a126` (illustrated above)
+- [header.png](../../examples/design-components/chart-container/header.png) — exact source blob `46b39a10371c`
+- [heading-hierarchy.png](../../examples/design-components/chart-container/heading-hierarchy.png) — exact source blob `b79f1e5885df`
+- [view-toggle.png](../../examples/design-components/chart-container/view-toggle.png) — exact source blob `24a4a881cc7b`

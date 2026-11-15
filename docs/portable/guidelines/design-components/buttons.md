@@ -206,3 +206,25 @@ Always use logically paired verbs for opposite actions, as the choice clarifies 
 - Ensure actions do not obscure Hanzi, pinyin, answer choices, keyboard, safe areas or AI Voice controls.
 - Test correct/incorrect learning feedback, loading, accessibility, press states and duplicate-request protection on both mobile platforms.
 - Keep existing brand-red versus Critical semantics, 4-point spacing tokens and approved custom icons. Source screenshots are educational references, not product artwork.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: buttons.png](../../examples/design-components/buttons/buttons.png)
+
+- [buttons.png](../../examples/design-components/buttons/buttons.png) — exact source blob `5cecea5ba49e` (illustrated above)
+- [copy-1.png](../../examples/design-components/buttons/copy-1.png) — exact source blob `968df7d58547`
+- [copy-2.png](../../examples/design-components/buttons/copy-2.png) — exact source blob `618926f46a01`
+- [copy-3.png](../../examples/design-components/buttons/copy-3.png) — exact source blob `af6317f468cc`
+- [copy-4.png](../../examples/design-components/buttons/copy-4.png) — exact source blob `e28b6738fafa`
+- [copy-5.png](../../examples/design-components/buttons/copy-5.png) — exact source blob `4c7531905a6d`
+- [copy-6.png](../../examples/design-components/buttons/copy-6.png) — exact source blob `00970245c302`
+- [header.png](../../examples/design-components/buttons/header.png) — exact source blob `6b7a2a8eb962`
+- [neutral-icon-buttons.png](../../examples/design-components/buttons/neutral-icon-buttons.png) — exact source blob `6343332a32cc`
+- [states-2.png](../../examples/design-components/buttons/states-2.png) — exact source blob `06fbddaf9c81`
+- [states-3.png](../../examples/design-components/buttons/states-3.png) — exact source blob `188531c139ad`
+- [states-5.png](../../examples/design-components/buttons/states-5.png) — exact source blob `de73c05c75df`
+- [variants-1.png](../../examples/design-components/buttons/variants-1.png) — exact source blob `6e8045edf0dc`
+- [variants-2.png](../../examples/design-components/buttons/variants-2.png) — exact source blob `310d8293a021`
+- [variants-3.png](../../examples/design-components/buttons/variants-3.png) — exact source blob `43dbb1eb6cf6`
