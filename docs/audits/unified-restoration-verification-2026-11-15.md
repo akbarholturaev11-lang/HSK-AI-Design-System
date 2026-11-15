@@ -111,3 +111,16 @@ The static import and `alt` inspection does **not** validate MDX compilation, al
 - This closes the **historical MDX rules-completeness/documentary comparison**, **not** the independent Storybook build, UI interaction, source image distribution-rights, responsive rendering or CI requirements below. At this check, the design repo GitHub Actions API still returned **zero workflow runs**; local runtime has Node 22 instead of required Node 24 and no pnpm or GitHub network DNS, so `pnpm typecheck` / `pnpm build` were **not** executed.
 
 **Disposition:** The specified source-comparison task has a per-page audited result. The PR **stays draft/unmerged** pending the existing release blockers.
+
+## Follow-up: code, CI gate, and authentic branding audit (2026-11-15)
+
+See [Design implementation integrity follow-up](./design-implementation-integrity-followup-2026-11-15.md) for the detailed GitHub-source verification and per-file changes.
+
+- **Documentation demo corrections:** plot segments and accessibility descriptions now derive from the same fictional dataset as the table; missing observations remain gaps; sample-zero filtering actually changes the visible categories. The example vocabulary table now shows Hanzi, tone-marked pinyin and real Russian word meanings, and announces sort direction.
+- **Storybook brand corrected:** reused the exact official product SVG master (`171a49f9093367cc88d3a81b83133a85e8bb4be9`) for the docs' brand and favicon; 375px and 412px preview presets added. Five confirmed-unreferenced legacy source-brand logos/favicon assets were deleted from the branch. Historic source illustration rights remain unresolved.
+- **Static documentation integrity guard added:** `pnpm check:docs` via `scripts/check-docs.mjs`, wired into `build-check.yml`. A GitHub-source static import check separately reviewed **all 44 published MDX pages** and found no missing relative import or missing `<Meta title>`. **This is not a successful execution** of the new Node CLI command.
+- **Dead links fixed:** banner examples no longer navigate to `#link` and are explicitly fictional / documentation-only.
+- **Chromatic draft safety:** workflow now guards publish jobs for draft PRs and includes `ready_for_review` in PR trigger types. This protects the unmerged draft intent; it does not validate image reuse rights or prove the workflow ran.
+- **Release status unchanged:** `pnpm install`, `pnpm check:docs`, `pnpm typecheck`, `pnpm build`, GitHub CI, rendered Storybook, accessibility and image licensing **remain unverified**. At the last API query GitHub Actions had **zero workflow runs**. No main merge and no HSK-AI-Bot product edits.
+
+**Do not conflate source/audit progress with all mandatory release gates passing.**
