@@ -28,7 +28,7 @@ Long **optional** descriptions are clamped to a maximum of **two rendered lines*
 
 The intended outcome is a **full, no-omission transfer of professional guidelines** into the HSK AI product repository as the **top-level UI/UX decision authority**—not a new app, not a code refactor, and not a blind merge of third-party Storybook tools.
 
-- [44-page standalone Markdown review edition](docs/portable/README.md) — one independent, source-SHA-pinned draft per professional guideline, with figure references and no Storybook runtime dependency.
+- [44-page standalone Markdown review edition](docs/portable/README.md) and [first-pass migration readiness audit](docs/audits/portable-rulebook-migration-readiness-2026-11-15.md) — one independent, source-SHA-pinned draft per professional guideline, with figure references and no Storybook runtime dependency.
 - [44-page source/transfer catalog](docs/migration/TRANSFER_CATALOG.md) — tracked filenames, Git blob identities, intended target paths and 298 historical figure placements plus one Phosphor SVG demo import.
 - [Upstream text/art rights verification](docs/migration/UPSTREAM_RIGHTS_VERIFICATION_2026-11-15.md) and [29-demo semantic audit](docs/migration/LIVE_DEMO_SEMANTICS_AUDIT.md) — no automatic license from the upstream repository or its separate component packages.
 - [316-image / 30-font asset quarantine](docs/migration/ASSET_AND_RUNTIME_INVENTORY.md) — verified source path and SHA inventory, no blind binary copying.
