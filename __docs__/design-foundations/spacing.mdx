@@ -66,7 +66,7 @@ The production sources of truth are `app/static/course_v3_data/design-tokens.css
 
 ### Always use a token — never a raw value
 
-Use the existing HSK AI spacing tokens for recurring margins, padding and gaps, rather than introducing arbitrary per-screen values (such as 13px, 17px or 22px). PWA must reference the approved CSS variables and Android must use `PompSpacing` values. During the cross-platform UI audit, identify historical hard-coded values and assess each before migration; do not change production layouts blindly or assume that any non-token measurement is automatically a spacing defect.
+Use HSK AI's approved 4-unit spacing scale to realize the **professional rhythm, grouping and spatial hierarchy**; the current layout's exact padding/gaps are not fixed targets. Avoid arbitrary per-screen values (such as 13px, 17px or 22px) without a deliberate documented optical exception. PWA must reference the approved CSS variables and Android must use `PompSpacing` values. During the cross-platform UI audit, identify historical hard-coded values and assess each before migration; do not change production layouts blindly or assume that any non-token measurement is automatically a spacing defect.
 
 ### The same relationship gets the same space
 
@@ -82,7 +82,7 @@ If a layout feels crowded and adding more space doesn't help, the problem is lik
 
 ### Component spacing is already handled
 
-Spacing within approved shared UI components (for example, button padding) belongs to their component specification and should not be overridden for one screen. Layout authors control spacing between components and inside new composed groupings. Keep canonical Panda/approved-character proportions, established lesson feedback effects and AI Voice Orb geometry intact; do not resize or reposition them mechanically just to fit a spacing step. Correct an actual accessibility or layout defect through the relevant component design, not arbitrary overrides.
+Spacing within professional shared UI components (for example, button padding) belongs to their component specification and should not be overridden ad hoc. Existing component spacing that contradicts the professional target is a future shared-component redesign candidate, not a global exemption. Layout authors control spacing between components and inside new composed groupings. Keep canonical Panda/approved-character proportions, established lesson feedback effects and AI Voice Orb geometry intact; do not resize or reposition them mechanically just to fit a spacing step. Correct an actual accessibility or layout defect through the relevant component design, not arbitrary overrides.
 
 ### Negative space is a design decision
 
