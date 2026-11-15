@@ -89,7 +89,9 @@ export function HskTrendReference(): React.ReactElement {
             </div>
             {view === "chart" ? (
                 <div style={{maxWidth: 500, marginTop: 12}}>
-                    <svg viewBox="0 0 340 150" role="img" aria-label="Week 1 six answers; week 2 no data; week 3 eight; week 4 ten. Gap represents missing observations." style={{width: "100%", height: "auto"}}>
+                    <svg viewBox="0 0 340 150" role="img" aria-label={"Fictional weekly trend: " + trend.map(item =>
+                            item.period + ": " + (item.answers === null ? "not recorded" : item.answers + " answers")
+                        ).join("; ") + ". Missing observations are gaps, not zeros."} style={{width: "100%", height: "auto"}}>
                         <path d="M 32 15 V 125 H 325" stroke="currentColor" opacity=".5" fill="none" />
                         {trendSegments.map((segment, index) => (
                             <line key={index} x1={segment.x1} y1={segment.y1}
@@ -171,9 +173,9 @@ export function HskDistributionReference(): React.ReactElement {
 }
 
 const sampleWords = [
-    {hanzi: "你好", pinyin: "nǐ hǎo", result: "Reviewed"},
-    {hanzi: "学习", pinyin: "xuéxí", result: "In progress"},
-    {hanzi: "今天", pinyin: "jīntiān", result: "Reviewed"},
+    {hanzi: "你好", pinyin: "nǐ hǎo", meaningRu: "Здравствуйте", result: "Reviewed"},
+    {hanzi: "学习", pinyin: "xuéxí", meaningRu: "Учиться", result: "In progress"},
+    {hanzi: "今天", pinyin: "jīntiān", meaningRu: "Сегодня", result: "Reviewed"},
 ] as const;
 
 export function HskTableReference(): React.ReactElement {
@@ -184,18 +186,20 @@ export function HskTableReference(): React.ReactElement {
     return (
         <section style={panel} aria-label="Accessible sample vocabulary table">
             <strong>Scannable exact records</strong>
-            <p style={muted}>Fictional words and statuses for interaction testing, not a learner's data.</p>
+            <p style={muted}>Fictional word statuses; Russian meanings illustrate one supported language. Real HSK AI uses the account-selected translation language.</p>
             <button type="button" style={button} onClick={() => setAscending((value) => !value)}
                 aria-label={ascending ? "Sort example rows by pinyin descending" : "Sort example rows by pinyin ascending"}>
                 Sort pinyin {ascending ? "A–Z" : "Z–A"}
             </button>
-            <div style={{overflowX: "auto", marginTop: 12}}>
+            <div role="region" aria-label="Scrollable sample vocabulary records" tabIndex={0}
+                style={{overflowX: "auto", marginTop: 12}}>
                 <table style={{width: "100%", borderCollapse: "collapse", textAlign: "left"}}>
-                    <thead><tr><th scope="col">汉字</th><th scope="col">Pinyin</th><th scope="col">Status</th></tr></thead>
+                    <thead><tr><th scope="col">汉字</th><th scope="col" aria-sort={ascending ? "ascending" : "descending"}>Pinyin</th><th scope="col">Значение (RU)</th><th scope="col">Status</th></tr></thead>
                     <tbody>{rows.map((row) => (
                         <tr key={row.hanzi}>
                             <td style={{padding: "10px 4px", borderTop: "1px solid currentColor", fontSize: 20}}>{row.hanzi}</td>
                             <td style={{padding: "10px 4px", borderTop: "1px solid currentColor"}}>{row.pinyin}</td>
+                            <td style={{padding: "10px 4px", borderTop: "1px solid currentColor"}}>{row.meaningRu}</td>
                             <td style={{padding: "10px 4px", borderTop: "1px solid currentColor"}}>{row.result}</td>
                         </tr>
                     ))}</tbody>
