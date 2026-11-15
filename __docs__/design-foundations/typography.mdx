@@ -28,7 +28,7 @@ The production PWA already defines these values in `app/static/course_v3_data/de
 | `--hsk-section-title-line-height` | `1.2` | Existing section-title proportion; not a universal text line-height. |
 | `--hsk-ink` / `--hsk-ink-secondary` | Theme-dependent text colors | Primary learning text and supporting explanations. |
 
-The light theme currently uses dark ink on light paper and a cinnabar `#E04A40` accent. The dark theme uses light ink on dark paper and changes the accent token to cyan `#20BCEB`. **Do not hard-code the light accent in dark mode.**
+The light theme currently uses dark ink on light paper and the `--hsk-cinnabar` accent `#E04A40`. The dark theme uses light ink on dark paper and **the same token** changes to cyan `#20BCEB`. **Do not hard-code the light accent in dark mode.**
 
 On Android, inspect existing native text styles, font fallback and dynamic font scaling before choosing an equivalent. A PWA `px` dimension is **not** a 1:1 Android `sp` instruction; use the platform's supported typography and scaling. No new CJK font file or web font dependency is introduced by this guideline.
 
