@@ -1,8 +1,8 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/layout.mdx`, Git blob `d936a912a96cc554395de5b4349b9dcf197c506c`; 5 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/layout.mdx`, Git blob `d936a912a96cc554395de5b4349b9dcf197c506c`; 5 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
 # Layout
 
-> **Historical figure 1 — source reference only (not transferred):** Source illustration of general layout categories, not HSK AI production UI. Source asset: `./assets/layout/header.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Source illustration of general layout categories, not HSK AI production UI. Source asset: `./assets/layout/header.png`.
 
 > **Source diagram note:** The retained original wireframes explain the four screen-layout shapes. Their desktop sidebars and two-column geometry are **information hierarchy and density references**, not literal HSK AI mobile layouts. Preserve actual navigation destinations, but use the professional composition to improve the later iPhone PWA/Android interface instead of freezing current appearance.
 
@@ -37,7 +37,7 @@ A bird's-eye view of the system's current state with entry points to tasks and d
 
 The primary surface where an HSK AI learner actively studies Chinese: lessons, Hanzi/pinyin practice, quizzes, listening, pronunciation and AI Voice conversation. The lesson content is the focus; existing Panda/approved-character reactions and visual effects for both correct and incorrect answers are meaningful learning feedback and must remain. AI Voice retains its approved Orb and interaction states.
 
-> **Historical figure 2 — source reference only (not transferred):** Original source Learning wireframe (desktop side rail is not HSK AI mobile layout). Source asset: `./assets/layout/learning.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Original source Learning wireframe (desktop side rail is not HSK AI mobile layout). Source asset: `./assets/layout/learning.png`.
 
 **When to use:** An active lesson, answer exercise, vocabulary study or AI Voice conversation.
 **Density:** Low — the student needs focus. Nothing competes with the content.
@@ -46,7 +46,7 @@ The primary surface where an HSK AI learner actively studies Chinese: lessons, H
 
 A focused flow for completing a task — either a single step or a sequence of steps. The user has one thing to accomplish and the layout clears everything else out of the way. When a task requires multiple sequential decisions, a progress indicator at the top shows the user where they are and how much is left. Complexity is managed by breaking it across steps, not by cramming it onto one screen.
 
-> **Historical figure 3 — source reference only (not transferred):** Original source focused task flow (layout principle only). Source asset: `./assets/layout/job.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Original source focused task flow (layout principle only). Source asset: `./assets/layout/job.png`.
 
 **When to use:** One-time flows such as account linking, completing a profile action, confirming a purchase or submitting a focused task. Do not copy Khan Academy's teacher/assignment use cases.
 **Density:** Low — one task, one focus per step.
@@ -55,7 +55,7 @@ A focused flow for completing a task — either a single step or a sequence of s
 
 A setup flow for first-time HSK AI learners. New users need clarity above everything else, so each step focuses on the immediate decision without introducing all product features at once.
 
-> **Historical figure 4 — source reference only (not transferred):** Original source setup wireframe (its desktop columns must not be copied into HSK AI iPhone onboarding). Source asset: `./assets/layout/onboarding.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** Original source setup wireframe (its desktop columns must not be copied into HSK AI iPhone onboarding). Source asset: `./assets/layout/onboarding.png`.
 
 **When to use:** First launch, language/HSK-level selection, sign-in, account binding and platform-specific installation onboarding when required. On iPhone PWA, retain the approved Safari/Add to Home Screen guidance rather than a desktop two-column onboarding template.
 **Density:** Low — one focus per step.
@@ -71,7 +71,7 @@ A view for reviewing HSK AI learning progress, completed lessons, results, mista
 
 A screen for managing preferences and configurations. Navigation between topics sits above or alongside; the content area handles the active topic. Users come here to adjust something specific and leave — it's rarely a destination in itself.
 
-> **Historical figure 5 — source reference only (not transferred):** Original source settings wireframe (not HSK AI mobile navigation geometry). Source asset: `./assets/layout/settings.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** Original source settings wireframe (not HSK AI mobile navigation geometry). Source asset: `./assets/layout/settings.png`.
 
 **When to use:** HSK AI profile/account settings, language, learning preferences, notifications, privacy and accessibility controls.
 **Density:** Medium.

@@ -1,6 +1,6 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/surfaces-and-elevations.mdx`, Git blob `1231393bcf0ddff3618e3a1c01438bc14bb779ff`; 15 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/surfaces-and-elevations.mdx`, Git blob `1231393bcf0ddff3618e3a1c01438bc14bb779ff`; 15 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
-> **Historical figure 1 — source reference only (not transferred):** Historical upstream diagram of layered backgrounds and shadows; not the HSK AI app color palette or component styling. Source asset: `./assets/surfaces-and-elevations/surfaces-and-elevations.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Historical upstream diagram of layered backgrounds and shadows; not the HSK AI app color palette or component styling. Source asset: `./assets/surfaces-and-elevations/surfaces-and-elevations.png`.
 
 # Surfaces and elevations
 
@@ -34,7 +34,7 @@ The historical illustrations show two conceptual layers, **not** a rule that HSK
 
 Do not treat the source-specific `semanticColor.core.*` identifiers or the figures' palette as HSK AI's official design tokens.
 
-> **Historical figure 2 — source reference only (not transferred):** Swatches for Surface 1 - Subtle, Surface 2 - Default, and Surface scrim. Source asset: `./assets/surfaces-and-elevations/surfaces-overview.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Swatches for Surface 1 - Subtle, Surface 2 - Default, and Surface scrim. Source asset: `./assets/surfaces-and-elevations/surfaces-overview.png`.
 
 ### Surface 1
 
@@ -42,7 +42,7 @@ The main page background — the paint on the wall. Everything else sits in fron
 
 Use for: page and screen backgrounds, full-bleed layout regions like sidebars and headers, and supplementary cards where a border is sufficient to define the boundary.
 
-> **Historical figure 3 — source reference only (not transferred):** Mockup of a page with a sidebar and cards on the Surface 1 background — Page backgrounds are set to Surface 1. Other containers that are not the main priority of a page can also have Surface 1 background color.. Source asset: `./assets/surfaces-and-elevations/surface-1.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Mockup of a page with a sidebar and cards on the Surface 1 background — Page backgrounds are set to Surface 1. Other containers that are not the main priority of a page can also have Surface 1 background color.. Source asset: `./assets/surfaces-and-elevations/surface-1.png`.
 
 ### Surface 2
 
@@ -50,7 +50,7 @@ The first layer on the wall. Elements using Surface 2 sit closer to the user tha
 
 Use for: primary content cards, content panels, modals, drawers, and components that need to read as the focal object on the page background.
 
-> **Historical figure 4 — source reference only (not transferred):** Mockup of a content card standing out as the focal object on the page — Containers that are the main focus of the page have a Surface 2 background color.. Source asset: `./assets/surfaces-and-elevations/surface-2.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** Mockup of a content card standing out as the focal object on the page — Containers that are the main focus of the page have a Surface 2 background color.. Source asset: `./assets/surfaces-and-elevations/surface-2.png`.
 
 ### Surface scrim
 
@@ -58,7 +58,7 @@ A semi-transparent overlay applied over the page when a modal or drawer is open.
 
 Use a scrim when the **existing** overlay actually places the rest of the screen into a modal or blocked state. In the course, the `.sheet` overlay has a dimmed background; AI Voice has its own verified `.sheetLayer`/`.scrim` behavior. An anchored non-modal popover is different. Do not inherit a source-exclusive token or blindly alter functional overlay flows. **Retain the professional scrim, elevation, separation, focus and modality details** as the target for redesign.
 
-> **Historical figure 5 — source reference only (not transferred):** Mockup of an open drawer with a scrim dimming the page content behind it — A drawer is open above the page; the scrim dims the page content behind it while the drawer requires attention.. Source asset: `./assets/surfaces-and-elevations/surface-scrim.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** Mockup of an open drawer with a scrim dimming the page content behind it — A drawer is open above the page; the scrim dims the page content behind it while the drawer requires attention.. Source asset: `./assets/surfaces-and-elevations/surface-scrim.png`.
 
 ## Elevation
 
@@ -73,7 +73,7 @@ The following four levels are a **reference-only visual vocabulary**, not four s
 
 Original diagrams retain their own shadows and swatches for **analysis only**; they do not specify HSK AI values.
 
-> **Historical figure 6 — source reference only (not transferred):** Swatches for the four elevation levels: Base, Low, Mid, and High. Source asset: `./assets/surfaces-and-elevations/elevation-overview.png`.
+> **Historical figure 6 — source figure reference (only approved samples, if any, are linked below):** Swatches for the four elevation levels: Base, Low, Mid, and High. Source asset: `./assets/surfaces-and-elevations/elevation-overview.png`.
 
 ### Base
 
@@ -81,7 +81,7 @@ For components that sit flush with the surface. The right choice when the elemen
 
 Use for: static containers, layout elements, and interactive components that communicate affordance through other means.
 
-> **Historical figure 7 — source reference only (not transferred):** Mockup of a card at base elevation, flush with the surface with no shadow — The card contains multiple interactive elements and the content here is already the main focus of the page. Adding shadow to it would add depth without adding meaning.. Source asset: `./assets/surfaces-and-elevations/elevation-base.png`.
+> **Historical figure 7 — source figure reference (only approved samples, if any, are linked below):** Mockup of a card at base elevation, flush with the surface with no shadow — The card contains multiple interactive elements and the content here is already the main focus of the page. Adding shadow to it would add depth without adding meaning.. Source asset: `./assets/surfaces-and-elevations/elevation-base.png`.
 
 ### Low
 
@@ -89,7 +89,7 @@ For components where a subtle lift signals that the whole thing is a discrete, p
 
 Use for: content cards that function as primary focus or selectable units, and expanded accordion panels.
 
-> **Historical figure 8 — source reference only (not transferred):** Mockup of a card lifted off the surface with a subtle low-elevation shadow — The shadow signals that this is a main priority of the page and that the whole card is a selectable unit, not just a region of the page.. Source asset: `./assets/surfaces-and-elevations/elevation-low.png`.
+> **Historical figure 8 — source figure reference (only approved samples, if any, are linked below):** Mockup of a card lifted off the surface with a subtle low-elevation shadow — The shadow signals that this is a main priority of the page and that the whole card is a selectable unit, not just a region of the page.. Source asset: `./assets/surfaces-and-elevations/elevation-low.png`.
 
 ### Mid
 
@@ -97,7 +97,7 @@ For popovers. Temporary surfaces that appear above the main page flow without bl
 
 Use for: popovers and tooltips.
 
-> **Historical figure 9 — source reference only (not transferred):** Mockup of a popover floating above the page at mid elevation — The popover floats above the page content without blocking it — the stronger shadow is what separates it from the layer beneath.. Source asset: `./assets/surfaces-and-elevations/elevation-mid.png`.
+> **Historical figure 9 — source figure reference (only approved samples, if any, are linked below):** Mockup of a popover floating above the page at mid elevation — The popover floats above the page content without blocking it — the stronger shadow is what separates it from the layer beneath.. Source asset: `./assets/surfaces-and-elevations/elevation-mid.png`.
 
 ### High
 
@@ -105,7 +105,7 @@ For components that must command full attention and interrupt the user's flow.
 
 Illustrates toasts and modals in the upstream system; **do not require a strong shadow or interruption** for every HSK AI toast. Existing notification and modal behavior takes precedence.
 
-> **Historical figure 10 — source reference only (not transferred):** Mockup of a toast floating clearly above all page content at high elevation — Since toasts are temporary, urgent, and demand immediate attention, a strong shadow ensures they're never visually lost or confused with page content beneath them.. Source asset: `./assets/surfaces-and-elevations/elevation-high.png`.
+> **Historical figure 10 — source figure reference (only approved samples, if any, are linked below):** Mockup of a toast floating clearly above all page content at high elevation — Since toasts are temporary, urgent, and demand immediate attention, a strong shadow ensures they're never visually lost or confused with page content beneath them.. Source asset: `./assets/surfaces-and-elevations/elevation-high.png`.
 
 ## Using surfaces and elevations together
 
@@ -122,7 +122,7 @@ Surfaces and elevations are independent — either can be applied without the ot
 | Bottom sheet / modal | Actual `.sheet` / Voice-specific overlay CSS | Preserve existing scrim, stacking, focus and dismissal |
 | Voice Orb | Its own red pearlescent screen and renderer | Never re-skin via generic cards/shadow tiers |
 
-> **Historical figure 11 — source reference only (not transferred):** Two stacked-layer diagrams showing how surfaces and elevations combine, from the background at Surface 1 with base elevation up to alerts and modals at Surface 2 with high elevation. Source asset: `./assets/surfaces-and-elevations/combinations.png`.
+> **Historical figure 11 — source figure reference (only approved samples, if any, are linked below):** Two stacked-layer diagrams showing how surfaces and elevations combine, from the background at Surface 1 with base elevation up to alerts and modals at Surface 2 with high elevation. Source asset: `./assets/surfaces-and-elevations/combinations.png`.
 
 ## Usage guidelines
 
@@ -130,25 +130,25 @@ Surfaces and elevations are independent — either can be applied without the ot
 
 A background should remain visually subordinate to the current learning task. This is a hierarchy principle, **not** a claim that the real app implements the original system's Surface 1/Surface 2 classes. Preserve actual task/overlay layering semantics, but elevate the visual system to the professional surface/elevation hierarchy in the later redesign; avoid redundant depth effects.
 
-> **Historical figure 12 — source reference only (not transferred):** A Surface 1 card sitting flat on the page with no shadow, labeled Surface 1 + Elevation: Base. Source asset: `./assets/surfaces-and-elevations/usage-surface-base.png`.
+> **Historical figure 12 — source figure reference (only approved samples, if any, are linked below):** A Surface 1 card sitting flat on the page with no shadow, labeled Surface 1 + Elevation: Base. Source asset: `./assets/surfaces-and-elevations/usage-surface-base.png`.
 
 ### Elevation is a page-level decision
 
 Before reaching for Low elevation, look at the full page. On a complex page — a practice view with chat, action buttons, and a question all present — Low elevation gives the question card the hierarchy it needs to read as the primary focus. On a simpler page where the main content is already uncontested, Base is sufficient. Adding Low where nothing is competing creates depth without meaning.
 
-> **Historical figure 13 — source reference only (not transferred):** A white Surface 2 card sitting on a Surface 1 background with a soft shadow, labeled Elevation: Low. Source asset: `./assets/surfaces-and-elevations/usage-page-level.png`.
+> **Historical figure 13 — source figure reference (only approved samples, if any, are linked below):** A white Surface 2 card sitting on a Surface 1 background with a soft shadow, labeled Elevation: Low. Source asset: `./assets/surfaces-and-elevations/usage-page-level.png`.
 
 ### Elevation low is for interactive components at rest — not on hover
 
 In the upstream example, Low is the default elevation rather than a hover state. This is **not** a binding HSK AI shadow level. Interactive states are handled by the component's state tokens, not by increasing elevation level. Don't increase elevation on hover unless the component's design explicitly uses elevation as a state signal.
 
-> **Historical figure 14 — source reference only (not transferred):** Mockup of interactive cards at low elevation, one showing a hover cursor — increase elevation on hover. Use state tokens to handle interactive states instead.. Type: dont. Source asset: `./assets/surfaces-and-elevations/usage-low-at-rest-v3.png`.
+> **Historical figure 14 — source figure reference (only approved samples, if any, are linked below):** Mockup of interactive cards at low elevation, one showing a hover cursor — increase elevation on hover. Use state tokens to handle interactive states instead.. Type: dont. Source asset: `./assets/surfaces-and-elevations/usage-low-at-rest-v3.png`.
 
 ### Scrims belong with elevation high
 
 Use a scrim for truly **modal** content when the existing screen blocks interaction with the rest of the page. Do not reclassify non-modal HSK AI helpers as modal or replace the existing course and AI Voice overlay mechanisms merely to fit the source diagram. Test dismissal, safe areas, keyboard, focus restoration and screen-reader behavior in the actual PWA/Android component.
 
-> **Historical figure 15 — source reference only (not transferred):** A modal dialog at high elevation paired with a scrim dimming the page behind it. Source asset: `./assets/surfaces-and-elevations/usage-scrim-high.png`.
+> **Historical figure 15 — source figure reference (only approved samples, if any, are linked below):** A modal dialog at high elevation paired with a scrim dimming the page behind it. Source asset: `./assets/surfaces-and-elevations/usage-scrim-high.png`.
 
 ## Accessibility
 

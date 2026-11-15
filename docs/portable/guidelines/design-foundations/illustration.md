@@ -1,4 +1,4 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/illustration.mdx`, Git blob `e9947b3c1fa26573c28ed97b716878dd04e0dd5f`; 3 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/illustration.mdx`, Git blob `e9947b3c1fa26573c28ed97b716878dd04e0dd5f`; 3 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
 # HSK AI illustration
 
@@ -56,19 +56,19 @@ These original reference images illustrate **three forms of supporting artwork**
 
 ### Spot illustration — one focused idea
 
-> **Historical figure 1 — source reference only (not transferred):** Original design-system example of a small spot illustration; source shapes and colors are not HSK AI artwork. Source asset: `./assets/illustration/types-of-illustration-3.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Original design-system example of a small spot illustration; source shapes and colors are not HSK AI artwork. Source asset: `./assets/illustration/types-of-illustration-3.png`.
 
 A spot image should explain one meaningful state without occupying most of the page. For HSK AI an eligible example would be a **currently supported** empty state or small learning help area. Pair the graphic with the real message and action; do not insert a random character merely to decorate an alert.
 
 ### Scene — purposeful context
 
-> **Historical figure 2 — source reference only (not transferred):** Original scene composition reference; not a canonical HSK AI character scene. Source asset: `./assets/illustration/types-of-illustration-4.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Original scene composition reference; not a canonical HSK AI character scene. Source asset: `./assets/illustration/types-of-illustration-4.png`.
 
 A scene should have a focal subject, a restrained background and a clear relationship to the user's current task. Keep enough breathing room for Hanzi, tone-marked pinyin, answer choices and narrow phone layouts. Do not trace source characters or shift approved Panda anatomy.
 
 ### Accent — strictly decorative
 
-> **Historical figure 3 — source reference only (not transferred):** Original decorative accent reference illustrating small shapes and celebration effects. Source asset: `./assets/illustration/types-of-illustration-5.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Original decorative accent reference illustrating small shapes and celebration effects. Source asset: `./assets/illustration/types-of-illustration-5.png`.
 
 Accent shapes such as confetti may support a verified celebration but must carry **no required information**. Their color and animation may be reduced or removed without losing meaning. Never use an accent as evidence that a lesson or payment succeeded.
 

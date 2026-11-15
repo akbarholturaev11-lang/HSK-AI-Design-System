@@ -1,6 +1,6 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/spacing.mdx`, Git blob `d062c6cbca2748f356b342ed3e234da8c2c5094f`; 7 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/spacing.mdx`, Git blob `d062c6cbca2748f356b342ed3e234da8c2c5094f`; 7 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
-> **Historical figure 1 — source reference only (not transferred):** Spacing. Source asset: `./assets/spacing/spacing.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Spacing. Source asset: `./assets/spacing/spacing.png`.
 
 # Spacing
 
@@ -73,19 +73,19 @@ There are several types of spacing we can use to place elements within layouts a
 
 Padding is the distance between the outside edge of an element and the content inside of it.
 
-> **Historical figure 2 — source reference only (not transferred):** Padding illustration. Source asset: `./assets/spacing/types-of-spacing-1.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Padding illustration. Source asset: `./assets/spacing/types-of-spacing-1.png`.
 
 ### Gap
 
 Gap is the space between elements inside a container. Unlike padding, it doesn't affect the distance to the container's edge, it only controls how far apart the elements inside are from each other.
 
-> **Historical figure 3 — source reference only (not transferred):** Gap illustration. Source asset: `./assets/spacing/types-of-spacing-2.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Gap illustration. Source asset: `./assets/spacing/types-of-spacing-2.png`.
 
 ### Margins
 
 Margins are the space around the outside edge of a component.
 
-> **Historical figure 4 — source reference only (not transferred):** Margins illustration. Source asset: `./assets/spacing/types-of-spacing-3.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** Margins illustration. Source asset: `./assets/spacing/types-of-spacing-3.png`.
 
 ## Spacing examples
 
@@ -95,19 +95,19 @@ Here are some examples of use which might help guide your decisions when applyin
 
 Make sure to use vertical spacing as a way to create meaningful blocks of content, using bigger and smaller spaces to improve the visual hierarchy of your layout and to keep a consistent vertical rhythm within the page.
 
-> **Historical figure 5 — source reference only (not transferred):** Layout spacing example. Source asset: `./assets/spacing/spacing-examples-1.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** Layout spacing example. Source asset: `./assets/spacing/spacing-examples-1.png`.
 
 ### Grouped content
 
 When you're composing a custom grouping — a card, a module, a section of related content — use padding and gap consistently to create a clear visual hierarchy. Smaller values bring related elements closer together; larger values signal separation between distinct content areas. This is different from spacing inside a pre-built system component (a Button, an Input) — that's fixed by the component and isn't yours to adjust; see Component spacing is already handled above.
 
-> **Historical figure 6 — source reference only (not transferred):** Component spacing example. Source asset: `./assets/spacing/spacing-examples-2.png`.
+> **Historical figure 6 — source figure reference (only approved samples, if any, are linked below):** Component spacing example. Source asset: `./assets/spacing/spacing-examples-2.png`.
 
 ### Typography spacing
 
 Prioritize readability of Chinese Hanzi, pinyin and translations. Keep related text close enough to be recognized as one learning unit without collisions or cramped line spacing; use larger gaps to separate distinct questions, answer options and feedback. Spacing tokens control margins and padding; readable line-height and text scaling are governed by typography and must not be forced to 4-point increments.
 
-> **Historical figure 7 — source reference only (not transferred):** Typography spacing example. Source asset: `./assets/spacing/spacing-examples-3.png`.
+> **Historical figure 7 — source figure reference (only approved samples, if any, are linked below):** Typography spacing example. Source asset: `./assets/spacing/spacing-examples-3.png`.
 
 ## Accessibility
 

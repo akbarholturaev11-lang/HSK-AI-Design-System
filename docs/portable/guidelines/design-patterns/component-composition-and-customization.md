@@ -1,4 +1,4 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-patterns/component-composition-and-customization.mdx`, Git blob `4c8c8dbf0d78a4b20f0e320185ff2ad2f27f5117`; 0 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-patterns/component-composition-and-customization.mdx`, Git blob `4c8c8dbf0d78a4b20f0e320185ff2ad2f27f5117`; 0 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
 # HSK AI component composition and customization
 

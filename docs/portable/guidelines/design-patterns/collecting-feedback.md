@@ -1,4 +1,4 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-patterns/collecting-feedback.mdx`, Git blob `5e8c950b767db01e3aed7fe84d14ad0dc22bdd79`; 4 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-patterns/collecting-feedback.mdx`, Git blob `5e8c950b767db01e3aed7fe84d14ad0dc22bdd79`; 4 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
 # HSK AI feedback and problem reporting
 
@@ -62,25 +62,25 @@ The following observations came from inspecting `app/static/course_v3_data/iphon
 
 ### Example 1: hero collecting feedback
 
-> **Historical figure 1 — source reference only (not transferred):** Original feedback-positive/negative illustration; not an HSK AI voting screen. Source asset: `./assets/collecting-feedback/hero-collecting-feedback.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Original feedback-positive/negative illustration; not an HSK AI voting screen. Source asset: `./assets/collecting-feedback/hero-collecting-feedback.png`.
 
 **Contextual sentiment:** a source-level thumbs-up/down interaction is not equivalent to HSK AI's current server-prepared lesson survey.
 
 ### Example 2: feedback trigger opinion
 
-> **Historical figure 2 — source reference only (not transferred):** Source in-content opinion feedback affordance. Source asset: `./assets/collecting-feedback/feedback-trigger-opinion.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Source in-content opinion feedback affordance. Source asset: `./assets/collecting-feedback/feedback-trigger-opinion.png`.
 
 **Discoverability:** invite feedback near the content it evaluates, but only through a real supported HSK AI feedback campaign/route.
 
 ### Example 3: feedback trigger general
 
-> **Historical figure 3 — source reference only (not transferred):** Source general feedback entry point on a teacher dashboard, not an HSK AI admin feature. Source asset: `./assets/collecting-feedback/feedback-trigger-general.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Source general feedback entry point on a teacher dashboard, not an HSK AI admin feature. Source asset: `./assets/collecting-feedback/feedback-trigger-general.png`.
 
 **General suggestions:** product feedback has a different intent from a reproducible technical error; don't invent a teacher navigation item.
 
 ### Example 4: feedback open widget
 
-> **Historical figure 4 — source reference only (not transferred):** Original compact feedback popover example. Source asset: `./assets/collecting-feedback/feedback-open-widget.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** Original compact feedback popover example. Source asset: `./assets/collecting-feedback/feedback-open-widget.png`.
 
 **Form anatomy:** use readable choices, concise explanation, optional comment where configured and a safe submission/close behavior. A fixed desktop popover width is not mandated on phones.
 

@@ -1,6 +1,6 @@
-> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/motion.mdx`, Git blob `55d96973acd95eb568d0d4f2edf8698f8c17e099`; 6 historic figures, 0 MDX interactive demos. Historical binaries/vendor runtime omitted; source prose licensing, picture equivalence and full rights-cleared transfer still require review. No live HSK AI feature is implied.
+> **HSK AI professional guideline — standalone internal review draft.** Source `__docs__/design-foundations/motion.mdx`, Git blob `55d96973acd95eb568d0d4f2edf8698f8c17e099`; 6 historic figures, 0 MDX interactive demos. Only selected neutral example PNGs, if any, are included below; excluded foreign screens and vendor runtime were not transferred. Source prose remains an internal draft; omitted historical figures are not claimed visually equivalent. No live HSK AI feature is implied.
 
-> **Historical figure 1 — source reference only (not transferred):** Motion. Source asset: `./assets/motion/motion.png`.
+> **Historical figure 1 — source figure reference (only approved samples, if any, are linked below):** Motion. Source asset: `./assets/motion/motion.png`.
 
 # Motion
 
@@ -32,7 +32,7 @@ The existing HSK AI Panda and other approved lesson characters MUST continue to 
 
 When a learner completes a lesson, reaches a verified milestone, or earns a genuine achievement, a richer celebration, confetti or a reward reveal is appropriate. Keep these moments special. This limitation on *large celebrations* does NOT prohibit short, existing Panda/character reactions and feedback effects after each correct or incorrect lesson answer.
 
-> **Historical figure 2 — source reference only (not transferred):** Student celebration motion example. Source asset: `./assets/motion/exceptions-2.png`.
+> **Historical figure 2 — source figure reference (only approved samples, if any, are linked below):** Student celebration motion example. Source asset: `./assets/motion/exceptions-2.png`.
 
 ### AI Voice Orb
 
@@ -45,7 +45,7 @@ The existing red pearlescent HSK AI Voice Orb preserves its approved three-dimen
 Use motion to communicate spatial relationships — panels that slide in from the side they originate from, drawers that expand from their trigger.
 Keep transition durations short. Most UI transitions should feel nearly instant.
 
-> **Historical figure 3 — source reference only (not transferred):** Drawer transitioning in from right to left. Source asset: `./assets/motion/usage-guidelines-1.png`.
+> **Historical figure 3 — source figure reference (only approved samples, if any, are linked below):** Drawer transitioning in from right to left. Source asset: `./assets/motion/usage-guidelines-1.png`.
 
 A drawer transitioning in, coming in from the right to left.
 
@@ -55,7 +55,7 @@ Show a skeleton screen rather than a spinner whenever the shape of the content i
 Use a spinner only when duration is truly unknown and no structural preview is possible.
 Never use a fake or non-reflecting progress bar. If real progress can't be measured, use indeterminate states honestly.
 
-> **Historical figure 4 — source reference only (not transferred):** Skeleton loading state of the learner class dashboard page. Source asset: `./assets/motion/usage-guidelines-2.png`.
+> **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** Skeleton loading state of the learner class dashboard page. Source asset: `./assets/motion/usage-guidelines-2.png`.
 
 Skeleton loading state of the learner class dashboard page.
 
@@ -63,13 +63,13 @@ Skeleton loading state of the learner class dashboard page.
 
 Some loading states should be deliberately crafted to reflect the weight of what's happening — not just fill technical wait time. This builds trust. In moments like these, the loading state is part of the experience, not a workaround for latency.
 
-> **Historical figure 5 — source reference only (not transferred):** Intentional loading state example. Source asset: `./assets/motion/usage-guidelines-3.png`.
+> **Historical figure 5 — source figure reference (only approved samples, if any, are linked below):** Intentional loading state example. Source asset: `./assets/motion/usage-guidelines-3.png`.
 
 ### Animations
 
 Trigger routine animations in response to a real state change, a learner action, or viewport entry — not as arbitrary recurring decoration. Preserve the established correct/incorrect answer feedback effects; after a brief character reaction, settle into the appropriate readable feedback state rather than looping. Ordinary decorative animations should finish promptly and generally stay under 5 seconds; do not delay the learner's next action. The active AI Voice Orb is the explicit exception to the no-looping and short-duration rules, because its continuous motion communicates Listening, Thinking or Speaking. Support reduced motion for every category.
 
-> **Historical figure 6 — source reference only (not transferred):** Animation example. Source asset: `./assets/motion/usage-guidelines-4.png`.
+> **Historical figure 6 — source figure reference (only approved samples, if any, are linked below):** Animation example. Source asset: `./assets/motion/usage-guidelines-4.png`.
 
 ## Accessibility
 
