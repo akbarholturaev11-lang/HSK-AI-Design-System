@@ -1,141 +1,70 @@
 ---
 name: dsg-creation
-description: "Add to or edit Khan Academy Design System Guidelines documentation in storybook. Use this skill when researching or making changes to Foundations, Components or Patterns in the design-system-guidelines repo."
+description: "Create and edit HSK AI's mobile PWA/Android design guidelines without inheriting foreign product requirements."
 user-invokable: true
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Agent, AskUserQuestion
 ---
 
-# Creating & editing design system guidelines docs
+# HSK AI Design Guidelines — authoring skill
 
-You are working with a **non-technical designer** to craft design guideline docs. Your job is to make sure that the docs follow the repo's conventions and that they are optimized for MCP/LLMs usage: favor clear structure and tight prose.
+**Mandatory first step:** read repository-root `AGENTS.md`. That is the canonical HSK AI product and agent contract. This skill provides **technical MDX/Storybook authoring conventions only**; it does not make the documentation site's inherited packages into HSK AI app requirements.
 
-Before authoring, read the two exemplars: `__docs__/design-components/banners.mdx` (component page) and `__docs__/design-foundations/colors.mdx` (foundation page).
+## Research before editing
 
-This repo (`@khanacademy/design-guidelines`) is a **Storybook 10 site that documents how to use Wonder Blocks** — it is *not* a component library. Guideline pages are `.mdx` files under `__docs__/`, grouped into Foundations, Components, and Patterns.
+1. Read the relevant existing `__docs__/` page and the HSK AI-specific foundation or component it links to.
+2. When a rule mentions implemented app behavior, inspect the **read-only** HSK AI product repository `akbarholturaev11-lang/HSK-AI-Bot`, current `main`. Product behavior and source files may change.
+3. Distinguish **implemented behavior** from **target guideline**. Do not imply a new feature exists.
+4. Remove leftover foreign-brand rules instead of placing an HSK AI note above a contradictory old demand. Strip Khan Academy school/district, Khanmigo, Khanductor, Gems, former scoring thresholds, and fake ownership from the active guideline. Preserve the underlying generic professional interaction only when still applicable.
+5. Protect Hanzi/pinyin/translation correctness, Panda/side-character identity, AI Voice Orb and platform-specific PWA/Android interactions. Do not edit application code from this repository.
 
----
+## Document organization
 
-## Golden rules
+- Foundations: `__docs__/design-foundations/`
+- Components: `__docs__/design-components/`
+- Patterns: `__docs__/design-patterns/`
+- Components are grouped into additional Storybook subcategories through `<Meta title="Design Guidelines / Components / …" />`.
+- Put actual pages in `.mdx`; work-in-progress drafts can use `.draft` so Storybook's `.mdx` glob does not publish them.
+- Use sentence-case page titles, meaningful top-level headings and short sections. A self-contained decision table often beats a long paragraph.
+- For a component explain **when to use**, **when not**, **states/variants**, **mobile placement**, **accessible input and focus**, **localization** and **error/retry behavior** as relevant.
+- For a foundation explain role, purpose, real HSK AI tokens/constraints and documented implementation boundary. Do not copy unverified role taxonomies from foreign design systems.
 
-- **Always consider implications for LLM legibility (limiting token context) and a11y.** Pure markdown is best.
-- **Minimize noise.** Concise prose, tables for grids, and heavy demos moved out of the page.
-- **Reuse authoring components.** Sometimes custom authoring components are best when they semantically convey meaning concisely to an LLM. Before creating a new component, look at the through the current set: (`Do`, `Dont`, `UsageExample`, `Demo`, `Figure`, `Color`, `Principle`/`PrincipleSet`) in the [catalog](references/component-catalog.md). When deciding to make a component, ask the user first if this is something that will be reused. If you do create one, add it to the **catalog**.
-- **Usage examples** `Do`, `Dont`, `UsageExample` components all convey system usage semantically and concisely. If the user wants to build a be a one-off `Demo`, it should stay page-local and be alongside other page assets instead of adding to the authoring components dir.
-- **Do/dont examples must be semantic** for a11y and screenreaders. See "Choosing a do/dont mechanism" below. Color or proximity cannot be the only signal. Details in [`references/accessibility.md`](references/accessibility.md).
-- **Start every `<Dont />` item with "Don't."** Write `<Dont /> Don't fill the bar past 100%.`, not `<Dont /> Fill the bar past 100%.` Without the icon (screen readers, plain text, an LLM reading the source), the second reads as an instruction to do it.
-- **Keep it tight.** Use markdown tables for "use when / don't use when" grids (see banners.mdx). Short declarative sentences. Cut filler.
+## Existing MDX authoring helpers
 
-### Technical rules
+These helpers support the docs site's rendering; their names and runtime packages do not define HSK AI's app-level component library.
 
-- **Verify every Wonder Blocks prop rather than guessing.** Use the Wonder Blocks MCP (https://main--5e1bf4b385e3fb0020b7073c.chromatic.com/mcp"): `list-all-documentation` → `get-documentation`.
-- **Assets** always import: `import headerImg from "./assets/<page>/header.png"; <img src={headerImg} alt="…" />`. A raw `src="./assets/..."` string will not survive Vite bundling. Every image needs meaningful `alt`.
-- **Phosphor icons are from `@phosphor-icons/core`.** `import checkCircleBold from "@phosphor-icons/core/bold/check-circle-bold.svg";` (weights: `bold`, `fill`, `regular`, …). Do not import `@phosphor-icons/react`
-- **Color comes from tokens, not raw hex.** Hardcoded hex will not adapt to theming. Tokens live inside the `.tsx` helper components used in `.mdx`.  `style={{}}` is only for demo *layout* scaffolding (widths, gaps, flexbox) — never for colors.
-- **Links follow the Wonder Blocks patterns.** Whether to use markdown or a raw `<a>` depends on the link type; see [Links](#links).
+- `import {Do, Dont, UsageExample} from "../components/DoDont";` — accessible guidance and examples.
+- `import Demo from "../components/Demo";` — live documentation-only examples.
+- `import Figure from "../components/Figure";` — image with meaningful caption. Avoid source-product screenshots when they would imply unsupported functionality.
+- `import Principle, {PrincipleSet} from "../components/principle";` — foundation cards.
+- See `references/component-catalog.md` for helper API signatures; use it **only** as documentation authoring guidance.
 
----
+Accessibility meaning must never depend on color or unlabeled icon alone. Explicitly write `Don't` in prose after a `<Dont />` marker so an LLM or screen reader cannot interpret a forbidden action as a positive instruction.
 
-## Choosing a do/dont mechanism
+## Assets and demos
 
-There are three, and they are not interchangeable. The JSDoc headers in `__docs__/components/DoDont.tsx` and `Demo.tsx` are the source of truth; summary:
-
-| Use | When |
-| --- | --- |
-| Bare `<Do />` / `<Dont />` | Inline markers in a prose list or a heading (e.g. `## <Do /> When to use`). |
-| `<Demo type="do">` / `type="dont"` | Judging **one whole card-scale example** — adds a full-width labeled bar under it. Pass `explanation` for a short rationale. |
-| `<UsageExample type="do">` inside a `<Demo>` | Pairing **small, inline** good/bad examples side by side in one card. Carries the meaning on an accessible `role="group"`. |
-
----
-
-## New component vs. new props vs. one-off demo
-
-- **Add a prop / variant** to an existing component when the need is a small variation of something that already exists. Prefer this over a new component.
-- **Make a new *reusable* component** (in `__docs__/components/`) only when it will likely be used **multiple times, especially across pages**. Match the existing files' style: typed props, a JSDoc header describing intended MDX usage, tokens for all styling.
-- **A one-off demo is a page asset, not a shared component.** Keep it page-local (see next section). Do not add single-use visuals to `__docs__/components/`.
-
-When it's a genuine judgment call, surface the trade-off to the user rather than guessing.
-
----
-
-## Where demo content lives
-
-- **Small, legible demos → inline in the `.mdx`.** Writing the live component tree directly in the page also helps an LLM reader understand the point being made. This is the default (see the `<Banner>` examples in banners.mdx).
-- **Heavy demos → extract to a colocated `.tsx`.** If a demo carries substantial JavaScript behavior, state, or styling, it bloats the page and buries the point. Move it to `__docs__/design-<section>/assets/<page>/<Name>.tsx` as a **named export**, colocated with that page's images, and import it relatively:
-  ```mdx
-  import {BannerIconography} from "./assets/banners/BannerIconography";
-  ...
-  <Demo><BannerIconography /></Demo>
-  ```
-  (`assets/<page>/` holds both PNGs and any page-specific demo `.tsx`.) This is the `BannerIconography` pattern — `__docs__/design-components/assets/banners/BannerIconography.tsx`.
-- If you're unsure whether a demo is "heavy enough" to extract, explain the pros/cons (page legibility vs. keeping the example visible to readers) and let the user choose.
-
----
+- Bundle docs screenshots through imports: `import exampleImg from "./assets/<page>/example.png";` and `<img src={exampleImg} alt="Descriptive content" />`. No broken imports or unused image variables.
+- Prefer **current approved HSK AI assets**. A legacy source figure can be retained **only** if it communicates a useful generic structural idea and cannot be misconstrued as the HSK AI interface. Never reintroduce foreign character rules.
+- UI demo source may depend on `@khanacademy/wonder-blocks-*` for documentation rendering. Such packages **must not** be prescribed to HSK AI PWA/Android. Keep them only until a real, tested Storybook replacement exists.
+- Use the actual HSK AI semantic theme, not a remembered source library's palette.
+- For larger page demos use a colocated TypeScript component in `__docs__/design-<section>/assets/<page>/`; small demos can remain inline.
+- Make sure images, code samples, alt text and instructions do not advertise unimplemented app features.
 
 ## Links
 
-Links must follow the `wonder-blocks` repo's conventions listed below:
+- Internal Storybook pages: `<a href="./?path=/docs/<storybook-id>--docs">Text</a>`.
+- Same-page anchors: `[Section](#section)`.
+- External third-party sites that disallow framing: `<a href="https://example.com" target="_blank" rel="noopener noreferrer">Text</a>`.
+- Link only to **current HSK AI** pages/resources as authoritative. Never present a historical Khan Academy MCP host, design URL, old Storybook build or foreign team as official HSK AI infrastructure.
 
-| Link to | Write it as | Why |
-| --- | --- | --- |
-| A heading on the same page | `[Text](#heading-slug)` | Markdown; scrolls in place. |
-| Another page in this Storybook (optionally a heading on it) | `<a href="./?path=/docs/<page-id>--docs#heading-slug">Text</a>` | The Wonder Blocks pattern. `./` resolves correctly on GitHub Pages and Chromatic. |
-| An external site | `[Text](https://…)` | Markdown; rendered by the Wonder Blocks `Link`. |
-| An external site that refuses to load inside another page (Figma, Confluence, Google Docs, GitHub) | `<a href="https://…" target="_blank" rel="noopener noreferrer">Text</a>` | Docs render inside an iframe, so these sites show "refused to connect" unless opened in a new tab. |
+## Required validation
 
-- **Page ID**: the `<Meta title>` lowercased, with spaces, `/` and punctuation turned into single hyphens, plus `--docs`. `Design Guidelines / Patterns / Data reports` → `design-guidelines-patterns-data-reports--docs`; `… / Overlays / Modals - selection` → `…-overlays-modals-selection--docs`. When unsure, open the page in Storybook and copy `?path=…` from the address bar.
-- **Heading slug**: the heading text lowercased, punctuation dropped, spaces turned into hyphens. `## Making a useful chart` → `#making-a-useful-chart`.
-- **Never** write internal links as `?path=…` (resolves against `iframe.html` and loads inside the docs frame), `/?path=…` (breaks on GitHub Pages), or absolute `khan.github.io/design-system-guidelines` URLs (leaves the current host).
-- **Not sure whether a site loads inside another page?** Check its headers: `curl -sI <url> | grep -iE 'x-frame-options|frame-ancestors'`. If you see `DENY` or `SAMEORIGIN`, or a `frame-ancestors` list without `*`, use the new-tab form.
+1. Confirm every imported image/demo exists and every imported symbol is used. Check no former Khanmigo/Khanductor/Gems page is linked as HSK AI policy.
+2. Check MDX syntax, Storybook page IDs, internal anchors and the visible fallback when an illustration or custom font is absent.
+3. Review iPhone PWA/Android differences, localization and accessibility, including safe-area and keyboard behavior.
+4. For collapsible **optional** descriptions: maximum **two fully visible** collapsed lines, only a **top-right ⌄/⌃ icon**, accessible invisible label, in-place full expansion and collapse. Never collapse critical content.
+5. When tooling is available, run `pnpm typecheck`, `pnpm build` and a Storybook/mobile viewport review. Do **not** claim a build or device test passed unless it ran.
+6. Keep a focused changelog or commit description and avoid touching the production HSK AI code in a documentation-only task.
 
----
+## Ship
 
-## Authoring a new page
-
-Key rules:
-
-1. **Pick the section and put the file in the matching directory** (note the `design-` prefix):
-   - Foundations → `__docs__/design-foundations/`
-   - Components → `__docs__/design-components/`
-   - Patterns → `__docs__/design-patterns/`
-2. **Set `<Meta title>` with the bare section name** (no `design-` prefix), e.g. `<Meta title="Design Guidelines / Components / Feedback / Banners" />`. Components will likely live in a **subcategory**. Foundations and Patterns pages may or may not.
-3. **Filename is kebab-case; the page title / Meta name is sentence case** (`text-field.mdx` → "Text field").
-4. **Page shape differs by section:**
-   - *Component* pages open with a header `<img>`, `# Title`, a `<NeutralBadge label="…" />` tagline, an intro, then `## When to use` / `## When NOT to use` (tables), then Variants / States / Placement / Copy.
-   - *Foundation* pages have **no** NeutralBadge and **no** when-to-use tables — they use `## Principles` (`PrincipleSet`/`Principle`) plus topic sections and `## Usage guidelines`.
-5. **Adding a page or subcategory needs no config edit.** Discovery is automatic (glob `../__docs__/**/*.mdx`) and subcategories sort alphabetically. Only a brand-new *top-level* section would need a `.storybook/preview.tsx` change.
-6. **To keep an unfinished page out of the sidebar, rename it to end in `.draft`** with **no** `.mdx` (e.g. `onboarding-and-setup.draft`). `foo.draft.mdx` is still published.
-
----
-
-## Verify
-
-1. `pnpm typecheck` — only catches errors in `.tsx` files, not `.mdx`.
-2. `pnpm start` (Storybook port 56789) and open the page — **MDX errors only surface here**.
-3. Open the Storybook **Accessibility** addon panel on the page; resolve violations (a11y is set to fail CI).
-4. Use the **Theme** toolbar to spot-check `syl-dark` — confirm nothing is hardcoded to a light-only color. (Note: the **RTL** toolbar toggle affects *stories* only, not docs pages, so RTL can't be previewed here — rely on tokens/logical properties and the WB components, which handle direction.)
-5. Confirm the page appears in the expected sidebar location.
-6. Click each new or changed link. Internal links should land on the right page and heading. Links to sites that refuse to load inside another page should open a new tab.
-
----
-
-## Ship it
-
-A minimal git flow for non-technical contributors. This repo batches docs work onto `docs/*` branches with a single PR (same convention as the `export-design-guidelines` skill) — if such a branch already exists for this work, commit onto it rather than starting a new one.
-
-```bash
-git switch main && git pull
-git switch -c docs/<short-slug>   # e.g. docs/tooltip-page
-# ... make edits ...
-git add -A && git commit -m "docs: <what changed>"
-git push -u origin HEAD
-```
-
-Then open one PR. Do not push to `main` directly. Ask the user before pushing or opening the PR if that hasn't been explicitly requested.
-
----
-
-## Notes & gotchas
-
-- **Ignore `.claude/worktrees/` copies** — they are git worktrees, not source of truth. Always edit files under the real `__docs__/`.
-- **No barrel/index file** — import each authoring component by its relative path (`import Demo from "../components/Demo";`, `import {Do, Dont, UsageExample} from "../components/DoDont";`).
-- **Escape entities in tables** — curly apostrophes are fine as literal characters; escape `{`/`}` as `&#123;`/`&#125;` and other JSX-significant characters so MDX doesn't try to parse them.
+Follow the branch and merge instructions of the user or repository owner. Never import upstream Khan Academy branch policies or direct-push prohibitions as HSK AI governance without confirming them.
