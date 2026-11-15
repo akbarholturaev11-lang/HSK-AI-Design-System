@@ -59,3 +59,8 @@
 5. Recheck the protected decisions registry and current production app source before a reviewed merge.
 
 The documentation, example behavior and branding are materially safer and more complete, but **production-ready design-system status is not established**.
+
+
+## Current-scope correction — supersedes the experimental test-code claims above
+
+After the owner's explicit clarification that this phase is **professional design-guideline adaptation, not application/Storybook testing**, the experimental `scripts/check-docs.mjs` was **deleted** and its `package.json` and `.github/workflows/build-check.yml` changes were **fully reverted to the `main` blobs**. The historical entries above describe an intermediate state and **do not describe current branch configuration**. Keep the document for audit traceability, but use the [professional-first rule priority reconciliation](./professional-first-priority-reconciliation-2026-11-15.md) and `DESIGN_SYSTEM_PROFESSIONAL_FIRST_CONTRACT.md` for the current design-decision scope. Real code compilation and device tests belong to subsequent site publication or application implementation and are **not a prerequisite for evaluating this written design policy**.
