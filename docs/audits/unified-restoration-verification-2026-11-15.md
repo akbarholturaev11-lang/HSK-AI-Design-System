@@ -124,3 +124,10 @@ See [Design implementation integrity follow-up](./design-implementation-integrit
 - **Release status unchanged:** `pnpm install`, `pnpm check:docs`, `pnpm typecheck`, `pnpm build`, GitHub CI, rendered Storybook, accessibility and image licensing **remain unverified**. At the last API query GitHub Actions had **zero workflow runs**. No main merge and no HSK-AI-Bot product edits.
 
 **Do not conflate source/audit progress with all mandatory release gates passing.**
+
+
+## Owner-confirmed design-only scope and professional priority (2026-11-15)
+
+Professional design details are the **default design target**, and HSK AI's current UI is the **functional baseline**, not a universal visual/style authority. Read `AGENTS.md`, `DESIGN_SYSTEM_PROFESSIONAL_FIRST_CONTRACT.md` and [Professional-first priority reconciliation](./professional-first-priority-reconciliation-2026-11-15.md) for the latest decision hierarchy and observed per-page wording corrections.
+
+**Supersession:** the earlier temporary test CLI and build-check/package integrations described above were withdrawn; `scripts/check-docs.mjs` is deleted and `package.json` + `.github/workflows/build-check.yml` are restored identically to `main`. **CI/build/device tests are not a condition for declaring the written design decision hierarchy reconciled**. Separate public site publication still needs asset-rights assessment, and subsequent PWA/Android UI redesign has its own actual product acceptance/test obligations. The production application has not been edited in this design-only phase.
