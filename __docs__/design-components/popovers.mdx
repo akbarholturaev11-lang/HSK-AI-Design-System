@@ -9,7 +9,7 @@ import sourcePopoverAnchor from "./assets/popovers/adaptive-anchoring.png";
 
 # Popovers
 
-A **popover** is an anchored, non-modal overlay for brief supporting details or small optional actions. In HSK AI, use one only if the current iPhone PWA or Android screen actually supports an anchored overlay, its content remains readable and the trigger stays meaningful.
+A **popover** is an anchored, non-modal overlay for brief supporting details or small optional actions. The professional anchored-popover anatomy, adaptive placement, focus and dismissal rules are the **design target**. Apply them to HSK AI only where a real feature benefits from a popover and platform constraints allow it; the absence of a current popover is not a reason to erase this professional pattern or claim it already ships.
 
 ## When to use
 
@@ -51,7 +51,7 @@ An optional nudge associated with a real user flow. If proceeding requires ackno
 ## Placement on phones
 
 - Respect the viewport, safe areas, keyboard, active answer options, bottom navigation and AI Voice Orb.
-- Prefer above/below the trigger and flip when needed. If anchoring cannot keep controls accessible at the current screen size or enlarged font, use the existing approved mobile presentation instead.
+- Prefer above/below the trigger and flip when needed. If anchoring cannot keep controls accessible at the current screen size or enlarged font, use the professionally appropriate bottom sheet or dialog on that phone; preserve the actual functional flow, not the current visual defects.
 - Give the popover a sensible maximum size and support natural text wrapping; never force desktop popover dimensions.
 - Do not cover essential Hanzi, pinyin, lesson meaning, error recovery or payment conditions.
 
@@ -105,7 +105,7 @@ A user-opened interactive popover should make its controls accessible and restor
 
 <img src={sourcePopoverAnchor} alt="Source illustration of an anchored popover that shifts away from the viewport edge" />
 
-**Adaptive anchoring:** flip to available space, keep the trigger visible and avoid the keyboard/safe area. Use the existing HSK AI sheet/dialog when a phone has insufficient space.
+**Adaptive anchoring:** flip to available space, keep the trigger visible and avoid the keyboard/safe area. Use a professionally composed HSK AI sheet/dialog when a phone has insufficient space, maintaining real actions, focus and draft behavior.
 
 ### Interaction details
 
@@ -135,4 +135,4 @@ Opening should come from an actual control, not a surprise during a scored exerc
 
 ## Implementation boundary
 
-These are HSK AI interaction rules, not a requirement to introduce a popover library. Existing working features, platform navigation and server-owned state remain authoritative. No foreign character, school reward or assessment examples are product rules.
+These are HSK AI interaction rules, not a requirement to introduce a popover library. Existing working **functional contracts**, platform navigation destinations and server-owned state remain authoritative, while the professional popover design takes precedence over today's cosmetic implementation. No foreign character, school reward or assessment examples are product rules.
