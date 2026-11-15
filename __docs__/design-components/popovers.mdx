@@ -1,119 +1,73 @@
 import {Meta} from "@storybook/addon-docs/blocks";
-import {NeutralBadge} from "@khanacademy/wonder-blocks-badge";
-import popoversImg from "./assets/popovers/popovers.png";
-import informationalImg from "./assets/popovers/informational.png";
-import featureHighlightImg from "./assets/popovers/feature-highlight.png";
-import systemGuidanceImg from "./assets/popovers/system-guidance.png";
-import adaptiveAnchoringImg from "./assets/popovers/adaptive-anchoring.png";
-import withCharacterImg from "./assets/popovers/with-character.png";
-import {Do, Dont} from "../components/DoDont";
 
 <Meta title="Design Guidelines / Components / Overlays / Popovers" />
 
-<img src={popoversImg} alt="Popovers" />
-
 # Popovers
 
-> **HSK AI adaptation:** The original popover screenshots (including Khanmigo/Khanductor and Gems) are **structural examples only**, not HSK AI screens. Preserve anchoring, contrast, focus, one-popover-at-a-time and clear action principles. On a narrow mobile screen use the current HSK AI overlay/sheet when an anchored popover would cover Hanzi, answer choices, AI Voice controls or the keyboard. Do not treat an editable feedback form or payment/verification dialog as a dismiss-on-outside popover.
+A **popover** is an anchored, non-modal overlay for brief supporting details or small optional actions. In HSK AI, use one only if the current iPhone PWA or Android screen actually supports an anchored overlay, its content remains readable and the trigger stays meaningful.
 
-<NeutralBadge label="Rich contextual overlay" />
+## When to use
 
-A non-modal overlay that displays rich content — text, links, icons, or illustration — anchored to a specific UI element. Some popovers open in response to the user; others are raised by the product. Unlike tooltips, popovers are designed for larger bodies of info and interactive content.
-
-## <Do /> When to use
-
-The choice to use a popover is determined by the need to provide supplemental information or micro-tasks that are too complex for a tooltip but do not require the full interruption of a modal.
-
-| Use when | Example use |
+| Use when | HSK AI example |
 | --- | --- |
-| Displaying formatted text, headers, or small snippets of info | Explaining a specific exercise, skill name, and score, e.g. "Familiar." |
-| The overlay needs to contain clickable links, buttons, or small forms | A popover that includes a "Jump here" button to navigate the user to a specific activity. |
-| Delivering brief, non-blocking guidance associated with a supported existing feature | A concise hint or explanation tied to a real HSK AI control; do not invent a Khanductor exam-proctor feature. |
-| A specific on-screen element needs contextual guidance tied directly to it | An explanation anchored to an existing HSK AI progress indicator or lesson action when such a popover is already supported. |
+| An existing on-screen control needs concise contextual detail | Clarify a supported lesson-progress status without navigating away. |
+| A short feature explanation benefits from proximity to its trigger | Explain a real control during the current screen's supported feature introduction. |
+| The user needs one optional action near a related item | Offer a verified existing navigation/action, with a clear destination. |
 
-## <Dont /> When NOT to use
+## When NOT to use
 
-| Don’t use when | Recommended alternative | Rationale |
-| --- | --- | --- |
-| The content requires extensive reading across multiple paragraphs | Modal | An anchored overlay gives the reader nowhere to settle into a long passage, and a stray click elsewhere dismisses it partway through. |
-| Only a simple, unformatted identification label is needed | Tooltip | A popover introduces a structured overlay with padding, elevation, and potential actions — all unnecessary overhead for a single identifying label. Tooltips are lightweight by design. |
-| The user must complete a complex task or make a destructive choice | Modal | A popover leaves the background live, so nothing stops the user acting elsewhere mid-task — and a destructive choice needs the deliberate pause a modal forces. |
-| The message requires the user’s full attention before proceeding | Modal | Popovers are anchored to a specific UI element and non-blocking — they can’t command full attention the way a modal can. |
+- Long reading, full paragraphs or mandatory notices: keep essential text in the page or use a proper dialog when necessary.
+- Destructive actions, payment confirmation, account verification or required input: use the appropriate guarded dialog/screen.
+- Active exercise instructions and answers: do not use a popover that obscures a question or leaks a hidden answer.
+- Ordinary optional text slightly over two lines: apply HSK AI's **inline two-line collapse** rule instead of a popover.
+- A technical problem report or feedback form containing drafts: use the actual submission sheet/dialog and preserve entered information.
 
 ## Variants
 
-Each variant serves a distinct use case. Choose based on the intent of the content — what the user needs to do or understand when the popover appears.
-
 ### Informational
 
-Focuses on providing additional context as succinctly as possible, such as exercise names and learner scores. Typically action-oriented, including a button for immediate navigation — e.g. "Jump here" — task completion, or more info to read.
-
-<img src={informationalImg} alt="An informational popover anchored to a learning-queue item showing the exercise name, a “Familiar” score, and a “Jump here” link" />
+Brief context tied to the triggering element, with optional navigation only if the destination exists. Never invent a score, HSK level, statistic or server state.
 
 ### Feature highlight
 
-Used for single-step guidance only.
-
-<img src={featureHighlightImg} alt="A feature-highlight popover anchored to the gem counter, headed “Catch up on your rewards” with a “Got it” button" />
+A short, non-blocking explanation for an available feature. A feature not yet implemented is not a valid live highlight.
 
 ### System guidance
 
-Used for transient, proactive feedback from the system that requires user acknowledgement.
+An optional nudge associated with a real user flow. If proceeding requires acknowledgement, evaluate a proper dialog instead; do not use a non-modal popover to force critical action. Character illustrations are optional and must use actual approved HSK AI Panda/side-character assets only when the current screen really assigns them.
 
-<img src={systemGuidanceImg} alt="A system-guidance popover during an assessment, with the Khanductor character saying “Slow down just a bit” and a “Got it” button" />
+## Anatomy and actions
 
-## Usage and purpose by variant
+- Anchor the overlay to the **actual control** and label the purpose; keep it visually separate from the underlying exercise.
+- Prefer a single action. **At most two** for a genuinely small task; if it needs more, use a dialog/screen rather than an overloaded popover.
+- Primary actions must describe what actually happens. Acknowledgement only means the user saw the message, **not** that a backend save or lesson result succeeded.
+- Do not insert stock mascots, unimplemented awards or external-product promotional art.
 
-| Variant | Purpose | Example |
-| --- | --- | --- |
-| Informational | To surface contextual detail about a specific UI element without leaving the page. | Explaining an exercise name, skill level, and score inline with the learning queue. |
-| Feature highlight | To introduce a verified, available feature in context without interrupting the learner. | Briefly explaining a real HSK AI feature when it first appears; the source Gems figure is not an HSK AI reward scheme. |
-| System guidance | To deliver concise contextual system guidance where an anchored non-modal cue is sufficient. | Explaining a real HSK AI step without leaking test answers or introducing an assessment-proctor persona. |
+## Placement on phones
 
-## Character illustration
-
-A source example uses Khanmigo or Khanductor to identify who is giving guidance. **These characters are not HSK AI assets.** In HSK AI, only include a real approved Panda/side-character illustration where the existing learning UI actually assigns that character and the guidance benefits from it. Use text-only presentation when a character would distract or invent authority. Refer to <a href="./?path=/docs/design-guidelines-components-characters-hsk-ai-characters--docs">HSK AI characters</a>.
-
-Retain the source principle of **sparse, optional artwork** in meaningful system guidance. Do not copy Khan-only image placement rules as a mandate for all HSK AI views. An informative popover or feature highlight should normally remain text/control-first; any exception requires an actual approved UI and accessibility review.
-
-<img src={withCharacterImg} alt="A popover with the Khanductor character illustration to the left of the “Slow down just a bit” message and a “Got it” button" />
-
-## Buttons
-
-A popover contains no more than two buttons — one primary and one tertiary. More than that signals a task too large for an anchored overlay; use a modal instead.
-
-| Variant | Buttons |
-| --- | --- |
-| Informational | Optional. Where present, a single action for navigation or task completion — e.g. "Jump here". |
-| Feature highlight | A single acknowledgement action — e.g. "Got it". |
-| System guidance | Always a primary acknowledgement action — e.g. "Got it" or "Okay". A tertiary action is optional. |
-
-## Placement
-
-### Adaptive relative anchoring
-
-Popovers must always anchor and appear from the content that triggered them. When they prefer "above" or "below" placement, they must flip to the opposite or reverse orientation if they would be clipped by the viewport edge.
-
-<img src={adaptiveAnchoringImg} alt="A popover anchored directly to the learning-queue item that triggered it, appearing beside the anchor" />
+- Respect the viewport, safe areas, keyboard, active answer options, bottom navigation and AI Voice Orb.
+- Prefer above/below the trigger and flip when needed. If anchoring cannot keep controls accessible at the current screen size or enlarged font, use the existing approved mobile presentation instead.
+- Give the popover a sensible maximum size and support natural text wrapping; never force desktop popover dimensions.
+- Do not cover essential Hanzi, pinyin, lesson meaning, error recovery or payment conditions.
 
 ## Interaction
 
 ### Opening
 
-Informational popovers open in response to the user, from the element they are anchored to. Feature highlight and System guidance popovers are raised by the product, at a moment the product chooses.
+A user-triggered popover should be reachable from a real button and have a clear accessible relationship with its trigger. Product-triggered hints must not appear during unrelated active tasks or disrupt focus.
 
 ### Dismissal
 
-Every popover can be closed without acting on it. Selecting outside the popover closes it, as does pressing Escape. Where the popover carries an acknowledgement action, selecting that action closes it too.
-
-A popover never closes on a timer. It is not a toast, and content the user may still be reading must not disappear on its own.
+A **non-editable, optional** popover can close through its dismissal action, outside tap or platform back/Escape as supported by the current UI. This is **not** permission to discard a typed draft, interrupt a pending request or close a mandatory safety dialog. It never auto-dismisses while someone is reading it.
 
 ### One at a time
 
-Only one popover is open at a time — opening a second closes the first. A popover and a modal never appear together: a modal blocks the background, which is where the popover’s anchor lives.
+One popover at a time; a modal/required sheet takes precedence. Do not stack a second overlay over an active exercise answer, login, payment or AI Voice action.
 
-### Focus
+### Focus and accessibility
 
-A popover opened by the user takes focus, so its buttons and links are immediately reachable by keyboard. Closing it returns focus to the element that opened it.
+A user-opened interactive popover should make its controls accessible and restore focus to the opener when closed. Announce relevant status without pulling focus unexpectedly for optional, product-triggered hints. Support touch, keyboard, iPhone PWA and Android equivalents; visible icons require accessible names.
 
-A popover raised by the product does not take focus. Pulling a user out of what they were doing is the interruption these popovers exist to avoid. Instead it is announced politely to assistive technology and placed immediately after its anchor in the tab order, so the user reaches it on their next Tab rather than being dropped into it.
+## Implementation boundary
+
+These are HSK AI interaction rules, not a requirement to introduce a popover library. Existing working features, platform navigation and server-owned state remain authoritative. No foreign character, school reward or assessment examples are product rules.
