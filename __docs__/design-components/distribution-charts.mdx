@@ -1,4 +1,7 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import {DistributionReferenceDemo} from "../components/HskReferenceDemos";
+import sourceDistributionHeader from "./assets/distribution-charts/header.png";
+import sourceDistributionContainer from "./assets/distribution-charts/container.png";
 import {NeutralBadge} from "@khanacademy/wonder-blocks-badge";
 
 <Meta title="Design Guidelines / Components / Data visualization / Distribution charts" />
@@ -76,6 +79,53 @@ An isolated chart error should not prevent independently loaded report component
 - Make supported tooltip/detail interactions available on **touch and keyboard** without relying on hover alone.
 - Respect narrow screens, localized Cyrillic/Chinese labels, tone-marked pinyin and enlarged text. If vertical categories become illegible, switch to horizontal or a table.
 - Use real HSK AI colors, not a borrowed assessment palette. An incorrect-answer red or brand accent is not by itself an acceptable chart category legend.
+
+## Interactive HSK AI documentation example
+
+The following demonstration contains **fictional example values only**. It illustrates a real UI interaction (switching view, sorting, state, or range), **not** a functioning HSK AI analytics endpoint or a new production screen.
+
+<DistributionReferenceDemo />
+
+## Restored professional reference examples
+
+> **Source-only illustrations:** Every figure below originated in a different product's design guidelines. Preserve their professional layout and interaction principles; do not treat sample students, school data, scores, source colors or buttons as verified HSK AI functionality.
+
+### Overview
+
+<img src={sourceDistributionHeader} alt="Original distribution chart overview with illustrative source groups" />
+
+A distribution is a **count across mutually exclusive bins**, not a progress bar or a trend. Define the denominator and bin boundaries explicitly.
+
+### Anatomy
+
+<img src={sourceDistributionContainer} alt="Original histogram layout reference; source scores and school ranges are not HSK AI measurement rules" />
+
+**Histogram anatomy:** consistent range labels, zero baseline and appropriately grouped bars. The total count of observations must reconcile with the displayed bins and exclusions.
+
+Do not assign a learner's HSK level to a score bin unless such mapping is supported in real data. For comparing two periods, align bins, units, sample scope and the denominator; otherwise the difference is misleading. Distinguish *not measured* from the numeric zero bin. Use readable labels and a data table alternative for accessible chart implementations.
+
+## Restored distribution design rules
+
+### Ranges and sampling
+
+- Prefer **four to eight clearly labeled bins** when a distribution genuinely needs ranges; use additional bins only when an actual scoring or learning taxonomy demands them. Include a dedicated “none” or zero bucket whenever zero is valid.
+- Use non-overlapping, mutually exclusive boundaries, readable units and a stable sorting direction. Equal-width numeric bins make heights comparable; **real categorical levels must follow the actual level definitions** even when widths differ.
+- State whether the bars count **unique learners, attempts, activities or vocabulary entries**. Never sum attempts as learners. Check that included bins plus explicitly disclosed exclusions reconcile to the authorized denominator.
+- Do not publish a granular small-cohort chart when it might expose another learner's results. A short text summary or authorized table can be more appropriate when the sample is too small.
+
+### Chart anatomy and comparisons
+
+- Value bars start at **zero** and share a labeled count/percentage axis. Put exact values in data labels or an accessible alternative; do not rely on color or hover.
+- Use a description that identifies the metric and included population, not merely “Results.” Use a count and denominator for percentage labels and show the sample size when comparing rates.
+- Two time periods must use **identical boundaries, units, learner/event definitions and available permission scope**. Comparing distinct learner cohorts is not evidence that individual learners improved.
+- For group comparison, align the axes, category order and units; avoid a misleading stacked arrangement if readers need exact side-by-side comparisons.
+- A tooltip is optional supplementary detail and, if added, must work with touch and keyboard. A bar can navigate to a verified filtered list only if that route and authorization already exist.
+
+### Misuse prevention
+
+- Use a trend chart for change across ordered time, a progress chart for a real goal, and a table for exact individual records. Do not draw a histogram when one count already answers the question.
+- Missing, excluded, processing and confirmed zero observations are distinct. Do not insert zeros or fabricate HSK pass bands to force a complete chart.
+
 
 ## Scope
 

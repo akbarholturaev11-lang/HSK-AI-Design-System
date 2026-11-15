@@ -26,7 +26,7 @@ import {Do, Dont} from "../components/DoDont";
 
 # Dropdown select
 
-> **HSK AI application:** The source dropdown examples show professional selection, accessibility and feedback behavior, not HSK AI school screens. Use the existing HSK AI component style and **only the actual options** available in a course, learning-preference form or supported report.
+> **HSK AI application:** The source dropdown examples show professional selection, accessibility and feedback behavior, not HSK AI school screens. Preserve the source's complete professional dropdown geometry, visual grouping, selection, focus, menu alignment and commit/cancel contract as the **target**; map it onto **only the real options** available in a course, learning-preference form or supported report. Existing HSK AI styling is a baseline to improve, not a reason to drop the professional details.
 
 <NeutralBadge label="Predefined list selection" />
 
@@ -180,5 +180,5 @@ Order options logically. This can mean arranging them alphabetically, numericall
 
 - The HSK level or lesson choices must match the **actual available product and account state**. Do not show unsupported levels, fabricated exercise types or a default that silently changes stored progress.
 - For a small fixed set of choices, preserve the original guidance to show options directly where space permits. On phones, long translated labels, Hanzi and pinyin must not become unreadable solely to satisfy a rigid desktop layout.
-- Source illustrations are teaching references only. Use the approved HSK AI icons, theme colors and existing mobile dropdown/sheet behavior, with at least 44 CSS px touch area on iPhone PWA and 48 dp on native Android.
+- Source illustrations are teaching references only. Keep the professional visual anatomy, option hierarchy and keyboard/focus behavior; use approved HSK AI brand icon/semantic roles and implement the appropriate anchored menu or mobile sheet for actual platform constraints, with at least 44 CSS px touch area on iPhone PWA and 48 dp on native Android. The current sheet visuals may be redesigned later.
 - Keep single-select commits immediate, multi-select pending until Apply, and Cancel nondestructive. Required, disabled, read-only and error states retain distinct meanings and accessible explanations.

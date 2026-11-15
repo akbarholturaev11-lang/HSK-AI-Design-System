@@ -1,4 +1,8 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import {TableReferenceDemo} from "../components/HskReferenceDemos";
+import sourceTableHeader from "./assets/data-tables/header.png";
+import sourceBasicTable from "./assets/data-tables/basic-table.png";
+import sourceSummaryTabs from "./assets/data-tables/summary-tabs.png";
 
 <Meta title="Design Guidelines / Components / Data visualization / Data tables" />
 
@@ -45,6 +49,24 @@ Use a <a href="./?path=/docs/design-guidelines-components-data-visualization-sum
 6. Where a table offers tabs or summary views, each tab's count and list must be calculated from the **same verified records**.
 7. Do not insert fictional sample student records or unauthorized individual analytics to fill a design mockup.
 
+## In-cell information and row controls
+
+A cell must remain understandable when separated from color, chart decoration or surrounding rows. This preserves the source system's useful distinction between **exact values, in-cell visuals, status flags, and per-row actions**, without importing its school records or score rules.
+
+| Cell content | Professional rule | HSK AI constraint |
+| --- | --- | --- |
+| Missing value | Use a localized em dash or explicit “Not recorded”; never silently substitute zero. | Explain whether an observation is absent, not applicable, still processing or unavailable because of permission. |
+| Progress visualization | Show an exact readable value such as `12/20` alongside the bar; use a real non-zero denominator and accessible text. | The numerator, denominator and completion meaning must come from the same verified lesson/goal source. |
+| Status badge | Pair a compact badge with understandable text; hue alone is insufficient. | Keep correct/incorrect learning feedback separate from upload, network, payment and destructive errors. |
+| Action-required flag | Name what happened and the appropriate severity, not just a count or colored symbol. | Use only genuinely recorded recoverable conditions; do not create school-style overdue or “needs help” classifications. |
+| Row action | Put genuine record-specific actions together at the row's trailing edge if more than one is necessary. | Announce the target in its accessible label, e.g. “Actions for [record]”; do not imply unsupported edit/export/delete controls. |
+
+- **Keep flags sparse:** where two verified, independently meaningful flags coexist, order the most important first; use a more detailed record view rather than stacking many badges. The upstream two-flag example is a readability reference, not a new HSK AI severity API.
+- **Align by data type:** text identifiers follow the reading direction, comparable numbers align on the numeric edge, and dates/times use the selected locale and declared time zone. Keep a stable column meaning within one table.
+- **Bulk selection is conditional:** add selection checkboxes only if authorized bulk actions exist. Announce each row's identity, show the selected count and available actions together, and define what selection does when filtering or paging changes.
+- **Long datasets:** use genuine server paging or validated virtualization with stable identifiers, sortable scope, selection and totals. The original desktop suggestion of 50 rows is not a universal mobile HSK AI limit.
+- **Navigation:** real tab groups need the appropriate keyboard interaction and selected-state announcement. A table header should use `scope="col"` or the native equivalent; decorative mini-bars never replace an exact readable value.
+
 ## Mobile and accessibility
 
 - Use actual PWA/Android layouts, not a forced desktop six-column table. Prefer a compact list/stacked row where that preserves meaning better.
@@ -58,6 +80,60 @@ Use a <a href="./?path=/docs/design-guidelines-components-data-visualization-sum
 Loading keeps known labels/header structure stable without fake data. Empty and filtered-to-none states explain the actual cause. A failed refresh may leave a previous valid snapshot with a timestamp and retry, but authorization failures must clear protected content.
 
 Refer to <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs">HSK AI data reports</a> for shared empty, retry, filtering, data-integrity and access rules.
+
+## Interactive HSK AI documentation example
+
+The following demonstration contains **fictional example values only**. It illustrates a real UI interaction (switching view, sorting, state, or range), **not** a functioning HSK AI analytics endpoint or a new production screen.
+
+<TableReferenceDemo />
+
+## Restored professional reference examples
+
+> **Source-only illustrations:** Every figure below originated in a different product's design guidelines. Preserve their professional layout and interaction principles; do not treat sample students, school data, scores, source colors or buttons as verified HSK AI functionality.
+
+### Overview
+
+<img src={sourceTableHeader} alt="Source illustration showing a dense data table, not actual HSK AI student records" />
+
+Use a table for comparable structured records with stable column meanings. It is not a universal replacement for mobile lesson cards.
+
+### Anatomy
+
+<img src={sourceBasicTable} alt="Original table example with short headings and name-first structure; sample school data are not HSK AI content" />
+
+**Columns:** place the record identifier first, use concise sentence-case headers and correct text/numeric/date alignment. Numeric values should usually align on the end edge; dates must follow selected locale.
+
+### Controls and comparison
+
+<img src={sourceSummaryTabs} alt="Original table with summary tabs; its school/classroom categories are illustrative only" />
+
+**Tabs:** totals and scoped categories must come from the same verified query or explicitly different scopes. Switching tabs does not change the identity/authorization of the underlying data.
+
+**Detailed cell guidance:** a missing number is not zero; use a localized dash or “not recorded” explanation. A status flag should link to a real verified status and be understandable without color. Sorting must compare actual values rather than localized strings, and the visual sort indicator and screen-reader announcement must match. Avoid a full grid and thick separators if restrained row lines are sufficient. For long tables preserve column headers, pagination/virtualization semantics, keyboard navigation and a compact mobile strategy; never hide an essential HSK character or translation behind a clipped cell.
+
+## Restored table decision and interaction contract
+
+### Selection, ordering and exact records
+
+- Use a table when a reader must locate **individual authorized records**, compare exact values or perform a row-specific action. Use a stat card for a single headline and a chart for a broad pattern; a table must not be the default answer to every report.
+- A **basic table** has stable column headers, clearly defined row keys and a documented default sort. A **summary-tab variant** is useful only when actual non-overlapping statuses or categories exist; tab totals must reconcile to the scoped dataset, and selection must announce which set is visible.
+- Use precise column nouns, short sentence-case headers and a readable Hanzi/pinyin/meaning hierarchy when vocabulary is the subject. Numeric columns align consistently; date/time values show applicable locale and time zone.
+- Show a real **0** for an observed zero, an em dash plus explanation for absent data, and distinct states for processing, unavailable, unauthorized and failed values. A missing score is not a zero score.
+- Status flags are concise **icon-and-label** information, not color-only signals. The server must actually support the status. A progress bar inside a row must have a verified target, correct units and a text equivalent.
+
+### Actions, density and navigation
+
+- Sorting controls must indicate direction, preserve the active filter scope and use stable tie-breaking so rows do not jump unpredictably. A sorted numeric field must be sorted numerically, not as formatted strings.
+- Show a **bulk-selection checkbox column only when authorized bulk actions exist**. Explain the selected count, clear selection on an identity/scope change and confirm destructive operations explicitly.
+- Row-level actions apply to that exact stable record; do not imply “open details” if there is no verified route. If row click and inner buttons coexist, avoid nested interactive targets.
+- On wide reporting surfaces, paginate or virtualize long tables; the original source's approximately 50-row-per-page guideline is a performance heuristic, **not** a guaranteed HSK AI product limit.
+- On mobile, prefer a semantic stacked record list or a carefully disclosed horizontally scrollable data region over squashing Hanzi, numeric values and controls into illegible columns. Preserve column meaning and keyboard/screen-reader labels.
+
+### Empty and error fidelity
+
+- An unfiltered zero-result table retains context and offers the next relevant action. A filtered-empty table retains the applied filters and clear-filter control; explain “No matching records” rather than “No data exists.”
+- Loading, partial aggregates and export results must share the **same authoritative population, period and counting method**. Reject duplicate-event totals and the accidental merging of Android and PWA event records when the same event ID represents one action.
+- Learners can only inspect their own records. Authorized admin views must enforce permission before rendering values or exports, and must not leak prior-user rows after account switching.
 
 ## Implementation boundary
 

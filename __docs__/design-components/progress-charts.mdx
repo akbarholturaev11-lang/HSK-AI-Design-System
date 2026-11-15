@@ -1,4 +1,7 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import {ProgressReferenceDemo} from "../components/HskReferenceDemos";
+import sourceProgressHeader from "./assets/progress-charts/header.png";
+import sourceProgressContainer from "./assets/progress-charts/container.png";
 
 <Meta title="Design Guidelines / Components / Data visualization / Progress charts" />
 
@@ -26,7 +29,7 @@ Do **not** use this component to assign an exercise grade, invent an HSK pass th
 | Time/expected marker | Show **only** if a real schedule and its method have been defined; otherwise omit. |
 | Text alternative | Clearly announce current, target, units and any real shortfall. |
 
-Bar visuals follow the existing HSK AI mobile palette, not a foreign assessment or rewards palette.
+Bar visuals follow the **professional semantic hierarchy, geometry and state model**, mapped onto real HSK AI light/dark semantic colors or a clearly proposed role. Neither the old app's contrast flaws nor foreign assessment/reward palettes are the target.
 
 ## Visual and mathematical rules
 
@@ -59,6 +62,52 @@ Use <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs">HSK AI
 ## Accessibility
 
 Each chart announces the actual value and goal as text, with a clear accessible name and unit. Do not depend on color, animation, a vague percentage or a character reaction alone. Check focus, contrast, dynamic text size and mobile safe areas. Reduced-motion mode must still convey the completed amount and any genuinely pending task.
+
+## Interactive HSK AI documentation example
+
+The following demonstration contains **fictional example values only**. It illustrates a real UI interaction (switching view, sorting, state, or range), **not** a functioning HSK AI analytics endpoint or a new production screen.
+
+<ProgressReferenceDemo />
+
+## Restored professional reference examples
+
+> **Source-only illustrations:** Every figure below originated in a different product's design guidelines. Preserve their professional layout and interaction principles; do not treat sample students, school data, scores, source colors or buttons as verified HSK AI functionality.
+
+### Overview
+
+<img src={sourceProgressHeader} alt="Source progress chart overview; it is not HSK AI's Gems or school reward feature" />
+
+A progress bar requires a real, validated numerator and target in the **same units**; otherwise use a different view.
+
+### Anatomy
+
+<img src={sourceProgressContainer} alt="Original large progress-chart container showing current versus target observations" />
+
+**Progress anatomy:** clear title, measured current amount, real target, optional marker only where an actual schedule exists and meaningful completion semantics.
+
+Never use an expected-by-today marker or 100% unless the backend records the target and its schedule. Preserve a readable text equivalent for bar fill; distinguish a goal that is exceeded from an error in accounting. Compact versions omit secondary controls without hiding the actual current/target values. **Gems challenge illustration remains excluded** because HSK AI has no corresponding verified reward metric.
+
+## Restored progress design rules
+
+### Choose progress rather than a score
+
+- A progress bar measures **completion of a real task toward a genuine target**. A learning grade, answer correctness, mastery status, unverified XP total or subscription entitlement is not automatically completion progress.
+- Without a genuine target, use a stat card for the current amount. Use a trend for change over time and a distribution for counts by band. Avoid circular gauges when a linear bar communicates the same result more precisely.
+- Show **current value and target together**, in the same units and account/date scope. For example, use “8 of 12 verified lessons” only if both quantities come from the authorized course state.
+
+### Title, bar and expected marker
+
+- Use a concrete title, an exact numeric label and a denominator. When a real schedule exists, say how far ahead or behind the learner actually is; do not add “on track” from a guessed deadline.
+- A bar starts at zero, advances monotonically for actual completed units and has an accessible numeric text equivalent. Distinguish “target achieved” from “value unexpectedly greater than denominator”; do not hide data-integrity issues with CSS clipping.
+- **Expected by today** is optional and requires a stored real target, time zone, schedule and transparent formula. Label the expected amount; without reliable scheduling data, omit the marker entirely.
+- A large container can show marker, explanation and genuine controls. A compact card uses one bar and the essential values only; it must not silently discard the denominator.
+- Comparing multiple groups requires the **same measurement and same goal definition** for all bars. If one group uses a different target, separate the charts or clearly normalize with an explained method.
+
+### States and accessible reporting
+
+- Loading, no target, no observations, missing permission, outdated records and request failure must not look like 0% completion.
+- Expose the number/target to a screen reader in the user's locale; distinguish completion from grades and incorrect-answer feedback. Keep the icon/character lesson reactions intact.
+
 
 ## Implementation boundary
 

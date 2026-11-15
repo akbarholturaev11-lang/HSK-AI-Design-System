@@ -1,30 +1,26 @@
 import {create} from "storybook/theming";
-import wbTokenValues from "./wb-token-values.gen";
-
-const INSTRUCTIVE = "--wb-semanticColor-core-foreground-instructive-default";
-
 /**
- * Builds the Storybook UI theme for a Wonder Blocks theme name, using the
- * WB "instructive" token as the accent so the Storybook chrome matches the
- * content pages. Token values come from wb-token-values.gen.js (regenerated
- * from the wonder-blocks-tokens package on every startup by main.ts).
+ * Builds HSK AI documentation-site chrome while retaining the inherited WB
+ * preview themes used to render historical examples. These are NOT production
+ * PWA/Android theme tokens or a mandate to re-theme the application.
  */
 function makeTheme(wbTheme) {
-    const instructive = wbTokenValues[wbTheme][INSTRUCTIVE];
     const dark = wbTheme === "syl-dark";
+    // Verified existing product values: branding/hsk-ai-logo.svg gradient end
+    // (#C02F32) on light; PWA dark --hsk-cinnabar (#20BCEB) on dark.
+    // The light documentation accent is chosen for readable contrast on white.
+    const documentationAccent = dark ? "#20BCEB" : "#C02F32";
 
     return create({
         base: dark ? "dark" : "light",
         fontBase: '"Plus Jakarta Sans", "Noto Sans", sans-serif',
-        brandTitle: "Design Guidelines",
+        brandTitle: "HSK AI Design System",
         brandUrl: "/",
-        brandImage: dark
-            ? "./logo-design-guidelines--dark.svg"
-            : "./logo-design-guidelines.svg",
-        colorPrimary: instructive,
-        colorSecondary: instructive,
-        barSelectedColor: instructive,
-        barHoverColor: instructive,
+        brandImage: "./hsk-ai-logo.svg",
+        colorPrimary: documentationAccent,
+        colorSecondary: documentationAccent,
+        barSelectedColor: documentationAccent,
+        barHoverColor: documentationAccent,
         // App-wide background (sidebar, toolbar, content, and docs pages —
         // appContentBg flows into the docs container via docs.theme)
         ...(dark

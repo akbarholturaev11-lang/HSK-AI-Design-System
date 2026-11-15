@@ -24,7 +24,7 @@ import {Do, Dont} from "../components/DoDont";
 
 # Modals
 
-> **HSK AI scope:** The original screenshots explain modal structure and interaction, not HSK AI's approved visual style. On iPhone PWA and Android, retain the existing centered confirmation and bottom-sheet patterns. Preserve protection against lost lesson progress, mistaken account changes and interrupted payment verification.
+> **HSK AI scope:** The original screenshots explain modal structure and interaction, not HSK AI's approved visual style. On iPhone PWA and Android, preserve the **professional modal anatomy, hierarchy, scrim, spacing, adaptive placement and focus/dismissal semantics** as the target. Choose centered confirmation, sheet or full-screen presentation by task and available mobile space; do not freeze today's visual style. Preserve protection against lost lesson progress, mistaken account changes and interrupted payment verification.
 
 <NeutralBadge label="Focused task or decision" />
 
@@ -115,7 +115,7 @@ Choose a fitting presentation according to the task and mobile viewport, rather 
 | Variant | HSK AI mobile placement | Reason |
 | --- | --- | --- |
 | Confirmation | Compact centered dialog within available safe area | Two clear choices and their consequences stay together. |
-| Contextual education | Compact dialog or bottom sheet matching the current screen pattern | Gives help without covering the entire lesson. |
+| Contextual education | Compact dialog or bottom sheet chosen by professional content hierarchy, task and phone constraints | Gives help without covering the entire lesson. |
 | Functional task | Short bottom sheet; separate full-screen view for long forms | Supports keyboard and input without hidden controls. |
 | Selection | Bottom sheet with scrollable body and reachable footer | Makes multiple choices usable on narrow phones. |
 | Feature announcement | Approved HSK AI presentation only | Avoids unsolicited interruptions during study. |
@@ -129,9 +129,9 @@ A floating modal uses HSK AI's approved raised surface with sufficient separatio
 
 | Element | Value | Token |
 | --- | --- | --- |
-| Modal container | Approved HSK AI raised surface | Existing PWA/Android surface tokens |
-| Container elevation | Enough separation for a distinct dialog | Existing HSK AI component tokens |
-| Background | Modal scrim | Existing HSK AI overlay token |
+| Modal container | Approved HSK AI raised surface | Verified HSK AI semantic surface roles; improve visual elevation in the later UI pass |
+| Container elevation | Enough separation for a distinct dialog | Verified roles where suitable; professional elevation is the design target |
+| Background | Modal scrim | Verified scrim role or explicitly proposed role, never an invented implemented token |
 
 ## Placement
 

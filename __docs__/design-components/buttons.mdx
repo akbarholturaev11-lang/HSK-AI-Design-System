@@ -28,7 +28,7 @@ export const barImageStyle = {width: "100%", display: "block", margin: 0};
 
 # Buttons
 
-> **HSK AI scope:** The original figures and live demonstrations illustrate professional button hierarchy and states, **not** HSK AI's final colors, branded button styles or screens. Keep the approved HSK AI mobile interface and product behavior. This documentation does not change production code.
+> **HSK AI scope:** The original figures and live demonstrations illustrate professional button hierarchy and states, **not** HSK AI's final colors, branded button styles or screens. **Preserve the full professional button visual/interaction hierarchy as the redesign target.** Keep only real HSK AI action semantics, brand identity and mobile platform constraints; the current button appearance is not the design standard. This documentation does not change production code.
 
 <div style={{display: "flex", gap: "8px", marginBottom: "8px"}}>
   <NeutralBadge label="Call-to-action/Interaction trigger" />
@@ -102,7 +102,7 @@ Neutral tokens help preserve hierarchy balance when multiple kinds of elements w
 
 <img src={neutralIconButtonsImg} alt="Three icon-only neutral buttons: an X (close), a back chevron, and an info icon" />
 
-Use neutral text buttons only where they support the existing HSK AI hierarchy and retain clear affordance; source-team approval procedures are not HSK AI policy.
+Use neutral text buttons where the **professional hierarchy** calls for a low-emphasis action; repair a weaker current HSK AI hierarchy in the later app-redesign phase rather than lowering this standard. Source-team approval procedures are not HSK AI policy.
 
 <Demo type="dont" explanation="use neutral text buttons. Neutral is only for icon-only tertiary buttons." style={{gap: "16px", flexDirection: "row", flexWrap: "wrap", justifyContent: "center"}}>
     <Button actionType="neutral" kind="primary" onClick={() => {}}>Primary button</Button>
@@ -120,7 +120,7 @@ Use for destructive or irreversible actions, such as account deletion. The disti
 
 ### Default buttons
 
-Use HSK AI's existing button components and approved spacing. Minimum interactive areas: **44 × 44 CSS px on iPhone PWA** and **48 × 48 dp on Android**; the visible icon can be smaller than its hit area. Do not invent arbitrary production dimensions.
+Use the complete professional button anatomy, shape, emphasis, spacing rhythm and state behavior as the target; reuse existing components only when they meet it, otherwise record a future visual delta. Retain HSK AI's documented 4-unit spacing compatibility. Minimum interactive areas: **44 × 44 CSS px on iPhone PWA** and **48 × 48 dp on Android**; the visible icon can be smaller than its hit area. Do not invent arbitrary production dimensions.
 
 ### Small buttons
 

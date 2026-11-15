@@ -1,10 +1,14 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import sourceColorsImg from "./assets/colors/colors.png";
+import sourcePrimitivesImg from "./assets/colors/primitives-grid.png";
+import sourceSemanticImg from "./assets/colors/semantic-tokens.png";
+import sourceAccessibleImg from "./assets/colors/accessible-pairings.png";
 
 <Meta title="Design Guidelines / Foundations / Colors / Colors" />
 
 # Colors
 
-HSK AI uses **semantic colors** to make lesson content readable, support correct and incorrect answers, show actual progress and keep navigation clear. Colors express **purpose**, not decorative preferences. The actual PWA tokens and Android palette are the source of truth for existing roles.
+HSK AI uses **semantic colors** to make lesson content readable, support correct and incorrect answers, show actual progress and keep navigation clear. Colors express **purpose**, not decorative preferences. The actual PWA tokens and Android palette are the **inventory of implemented roles**, not a ceiling on professional semantic palette design. Preserve brand identity and verified state meaning while refining any inferior contrast, hierarchy or color application in the later UI/UX phase.
 
 Read the <a href="./?path=/docs/design-guidelines-foundations-colors-semantic-tokens--docs">HSK AI semantic color tokens</a> page for existing token names, verified light/dark values, contrast and state rules.
 
@@ -30,6 +34,45 @@ The existing `--hsk-cinnabar` role is `#E04A40` on the light theme and **`#20BCE
 ### Readable contrast
 
 For WCAG AA, normal text usually needs **4.5:1**, large text or essential non-text UI boundaries **3:1** against their real background. Do not assume a palette is accessible merely because a pair uses a semantic variable; check the actual rendered combination, including overlays and focus states.
+
+## Source reference: palette, tokens and accessibility
+
+The four images in this section are **original design-method references**, not HSK AI palette samples, screenshots, permitted colors or token names. They remain because the underlying professional method is valuable.
+
+### Primitive palette versus semantic meaning
+
+<img src={sourceColorsImg} alt="Historical source design color overview: an example of visual hierarchy, not HSK AI brand colors" />
+
+The source overview demonstrates visual restraint: use a small, intentional accent family and distinguish content, actions and feedback. For HSK AI the actual brand roles and dark-theme variants in the production app remain authoritative.
+
+<img src={sourcePrimitivesImg} alt="Reference grid demonstrating a primitive color palette; its particular hues are not HSK AI tokens" />
+
+**Primitives** are raw shades. They should inform semantic decisions, not be pasted directly as hex values throughout an interface. When considering a new HSK AI color, first identify its function, compare it against existing light/dark roles, and test the contrast of foreground, background and state indicators.
+
+### Semantic color roles
+
+<img src={sourceSemanticImg} alt="Reference example of mapping raw colors to purposeful semantic tokens; the illustrated token names belong to the source library" />
+
+The transferable principle is **intent over appearance**. Apply actual HSK AI names such as `--hsk-ink`, `--hsk-paper`, `--hsk-divider`, `--hsk-cinnabar` and `--hsk-jade` where verified. Never create nonexistent HSK AI warning or critical tokens merely to imitate the reference. A destructive action, a wrong lesson answer, a payment failure and a brand accent are distinct concepts.
+
+### Accessible pairings
+
+<img src={sourceAccessibleImg} alt="Professional reference showing accessible foreground/background pairings; actual combinations must be checked against HSK AI themes" />
+
+- Test **4.5:1 for normal text** and **3:1 for qualifying large text and essential non-text interface boundaries** against the **rendered** HSK AI background. Bigger fonts do not automatically make low contrast acceptable.
+- Decorative figures need not act as state signals; important status graphics, focus boundaries and selected options must be discernible without relying on hue alone.
+- A subtle border is acceptable only where it is not the sole signifier of a necessary boundary. A focus ring and critical form control boundary need the contrast required by their role.
+- When layers or overlays change the underlying background, measure the effective visible colors, not just standalone tokens.
+- Pair positive/negative lesson colors with a shape, readable message and the actual character reaction. Check theme switching and color-vision differences.
+
+### Decision checklist for a new color
+
+1. Which real semantic product role does it express?
+2. What existing app token or Android role already covers that intent?
+3. Is it distinguishable from verified error, success, pending, disabled and ordinary brand action?
+4. Does it remain legible in light, dark and overlaid states?
+5. Is the outcome verified by the server where relevant?
+6. Is the chosen color supplemented with a non-color cue?
 
 ## HSK AI implementation guidance
 

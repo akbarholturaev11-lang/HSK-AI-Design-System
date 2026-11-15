@@ -19,7 +19,7 @@ import dependentFilters2Img from "./assets/filter-and-sort/dependent-filters-2.p
 
 # Filter and sort
 
-> **HSK AI application:** The existing examples and images illustrate **filter behavior**, not HSK AI's approved visual style or a requirement to reproduce Khan Academy school reports. In HSK AI, use these rules for **already-supported** lesson, vocabulary, practice-history and authorized analytics lists only. The UI must remain usable on iPhone PWA and Android.
+> **HSK AI application:** The professional examples define the target **filter-bar composition, control hierarchy, placement and interaction states**, not school-specific product rules or mandatory Khan Academy branding. In HSK AI, use these rules for **already-supported** lesson, vocabulary, practice-history and authorized analytics lists only. The UI must remain usable on iPhone PWA and Android.
 
 This guide defines how interactive components work together to manage large datasets, ensuring users can navigate content with minimal friction.
 
@@ -58,7 +58,7 @@ This section illustrates the logic framework in practice, transitioning from bro
 ### Filter bar
 
 The horizontal filter bar is located directly above the content list to provide immediate access to data refinement tools.
-It can feature things like (and in this order) Search field for keyword queries, embedded dropdowns for high-priority + preset selections (e.g., Last 30 days), compact additive dropdowns for common categories (e.g. School and Grade), and for advanced segments, the More Filters button opens a comprehensive modal for less frequent criteria.
+It can feature things like (and in this order) Search field for keyword queries, embedded dropdowns for high-priority + preset selections (e.g., Last 30 days), compact additive dropdowns for **actually supported** categories (for example, an existing HSK study level or lesson status), and for advanced segments, the More Filters button opens a comprehensive modal for less frequent criteria.
 
 <img src={logicFrameworkHowTheyPlayTogether1Img} alt="Logic framework: how they play together 1" />
 
@@ -70,7 +70,7 @@ A search field allowing users to type keywords to find specific items within the
 
 ### Embedded filter dropdown (single-select)
 
-This variation is used for essential criteria that require a value to be active at all times, such as Date. Typically restricted to a single selection at a time to maintain a clear, focused data view. Because these are fundamental to the dataset, they remain visible in the filter bar as the primary anchors for the results displayed. Only use this for high-level view switches (e.g., Date Range or Department) where the system cannot show "All" data without a primary category being selected.
+This variation is used for essential criteria that require a value to be active at all times, such as Date. Typically restricted to a single selection at a time to maintain a clear, focused data view. Because these are fundamental to the dataset, they remain visible in the filter bar as the primary anchors for the results displayed. Only use this for a verified necessary scope (for example, a time range or permitted course segment) where the real data model cannot safely display all records without a primary selection.
 Use them sparingly (1–2 max) to avoid over-constraining the data and forcing a "Zero Results" state before discovery begins.
 
 <img src={logicFrameworkHowTheyPlayTogether3Img} alt="Logic framework: how they play together 3" />
@@ -80,7 +80,7 @@ Use them sparingly (1–2 max) to avoid over-constraining the data and forcing a
 ### Compact additive dropdown (single or multi-select)
 
 This specific style of dropdown is designed for high-frequency use within the horizontal filter bar. It allows users to manage common data categories—such as HSK level or exercise type when these are supported—efficiently within a limited space.
-Keep the original four-category upper bound only where a larger viewport comfortably supports it; the inline-filter component recommends three visible filters per row. On HSK AI phones use fewer visible controls or the existing selection sheet when needed.
+Treat the source four-category upper bound as a generous wide-layout heuristic only where a larger viewport comfortably supports it; the inline-filter component recommends three visible filters per row. On HSK AI phones use fewer visible controls or the existing selection sheet when needed.
 
 <img src={logicFrameworkHowTheyPlayTogether5Img} alt="Logic framework: how they play together 5" />
 

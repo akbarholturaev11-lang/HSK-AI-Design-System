@@ -1,4 +1,9 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import {TrendReferenceDemo} from "../components/HskReferenceDemos";
+import sourceChartHeader from "./assets/chart-container/header.png";
+import sourceHeadingHierarchy from "./assets/chart-container/heading-hierarchy.png";
+import sourceControls from "./assets/chart-container/controls.png";
+import sourceViewToggle from "./assets/chart-container/view-toggle.png";
 
 <Meta title="Design Guidelines / Components / Data visualization / Chart container" />
 
@@ -29,7 +34,7 @@ On narrow screens, stack controls **below** the title when needed. Never force a
 
 ## Controls
 
-- Only include a date picker, chart/table toggle, filter or download when **implemented** in the relevant HSK AI screen and supported by the current backend.
+- Keep the **full professional anatomy and design guidance** for date picker, chart/table toggle, filter and download in the library. **Render and wire them in a real HSK AI screen only when implemented, authorized and supported by its actual backend.** Absence from today's app changes implementation status, not professional design quality.
 - A chart/table switch must preserve the exact same records, permission scope, filters, denominator and window; it is not a second analytics query with unrelated data.
 - Keep the controlled content obvious. A control in one container should not silently change unrelated charts above it.
 - Use a dedicated report section when controls become complex. Refer to <a href="./?path=/docs/design-guidelines-patterns-data-reports--docs">Data reports</a> rather than copying a desktop toolbar.
@@ -46,6 +51,66 @@ On error, show an understandable message with real recovery, preserve unaffected
 - Describe the chart's meaning in text; never rely only on color or hover tooltip.
 - Enable touch/keyboard access to supported data details.
 - Keep HSK-related Hanzi, pinyin and localized language text legible under font scaling and both HSK AI themes.
+
+## Interactive HSK AI documentation example
+
+The following demonstration contains **fictional example values only**. It illustrates a real UI interaction (switching view, sorting, state, or range), **not** a functioning HSK AI analytics endpoint or a new production screen.
+
+<TrendReferenceDemo />
+
+## Restored professional reference examples
+
+> **Source-only illustrations:** Every figure below originated in a different product's design guidelines. Preserve their professional layout and interaction principles; do not treat sample students, school data, scores, source colors or buttons as verified HSK AI functionality.
+
+### Overview
+
+<img src={sourceChartHeader} alt="Historical chart-container overview showing a source data report, not real HSK AI analytics" />
+
+Overview: hierarchy of chart title, timeframe, controls and plot. Preserve the separation of data definition and presentation.
+
+### Anatomy
+
+<img src={sourceHeadingHierarchy} alt="Source illustration of section heading outside a chart container and chart title inside" />
+
+**Headings:** put the page/section H2 outside; a shorter chart title and optional description belong inside the container. Do not duplicate a headline in two places.
+
+### Controls and comparison
+
+<img src={sourceControls} alt="Original reference showing chart controls alongside the container title" />
+
+**Control scope:** a chart-local dropdown applies to that chart; a page-wide date filter belongs above all affected results. Show the selected scope and avoid silent cross-chart filter drift.
+
+### Alternative presentation
+
+<img src={sourceViewToggle} alt="Original reference showing chart and table view controls together" />
+
+**Alternative view:** when an authorized real chart has a table alternative, a clearly labeled toggle preserves the selected date range and filtered data. Do not fabricate unmeasured values in a table.
+
+A professional report container has five layers: contextual heading, compact metric title, optional supporting explanation, **local controls with explicit scope**, and the visualization or its state. Choose a large layout when users need comparison or drill-down; use a compact layout only for a glanceable supported metric. In narrow phones move controls below the title rather than squeezing labels. A chart with no verified data needs an accurate empty/loading/error state, not a fabricated SVG.
+
+## Restored professional decision contract
+
+### Choose the right container
+
+- Use a **large container** when readers need a comparison, a legend, data export, a date selector or additional explanation. Use a **compact container** only when one measured result can be understood at a glance.
+- Do not use a chart container for a lone number (use a stat card), a table that needs substantial sorting or filtering (give the table its own section), or two unrelated visualizations (use separate containers).
+- Keep at most a small set of local controls (approximately three). When controls need multiple rows or dominate the title, move the data view into its own section or screen; this is a layout heuristic, not a product feature.
+
+### Exact anatomy and hierarchy
+
+- The report section's **H2 is outside** a large container; its descriptive chart **H3 is inside**. A compact card uses the appropriate heading level within its real page outline; do not skip heading levels solely to change appearance.
+- A useful insight title explains the **measured observation**, while a supporting description names the unit, population, date range and any important exclusion. Never state an unverified conclusion as fact.
+- An optional legend belongs after the title/description and before the plot if direct series labels are insufficient. Show a last-successful-update timestamp when freshness matters; avoid fake live indicators.
+- A table/chart view switch retains **the exact same scoped population, filters, denominator and date range**. Switching views must not silently change the statistic.
+- Put page-wide controls above *all* results they govern; put chart-local controls in the specific container. On narrow phones, wrap controls below the title without truncating actions or violating the safe viewport.
+
+### Operational and accessible states
+
+- Empty or failed visualizations show a meaningful state **in the chart region**, not an empty graph or artificial zero. For a container-wide failure, keep unaffected report controls available; distinguish filtered-empty from no records.
+- Export is offered only when permission and a working export route exist; export the same visible scope and indicate if the file uses a broader scope.
+- Give icon-only controls explicit accessible action names including the chart topic (for example, “Show lesson completions as a table”); move focus appropriately after major state changes.
+- Provide a text takeaway and an accessible data alternative. Neither a hover-only tooltip nor bar color can be the sole carrier of an essential value.
+
 
 ## Implementation boundary
 

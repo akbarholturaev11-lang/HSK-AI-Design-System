@@ -13,9 +13,9 @@ on:
     push:
         branches: [main]
     pull_request:
-        # This allows us to run the workflow on PRs when they move from draft
-        # to non-draft.
-        types: [edited, opened, synchronize, reopened]
+        # Build/publish only when review is explicitly ready. Draft restoration
+        # branches can include historical artwork pending redistribution review.
+        types: [edited, opened, synchronize, reopened, ready_for_review]
 
 concurrency:
     group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -23,6 +23,8 @@ concurrency:
 
 jobs:
     publish:
+        # Draft PRs must never publish potentially uncleared source illustrations.
+        if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
         runs-on: ubuntu-latest
         outputs:
             storybookUrl: ${{ steps.chromatic_publish.outputs.storybookUrl }}

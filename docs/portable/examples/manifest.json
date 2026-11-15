@@ -1,0 +1,1287 @@
+{
+  "schema": "hskai.internal.design.examples.v1",
+  "source_branch": "restore/hsk-ai-professional-unified-audit-20261115",
+  "parent_commit_before_copy": "b7c1902790f13222359ae410d1dcdb2b3a099beb",
+  "count": 212,
+  "scope": "internal-design-docs-not-product-code",
+  "excluded": {
+    "foreign_screens": 95,
+    "noninformative": 4,
+    "mixed_needs_neutral_rework": 4,
+    "oversized_unreviewed": 1
+  },
+  "files": [
+    {
+      "source": "__docs__/design-components/assets/active-filters/active-filters.png",
+      "dest": "docs/portable/examples/design-components/active-filters/active-filters.png",
+      "sha": "b986b2d68d6aaf26ec5ba2aeb2b0f5b17667efd2",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/active-filters/copy.png",
+      "dest": "docs/portable/examples/design-components/active-filters/copy.png",
+      "sha": "bf9fa2fb3e5db1a3243cb5db7048f6b61aa82ed1",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/badges/copy-2.png",
+      "dest": "docs/portable/examples/design-components/badges/copy-2.png",
+      "sha": "82aba4a41e3b5d0d452dee37258d950a44614ee3",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/badges/copy-3.png",
+      "dest": "docs/portable/examples/design-components/badges/copy-3.png",
+      "sha": "a26678996b0396ced4f9f2bef7090fa8efb539f6",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/badges/copy-4.png",
+      "dest": "docs/portable/examples/design-components/badges/copy-4.png",
+      "sha": "5031657e0c2f0ddf87988f02523ec0f9fa83f632",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/badges/iconography-1.png",
+      "dest": "docs/portable/examples/design-components/badges/iconography-1.png",
+      "sha": "7d27b9022fb28a3769215e5423e9f219faf1c939",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/badges/placement-2.png",
+      "dest": "docs/portable/examples/design-components/badges/placement-2.png",
+      "sha": "49c611757adfa39acaff334f2e02e63fd72703dc",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/badges/placement-3.png",
+      "dest": "docs/portable/examples/design-components/badges/placement-3.png",
+      "sha": "1500b8ee342b81336a7e0852732d5380ae46e24d",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/badges/score-to-status-mapping-2.png",
+      "dest": "docs/portable/examples/design-components/badges/score-to-status-mapping-2.png",
+      "sha": "022556b25972ac2cfccd251db4260587e468eed1",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/badges/states-1.png",
+      "dest": "docs/portable/examples/design-components/badges/states-1.png",
+      "sha": "e2a4b05a492bb09c97932c2e317881a400689478",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/badges/states-2.png",
+      "dest": "docs/portable/examples/design-components/badges/states-2.png",
+      "sha": "335d22ac886399fca21754c556d1a90c7a898737",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/badges/states-3.png",
+      "dest": "docs/portable/examples/design-components/badges/states-3.png",
+      "sha": "c7d2163fd86225d9e2a40f6b2f139902a0301e87",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/badges/states-5.png",
+      "dest": "docs/portable/examples/design-components/badges/states-5.png",
+      "sha": "745b0c119a832d60487747d7dc3d66d986e5d17b",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/badges/variants-1.png",
+      "dest": "docs/portable/examples/design-components/badges/variants-1.png",
+      "sha": "475fa87603a970e0edfc2531bcd80d75a3049f93",
+      "batch": 0
+    },
+    {
+      "source": "__docs__/design-components/assets/badges/variants-2.png",
+      "dest": "docs/portable/examples/design-components/badges/variants-2.png",
+      "sha": "81d683c9732aab4d60dac6a9247e737f6893790f",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/badges/variants-3.png",
+      "dest": "docs/portable/examples/design-components/badges/variants-3.png",
+      "sha": "f2bebe7be6c81194a737111fba25a8ec9c04e29f",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/badges/variants-4.png",
+      "dest": "docs/portable/examples/design-components/badges/variants-4.png",
+      "sha": "79aaadf6d27e26e3bee21ba897ceedb5ccfe5d5d",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/badges/variants-5.png",
+      "dest": "docs/portable/examples/design-components/badges/variants-5.png",
+      "sha": "8815941abb7e567c933fcc64daa80e16dd49afdd",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/badges/variants-6.png",
+      "dest": "docs/portable/examples/design-components/badges/variants-6.png",
+      "sha": "d61cb1b03399f68e6d33e548a506710754567f9f",
+      "batch": 1
+    },
+    {
+      "source": "__docs__/design-components/assets/banners/banners.png",
+      "dest": "docs/portable/examples/design-components/banners/banners.png",
+      "sha": "dce69d4d6091994ef31dcf96224a8f25e6fc745c",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/banners/copy-1.png",
+      "dest": "docs/portable/examples/design-components/banners/copy-1.png",
+      "sha": "cc3f154bc6c475a81d3d4242ca1af8205cdd6155",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/banners/copy-2.png",
+      "dest": "docs/portable/examples/design-components/banners/copy-2.png",
+      "sha": "bf820d172ad5edbf68959ea04cc0560402015871",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/banners/copy-3.png",
+      "dest": "docs/portable/examples/design-components/banners/copy-3.png",
+      "sha": "3b3b40b74108770f787c67133c37c6ae05cb7cde",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/banners/placement-1.png",
+      "dest": "docs/portable/examples/design-components/banners/placement-1.png",
+      "sha": "081bd66f743c941b97a35beaaf69ed32fb49fa3a",
+      "batch": 0
+    },
+    {
+      "source": "__docs__/design-components/assets/banners/placement-2.png",
+      "dest": "docs/portable/examples/design-components/banners/placement-2.png",
+      "sha": "fa405f893bbf8854d74390170a2262f4783e9da6",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/banners/placement-3.png",
+      "dest": "docs/portable/examples/design-components/banners/placement-3.png",
+      "sha": "a8946a36eed681afc5c51aa46ada2d4e37344504",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/banners/variants-1.png",
+      "dest": "docs/portable/examples/design-components/banners/variants-1.png",
+      "sha": "e230a47f6b40658b4eaeb117bda89bb58790bf8c",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/banners/variants-2.png",
+      "dest": "docs/portable/examples/design-components/banners/variants-2.png",
+      "sha": "ff488b073e9bd8d56e99378e903d14fcb366c117",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/banners/variants-3.png",
+      "dest": "docs/portable/examples/design-components/banners/variants-3.png",
+      "sha": "ab35014792a0e11a84132dfb79874235f12906cf",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/buttons/buttons.png",
+      "dest": "docs/portable/examples/design-components/buttons/buttons.png",
+      "sha": "5cecea5ba49eb5b18bc749f78de7987638a8cc4c",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/buttons/copy-1.png",
+      "dest": "docs/portable/examples/design-components/buttons/copy-1.png",
+      "sha": "968df7d5854708df8555618d4a97ab8c09a416d5",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/buttons/copy-2.png",
+      "dest": "docs/portable/examples/design-components/buttons/copy-2.png",
+      "sha": "618926f46a0113a298f3fb478c0cc5b73695cd5a",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/buttons/copy-3.png",
+      "dest": "docs/portable/examples/design-components/buttons/copy-3.png",
+      "sha": "af6317f468cc5a50b50faf3fca2b472185c80663",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/buttons/copy-4.png",
+      "dest": "docs/portable/examples/design-components/buttons/copy-4.png",
+      "sha": "e28b6738fafa8a37f49e44ea7c2e949f91825055",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/buttons/copy-5.png",
+      "dest": "docs/portable/examples/design-components/buttons/copy-5.png",
+      "sha": "4c7531905a6d263ec7e46731acc3c91a80e95feb",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/buttons/copy-6.png",
+      "dest": "docs/portable/examples/design-components/buttons/copy-6.png",
+      "sha": "00970245c302c9225321b2a402d905c9f7d95409",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/buttons/header.png",
+      "dest": "docs/portable/examples/design-components/buttons/header.png",
+      "sha": "6b7a2a8eb962fc4e62f8fa7d82395820cfbec4bb",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/buttons/neutral-icon-buttons.png",
+      "dest": "docs/portable/examples/design-components/buttons/neutral-icon-buttons.png",
+      "sha": "6343332a32cc9b4c999a22a2295dfd1d1f89dd42",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/buttons/states-2.png",
+      "dest": "docs/portable/examples/design-components/buttons/states-2.png",
+      "sha": "06fbddaf9c81b078ff203facce2101458f5e9fe9",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/buttons/states-3.png",
+      "dest": "docs/portable/examples/design-components/buttons/states-3.png",
+      "sha": "188531c139addc6b08a792f98dd862ffe8037370",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/buttons/states-5.png",
+      "dest": "docs/portable/examples/design-components/buttons/states-5.png",
+      "sha": "de73c05c75dfa7fb41bb8c75b0a9fab507cd1e59",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/buttons/variants-1.png",
+      "dest": "docs/portable/examples/design-components/buttons/variants-1.png",
+      "sha": "6e8045edf0dc032711b3e202ea6208eb557eef5b",
+      "batch": 0
+    },
+    {
+      "source": "__docs__/design-components/assets/buttons/variants-2.png",
+      "dest": "docs/portable/examples/design-components/buttons/variants-2.png",
+      "sha": "310d8293a0217537961712c705ba65b8010126a1",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/buttons/variants-3.png",
+      "dest": "docs/portable/examples/design-components/buttons/variants-3.png",
+      "sha": "43dbb1eb6cf682348cfe65952d1500e474124218",
+      "batch": 2
+    },
+    {
+      "source": "__docs__/design-components/assets/chart-container/controls.png",
+      "dest": "docs/portable/examples/design-components/chart-container/controls.png",
+      "sha": "bfa77705a126b15b8688b6d2b6cd827d854caaae",
+      "batch": 3
+    },
+    {
+      "source": "__docs__/design-components/assets/chart-container/header.png",
+      "dest": "docs/portable/examples/design-components/chart-container/header.png",
+      "sha": "46b39a10371c853a0acd940da5ac6f6a037af9b5",
+      "batch": 3
+    },
+    {
+      "source": "__docs__/design-components/assets/chart-container/heading-hierarchy.png",
+      "dest": "docs/portable/examples/design-components/chart-container/heading-hierarchy.png",
+      "sha": "b79f1e5885df73cf10d281fcf4fb4485f444983b",
+      "batch": 3
+    },
+    {
+      "source": "__docs__/design-components/assets/chart-container/view-toggle.png",
+      "dest": "docs/portable/examples/design-components/chart-container/view-toggle.png",
+      "sha": "24a4a881cc7bb9d938822f85e1ece47f0fb26d80",
+      "batch": 3
+    },
+    {
+      "source": "__docs__/design-components/assets/checkbox-group/checkbox-group.png",
+      "dest": "docs/portable/examples/design-components/checkbox-group/checkbox-group.png",
+      "sha": "d79160a70d7fce331694b767f3a6033f7fe2ad45",
+      "batch": 3
+    },
+    {
+      "source": "__docs__/design-components/assets/checkbox-group/copy.png",
+      "dest": "docs/portable/examples/design-components/checkbox-group/copy.png",
+      "sha": "17d35ef83f577598ee66cb9f2bf52af67547b47b",
+      "batch": 3
+    },
+    {
+      "source": "__docs__/design-components/assets/checkbox-group/header.png",
+      "dest": "docs/portable/examples/design-components/checkbox-group/header.png",
+      "sha": "80e4ce79e65feccc5248e1d908e1ea80effd5b5d",
+      "batch": 3
+    },
+    {
+      "source": "__docs__/design-components/assets/checkbox-group/interaction-1.png",
+      "dest": "docs/portable/examples/design-components/checkbox-group/interaction-1.png",
+      "sha": "a085849e3c8ded92dfff46f2ff62ce61d2ad18b1",
+      "batch": 3
+    },
+    {
+      "source": "__docs__/design-components/assets/checkbox-group/interaction-2.png",
+      "dest": "docs/portable/examples/design-components/checkbox-group/interaction-2.png",
+      "sha": "01c7dcbfdc0089477f78a3c5a419522bbc3e2795",
+      "batch": 3
+    },
+    {
+      "source": "__docs__/design-components/assets/checkbox-group/placement-1.png",
+      "dest": "docs/portable/examples/design-components/checkbox-group/placement-1.png",
+      "sha": "5ca856b288d502c52a0271467230b1d0381d1e4d",
+      "batch": 3
+    },
+    {
+      "source": "__docs__/design-components/assets/clear-filter/clear-filter.png",
+      "dest": "docs/portable/examples/design-components/clear-filter/clear-filter.png",
+      "sha": "dd0ae64847ad5cb8bea326244a789ca2da0471a6",
+      "batch": 3
+    },
+    {
+      "source": "__docs__/design-components/assets/data-tables/basic-table.png",
+      "dest": "docs/portable/examples/design-components/data-tables/basic-table.png",
+      "sha": "9826e9506e8a783af9237a7c767b823aead455a0",
+      "batch": 4
+    },
+    {
+      "source": "__docs__/design-components/assets/date-filter/copy.png",
+      "dest": "docs/portable/examples/design-components/date-filter/copy.png",
+      "sha": "4408003a6dd23aefa7b4f4d33011732ff1f0c161",
+      "batch": 4
+    },
+    {
+      "source": "__docs__/design-components/assets/date-filter/date-filter.png",
+      "dest": "docs/portable/examples/design-components/date-filter/date-filter.png",
+      "sha": "1a71feccf89cdb50b1dd22afffc1fba0a9b8b8b4",
+      "batch": 4
+    },
+    {
+      "source": "__docs__/design-components/assets/date-filter/interaction.png",
+      "dest": "docs/portable/examples/design-components/date-filter/interaction.png",
+      "sha": "c01da37913e650085ffe9aaf3bb76583631a43af",
+      "batch": 4
+    },
+    {
+      "source": "__docs__/design-components/assets/date-filter/variants-1.png",
+      "dest": "docs/portable/examples/design-components/date-filter/variants-1.png",
+      "sha": "622d0fa717b35bbd5a9105efbb49c5a392ffbf3e",
+      "batch": 4
+    },
+    {
+      "source": "__docs__/design-components/assets/date-filter/variants-2.png",
+      "dest": "docs/portable/examples/design-components/date-filter/variants-2.png",
+      "sha": "858ca1fdac0cc031eeec382c512edb2aeea08201",
+      "batch": 4
+    },
+    {
+      "source": "__docs__/design-components/assets/date-picker/custom-range-modal.png",
+      "dest": "docs/portable/examples/design-components/date-picker/custom-range-modal.png",
+      "sha": "5f4c943aadc46f91b8b4ee17c5a82cce9c8872ec",
+      "batch": 4
+    },
+    {
+      "source": "__docs__/design-components/assets/date-picker/date-picker.png",
+      "dest": "docs/portable/examples/design-components/date-picker/date-picker.png",
+      "sha": "8aa266563dfadbbe53b33548b669989e4db9df38",
+      "batch": 4
+    },
+    {
+      "source": "__docs__/design-components/assets/date-picker/interaction.png",
+      "dest": "docs/portable/examples/design-components/date-picker/interaction.png",
+      "sha": "434d3642b037dbaa54e649913404a57cf8541114",
+      "batch": 4
+    },
+    {
+      "source": "__docs__/design-components/assets/date-picker/standalone.png",
+      "dest": "docs/portable/examples/design-components/date-picker/standalone.png",
+      "sha": "1b3cfb16561cc233658b8ccf0c18887cc3d7dd50",
+      "batch": 4
+    },
+    {
+      "source": "__docs__/design-components/assets/distribution-charts/header.png",
+      "dest": "docs/portable/examples/design-components/distribution-charts/header.png",
+      "sha": "8d9ed89b089d9dd4a3b00707b301ccaeee5fdf98",
+      "batch": 4
+    },
+    {
+      "source": "__docs__/design-components/assets/dropdown-select/copy-ordering.png",
+      "dest": "docs/portable/examples/design-components/dropdown-select/copy-ordering.png",
+      "sha": "7d5a25e3b4810a2695fdcd8882405e6c2dd62798",
+      "batch": 7
+    },
+    {
+      "source": "__docs__/design-components/assets/dropdown-select/copy-truncation.png",
+      "dest": "docs/portable/examples/design-components/dropdown-select/copy-truncation.png",
+      "sha": "7c9fa216775538e717477ccb0614d151f5886b68",
+      "batch": 7
+    },
+    {
+      "source": "__docs__/design-components/assets/dropdown-select/dropdown-select.png",
+      "dest": "docs/portable/examples/design-components/dropdown-select/dropdown-select.png",
+      "sha": "e8b14fde21cbc99eb043bad21bfd90a21b58b047",
+      "batch": 7
+    },
+    {
+      "source": "__docs__/design-components/assets/dropdown-select/in-menu-search.png",
+      "dest": "docs/portable/examples/design-components/dropdown-select/in-menu-search.png",
+      "sha": "7f56fa029a25776c6ba90ab5c2eb8f06f5c6a736",
+      "batch": 7
+    },
+    {
+      "source": "__docs__/design-components/assets/dropdown-select/label-above.png",
+      "dest": "docs/portable/examples/design-components/dropdown-select/label-above.png",
+      "sha": "23c265ede998a5351e4f44c3f92fe7f25b19178f",
+      "batch": 7
+    },
+    {
+      "source": "__docs__/design-components/assets/dropdown-select/label-inline.png",
+      "dest": "docs/portable/examples/design-components/dropdown-select/label-inline.png",
+      "sha": "724173d629c8f3d95157d6212ec84d94aec47e2b",
+      "batch": 7
+    },
+    {
+      "source": "__docs__/design-components/assets/dropdown-select/multi-select-2.png",
+      "dest": "docs/portable/examples/design-components/dropdown-select/multi-select-2.png",
+      "sha": "2992cbd511025f81ad607857fc6c7409c7eb0ef4",
+      "batch": 7
+    },
+    {
+      "source": "__docs__/design-components/assets/dropdown-select/multi-select-apply.png",
+      "dest": "docs/portable/examples/design-components/dropdown-select/multi-select-apply.png",
+      "sha": "dc4b4d8d9d2ac720865af62fd512189df3efb64f",
+      "batch": 7
+    },
+    {
+      "source": "__docs__/design-components/assets/dropdown-select/multi-select.png",
+      "dest": "docs/portable/examples/design-components/dropdown-select/multi-select.png",
+      "sha": "f461f407e82f3db7d2fb18f903f8cc8a3d16911a",
+      "batch": 7
+    },
+    {
+      "source": "__docs__/design-components/assets/dropdown-select/single-select.png",
+      "dest": "docs/portable/examples/design-components/dropdown-select/single-select.png",
+      "sha": "f76bc77c9844fff6228822b9c470ed52956bc2e3",
+      "batch": 7
+    },
+    {
+      "source": "__docs__/design-components/assets/dropdown-select/state-context.png",
+      "dest": "docs/portable/examples/design-components/dropdown-select/state-context.png",
+      "sha": "c9ecdcac69dbfa7ebfa862c37c79a6860ee1a8be",
+      "batch": 7
+    },
+    {
+      "source": "__docs__/design-components/assets/dropdown-select/state-disabled.png",
+      "dest": "docs/portable/examples/design-components/dropdown-select/state-disabled.png",
+      "sha": "6471457f2441f28e28e3dabd2e0566efe324a8bc",
+      "batch": 7
+    },
+    {
+      "source": "__docs__/design-components/assets/dropdown-select/state-error.png",
+      "dest": "docs/portable/examples/design-components/dropdown-select/state-error.png",
+      "sha": "92b15666771320292adc9d872319c1fb45d432d1",
+      "batch": 7
+    },
+    {
+      "source": "__docs__/design-components/assets/dropdown-select/state-helper-text.png",
+      "dest": "docs/portable/examples/design-components/dropdown-select/state-helper-text.png",
+      "sha": "40ad7d1049041f6f4442b6771d75a9063987b64d",
+      "batch": 7
+    },
+    {
+      "source": "__docs__/design-components/assets/dropdown-select/state-read-only.png",
+      "dest": "docs/portable/examples/design-components/dropdown-select/state-read-only.png",
+      "sha": "14a3203b64bbb35e74c1650875223f30aba3148e",
+      "batch": 7
+    },
+    {
+      "source": "__docs__/design-components/assets/inline-filter-button/inline-filter-button.png",
+      "dest": "docs/portable/examples/design-components/inline-filter-button/inline-filter-button.png",
+      "sha": "97c6bde9230aa28c3d20ea25af7bec5953b1203c",
+      "batch": 10
+    },
+    {
+      "source": "__docs__/design-components/assets/inline-filter-button/interaction-1.png",
+      "dest": "docs/portable/examples/design-components/inline-filter-button/interaction-1.png",
+      "sha": "b48c04571a81e6ef11038a16ee4e9ed8493db5b9",
+      "batch": 10
+    },
+    {
+      "source": "__docs__/design-components/assets/inline-filter-button/interaction-2.png",
+      "dest": "docs/portable/examples/design-components/inline-filter-button/interaction-2.png",
+      "sha": "d4e25ef4faef5b50fbe64e5a1067303706963963",
+      "batch": 10
+    },
+    {
+      "source": "__docs__/design-components/assets/inline-filter-button/variants-1.png",
+      "dest": "docs/portable/examples/design-components/inline-filter-button/variants-1.png",
+      "sha": "346126e6514b71e6903bd75aa4567dd86eb7e754",
+      "batch": 10
+    },
+    {
+      "source": "__docs__/design-components/assets/inline-filter-button/variants-2.png",
+      "dest": "docs/portable/examples/design-components/inline-filter-button/variants-2.png",
+      "sha": "b17bdf51c3ab7b0abbc34931b57a3cef1cd13a32",
+      "batch": 10
+    },
+    {
+      "source": "__docs__/design-components/assets/modals-selection/adaptive-controls-1.png",
+      "dest": "docs/portable/examples/design-components/modals-selection/adaptive-controls-1.png",
+      "sha": "607186ecde807de5741ebbca64a13df2f61ec07b",
+      "batch": 9
+    },
+    {
+      "source": "__docs__/design-components/assets/modals-selection/adaptive-controls-2.png",
+      "dest": "docs/portable/examples/design-components/modals-selection/adaptive-controls-2.png",
+      "sha": "ede268495f789fdcf822da4d02cfbdcd60c5b11b",
+      "batch": 9
+    },
+    {
+      "source": "__docs__/design-components/assets/modals-selection/category-labels.png",
+      "dest": "docs/portable/examples/design-components/modals-selection/category-labels.png",
+      "sha": "2f4d31f736663f35563342c660b26a4688418773",
+      "batch": 9
+    },
+    {
+      "source": "__docs__/design-components/assets/modals-selection/common-placement.png",
+      "dest": "docs/portable/examples/design-components/modals-selection/common-placement.png",
+      "sha": "74f553b0cdb4b41c9ca4c2c1987ad1e41bded57a",
+      "batch": 9
+    },
+    {
+      "source": "__docs__/design-components/assets/modals-selection/default-modal.png",
+      "dest": "docs/portable/examples/design-components/modals-selection/default-modal.png",
+      "sha": "c9a9e7ccb9f784934fb14ff48363480a9aa58a9b",
+      "batch": 9
+    },
+    {
+      "source": "__docs__/design-components/assets/modals-selection/footer-actions.png",
+      "dest": "docs/portable/examples/design-components/modals-selection/footer-actions.png",
+      "sha": "3b67ce148a59109804964c9d44dd7db1ab8238f5",
+      "batch": 9
+    },
+    {
+      "source": "__docs__/design-components/assets/modals-selection/internal-layout.png",
+      "dest": "docs/portable/examples/design-components/modals-selection/internal-layout.png",
+      "sha": "16fb5006e9599bf0e7eed536d1ab4f8caccb445a",
+      "batch": 9
+    },
+    {
+      "source": "__docs__/design-components/assets/modals-selection/modals-selection.png",
+      "dest": "docs/portable/examples/design-components/modals-selection/modals-selection.png",
+      "sha": "149824bdf5fa63205a0ef86544f1d651be92496d",
+      "batch": 9
+    },
+    {
+      "source": "__docs__/design-components/assets/modals-selection/parent-child-1.png",
+      "dest": "docs/portable/examples/design-components/modals-selection/parent-child-1.png",
+      "sha": "f0019b767d6c60efca27f95831e660629055534b",
+      "batch": 9
+    },
+    {
+      "source": "__docs__/design-components/assets/modals-selection/parent-child-2.png",
+      "dest": "docs/portable/examples/design-components/modals-selection/parent-child-2.png",
+      "sha": "821cc47eb100a7cac4e7584d327f27e66323bf54",
+      "batch": 9
+    },
+    {
+      "source": "__docs__/design-components/assets/modals-selection/reset-filters.png",
+      "dest": "docs/portable/examples/design-components/modals-selection/reset-filters.png",
+      "sha": "61b0999cdb0f80adde5f90a068738c9051e60e80",
+      "batch": 9
+    },
+    {
+      "source": "__docs__/design-components/assets/modals-selection/toggle-behavior.png",
+      "dest": "docs/portable/examples/design-components/modals-selection/toggle-behavior.png",
+      "sha": "662cf35827542fd6078b1f2220cac25a82b832e4",
+      "batch": 9
+    },
+    {
+      "source": "__docs__/design-components/assets/modals/buttons-directional.png",
+      "dest": "docs/portable/examples/design-components/modals/buttons-directional.png",
+      "sha": "a59bc5ea62f867ddb4401c4d49cae4358a15f981",
+      "batch": 8
+    },
+    {
+      "source": "__docs__/design-components/assets/modals/buttons-pairings.png",
+      "dest": "docs/portable/examples/design-components/modals/buttons-pairings.png",
+      "sha": "c3eeaae373b65b7611617002a5a80c28d42a4c9c",
+      "batch": 8
+    },
+    {
+      "source": "__docs__/design-components/assets/modals/copy-actions.png",
+      "dest": "docs/portable/examples/design-components/modals/copy-actions.png",
+      "sha": "813144c3d2469895990e9c1238fb87a6b1174fb5",
+      "batch": 8
+    },
+    {
+      "source": "__docs__/design-components/assets/modals/copy-body.png",
+      "dest": "docs/portable/examples/design-components/modals/copy-body.png",
+      "sha": "388787fdaf0f3589b6b90ad63acdc9de943ddddd",
+      "batch": 8
+    },
+    {
+      "source": "__docs__/design-components/assets/modals/copy-headline.png",
+      "dest": "docs/portable/examples/design-components/modals/copy-headline.png",
+      "sha": "87e8335b3b33d3f7fae78c8996b16f2674951472",
+      "batch": 8
+    },
+    {
+      "source": "__docs__/design-components/assets/modals/interaction-dismissal.png",
+      "dest": "docs/portable/examples/design-components/modals/interaction-dismissal.png",
+      "sha": "63389557778348754cd19fb0ca7a231756b02440",
+      "batch": 8
+    },
+    {
+      "source": "__docs__/design-components/assets/modals/modals.png",
+      "dest": "docs/portable/examples/design-components/modals/modals.png",
+      "sha": "a1ba7d7b5be779ab32f8e9f6d3822e3608235ce7",
+      "batch": 8
+    },
+    {
+      "source": "__docs__/design-components/assets/modals/placement-actions.png",
+      "dest": "docs/portable/examples/design-components/modals/placement-actions.png",
+      "sha": "076ad73c100fc288ebaeacb0f1ea585d46263dbc",
+      "batch": 8
+    },
+    {
+      "source": "__docs__/design-components/assets/modals/placement-centered.png",
+      "dest": "docs/portable/examples/design-components/modals/placement-centered.png",
+      "sha": "93e7b64a1b4a636d388f0c8d44f7b67c8afeda61",
+      "batch": 8
+    },
+    {
+      "source": "__docs__/design-components/assets/popovers/popovers.png",
+      "dest": "docs/portable/examples/design-components/popovers/popovers.png",
+      "sha": "afb77135adbaa3cb4bd58a261d69431b17046bec",
+      "batch": 10
+    },
+    {
+      "source": "__docs__/design-components/assets/progress-charts/header.png",
+      "dest": "docs/portable/examples/design-components/progress-charts/header.png",
+      "sha": "133c27c0edc2eda84c46caa43570c6419f12c939",
+      "batch": 10
+    },
+    {
+      "source": "__docs__/design-components/assets/progress-stepper/copy.png",
+      "dest": "docs/portable/examples/design-components/progress-stepper/copy.png",
+      "sha": "320fb8cfa6dd0f91ea2a215329c487ae977622b1",
+      "batch": 10
+    },
+    {
+      "source": "__docs__/design-components/assets/progress-stepper/progress-stepper.png",
+      "dest": "docs/portable/examples/design-components/progress-stepper/progress-stepper.png",
+      "sha": "c6595be449f00db2c122f94d34be5db21a7a5444",
+      "batch": 10
+    },
+    {
+      "source": "__docs__/design-components/assets/progress-stepper/variants-1.png",
+      "dest": "docs/portable/examples/design-components/progress-stepper/variants-1.png",
+      "sha": "7f478a31e99a777b92cb1b6ed134d5eb07f53c67",
+      "batch": 10
+    },
+    {
+      "source": "__docs__/design-components/assets/progress-stepper/variants-2.png",
+      "dest": "docs/portable/examples/design-components/progress-stepper/variants-2.png",
+      "sha": "0442c9a9d4561fe1bb525335a114a98fc39dce80",
+      "batch": 10
+    },
+    {
+      "source": "__docs__/design-components/assets/radio-button/avoid-nesting.png",
+      "dest": "docs/portable/examples/design-components/radio-button/avoid-nesting.png",
+      "sha": "99b7e2352feeb2871ca1363522b70b40a3c13fd1",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/radio-button/default-selection.png",
+      "dest": "docs/portable/examples/design-components/radio-button/default-selection.png",
+      "sha": "37da184420799daf89846b816f1f8dd0afc09834",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/radio-button/disabled.png",
+      "dest": "docs/portable/examples/design-components/radio-button/disabled.png",
+      "sha": "c1effb9243f4cd95e611d600bb77daef4280041f",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/radio-button/immediate-selection.png",
+      "dest": "docs/portable/examples/design-components/radio-button/immediate-selection.png",
+      "sha": "6b7b07f5ee5678461931b1d0bea221d55f846102",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/radio-button/no-selection.png",
+      "dest": "docs/portable/examples/design-components/radio-button/no-selection.png",
+      "sha": "2162ff6dd06f80c71913c3fc223e346edfa3d9bd",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/radio-button/radio-button.png",
+      "dest": "docs/portable/examples/design-components/radio-button/radio-button.png",
+      "sha": "62e6524bbc39d261d98607dbddd33bcbfda9d4a3",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/search-field/auto-suggestion.png",
+      "dest": "docs/portable/examples/design-components/search-field/auto-suggestion.png",
+      "sha": "22ec012e71c7eb9cf2bee5fd658f34ab0a74351e",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/search-field/clear-button.png",
+      "dest": "docs/portable/examples/design-components/search-field/clear-button.png",
+      "sha": "7e437d3d4a7c3a3a694a9562c50e89daedae78f9",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/search-field/default-active.png",
+      "dest": "docs/portable/examples/design-components/search-field/default-active.png",
+      "sha": "f7ecf0bdc2a7b09d1d731fc8e861e005a3785dc8",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/search-field/scope-clarity.png",
+      "dest": "docs/portable/examples/design-components/search-field/scope-clarity.png",
+      "sha": "f6fb0b3631832f9c624ea87b39941d97c4c917d4",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/search-field/search-field.png",
+      "dest": "docs/portable/examples/design-components/search-field/search-field.png",
+      "sha": "a3021506ac18aa4fc0fb2973d7ae3e72a4444e0e",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/summary-cards/header.png",
+      "dest": "docs/portable/examples/design-components/summary-cards/header.png",
+      "sha": "56475075223149198bfc490a96d5306ae8dbeb69",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/text-field/states-1.png",
+      "dest": "docs/portable/examples/design-components/text-field/states-1.png",
+      "sha": "8822eadf52d055a635d8bd4eaed20d0588fedbe1",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/text-field/states-2.png",
+      "dest": "docs/portable/examples/design-components/text-field/states-2.png",
+      "sha": "5bf5878d366e031efe5acdb0f316a28596eb1b8a",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/text-field/states-3.png",
+      "dest": "docs/portable/examples/design-components/text-field/states-3.png",
+      "sha": "b01cd8d166847793593e7edcbd82fb59493ab845",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/text-field/states-4.png",
+      "dest": "docs/portable/examples/design-components/text-field/states-4.png",
+      "sha": "25e881708df11a94024784cd16390c58ade6856e",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/text-field/states-5.png",
+      "dest": "docs/portable/examples/design-components/text-field/states-5.png",
+      "sha": "411067a6b7926a254e5c42403c61c93583a08bc6",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/text-field/states-6.png",
+      "dest": "docs/portable/examples/design-components/text-field/states-6.png",
+      "sha": "9a7c3e32864d23f280e33eeae140b8d34a2be3fa",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/text-field/states-7.png",
+      "dest": "docs/portable/examples/design-components/text-field/states-7.png",
+      "sha": "116bfd716f059bec62a7958500a2ef91d716d9c2",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/text-field/text-field.png",
+      "dest": "docs/portable/examples/design-components/text-field/text-field.png",
+      "sha": "61f9f09e8663bfafcc26b74d3203641e2a1b40ed",
+      "batch": 11
+    },
+    {
+      "source": "__docs__/design-components/assets/toasts/copy-1.png",
+      "dest": "docs/portable/examples/design-components/toasts/copy-1.png",
+      "sha": "0db047666492d16bac0180d8da1cd77c07be6ab9",
+      "batch": 12
+    },
+    {
+      "source": "__docs__/design-components/assets/toasts/copy-2.png",
+      "dest": "docs/portable/examples/design-components/toasts/copy-2.png",
+      "sha": "cc63264ef97eade839881ceedb712d311e0dd20a",
+      "batch": 12
+    },
+    {
+      "source": "__docs__/design-components/assets/toasts/copy-3.png",
+      "dest": "docs/portable/examples/design-components/toasts/copy-3.png",
+      "sha": "2dddb4551b539dd34c6cb4b2e388a79b137359be",
+      "batch": 12
+    },
+    {
+      "source": "__docs__/design-components/assets/toasts/copy-4.png",
+      "dest": "docs/portable/examples/design-components/toasts/copy-4.png",
+      "sha": "dc164eb2fd6213d7857f3ddecd4357ebcd655516",
+      "batch": 12
+    },
+    {
+      "source": "__docs__/design-components/assets/toasts/interaction-1.png",
+      "dest": "docs/portable/examples/design-components/toasts/interaction-1.png",
+      "sha": "ae161569e046e0075e24522e0a11fa8d3d6ab140",
+      "batch": 12
+    },
+    {
+      "source": "__docs__/design-components/assets/toasts/interaction-2.png",
+      "dest": "docs/portable/examples/design-components/toasts/interaction-2.png",
+      "sha": "8eee88fdf35b321199f4e07f6c7c595eaddea885",
+      "batch": 12
+    },
+    {
+      "source": "__docs__/design-components/assets/toasts/interaction-3.png",
+      "dest": "docs/portable/examples/design-components/toasts/interaction-3.png",
+      "sha": "7c7552ab453e70fb62d4655e840b667a55e8ab8b",
+      "batch": 12
+    },
+    {
+      "source": "__docs__/design-components/assets/toasts/interaction-4.png",
+      "dest": "docs/portable/examples/design-components/toasts/interaction-4.png",
+      "sha": "767f9a318ed2385c8576e4b5c8387b49a9ba88d5",
+      "batch": 12
+    },
+    {
+      "source": "__docs__/design-components/assets/toasts/placement-1.png",
+      "dest": "docs/portable/examples/design-components/toasts/placement-1.png",
+      "sha": "c2db03bffebc2340ad7c474f0dc3e04b0291ee01",
+      "batch": 12
+    },
+    {
+      "source": "__docs__/design-components/assets/toasts/states.png",
+      "dest": "docs/portable/examples/design-components/toasts/states.png",
+      "sha": "520fd35c6d134e5f786f9cc56dc524c9dd212c82",
+      "batch": 12
+    },
+    {
+      "source": "__docs__/design-components/assets/toasts/toasts.png",
+      "dest": "docs/portable/examples/design-components/toasts/toasts.png",
+      "sha": "cdc01a62095e6f21fe851e2c32c2b1c32c9422a6",
+      "batch": 12
+    },
+    {
+      "source": "__docs__/design-components/assets/toasts/variants-1.png",
+      "dest": "docs/portable/examples/design-components/toasts/variants-1.png",
+      "sha": "6c10b92fcf9bbf8b074608999ac8234d021d9948",
+      "batch": 12
+    },
+    {
+      "source": "__docs__/design-components/assets/toasts/variants-2.png",
+      "dest": "docs/portable/examples/design-components/toasts/variants-2.png",
+      "sha": "7dc3b34c1c499c8b7d3efa27c9eda57e658d8ab7",
+      "batch": 12
+    },
+    {
+      "source": "__docs__/design-components/assets/toasts/variants-3.png",
+      "dest": "docs/portable/examples/design-components/toasts/variants-3.png",
+      "sha": "44b9d64b6535c6b61132464797d6213153b9e1f6",
+      "batch": 12
+    },
+    {
+      "source": "__docs__/design-components/assets/toggle/copy.png",
+      "dest": "docs/portable/examples/design-components/toggle/copy.png",
+      "sha": "a3b7cd033a438b883ba2cf52f7aff6bbcc207e98",
+      "batch": 13
+    },
+    {
+      "source": "__docs__/design-components/assets/toggle/interaction-2-do.png",
+      "dest": "docs/portable/examples/design-components/toggle/interaction-2-do.png",
+      "sha": "dec7918bf0f847b9978e902a8d1f6c04d257f3e0",
+      "batch": 13
+    },
+    {
+      "source": "__docs__/design-components/assets/toggle/interaction-2-dont.png",
+      "dest": "docs/portable/examples/design-components/toggle/interaction-2-dont.png",
+      "sha": "a60e7af2a13ffadd6b3b5c32412448d9b424df68",
+      "batch": 13
+    },
+    {
+      "source": "__docs__/design-components/assets/toggle/placement.png",
+      "dest": "docs/portable/examples/design-components/toggle/placement.png",
+      "sha": "7fbcd4e0ddd1f2e97dcef90498e837f69b3f0f83",
+      "batch": 13
+    },
+    {
+      "source": "__docs__/design-components/assets/toggle/preferences-copy.png",
+      "dest": "docs/portable/examples/design-components/toggle/preferences-copy.png",
+      "sha": "e72822c18f62018ebe21bf5b4618be81fa91ee2f",
+      "batch": 13
+    },
+    {
+      "source": "__docs__/design-components/assets/toggle/toggle.png",
+      "dest": "docs/portable/examples/design-components/toggle/toggle.png",
+      "sha": "1a58fbe0d81c5659706eca499d77aae1a53146ef",
+      "batch": 13
+    },
+    {
+      "source": "__docs__/design-components/assets/tooltips/copy.png",
+      "dest": "docs/portable/examples/design-components/tooltips/copy.png",
+      "sha": "bef8a697974069ea098a8f1a30618d8473429f95",
+      "batch": 13
+    },
+    {
+      "source": "__docs__/design-components/assets/tooltips/tooltips.png",
+      "dest": "docs/portable/examples/design-components/tooltips/tooltips.png",
+      "sha": "644434d4296f15a71b7c009875acdf6a3eb41732",
+      "batch": 13
+    },
+    {
+      "source": "__docs__/design-components/assets/trend-charts/header.png",
+      "dest": "docs/portable/examples/design-components/trend-charts/header.png",
+      "sha": "74ad90b6e1b30568d89cc08d545d31b504a137ee",
+      "batch": 13
+    },
+    {
+      "source": "__docs__/design-foundations/assets/borders-and-dividers/border-colors.png",
+      "dest": "docs/portable/examples/design-foundations/borders-and-dividers/border-colors.png",
+      "sha": "be1650382fcdfd2079d8c0b600c2662eeb1681a3",
+      "batch": 6
+    },
+    {
+      "source": "__docs__/design-foundations/assets/borders-and-dividers/default-border.png",
+      "dest": "docs/portable/examples/design-foundations/borders-and-dividers/default-border.png",
+      "sha": "4b8dc5814863f3741c65c5ec23307a22d2878ef1",
+      "batch": 6
+    },
+    {
+      "source": "__docs__/design-foundations/assets/borders-and-dividers/focus-border.png",
+      "dest": "docs/portable/examples/design-foundations/borders-and-dividers/focus-border.png",
+      "sha": "0c1640d3d5d52ee73df51db5f285c8b6177fcb07",
+      "batch": 6
+    },
+    {
+      "source": "__docs__/design-foundations/assets/borders-and-dividers/header-footer-dividers.png",
+      "dest": "docs/portable/examples/design-foundations/borders-and-dividers/header-footer-dividers.png",
+      "sha": "f10597a2494352ae51ed53d6aeae387e0e87dd02",
+      "batch": 6
+    },
+    {
+      "source": "__docs__/design-foundations/assets/borders-and-dividers/header.png",
+      "dest": "docs/portable/examples/design-foundations/borders-and-dividers/header.png",
+      "sha": "3909df7c76278d97c523b059423ebf390912e127",
+      "batch": 6
+    },
+    {
+      "source": "__docs__/design-foundations/assets/borders-and-dividers/section-dividers.png",
+      "dest": "docs/portable/examples/design-foundations/borders-and-dividers/section-dividers.png",
+      "sha": "4b0293962b09fc991ec3119853cb03b93eeeb277",
+      "batch": 6
+    },
+    {
+      "source": "__docs__/design-foundations/assets/borders-and-dividers/state-card.png",
+      "dest": "docs/portable/examples/design-foundations/borders-and-dividers/state-card.png",
+      "sha": "c42d7d58c6e2b9cc1e1a5ff9536f0a8f37219a90",
+      "batch": 6
+    },
+    {
+      "source": "__docs__/design-foundations/assets/borders-and-dividers/state-inputs.png",
+      "dest": "docs/portable/examples/design-foundations/borders-and-dividers/state-inputs.png",
+      "sha": "727448cdca540ba6b3ae83cf66b0ca5c291ebd48",
+      "batch": 6
+    },
+    {
+      "source": "__docs__/design-foundations/assets/borders-and-dividers/subtle-border.png",
+      "dest": "docs/portable/examples/design-foundations/borders-and-dividers/subtle-border.png",
+      "sha": "39012be3b39f818f45007708b45ff4549c860ba3",
+      "batch": 6
+    },
+    {
+      "source": "__docs__/design-foundations/assets/borders-and-dividers/table-dividers.png",
+      "dest": "docs/portable/examples/design-foundations/borders-and-dividers/table-dividers.png",
+      "sha": "911d36c02f03106cc6eb40fe7c0a8b363cc15d1f",
+      "batch": 6
+    },
+    {
+      "source": "__docs__/design-foundations/assets/colors/accessible-pairings.png",
+      "dest": "docs/portable/examples/design-foundations/colors/accessible-pairings.png",
+      "sha": "56a16cea4c3efa1774c490ae0f1c8f40e9c45ba9",
+      "batch": 5
+    },
+    {
+      "source": "__docs__/design-foundations/assets/colors/colors.png",
+      "dest": "docs/portable/examples/design-foundations/colors/colors.png",
+      "sha": "df78d2ee00369aad48181e3226871c6701b5dc36",
+      "batch": 5
+    },
+    {
+      "source": "__docs__/design-foundations/assets/colors/primitives-grid.png",
+      "dest": "docs/portable/examples/design-foundations/colors/primitives-grid.png",
+      "sha": "2f75a0291c644224b3695c0f29ca419f43a1f435",
+      "batch": 0
+    },
+    {
+      "source": "__docs__/design-foundations/assets/colors/semantic-tokens-hero.png",
+      "dest": "docs/portable/examples/design-foundations/colors/semantic-tokens-hero.png",
+      "sha": "b3b925f81f2cbc4deaf31e987be161a411dfba3c",
+      "batch": 5
+    },
+    {
+      "source": "__docs__/design-foundations/assets/colors/semantic-tokens.png",
+      "dest": "docs/portable/examples/design-foundations/colors/semantic-tokens.png",
+      "sha": "2266c0c3d6a53957eda2b1c02a004fea36dd8e62",
+      "batch": 5
+    },
+    {
+      "source": "__docs__/design-foundations/assets/iconography/icon-library.png",
+      "dest": "docs/portable/examples/design-foundations/iconography/icon-library.png",
+      "sha": "ae5d4f81e22eb0fd62f9fda542e0484ee9f40c48",
+      "batch": 5
+    },
+    {
+      "source": "__docs__/design-foundations/assets/iconography/iconography.png",
+      "dest": "docs/portable/examples/design-foundations/iconography/iconography.png",
+      "sha": "b3dc7449db369cd30c6b43f5f736c1f38b032d96",
+      "batch": 5
+    },
+    {
+      "source": "__docs__/design-foundations/assets/iconography/usage-guidelines-2.png",
+      "dest": "docs/portable/examples/design-foundations/iconography/usage-guidelines-2.png",
+      "sha": "80490285d5989fca02206dc8aae29624fa4cf006",
+      "batch": 5
+    },
+    {
+      "source": "__docs__/design-foundations/assets/iconography/usage-guidelines-3.png",
+      "dest": "docs/portable/examples/design-foundations/iconography/usage-guidelines-3.png",
+      "sha": "891d3f05e01165ae8a2f497162f4fa035e6f24c9",
+      "batch": 5
+    },
+    {
+      "source": "__docs__/design-foundations/assets/illustration/types-of-illustration-5.png",
+      "dest": "docs/portable/examples/design-foundations/illustration/types-of-illustration-5.png",
+      "sha": "1363aa2010823e78deb814319f13ce83395930cd",
+      "batch": 14
+    },
+    {
+      "source": "__docs__/design-foundations/assets/layout/header.png",
+      "dest": "docs/portable/examples/design-foundations/layout/header.png",
+      "sha": "d28b20c3e24038819cba944a301ad48f9063c723",
+      "batch": 14
+    },
+    {
+      "source": "__docs__/design-foundations/assets/layout/job.png",
+      "dest": "docs/portable/examples/design-foundations/layout/job.png",
+      "sha": "76bd4840e415d80d72bed133699f3947d4518b92",
+      "batch": 14
+    },
+    {
+      "source": "__docs__/design-foundations/assets/layout/learning.png",
+      "dest": "docs/portable/examples/design-foundations/layout/learning.png",
+      "sha": "117c98f62546e71d052919cbf01b1a04c8599c9f",
+      "batch": 14
+    },
+    {
+      "source": "__docs__/design-foundations/assets/layout/onboarding.png",
+      "dest": "docs/portable/examples/design-foundations/layout/onboarding.png",
+      "sha": "37b779c46c50da25030d32ae91539714092ab8ab",
+      "batch": 14
+    },
+    {
+      "source": "__docs__/design-foundations/assets/layout/settings.png",
+      "dest": "docs/portable/examples/design-foundations/layout/settings.png",
+      "sha": "33402bfa32e560693c4860a0370c2a600ceb995b",
+      "batch": 14
+    },
+    {
+      "source": "__docs__/design-foundations/assets/motion/motion.png",
+      "dest": "docs/portable/examples/design-foundations/motion/motion.png",
+      "sha": "ccd36c0b2e2d592e86640b557b57417c4439395b",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/motion/usage-guidelines-1.png",
+      "dest": "docs/portable/examples/design-foundations/motion/usage-guidelines-1.png",
+      "sha": "38862df9f3b1fef9f5467a2135dc98bbcaccbe03",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/motion/usage-guidelines-2.png",
+      "dest": "docs/portable/examples/design-foundations/motion/usage-guidelines-2.png",
+      "sha": "0361cbde5519a24d1eca0ddaa6a36376c517b15e",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/spacing/scale.png",
+      "dest": "docs/portable/examples/design-foundations/spacing/scale.png",
+      "sha": "199b41022cec91fb789cad038af62d68ef114011",
+      "batch": 0
+    },
+    {
+      "source": "__docs__/design-foundations/assets/spacing/spacing-examples-1.png",
+      "dest": "docs/portable/examples/design-foundations/spacing/spacing-examples-1.png",
+      "sha": "417ea08481c5fac193249d041b40a6553594b19e",
+      "batch": 6
+    },
+    {
+      "source": "__docs__/design-foundations/assets/spacing/spacing-examples-2.png",
+      "dest": "docs/portable/examples/design-foundations/spacing/spacing-examples-2.png",
+      "sha": "19fa35d312d99498e0e8c9deebf6804668fd20b6",
+      "batch": 6
+    },
+    {
+      "source": "__docs__/design-foundations/assets/spacing/spacing-examples-3.png",
+      "dest": "docs/portable/examples/design-foundations/spacing/spacing-examples-3.png",
+      "sha": "ec8bbb6de53aa278e135a3ecd8be0e3586ebd5fb",
+      "batch": 6
+    },
+    {
+      "source": "__docs__/design-foundations/assets/spacing/spacing.png",
+      "dest": "docs/portable/examples/design-foundations/spacing/spacing.png",
+      "sha": "c2d862abb09fde2bc79d88effa5fdb190c71c35d",
+      "batch": 6
+    },
+    {
+      "source": "__docs__/design-foundations/assets/spacing/types-of-spacing-1.png",
+      "dest": "docs/portable/examples/design-foundations/spacing/types-of-spacing-1.png",
+      "sha": "5dd5ba157b04df603a81453fd6ed132e136a6eb0",
+      "batch": 0
+    },
+    {
+      "source": "__docs__/design-foundations/assets/spacing/types-of-spacing-2.png",
+      "dest": "docs/portable/examples/design-foundations/spacing/types-of-spacing-2.png",
+      "sha": "ac414f766f3151d67518e7ee474267f449f3c42c",
+      "batch": 6
+    },
+    {
+      "source": "__docs__/design-foundations/assets/spacing/types-of-spacing-3.png",
+      "dest": "docs/portable/examples/design-foundations/spacing/types-of-spacing-3.png",
+      "sha": "093968a41488ceb6e7044ceca510f21a6b8b9305",
+      "batch": 6
+    },
+    {
+      "source": "__docs__/design-foundations/assets/surfaces-and-elevations/combinations.png",
+      "dest": "docs/portable/examples/design-foundations/surfaces-and-elevations/combinations.png",
+      "sha": "bf3ea8721306eaf174d9f205808f9b2148c839ee",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/surfaces-and-elevations/elevation-base.png",
+      "dest": "docs/portable/examples/design-foundations/surfaces-and-elevations/elevation-base.png",
+      "sha": "30a30daab149463726fb883767a8a7e9956dc0ab",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/surfaces-and-elevations/elevation-high.png",
+      "dest": "docs/portable/examples/design-foundations/surfaces-and-elevations/elevation-high.png",
+      "sha": "175888054877af92d56cadacb65e502468b4f2e4",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/surfaces-and-elevations/elevation-low.png",
+      "dest": "docs/portable/examples/design-foundations/surfaces-and-elevations/elevation-low.png",
+      "sha": "7ff1292d3aa756c391c85985b68d4fc4d358871f",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/surfaces-and-elevations/elevation-mid.png",
+      "dest": "docs/portable/examples/design-foundations/surfaces-and-elevations/elevation-mid.png",
+      "sha": "bbb57cb47b6c7bf4895f21edf64f6eb4ff210488",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/surfaces-and-elevations/elevation-overview.png",
+      "dest": "docs/portable/examples/design-foundations/surfaces-and-elevations/elevation-overview.png",
+      "sha": "c15ed7290e5662c28cda0a821869a9b3251a6f51",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/surfaces-and-elevations/surface-1.png",
+      "dest": "docs/portable/examples/design-foundations/surfaces-and-elevations/surface-1.png",
+      "sha": "319f7b300ac3295e452cccbd9f32a129ce0631bd",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/surfaces-and-elevations/surface-2.png",
+      "dest": "docs/portable/examples/design-foundations/surfaces-and-elevations/surface-2.png",
+      "sha": "c1820c2cd73dff0de4df0d29e659fe6ba19af364",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/surfaces-and-elevations/surface-3.png",
+      "dest": "docs/portable/examples/design-foundations/surfaces-and-elevations/surface-3.png",
+      "sha": "11173ef266026bc1144830a6c76d0957f88607ba",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/surfaces-and-elevations/surface-scrim.png",
+      "dest": "docs/portable/examples/design-foundations/surfaces-and-elevations/surface-scrim.png",
+      "sha": "68bb024a04d56d195172f6e13d4c06aaddf5bbd7",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/surfaces-and-elevations/surfaces-and-elevations.png",
+      "dest": "docs/portable/examples/design-foundations/surfaces-and-elevations/surfaces-and-elevations.png",
+      "sha": "f8ade7d17c555b3a76627d19528feb0f41e3a670",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/surfaces-and-elevations/surfaces-overview.png",
+      "dest": "docs/portable/examples/design-foundations/surfaces-and-elevations/surfaces-overview.png",
+      "sha": "c3cf49e2f166c90796e6c3277249d4a42d6fd55c",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/surfaces-and-elevations/usage-low-at-rest-v3.png",
+      "dest": "docs/portable/examples/design-foundations/surfaces-and-elevations/usage-low-at-rest-v3.png",
+      "sha": "48fa93500c262aa6034382f13e397b48fcd6b323",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/surfaces-and-elevations/usage-page-level.png",
+      "dest": "docs/portable/examples/design-foundations/surfaces-and-elevations/usage-page-level.png",
+      "sha": "4e6eddb8a04bdcf007c1ca5c32190f634a00bef2",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/surfaces-and-elevations/usage-scrim-high.png",
+      "dest": "docs/portable/examples/design-foundations/surfaces-and-elevations/usage-scrim-high.png",
+      "sha": "b8c66b8a0da752d587b7c0a4d0dffdbf0ceea3c3",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-foundations/assets/surfaces-and-elevations/usage-surface-base.png",
+      "dest": "docs/portable/examples/design-foundations/surfaces-and-elevations/usage-surface-base.png",
+      "sha": "e5a1d82e4e2e0828b0de10a95aa9203e869ebd89",
+      "batch": 15
+    },
+    {
+      "source": "__docs__/design-patterns/assets/collecting-feedback/feedback-open-widget.png",
+      "dest": "docs/portable/examples/design-patterns/collecting-feedback/feedback-open-widget.png",
+      "sha": "9b16a4037eba724e24280e4948014e7ad629e440",
+      "batch": 5
+    },
+    {
+      "source": "__docs__/design-patterns/assets/collecting-feedback/feedback-trigger-general.png",
+      "dest": "docs/portable/examples/design-patterns/collecting-feedback/feedback-trigger-general.png",
+      "sha": "f7b51a63072b71fe48717f703be6c0ab0401feb8",
+      "batch": 5
+    },
+    {
+      "source": "__docs__/design-patterns/assets/collecting-feedback/feedback-trigger-opinion.png",
+      "dest": "docs/portable/examples/design-patterns/collecting-feedback/feedback-trigger-opinion.png",
+      "sha": "d2c52712f4fe86a20f88130005be69a12c7998e7",
+      "batch": 5
+    },
+    {
+      "source": "__docs__/design-patterns/assets/collecting-feedback/hero-collecting-feedback.png",
+      "dest": "docs/portable/examples/design-patterns/collecting-feedback/hero-collecting-feedback.png",
+      "sha": "305b46050e7c214aea520850b4b0e1caaabaa41d",
+      "batch": 5
+    }
+  ]
+}

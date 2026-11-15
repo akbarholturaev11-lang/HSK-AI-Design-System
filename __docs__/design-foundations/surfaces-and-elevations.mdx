@@ -19,11 +19,17 @@ import usageScrimHighImg from "./assets/surfaces-and-elevations/usage-scrim-high
 
 <Meta title="Design Guidelines / Foundations / Surfaces and elevations" />
 
-<img src={surfacesAndElevationsImg} alt="Surfaces and elevations" />
+<img src={surfacesAndElevationsImg} alt="Historical upstream diagram of layered backgrounds and shadows; not the HSK AI app color palette or component styling" />
 
 # Surfaces and elevations
 
 Surfaces are background colors. Elevations are shadows. Both are separate decisions that work together to define the spatial relationships users navigate — surfaces differentiate regions, elevations communicate depth.
+
+> **HSK AI implementation boundary (verified in code):** The iPhone PWA course uses `app/static/course_v3_data/design-tokens.css` (`--hsk-paper`, `--hsk-paper-raised`, `--hsk-card-surface`, `--hsk-divider`, theme-aware values), `app/static/course-v3.html` (safe-area-aware `.wrap`, `.scr`, `.nav`, `.sheet`), and the independently styled `app/static/iphone-pwa-voice.html`. The Android `LessonCharacters.kt` routes real lesson-card types to approved characters. The diagrams below are **professional concepts from a historical external design system**, not existing HSK UI, released components, valid HSK shadow tokens, or instructions to replace that behavior. Preserve verified platform behavior, accessibility, backend contracts and official HSK AI semantic color meanings; the current component shape, surface depth and styling are an implementation baseline, **not** a veto on the professional visual target. Do not import original school colors, Wonder Blocks classes, desktop layout, or branded imagery into production.
+
+**Professional-first HSK AI visual hierarchy:** the existing `.agents/skills/hsk-ai-ui/SKILL.md` documents a current preference for flat settings/navigation/list rows, no unnecessary icon backplates or nested cards, one primary action per context and >=44 CSS px PWA / >=48 dp Android touch targets. These functional/accessibility constraints remain, but current card geometry, surface arrangement and visual emphasis may be improved to meet the stronger professional component standard. Elevation is an optional supporting cue, **not** a default for every selected card, icon, lesson or CTA. Maintain layout-matched skeleton slots, keyboard visibility and reduced-motion alternatives.
+
+**Related distinction:** a page/task *surface* supports one continuous workflow; a *Card* groups a discrete comparable item. Do not replace the current lesson workspace with a generic elevated Card based only on its appearance. The archived source committee's decisions do not govern HSK AI.
 
 ## Principles
 
@@ -42,13 +48,17 @@ Surfaces are background colors. Elevations are shadows. Both are separate decisi
 
 ## Surfaces
 
-The system has two surface colors. They are always used to create color-based differentiation between regions.
+The historical illustrations show two conceptual layers, **not** a rule that HSK AI has exactly two color values. Actual HSK AI course tokens vary by current theme; the separate Voice screen has its own verified dark visual language.
 
-| Surface | Token |
+| HSK AI role in the existing course | Verified token/source |
 | --- | --- |
-| Surface 1 – Subtle | `semanticColor.core.background.base.subtle` |
-| Surface 2 – Default | `semanticColor.core.background.base.default` |
-| Surface scrim | `semanticColor.core.background.overlay.default` |
+| Page / main reading background | `--hsk-paper` |
+| Raised content background | `--hsk-paper-raised` |
+| Lesson card / supporting surface | `--hsk-card-surface` |
+| Outline / divider | `--hsk-divider` |
+| Dimmed content behind course modal bottom sheet | `app/static/course-v3.html` `.sheet` uses `rgba(20,17,13,.5)` (screen-specific CSS, **not** a shared semantic token) |
+
+Do not treat the source-specific `semanticColor.core.*` identifiers or the figures' palette as HSK AI's official design tokens.
 
 <img src={surfacesOverviewImg} alt="Swatches for Surface 1 - Subtle, Surface 2 - Default, and Surface scrim" />
 
@@ -80,7 +90,7 @@ Use for: primary content cards, content panels, modals, drawers, and components 
 
 A semi-transparent overlay applied over the page when a modal or drawer is open. The scrim signals that the content beneath is behind and unavailable while the overlay requires attention.
 
-Use for: always paired with modal dialogs and drawers using High elevation. Never use a scrim without a modal or drawer, and never open one without a scrim.
+Use a scrim when the **existing** overlay actually places the rest of the screen into a modal or blocked state. In the course, the `.sheet` overlay has a dimmed background; AI Voice has its own verified `.sheetLayer`/`.scrim` behavior. An anchored non-modal popover is different. Do not inherit a source-exclusive token or blindly alter functional overlay flows. **Retain the professional scrim, elevation, separation, focus and modality details** as the target for redesign.
 
 <Figure
     src={surfaceScrimImg}
@@ -90,16 +100,16 @@ Use for: always paired with modal dialogs and drawers using High elevation. Neve
 
 ## Elevation
 
-The system has four shadow levels. They describe how much depth a component appears to have — from flush with the surface to clearly floating above everything else.
+The following four levels are a **reference-only visual vocabulary**, not four shipped HSK AI elevation tokens. The inspected PWA `design-tokens.css` does not define `boxShadow.low/mid/high` or `semanticColor.core.shadow.*`. Any shadow must be sourced from the actual owning screen/component and checked in its supported themes.
 
-| Level | Description | Token |
+| Illustrative level | Professional purpose | HSK AI decision |
 | --- | --- | --- |
-| Base | No shadow. The component sits flush with the surface beneath it, occupying space without floating above it. | – |
-| Low | A subtle, close shadow. Just enough depth to signal that a component can be interacted with or selected. | `boxShadow.low` |
-| Mid | A stronger shadow that clearly separates a component from the content beneath it. | `boxShadow.mid` |
-| High | The maximum shadow in the system. The component is visibly floating above all other content. | `boxShadow.high` |
+| Base | Flush region with no extra shadow | Prefer the professional surface treatment; a current screen can be kept only if it already satisfies the target hierarchy |
+| Low | Slight visual separation | Use when the professional visual hierarchy warrants separation; implement through verified roles or explicitly propose a new token instead of inventing an existing `boxShadow.low` |
+| Mid | Temporarily floating but non-modal help | Preserve supported HSK AI popover anchoring and keyboard behavior |
+| High | Modal overlay and major interruption | Preserve the existing overlay layering, not upstream shadow constants |
 
-Shadow colors come from `semanticColor.core.shadow.transparent.low`, `semanticColor.core.shadow.transparent.mid`, and `semanticColor.core.shadow.transparent.high`.
+Original diagrams retain their own shadows and swatches for **analysis only**; they do not specify HSK AI values.
 
 <img src={elevationOverviewImg} alt="Swatches for the four elevation levels: Base, Low, Mid, and High" />
 
@@ -143,7 +153,7 @@ Use for: popovers and tooltips.
 
 For components that must command full attention and interrupt the user's flow.
 
-Use for: toasts and modals.
+Illustrates toasts and modals in the upstream system; **do not require a strong shadow or interruption** for every HSK AI toast. Existing notification and modal behavior takes precedence.
 
 <Figure
     src={elevationHighImg}
@@ -153,24 +163,26 @@ Use for: toasts and modals.
 
 ## Using surfaces and elevations together
 
-Surfaces and elevations are independent — either can be applied without the other — but they're often used in combination. A card uses Surface 2 (color lift) and Low (shadow lift) together: the surface color distinguishes the card from the page background laterally, and the shadow establishes its perceived depth. Not every surface needs elevation, and not every elevated component needs a distinct surface color. The test is always whether the combination is communicating something real to the user or just adding visual complexity.
+Surfaces and elevations are independent — either can be applied without the other — but they're often used in combination. An upstream example card uses a differentiated surface and subtle shadow together: the surface color distinguishes the card from the page background laterally, and the shadow establishes its perceived depth. Not every surface needs elevation, and not every elevated component needs a distinct surface color. The test is always whether the combination is communicating something real to the user or just adding visual complexity.
 
 | Component | Surface | Elevation |
 | --- | --- | --- |
-| Background | Surface 1 | Base |
-| Container card | Surface 1 or 2 | Base |
-| Interactive card | Surface 2 | Low |
-| Popovers, tooltips | Surface 2 | Mid |
-| Alerts, modals | Surface 2 | High |
-| Scrim (always paired with Alerts, modals above) | Surface scrim | – |
+| Existing HSK UI concept | Surface decision | Depth decision |
+| --- | --- | --- |
+| Course page | `--hsk-paper` | Current page CSS, not an inherited `Base` token |
+| Raised content | `--hsk-paper-raised` or `--hsk-card-surface` when actually used | Match the professional surface hierarchy, mapped to real existing or explicitly proposed roles |
+| Lesson/choice item | Verified course styles | Preserve answer feedback and focus |
+| Anchored help | Actual popover styling if implemented | Not necessarily modal; avoid covering the keyboard |
+| Bottom sheet / modal | Actual `.sheet` / Voice-specific overlay CSS | Preserve existing scrim, stacking, focus and dismissal |
+| Voice Orb | Its own red pearlescent screen and renderer | Never re-skin via generic cards/shadow tiers |
 
 <img src={combinationsImg} alt="Two stacked-layer diagrams showing how surfaces and elevations combine, from the background at Surface 1 with base elevation up to alerts and modals at Surface 2 with high elevation" />
 
 ## Usage guidelines
 
-### Surface 1 always sits at base elevation
+### Base layer should not falsely imply interactivity
 
-Surface 1 is the ground itself. Applying elevation to it would imply it's a separate object floating above the page, which contradicts its role. Only Surface 2 components — cards, panels, modals, and drawers — earn elevation because they're meant to read as distinct objects sitting on top of the background.
+A background should remain visually subordinate to the current learning task. This is a hierarchy principle, **not** a claim that the real app implements the original system's Surface 1/Surface 2 classes. Preserve actual task/overlay layering semantics, but elevate the visual system to the professional surface/elevation hierarchy in the later redesign; avoid redundant depth effects.
 
 <img src={usageSurfaceBaseImg} alt="A Surface 1 card sitting flat on the page with no shadow, labeled Surface 1 + Elevation: Base" />
 
@@ -182,7 +194,7 @@ Before reaching for Low elevation, look at the full page. On a complex page — 
 
 ### Elevation low is for interactive components at rest — not on hover
 
-Low is the default elevation, not a hover state. Interactive states are handled by the component's state tokens, not by increasing elevation level. Don't increase elevation on hover unless the component's design explicitly uses elevation as a state signal.
+In the upstream example, Low is the default elevation rather than a hover state. This is **not** a binding HSK AI shadow level. Interactive states are handled by the component's state tokens, not by increasing elevation level. Don't increase elevation on hover unless the component's design explicitly uses elevation as a state signal.
 
 <Figure
     src={usageLowAtRestImg}
@@ -193,7 +205,7 @@ Low is the default elevation, not a hover state. Interactive states are handled 
 
 ### Scrims belong with elevation high
 
-Modal dialogs using High elevation should always be paired with a scrim over the underlying content. The scrim reinforces the spatial model — the page is behind and unavailable, the modal is above and requires attention. Don't use a scrim without a modal, and don't open a modal without a scrim.
+Use a scrim for truly **modal** content when the existing screen blocks interaction with the rest of the page. Do not reclassify non-modal HSK AI helpers as modal or replace the existing course and AI Voice overlay mechanisms merely to fit the source diagram. Test dismissal, safe areas, keyboard, focus restoration and screen-reader behavior in the actual PWA/Android component.
 
 <img src={usageScrimHighImg} alt="A modal dialog at high elevation paired with a scrim dimming the page behind it" />
 

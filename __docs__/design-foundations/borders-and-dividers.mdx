@@ -1,4 +1,16 @@
 import {Meta} from "@storybook/addon-docs/blocks";
+import sourceBordersHeaderImg from "./assets/borders-and-dividers/header.png";
+import sourceBorderColorsImg from "./assets/borders-and-dividers/border-colors.png";
+import sourceSubtleBorderImg from "./assets/borders-and-dividers/subtle-border.png";
+import sourceDefaultBorderImg from "./assets/borders-and-dividers/default-border.png";
+import sourceFocusBorderImg from "./assets/borders-and-dividers/focus-border.png";
+import sourceStateInputsImg from "./assets/borders-and-dividers/state-inputs.png";
+import sourceStateCardImg from "./assets/borders-and-dividers/state-card.png";
+import sourceTableDividersImg from "./assets/borders-and-dividers/table-dividers.png";
+import sourceHeaderFooterDividersImg from "./assets/borders-and-dividers/header-footer-dividers.png";
+import sourceSectionDividersImg from "./assets/borders-and-dividers/section-dividers.png";
+import sourceBorderedCellsImg from "./assets/borders-and-dividers/bordered-cells.png";
+import sourceLineDividersImg from "./assets/borders-and-dividers/line-dividers.png";
 
 <Meta title="Design Guidelines / Foundations / Borders and dividers" />
 
@@ -26,7 +38,7 @@ Android has its own `PompColors` palette and Material 3 roles. Keep the same mea
 - A focused interactive control needs **high-contrast focus treatment** that does not disappear in dark mode.
 - An error input needs a state border **plus** an explanation; never use border color as the sole failure cue.
 
-Use ordinary approved component borders where available; their widths, corner radii and themes are defined by the real platform components. Avoid mandating fixed source-library 1px/2px token rules on components that do not use them.
+Follow the **professional border/divider hierarchy** for real controls, cards, focus and selection, preserving source-grounded geometry and visual intent. Treat current component widths/radii as an implementation inventory, not an aesthetic veto; map the target onto actual HSK AI theme roles or propose new roles without fabricating already-implemented tokens.
 
 ## When to use a divider
 
@@ -46,7 +58,7 @@ Use `--hsk-divider` or the corresponding native theme role rather than a copied 
 | No substantial filtering needed | A genuine supported filter/search may narrow the options |
 | Useful for a supported HSK track/level choice if already present | Useful for supported lesson or result lists if already present |
 
-Never build fictional class selection, teacher/roster forms or school filters to populate a demonstration. Respect the existing HSK AI component style rather than forcing cards merely because a design source depicted them.
+Never build fictional class selection, teacher/roster forms or school filters to populate a demonstration. Preserve the **professional component composition** and distinguish a true card from a continuous task surface. Do not force a card solely because a source image depicted one, and do not freeze inferior current HSK AI borders/shapes in the future redesign.
 
 ## Focus, error and accessibility
 
@@ -56,6 +68,86 @@ Never build fictional class selection, teacher/roster forms or school filters to
 - Dividers are structural, not buttons; do not render them as interactive targets.
 - Use 44 CSS px minimum iPhone PWA touch targets and 48 dp native Android targets where relevant, even if a border or icon is visually much smaller.
 - Verify text scaling, Hanzi strokes/pinyin tone marks, light/dark surfaces, keyboard overlay and reduced-motion interactions on real mobile screens.
+
+## Original professional examples, adapted by function
+
+The following figures restore the **original detailed border and divider examples**. Their blue/neutral palette, classroom content and source component tokens are reference screenshots only; **do not copy them into HSK AI themes**. The current `--hsk-divider`, actual PWA focus treatment and native Android components **document the present implementation**; the professional border/focus distinction remains the target for future value and geometry improvements.
+
+<img src={sourceBordersHeaderImg} alt="Original border and divider overview; educational diagram rather than HSK AI app screen" />
+
+### Border intensity and contrast
+
+<img src={sourceBorderColorsImg} alt="Two source reference border strengths shown side by side" />
+
+- **Subtle border:** appropriate when the shape is already clear through readable text, spacing, surface or elevation. It need not itself carry a state or interactive boundary. Ask: *If the line disappeared, would the learner still identify the control?*
+- **Default/discoverable border:** required when the line itself is the primary cue that an input or action has an edge. In this case verify non-text contrast, normally 3:1 where applicable.
+- Border thickness is part of component behavior: do not change the size of a selectable card merely to show focus. The original reference library used 1px normally and sometimes 2px for focus; **those are source examples, not fixed HSK CSS/Android dp instructions**.
+
+<img src={sourceSubtleBorderImg} alt="Reference showing cards with light, nonessential borders" />
+
+<img src={sourceDefaultBorderImg} alt="Reference of a discoverable text input whose edge is a primary affordance" />
+
+### Focus state must be distinct
+
+<img src={sourceFocusBorderImg} alt="Reference dropdown with a visible focus indicator" />
+
+A keyboard-focused action requires visible, accessible focus without surprising layout shift. Use each platform's **actual supported focus implementation**. Never import Khan's Wonder Blocks focus package into the HSK AI application. Check light/dark contrast and visible focus against adjacent error/selected borders.
+
+### Selected, invalid and disabled
+
+<img src={sourceStateInputsImg} alt="Source comparison of selected, focused, invalid and disabled text-field borders" />
+
+<img src={sourceStateCardImg} alt="Source example of a selected choice card with a distinct outline" />
+
+Selected, pending, invalid, disabled and read-only are **different states**. Error requires text and recovery, not just a red line; a wrong quiz answer is a learning result, not necessarily an invalid form input. In a selectable card, retain an accessible checked/selected cue (text, icon, radio state) in addition to the outline.
+
+### Table, modal and section dividers
+
+<img src={sourceTableDividersImg} alt="Source data table with horizontal separators; the displayed data are illustrative, not HSK AI learner records" />
+
+Use row separators as a restrained default for dense data. Don't mix a full cell grid, zebra stripes and horizontal lines without a specific measured scanning benefit. Preserve cell/column association and focus in an accessible HSK AI admin table.
+
+<img src={sourceHeaderFooterDividersImg} alt="Reference of modal boundaries separating fixed header/footer from scrolling content" />
+
+A modal's fixed header/footer can need a clear line between stationary actions and scrolling content, especially with the on-screen keyboard and safe areas. Preserve primary actions and unsaved learner input.
+
+<img src={sourceSectionDividersImg} alt="Source reference separating independent content groups inside a dialog" />
+
+For independent filter groups, a section line can clarify scope; don't add dividers directly under every heading when spacing and labels already establish hierarchy.
+
+### Bordered choice cells versus divided lists
+
+<img src={sourceBorderedCellsImg} alt="Source example of separately bordered selectable cells; its original class names are not HSK AI options" />
+
+- **Bordered cells:** a short fixed mutually exclusive choice on the page background (e.g., *an already supported HSK track/level choice*). Each target needs its own edge and a selected cue.
+- **Line-divided list:** content already inside a container, especially when searching or filtering. Use rows and separators rather than a second full border around every record.
+
+<img src={sourceLineDividersImg} alt="Reference list within a containing surface using lightweight horizontal row lines" />
+
+No image represents actual student/classroom functionality in HSK AI. These rules are about **visual organization**, not new product screens. The original source's main professional distinctions—subtle vs discoverable, focus vs selected, table vs section, and cells vs list—are now explicit for HSK AI.
+
+## Restored edge and divider decision rules
+
+### Pick the least intrusive boundary
+
+- Start with **spacing**, then a **divider**, then a **full border** only when the boundary itself helps recognition or action. This preserves hierarchy without turning every lesson group into a grid.
+- A **subtle border** may be suitable when the card edge is already evident through elevation/spacing and the line is not essential. An interactive input whose shape depends on its border needs an edge with the applicable **3:1** contrast, plus focus and error treatment.
+- A **focus ring** must remain visible by keyboard, should not shift the control's layout, and must not be repurposed as the only indicator of selection or validation error.
+- Source examples use roughly **1 CSS px** neutral strokes and stronger focus treatment. These are design-scale references, not a claim that every current Android/PWA control has identical dp/px geometry.
+
+### Choose dividers by structural meaning
+
+- **Table row separators:** consistently separate exact records; avoid mixing every-other-row shading, full grids and individual cell boxes without a measured comprehension benefit.
+- **Header/footer dividers:** separate fixed modal and sticky navigation regions from independently scrolling content, respecting the PWA safe area and native Android inset.
+- **Section dividers:** separate meaningfully different content areas. Do not insert a line automatically under every heading when heading typography and spacing already express the group.
+- **Bordered choice cells:** appropriate for a small fixed list of independently selectable options on the page background.
+- **Line-divided lists:** appropriate for already-contained, searchable or filterable items where each row is a distinct target.
+
+### Error, selected and inaccessible states
+
+- An invalid field must pair a distinct border with a readable inline message; a selected option needs a clear persistent state; a disabled control must be semantically disabled, not merely faded.
+- Keep meaningful focus, selected, error and disabled borders distinguishable **in both light and dark themes** without importing the source product's blue or other raw semantic tokens.
+- A decorative divider should not be focusable or look like a click target. Screen readers should hear row headings, labels and available actions rather than visual strokes.
 
 ## Implementation boundary
 
