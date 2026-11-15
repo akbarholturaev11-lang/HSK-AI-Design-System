@@ -24,6 +24,17 @@ Mobile learning experience, verified Hanzi and pinyin, localized translation and
 
 Long **optional** descriptions are clamped to a maximum of **two rendered lines**; a **top-right ⌄ / ⌃ icon only** reveals the entire explanation inline. Do not hide questions, answers, payment terms, required notices or learner input.
 
+## Preparing to become the main HSK AI design system
+
+The intended outcome is a **full, no-omission transfer of professional guidelines** into the HSK AI product repository as the **top-level UI/UX decision authority**—not a new app, not a code refactor, and not a blind merge of third-party Storybook tools.
+
+- [44-page source/transfer catalog](docs/migration/TRANSFER_CATALOG.md) — exact tracked filenames, Git blob identities, planned destination paths and 299 source image imports.
+- [Verified conflicts with existing HSK AI rules](docs/migration/CONFLICT_REGISTER.md) — especially the **one-line vs two-line** disclosure and **existing-style vs professional-design precedence** discrepancies.
+- [Copy-ready authority insertion and two-line UI skill replacement](docs/migration/TARGET_AUTHORITY_INSERT.md) — read and apply **only during the separately authorized repository transfer**.
+- [Top-level transfer status](MIGRATION_TO_HSK_AI.md) — what is actually prepared and what still cannot be claimed complete.
+
+**Important:** all 44 active guideline pages exist here, but they are still MDX/Storybook source files. Some professional reference illustrations are third-party material without confirmed redistribution rights. A truly portable product-repository design corpus must retain every useful rule while removing external runtime dependencies and resolving media provenance. **Neither the product repository nor its PWA/Android screens have been edited as part of this preparation.**
+
 ## Documentation development
 
 Use the repository's current `package.json` scripts:
