@@ -68,10 +68,12 @@ let images = 0;
 for (const file of files) {
     const source = fs.readFileSync(file, "utf8");
     // Check relative static ESM imports without interpreting third-party package names.
-    for (const match of source.matchAll(/(?:^|\n)\s*import\s+(?:(?:[\s\S]*?)\s+from\s+)?["'](\.[^"']+)["']/g)) {
+    for (const match of source.matchAll(/(?:^|\n)\s*import\s+([\s\S]*?);/g)) {
+        const spec = match[1].match(/(?:from\s+)?["'](\.[^"']+)["']\s*$/);
+        if (!spec) continue;
         imports++;
-        if (!resolveLocalImport(file, match[1])) {
-            report(file, "missing relative import", match[1]);
+        if (!resolveLocalImport(file, spec[1])) {
+            report(file, "missing relative import", spec[1]);
         }
     }
     if (!file.endsWith(".mdx")) continue;
