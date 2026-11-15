@@ -100,3 +100,18 @@ The optional-text disclosure in [HSK AI typography](../design-foundations/typogr
 - Apply the professional text-field typography, hierarchy and spacing using verified HSK AI semantic color roles where appropriate; do not perpetuate an inferior current style. Consult [HSK AI typography](../design-foundations/typography.md) for Hanzi/pinyin/translation reading order and text roles.
 
 The source screenshots remain **illustrations of form behavior**. This is a design-documentation change; it does not authorize production input or validation rewrites.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: states-1.png](../../examples/design-components/text-field/states-1.png)
+
+- [states-1.png](../../examples/design-components/text-field/states-1.png) — exact source blob `8822eadf52d0` (illustrated above)
+- [states-2.png](../../examples/design-components/text-field/states-2.png) — exact source blob `5bf5878d366e`
+- [states-3.png](../../examples/design-components/text-field/states-3.png) — exact source blob `b01cd8d16684`
+- [states-4.png](../../examples/design-components/text-field/states-4.png) — exact source blob `25e881708df1`
+- [states-5.png](../../examples/design-components/text-field/states-5.png) — exact source blob `411067a6b792`
+- [states-6.png](../../examples/design-components/text-field/states-6.png) — exact source blob `9a7c3e32864d`
+- [states-7.png](../../examples/design-components/text-field/states-7.png) — exact source blob `116bfd716f05`
+- [text-field.png](../../examples/design-components/text-field/text-field.png) — exact source blob `61f9f09e8663`

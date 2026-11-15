@@ -55,3 +55,12 @@ Keep messaging brief and non-interactive; prefer a short phrase. Use inline help
 Do not use unnecessary end punctuation for brief tooltip labels. A tooltip does not substitute for the **two-line optional explanation disclosure**: only supporting explanation may collapse, with an accessible top-right ⌄/⌃ icon that opens it in place.
 
 > **Historical figure 6 — source reference only (not transferred):** A tooltip whose text wraps onto three lines and ends with a period: "When you’ve selected your answer(s), click this button to check your answer." — let tooltip text wrap across multiple lines or end with punctuation.. Type: dont. Source asset: `./assets/tooltips/copy.png`.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: copy.png](../../examples/design-components/tooltips/copy.png)
+
+- [copy.png](../../examples/design-components/tooltips/copy.png) — exact source blob `bef8a6979740` (illustrated above)
+- [tooltips.png](../../examples/design-components/tooltips/tooltips.png) — exact source blob `644434d4296f`

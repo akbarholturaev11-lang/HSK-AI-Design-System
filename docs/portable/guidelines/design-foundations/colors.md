@@ -90,3 +90,15 @@ Use current semantic role names and token mappings. An experimental palette, unv
 ## Scope
 
 This page is **HSK AI-only design guidance**. It does not authorize editing the production app or replacing Storybook's temporary authoring dependencies without separate validation.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: accessible-pairings.png](../../examples/design-foundations/colors/accessible-pairings.png)
+
+- [accessible-pairings.png](../../examples/design-foundations/colors/accessible-pairings.png) — exact source blob `56a16cea4c3e` (illustrated above)
+- [colors.png](../../examples/design-foundations/colors/colors.png) — exact source blob `df78d2ee0036`
+- [primitives-grid.png](../../examples/design-foundations/colors/primitives-grid.png) — exact source blob `2f75a0291c64`
+- [semantic-tokens-hero.png](../../examples/design-foundations/colors/semantic-tokens-hero.png) — exact source blob `b3b925f81f2c`
+- [semantic-tokens.png](../../examples/design-foundations/colors/semantic-tokens.png) — exact source blob `2266c0c3d6a5`

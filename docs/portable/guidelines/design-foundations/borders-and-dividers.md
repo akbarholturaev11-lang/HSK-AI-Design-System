@@ -138,3 +138,20 @@ No image represents actual student/classroom functionality in HSK AI. These rule
 ## Implementation boundary
 
 This is HSK AI-specific design guidance. It deliberately excludes foreign UI-library token paths, desktop classroom screenshots and third-party focus-package requirements. It changes no production CSS, native component or navigation behavior.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: border-colors.png](../../examples/design-foundations/borders-and-dividers/border-colors.png)
+
+- [border-colors.png](../../examples/design-foundations/borders-and-dividers/border-colors.png) — exact source blob `be1650382fcd` (illustrated above)
+- [default-border.png](../../examples/design-foundations/borders-and-dividers/default-border.png) — exact source blob `4b8dc5814863`
+- [focus-border.png](../../examples/design-foundations/borders-and-dividers/focus-border.png) — exact source blob `0c1640d3d5d5`
+- [header-footer-dividers.png](../../examples/design-foundations/borders-and-dividers/header-footer-dividers.png) — exact source blob `f10597a24943`
+- [header.png](../../examples/design-foundations/borders-and-dividers/header.png) — exact source blob `3909df7c7627`
+- [section-dividers.png](../../examples/design-foundations/borders-and-dividers/section-dividers.png) — exact source blob `4b0293962b09`
+- [state-card.png](../../examples/design-foundations/borders-and-dividers/state-card.png) — exact source blob `c42d7d58c6e2`
+- [state-inputs.png](../../examples/design-foundations/borders-and-dividers/state-inputs.png) — exact source blob `727448cdca54`
+- [subtle-border.png](../../examples/design-foundations/borders-and-dividers/subtle-border.png) — exact source blob `39012be3b39f`
+- [table-dividers.png](../../examples/design-foundations/borders-and-dividers/table-dividers.png) — exact source blob `911d36c02f03`

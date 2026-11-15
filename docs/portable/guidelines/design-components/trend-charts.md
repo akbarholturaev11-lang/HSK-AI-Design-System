@@ -117,3 +117,11 @@ Place a high-level measure above the chart where useful; label the time window. 
 ## Implementation boundary
 
 This document is HSK AI-only and deliberately contains no imported school test charts, source scoring examples or inherited comparator policies. Do not modify the app or manufacture trend data from the design guideline.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: header.png](../../examples/design-components/trend-charts/header.png)
+
+- [header.png](../../examples/design-components/trend-charts/header.png) — exact source blob `74ad90b6e1b3` (illustrated above)

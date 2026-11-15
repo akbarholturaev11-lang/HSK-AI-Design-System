@@ -94,3 +94,16 @@ Preference toggles save instantly on change. There is no deferred or confirm ste
 The label names the actual supported setting as a concise noun phrase (e.g., "Notifications" only when that notification preference exists), not an unrelated messaging or classroom-management feature. Avoid imperative phrases such as "Enable notifications" when the label should name the preference. Clearly distinguish saved preference, pending permission and unavailable state.
 
 > **Historical figure 11 — source reference only (not transferred):** Two preference toggles compared: “New assignment notifications” marked with a green check, and “Enable new assignment notifications” marked with a red cross. Source asset: `./assets/toggle/preferences-copy.png`.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: copy.png](../../examples/design-components/toggle/copy.png)
+
+- [copy.png](../../examples/design-components/toggle/copy.png) — exact source blob `a3b7cd033a43` (illustrated above)
+- [interaction-2-do.png](../../examples/design-components/toggle/interaction-2-do.png) — exact source blob `dec7918bf0f8`
+- [interaction-2-dont.png](../../examples/design-components/toggle/interaction-2-dont.png) — exact source blob `a60e7af2a13f`
+- [placement.png](../../examples/design-components/toggle/placement.png) — exact source blob `7fbcd4e0ddd1`
+- [preferences-copy.png](../../examples/design-components/toggle/preferences-copy.png) — exact source blob `e72822c18f62`
+- [toggle.png](../../examples/design-components/toggle/toggle.png) — exact source blob `1a58fbe0d81c`

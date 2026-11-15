@@ -127,3 +127,24 @@ Copy should omit periods when the message consists of a single, short statement 
 Action text must be a single, strong verb or short, imperative phrase (e.g., "Undo," "View," or "Try Again") that clearly describes the user's immediate recovery or context. Avoid conversational fillers, technical jargon, or multi-word phrases (e.g., avoid "Click here to view" or "Please reverse the deletion").
 
 > **Historical figure 15 — source reference only (not transferred):** Two toasts. The first has a proper 'View' action, and a second with 'View link' which is not recommended. Source asset: `./assets/toasts/copy-4.png`.
+
+## Curated professional visual examples (internal)
+
+These illustrations are retained as **professional reference samples**, not screenshots of HSK AI or evidence that source-specific functions exist. **Apply the design principles; do not copy original brand colors, source metrics, school terms or unverified features as HSK AI requirements.** All image binaries are SHA-preserved in the [approved examples library](../../examples/README.md).
+
+![Professional UI reference: copy-1.png](../../examples/design-components/toasts/copy-1.png)
+
+- [copy-1.png](../../examples/design-components/toasts/copy-1.png) — exact source blob `0db047666492` (illustrated above)
+- [copy-2.png](../../examples/design-components/toasts/copy-2.png) — exact source blob `cc63264ef97e`
+- [copy-3.png](../../examples/design-components/toasts/copy-3.png) — exact source blob `2dddb4551b53`
+- [copy-4.png](../../examples/design-components/toasts/copy-4.png) — exact source blob `dc164eb2fd62`
+- [interaction-1.png](../../examples/design-components/toasts/interaction-1.png) — exact source blob `ae161569e046`
+- [interaction-2.png](../../examples/design-components/toasts/interaction-2.png) — exact source blob `8eee88fdf35b`
+- [interaction-3.png](../../examples/design-components/toasts/interaction-3.png) — exact source blob `7c7552ab453e`
+- [interaction-4.png](../../examples/design-components/toasts/interaction-4.png) — exact source blob `767f9a318ed2`
+- [placement-1.png](../../examples/design-components/toasts/placement-1.png) — exact source blob `c2db03bffebc`
+- [states.png](../../examples/design-components/toasts/states.png) — exact source blob `520fd35c6d13`
+- [toasts.png](../../examples/design-components/toasts/toasts.png) — exact source blob `cdc01a62095e`
+- [variants-1.png](../../examples/design-components/toasts/variants-1.png) — exact source blob `6c10b92fcf9b`
+- [variants-2.png](../../examples/design-components/toasts/variants-2.png) — exact source blob `7dc3b34c1c49`
+- [variants-3.png](../../examples/design-components/toasts/variants-3.png) — exact source blob `44b9d64b6535`
