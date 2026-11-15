@@ -49,6 +49,24 @@ Use a <a href="./?path=/docs/design-guidelines-components-data-visualization-sum
 6. Where a table offers tabs or summary views, each tab's count and list must be calculated from the **same verified records**.
 7. Do not insert fictional sample student records or unauthorized individual analytics to fill a design mockup.
 
+## In-cell information and row controls
+
+A cell must remain understandable when separated from color, chart decoration or surrounding rows. This preserves the source system's useful distinction between **exact values, in-cell visuals, status flags, and per-row actions**, without importing its school records or score rules.
+
+| Cell content | Professional rule | HSK AI constraint |
+| --- | --- | --- |
+| Missing value | Use a localized em dash or explicit “Not recorded”; never silently substitute zero. | Explain whether an observation is absent, not applicable, still processing or unavailable because of permission. |
+| Progress visualization | Show an exact readable value such as `12/20` alongside the bar; use a real non-zero denominator and accessible text. | The numerator, denominator and completion meaning must come from the same verified lesson/goal source. |
+| Status badge | Pair a compact badge with understandable text; hue alone is insufficient. | Keep correct/incorrect learning feedback separate from upload, network, payment and destructive errors. |
+| Action-required flag | Name what happened and the appropriate severity, not just a count or colored symbol. | Use only genuinely recorded recoverable conditions; do not create school-style overdue or “needs help” classifications. |
+| Row action | Put genuine record-specific actions together at the row's trailing edge if more than one is necessary. | Announce the target in its accessible label, e.g. “Actions for [record]”; do not imply unsupported edit/export/delete controls. |
+
+- **Keep flags sparse:** where two verified, independently meaningful flags coexist, order the most important first; use a more detailed record view rather than stacking many badges. The upstream two-flag example is a readability reference, not a new HSK AI severity API.
+- **Align by data type:** text identifiers follow the reading direction, comparable numbers align on the numeric edge, and dates/times use the selected locale and declared time zone. Keep a stable column meaning within one table.
+- **Bulk selection is conditional:** add selection checkboxes only if authorized bulk actions exist. Announce each row's identity, show the selected count and available actions together, and define what selection does when filtering or paging changes.
+- **Long datasets:** use genuine server paging or validated virtualization with stable identifiers, sortable scope, selection and totals. The original desktop suggestion of 50 rows is not a universal mobile HSK AI limit.
+- **Navigation:** real tab groups need the appropriate keyboard interaction and selected-state announcement. A table header should use `scope="col"` or the native equivalent; decorative mini-bars never replace an exact readable value.
+
 ## Mobile and accessibility
 
 - Use actual PWA/Android layouts, not a forced desktop six-column table. Prefer a compact list/stacked row where that preserves meaning better.
