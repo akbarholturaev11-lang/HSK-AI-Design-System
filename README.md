@@ -30,7 +30,6 @@ Use the repository's current `package.json` scripts:
 
 ```sh
 pnpm install --frozen-lockfile
-pnpm check:docs
 pnpm start
 pnpm typecheck
 pnpm build
@@ -38,15 +37,14 @@ pnpm build
 
 Build requirements and package versions are defined in `package.json`. Some `@khanacademy/wonder-blocks-*` dependencies and legacy theme names are still required by the **documentation renderer**; they do not authorize porting those UI components, scoring, school workflows, Gems or mascots into HSK AI. Dependency replacement requires an isolated tested migration, not blind deletion.
 
-**Validation status:** The presence of a file or commit is not evidence that Storybook currently compiles. A full build and device visual check must be run separately.
+**Scope:** this phase validates professional design **decisions and text**, not deployed Storybook or production HSK AI UI. A build/device check belongs to an eventual site publication or separate PWA/Android implementation phase.
 
 ## Design-site identity and verification evidence
 
 - Storybook now uses the **exact canonical HSK AI Chinese-knot SVG** from `HSK-AI-Bot/branding/hsk-ai-logo.svg` (product blob SHA `171a49f9093367cc88d3a81b83133a85e8bb4be9`), including its favicon and documentation chrome. This is not a new or generated Panda/logo design.
 - The Storybook **chrome** uses verified HSK AI brand colors: documented cinnabar-gradient end `#C02F32` for accessible light-theme links and the current PWA dark-theme accent `#20BCEB`. The rendered *example components* still depend on historical Wonder Blocks theme mechanisms and must not be mistaken for actual HSK AI theme screenshots.
 - Mobile documentation preview presets now include **320 px, 375 px and 412 px**. A preset is not evidence that the page has been visually tested at that width.
-- The new `pnpm check:docs` command is a dependency-free **static integrity check** of MDX metadata IDs, relative imports, `img` alt attributes and local Storybook page links. It is part of PR build-check CI, alongside the existing `pnpm typecheck` and `pnpm build`; none of these replace manual mobile/keyboard/accessibility testing.
-- The full historic 45-page source reconciliation and live-code follow-up are documented under `docs/audits/`. **The current recovery PR remains draft** because source-illustration redistribution rights and real green build/CI/visual evidence have not yet been established.
+- The full historic 45-page source reconciliation and follow-up are documented under `docs/audits/`. The **professional design-decision adaptation can be reviewed as documentation without app/Storybook tests**. The draft PR remains unmerged; any future publication of third-party illustrations requires separate asset-rights review.
 - `chromatic.yml` does not publish a **draft PR**, preventing the unreviewed restoration images from being automatically uploaded to a preview host. The branch must not be promoted or merged until the release gates are evidenced.
 
 **Important:** GitHub workflow configuration files alone cannot prove that GitHub Actions is enabled or running. Check actual run and job results before claiming CI passed.
