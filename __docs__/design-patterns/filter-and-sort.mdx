@@ -23,7 +23,7 @@ import dependentFilters2Img from "./assets/filter-and-sort/dependent-filters-2.p
 
 This guide defines how interactive components work together to manage large datasets, ensuring users can navigate content with minimal friction.
 
-<a href="https://www.figma.com/make/XJsbikH15NhiBV6s2Yi8wl/Finding--Organizing--and-Viewing-Prototype?p=f&t=YW51oGABw6Xv1kLY-0&fullscreen=1" target="_blank" rel="noopener noreferrer">View prototype</a>
+<a href="https://www.figma.com/make/XJsbikH15NhiBV6s2Yi8wl/Finding--Organizing--and-Viewing-Prototype?p=f&t=YW51oGABw6Xv1kLY-0&fullscreen=1" target="_blank" rel="noopener noreferrer">Original source demonstration (not HSK AI interface)</a>
 
 ## Usage and purpose
 
@@ -64,7 +64,7 @@ It can feature things like (and in this order) Search field for keyword queries,
 
 ### Search field
 
-A search field allowing users to type keywords to find specific items within the dataset. As you type, the system provides a list of auto-suggestions—such as names of available lessons or vocabulary items—to help you find what you need faster. Once you select a suggestion or press enter, the main results list will refresh to display your matches.
+A search field allowing users to type keywords to find specific items within the dataset. When this view implements suggestions, typing may reveal supported matching lesson or vocabulary choices without changing the main result set. The main results update only after a suggestion is selected or the query is submitted, consistent with the search-field rule; unsupported autocomplete must not be implied as an existing HSK AI feature.
 
 <img src={logicFrameworkHowTheyPlayTogether2Img} alt="Logic framework: how they play together 2" />
 
@@ -80,7 +80,7 @@ Use them sparingly (1–2 max) to avoid over-constraining the data and forcing a
 ### Compact additive dropdown (single or multi-select)
 
 This specific style of dropdown is designed for high-frequency use within the horizontal filter bar. It allows users to manage common data categories—such as HSK level or exercise type when these are supported—efficiently within a limited space.
-Limit to 4 max of these categories to prevent UI clutter and ensure the most common data segments remain accessible.
+Keep the original four-category upper bound only where a larger viewport comfortably supports it; the inline-filter component recommends three visible filters per row. On HSK AI phones use fewer visible controls or the existing selection sheet when needed.
 
 <img src={logicFrameworkHowTheyPlayTogether5Img} alt="Logic framework: how they play together 5" />
 
