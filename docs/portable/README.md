@@ -2,6 +2,8 @@
 
 **Source status:** 44/44 standalone Markdown guideline files have been created and independently inventoried in `HSK-AI-Design-System` at this repository branch (snapshot `776d92e2c9b4b639db3b8c5c6542bf3006fc69d0`). This is a **candidate transfer corpus, not the final HSK app's currently installed design system**. HSK-AI-Bot has not been changed.
 
+**Latest verification:** [44 guideline pages, 212 original-SHA image blobs and all local reference links — integrity audit](../audits/PORTABLE_EXAMPLE_INTEGRITY_2026-11-15.md). The historic source-notes in the portable pages have been reconciled with the physically copied, selected sample images; excluded screenshots are not present in the portable examples directory.
+
 ## Portable image-library integration complete (35 guidelines / 212 source-exact PNGs)
 
 The **212 visually selected source sample PNG files are now physically included within this design repository** at [`docs/portable/examples/`](examples/README.md), copied using their **original Git blob SHAs, without recompression or pixel alteration**. The [machine-readable manifest](examples/manifest.json) links every selected source image, destination image, content SHA and audit batch. **All 35 corresponding portable Markdown guidelines contain an image preview and direct links to all their approved examples**; the other nine guidelines intentionally remain text-only, because their historical assets were excluded or did not have an approved generic sample.
