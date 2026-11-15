@@ -27,6 +27,8 @@ Surfaces are background colors. Elevations are shadows. Both are separate decisi
 
 > **HSK AI implementation boundary (verified in code):** The iPhone PWA course uses `app/static/course_v3_data/design-tokens.css` (`--hsk-paper`, `--hsk-paper-raised`, `--hsk-card-surface`, `--hsk-divider`, theme-aware values), `app/static/course-v3.html` (safe-area-aware `.wrap`, `.scr`, `.nav`, `.sheet`), and the independently styled `app/static/iphone-pwa-voice.html`. The Android `LessonCharacters.kt` routes real lesson-card types to approved characters. The diagrams below are **professional concepts from a historical external design system**, not existing HSK UI, released components, valid HSK shadow tokens, or instructions to replace that behavior. Preserve the actual platform components and semantic tokens; do not import original school colors, Wonder Blocks classes, desktop layout, or branded imagery into production.
 
+**Mandatory HSK AI visual hierarchy:** the verified `.agents/skills/hsk-ai-ui/SKILL.md` prefers flat settings/navigation/list rows, forbids unnecessary icon backplates or nested cards, expects one clear primary action per context and requires >=44 CSS px PWA / >=48 dp Android touch targets. Elevation is an optional supporting cue, **not** a default for every selected card, icon, lesson or CTA. Maintain layout-matched skeleton slots, keyboard visibility and reduced-motion alternatives.
+
 **Related distinction:** a page/task *surface* supports one continuous workflow; a *Card* groups a discrete comparable item. Do not replace the current lesson workspace with a generic elevated Card based only on its appearance. The archived source committee's decisions do not govern HSK AI.
 
 ## Principles
