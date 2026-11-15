@@ -36,7 +36,7 @@ The six pages still byte-identical to the historical MDX baseline — clear filt
 
 1. [**Professional-first contract**](DESIGN_SYSTEM_PROFESSIONAL_FIRST_CONTRACT.md) — governs the professional design decisions and minimal HSK adaptation.
 2. [**Approved owner decisions**](DESIGN_SYSTEM_APPROVED_DECISIONS_AND_RESTORATION_TASKS.md) — exact protected exceptions; never relax.
-3. [**44 standalone Markdown review documents**](docs/portable/README.md) — navigable completed draft corpus with source SHA metadata.
+3. [**44 standalone Markdown review documents**](docs/portable/README.md) and [**independent first-pass rulebook audit**](docs/audits/portable-rulebook-migration-readiness-2026-11-15.md) — navigable completed draft corpus with source SHA metadata.
 4. [**Exact 44-page transfer catalog**](docs/migration/TRANSFER_CATALOG.md) — every page with its Git SHA, image exposure and planned `docs/design-system/guidelines` path.
 5. [**Exact asset quarantine**](docs/migration/ASSET_AND_RUNTIME_INVENTORY.md) — 316 PNG and 30 font paths with source SHA provenance and exclusions.
 6. [**Existing HSK conflict register**](docs/migration/CONFLICT_REGISTER.md) — verified line-by-line policy collisions and resolution strategy.
