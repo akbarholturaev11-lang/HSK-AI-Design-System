@@ -1,5 +1,5 @@
 {
-    "name": "@khanacademy/design-guidelines",
+    "name": "hsk-ai-design-system",
     "version": "0.0.1",
     "private": true,
     "type": "module",
@@ -10,9 +10,7 @@
     "scripts": {
         "start": "storybook dev -p 56789",
         "build": "storybook build --stats-json",
-        "typecheck": "tsc --noEmit",
-        "verdicts:page": "node scripts/build-verdicts-page.mjs",
-        "verdicts:check": "node scripts/build-verdicts-page.mjs --check"
+        "typecheck": "tsc --noEmit"
     },
     "dependencies": {
         "@khanacademy/wonder-blocks-announcer": "^1.1.1",
