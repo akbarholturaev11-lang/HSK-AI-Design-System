@@ -49,7 +49,7 @@ Regardless of which components are selected for your specific use case, the syst
 - **Additive filtering (AND):** When a user selects a value from a Dropdown and then types in the Search Bar, the results must reflect both. The search is conducted within the already filtered subset.
 - **Inclusive selection (OR):** Within a single component—specifically Checkboxes—selecting multiple items should expand the results (e.g., "Show me Blue OR Red items").
 - **Cascading dependencies:** Primary filters (e.g., an actually available HSK course) dynamically "prune" dependent criteria (e.g., its available lessons) to show only valid, overlapping options. If a primary filter is changed, any now-invalid secondary selections are cleared to prevent "No Results" states. In the filter bar, a child filter is not displayed at all until its parent holds a value, and is removed when the parent is.
-- **Global reset:** Provide a "Clear all filters" function as soon as the user applies a filter. This ensures users can return to a neutral state instantly without manual deselection, regardless of how many components are currently in use. A toggle counts — it produces no chip, but it activates the button and is turned off by it.
+- **Global filter reset:** Provide a "Clear all filters" function as soon as the user applies an optional filter. This removes applied optional filter choices without manual deselection. A toggle counts even though it produces no chip. Typed search, non-clearable scope selections and sort order are retained, as specified in the Clear filter guideline.
 
 ### Experience flow: the discovery sequence
 
