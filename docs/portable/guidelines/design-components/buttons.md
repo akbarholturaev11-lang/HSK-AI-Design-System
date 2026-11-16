@@ -117,7 +117,9 @@ Don’t use a disabled button to communicate when conditions for progressing or 
 
 ### Loading
 
-Use a visible loading state and protect against duplicate submissions while an asynchronous action is pending. The label and accessible status should explain what is happening; on failure provide a real recovery route. Never treat an unconfirmed purchase or unsaved lesson as successful.
+Show **immediate, truthful feedback** when an asynchronous action begins: the active control communicates pending state and prevents duplicate submission, while unaffected controls remain usable. Keep the user's draft, selection and focus available; use a localized error and working retry or rollback if the request fails. The UI must not present a verified-success label merely because an animation, click or redirect occurred.
+
+For **reversible, low-risk actions only** (for example, a supported saved-word toggle), a provisional visual change may make the interface feel immediate **if the previous state can reliably be restored**. Make the provisional state distinguishable from confirmed persistence; if the server rejects or times out, restore the previous state and explain the failure. **Never optimistically assert** purchase/Pro entitlement, subscription renewal, official lesson grade, XP, streak, completion, account deletion or any irreversible mutation. If rollback is unsafe or unavailable, retain the pending state until authoritative confirmation. Whether to use request deduplication, cancellation or optimistic cache updates is an engineering decision, not a new visual component.
 
 ## Iconography
 
