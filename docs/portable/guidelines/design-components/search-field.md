@@ -50,13 +50,20 @@ The search field must be placed immediately adjacent to the content list or data
 
 Once text is entered, a clear button (an X) appears inside the field so the user can erase the query without selecting and deleting the text.
 
-Selecting it clears the search term and submits in a single action, restoring results that match any other still-applied filters. This is not an exception to the submission rule — that rule exists to stop results churning on every keystroke, and clearing is one deliberate action. Leaving the results filtered after the field is emptied would show an empty search box above a narrowed list, which states two contradictory things at once.
+Selecting it clears the search term and updates the results in **one immediate user action**, constrained only by other still-applied filters. Do not impose a remote-search typing delay on this explicit clear action. Leaving an empty search field above a still query-filtered list presents contradictory states.
 
 Focus stays in the field after clearing. A user who clears a search is usually about to type a different one. This differs from Clear filters, where the button removes itself when activated and focus has to be moved deliberately.
 
 > **Historical figure 4 — source figure reference (only approved samples, if any, are linked below):** A search field with a text cursor and a clear “X” button at the end of the input. Source asset: `./assets/search-field/clear-button.png`.
 
 A search term is cleared only from the field. It does not produce an active filter, and Clear filters does not remove it — a user who clears all filters while a search is still applied will see results that remain narrowed by the search term. See [Active filters](active-filters.md) and [Clear filter](clear-filter.md).
+
+### Responsive search without stale results (conditional, HSK AI)
+
+- **Immediate text, deliberate remote search:** the typed query, caret, clear button and focus update immediately. If a supported search actually calls a remote API on typing, wait for a short measured typing pause before sending the next request; repeated keystrokes must not make the list flash or trigger a server call per letter. **Do not delay inexpensive local-only filtering** or add a search API where none exists.
+- **Latest query owns the results:** a slower response to an earlier query must never replace the current query's results or count. Preserve the user's current filters, locale, HSK version, and any unsent input. Cancellation and request scheduling are engineering responsibilities; the **visible UX requirement** is that only results matching the most recently committed query/scope are shown.
+- **Independent status and recovery:** keep the query editable during a remote wait; distinguish pending results, genuine no matches, offline/error and a previous authorized snapshot marked as such. When a search fails, do not silently erase verified vocabulary or show stale results as new. Return focus to the search or relevant retry control and announce the updated result count without repeating every row.
+- **Verify on real supported surfaces:** type Hanzi, tone-marked pinyin and long UZ/RU/TJ queries rapidly on a weak/slow network; clear midway, change filters, reverse response order and return from a word detail. There must be no stale-result flash, lost query, keyboard jump, focus trap or unexpected scroll reset. If the existing collection is purely local or does not search one of these fields, verify only its actually supported behavior.
 
 ## Copy
 
